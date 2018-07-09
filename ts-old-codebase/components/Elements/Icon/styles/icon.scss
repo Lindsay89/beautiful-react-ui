@@ -1,0 +1,51 @@
+.bi.bi-icon {
+  @apply text-base;
+
+  // SIZES
+
+  &.icon-sm {
+    @apply text-xs;
+  }
+
+  &.icon-lg {
+    @apply text-xl;
+  }
+
+  // COLORS
+
+  &.icon-default {
+    @apply text-default;
+  }
+
+  &.icon-white {
+    @apply text-white;
+  }
+
+  &.icon-black {
+    @apply text-black;
+  }
+
+  &.icon-primary {
+    @apply text-primary;
+  }
+
+  &.icon-secondary {
+    @apply text-secondary;
+  }
+
+  &.icon-info {
+    @apply text-info;
+  }
+
+  &.icon-success {
+    @apply text-success;
+  }
+
+  &.icon-warning {
+    @apply text-warning;
+  }
+
+  &.icon-danger {
+    @apply text-danger;
+  }
+}

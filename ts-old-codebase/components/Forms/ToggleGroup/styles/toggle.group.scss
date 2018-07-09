@@ -1,0 +1,14 @@
+@import 'create-toggle-group-color';
+
+.bi.toggle-group {
+  .bi.bi-btn.btn-default.toggled {
+    @apply bg-default;
+  }
+
+  @include create-toggle-group-color('primary');
+  @include create-toggle-group-color('secondary');
+  @include create-toggle-group-color('info');
+  @include create-toggle-group-color('success');
+  @include create-toggle-group-color('warning');
+  @include create-toggle-group-color('danger');
+}

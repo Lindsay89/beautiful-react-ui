@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss"
+  ],
+  "rules": {
+    "max-empty-lines": 2,
+    "unit-whitelist": ["px", "ms", "em", "rem", "%", "dpi", "dppx", "deg", "s", "vh", "vw"]
+  }
+}

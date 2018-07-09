@@ -1,0 +1,36 @@
+.bi.bi-modals.have-modals {
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  @apply fixed pin-t pin-r pin-l pin-b flex;
+  animation: fade_in 450ms;
+  align-items: center;
+  justify-content: center;
+
+  .modal {
+    width: 650px;
+    animation: zoomIn 500ms;
+    @apply p-4 bg-white shadow rounded;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

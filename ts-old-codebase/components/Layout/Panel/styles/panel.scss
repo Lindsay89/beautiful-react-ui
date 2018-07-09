@@ -1,0 +1,16 @@
+.bi.bi-panel {
+  @apply p-4 relative rounded bg-default-lightest;
+
+  .bi-panel-title {
+    transition: transform 250ms ease-in-out, opacity 300ms ease-in;
+    opacity: 0;
+    padding-bottom: 0;
+    transform: translateY(-90%);
+    @apply absolute pin-t underline pb-2;
+  }
+
+  &:hover .bi-panel-title {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+}

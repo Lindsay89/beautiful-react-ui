@@ -1,0 +1,33 @@
+@import '../../../../theme/utils/functions';
+
+.bi.bi-img {
+  &.img-shadow {
+    @apply shadow-md;
+  }
+
+  &.img-rounded {
+    @apply rounded;
+  }
+
+  &.img-circular {
+    @apply rounded-full;
+  }
+
+  &.img-fluid {
+    display: block;
+    width: 100%;
+  }
+
+  &.img-lazy {
+    opacity: 0;
+    transition: opacity 450ms ease-in-out;
+
+    &.img-loaded {
+      opacity: 1;
+    }
+  }
+}
+
+.bi-img-spinner {
+  @apply text-center m-auto block bg-default-lighter p-6;
+}

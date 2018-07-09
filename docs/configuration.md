@@ -1,0 +1,1 @@
+To configure the thing just do something and then bla bla

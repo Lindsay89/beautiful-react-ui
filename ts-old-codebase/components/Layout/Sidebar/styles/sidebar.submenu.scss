@@ -1,0 +1,63 @@
+.bi.bi-sidebar-item.bi-sidebar-submenu {
+  overflow: hidden;
+
+  > .item-content {
+    &::before {
+      content: 'E';
+      font-family: ElegantIcons, sans-serif;
+      position: absolute;
+      top: 50%;
+      display: block;
+      transform: translateY(-50%);
+      right: 0;
+      font-size: 0.8rem;
+      line-height: 1;
+      @apply pr-4;
+    }
+  }
+
+  .bi-sidebar-submenu-container {
+    height: 0;
+    margin: 0;
+  }
+
+  &.open {
+    > .item-content {
+      &::before {
+        content: 'C';
+      }
+    }
+
+    // first lever submenu
+    .bi-sidebar-submenu-container {
+      height: auto;
+      @apply bg-primary-dark text-white shadow-inner;
+
+      .bi.bi-sidebar-item {
+        box-shadow: none;
+        border-bottom: 0;
+        transition: box-shadow 250ms ease-in-out;
+
+        &:hover {
+          border-left: 0;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1) inset, 0 -1px 2px 0 rgba(0, 0, 0, 0.1) inset;
+        }
+
+        .item-content {
+          @apply text-white;
+
+          .sidebar-item-icon {
+            @apply text-white;
+          }
+        }
+      }
+
+      // second level submenu
+      .bi.bi-sidebar-item.bi-sidebar-submenu {
+        .bi-sidebar-submenu-container {
+          background: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}

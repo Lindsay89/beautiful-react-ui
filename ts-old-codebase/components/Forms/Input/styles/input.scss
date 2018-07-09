@@ -1,0 +1,126 @@
+@import '../../../../theme/utils/mixins';
+@import 'create-input-color';
+
+.bi.bi-input {
+  @apply relative;
+
+  + .bi.bi-input {
+    @apply mt-2;
+  }
+
+  // -----------------------
+  // INPUT CONTROL
+  // -----------------------
+  .bi-input-control {
+    box-sizing: border-box;
+    transition: border-color 250ms ease-out;
+    @include create-placeholder();
+    @apply inline-block appearance-none text-sm font-sans font-normal border border-solid border-default-light rounded w-full py-2 px-4 text-default-dark leading-tight;
+
+    &:hover {
+      @apply border-default-dark;
+    }
+
+    &:active {
+      @apply border-default-dark;
+    }
+
+    &:focus {
+      outline: 0;
+      @apply border-default-dark;
+    }
+  }
+
+  // -----------------------
+  // INPUT CONTROL TYPE NUMBER
+  // -----------------------
+  .input-number {
+    @apply flex flex-wrap border border-solid border-default-light rounded;
+
+    .min-btn {
+      max-width: 50px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      @apply flex-1;
+    }
+
+    .bi-input-control {
+      border-radius: 0;
+      @apply flex-1 border-0;
+
+      // stylelint-disable
+      -webkit-appearance: none;
+      // stylelint-enable
+    }
+
+    .plus-btn {
+      max-width: 50px;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      @apply flex-1;
+    }
+  }
+
+  // -----------------------
+  // INPUT COLORS
+  // -----------------------
+  @include create-input-color('primary');
+  @include create-input-color('secondary');
+  @include create-input-color('info');
+  @include create-input-color('success');
+  @include create-input-color('warning');
+  @include create-input-color('danger');
+
+  // -----------------------
+  // DISABLED
+  // -----------------------
+  &.disabled .bi-input-control {
+    @apply bg-default-lightest border-default-lightest;
+    cursor: not-allowed;
+
+    &:active,
+    &:hover,
+    &:focus {
+      border-color: transparent;
+    }
+  }
+
+  // -----------------------
+  // ERROR
+  // -----------------------
+  &.has-error .bi-input-control {
+    @apply border-danger mb-1;
+  }
+
+  // -----------------------
+  // ICON
+  // -----------------------
+  &.has-icon {
+    .bi-input-control {
+      @apply pr-8;
+    }
+
+    .input-icon {
+      @apply absolute pin-r pt-2 pr-3;
+    }
+
+    &.icon-left {
+      .bi-input-control {
+        @apply pl-8 pr-3;
+      }
+
+      .input-icon {
+        right: unset;
+        @apply absolute pin-l pt-2 pl-3;
+      }
+    }
+  }
+}
+
+.bi-input-error {
+  @apply text-danger mt-1 mb-3 leading-none font-sans font-normal text-sm;
+}
+
+.bi-input-help-text {
+  @apply text-default-dark mt-2 mb-3 leading-none font-sans font-normal text-sm;
+}

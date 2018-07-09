@@ -1,0 +1,30 @@
+.bi.bi-header {
+  @apply bg-white w-full p-5;
+  top: 100px;
+
+  &.affix.affixed {
+    @apply fixed pin-t z-10 shadow;
+    animation: slideDown 250ms;
+    right: 0;
+    width: calc(100% - 250px); // minus sidebar width
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.full-width .bi.bi-header.affix.affixed {
+  transition: width 250ms ease-in-out;
+  width: calc(100% - 65px); // minus sidebar width when it is closed
+}

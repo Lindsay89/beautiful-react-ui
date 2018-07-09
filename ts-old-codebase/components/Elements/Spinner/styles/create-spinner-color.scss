@@ -1,0 +1,13 @@
+@mixin create-spinner-color($colorName: 'default', $colorValue: $colorName) {
+  &.spinner-#{$colorName} {
+    .spinner-circle,
+    .spinner-puff {
+      @apply text-#{$colorValue} stroke-current;
+    }
+
+    .spinner-bars,
+    .spinner-dots {
+      @apply text-#{$colorValue} fill-current;
+    }
+  }
+}

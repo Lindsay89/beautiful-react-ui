@@ -1,0 +1,5 @@
+@mixin create-textarea-color($colorName: 'default', $colorValue: $colorName) {
+  &.textarea-#{$colorName} .textarea-item {
+    @apply border-#{$colorValue};
+  }
+}

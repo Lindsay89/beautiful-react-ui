@@ -1,0 +1,149 @@
+@import '../../../../theme/utils/mixins';
+@import 'button-with-color';
+@import 'button-outline';
+@import 'button-hover-effect';
+
+.bi.bi-btn {
+  overflow: hidden;
+  transition: background-color 250ms ease-out, color 300ms ease-out, box-shadow ease-in 250ms;
+  outline: none;
+  user-select: none;
+  @apply relative cursor-pointer font-normal font-sans border-0 text-sm py-2 px-4 rounded bg-default-lighter text-default-darker;
+
+  &:not(.btn-outline):not(.btn-transparent) {
+    @include shadow-gradient();
+    box-shadow: 0 4px 11px 0 rgba(37, 44, 97, 0.15), 0 2px 3px 0 rgba(93, 100, 148, 0.2);
+  }
+
+  &.n-c {
+    @apply p-3;
+  }
+
+  // ----------------------------
+  // SIZES
+  // ----------------------------
+  &.btn-sm {
+    @apply py-1 px-2 text-xs;
+  }
+
+  &.btn-lg {
+    @apply py-3 px-4 text-lg;
+
+    &.n-c {
+      @apply p-4;
+    }
+
+    &.btn-icon .btn-icon-item {
+      line-height: 1.2;
+    }
+  }
+
+  // ----------------------------
+  // COLORS
+  // ----------------------------
+  @include button-default-color();
+  @include button-transparent-color();
+  @include button-with-color('primary');
+  @include button-with-color('secondary');
+  @include button-with-color('info');
+  @include button-with-color('success');
+  @include button-with-color('warning');
+  @include button-with-color('danger');
+
+  // ----------------------------
+  // OUTLINES
+  // ----------------------------
+  @include button-outline-default();
+  @include button-outline-with-color('primary');
+  @include button-outline-with-color('secondary');
+  @include button-outline-with-color('info');
+  @include button-outline-with-color('success');
+  @include button-outline-with-color('warning');
+  @include button-outline-with-color('danger');
+
+  // ----------------------------
+  // FLUID
+  // ----------------------------
+  &.btn-fluid {
+    @apply w-full;
+  }
+
+  // ----------------------------
+  // ROUNDED
+  // ----------------------------
+  &.btn-rounded {
+    @apply rounded-full;
+  }
+
+  // ----------------------------
+  // HOVER EFFECTS
+  // ----------------------------
+  @include button-hover-zoom(1.05);
+  @include button-hover-shrink(0.95);
+  @include button-hover-float(-0.2rem);
+  @include button-hover-reflection();
+  @include button-hover-round();
+
+  // ----------------------------
+  // DISABLED
+  // ----------------------------
+  &[disabled] {
+    @apply opacity-50;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+
+  // ----------------------------
+  // RIPPLE EFFECTS
+  // ----------------------------
+  @include ripple();
+
+  // fix the opacity of the riffle in the default and transparent buttons:
+  &.btn-default,
+  &.btn-transparent {
+    &:active::after {
+      opacity: 0.1;
+    }
+  }
+
+  // ----------------------------
+  // SPINNER
+  // ----------------------------
+  &.btn-spinner {
+    .btn-spnr-icon {
+      margin-right: 0.5rem;
+      float: left;
+
+      &.spnr-right {
+        margin-left: 0.5rem;
+        margin-right: auto;
+        float: right;
+      }
+    }
+  }
+
+  // ----------------------------
+  // ICON
+  // ----------------------------
+  &.btn-icon {
+    .btn-icon-item {
+      vertical-align: text-bottom;
+      margin-right: 0.5rem;
+
+      &.btn-icon-right {
+        margin-left: 0.5rem;
+        margin-right: auto;
+        float: right;
+      }
+    }
+
+    &.n-c .btn-icon-item {
+      // FIXME: do not use bloody !important
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      float: none;
+    }
+  }
+}

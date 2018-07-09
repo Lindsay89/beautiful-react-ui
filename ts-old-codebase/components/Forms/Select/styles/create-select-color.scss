@@ -1,0 +1,11 @@
+@mixin create-select-color($colorName, $colorValue: $colorName) {
+  &.select-#{$colorName} {
+    .select-element {
+      @apply text-#{$colorValue}-light;
+
+      .bi.bi-chevron {
+        @apply text-#{$colorValue};
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@mixin button-outline-default() {
+  &.btn-outline {
+    background-image: none;
+    filter: none;
+    box-shadow: unset;
+
+    @apply border border-default-lighter bg-transparent text-default-darker;
+
+    &:hover {
+      @apply bg-default-lighter text-default-darker text-default-darker;
+    }
+  }
+}
+
+@mixin button-outline-with-color($name: 'default', $color: $name) {
+  &.btn-#{$name}.btn-outline {
+    box-shadow: 0 0 0 1px inset;
+
+    @apply border-0 bg-transparent text-#{$color};
+
+    &:hover {
+      box-shadow: 0 0 0 1px;
+
+      @apply border-0 bg-#{$color} text-white;
+    }
+  }
+}

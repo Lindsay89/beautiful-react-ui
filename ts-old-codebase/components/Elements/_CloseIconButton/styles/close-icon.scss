@@ -1,0 +1,19 @@
+@import './make-close-icon-color';
+
+.bi.bi-close-icon {
+  outline: 0;
+  border: 0;
+  background: transparent;
+
+  svg {
+    @apply fill-current;
+    min-width: 8px;
+  }
+
+  @include make-close-icon-color('primary');
+  @include make-close-icon-color('secondary');
+  @include make-close-icon-color('info');
+  @include make-close-icon-color('success');
+  @include make-close-icon-color('warning');
+  @include make-close-icon-color('danger');
+}

@@ -1,0 +1,85 @@
+@import 'create-select-color';
+@import 'create-select-outline';
+
+.bi.bi-select {
+  box-sizing: border-box;
+  user-select: none;
+  min-width: 160px;
+  @apply relative inline-block text-left;
+
+  &.fluid {
+    @apply w-full block;
+  }
+
+  .select-element {
+    outline: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
+    word-break: break-word;
+    @apply relative bg-default-lighter border border-solid border-default-light text-sm text-default-dark leading-tight font-sans font-normal rounded py-2 pl-4 pr-8;
+
+    .bi.bi-chevron {
+      @apply pointer-events-none absolute pin-y pin-r flex items-center px-2 text-default-dark z-10;
+
+      svg {
+        @apply fill-current;
+        width: 12px;
+      }
+    }
+
+    .select-spinner {
+      @apply block pointer-events-none absolute pin-y pin-r flex items-center px-2;
+    }
+
+    &:hover {
+      @apply bg-default-light;
+    }
+
+    .select-value.opaque {
+      opacity: 0.8;
+      @apply text-default;
+    }
+  }
+
+  .bi.bi-close-icon {
+    cursor: pointer;
+    @apply absolute pin-y pin-r items-center py-0 px-3 z-10;
+  }
+
+  // sizes
+  &.select-small .select-element {
+    @apply py-1 pl-2 pr-6 text-sm;
+  }
+
+  &.select-large .select-element {
+    @apply py-2 pl-4 pr-8 text-lg;
+  }
+
+  // Disabled
+  &.disabled {
+    opacity: 0.5;
+
+    .select-element {
+      cursor: not-allowed;
+    }
+  }
+
+  // Color
+  @include create-select-color('primary');
+  @include create-select-color('secondary');
+  @include create-select-color('info');
+  @include create-select-color('warning');
+  @include create-select-color('success');
+  @include create-select-color('danger');
+
+  // Outline
+  @include create-select-outline('primary');
+  @include create-select-outline('secondary');
+  @include create-select-outline('info');
+  @include create-select-outline('warning');
+  @include create-select-outline('success');
+  @include create-select-outline('danger');
+
+  .no-selection { opacity: 0.5; }
+}

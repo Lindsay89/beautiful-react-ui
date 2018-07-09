@@ -1,0 +1,170 @@
+@import '../../../theme/utils/mixins';
+@import 'styles/button-with-color';
+@import 'styles/button-outline';
+@import 'styles/button-hover-effect';
+
+.bi.bi-btn {
+  transition: background-color 250ms ease-out, color 300ms ease-out, box-shadow ease-in 250ms;
+  box-shadow: 0 4px 11px 0 rgba(37, 44, 97, 0.15), 0 2px 3px 0 rgba(93, 100, 148, 0.2);
+  box-sizing: border-box;
+
+  @include shadow-gradient();
+
+  @apply relative cursor-pointer font-normal font-sans border-0 text-base py-2 px-4 rounded;
+  @apply bg-default-lighter text-default-darker leading-tight overflow-hidden outline-none select-none;
+
+  + .bi.bi-btn {
+    @apply ml-2;
+  }
+
+  // ----------------------------
+  // SIZES
+  // ----------------------------
+  &.btn-sm {
+    @apply py-1 px-2 text-xs leading-normal;
+  }
+
+  &.btn-lg {
+    @apply px-4 py-2 leading-normal text-xl;
+  }
+
+  // ----------------------------
+  // COLORS
+  // ----------------------------
+  @include button-default-color();
+  @include button-transparent-color();
+  @include button-with-color('primary');
+  @include button-with-color('secondary');
+  @include button-with-color('info');
+  @include button-with-color('success');
+  @include button-with-color('warning');
+  @include button-with-color('danger');
+
+  // ----------------------------
+  // OUTLINES
+  // ----------------------------
+  @include button-outline-default();
+  @include button-outline-with-color('primary');
+  @include button-outline-with-color('secondary');
+  @include button-outline-with-color('info');
+  @include button-outline-with-color('success');
+  @include button-outline-with-color('warning');
+  @include button-outline-with-color('danger');
+
+  // ----------------------------
+  // BLOCK
+  // ----------------------------
+  &.btn-block {
+    @apply w-full my-2;
+
+    + .btn-block {
+      @apply mx-0;
+    }
+  }
+
+  // ----------------------------
+  // ROUNDED
+  // ----------------------------
+  &.btn-rounded {
+    @apply rounded-full;
+  }
+
+  // ----------------------------
+  // HOVER EFFECTS
+  // ----------------------------
+  @include button-hover-zoom(1.05);
+  @include button-hover-shrink(0.95);
+  @include button-hover-float(-0.2rem);
+  @include button-hover-reflection();
+  @include button-hover-round();
+
+  // ----------------------------
+  // DISABLED
+  // ----------------------------
+  &[disabled] {
+    @apply opacity-50;
+
+    box-shadow: unset;
+
+    &:hover {
+      box-shadow: unset !important; // please don't use !important
+      cursor: not-allowed;
+    }
+  }
+
+  // ----------------------------
+  // RIPPLE EFFECTS
+  // ----------------------------
+  @include ripple();
+
+  // fix the opacity of the riffle in the default and transparent buttons:
+  &.btn-default,
+  &.btn-transparent {
+    &:active::after {
+      opacity: 0.1;
+    }
+  }
+
+  // ----------------------------
+  // ICON
+  // ----------------------------
+  &.btn-icon-only {
+    @apply px-0;
+
+    width: 2.25rem;
+
+    &.btn-sm {
+      width: 1.625rem;
+    }
+
+    &.btn-lg {
+      width: 2.875rem;
+    }
+
+    > svg {
+      margin: 0;
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  > svg {
+    @apply mr-2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &.btn-lci svg {
+    @apply mr-0 ml-2;
+  }
+
+
+  // ----------------------------
+  // SPINNER
+  // ----------------------------
+
+  .bi.bi-spinner {
+    @apply w-3 h-3 -mt-1 mr-2;
+
+    &.spinner-circle {
+      @apply -mb-1;
+
+      margin-bottom: -0.1rem;
+    }
+  }
+
+  // small spinner
+  &.btn-sm .bi.bi-spinner {
+    @apply w-2 h-2;
+  }
+
+  // large spinner
+  &.btn-lg .bi.bi-spinner {
+    @apply w-4 h-4;
+  }
+
+  &.btn-lci .bi.bi-spinner {
+    @apply mr-0 ml-2;
+  }
+}

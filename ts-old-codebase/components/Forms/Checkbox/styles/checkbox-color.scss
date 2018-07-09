@@ -1,0 +1,10 @@
+@mixin checkbox-color($colorName: 'default', $colorValue: $colorName) {
+  &.checked.checkbox-#{$colorName} .check-icon {
+    @apply bg-#{$colorValue};
+
+    &::before {
+      @apply bg-#{$colorValue};
+    }
+  }
+}
+

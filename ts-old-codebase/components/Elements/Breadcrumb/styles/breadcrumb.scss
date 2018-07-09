@@ -1,0 +1,67 @@
+.bi.bi-breadcrumb {
+  @apply list-reset overflow-hidden;
+
+  .bi-breadcrumb-item {
+    @apply float-left;
+
+    &::before {
+      content: '5';
+      font-family: ElegantIcons, sans-serif;
+      color: #ced4da;
+      font-size: 14px;
+      @apply px-1;
+    }
+
+    &:first-child::before {
+      @apply hidden;
+    }
+  }
+
+  .bi-breadcrumb-link {
+    @apply no-underline;
+    color: inherit;
+  }
+
+  .bi-breadcrumb-item,
+  .bi-breadcrumb-link {
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  // COLORS
+  &.bi-breadcrumb-default .bi-breadcrumb-item:last-child {
+    @apply text-default;
+  }
+
+  &.bi-breadcrumb-white .bi-breadcrumb-item:last-child {
+    @apply text-white;
+  }
+
+  &.bi-breadcrumb-black .bi-breadcrumb-item:last-child {
+    @apply text-black;
+  }
+
+  &.bi-breadcrumb-primary .bi-breadcrumb-item:last-child {
+    @apply text-primary;
+  }
+
+  &.bi-breadcrumb-secondary .bi-breadcrumb-item:last-child {
+    @apply text-secondary;
+  }
+
+  &.bi-breadcrumb-info .bi-breadcrumb-item:last-child {
+    @apply text-info;
+  }
+
+  &.bi-breadcrumb-success .bi-breadcrumb-item:last-child {
+    @apply text-success;
+  }
+
+  &.bi-breadcrumb-warning .bi-breadcrumb-item:last-child {
+    @apply text-warning;
+  }
+
+  &.bi-breadcrumb-danger .bi-breadcrumb-item:last-child {
+    @apply text-danger;
+  }
+}

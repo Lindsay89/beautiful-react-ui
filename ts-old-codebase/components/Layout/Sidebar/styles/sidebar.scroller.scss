@@ -1,0 +1,141 @@
+.bi.bi-sidebar .bi-sidebar-content {
+  overflow: hidden;
+
+  .bi-sidebar-menu {
+    @apply overflow-hidden;
+    width: 500px;
+
+    .current-item {
+      > .item-content  {
+        @apply border-0 cursor-auto;
+      }
+    }
+  }
+
+  .bi-sidebar-menu-disappear,
+  .bi-sidebar-menu-active {
+    float: left;
+    position: relative;
+    width: 250px;
+  }
+
+  .bi-sidebar-menu-disappear {
+    left: 0;
+  }
+
+  .bi-sidebar-menu-active {
+    left: 0;
+  }
+
+  .bi-sidebar-menu.enter-left {
+    .bi-sidebar-menu-disappear {
+      animation: enter-left 350ms forwards;
+    }
+
+    .bi-sidebar-menu-active {
+      animation: enter-left 350ms forwards;
+    }
+  }
+
+  .bi-sidebar-menu.enter-right {
+    .bi-sidebar-menu-disappear {
+      animation: enter-right 350ms forwards;
+    }
+
+    .bi-sidebar-menu-active {
+      animation: enter-right-active 350ms forwards;
+    }
+  }
+
+  @keyframes enter-left {
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: -250px;
+    }
+  }
+
+  @keyframes enter-right {
+    0% {
+      left: 0;
+    }
+
+    100% {
+      left: 250px;
+    }
+  }
+
+  @keyframes enter-right-active {
+    0% {
+      left: -500px;
+    }
+
+    100% {
+      left: -250px;
+    }
+  }
+
+  ul {
+    @apply list-reset mx-0;
+  }
+
+  .navigation {
+    @apply relative px-4 py-3;
+  }
+
+  .icon-back,
+  .icon-navigation {
+    transition: margin-right 250ms ease-in-out;
+  }
+
+  .sidebar-item-back {
+    @apply mr-2 cursor-pointer;
+
+    .icon-back:hover {
+      @apply text-black;
+    }
+  }
+
+  .sidebar-icon-navigation {
+    @apply mx-2 cursor-pointer;
+
+    .icon-navigation:hover {
+      @apply text-primary;
+    }
+  }
+
+  .bi-submenu-scroller {
+    @apply bg-primary-dark m-0 text-white shadow-inner overflow-x-auto;
+    max-height: 250px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      background-color: #b8c2cc;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #fff;
+    }
+
+    .bi.bi-sidebar-item {
+      box-shadow: none;
+      border-bottom: 0;
+      transition: box-shadow 250ms ease-in-out;
+
+      &:hover {
+        border-left: 0;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1) inset, 0 -1px 2px 0 rgba(0, 0, 0, 0.1) inset;
+      }
+
+      .item-content {
+        @apply text-white;
+
+        .sidebar-item-icon {
+          @apply text-white;
+        }
+      }
+    }
+  }
+}

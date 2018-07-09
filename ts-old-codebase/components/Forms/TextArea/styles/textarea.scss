@@ -1,0 +1,50 @@
+@import './create-textarea-color';
+@import '../../../../theme/utils/mixins';
+
+.bi.bi-textarea {
+  box-sizing: border-box;
+  user-select: none;
+
+  .textarea-item {
+    background: #fff;
+    @apply relative px-4 py-2 border border-solid border-default-light text-sm text-default-dark leading-tight font-sans font-normal rounded;
+
+    textarea {
+      outline: 0;
+      padding: 0;
+      border: 0;
+      width: 100%;
+      resize: none;
+      box-sizing: border-box;
+      background: transparent;
+      @include create-placeholder();
+      @apply text-sm text-default-dark leading-tight font-sans font-normal;
+    }
+  }
+
+  &.inline {
+    display: inline-block;
+
+    textarea {
+      width: auto;
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    .textarea-item textarea {
+      cursor: not-allowed;
+    }
+  }
+
+  // colors
+  @include create-textarea-color('primary');
+  @include create-textarea-color('secondary');
+  @include create-textarea-color('info');
+  @include create-textarea-color('success');
+  @include create-textarea-color('warning');
+  @include create-textarea-color('danger');
+}
+

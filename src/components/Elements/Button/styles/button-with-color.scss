@@ -1,0 +1,50 @@
+/**
+ * Create a button with defined colors
+ */
+@mixin button-with-color($name: 'default', $color: $name) {
+  &.btn-#{$name}:not(.btn-outline) {
+    @apply bg-#{$color} border-#{$color} text-white;
+
+    &:hover {
+      box-shadow: 0 2px 11px 0 rgba(37, 44, 97, 0.15), 0 4px 6px 0 rgba(93, 100, 148, 0.2);
+
+      @apply bg-#{$color}-light;
+    }
+  }
+}
+
+@mixin button-default-color() {
+  &.btn-default:not(.btn-outline) {
+    @apply bg-default-lightest text-default-darker;
+
+    &:hover {
+      box-shadow: 0 2px 11px 0 rgba(37, 44, 97, 0.15), 0 4px 6px 0 rgba(93, 100, 148, 0.2);
+
+      @apply bg-default-lighter;
+    }
+  }
+}
+
+@mixin button-transparent-color() {
+  &.btn-transparent {
+    box-shadow: unset;
+    background-image: unset;
+    filter: unset;
+
+    @apply bg-transparent border-transparent text-primary;
+
+    &:hover {
+      @apply text-primary-dark;
+    }
+  }
+
+  &.btn-outline.btn-transparent {
+    border: 0;
+
+    @apply text-primary;
+
+    &:hover {
+      @apply bg-transparent text-primary-dark;
+    }
+  }
+}

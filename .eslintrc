@@ -1,0 +1,34 @@
+{
+  "extends": "airbnb",
+  "plugins": ["chai-expect"],
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "max-len": ["error", { "code": 120 }],
+    "object-curly-newline": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [ ".js", ".jsx" ] } ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.test.js",
+        "*.spec.js",
+        "*.test.jsx",
+        "*.spec.jsx"
+      ],
+      "globals": {
+        "expect": "readonly",
+        "should": "readonly",
+        "mount": "readonly",
+        "render": "readonly",
+        "shallow": "readonly",
+        "spy": "readonly"
+      },
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}

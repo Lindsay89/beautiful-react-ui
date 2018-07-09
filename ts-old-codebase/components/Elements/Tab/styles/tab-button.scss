@@ -1,0 +1,33 @@
+.bi.bi-tab {
+  .bi.bi-tab-buttons {
+    .tab-button {
+      @apply inline-block cursor-pointer p-4 border-solid border-b-2;
+
+      i + span {
+        @apply ml-2;
+      }
+
+      &:not(.active) {
+        @apply border-transparent;
+      }
+    }
+  }
+
+  .horizontal {
+    display: flex;
+    flex-flow: row wrap;
+
+    .tab-button {
+      flex: auto;
+      @apply text-center;
+    }
+  }
+
+  .vertical {
+    width: 150px;
+
+    .tab-button {
+      @apply block border-0 border-r-2;
+    }
+  }
+}
