@@ -11,11 +11,11 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
-var _shared = require("../../../shared");
-
 var _Icon = _interopRequireDefault(require("../Icon"));
 
 var _Spinner = _interopRequireDefault(require("../Spinner"));
+
+var _shared = require("../../../shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -26,7 +26,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var Button = function Button(props) {
   var children = props.children,
       type = props.type,
-      fluid = props.fluid,
+      block = props.block,
       color = props.color,
       rounded = props.rounded,
       outline = props.outline,
@@ -41,7 +41,7 @@ var Button = function Button(props) {
       style = props.style;
   var lastChild = (0, _shared.getLastChild)(children);
   var classList = (0, _classnames["default"])('bi bi-btn', "btn-".concat(color), {
-    'btn-fluid': fluid,
+    'btn-block': block,
     'btn-outline': outline,
     'btn-rounded': rounded,
     'btn-he-zoom': hover === 'zoom',
@@ -51,10 +51,9 @@ var Button = function Button(props) {
     'btn-he-rnd': hover === 'round',
     'btn-sm': size === 'small',
     'btn-lg': size === 'large',
-    'icon-only': (0, _shared.emptyChildren)(children),
-    'icon-right': lastChild && lastChild.type && lastChild.type.type.name === 'Icon'
+    'btn-icon-only': (0, _shared.emptyChildren)(children),
+    'btn-lci': lastChild && typeof lastChild !== 'string'
   }, className);
-  console.log('SPINNER PROP', spinner);
   return _react["default"].createElement("button", {
     id: id,
     disabled: disabled,
@@ -62,7 +61,9 @@ var Button = function Button(props) {
     onClick: (0, _shared.makeCallback)(onClick),
     className: classList,
     style: style
-  }, !!icon && (0, _shared.makeIconFromProp)(icon), children);
+  }, !!icon && (0, _shared.makeIconFromProp)(icon), !!spinner && (0, _shared.makeSpinnerFromProp)(spinner, {
+    size: size
+  }), children);
 };
 
 Button.propTypes = _objectSpread({}, _shared.BaseProps, {
@@ -72,10 +73,10 @@ Button.propTypes = _objectSpread({}, _shared.BaseProps, {
   rounded: _propTypes["default"].bool,
   type: _propTypes["default"].oneOf(['submit', 'button', 'reset']),
   disabled: _propTypes["default"].bool,
-  fluid: _propTypes["default"].bool,
+  block: _propTypes["default"].bool,
   hover: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['round', 'zoom', 'shrink', 'float', 'reflection'])]),
   onClick: _propTypes["default"].func,
-  icon: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].instanceOf(_Icon["default"]), _propTypes["default"].arrayOf(_propTypes["default"].string)]),
+  icon: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].instanceOf(_Icon["default"])]),
   spinner: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].instanceOf(_Spinner["default"])]),
   children: _propTypes["default"].node
 });
@@ -84,7 +85,7 @@ Button.defaultProps = {
   size: 'default',
   rounded: false,
   outline: false,
-  fluid: false,
+  block: false,
   type: 'button',
   disabled: false,
   hover: undefined,

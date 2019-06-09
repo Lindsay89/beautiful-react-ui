@@ -14,6 +14,8 @@ var makeCallback = function makeCallback(callbackProp, override) {
     if (typeof callbackProp === 'function') {
       return callbackProp(nativeEvent, override === undefined ? value : override);
     }
+
+    return undefined;
   };
 };
 

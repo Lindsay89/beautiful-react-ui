@@ -10,6 +10,7 @@ module.exports = {
     url: 'http://beautiful-ui.binteractions.com/',
     text: 'Fork me on GitHub',
   },
+  exampleMode: 'expand',
   pagePerSection: true,
   skipComponentsWithoutExample: true,
   sections: [

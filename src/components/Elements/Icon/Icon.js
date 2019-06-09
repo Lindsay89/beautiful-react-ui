@@ -10,7 +10,7 @@ library.add(fas, fab);
 /**
  * Icon component
  */
-const Icon = ({ name }) => <FontAwesomeIcon icon={name} />;
+const Icon = ({ name }) => <FontAwesomeIcon icon={name} className="bi bi-icon" />;
 
 Icon.propTypes = {
   /**

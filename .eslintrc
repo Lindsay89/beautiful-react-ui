@@ -21,10 +21,7 @@
       "globals": {
         "expect": "readonly",
         "should": "readonly",
-        "mount": "readonly",
-        "render": "readonly",
-        "shallow": "readonly",
-        "spy": "readonly"
+        "sinon": "readonly"
       },
       "rules": {
         "no-unused-expressions": "off"

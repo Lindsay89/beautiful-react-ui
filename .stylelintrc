@@ -5,6 +5,6 @@
   ],
   "rules": {
     "max-empty-lines": 2,
-    "unit-whitelist": ["px", "ms", "em", "rem", "%", "dpi", "dppx", "deg", "s", "vh", "vw"]
+    "unit-whitelist": ["em", "rem", "%", "dpi", "dppx", "deg", "s", "vh", "vw"]
   }
 }

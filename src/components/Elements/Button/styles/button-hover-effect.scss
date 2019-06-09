@@ -1,6 +1,6 @@
 @mixin button-hover-zoom($scale: 1.025) {
   &.btn-he-zoom {
-    transition: background-color 250ms ease-in-out, color 300ms ease-out, transform 250ms ease-in-out, border 250ms ease-out;
+    transition: background-color 0.25s ease-in-out, color 0.3s ease-out, transform 0.25s ease-in-out, border 0.25s ease-out;
 
     &:hover {
       transform: scale($scale);
@@ -10,7 +10,7 @@
 
 @mixin button-hover-float($translateY: -0.1rem) {
   &.btn-he-float {
-    transition: background-color 250ms ease-in-out, color 300ms ease-out, transform 250ms ease-in-out, border 250ms ease-out;
+    transition: background-color 0.25s ease-in-out, color 0.3s ease-out, transform 0.25s ease-in-out, border 0.25s ease-out;
 
     &:hover {
       transform: translateY($translateY);
@@ -46,7 +46,7 @@
 
 @mixin button-hover-shrink($scale: 0.85) {
   &.btn-he-shrink {
-    transition: background-color 250ms ease-in-out, color 300ms ease-out, transform 250ms ease-in-out, border 250ms ease-out;
+    transition: background-color 0.25s ease-in-out, color 0.3s ease-out, transform 0.25s ease-in-out, border 0.25s ease-out;
 
     &:hover {
       transform: scale($scale);
@@ -56,7 +56,7 @@
 
 @mixin button-hover-round() {
   &.btn-he-rnd {
-    transition: all 250ms ease-in-out;
+    transition: all 0.25s ease-in-out;
 
     &:hover {
       border-radius: 3rem;

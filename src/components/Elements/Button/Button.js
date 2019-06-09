@@ -17,8 +17,7 @@ import {
 import './button.scss';
 
 /**
- * A Button component is used for actions in forms, dialogs, and more. <br />
- * It comes with support for multiple sizes, colors, and more.
+ * Button components are used to provide a visual indication user actions.
  */
 const Button = (props) => {
   const {
@@ -111,8 +110,8 @@ Button.propTypes = {
    */
   icon: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.instanceOf(Icon),
     PropTypes.arrayOf(PropTypes.string),
+    PropTypes.instanceOf(Icon),
   ]),
   /**
    * Shows a spinner icon within the button. The prop value can be "true" to show a standard <Spinner />
@@ -120,7 +119,10 @@ Button.propTypes = {
    * If the prop value is "false" or any falsy value (undefined or null) the spinner won't show.
    * @default false
    */
-  spinner: PropTypes.oneOfType([PropTypes.bool, PropTypes.instanceOf(Spinner)]),
+  spinner: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.instanceOf(Spinner),
+  ]),
   /**
    * @ignore
    */

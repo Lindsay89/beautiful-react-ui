@@ -1,10 +1,14 @@
 ### Basic Usage
 
+As simple as the following:
+
 ```jsx
 <Button>A simple button</Button>
 ```
 
 ### Button colors
+
+Colors are meant to highlight the syntactic meaning of a button.
 
 ```jsx
 <Button>Default</Button>
@@ -19,6 +23,9 @@
 
 ### Button outlines
 
+Subtle appearance can also be applied to a button, if in need of a 
+get rid of the hefty, colorful background.
+
 ```jsx
 <Button outline>Default</Button>
 <Button outline color="primary">Primary</Button>
@@ -30,6 +37,8 @@
 ```
 
 ### Rounded buttons
+
+Buttons can also turn rounded by using the `rounded` prop
 
 ```jsx
 <div>
@@ -53,6 +62,13 @@
 ```
 
 ### Button icon
+
+It is possible to attach an icon to a button by passing both the icon name
+or the instance of an `Icon` component.
+
+<small>**Please note**: the `icon` prop accepts all the valid `font-awesome` icon names for it is abstracted
+ on top of it.</small>
+
 ```jsx 
 import { Icon } from 'beautiful-ui';
 
@@ -89,6 +105,9 @@ import { Icon } from 'beautiful-ui';
 
 
 ### Block
+
+full-width fluid buttons
+
 ```jsx
 <Button block>Block button</Button>
 <Button block color="primary">Block button</Button>
@@ -100,6 +119,9 @@ import { Icon } from 'beautiful-ui';
 ```
 
 ### Sizes
+
+Buttons can have different sizes
+
 ```jsx
 <Button size="small">Small size</Button>
 <Button size="default" color="primary">Default size</Button>
@@ -115,6 +137,9 @@ import { Icon } from 'beautiful-ui';
 ```
 
 ### Effects
+
+It is possible to define the animation the button should perform on the `hover` event.
+
 ```jsx
 <Button color="primary" hover="round">I change shape</Button>
 <Button color="secondary" hover="float">I can float</Button>
@@ -125,6 +150,8 @@ import { Icon } from 'beautiful-ui';
 
 ### Click Action
 
+Buttons are meant to have a callback attached
+
 ```
 const foo = event => { alert('Click'); };
 
@@ -132,6 +159,12 @@ const foo = event => { alert('Click'); };
 ```
 
 ### Spinners
+
+It is possible to show a spinner glyph next to the label, possibly in case of loading data.<br/>
+
+Similar to the `icon` prop, the `spinner` prop accepts both a boolean value or the instance of a `Spinner`
+component. 
+
 ```jsx
 import { Spinner } from 'beautiful-ui';
 

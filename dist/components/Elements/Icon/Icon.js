@@ -24,7 +24,8 @@ _fontawesomeSvgCore.library.add(_freeSolidSvgIcons.fas, _freeBrandsSvgIcons.fab)
 var Icon = function Icon(_ref) {
   var name = _ref.name;
   return _react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
-    icon: name
+    icon: name,
+    className: "bi bi-icon"
   });
 };
 

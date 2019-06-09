@@ -27,8 +27,10 @@ var Spinner = function Spinner(props) {
       className = props.className,
       style = props.style;
   var classes = (0, _classnames["default"])('bi', 'bi-spinner', "spinner-".concat(color), {
-    'spinner-sm': size === 'small',
-    'spinner-lg': size === 'large'
+    'spin-sm': size === 'small',
+    'spin-lg': size === 'large',
+    'spinner-pulse': type === 'pulse',
+    'spinner-circle': type === 'circle'
   }, className);
   return _react["default"].createElement("span", {
     className: classes,
@@ -39,8 +41,8 @@ var Spinner = function Spinner(props) {
 
 Spinner.propTypes = _objectSpread({}, _shared.BaseProps, {
   color: _shared.Color,
-  size: _propTypes["default"].oneOfType(_shared.Size),
-  type: _propTypes["default"].oneOf(['circle', 'bars', 'puff', 'dots'])
+  size: _shared.Size,
+  type: _propTypes["default"].oneOf(['circle', 'pulse'])
 });
 Spinner.defaultProps = {
   color: 'default',

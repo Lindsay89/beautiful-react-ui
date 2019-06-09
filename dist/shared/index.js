@@ -33,6 +33,12 @@ Object.defineProperty(exports, "makeIconFromProp", {
     return _makeIconFromProp["default"];
   }
 });
+Object.defineProperty(exports, "makeSpinnerFromProp", {
+  enumerable: true,
+  get: function get() {
+    return _makeSpinnerFromProp["default"];
+  }
+});
 Object.defineProperty(exports, "emptyChildren", {
   enumerable: true,
   get: function get() {
@@ -55,6 +61,8 @@ var _Size = _interopRequireDefault(require("./types/Size"));
 var _makeCallback = _interopRequireDefault(require("./functions/makeCallback"));
 
 var _makeIconFromProp = _interopRequireDefault(require("./functions/makeIconFromProp"));
+
+var _makeSpinnerFromProp = _interopRequireDefault(require("./functions/makeSpinnerFromProp"));
 
 var _emptyChildren = _interopRequireDefault(require("./functions/emptyChildren"));
 
