@@ -33,3 +33,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Toggle component tests
 - Label component tests
 - HelpText component tests
+
+
+## [0.3.0] - 2019-06-14
+
+### Added
+
+- Accessibility tools (AXE and jsx-a11y)

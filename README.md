@@ -1,6 +1,7 @@
-# Beautiful UI / React
+# Beautiful-UI
 
-> Write a project description
+> Beautiful-UI is a set of lightweight and easy-to-customise React components, built on top of 
+[Tailwind](https://tailwindcss.com/).
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
