@@ -1,6 +1,6 @@
 {
   "extends": "airbnb",
-  "plugins": ["chai-expect"],
+  "plugins": ["chai-expect", "jsx-a11y"],
   "env": {
     "browser": true,
     "mocha": true
