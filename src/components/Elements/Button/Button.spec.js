@@ -156,19 +156,16 @@ describe('Button component', () => {
   });
 
   it('should allow to perform a callback on click', () => {
-    const noop = sinon.fake();
-    const { container } = render(<Button onClick={noop}>Hello Button</Button>);
+    const onClickSpy = sinon.spy();
+    const { container } = render(<Button onClick={onClickSpy}>Hello Button</Button>);
     const button = container.querySelector('button');
 
     fireEvent.click(button);
 
-    expect(noop.callCount).to.equal(1);
+    const firstCallArgs = onClickSpy.args[0];
 
-    fireEvent.click(button);
-    fireEvent.click(button);
-    fireEvent.click(button);
-
-    expect(noop.callCount).to.equal(4);
+    expect(onClickSpy.callCount).to.equal(1);
+    expect(firstCallArgs[0]).to.be.instanceOf(MouseEvent);
   });
 
   it('should possibly render an icon', () => {

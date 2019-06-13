@@ -50,8 +50,10 @@ module.exports = {
         },
         {
           name: 'Forms',
-          content: 'docs/forms.md',
-          components: 'src/components/Forms/**/index.{js,jsx}',
+          pagePerSection: true,
+          components: () => [
+            'src/components/Forms/Toggle/Toggle.js',
+          ],
         },
         {
           name: 'Layout',

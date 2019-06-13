@@ -22,3 +22,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Button Component
 - Spinner Component
 - Icon Component
+
+## [0.2.0] - 2019-06-10
+
+### Added
+
+- Toggle component
+- Label private component, to be used to render labels in form components
+- HelpText component, to be used to render help texts in form components
+- Toggle component tests
+- Label component tests
+- HelpText component tests

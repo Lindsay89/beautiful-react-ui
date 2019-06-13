@@ -1,0 +1,21 @@
+@mixin make-colored-label($colorName: 'default', $colorValue: $colorName) {
+  &.label-#{$colorName} {
+    @apply text-#{$colorValue};
+  }
+}
+
+
+.bi.bi-label {
+  @apply inline-block font-sans font-normal text-sm text-default-dark mb-2;
+
+  @include make-colored-label('primary');
+  @include make-colored-label('secondary');
+  @include make-colored-label('info');
+  @include make-colored-label('success');
+  @include make-colored-label('warning');
+  @include make-colored-label('danger');
+
+  span {
+    @apply text-danger;
+  }
+}

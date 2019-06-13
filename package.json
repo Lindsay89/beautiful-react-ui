@@ -1,6 +1,6 @@
 {
   "name": "beautiful-ui-react",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "A charming set of beautiful ui components",
   "main": "dist/index.js",
   "scripts": {
@@ -74,6 +74,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
+    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

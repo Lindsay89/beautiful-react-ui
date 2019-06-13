@@ -103,6 +103,18 @@ import { Icon } from 'beautiful-ui';
 </>
 ```
 
+### Sizes
+
+Buttons can have different sizes
+
+```jsx
+<Button size="small">Small size</Button>
+<Button size="default" color="primary">Default size</Button>
+<Button size="large" color="secondary">Large size</Button>
+<Button size="large" color="info" icon={['fab', 'react']}>Large with icon</Button>
+<Button size="default" color="success" icon="bell" />
+<Button size="small" color="warning" icon="heart" />
+```
 
 ### Block
 
@@ -116,19 +128,6 @@ full-width fluid buttons
 <Button block color="success">Block button</Button>
 <Button block color="warning">Block button</Button>
 <Button block color="danger">Block button</Button>
-```
-
-### Sizes
-
-Buttons can have different sizes
-
-```jsx
-<Button size="small">Small size</Button>
-<Button size="default" color="primary">Default size</Button>
-<Button size="large" color="secondary">Large size</Button>
-<Button size="large" color="info" icon={['fab', 'react']}>Large with icon</Button>
-<Button size="default" color="success" icon="bell" />
-<Button size="small" color="warning" icon="heart" />
 ```
 
 ### Disabled state

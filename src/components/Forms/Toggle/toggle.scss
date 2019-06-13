@@ -1,0 +1,96 @@
+@mixin generate-toggle-color($colorName: 'default', $colorValue: $colorName) {
+  &.toggle-#{$colorName} {
+    &.toggled .toggle-switch {
+      @apply bg-#{$colorValue};
+    }
+  }
+}
+
+// sizes
+$small-w: 2.5rem;
+$small-h: 1.5rem;
+
+$default-w: 3rem;
+$default-h: 1.875rem;
+
+$large-w: 3.75rem;
+$large-h: 2.375rem;
+
+.bi.bi-toggle {
+  + .bi.bi-toggle {
+    @apply ml-2;
+  }
+
+  input {
+    display: none;
+    visibility: hidden;
+  }
+
+  .toggle-switch {
+    user-select: none;
+    box-sizing: content-box;
+    background-clip: content-box;
+    transition: background-color 0.25s ease-in-out;
+    vertical-align: middle;
+    width: $default-w;
+    height: $default-h;
+
+    @apply inline-block relative bg-default-light rounded-full cursor-pointer;
+
+    .switchery {
+      transition: left 0.1s ease-in;
+      width: $default-h;
+      height: $default-h;
+
+      @apply absolute rounded-full bg-white shadow left-0;
+    }
+  }
+
+  // sizes
+  &.toggle-sm .toggle-switch {
+    width: $small-w;
+    height: $small-h;
+
+    .switchery {
+      width: $small-h;
+      height: $small-h;
+    }
+  }
+
+  &.toggle-lg .toggle-switch {
+    width: $large-w;
+    height: $large-h;
+
+    .switchery {
+      width: $large-h;
+      height: $large-h;
+    }
+  }
+
+  &.block .toggle-switch {
+    @apply block;
+  }
+
+  &.toggled {
+    .toggle-switch {
+      @apply bg-default;
+
+      .switchery {
+        left: 40%;
+      }
+    }
+  }
+
+
+  // colors
+  @include generate-toggle-color('primary');
+  @include generate-toggle-color('secondary');
+  @include generate-toggle-color('info');
+  @include generate-toggle-color('success');
+  @include generate-toggle-color('warning');
+  @include generate-toggle-color('danger');
+
+  .bi.bi-toggle-label {
+    @apply block;
+  }
+}
