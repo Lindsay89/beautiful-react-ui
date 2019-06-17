@@ -3,6 +3,8 @@
 As simple as the following:
 
 ```jsx
+import { Button } from 'beautiful-ui';
+
 <Button>A simple button</Button>
 ```
 
@@ -11,14 +13,18 @@ As simple as the following:
 Colors are meant to highlight the syntactic meaning of a button.
 
 ```jsx
-<Button>Default</Button>
-<Button color="primary">Primary</Button>
-<Button color="secondary">Secondary</Button>
-<Button color="info">Info</Button>
-<Button color="success">Success</Button>
-<Button color="warning">Warning</Button>
-<Button color="danger">Danger</Button>
-<Button color="transparent">Transparent</Button>
+import { Button } from 'beautiful-ui';
+
+<>
+  <Button>Default</Button>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="info">Info</Button>
+  <Button color="success">Success</Button>
+  <Button color="warning">Warning</Button>
+  <Button color="danger">Danger</Button>
+  <Button color="transparent">Transparent</Button>
+</>
 ```
 
 ### Button outlines
@@ -27,13 +33,17 @@ Subtle appearance can also be applied to a button, if in need of a
 get rid of the hefty, colorful background.
 
 ```jsx
-<Button outline>Default</Button>
-<Button outline color="primary">Primary</Button>
-<Button outline color="secondary">Secondary</Button>
-<Button outline color="info">Info</Button>
-<Button outline color="success">Success</Button>
-<Button outline color="warning">Warning</Button>
-<Button outline color="danger">Danger</Button>
+import { Button } from 'beautiful-ui';
+
+<>
+  <Button outline>Default</Button>
+  <Button outline color="primary">Primary</Button>
+  <Button outline color="secondary">Secondary</Button>
+  <Button outline color="info">Info</Button>
+  <Button outline color="success">Success</Button>
+  <Button outline color="warning">Warning</Button>
+  <Button outline color="danger">Danger</Button>
+</>
 ```
 
 ### Rounded buttons
@@ -41,24 +51,28 @@ get rid of the hefty, colorful background.
 Buttons can also turn rounded by using the `rounded` prop
 
 ```jsx
-<div>
-  <Button rounded>Default</Button>
-  <Button rounded color="primary">Primary</Button>
-  <Button rounded color="secondary">Secondary</Button>
-  <Button rounded color="info">Info</Button>
-  <Button rounded color="success">Success</Button>
-  <Button rounded color="warning">Warning</Button>
-  <Button rounded color="danger">Danger</Button>
-</div>
-<div style={{marginTop: '20px'}}>
-  <Button rounded outline>Default</Button>
-  <Button rounded outline color="primary">Primary</Button>
-  <Button rounded outline color="secondary">Secondary</Button>
-  <Button rounded outline color="info">Info</Button>
-  <Button rounded outline color="success">Success</Button>
-  <Button rounded outline color="warning">Warning</Button>
-  <Button rounded outline color="danger">Danger</Button>
-</div>
+import { Button } from 'beautiful-ui';
+
+<>
+  <div>
+    <Button rounded>Default</Button>
+    <Button rounded color="primary">Primary</Button>
+    <Button rounded color="secondary">Secondary</Button>
+    <Button rounded color="info">Info</Button>
+    <Button rounded color="success">Success</Button>
+    <Button rounded color="warning">Warning</Button>
+    <Button rounded color="danger">Danger</Button>
+  </div>
+  <div style={{marginTop: '20px'}}>
+    <Button rounded outline>Default</Button>
+    <Button rounded outline color="primary">Primary</Button>
+    <Button rounded outline color="secondary">Secondary</Button>
+    <Button rounded outline color="info">Info</Button>
+    <Button rounded outline color="success">Success</Button>
+    <Button rounded outline color="warning">Warning</Button>
+    <Button rounded outline color="danger">Danger</Button>
+  </div>
+</>
 ```
 
 ### Button icon
@@ -70,7 +84,7 @@ or the instance of an `Icon` component.
  on top of it.</small>
 
 ```jsx 
-import { Icon } from 'beautiful-ui';
+import { Button, Icon } from 'beautiful-ui';
 
 <>
   <div>
@@ -108,12 +122,16 @@ import { Icon } from 'beautiful-ui';
 Buttons can have different sizes
 
 ```jsx
-<Button size="small">Small size</Button>
-<Button size="default" color="primary">Default size</Button>
-<Button size="large" color="secondary">Large size</Button>
-<Button size="large" color="info" icon={['fab', 'react']}>Large with icon</Button>
-<Button size="default" color="success" icon="bell" />
-<Button size="small" color="warning" icon="heart" />
+import { Button } from 'beautiful-ui';
+
+<>
+  <Button size="small">Small size</Button>
+  <Button size="default" color="primary">Default size</Button>
+  <Button size="large" color="secondary">Large size</Button>
+  <Button size="large" color="info" icon={['fab', 'react']}>Large with icon</Button>
+  <Button size="default" color="success" icon="bell" />
+  <Button size="small" color="warning" icon="heart" />
+</>
 ```
 
 ### Block
@@ -121,17 +139,23 @@ Buttons can have different sizes
 full-width fluid buttons
 
 ```jsx
-<Button block>Block button</Button>
-<Button block color="primary">Block button</Button>
-<Button block color="secondary">Block button</Button>
-<Button block color="info">Block button</Button>
-<Button block color="success">Block button</Button>
-<Button block color="warning">Block button</Button>
-<Button block color="danger">Block button</Button>
+import { Button } from 'beautiful-ui';
+
+<>
+  <Button block>Block button</Button>
+  <Button block color="primary">Block button</Button>
+  <Button block color="secondary">Block button</Button>
+  <Button block color="info">Block button</Button>
+  <Button block color="success">Block button</Button>
+  <Button block color="warning">Block button</Button>
+  <Button block color="danger">Block button</Button>
+</>
 ```
 
 ### Disabled state
 ```jsx
+import { Button } from 'beautiful-ui';
+
 <Button disabled>disabled</Button>
 ```
 
@@ -140,11 +164,15 @@ full-width fluid buttons
 It is possible to define the animation the button should perform on the `hover` event.
 
 ```jsx
-<Button color="primary" hover="round">I change shape</Button>
-<Button color="secondary" hover="float">I can float</Button>
-<Button color="info" hover="shrink">I can shrink</Button>
-<Button color="success" hover="zoom">I can zoom</Button>
-<Button color="warning" hover="reflection">I have a reflection</Button>
+import { Button } from 'beautiful-ui';
+
+<>
+  <Button color="primary" hover="round">I change shape</Button>
+  <Button color="secondary" hover="float">I can float</Button>
+  <Button color="info" hover="shrink">I can shrink</Button>
+  <Button color="success" hover="zoom">I can zoom</Button>
+  <Button color="warning" hover="reflection">I have a reflection</Button>
+</>
 ```
 
 ### Click Action
@@ -152,6 +180,8 @@ It is possible to define the animation the button should perform on the `hover` 
 Buttons are meant to have a callback attached
 
 ```
+import { Button } from 'beautiful-ui';
+
 const foo = event => { alert('Click'); };
 
 <Button color="primary" onClick={foo}>Click me!</Button>
@@ -165,7 +195,7 @@ Similar to the `icon` prop, the `spinner` prop accepts both a boolean value or t
 component. 
 
 ```jsx
-import { Spinner } from 'beautiful-ui';
+import { Spinner, Button } from 'beautiful-ui';
 
 <>
   <div>

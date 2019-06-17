@@ -44,6 +44,7 @@ module.exports = {
           pagePerSection: true,
           components: () => [
             'src/components/Elements/Button/Button.js',
+            'src/components/Elements/ButtonGroup/ButtonGroup.js',
             'src/components/Elements/Icon/Icon.js',
             'src/components/Elements/Spinner/Spinner.js',
           ],
