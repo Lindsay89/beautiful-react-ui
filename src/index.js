@@ -3,6 +3,7 @@ export { default as Button } from './components/Elements/Button';
 export { default as ButtonGroup } from './components/Elements/ButtonGroup';
 export { default as Icon } from './components/Elements/Icon';
 export { default as Spinner } from './components/Elements/Spinner';
+export { default as Breadcrumb } from './components/Elements/Breadcrumb';
 
 // Forms
 export { default as Toggle } from './components/Forms/Toggle';

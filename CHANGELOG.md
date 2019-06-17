@@ -49,3 +49,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ButtonGroup component
 - ButtonGroup tests
 - `lodash` as project dependency
+
+## [0.5.0] - 2019-06-14
+
+### Added
+
+- Breadcrumb component
+- Breadcrumb component tests 
