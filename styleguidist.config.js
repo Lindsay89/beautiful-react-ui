@@ -45,6 +45,7 @@ module.exports = {
           components: () => [
             'src/components/Elements/Button/Button.js',
             'src/components/Elements/ButtonGroup/ButtonGroup.js',
+            'src/components/Elements/Pill/Pill.js',
             'src/components/Elements/Breadcrumb/Breadcrumb.js',
             'src/components/Elements/Icon/Icon.js',
             'src/components/Elements/Spinner/Spinner.js',

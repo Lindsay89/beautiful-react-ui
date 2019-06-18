@@ -77,24 +77,25 @@ describe('Breadcrumb component', () => {
   it('should allow to define the breadcrumb links color', () => {
     const pages = [{ path: '/', label: 'home' }, { path: '/section', label: 'Section' }];
     const { container, rerender } = render(<Breadcrumb items={pages} color="secondary" />);
-    const breadcrumb = container.querySelector('nav');
+    const firstColor = container.querySelector('nav');
 
-    expect(breadcrumb.getAttribute('class').split(' ')).to.include.members(['breadcrumb-secondary']);
-    expect(breadcrumb.getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-primary']);
+    expect(firstColor.getAttribute('class').split(' ')).to.include.members(['breadcrumb-secondary']);
+    expect(firstColor.getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-primary']);
 
     rerender(<Breadcrumb items={pages} color="danger" />);
-    expect(breadcrumb.getAttribute('class').split(' ')).to.include.members(['breadcrumb-danger']);
-    expect(breadcrumb.getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-secondary']);
+    const secondColor = container.querySelector('nav');
+    expect(secondColor.getAttribute('class').split(' ')).to.include.members(['breadcrumb-danger']);
+    expect(secondColor.getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-secondary']);
 
     rerender(<Breadcrumb items={pages} />);
-    const breadcrumbClasses = breadcrumb.getAttribute('class').split(' ');
-    expect(breadcrumbClasses).to.include.members(['breadcrumb-primary']);
-    expect(breadcrumbClasses).to.not.include.members(['breadcrumb-danger', 'breadcrumb-secondary']);
+    const noColor = container.querySelector('nav').getAttribute('class').split(' ');
+    expect(noColor).to.include.members(['breadcrumb-primary']);
+    expect(noColor).to.not.include.members(['breadcrumb-danger', 'breadcrumb-secondary']);
   });
 
   it('it should possibly run a renderer passing current item as parameter', () => {
     const spy = sinon.spy();
-    const pages = [{ path: '/', label: 'home' }, { path: '/section', label: 'Section', renderer: spy }];
+    const pages = [{ path: '/', label: 'home' }, { path: '/section', label: 'Section', render: spy }];
     render(<Breadcrumb items={pages} />);
     const spyArgs = spy.args[0];
 

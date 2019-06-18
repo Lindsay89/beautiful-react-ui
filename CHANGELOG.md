@@ -56,3 +56,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Breadcrumb component
 - Breadcrumb component tests 
+
+## [0.6.0] - 2019-06-18
+
+### Added
+
+- Pill component
+- Pill component tests 
+- Breadcrumb `renderer` prop renamed as `render`

@@ -187,6 +187,21 @@ const foo = event => { alert('Click'); };
 <Button color="primary" onClick={foo}>Click me!</Button>
 ```
 
+### Pills
+
+It's possible to add a pill within a button to show further information.
+
+```jsx
+import { Pill, Button, Icon } from 'beautiful-ui';
+
+<>
+  <Button pill="New messages" icon="envelope" color="primary">Mail</Button>
+  <Button pill={<Pill color="danger">5 spam</Pill>} icon="envelope" color="primary">Mail</Button>
+  <Button color="info"><Pill color="warning">10 warnings</Pill>Manage <Icon name="bicycle" /></Button>
+</>
+```
+
+
 ### Spinners
 
 It is possible to show a spinner glyph next to the label, possibly in case of loading data.<br/>

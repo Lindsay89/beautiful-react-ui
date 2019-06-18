@@ -8,7 +8,7 @@ import { Children } from 'react';
 const getLastChild = (children) => {
   const arr = Children.toArray(children);
 
-  return arr.length > 0 ? arr.reverse()[0] : null;
+  return arr.length > 0 ? arr[arr.length - 1] : null;
 };
 
 export default getLastChild;

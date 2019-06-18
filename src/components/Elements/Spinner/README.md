@@ -50,7 +50,7 @@
   <Spinner type="pulse" size="small" color="danger" />
 <div style={{marginTop: '20px'}}>
 </div>
-  <Spinner type="circle" />
+  <Spinner type="circle" size="large" />
   <Spinner type="circle" size="large" color="primary" />
   <Spinner type="circle" size="large" color="secondary" />
   <Spinner type="circle" size="large" color="info" />
