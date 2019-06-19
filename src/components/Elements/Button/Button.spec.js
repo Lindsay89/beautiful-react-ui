@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Button from '.';
+import Pill from '../Pill';
 
 describe('Button component', () => {
   afterEach(() => {
@@ -180,5 +181,21 @@ describe('Button component', () => {
     const button = container.querySelector('button');
 
     expect(button.querySelector('.bi.bi-spinner')).to.exist;
+  });
+
+  it('should possibly render a pill if given as a string', () => {
+    const { container } = render(<Button pill="join us!" />);
+    const pill = container.querySelector('button').querySelector('.bi.bi-pill');
+
+    expect(pill).to.exist;
+    expect(pill.tagName).to.equal('SPAN');
+  });
+
+  it('should possibly render a pill if given as a instance of pill component', () => {
+    const { container } = render(<Button pill={<Pill>join us</Pill>} />);
+    const pill = container.querySelector('button').querySelector('.bi.bi-pill');
+
+    expect(pill).to.exist;
+    expect(pill.tagName).to.equal('SPAN');
   });
 });

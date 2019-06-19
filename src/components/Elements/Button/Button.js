@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import Spinner from '../Spinner';
+import Pill from '../Pill';
 import {
   makeIconFromProp,
   makeCallback,
   emptyChildren,
   getLastChild,
+  getFirstChild,
   makeSpinnerFromProp,
+  makePillFromProp,
   BaseProps,
   Size,
   Color,
@@ -16,15 +19,18 @@ import {
 
 import './button.scss';
 
+
 /**
  * Button components are used to provide a visual indication user actions.
  */
 const Button = (props) => {
   const {
-    children, type, block, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, className, id, style,
+    children, type, block, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
+    className, id, style,
   } = props;
 
   const lastChild = getLastChild(children);
+  const firstChild = getFirstChild(children);
 
   const classList = classNames('bi bi-btn', `btn-${color}`, {
     'btn-block': block,
@@ -39,6 +45,7 @@ const Button = (props) => {
     'btn-lg': size === 'large',
     'btn-icon-only': emptyChildren(children),
     'btn-lci': lastChild && typeof lastChild !== 'string',
+    'btn-fcp': firstChild && firstChild.type === Pill,
   }, className);
 
   return (
@@ -48,7 +55,9 @@ const Button = (props) => {
       {!!icon && makeIconFromProp(icon)}
       {/* Generate spinner if exists */}
       {!!spinner && makeSpinnerFromProp(spinner, { size })}
+      {/* Generate pill if exists */}
       {children}
+      {!!pill && makePillFromProp(pill)}
     </button>
   );
 };
@@ -124,6 +133,15 @@ Button.propTypes = {
     PropTypes.instanceOf(Spinner),
   ]),
   /**
+   * Show a pill into the button. You can pass both a valid pill label prop or the instance of an pill component
+   * @default undefined
+   */
+  pill: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.instanceOf(Pill),
+  ]),
+
+  /**
    * @ignore
    */
   children: PropTypes.node,
@@ -141,6 +159,7 @@ Button.defaultProps = {
   icon: undefined,
   spinner: false,
   onClick: null,
+  pill: undefined,
   children: null,
 };
 

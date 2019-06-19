@@ -10,27 +10,32 @@ import { makeIconFromProp } from '../../../shared';
  */
 const BreadcrumbItems = (props) => {
   const { path, label, icon } = props;
-  if (!!label || !!icon) {
-    return (
-      <li className="bi bi-breadcrumb breadcrumb-item">
-        {!!path && (
-          <a href={path}>
-            {!!icon && makeIconFromProp(icon)}
-            {label}
-          </a>
-        )}
-        {!path && (
-          <>
-            {!!icon && makeIconFromProp(icon)}
-            {label}
-          </>
-        )}
-      </li>
-    );
+
+  if (!label && !icon) {
+    /**
+     * We are disabling the eslint no-console rule so that the user will be warned about one of its
+     */
+    // eslint-disable-next-line no-console
+    console.warn('One of the your breadcrumb items has been wiped out as it has no label nor icon');
+    return null;
   }
-  // eslint-disable-next-line no-console, needed to show error message in console when values are missing
-  console.warn('WARNING: MISSING BOTH LABEL AND ICON');
-  return null;
+
+  return (
+    <li className="bi bi-breadcrumb breadcrumb-item">
+      {!!path && (
+        <a href={path}>
+          {!!icon && makeIconFromProp(icon)}
+          {label}
+        </a>
+      )}
+      {!path && (
+        <>
+          {!!icon && makeIconFromProp(icon)}
+          {label}
+        </>
+      )}
+    </li>
+  );
 };
 
 

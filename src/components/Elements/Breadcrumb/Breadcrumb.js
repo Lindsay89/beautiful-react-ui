@@ -1,10 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { BaseProps, Color } from '../../../shared';
 import BreadcrumbItems from './BreadcrumbItems';
 import Icon from '../Icon';
+
 import './breadcrumb.scss';
-import { BaseProps, Color } from '../../../shared';
 
 /**
  * Breadcrumb components are used to show page hierarchy.
@@ -16,13 +17,11 @@ const Breadcrumb = (props) => {
   return (
     <nav className={classList} style={style} id={id}>
       <ol>
-        {
-          items.map(item => (
-            item.renderer
-              ? item.renderer(item)
-              : <BreadcrumbItems path={item.path} label={item.label} icon={item.icon} />
-          ))
-        }
+        {items.map(item => (
+          item.render
+            ? item.render(item)
+            : <BreadcrumbItems path={item.path} label={item.label} icon={item.icon} />
+        ))}
       </ol>
     </nav>
   );
@@ -48,11 +47,12 @@ Breadcrumb.propTypes = {
       PropTypes.arrayOf(PropTypes.string),
       PropTypes.instanceOf(Icon),
     ]),
-    renderer: PropTypes.func,
+    render: PropTypes.func,
   })).isRequired,
 };
 
 Breadcrumb.defaultProps = {
   color: 'primary',
 };
-export default Breadcrumb;
+
+export default React.memo(Breadcrumb);
