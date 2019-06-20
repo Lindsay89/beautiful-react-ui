@@ -25,6 +25,19 @@ import { Pill } from 'beautiful-ui';
 </>
 ```
 
+### Rounded shape
+
+The `rounded` prop changes the shape of a pill
+``` jsx
+import { Pill } from 'beautiful-ui';
+
+<>
+  <Pill>Rounded</Pill>
+  <Pill rounded={false}>not rounded</Pill>
+</>
+```
+
+
 ### Links
 
 The `href` prop providers an actionable pill
@@ -43,7 +56,7 @@ import { Pill } from 'beautiful-ui';
 ```
 ### Render
 
-Render change the normal behaviour of the component.
+Render changes the normal behaviour of the component.
 
 ```jsx
 const CustomLink = (props) => (<a href="/some-custom-link">Link to: {props.children}</a>);

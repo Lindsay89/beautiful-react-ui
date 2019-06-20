@@ -80,4 +80,14 @@ describe('Pill component', () => {
 
     expect(spy.calledOnce).to.be.equal(true);
   });
+
+  it('should allow to define the pill shape', () => {
+    const { container, rerender } = render(<Pill>rounded</Pill>);
+    const pill = container.querySelector('.bi.bi-pill');
+
+    expect(pill.getAttribute('class').split(' ')).to.include.members(['pill-rounded']);
+
+    rerender(<Pill rounded={false}>not rounded</Pill>);
+    expect(pill.getAttribute('class').split(' ')).to.not.include.members(['pill-rounded']);
+  });
 });

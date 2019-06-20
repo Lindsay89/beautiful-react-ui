@@ -64,3 +64,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pill component
 - Pill component tests 
 - Breadcrumb `renderer` prop renamed as `render`
+
+
+## [0.6.1] - 2019-06-19
+
+### Fixed
+
+- The rounded prop now defines the shape of the Pill component.
