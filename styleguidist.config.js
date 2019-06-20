@@ -49,6 +49,7 @@ module.exports = {
             'src/components/Elements/Breadcrumb/Breadcrumb.js',
             'src/components/Elements/Icon/Icon.js',
             'src/components/Elements/Spinner/Spinner.js',
+            'src/components/Elements/Alert/Alert.js',
           ],
         },
         {

@@ -26,18 +26,15 @@ const Spinner = (props) => {
 Spinner.propTypes = {
   ...BaseProps,
   /**
-   * Defines the spinner color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `error`.
-   * @default "default"
+   * Defines the spinner color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
   color: Color,
   /**
    * Defines the button size, can be `small`, `default`, `large`
-   * @default "default"
    */
   size: Size,
   /**
    * Defines the spinner type, can be `circle` or `pulse`
-   * @default "circle"
    */
   type: PropTypes.oneOf(['circle', 'pulse']),
 };

@@ -30,13 +30,12 @@ const Breadcrumb = (props) => {
 Breadcrumb.propTypes = {
   ...BaseProps,
   /**
-   * Defines the color of links in breadcrumb, can be `default`, `primary`, `secondary`,
-   * `info`, `warning`, `success`, `error`.
-   * @default "default"
+   * Defines the color of links in breadcrumb, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`,
+   * `danger`.
    */
   color: Color,
   /**
-   *  Defines the items type, it must be an array of object, with label required.
+   * Defines the items type, it must be an array of object, with label required.
    * The breadcrumb component accept an array of values, in order to show the path of pages.
    */
   items: PropTypes.arrayOf(PropTypes.shape({

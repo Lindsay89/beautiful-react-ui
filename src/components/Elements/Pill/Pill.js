@@ -13,11 +13,12 @@ import './pill.scss';
  */
 const Pill = (props) => {
   const { id, style, className, children, color, href, render, rounded } = props;
+  const El = href ? 'a' : 'span';
+
   const classList = classNames('bi bi-pill', `pill-${color}`, {
     'pill-rounded': rounded,
     'linkable-pill': href,
   }, className);
-  const El = href ? 'a' : 'span';
 
   return (
     <El id={id} style={style} className={classList} href={href}>
@@ -31,7 +32,7 @@ Pill.propTypes = {
   ...BaseProps,
   /**
    * Defines the pill's color, can be `default`, `primary`, `secondary`,
-   * `info`, `warning`, `success`, `error`.
+   * `info`, `warning`, `success`, `danger`.
    */
   color: Color,
   /**

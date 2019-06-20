@@ -12,6 +12,8 @@
   @apply bg-default-lighter text-default-darker font-sans font-normal text-xs font-normal text-center px-2 py-1;
   @apply leading-none uppercase;
 
+  box-sizing: border-box;
+
   + .bi.bi-pill {
     @apply ml-2;
   }
@@ -39,12 +41,12 @@
   }
 
   // ----------------------------
-  // COLOURS
+  // COLORS
   // ----------------------------
-  @include create-pill-color('primary');
-  @include create-pill-color('secondary');
-  @include create-pill-color('info');
-  @include create-pill-color('success');
-  @include create-pill-color('warning');
-  @include create-pill-color('danger');
+  @include create-pill-color("primary");
+  @include create-pill-color("secondary");
+  @include create-pill-color("info");
+  @include create-pill-color("success");
+  @include create-pill-color("warning");
+  @include create-pill-color("danger");
 }
