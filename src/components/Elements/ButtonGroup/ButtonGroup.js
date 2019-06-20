@@ -52,29 +52,24 @@ const ButtonGroup = ({ children, id, className, style, block, ...props }) => {
 ButtonGroup.propTypes = {
   ...BaseProps,
   /**
-   * Defines the buttons color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `error`
+   * Defines the buttons color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`
    * or `transparent`
-   * @default "default"
    */
   color: Color,
   /**
    * Defines the buttons' size, can be `small`, `default`, `large`
-   * @default "default"
    */
   size: Size,
   /**
    * Applies the outline style to the buttons
-   * @default false
    */
   outline: PropTypes.bool,
   /**
    * Makes the buttons rounded
-   * @default false
    */
   rounded: PropTypes.bool,
   /**
    * Makes the button completely fluid (full width)
-   * @default false
    */
   block: PropTypes.bool,
   /**

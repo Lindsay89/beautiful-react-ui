@@ -47,13 +47,12 @@ Toggle.propTypes = {
   ...BaseProps,
   ...BaseFormProps,
   /**
-   * defines the toggle background color when toggled
-   * @default default
+   * Defines the toggle background color when toggled, can be `default`, `primary`, `secondary`, `info`, `warning`,
+   * `success`, `danger` or `transparent`
    */
   color: Color,
   /**
    * defines the toggle size
-   * @default default
    */
   size: Size,
   /**

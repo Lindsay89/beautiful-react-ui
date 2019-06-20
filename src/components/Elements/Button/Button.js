@@ -65,44 +65,36 @@ const Button = (props) => {
 Button.propTypes = {
   ...BaseProps,
   /**
-   * Defines the button color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `error`
+   * Defines the button color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`
    * or `transparent`
-   * @default "default"
    */
   color: Color,
   /**
    * Defines the button's size, can be `small`, `default`, `large`
-   * @default "default"
    */
   size: Size,
   /**
    * Shows the outlines only
-   * @default false
    */
   outline: PropTypes.bool,
   /**
    * Makes the button rounded
-   * @default false
    */
   rounded: PropTypes.bool,
   /**
    * Defines the button's type
-   * @default 'button'
    */
   type: PropTypes.oneOf(['submit', 'button', 'reset']),
   /**
    * Disables the button
-   * @default false
    */
   disabled: PropTypes.bool,
   /**
    * Makes the button completely fluid (full width)
-   * @default false
    */
   block: PropTypes.bool,
   /**
    * Defines the hover effect, can be `round`, `zoom`,  `shrink`,  `float`, `reflection`
-   * @default undefined
    */
   hover: PropTypes.oneOfType([
     PropTypes.bool,
@@ -110,12 +102,10 @@ Button.propTypes = {
   ]),
   /**
    * Attaches a callback on the 'click' event
-   * @default (event) => undefined
    */
   onClick: PropTypes.func,
   /**
    * Shows an icon, you can pass both a valid Icon component name prop or the instance of an Icon component
-   * @default undefined
    */
   icon: PropTypes.oneOfType([
     PropTypes.string,
@@ -126,7 +116,6 @@ Button.propTypes = {
    * Shows a spinner icon within the button. The prop value can be "true" to show a standard <Spinner />
    * or the actual instance of a <Spinner /> component.
    * If the prop value is "false" or any falsy value (undefined or null) the spinner won't show.
-   * @default false
    */
   spinner: PropTypes.oneOfType([
     PropTypes.bool,
@@ -134,7 +123,6 @@ Button.propTypes = {
   ]),
   /**
    * Show a pill into the button. You can pass both a valid pill label prop or the instance of an pill component
-   * @default undefined
    */
   pill: PropTypes.oneOfType([
     PropTypes.string,

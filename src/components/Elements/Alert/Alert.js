@@ -7,7 +7,7 @@ import { BaseProps, Color } from '../../../shared';
 import './alert.scss';
 
 /**
- * Alert component are used to show alert messages.
+ * Alert component provides a contextual feedback messages for the user actions.
  */
 const Alert = (props) => {
   const { children, id, style, className, color, solid, outline, onClose } = props;
@@ -18,9 +18,7 @@ const Alert = (props) => {
   return (
     <div id={id} style={style} className={classList}>
       {children}
-      {onClose
-        && <Button color="transparent" className="alert-button" onClick={onClose}><Icon name="times" /></Button>
-      }
+      {onClose && <Button color="transparent" className="alert-button" onClick={onClose}><Icon name="times" /></Button>}
     </div>
   );
 };
@@ -28,8 +26,7 @@ const Alert = (props) => {
 Alert.propTypes = {
   ...BaseProps,
   /**
-   * Defines the color of the alert, can be `default`, `primary`, `secondary`,
-   * `info`, `warning`, `success`.
+   * Defines the color of the alert, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
   color: Color,
   /**
