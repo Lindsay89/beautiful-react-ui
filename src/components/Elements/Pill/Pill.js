@@ -12,8 +12,11 @@ import './pill.scss';
  * @constructor
  */
 const Pill = (props) => {
-  const { id, style, className, children, color, href, render } = props;
-  const classList = classNames('bi bi-pill pill-rounded', `pill-${color}`, { 'linkable-pill': href }, className);
+  const { id, style, className, children, color, href, render, rounded } = props;
+  const classList = classNames('bi bi-pill', `pill-${color}`, {
+    'pill-rounded': rounded,
+    'linkable-pill': href,
+  }, className);
   const El = href ? 'a' : 'span';
 
   return (
@@ -29,7 +32,6 @@ Pill.propTypes = {
   /**
    * Defines the pill's color, can be `default`, `primary`, `secondary`,
    * `info`, `warning`, `success`, `error`.
-   * @default "default"
    */
   color: Color,
   /**
@@ -40,6 +42,10 @@ Pill.propTypes = {
    * Accepts a function/component and renders the returning value within the Pill component
    */
   render: PropTypes.func,
+  /**
+   * rounded indicated the pill shape, by default the shape is rounded
+   */
+  rounded: PropTypes.string,
   /**
    * @ignore
    */
@@ -52,6 +58,7 @@ Pill.defaultProps = {
   color: 'default',
   href: undefined,
   render: undefined,
+  rounded: 'pill-rounded',
 };
 
 
