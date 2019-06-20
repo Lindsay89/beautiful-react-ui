@@ -71,3 +71,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - The rounded prop now defines the shape of the Pill component.
+
+## [0.7.0] - 2019-06-20
+
+### Added
+
+- Alert component
+- Alert component tests 

@@ -5,6 +5,8 @@ export { default as Icon } from './components/Elements/Icon';
 export { default as Spinner } from './components/Elements/Spinner';
 export { default as Breadcrumb } from './components/Elements/Breadcrumb';
 export { default as Pill } from './components/Elements/Pill';
+export { default as Alert } from './components/Elements/Alert';
+
 
 // Forms
 export { default as Toggle } from './components/Forms/Toggle';
