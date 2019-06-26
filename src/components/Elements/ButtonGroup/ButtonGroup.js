@@ -14,7 +14,7 @@ import './button.group.scss';
 const cloneButton = (buttonInstance, props) => {
   if (buttonInstance.type !== Button) {
     /**
-     * Eslint force the developer to not have any `console` statement in the code, in this case we want to warn the
+     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
      * user without throwing an error so it's perfectly safe to disable this rule.
      */
     /* eslint-disable-next-line no-console */
@@ -28,7 +28,7 @@ const cloneButton = (buttonInstance, props) => {
 };
 
 /**
- * Wraps a number of buttons an makes em group
+ * Wraps a number of buttons and makes a group out of them
  */
 const ButtonGroup = ({ children, id, className, style, block, ...props }) => {
   // the reason I'm disabling eslint "react/destructuring-assignment" rule is that I want to keep some props within the

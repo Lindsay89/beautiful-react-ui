@@ -50,6 +50,7 @@ module.exports = {
             'src/components/Elements/Icon/Icon.js',
             'src/components/Elements/Spinner/Spinner.js',
             'src/components/Elements/Alert/Alert.js',
+            'src/components/Elements/Accordion/Accordion.js',
           ],
         },
         {

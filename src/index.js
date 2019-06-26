@@ -6,6 +6,7 @@ export { default as Spinner } from './components/Elements/Spinner';
 export { default as Breadcrumb } from './components/Elements/Breadcrumb';
 export { default as Pill } from './components/Elements/Pill';
 export { default as Alert } from './components/Elements/Alert';
+export { default as Accordion } from './components/Elements/Accordion';
 
 
 // Forms

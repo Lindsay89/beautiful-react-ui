@@ -79,9 +79,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Alert component
 - Alert component tests 
 
-
 ## [0.7.1] - 2019-06-20
 
 ### Fixes
 
 - Colors description now correctly defines `danger` color.
+
+
+## [0.8.0] - 2019-06-20
+
+### Added
+
+- Accordion component
+- Accordion component tests
