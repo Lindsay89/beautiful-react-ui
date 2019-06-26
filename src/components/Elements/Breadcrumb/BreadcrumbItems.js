@@ -13,7 +13,8 @@ const BreadcrumbItems = (props) => {
 
   if (!label && !icon) {
     /**
-     * We are disabling the eslint no-console rule so that the user will be warned about one of its
+     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
+     * user without throwing an error so it's perfectly safe to disable this rule.
      */
     // eslint-disable-next-line no-console
     console.warn('One of the your breadcrumb items has been wiped out as it has no label nor icon');
