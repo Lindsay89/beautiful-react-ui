@@ -1,0 +1,89 @@
+@mixin create-acc-color($colorName) {
+  &.acc-color-#{$colorName} {
+    @apply border-none;
+
+    &.acc-content-show {
+      @apply bg-#{$colorName}-lightest;
+
+      .acc-title-button {
+        @apply text-#{$colorName}-darker bg-#{$colorName}-lightest border-t-0;
+      }
+
+      .acc-content {
+        @apply text-#{$colorName}-darker;
+
+        flex-basis: auto;
+      }
+    }
+
+    .acc-title-button {
+      @apply text-#{$colorName}-darker bg-#{$colorName}-lighter border-t border-solid;
+
+      border-color: theme("colors.#{$colorName}");
+    }
+  }
+}
+
+.bi.bi-accordion {
+  @apply max-w-full rounded font-sans overflow-hidden border border-solid;
+
+  border-color: theme("colors.default");
+
+  + .bi.bi-accordion {
+    @apply mt-4;
+  }
+
+  .bi.bi-acc-content {
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-color: theme("colors.default");
+
+    @apply text-default-darker border-b border-r-0  border-l-0 border-t-0 border-solid;
+
+    &:last-child {
+      @apply border-b-0;
+    }
+
+    &.acc-vertical {
+      flex-direction: row;
+    }
+
+    .acc-title-button {
+      @apply font-sans text-default-darker text-left m-0 p-3 font-medium bg-default-lighter rounded-none;
+    }
+
+    > .acc-content {
+      @apply px-3 overflow-hidden;
+
+      flex-basis: 0;
+    }
+
+    // ----------------------------
+    // COLORS
+    // ----------------------------
+    &.acc-color-default {
+      &.acc-content-show {
+        @apply bg-white;
+
+        .acc-title-button {
+          @apply text-primary bg-white;
+        }
+
+        .acc-content {
+          @apply text-default-darker;
+
+          flex-basis: auto;
+        }
+      }
+    }
+
+    @include create-acc-color("primary");
+    @include create-acc-color("secondary");
+    @include create-acc-color("info");
+    @include create-acc-color("warning");
+    @include create-acc-color("danger");
+    @include create-acc-color("success");
+  }
+}
