@@ -26,7 +26,6 @@ const cloneAccordionContents = (child, index, props) => {
     internalId: index,
     active: props.active === index,
     onChange: props.onChange,
-    color: props.color,
     iconOpen: props.iconOpen,
     iconClose: props.iconClose,
   });
@@ -38,9 +37,9 @@ const cloneAccordionContents = (child, index, props) => {
  */
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Accordion = React.memo((props) => {
-  const { id, style, className, children } = props;
+  const { id, style, className, children, color } = props;
 
-  const classList = classNames('bi bi-accordion', className);
+  const classList = classNames('bi bi-accordion', `acc-color-${color}`, className);
 
   return (
     <div id={id} style={style} className={classList}>

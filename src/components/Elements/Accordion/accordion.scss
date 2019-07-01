@@ -1,31 +1,41 @@
 @mixin create-acc-color($colorName) {
   &.acc-color-#{$colorName} {
-    @apply border-none;
+    @apply border-t border-b-0 border-r border-l border-solid;
 
-    &.acc-content-show {
-      @apply bg-#{$colorName}-lightest;
+    border-color: theme("colors.#{$colorName}");
+
+    .bi.bi-acc-content {
+      @apply border-t-0;
+
+      &.acc-content-show {
+        @apply border-t-0 border-b;
+
+        border-color: theme("colors.#{$colorName}");
+
+        .acc-title-button {
+          @apply text-#{$colorName} border-b-0;
+        }
+
+        .acc-content {
+          flex-basis: auto;
+        }
+
+        &:last-child {
+          @apply border-b;
+        }
+      }
 
       .acc-title-button {
-        @apply text-#{$colorName}-darker bg-#{$colorName}-lightest border-t-0;
+        @apply text-#{$colorName}-darker border-t-0  border-b border-solid;
+
+        border-color: theme("colors.#{$colorName}");
       }
-
-      .acc-content {
-        @apply text-#{$colorName}-darker;
-
-        flex-basis: auto;
-      }
-    }
-
-    .acc-title-button {
-      @apply text-#{$colorName}-darker bg-#{$colorName}-lighter border-t border-solid;
-
-      border-color: theme("colors.#{$colorName}");
     }
   }
 }
 
 .bi.bi-accordion {
-  @apply max-w-full rounded font-sans overflow-hidden border border-solid;
+  @apply max-w-full rounded font-sans overflow-hidden border border-solid border-t-0;
 
   border-color: theme("colors.default");
 
@@ -40,7 +50,7 @@
     justify-content: flex-start;
     border-color: theme("colors.default");
 
-    @apply text-default-darker border-b border-r-0  border-l-0 border-t-0 border-solid;
+    @apply text-default-darker border-t border-r-0  border-l-0 border-b-0 border-solid;
 
     &:last-child {
       @apply border-b-0;
@@ -59,31 +69,31 @@
 
       flex-basis: 0;
     }
+  }
 
-    // ----------------------------
-    // COLORS
-    // ----------------------------
-    &.acc-color-default {
-      &.acc-content-show {
-        @apply bg-white;
+  &.acc-color-default {
+    .acc-content-show {
+      @apply bg-white;
 
-        .acc-title-button {
-          @apply text-primary bg-white;
-        }
+      .acc-title-button {
+        @apply text-primary bg-white;
+      }
 
-        .acc-content {
-          @apply text-default-darker;
+      .acc-content {
+        @apply text-default-darker;
 
-          flex-basis: auto;
-        }
+        flex-basis: auto;
       }
     }
-
-    @include create-acc-color("primary");
-    @include create-acc-color("secondary");
-    @include create-acc-color("info");
-    @include create-acc-color("warning");
-    @include create-acc-color("danger");
-    @include create-acc-color("success");
   }
+
+  // ----------------------------
+  // COLORS
+  // ----------------------------
+  @include create-acc-color("primary");
+  @include create-acc-color("secondary");
+  @include create-acc-color("info");
+  @include create-acc-color("warning");
+  @include create-acc-color("danger");
+  @include create-acc-color("success");
 }

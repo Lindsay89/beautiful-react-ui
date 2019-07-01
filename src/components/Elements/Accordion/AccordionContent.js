@@ -8,8 +8,8 @@ import Button from '../Button';
  * Accordion content shows its content if active is provided
  */
 const AccordionContent = (props) => {
-  const { internalId, id, style, children, active, title, onChange, color, iconOpen, iconClose } = props;
-  const classList = classNames('bi', 'bi-acc-content', `acc-color-${color}`, {
+  const { internalId, id, style, children, active, title, onChange, iconOpen, iconClose } = props;
+  const classList = classNames('bi', 'bi-acc-content', {
     'acc-content-show': active,
   });
   const icon = active ? iconOpen : iconClose;
