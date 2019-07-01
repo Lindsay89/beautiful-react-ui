@@ -48,28 +48,20 @@ const Tab = React.memo((props) => {
   }, className);
 
   return (
-    <div
-      id={id}
-      style={style}
-      className={classList}
-    >
+    <div id={id} style={style} className={classList}>
       <nav className="bi-tab-nav">
         <ul>
-          {tabContents.map((item, index) => {
-            const { title, icon, disabled } = item;
-
-            return (
-              <TabButton
-                title={title}
-                icon={icon}
-                active={active}
-                index={index}
-                onChange={onChange}
-                disabled={disabled}
-              />
-            );
-          })}
-
+          {tabContents.map(({ title, icon, disabled }, index) => (
+            <TabButton
+              key={title}
+              title={title}
+              icon={icon}
+              active={active}
+              index={index}
+              onChange={onChange}
+              disabled={disabled}
+            />
+          ))}
         </ul>
       </nav>
       <section className="bi-tab-contents">

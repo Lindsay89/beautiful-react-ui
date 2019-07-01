@@ -99,3 +99,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Tab component
 - Tab component tests
+
+## [0.9.1] - 2019-07-01
+
+### Fixes
+
+- Added BaseProps to TabContent
+- TabContent component tests added 

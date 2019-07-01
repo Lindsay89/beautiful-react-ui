@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, makeIconFromProp, IconProp } from '../../../shared';
+import { makeIconFromProp, IconProp } from '../../../shared';
 
 
 /**
@@ -20,7 +20,7 @@ const TabButton = (props) => {
   };
 
   return (
-    <li key={title} className={classNames({ 'tab-btn-current': active === index, 'tab-disabled': disabled })}>
+    <li className={classNames({ 'tab-btn-current': active === index, 'tab-disabled': disabled })}>
       {/* The following eslint rule has been disabled so that we can use <a> as button tag. */}
       {/* eslint-disable jsx-a11y/anchor-is-valid */}
       <a onClick={clickOrKeyDownHandler} onKeyDown={clickOrKeyDownHandler} role="button" tabIndex={0}>
@@ -44,7 +44,25 @@ const TabButton = (props) => {
 };
 
 TabButton.propTypes = {
-  ...BaseProps,
+  /**
+   * Index is the internal index to identify which is the active label
+   */
+  index: PropTypes.number,
+  /**
+   * Disable is used to define which label should be disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+  * The callback to be performed on content change
+  */
+  onChange: PropTypes.func.isRequired,
+  /**
+  * Defines the current active tab index
+  */
+  active: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]).isRequired,
   /**
    * Title is the string that will be used as tab label
    */
@@ -56,6 +74,8 @@ TabButton.propTypes = {
 };
 
 TabButton.defaultProps = {
+  index: 0,
+  disabled: false,
   title: null,
   icon: undefined,
 };
