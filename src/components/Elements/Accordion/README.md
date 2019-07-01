@@ -11,17 +11,17 @@ const AccordionStateful = () => {
     <Accordion onChange={setCurrent} active={current}>
       <Accordion.Content title="fancy title">
         <div>
-          <p>some text here</p>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? </p>
         </div>
       </Accordion.Content>
       <Accordion.Content title="a different fancy title">
         <div>
-          <p>some other text here</p>
+          <p>Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
         </div>
       </Accordion.Content>
       <Accordion.Content title="a new different fancy title">
         <div>
-          <p>some other text here</p>
+          <p> The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.</p>
         </div>
       </Accordion.Content>
     </Accordion>
@@ -46,17 +46,17 @@ const AccordionStateful = (props) => {
     <Accordion {...props} onChange={setCurrent} active={current}>
       <Accordion.Content title="fancy title">
         <div>
-          <p>some text here</p>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? </p>
         </div>
       </Accordion.Content>
       <Accordion.Content title="a different fancy title">
         <div>
-          <p>some other text here</p>
+          <p>Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
         </div>
       </Accordion.Content>
       <Accordion.Content title="a new different fancy title">
         <div>
-          <p>some other text here</p>
+          <p> The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.</p>
         </div>
       </Accordion.Content>
     </Accordion>
@@ -89,17 +89,17 @@ const AccordionStateful = (props) => {
     <Accordion {...props} onChange={setCurrent} active={current}>
       <Accordion.Content title="fancy title">
         <div>
-          <p>some text here</p>
+          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? </p>
         </div>
       </Accordion.Content>
       <Accordion.Content title="a different fancy title">
         <div>
-          <p>some other text here</p>
+          <p>Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
         </div>
       </Accordion.Content>
       <Accordion.Content title="a new different fancy title">
         <div>
-          <p>some other text here</p>
+          <p> The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.</p>
         </div>
       </Accordion.Content>
     </Accordion>

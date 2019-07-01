@@ -106,3 +106,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added BaseProps to TabContent
 - TabContent component tests added 
+
+## [0.9.2] - 2019-07-01
+
+### Fixes
+
+- Changed the functionality of the Accordion color prop
+- Modified Accordion test to manage the new color prop

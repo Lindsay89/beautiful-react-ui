@@ -116,7 +116,7 @@ describe('Accordion component', () => {
     expect(accordion.getAttribute('style')).to.equal('margin: 30px;');
   });
 
-  it('should allow to change accordion color', () => {
+  it('should allow to change accordion link color', () => {
     const { container, rerender } = render(
       <Accordion onChange={noop} active={1} color="info">
         <Accordion.Content title="fancy title">
@@ -132,7 +132,7 @@ describe('Accordion component', () => {
       </Accordion>,
     );
 
-    const accordion = container.querySelector('.bi.bi-acc-content');
+    const accordion = container.querySelector('.bi.bi-accordion');
 
     expect(accordion.getAttribute('class').split(' ')).to.include.members(['acc-color-info']);
     expect(accordion.getAttribute('class').split(' ')).to.not.include.members(['acc-color-default']);
