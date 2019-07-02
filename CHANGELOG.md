@@ -113,3 +113,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changed the functionality of the Accordion color prop
 - Modified Accordion test to manage the new color prop
+
+
+
+## [0.9.3] - 2019-07-01
+
+### Fixes
+
+- Changed the focus on toggle component
+- Added 'aria-label' for accessibility

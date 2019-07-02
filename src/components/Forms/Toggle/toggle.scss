@@ -1,7 +1,11 @@
-@mixin generate-toggle-color($colorName: 'default', $colorValue: $colorName) {
+@mixin generate-toggle-color($colorName: "default", $colorValue: $colorName) {
   &.toggle-#{$colorName} {
     &.toggled .toggle-switch {
       @apply bg-#{$colorValue};
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem theme("colors.#{$colorValue}-lighter");
+      }
     }
   }
 }
@@ -36,6 +40,11 @@ $large-h: 2.375rem;
     height: $default-h;
 
     @apply inline-block relative bg-default-light rounded-full cursor-pointer;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem theme("colors.default-light");
+    }
 
     .switchery {
       transition: left 0.1s ease-in;
@@ -81,14 +90,13 @@ $large-h: 2.375rem;
     }
   }
 
-
   // colors
-  @include generate-toggle-color('primary');
-  @include generate-toggle-color('secondary');
-  @include generate-toggle-color('info');
-  @include generate-toggle-color('success');
-  @include generate-toggle-color('warning');
-  @include generate-toggle-color('danger');
+  @include generate-toggle-color("primary");
+  @include generate-toggle-color("secondary");
+  @include generate-toggle-color("info");
+  @include generate-toggle-color("success");
+  @include generate-toggle-color("warning");
+  @include generate-toggle-color("danger");
 
   .bi.bi-toggle-label {
     @apply block;
