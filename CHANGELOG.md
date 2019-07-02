@@ -104,21 +104,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixes
 
-- Added BaseProps to TabContent
-- TabContent component tests added 
+- BaseProps added to the TabContent component
+- TabContent component tests added to test the BaseProps
 
 ## [0.9.2] - 2019-07-01
 
 ### Fixes
 
-- Changed the functionality of the Accordion color prop
-- Modified Accordion test to manage the new color prop
-
-
+- Accordion color behaviour changed
+- Accordion tests changed to test the new color prop
 
 ## [0.9.3] - 2019-07-01
 
 ### Fixes
 
-- Changed the focus on toggle component
-- Added 'aria-label' for accessibility
+- Toggle component focus state defined by CSS
+- Accessibility issues on Toggle component fixed: added `aria-label`
+
+## [0.9.4] - 2019-07-02
+
+### Fixes
+
+- Accessibility issues on Button component fixed: added `aria-label`

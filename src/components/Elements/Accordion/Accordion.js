@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { BaseProps, Color, IconProp } from '../../../shared';
 import AccordionContent from './AccordionContent';
+
 import './accordion.scss';
 
 /**

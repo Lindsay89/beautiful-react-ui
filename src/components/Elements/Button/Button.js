@@ -49,8 +49,17 @@ const Button = (props) => {
   }, className);
 
   return (
+    // it is quite safe to disable the following Eslint rule as the button type is guaranteed by the defaultProp
     /* eslint-disable-next-line react/button-has-type */
-    <button id={id} disabled={disabled} type={type} onClick={makeCallback(onClick)} className={classList} style={style}>
+    <button
+      id={id}
+      disabled={disabled}
+      type={type}
+      onClick={makeCallback(onClick)}
+      className={classList}
+      style={style}
+      aria-label={`Button ${children}`}
+    >
       {/* Generate icon if exists */}
       {!!icon && makeIconFromProp(icon)}
       {/* Generate spinner if exists */}
