@@ -1,4 +1,5 @@
 import React from 'react';
+import noop from 'lodash/noop';
 import { render, cleanup } from '@testing-library/react';
 import Tab from './Tab';
 
@@ -10,42 +11,45 @@ describe('Tab component', () => {
 
   it('should render without explode', () => {
     const { container } = render(
-      <Tab>
+      <Tab active={1} onChange={noop}>
         <Tab.Content>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
 
-    const mainDiv = container.querySelector('.bi.bi-tab');
+    const tab = container.querySelector('.bi.bi-tab');
+
     should.exist(container);
-    expect(mainDiv).to.exist;
+    expect(tab).to.exist;
   });
 
   it('should have default classes', () => {
     const { container } = render(
-      <Tab>
+      <Tab active={1} onChange={noop}>
         <Tab.Content>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
 
-    const firstDiv = container.querySelector('div');
-    expect(firstDiv.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-tab']);
+    const tab = container.querySelector('div');
+
+    expect(tab.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-tab']);
   });
 
   it('should accept an id prop', () => {
     const { container } = render(
-      <Tab id="firstTab">
+      <Tab active={1} onChange={noop} id="firstTab">
         <Tab.Content>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
 
-    const firstDiv = container.querySelector('.bi.bi-tab');
-    expect(firstDiv.id).to.equal('firstTab');
+    const tab = container.querySelector('.bi.bi-tab');
+
+    expect(tab.id).to.equal('firstTab');
   });
 
   it('should allow to add custom classes', () => {
@@ -57,13 +61,14 @@ describe('Tab component', () => {
       </Tab>,
     );
 
-    const checkClass = container.querySelector('.bi.bi-tab');
-    expect(checkClass.getAttribute('class').split(' ')).to.include.members(['newClass']);
+    const tab = container.querySelector('.bi.bi-tab');
+
+    expect(tab.getAttribute('class').split(' ')).to.include.members(['newClass']);
   });
 
   it('should allow to define custom style', () => {
     const { container } = render(
-      <Tab style={{ margin: '10px' }}>
+      <Tab active={1} onChange={noop} style={{ margin: '10px' }}>
         <Tab.Content>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
@@ -71,46 +76,50 @@ describe('Tab component', () => {
     );
 
     const tab = container.querySelector('.bi.bi-tab');
+
     expect(tab.getAttribute('style')).to.equal('margin: 10px;');
   });
 
   it('should allow to change the link color', () => {
     const { container, rerender } = render(
-      <Tab color="secondary">
+      <Tab active={1} onChange={noop} color="secondary">
         <Tab.Content>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
 
-    const checkColor = container.querySelector('.bi.bi-tab');
-    expect(checkColor.getAttribute('class').split(' ')).to.include.members(['tab-color-secondary']);
-    expect(checkColor.getAttribute('class').split(' ')).to.not.include.members(['tab-color-default']);
+    const tab = container.querySelector('.bi.bi-tab');
 
-    rerender(
-      <Tab color="danger">
-        <Tab.Content>
-          <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
-        </Tab.Content>
-      </Tab>,
-    );
-    expect(checkColor.getAttribute('class').split(' ')).to.include.members(['tab-color-danger']);
-    expect(checkColor.getAttribute('class').split(' ')).to.not.include.members(['tab-color-secondary']);
+    expect(tab.getAttribute('class').split(' ')).to.include.members(['tab-color-secondary']);
+    expect(tab.getAttribute('class').split(' ')).to.not.include.members(['tab-color-default']);
 
     rerender(
-      <Tab>
+      <Tab active={1} onChange={noop} color="danger">
         <Tab.Content>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
-    expect(checkColor.getAttribute('class').split(' ')).to.include.members(['tab-color-default']);
-    expect(checkColor.getAttribute('class').split(' ')).to.not.include.members(['tab-color-danger']);
+
+    expect(tab.getAttribute('class').split(' ')).to.include.members(['tab-color-danger']);
+    expect(tab.getAttribute('class').split(' ')).to.not.include.members(['tab-color-secondary']);
+
+    rerender(
+      <Tab active={1} onChange={noop}>
+        <Tab.Content>
+          <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
+        </Tab.Content>
+      </Tab>,
+    );
+
+    expect(tab.getAttribute('class').split(' ')).to.include.members(['tab-color-default']);
+    expect(tab.getAttribute('class').split(' ')).to.not.include.members(['tab-color-danger']);
   });
 
   it('should render the correct number of tab label', () => {
     const { container } = render(
-      <Tab>
+      <Tab active={1} onChange={noop}>
         <Tab.Content title="home">
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
@@ -123,13 +132,14 @@ describe('Tab component', () => {
       </Tab>,
     );
 
-    const labelNr = container.querySelector('.bi.bi-tab').querySelectorAll('a').length;
-    expect(labelNr).to.equal(3);
+    const labelsNumber = container.querySelector('.bi.bi-tab').querySelectorAll('a').length;
+
+    expect(labelsNumber).to.equal(3);
   });
 
   it('should render the correct number of tab content', () => {
     const { container } = render(
-      <Tab>
+      <Tab active={1} onChange={noop}>
         <Tab.Content title="home">
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
@@ -141,39 +151,43 @@ describe('Tab component', () => {
         </Tab.Content>
       </Tab>,
     );
-    const contentNr = container.querySelector('.bi.bi-tab').querySelectorAll('.tab-content').length;
-    expect(contentNr).to.equal(3);
+
+    const contentsNumber = container.querySelector('.bi.bi-tab').querySelectorAll('.tab-content').length;
+
+    expect(contentsNumber).to.equal(3);
   });
 
   it('should accept icon prop', () => {
     const { container } = render(
-      <Tab>
+      <Tab active={1} onChange={noop}>
         <Tab.Content icon="home">
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
 
-    const checkIcon = container.querySelector('.bi.bi-tab').querySelector('svg');
-    expect(checkIcon.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-icon']);
+    const icon = container.querySelector('.bi.bi-tab').querySelector('svg');
+
+    expect(icon.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-icon']);
   });
 
-  it('should disable a label if the corresponding prop is set as disabled', () => {
+  it('should disable the label if the corresponding prop is set as disabled', () => {
     const { container } = render(
-      <Tab>
+      <Tab active={1} onChange={noop}>
         <Tab.Content disabled>
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
       </Tab>,
     );
 
-    const checkDisabled = container.querySelector('.bi.bi-tab').querySelector('.tab-disabled');
-    expect(checkDisabled).to.exist;
+    const tab = container.querySelector('.bi.bi-tab').querySelector('.tab-disabled');
+
+    expect(tab).to.exist;
   });
 
   it('should show the active content', () => {
     const { container } = render(
-      <Tab active={2}>
+      <Tab onChange={noop} active={2}>
         <Tab.Content title="home">
           <p>Et et consectetur ipsum labore excepteur est proident excepteur...</p>
         </Tab.Content>
@@ -186,7 +200,8 @@ describe('Tab component', () => {
       </Tab>,
     );
 
-    const checkActive = container.querySelector('.bi.bi-tab').querySelector('.tab-content-show');
-    expect(checkActive).to.exist;
+    const tabContent = container.querySelector('.bi.bi-tab').querySelector('.tab-content-show');
+
+    expect(tabContent).to.exist;
   });
 });

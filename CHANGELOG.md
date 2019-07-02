@@ -152,3 +152,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Tests on shared functions
+
+## [0.12.0]  - 2019-07-02
+
+### Added
+
+- Placeholder component
+- Placeholder component tests
