@@ -1,7 +1,7 @@
 /**
  * Create a button with defined colors
  */
-@mixin button-with-color($name: 'default', $color: $name) {
+@mixin button-with-color($name: "default", $color: $name) {
   &.btn-#{$name}:not(.btn-outline) {
     @apply bg-#{$color} border-#{$color} text-white;
 
@@ -9,6 +9,11 @@
       box-shadow: 0 0.125rem 0.6875rem 0 rgba(37, 44, 97, 0.15), 0 0.25rem 0.375rem 0 rgba(93, 100, 148, 0.2);
 
       @apply bg-#{$color}-light;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem theme("colors.#{$color}-light");
     }
   }
 }
@@ -21,6 +26,11 @@
       box-shadow: 0 0.125rem 0.6875rem 0 rgba(37, 44, 97, 0.15), 0 0.25rem 0.375rem 0 rgba(93, 100, 148, 0.2);
 
       @apply bg-default-lighter;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem theme("colors.default-light");
     }
   }
 }

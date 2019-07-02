@@ -1,6 +1,6 @@
 {
   "name": "beautiful-ui-react",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "A charming set of beautiful ui components",
   "main": "dist/index.js",
   "scripts": {
@@ -55,6 +55,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.6.0",
     "postcss-syntax": "^0.36.2",
+    "react-axe": "^3.1.0",
     "react-styleguidist": "^9.1.5",
     "sass": "^1.20.1",
     "sass-loader": "^7.1.0",
@@ -74,9 +75,9 @@
     "@fortawesome/free-solid-svg-icons": "^5.9.0",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "classnames": "^2.2.6",
-    "lodash": "^4.17.11",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "lodash": "^4.17.11"
   }
 }

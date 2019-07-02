@@ -126,3 +126,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixes
 
 - Accessibility issues on Button component fixed: added `aria-label`
+
+
+## [0.9.5] - 2019-07-02
+
+### Fixes
+
+- Button component focus state defined by CSS
