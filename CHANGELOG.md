@@ -146,3 +146,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Test coverage report with NYC
 - Test coverage should now be >= 80%
+
+## [0.11.0]  - 2019-07-02
+
+### Added
+
+- Tests on shared functions
