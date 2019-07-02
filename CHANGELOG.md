@@ -139,3 +139,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixes
 
 - Tab component is now exported from index.js
+
+## [0.10.0]  - 2019-07-02
+
+### Added
+
+- Test coverage report with NYC
+- Test coverage should now be >= 80%

@@ -1,6 +1,6 @@
 {
   "name": "beautiful-ui-react",
-  "version": "0.9.6",
+  "version": "0.10.0",
   "description": "A charming set of beautiful ui components",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "lint-js": "eslint --ext .jsx,.js src/",
     "lint-scss": "stylelint '**/*.scss'",
     "lint": "npm run lint-js && npm run lint-scss",
-    "test": "mocha",
+    "test": "nyc mocha",
     "tdd": "npm test -- --watch --watch-extensions jsx"
   },
   "author": "Antonio Russo @ Beautiful Interactions",
@@ -50,6 +50,7 @@
     "mini-css-extract-plugin": "^0.7.0",
     "mocha": "^6.1.4",
     "node-sass": "^4.12.0",
+    "nyc": "^14.1.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss": "^7.0.17",
     "postcss-loader": "^3.0.0",
@@ -79,5 +80,19 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "lodash": "^4.17.11"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "src/**/*.spec.js",
+      "src/**/index.js"
+    ],
+    "branches": 80,
+    "lines": 80,
+    "functions": 80,
+    "statements": 80
   }
 }
