@@ -133,3 +133,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixes
 
 - Button component focus state defined by CSS
+
+## [0.9.6] - 2019-07-02
+
+### Fixes
+
+- Tab component is now exported from index.js

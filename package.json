@@ -1,6 +1,6 @@
 {
   "name": "beautiful-ui-react",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "A charming set of beautiful ui components",
   "main": "dist/index.js",
   "scripts": {
