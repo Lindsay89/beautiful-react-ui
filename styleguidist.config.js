@@ -49,6 +49,7 @@ module.exports = {
             'src/components/Elements/Button/Button.js',
             'src/components/Elements/ButtonGroup/ButtonGroup.js',
             'src/components/Elements/Icon/Icon.js',
+            'src/components/Elements/Image/Image.js',
             'src/components/Elements/Pill/Pill.js',
             'src/components/Elements/Placeholder/Placeholder.js',
             'src/components/Elements/Spinner/Spinner.js',
