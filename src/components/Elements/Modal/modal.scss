@@ -1,0 +1,64 @@
+@import "../../../theme/utils/animations.scss";
+
+.bi-show-modal {
+  @apply fixed inset-0 flex;
+
+  &::before {
+    content: "";
+
+    @apply inset-0 w-full h-full absolute bg-default-dark opacity-50;
+  }
+
+  .bi.bi-modal {
+    @apply block mx-auto mt-4 bg-white border border-solid rounded font-sans;
+
+    border-color: theme("colors.default");
+    position: relative;
+    max-width: 31rem;
+
+    .bi-modal-title {
+      @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4 pt-0;
+
+      border-color: theme("colors.default");
+    }
+
+    .bi-modal-body {
+      @apply pr-4 pl-4;
+    }
+
+    .bi-modal-footer {
+      @apply border-b-0 border-r-0 border-l-0 border-t border-solid p-4 flex flex-row-reverse;
+
+      border-color: theme("colors.default");
+    }
+
+    &.modal-open {
+      // ----------------------------
+      // ANIMATION
+      // ----------------------------
+      @include slideTop();
+
+      @apply self-start;
+    }
+
+    &.modal-centered {
+      @apply mt-0 self-center;
+    }
+
+    &.modal-small {
+      max-width: 15rem;
+    }
+
+    &.modal-large {
+      max-width: 60rem;
+    }
+
+    &.modal-fade {
+      @include fadeIn;
+    }
+
+    .bi.bi-btn {
+      @apply float-right p-4;
+    }
+  }
+}

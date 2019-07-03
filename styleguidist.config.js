@@ -52,6 +52,7 @@ module.exports = {
             'src/components/Elements/Alert/Alert.js',
             'src/components/Elements/Accordion/Accordion.js',
             'src/components/Elements/Tab/Tab.js',
+            'src/components/Elements/Modal/Modal.js',
           ],
         },
         {
