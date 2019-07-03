@@ -1,0 +1,57 @@
+// ---------------------
+// FADEIN ANIMATION
+// ---------------------
+@mixin fadeIn($duration: 0.5s) {
+  opacity: 0;
+  animation-name: AnimationFadeIn;
+  animation-duration: $duration;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0.1s;
+}
+
+@keyframes AnimationFadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// ---------------------
+// SLIDETOP ANIMATION
+// ---------------------
+@mixin slideTop() {
+  animation-name: animateTop;
+  animation-duration: 0.4s;
+}
+
+@keyframes animateTop {
+  from {
+    transform: translateY(-10%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+// ---------------------
+// SLIDETOPCENTERED ANIMATION
+// ---------------------
+@mixin slideTopCentered() {
+  animation-name: animateTopCentered;
+  animation-duration: 0.4s;
+}
+
+@keyframes animateTopCentered {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(50%);
+  }
+}
