@@ -33,11 +33,6 @@
     }
 
     &.modal-open {
-      // ----------------------------
-      // ANIMATION
-      // ----------------------------
-      @include slideTop();
-
       @apply self-start;
     }
 
@@ -53,12 +48,45 @@
       max-width: 60rem;
     }
 
+    // ----------------------------
+    // ANIMATION
+    // ----------------------------
     &.modal-fade {
       @include fadeIn;
+    }
+
+    &.modal-scale {
+      @include scale;
+    }
+
+    &.modal-slideRight {
+      @include slideRight;
+    }
+
+    &.modal-slideLeft {
+      @include slideLeft;
+    }
+
+    &.modal-slideTop {
+      @include slideTop();
+    }
+
+    &.modal-slideBottom {
+      @include slideBottom();
     }
 
     .bi.bi-btn {
       @apply float-right p-4;
     }
+  }
+}
+
+.bi.bi-btn.btn-block {
+  @apply float-left ml-4;
+
+  width: 15rem;
+
+  + .bi.bi-btn.btn-block {
+    @apply ml-4;
   }
 }
