@@ -21,6 +21,24 @@
 }
 
 // ---------------------
+// SCALE ANIMATION
+// ---------------------
+@mixin scale() {
+  animation-name: scaleAnimation;
+  animation-duration: 0.4s;
+}
+
+@keyframes scaleAnimation {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+// ---------------------
 // SLIDETOP ANIMATION
 // ---------------------
 @mixin slideTop() {
@@ -39,19 +57,57 @@
 }
 
 // ---------------------
-// SLIDETOPCENTERED ANIMATION
+// SLIDEBOTTOM ANIMATION
 // ---------------------
-@mixin slideTopCentered() {
-  animation-name: animateTopCentered;
+@mixin slideBottom() {
+  animation-name: animateBottom;
   animation-duration: 0.4s;
 }
 
-@keyframes animateTopCentered {
+@keyframes animateBottom {
   from {
-    transform: translateY(0%);
+    transform: translateY(10%);
   }
 
   to {
-    transform: translateY(50%);
+    transform: translateY(0%);
+  }
+}
+
+// ---------------------
+// SLIDERIGHT ANIMATION
+// ---------------------
+@mixin slideRight() {
+  animation-name: slideRightAnimation;
+  animation-duration: 0.4s;
+  transition-timing-function: linear;
+}
+
+@keyframes slideRightAnimation {
+  from {
+    transform: translateX(10%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+// ---------------------
+// SLIDELEFT ANIMATION
+// ---------------------
+@mixin slideLeft() {
+  animation-name: slideLeftAnimation;
+  animation-duration: 0.4s;
+  transition-timing-function: linear;
+}
+
+@keyframes slideLeftAnimation {
+  from {
+    transform: translateX(-10%);
+  }
+
+  to {
+    transform: translateX(0);
   }
 }
