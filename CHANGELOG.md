@@ -180,3 +180,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `warn` utility function has been added to have a more readable codebase
+
+## [0.16.0]  - 2019-07-04
+
+### Added
+
+- Close Icon
+- Close Icon tests
