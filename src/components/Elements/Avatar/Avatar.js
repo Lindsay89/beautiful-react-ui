@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../Image';
-import { BaseProps, makePillFromProp, PillProp, Size } from '../../../shared';
+import { BaseProps, makePillFromProp, PillProp, Size, warn } from '../../../shared';
 
 import './avatar.scss';
 
@@ -19,12 +19,7 @@ const Avatar = ({ src, alt, shape, initials, size, state, pill, className, id, s
   }, className);
 
   if (!initials && !src) {
-    /**
-     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
-     * user without throwing an error so it's perfectly safe to disable this rule.
-     */
-    /* eslint-disable no-console */
-    console.warn('Avatar component has been used without providing a "src" nor a "initial" prop');
+    warn('Avatar component has been used without providing a "src" nor a "initial" prop');
     return null;
   }
 

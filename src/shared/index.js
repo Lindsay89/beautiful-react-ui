@@ -14,3 +14,4 @@ export { default as makePillFromProp } from './functions/makePillFromProp';
 export { default as emptyChildren } from './functions/emptyChildren';
 export { default as getLastChild } from './functions/getLastChild';
 export { default as getFirstChild } from './functions/getFirstChild';
+export { default as warn } from './functions/warn';

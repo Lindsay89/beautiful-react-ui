@@ -55,7 +55,6 @@ describe('Avatar component', () => {
     const avatar = container.querySelector('.bi.bi-avatar');
     const initials = avatar.querySelector('.initials');
 
-
     expect(initials).to.exist;
   });
 

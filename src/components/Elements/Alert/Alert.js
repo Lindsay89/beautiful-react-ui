@@ -11,10 +11,12 @@ import './alert.scss';
  */
 const Alert = (props) => {
   const { children, id, style, className, color, solid, outline, onClose } = props;
+
   const classList = classNames(`bi bi-alert alert-${color}`, {
     'alert-solid': solid,
     'alert-outline': outline,
   }, className);
+
   return (
     <div id={id} style={style} className={classList}>
       {children}

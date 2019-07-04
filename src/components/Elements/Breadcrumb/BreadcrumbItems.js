@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './breadcrumb.scss';
 import Icon from '../Icon';
-import { makeIconFromProp } from '../../../shared';
+import { makeIconFromProp, warn } from '../../../shared';
 
 /**
  * BreadcrumbsItems is a sub-component of Breadcrumb.
@@ -12,12 +12,7 @@ const BreadcrumbItems = (props) => {
   const { path, label, icon } = props;
 
   if (!label && !icon) {
-    /**
-     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
-     * user without throwing an error so it's perfectly safe to disable this rule.
-     */
-    // eslint-disable-next-line no-console
-    console.warn('One of the your breadcrumb items has been wiped out as it has no label nor icon');
+    warn('One of your breadcrumb items has been wiped out as it has no label nor icon');
     return null;
   }
 

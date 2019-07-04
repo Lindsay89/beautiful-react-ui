@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TabContent from './TabContent';
 import TabButton from './TabButton';
-import { BaseProps, Color } from '../../../shared';
+import { BaseProps, Color, warn } from '../../../shared';
 import './tab.scss';
 
 /**
@@ -12,12 +12,7 @@ import './tab.scss';
  */
 const filterTabChildren = (child, index, props) => {
   if (child.type !== TabContent) {
-    /**
-     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
-     * user without throwing an error so it's perfectly safe to disable this rule.
-     */
-    /* eslint-disable-next-line no-console */
-    console.warn('Tab allows only Tab.Content children, other kind of elements will be wiped out');
+    warn('Tab allows only Tab.Content children, other kind of elements will be wiped out');
     return null;
   }
 
