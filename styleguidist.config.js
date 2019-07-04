@@ -45,6 +45,7 @@ module.exports = {
           components: () => [
             'src/components/Elements/Accordion/Accordion.js',
             'src/components/Elements/Alert/Alert.js',
+            'src/components/Elements/Avatar/Avatar.js',
             'src/components/Elements/Breadcrumb/Breadcrumb.js',
             'src/components/Elements/Button/Button.js',
             'src/components/Elements/ButtonGroup/ButtonGroup.js',

@@ -4,6 +4,7 @@ export { default as Color } from './types/Color';
 export { default as Size } from './types/Size';
 export { default as BaseFormProps } from './types/BaseFormProps';
 export { default as IconProp } from './types/IconProp';
+export { default as PillProp } from './types/PillProp';
 
 // functions
 export { default as makeCallback } from './functions/makeCallback';

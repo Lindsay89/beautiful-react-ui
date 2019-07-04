@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../Icon';
 import Spinner from '../Spinner';
 import Pill from '../Pill';
 import {
@@ -15,6 +14,8 @@ import {
   BaseProps,
   Size,
   Color,
+  IconProp,
+  PillProp,
 } from '../../../shared';
 
 import './button.scss';
@@ -116,11 +117,7 @@ Button.propTypes = {
   /**
    * Shows an icon, you can pass both a valid Icon component name prop or the instance of an Icon component
    */
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.instanceOf(Icon),
-  ]),
+  icon: IconProp,
   /**
    * Shows a spinner icon within the button. The prop value can be "true" to show a standard <Spinner />
    * or the actual instance of a <Spinner /> component.
@@ -133,10 +130,7 @@ Button.propTypes = {
   /**
    * Show a pill into the button. You can pass both a valid pill label prop or the instance of an pill component
    */
-  pill: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.instanceOf(Pill),
-  ]),
+  pill: PillProp,
 
   /**
    * @ignore

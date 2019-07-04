@@ -11,6 +11,10 @@
   }
 
   &.bi-img-thumb {
-    @apply border-8 border-solid border-white;
+    @apply border-2 border-solid border-white;
+  }
+
+  &.bi-img-rounded {
+    @apply rounded-full;
   }
 }

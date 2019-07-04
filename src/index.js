@@ -1,6 +1,7 @@
 // Elements
 export { default as Accordion } from './components/Elements/Accordion';
 export { default as Alert } from './components/Elements/Alert';
+export { default as Avatar } from './components/Elements/Avatar';
 export { default as Breadcrumb } from './components/Elements/Breadcrumb';
 export { default as Button } from './components/Elements/Button';
 export { default as ButtonGroup } from './components/Elements/ButtonGroup';
