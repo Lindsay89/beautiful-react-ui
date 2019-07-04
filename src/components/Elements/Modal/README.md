@@ -80,3 +80,68 @@ const OpenModel = (props) => {
   <OpenModel />
 
 ```
+
+### Size
+
+
+```jsx
+import {Button} from 'beautiful-ui';
+const OpenModel = (props) => {
+  const [value, setValue] = React.useState(false);
+  
+  return(
+  <>
+  <Modal {...props} isOpen={value} onClose={()=>{setValue(!value)}}>
+    <Modal.Title>Ciao povery</Modal.Title>
+    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Footer>
+      <Button>Adios!</Button>
+    </Modal.Footer>
+  </Modal>
+
+<Button block color="primary" onClick={()=>{setValue(!value)}}>{props.size}</Button>
+</>
+)};
+
+<>
+
+  <OpenModel size='small' />
+  <OpenModel size='large' />
+  <OpenModel size='default' />
+</>
+```
+
+
+### Animation
+
+
+```jsx
+import {Button} from 'beautiful-ui';
+const OpenModel = (props) => {
+  const [value, setValue] = React.useState(false);
+  
+  return(
+    <>
+  <Modal {...props} isOpen={value} onClose={()=>{setValue(!value)}}>
+    <Modal.Title>Ciao povery</Modal.Title>
+    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Footer>
+      <Button>Adios!</Button>
+    </Modal.Footer>
+  </Modal>
+  
+    <Button block color="primary" onClick={()=>{setValue(!value)}}>{props.animation}</Button>
+  
+</>
+)};
+
+<>
+  <OpenModel animation='none' />
+  <OpenModel animation='fade' />
+  <OpenModel animation='scale' />
+  <OpenModel animation='slideTop' />
+  <OpenModel animation='slideBottom' />
+  <OpenModel animation='slideRight' />
+  <OpenModel animation='slideLeft' />
+</>
+```
