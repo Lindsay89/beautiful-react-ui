@@ -36,7 +36,7 @@ const OpenModel = (props) => {
   
   return(
     <>
-  <Modal isOpen={value} onClose={()=>{setValue(!value)}}>
+  <Modal isOpen={value} onToggle={()=>{setValue(!value)}}>
     <Modal.Title>Ciao povery</Modal.Title>
     <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
     <Modal.Footer>
@@ -64,7 +64,7 @@ const OpenModel = (props) => {
   
   return(
     <>
-  <Modal isOpen={value} onClose={()=>{setValue(!value)}} centered>
+  <Modal isOpen={value} onToggle={()=>{setValue(!value)}} centered>
     <Modal.Title>Ciao povery</Modal.Title>
     <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
     <Modal.Footer>
@@ -91,7 +91,7 @@ const OpenModel = (props) => {
   
   return(
   <>
-  <Modal {...props} isOpen={value} onClose={()=>{setValue(!value)}}>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
     <Modal.Title>Ciao povery</Modal.Title>
     <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
     <Modal.Footer>
@@ -99,7 +99,7 @@ const OpenModel = (props) => {
     </Modal.Footer>
   </Modal>
 
-<Button block color="primary" onClick={()=>{setValue(!value)}}>{props.size}</Button>
+<Button block color="primary" className="align-button" onClick={()=>{setValue(!value)}}>{props.size}</Button>
 </>
 )};
 
@@ -122,7 +122,7 @@ const OpenModel = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value} onClose={()=>{setValue(!value)}}>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
     <Modal.Title>Ciao povery</Modal.Title>
     <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
     <Modal.Footer>
@@ -130,7 +130,7 @@ const OpenModel = (props) => {
     </Modal.Footer>
   </Modal>
   
-    <Button block color="primary" onClick={()=>{setValue(!value)}}>{props.animation}</Button>
+    <Button block color="primary" className="align-button" onClick={()=>{setValue(!value)}}>{props.animation}</Button>
   
 </>
 )};
@@ -144,4 +144,37 @@ const OpenModel = (props) => {
   <OpenModel animation='slideRight' />
   <OpenModel animation='slideLeft' />
 </>
+```
+
+
+### Callbacks
+
+
+```jsx
+import {Button} from 'beautiful-ui';
+
+const alert = () => console.log('you are clicking somewhere');
+const show = () => console.log('show');
+const close = () => console.log('close');
+
+const OpenModel = (props) => {
+  const [value, setValue] = React.useState(false);
+  
+  return(
+    <>
+  <Modal isOpen={value} onToggle={()=>{setValue(!value)}} onBackdropClick={alert} onShow={show} onClose={close}> 
+    <Modal.Title>Ciao povery</Modal.Title>
+    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Footer>
+      <Button>Adios!</Button>
+    </Modal.Footer>
+  </Modal>
+<Button block color="primary" onClick={()=>{setValue(!value)}}>View live demo</Button>
+</>
+)};
+
+
+
+  <OpenModel />
+
 ```

@@ -27,12 +27,14 @@ const wipeOutIncorrectChildren = (child) => {
   return child;
 };
 
-
 /**
  * Modal component is a controlled element that disables the main window and show a smaller window in front of it.
  */
 const Modal = (props) => {
-  const { id, style, className, children, isOpen, onToggle, onClose, centered, size, animation } = props;
+  const {
+    id, style, className, children, isOpen, centered, size, animation,
+    onToggle, onBackdropClick, onShow, onClose,
+  } = props;
   const classList = classNames('bi bi-modal', {
     'modal-open': isOpen,
     'modal-centered': centered,
@@ -46,34 +48,38 @@ const Modal = (props) => {
     'modal-slideTop': animation === 'slideTop',
   }, className);
 
-  if (isOpen) {
+  let modalDiv = document.querySelector('.bi-show-modal');
+
+  if (isOpen && !modalDiv) {
+    if (onShow) {
+      onShow();
+    }
     // modal will be into the following div if isOpen is true
     const div = document.createElement('div');
     div.setAttribute('class', 'bi-show-modal');
-    const modalDiv = document.body.appendChild(div);
+    modalDiv = document.body.appendChild(div);
+
+    modalDiv.addEventListener('click', onBackdropClick);
 
     return ReactDOM.createPortal(
+      // eslint-disable-next-line
       <div
         id={id}
         style={style}
         className={classList}
-        isOpen={isOpen}
-        onToggle={onToggle && onToggle()}
-        centered={centered}
-        size={size}
       >
-        <Button color="transparent" className="alert-button" onClick={onClose}><Icon name="times" /></Button>
+        <Button color="transparent" className="alert-button" onClick={onToggle}><Icon name="times" /></Button>
         {Children.map(children, child => wipeOutIncorrectChildren(child))}
       </div>,
       modalDiv,
     );
   }
-
-  // the div will be delete if the modal is not active.
-  const showModal = document.querySelector('.bi-show-modal');
-
-  if (!isOpen && showModal) {
-    document.body.removeChild(showModal);
+  if (modalDiv) {
+    if (onClose) {
+      onClose();
+    }
+    modalDiv.removeEventListener('click', onBackdropClick);
+    document.body.removeChild(modalDiv);
   }
 
   return null;
@@ -86,13 +92,9 @@ Modal.propTypes = {
    */
   isOpen: PropTypes.bool.isRequired,
   /**
-   * This prop take a function that will be execute when isOpen value change.
-   */
-  onToggle: PropTypes.func,
-  /**
    * If defined, this prop will affect closable button into modal window.
    */
-  onClose: PropTypes.func,
+  onToggle: PropTypes.func.isRequired,
   /**
    * Centered prop center modal in order to let it be in the middle of the screen viewport.
    */
@@ -108,8 +110,6 @@ Modal.propTypes = {
 };
 
 Modal.defaultProps = {
-  onToggle: undefined,
-  onClose: undefined,
   centered: false,
   size: 'default',
   animation: 'fade',
