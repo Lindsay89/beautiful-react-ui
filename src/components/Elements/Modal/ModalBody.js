@@ -13,6 +13,9 @@ const ModalBody = (props) => {
 };
 
 ModalBody.propTypes = {
+  /**
+  * @ignore
+  */
   children: PropTypes.node,
 };
 

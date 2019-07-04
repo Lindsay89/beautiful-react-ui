@@ -11,6 +11,9 @@ const ModalTitle = (props) => {
 };
 
 ModalTitle.propTypes = {
+  /**
+  * @ignore
+  */
   children: PropTypes.node,
 };
 

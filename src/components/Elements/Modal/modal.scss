@@ -3,6 +3,8 @@
 .bi-show-modal {
   @apply fixed inset-0 flex;
 
+  z-index: 9999;
+
   &::before {
     content: "";
 
@@ -81,12 +83,12 @@
   }
 }
 
-.bi.bi-btn.btn-block {
-  @apply float-left ml-4;
+.bi.bi-btn.btn-block.align-button {
+  @apply ml-4;
 
   width: 15rem;
 
-  + .bi.bi-btn.btn-block {
-    @apply ml-4;
+  + .bi.bi-btn.btn-block.align-button {
+    @apply ml-4  float-left;
   }
 }

@@ -11,6 +11,9 @@ const ModalFooter = (props) => {
 };
 
 ModalFooter.propTypes = {
+  /**
+  * @ignore
+  */
   children: PropTypes.node,
 };
 
