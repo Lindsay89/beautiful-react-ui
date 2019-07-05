@@ -6,20 +6,15 @@ import ModalTitle from './ModalTitle';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
 import Button from '../Button';
-import Icon from '../Icon';
-import { BaseProps } from '../../../shared';
+import CloseIcon from '../_CloseIcon';
+import { BaseProps, warn } from '../../../shared';
 
 import './modal.scss';
 
 // this function wipe out wrong children types.
 const wipeOutIncorrectChildren = (child) => {
   if (child.type !== ModalTitle && child.type !== ModalBody && child.type !== ModalFooter) {
-    /**
-    * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
-    * user without throwing an error so it's perfectly safe to disable this rule.
-    */
-    /* eslint-disable-next-line no-console */
-    console.warn(
+    warn(
       'Modal allows only Modal.Title, Modal.Body or Modal.footer children, other kind of elements will be wiped out',
     );
 
@@ -62,8 +57,7 @@ const Modal = (props) => {
       }
       // one of the two following props must be defined.
       if (!onToggle && !closeButtonRender) {
-        // eslint-disable-next-line no-console
-        console.warn(
+        warn(
           'It must be define one of the following two props: onToggle or closeButtonRender',
         );
         return null;
@@ -87,7 +81,7 @@ const Modal = (props) => {
             role="presentation"
           >
             <Button color="transparent" className="alert-button" onClick={closeButtonRender || onToggle}>
-              <Icon name="times" />
+              <CloseIcon />
             </Button>
             {Children.map(children, child => wipeOutIncorrectChildren(child))}
           </div>
