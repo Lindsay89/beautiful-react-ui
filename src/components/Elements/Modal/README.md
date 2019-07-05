@@ -27,7 +27,7 @@ const ModalController = (props) => {
 
 
 ### Closable button working
-
+The prop `onToggle` accept a function that will be run on click the closable button.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -55,7 +55,7 @@ const ModalController = (props) => {
 
 
 ### Centered
-
+`Centered` will center the modal in the middle of viewport.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -82,7 +82,7 @@ const ModalController = (props) => {
 ```
 
 ### Size
-
+`size` props could be used to decide the modal size.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -112,7 +112,7 @@ const ModalController = (props) => {
 
 
 ### Animation
-
+`animation` will be perform to show the modal in different ways.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -170,7 +170,7 @@ const ModalController = (props) => {
       <Button>Adios!</Button>
     </Modal.Footer>
   </Modal>
-<Button block color="primary" onClick={()=>{setValue(!value)}}>onBackdropClick</Button>
+<Button block color="primary" onClick={()=>{setValue(!value)}}>onBackdropClick test</Button>
 </>
 )};
 
@@ -196,7 +196,7 @@ const ModalController = (props) => {
       <Button>Adios!</Button>
     </Modal.Footer>
   </Modal>
-<Button block color="primary" onClick={()=>{setValue(!value)}}>props test</Button>
+<Button block color="primary" onClick={()=>{setValue(!value)}}>onShow test</Button>
 </>
 )};
 
@@ -222,7 +222,7 @@ const ModalController = (props) => {
       <Button>Adios!</Button>
     </Modal.Footer>
   </Modal>
-<Button block color="primary" onClick={()=>{setValue(!value)}}>props test</Button>
+<Button block color="primary" onClick={()=>{setValue(!value)}}>onClose test</Button>
 </>
 )};
 
@@ -250,7 +250,7 @@ const ModalController = (props) => {
       <Button>Adios!</Button>
     </Modal.Footer>
   </Modal>
-<Button block color="primary" onClick={()=>{setValue(!value)}}>props test</Button>
+<Button block color="primary" onClick={()=>{setValue(!value)}}>backdropRender test</Button>
 </>
 )};
 
@@ -270,14 +270,14 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
+  <Modal {...props} isOpen={value}> 
     <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
   </Modal>
-<Button block color="primary" onClick={()=>{setValue(!value)}}>props test</Button>
+<Button block color="primary" onClick={()=>{setValue(!value)}}>closeButtonRender test</Button>
 </>
 )};
 

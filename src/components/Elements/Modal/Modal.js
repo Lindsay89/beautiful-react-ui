@@ -60,6 +60,14 @@ const Modal = (props) => {
       if (onShow) {
         onShow();
       }
+      // one of the two following props must be defined.
+      if (!onToggle && !closeButtonRender) {
+        // eslint-disable-next-line no-console
+        console.warn(
+          'It must be define one of the following two props: onToggle or closeButtonRender',
+        );
+        return null;
+      }
       /**
        * createPortal has been used to moved the component into a div that will be always in front of the main window
        * if open.
@@ -78,13 +86,9 @@ const Modal = (props) => {
             onClick={event => event.stopPropagation()}
             role="presentation"
           >
-            {closeButtonRender && closeButtonRender(props)}
-            {!closeButtonRender && (
-              <Button color="transparent" className="alert-button" onClick={closeButtonRender || onToggle}>
-                <Icon name="times" />
-              </Button>
-            )
-            }
+            <Button color="transparent" className="alert-button" onClick={closeButtonRender || onToggle}>
+              <Icon name="times" />
+            </Button>
             {Children.map(children, child => wipeOutIncorrectChildren(child))}
           </div>
         </div>,
@@ -125,7 +129,7 @@ Modal.propTypes = {
   /**
    * If defined, this prop will affect closable button into modal window.
    */
-  onToggle: PropTypes.func.isRequired,
+  onToggle: PropTypes.func,
   /**
    * If defined, this function will be run when clicking on backdrop
    */
@@ -152,6 +156,7 @@ Modal.defaultProps = {
   centered: false,
   size: 'default',
   animation: 'fade',
+  onToggle: undefined,
   onBackdropClick: undefined,
   onShow: undefined,
   onClose: undefined,
