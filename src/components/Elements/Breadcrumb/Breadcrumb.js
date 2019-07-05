@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color } from '../../../shared';
+import { BaseProps, Color, IconProp } from '../../../shared';
 import BreadcrumbItems from './BreadcrumbItems';
-import Icon from '../Icon';
 
 import './breadcrumb.scss';
 
@@ -41,11 +40,7 @@ Breadcrumb.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
     path: PropTypes.string,
     label: PropTypes.string,
-    icon: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-      PropTypes.instanceOf(Icon),
-    ]),
+    icon: IconProp,
     render: PropTypes.func,
   })).isRequired,
 };

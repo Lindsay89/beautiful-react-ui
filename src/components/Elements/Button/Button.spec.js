@@ -191,7 +191,7 @@ describe('Button component', () => {
     expect(pill.tagName).to.equal('SPAN');
   });
 
-  it('should possibly render a pill if given as a instance of pill component', () => {
+  it('should possibly render a pill component if given as a prop', () => {
     const { container } = render(<Button pill={<Pill>join us</Pill>} />);
     const pill = container.querySelector('button').querySelector('.bi.bi-pill');
 

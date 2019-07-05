@@ -104,12 +104,86 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixes
 
-- Added BaseProps to TabContent
-- TabContent component tests added 
+- BaseProps added to the TabContent component
+- TabContent component tests added to test the BaseProps
 
 ## [0.9.2] - 2019-07-01
 
 ### Fixes
 
-- Changed the functionality of the Accordion color prop
-- Modified Accordion test to manage the new color prop
+- Accordion color behaviour changed
+- Accordion tests changed to test the new color prop
+
+## [0.9.3] - 2019-07-01
+
+### Fixes
+
+- Toggle component focus state defined by CSS
+- Accessibility issues on Toggle component fixed: added `aria-label`
+
+## [0.9.4] - 2019-07-02
+
+### Fixes
+
+- Accessibility issues on Button component fixed: added `aria-label`
+
+
+## [0.9.5] - 2019-07-02
+
+### Fixes
+
+- Button component focus state defined by CSS
+
+## [0.9.6] - 2019-07-02
+
+### Fixes
+
+- Tab component is now exported from index.js
+
+## [0.10.0]  - 2019-07-02
+
+### Added
+
+- Test coverage report with NYC
+- Test coverage should now be >= 80%
+
+## [0.11.0]  - 2019-07-02
+
+### Added
+
+- Tests on shared functions
+
+## [0.12.0]  - 2019-07-02
+
+### Added
+
+- Placeholder component
+- Placeholder component tests
+
+## [0.13.0]  - 2019-07-02
+
+### Added
+
+- Image component
+- Image component tests
+
+## [0.14.0]  - 2019-07-03
+
+### Added
+
+- `rounded` prop to the Image component
+- Avatar component
+- Avatar component tests
+
+## [0.15.0]  - 2019-07-04
+
+### Added
+
+- `warn` utility function has been added to have a more readable codebase
+
+## [0.16.0]  - 2019-07-04
+
+### Added
+
+- Close Icon
+- Close Icon tests

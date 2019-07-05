@@ -1,5 +1,9 @@
 div[class^='rsg--sidebar'] nav ul li a {
-    text-decoration: none !important;
-    color: white !important;
-    font-weight: 500 !important;
+  text-decoration: none !important;
+  color: white !important;
+  font-weight: 500 !important;
+}
+
+div[data-preview^="Image"] {
+  background: #7987a1;
 }

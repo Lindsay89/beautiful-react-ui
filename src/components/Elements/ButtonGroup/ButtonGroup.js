@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color, Size } from '../../../shared';
+import { BaseProps, Color, Size, warn } from '../../../shared';
 import Button from '../Button';
 
 import './button.group.scss';
@@ -13,14 +13,7 @@ import './button.group.scss';
  */
 const cloneButton = (buttonInstance, props) => {
   if (buttonInstance.type !== Button) {
-    /**
-     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
-     * user without throwing an error so it's perfectly safe to disable this rule.
-     */
-    /* eslint-disable-next-line no-console */
-    console.warn(
-      'ButtonGroup\'s children can only be instances of the Button component, any other instance has been wiped out.',
-    );
+    warn('ButtonGroup\'s children can only be instances of the Button component, any other has been wiped out.');
     return null;
   }
 

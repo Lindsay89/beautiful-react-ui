@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import Icon from '../Icon';
+import CloseIcon from '../_CloseIcon';
 import { BaseProps, Color } from '../../../shared';
 import './alert.scss';
 
@@ -11,14 +11,16 @@ import './alert.scss';
  */
 const Alert = (props) => {
   const { children, id, style, className, color, solid, outline, onClose } = props;
+
   const classList = classNames(`bi bi-alert alert-${color}`, {
     'alert-solid': solid,
     'alert-outline': outline,
   }, className);
+
   return (
     <div id={id} style={style} className={classList}>
       {children}
-      {onClose && <Button color="transparent" className="alert-button" onClick={onClose}><Icon name="times" /></Button>}
+      {onClose && <Button color="transparent" className="alert-button" onClick={onClose}><CloseIcon /></Button>}
     </div>
   );
 };

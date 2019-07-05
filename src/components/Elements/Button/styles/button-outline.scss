@@ -9,6 +9,11 @@
     &:hover {
       @apply bg-default-lighter text-default-darker text-default-darker;
     }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem theme("colors.default-light");
+    }
   }
 }
 
@@ -22,6 +27,11 @@
       box-shadow: 0 0 0 0.0625rem;
 
       @apply border-0 bg-#{$color} text-white;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem theme("colors.#{$color}-light");
     }
   }
 }

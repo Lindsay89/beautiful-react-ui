@@ -34,7 +34,14 @@ const Toggle = (props) => {
       {!label && (
         <input type="checkbox" defaultChecked={value} name={name} id={`${uid}-input`} />
       )}
-      <span className="toggle-switch" onClick={onChangeCb} onKeyDown={onChangeCb} role="button" tabIndex={0}>
+      <span
+        className="toggle-switch"
+        onClick={onChangeCb}
+        onKeyDown={onChangeCb}
+        role="button"
+        tabIndex={0}
+        aria-label={`Toggle ${value ? 'on' : 'off'}`}
+      >
         <small className="switchery" />
       </span>
       {helpText && <HelpText text={helpText} />}

@@ -1,21 +1,24 @@
 // Elements
+export { default as Accordion } from './components/Elements/Accordion';
+export { default as Alert } from './components/Elements/Alert';
+export { default as Avatar } from './components/Elements/Avatar';
+export { default as Breadcrumb } from './components/Elements/Breadcrumb';
 export { default as Button } from './components/Elements/Button';
 export { default as ButtonGroup } from './components/Elements/ButtonGroup';
 export { default as Icon } from './components/Elements/Icon';
-export { default as Spinner } from './components/Elements/Spinner';
-export { default as Breadcrumb } from './components/Elements/Breadcrumb';
+export { default as Image } from './components/Elements/Image';
 export { default as Pill } from './components/Elements/Pill';
-export { default as Alert } from './components/Elements/Alert';
-export { default as Accordion } from './components/Elements/Accordion';
-
+export { default as Placeholder } from './components/Elements/Placeholder';
+export { default as Spinner } from './components/Elements/Spinner';
+export { default as Tab } from './components/Elements/Tab';
 
 // Forms
 export { default as Toggle } from './components/Forms/Toggle';
 
 /**
  * Writing an accessibility-first library of components is one of our main goals, but we need help.
- * For this reason we are using AXE (and jsx-a11y eslint plugin).
- * AXE is a testing library that highlights potential accessibility issues in console.
+ * For this reason we are using AxE (and jsx-a11y eslint plugin).
+ * AxE is a testing library that highlights potential accessibility issues in console.
  * In this case is safe to disable ESLint as we will use AXE only in development mode.
  */
 
