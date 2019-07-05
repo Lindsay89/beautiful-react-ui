@@ -10,7 +10,9 @@ const ModalController = (props) => {
     <>
   <Modal isOpen={value}>
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -38,7 +40,9 @@ const ModalController = (props) => {
     <>
   <Modal isOpen={value} onToggle={()=>{setValue(!value)}}>
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -66,7 +70,9 @@ const ModalController = (props) => {
     <>
   <Modal isOpen={value} onToggle={()=>{setValue(!value)}} centered>
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -93,7 +99,9 @@ const ModalController = (props) => {
   <>
   <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -123,7 +131,9 @@ const ModalController = (props) => {
     <>
   <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -165,7 +175,9 @@ const ModalController = (props) => {
     <>
   <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -191,7 +203,9 @@ const ModalController = (props) => {
     <>
   <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -217,7 +231,9 @@ const ModalController = (props) => {
     <>
   <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De     carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -245,7 +261,9 @@ const ModalController = (props) => {
     <>
   <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De     carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>
@@ -272,7 +290,9 @@ const ModalController = (props) => {
     <>
   <Modal {...props} isOpen={value}> 
     <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.</Modal.Body>
+    <Modal.Body>
+      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+    </Modal.Body>
     <Modal.Footer>
       <Button>Adios!</Button>
     </Modal.Footer>

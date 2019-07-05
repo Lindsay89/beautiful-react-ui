@@ -187,3 +187,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Close Icon
 - Close Icon tests
+
+## [0.17.0]  - 2019-07-05
+
+### Added
+
+- Modal component
+
