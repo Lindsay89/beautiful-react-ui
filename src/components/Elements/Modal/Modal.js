@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React, { Children, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -45,10 +45,32 @@ const Modal = (props) => {
     'modal-slideTop': animation === 'slideTop',
   }, className);
 
-  let modalDiv = document.querySelector('.modal-wrapper');
+  let modalDiv = document.getElementById('bi-modals');
 
+  useEffect(() => {
+    if (!modalDiv) {
+      modalDiv = document.createElement('div');
+      modalDiv.classList.add('modal-wrapper');
+      modalDiv.id = 'bi-modals';
+      document.body.appendChild(modalDiv);
+    }
+    return () => {
+      if (modalDiv) {
+        document.body.removeChild(modalDiv);
+      }
+    };
+  }, []);
 
-  if (isOpen && !modalDiv) {
+  const onCloseFunctions = () => {
+    if (onToggle && onClose) {
+      onToggle();
+      onClose();
+    } else if (onToggle && !onClose) {
+      onToggle();
+    }
+  };
+
+  if (isOpen) {
     if (backdropRender) {
       backdropRender(props);
     } else {
@@ -67,9 +89,6 @@ const Modal = (props) => {
        * if open.
        * This div won't be in the "original" DOM tree but it will be the latest div into the entire DOM.
        */
-      const div = document.createElement('div');
-      div.setAttribute('class', 'modal-wrapper');
-      modalDiv = document.body.appendChild(div);
 
       return ReactDOM.createPortal(
         <div className="bi-show-modal" onClick={onBackdropClick} role="presentation">
@@ -80,23 +99,20 @@ const Modal = (props) => {
             onClick={event => event.stopPropagation()}
             role="presentation"
           >
-            <Button color="transparent" className="alert-button" onClick={closeButtonRender || onToggle}>
-              <CloseIcon />
-            </Button>
+            {closeButtonRender && closeButtonRender(props)}
+            {!closeButtonRender
+              && (
+                <Button color="transparent" className="alert-button" onClick={onCloseFunctions}>
+                  <CloseIcon />
+                </Button>
+              )
+            }
             {Children.map(children, child => wipeOutIncorrectChildren(child))}
           </div>
         </div>,
         modalDiv,
       );
     }
-  }
-
-  if (modalDiv) {
-    if (onClose) {
-      onClose();
-    }
-    modalDiv.removeEventListener('click', onBackdropClick);
-    document.body.removeChild(modalDiv);
   }
 
   return null;
