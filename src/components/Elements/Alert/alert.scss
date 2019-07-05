@@ -37,11 +37,20 @@
   // ---------------
   .alert-button {
     @apply inline border-none p-0 m-0 float-right leading-tight;
+
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
   }
 
-  &.bi .bi-icon,
-  &.bi .bi-button,
-  &.bi .bi-spinner {
+  // ---------------
+  // Icons or spinners within the Alert
+  // ---------------
+  .bi-icon,
+  .bi-button,
+  .bi-spinner {
     @apply mr-2;
   }
 }

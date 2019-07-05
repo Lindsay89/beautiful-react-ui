@@ -1,8 +1,7 @@
 ### Basic usage
 
 ``` jsx
-<Alert>Some text</Alert>
-
+<Alert>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 ```
 
 
@@ -11,28 +10,33 @@
 Color highlight different alerts.
 
 ``` jsx
+import { Alert } from 'beautiful-ui';
+
 <>
-<Alert color="primary">Some text</Alert>
-<Alert color="secondary">Some text</Alert>
-<Alert color="info">Some text</Alert>
-<Alert color="warning">Some text</Alert>
-<Alert color="danger">Some text</Alert>
-<Alert color="success">Some text</Alert>
+  <Alert color="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="warning">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="danger">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="success">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 </>
 ```
 
 ### Solid brackground
 
 A solid background style variant with white text and without border.
+
 ``` jsx
+import { Alert } from 'beautiful-ui';
+
 <>
-<Alert color="default" solid="true">Some text</Alert>
-<Alert color="primary" solid="true">Some text</Alert>
-<Alert color="secondary" solid="true">Some text</Alert>
-<Alert color="info" solid="true">Some text</Alert>
-<Alert color="warning" solid="true">Some text</Alert>
-<Alert color="danger" solid="true">Some text</Alert>
-<Alert color="success" solid="true">Some text</Alert>
+  <Alert color="default" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="primary" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="secondary" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="info" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="warning" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="danger" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="success" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 </>
 ```
 
@@ -40,15 +44,18 @@ A solid background style variant with white text and without border.
 ### Outline
 
 Shows the outline only.
+
 ``` jsx
+import { Alert } from 'beautiful-ui';
+
 <>
-<Alert color="default" outline="true">Some text</Alert>
-<Alert color="primary" outline="true">Some text</Alert>
-<Alert color="secondary" outline="true">Some text</Alert>
-<Alert color="info" outline="true">Some text</Alert>
-<Alert color="warning" outline="true">Some text</Alert>
-<Alert color="danger" outline="true">Some text</Alert>
-<Alert color="success" outline="true">Some text</Alert>
+  <Alert color="default" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="primary" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="secondary" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="info" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="warning" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="danger" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
+  <Alert color="success" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 </>
 ```
 
@@ -56,21 +63,35 @@ Shows the outline only.
 
 Adding icon to different alert.
 ``` jsx
-import {Icon} from 'beautiful-ui';
+import { Alert, Icon } from 'beautiful-ui';
+
 <>
-<Alert color="primary" solid="true"><Icon name="info-circle" />Some text </Alert>
-<Alert color="secondary" outline="true"><Icon name="heart" />Some text </Alert>
-<Alert color="info"><Icon name="check" />Some text </Alert>
+  <Alert color="primary" solid="true">
+    <Icon name="info-circle" />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Alert>
+  <Alert color="secondary" outline="true">
+    <Icon name="heart" />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Alert>
+  <Alert color="info">
+    <Icon name="check" />
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Alert>
 </>
 ```
 
 ### Closable button
 
 Adding onClose prop, accept a function, and show button.
-``` jsx
-import { Button } from 'beautiful-ui';
 
-const AlertReporter = (props) => {
+``` jsx
+import { Alert, Button } from 'beautiful-ui';
+
+/**
+ * AlertController is a statefull component wrapping an Alert
+ */
+const AlertController = (props) => {
   const [showAlert, setShowAlert] = React.useState(true);
 
   return (
@@ -83,5 +104,5 @@ const AlertReporter = (props) => {
   );
 };
 
-<AlertReporter color="primary">Some text </AlertReporter>
+<AlertController color="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</AlertController>
 ```
