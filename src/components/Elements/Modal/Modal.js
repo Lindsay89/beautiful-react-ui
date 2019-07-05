@@ -11,6 +11,7 @@ import { BaseProps } from '../../../shared';
 
 import './modal.scss';
 
+// this function wipe out wrong children types.
 const wipeOutIncorrectChildren = (child) => {
   if (child.type !== ModalTitle && child.type !== ModalBody && child.type !== ModalFooter) {
     /**
@@ -34,6 +35,7 @@ const Modal = (props) => {
   const {
     id, style, className, children, isOpen, centered, size, animation,
     onToggle, onBackdropClick, onShow, onClose,
+    backdropRender, closeButtonRender,
   } = props;
   const classList = classNames('bi bi-modal', {
     'modal-open': isOpen,
@@ -48,32 +50,49 @@ const Modal = (props) => {
     'modal-slideTop': animation === 'slideTop',
   }, className);
 
-  let modalDiv = document.querySelector('.bi-show-modal');
+  let modalDiv = document.querySelector('.modal-wrapper');
+
 
   if (isOpen && !modalDiv) {
-    if (onShow) {
-      onShow();
+    if (backdropRender) {
+      backdropRender(props);
+    } else {
+      if (onShow) {
+        onShow();
+      }
+      /**
+       * createPortal has been used to moved the component into a div that will be always in front of the main window
+       * if open.
+       * This div won't be in the "original" DOM tree but it will be the latest div into the entire DOM.
+       */
+      const div = document.createElement('div');
+      div.setAttribute('class', 'modal-wrapper');
+      modalDiv = document.body.appendChild(div);
+
+      return ReactDOM.createPortal(
+        <div className="bi-show-modal" onClick={onBackdropClick} role="presentation">
+          <div
+            id={id}
+            style={style}
+            className={classList}
+            onClick={event => event.stopPropagation()}
+            role="presentation"
+          >
+            {closeButtonRender && closeButtonRender(props)}
+            {!closeButtonRender && (
+              <Button color="transparent" className="alert-button" onClick={closeButtonRender || onToggle}>
+                <Icon name="times" />
+              </Button>
+            )
+            }
+            {Children.map(children, child => wipeOutIncorrectChildren(child))}
+          </div>
+        </div>,
+        modalDiv,
+      );
     }
-    // modal will be into the following div if isOpen is true
-    const div = document.createElement('div');
-    div.setAttribute('class', 'bi-show-modal');
-    modalDiv = document.body.appendChild(div);
-
-    modalDiv.addEventListener('click', onBackdropClick);
-
-    return ReactDOM.createPortal(
-      // eslint-disable-next-line
-      <div
-        id={id}
-        style={style}
-        className={classList}
-      >
-        <Button color="transparent" className="alert-button" onClick={onToggle}><Icon name="times" /></Button>
-        {Children.map(children, child => wipeOutIncorrectChildren(child))}
-      </div>,
-      modalDiv,
-    );
   }
+
   if (modalDiv) {
     if (onClose) {
       onClose();
@@ -92,11 +111,7 @@ Modal.propTypes = {
    */
   isOpen: PropTypes.bool.isRequired,
   /**
-   * If defined, this prop will affect closable button into modal window.
-   */
-  onToggle: PropTypes.func.isRequired,
-  /**
-   * Centered prop center modal in order to let it be in the middle of the screen viewport.
+   * Centered prop center the modal to place it in the middle of the screen viewport.
    */
   centered: PropTypes.bool,
   /**
@@ -107,12 +122,41 @@ Modal.propTypes = {
    * It defines what kind of animation should be performed
    */
   animation: PropTypes.string,
+  /**
+   * If defined, this prop will affect closable button into modal window.
+   */
+  onToggle: PropTypes.func.isRequired,
+  /**
+   * If defined, this function will be run when clicking on backdrop
+   */
+  onBackdropClick: PropTypes.func,
+  /**
+   * onShow will be performed when each time the modal will be open
+   */
+  onShow: PropTypes.func,
+  /**
+   * onClose will be performed when each time the modal will be close
+   */
+  onClose: PropTypes.func,
+  /**
+   * this prop will replace the normal behavior of modal component
+   */
+  backdropRender: PropTypes.func,
+  /**
+   * this prop will effect the modal closable button.
+   */
+  closeButtonRender: PropTypes.func,
 };
 
 Modal.defaultProps = {
   centered: false,
   size: 'default',
   animation: 'fade',
+  onBackdropClick: undefined,
+  onShow: undefined,
+  onClose: undefined,
+  backdropRender: undefined,
+  closeButtonRender: undefined,
 };
 
 Modal.Title = ModalTitle;
