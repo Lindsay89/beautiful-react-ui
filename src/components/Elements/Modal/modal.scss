@@ -5,10 +5,10 @@
 
   z-index: 9999;
 
-  &::before {
-    content: "";
+  .modal-backdrop {
+    @apply inset-0 w-full h-full absolute;
 
-    @apply inset-0 w-full h-full absolute bg-default-dark opacity-50;
+    background-color: #8c97a57a;
   }
 
   .bi.bi-modal {
@@ -25,7 +25,9 @@
     }
 
     .bi-modal-body {
-      @apply p-4;
+      @apply p-4 overflow-y-scroll m-1;
+
+      max-height: 10rem;
     }
 
     .bi-modal-footer {
@@ -44,12 +46,6 @@
 
     &.modal-small {
       max-width: 15rem;
-
-      .bi-modal-body {
-        @apply overflow-y-scroll;
-
-        max-height: 10rem;
-      }
     }
 
     &.modal-large {
