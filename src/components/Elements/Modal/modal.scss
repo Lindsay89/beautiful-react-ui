@@ -1,22 +1,18 @@
 @import "../../../theme/utils/animations.scss";
 
 .bi-show-modal {
-  @apply fixed inset-0 flex;
-
-  z-index: 9999;
+  display: flex;
+  flex-direction: column;
 
   .modal-backdrop {
-    @apply inset-0 w-full h-full absolute;
+    @apply inset-0 w-full h-full fixed;
 
+    z-index: 9999;
     background-color: #8c97a57a;
   }
 
   .bi.bi-modal {
-    @apply block mx-auto mt-4 bg-white border border-solid rounded font-sans;
-
-    border-color: theme("colors.default");
-    position: relative;
-    max-width: 31rem;
+    @apply block mx-auto mt-4 bg-white border border-solid rounded font-sans inset-x-0 top-0;
 
     .bi-modal-title {
       @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4;
@@ -37,11 +33,19 @@
     }
 
     &.modal-open {
-      @apply self-start;
+      @apply bg-white fixed mt-4;
+
+      z-index: 9999;
+      max-width: 31rem;
+      border-color: theme("colors.default");
     }
 
     &.modal-centered {
-      @apply mt-0 self-center;
+      @apply mt-0;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     &.modal-small {
