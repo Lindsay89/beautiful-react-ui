@@ -62,7 +62,7 @@
   // ----------------------------
   // SIZES
   // ----------------------------
-  &.avatar-sm {
+  &.avt-sm {
     .avatar-item {
       @apply w-8 h-8;
     }
@@ -78,7 +78,7 @@
     }
   }
 
-  &.avatar-lg {
+  &.avt-lg {
     .avatar-item {
       @apply w-16 h-16;
     }

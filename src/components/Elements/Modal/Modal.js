@@ -28,10 +28,10 @@ const wipeOutIncorrectChildren = (child) => {
  */
 const Modal = (props) => {
   const {
-    id, style, className, children, isOpen, centered, size, animation,
-    onToggle, onBackdropClick, onShow, onClose,
+    id, style, className, children, isOpen, centered, size, animation, onToggle, onBackdropClick, onShow, onClose,
     backdropRender, closeButtonRender,
   } = props;
+
   const classList = classNames('bi bi-modal', {
     'modal-open': isOpen,
     'modal-centered': centered,
@@ -79,17 +79,14 @@ const Modal = (props) => {
       }
       // one of the two following props must be defined.
       if (!onToggle && !closeButtonRender) {
-        warn(
-          'It must be define one of the following two props: onToggle or closeButtonRender',
-        );
-        return null;
+        warn('It must be define one of the following two props to close the modal: onToggle or closeButtonRender');
       }
+
       /**
        * createPortal has been used to moved the component into a div that will be always in front of the main window
        * if open.
        * This div won't be in the "original" DOM tree but it will be the latest div into the entire DOM.
        */
-
       return ReactDOM.createPortal(
         <div className="bi-show-modal" onClick={onBackdropClick} role="presentation">
           <div
@@ -101,11 +98,11 @@ const Modal = (props) => {
           >
             {closeButtonRender && closeButtonRender(props)}
             {!closeButtonRender
-              && (
-                <Button color="transparent" className="alert-button" onClick={onCloseFunctions}>
-                  <CloseIcon />
-                </Button>
-              )
+            && (
+              <Button color="transparent" className="close-button" onClick={onCloseFunctions}>
+                <CloseIcon />
+              </Button>
+            )
             }
             {Children.map(children, child => wipeOutIncorrectChildren(child))}
           </div>

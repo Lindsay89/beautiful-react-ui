@@ -188,6 +188,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Close Icon
 - Close Icon tests
 
+<<<<<<< HEAD
+=======
+## [0.16.1]  - 2019-07-04
+
+### Fixed
+
+- CloseIcon component was not showing in Alert
+- Improved Alert documentation
+- `nyc` added to `devDependencies`
+- Avatar sizes bug fixed
+
+>>>>>>> f8bc6465ead3668a0af32ca1a969a67d5c910d18
 ## [0.17.0]  - 2019-07-05
 
 ### Added

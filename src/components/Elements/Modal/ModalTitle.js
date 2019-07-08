@@ -6,7 +6,7 @@ const ModalTitle = (props) => {
   const { children } = props;
   const classList = classNames('bi-modal-title');
   return (
-    <p className={classList}>{children}</p>
+    <div className={classList}>{children}</div>
   );
 };
 

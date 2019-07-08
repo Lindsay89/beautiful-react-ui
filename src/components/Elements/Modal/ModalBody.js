@@ -6,9 +6,9 @@ const ModalBody = (props) => {
   const { children } = props;
   const classList = classNames('bi-modal-body');
   return (
-    <p className={classList}>
+    <div className={classList}>
       {children}
-    </p>
+    </div>
   );
 };
 

@@ -19,13 +19,13 @@
     max-width: 31rem;
 
     .bi-modal-title {
-      @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4 pt-0;
+      @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4;
 
       border-color: theme("colors.default");
     }
 
     .bi-modal-body {
-      @apply pr-4 pl-4;
+      @apply p-4;
     }
 
     .bi-modal-footer {
@@ -44,6 +44,12 @@
 
     &.modal-small {
       max-width: 15rem;
+
+      .bi-modal-body {
+        @apply overflow-y-scroll;
+
+        max-height: 10rem;
+      }
     }
 
     &.modal-large {
@@ -77,7 +83,7 @@
       @include slideBottom();
     }
 
-    .bi.bi-btn {
+    .close-button {
       @apply float-right p-4;
     }
   }
