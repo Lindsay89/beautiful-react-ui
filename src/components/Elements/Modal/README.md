@@ -252,7 +252,7 @@ const ModalController = (props) => {
 ```jsx
 import {Button} from 'beautiful-ui';
 
-const backDrop = (props) => (<div>{props.children}</div>);
+const backDrop = (props) => (<div style={{background:'blue', width:'100%'}} />);
 
 const ModalController = (props) => {
   const [value, setValue] = React.useState(false);

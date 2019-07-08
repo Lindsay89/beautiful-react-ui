@@ -10,7 +10,6 @@ import CloseIcon from '../_CloseIcon';
 import { BaseProps, warn } from '../../../shared';
 
 import './modal.scss';
-
 // this function wipe out wrong children types.
 const wipeOutIncorrectChildren = (child) => {
   if (child.type !== ModalTitle && child.type !== ModalBody && child.type !== ModalFooter) {
@@ -45,10 +44,6 @@ const Modal = (props) => {
     'modal-slideTop': animation === 'slideTop',
   }, className);
 
-  const classBackdrop = classNames({
-    'modal-backdrop': !backdropRender,
-    'backdrop-render': backdropRender,
-  });
   let modalDiv = document.getElementById('bi-modals');
 
   useEffect(() => {
@@ -66,11 +61,13 @@ const Modal = (props) => {
   }, []);
 
   const onCloseFunctions = () => {
-    if (onToggle && onClose) {
-      onToggle();
-      onClose();
-    } else if (onToggle && !onClose) {
-      onToggle();
+    if (onToggle) {
+      if (onClose) {
+        onToggle();
+        onClose();
+      } else {
+        onToggle();
+      }
     }
   };
 
@@ -90,24 +87,24 @@ const Modal = (props) => {
      */
     return ReactDOM.createPortal(
       <div className="bi-show-modal" onClick={onBackdropClick || backdropRender} role="presentation">
-        <div className={classBackdrop}>
-          <div
-            id={id}
-            style={style}
-            className={classList}
-            onClick={event => event.stopPropagation()}
-            role="presentation"
-          >
-            {closeButtonRender && closeButtonRender(props)}
-            {!closeButtonRender
-              && (
-                <Button color="transparent" className="close-button" onClick={onCloseFunctions}>
-                  <CloseIcon />
-                </Button>
-              )
-            }
-            {Children.map(children, child => wipeOutIncorrectChildren(child))}
-          </div>
+        {!backdropRender && <div className="modal-backdrop" />}
+        {backdropRender && backdropRender()}
+        <div
+          id={id}
+          style={style}
+          className={classList}
+          onClick={event => event.stopPropagation()}
+          role="presentation"
+        >
+          {closeButtonRender && closeButtonRender(props)}
+          {!closeButtonRender
+            && (
+              <Button color="transparent" className="close-button" onClick={onCloseFunctions}>
+                <CloseIcon />
+              </Button>
+            )
+          }
+          {Children.map(children, child => wipeOutIncorrectChildren(child))}
         </div>
       </div>,
       modalDiv,
