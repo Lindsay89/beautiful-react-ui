@@ -20,6 +20,9 @@ const wipeOutIncorrectChildren = (child) => {
   return child;
 };
 
+// runOnShowOnOpenModal is used to run onShow only when modal is opening
+let runOnShowOnOpenModal;
+
 /**
  * Modal component looks like a smaller window  with some content that shows up disabling the main window.
  */
@@ -58,10 +61,12 @@ const Modal = (props) => {
     };
   }, []);
 
+  if (onShow && runOnShowOnOpenModal === 0 && isOpen) {
+    onShow();
+  }
+
   if (isOpen) {
-    if (onShow) {
-      onShow();
-    }
+    runOnShowOnOpenModal += 1;
     /**
      * React.createPortal is a function that renders the first parameter (a React component)
      * within the second one (A DOM element).s
@@ -70,11 +75,11 @@ const Modal = (props) => {
     return ReactDOM.createPortal(
       <div
         className="bi-show-modal"
-        onClick={makeCallback(onBackdropClick) || makeCallback(backdropRender)}
+        onClick={makeCallback(onBackdropClick)}
         role="presentation"
       >
         {!backdropRender && <div className="modal-backdrop" />}
-        {backdropRender && backdropRender()}
+        {backdropRender && backdropRender(props)}
         <div
           id={id}
           style={style}
@@ -88,6 +93,8 @@ const Modal = (props) => {
       modalDiv,
     );
   }
+
+  runOnShowOnOpenModal = 0;
 
   return null;
 };
