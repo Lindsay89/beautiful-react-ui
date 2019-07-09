@@ -8,17 +8,17 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value}>
-    <Modal.Title>Amazing modal title</Modal.Title>
-    <Modal.Body>
-      Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
-    </Modal.Body>
-    <Modal.Footer>
-      <Button>Adios!</Button>
-    </Modal.Footer>
-  </Modal>
-<Button block color="primary" onClick={()=>{setValue(!value)}}>View live demo</Button>
-</>
+      <Modal isOpen={value}>
+        <Modal.Title>Amazing modal title</Modal.Title>
+        <Modal.Body>
+          Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
+        </Modal.Body>
+        <Modal.Footer>
+          <Button>Adios!</Button>
+        </Modal.Footer>
+      </Modal>
+      <Button block color="primary" onClick={()=>{setValue(!value)}}>View live demo</Button>
+    </>
 )};
 
 
@@ -28,8 +28,8 @@ const ModalController = (props) => {
 ```
 
 
-### Closable button working
-The prop `onToggle` accept a function that will be run on click the closable button.
+### Closable button
+The prop `onToggle` accept a function that will be run when click close button.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -38,8 +38,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value} onToggle={()=>{setValue(!value)}}>
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal isOpen={value}>
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -68,8 +68,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value} onToggle={()=>{setValue(!value)}} centered>
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal isOpen={value} centered>
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -97,8 +97,8 @@ const ModalController = (props) => {
   
   return(
   <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value}>
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead. Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens. Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams. Pestilentia est plague haec decaying ambulabat mortuos. Sicut zeder apathetic malus voodoo. Aenean a dolor plan et terror soulless vulnerum contagium accedunt, mortui iam vivam unlife. Qui tardius moveri, brid eof reanimator sed in magna copia sint terribiles undeath legionis. Alii missing oculis aliorum sicut serpere crabs nostram. Putridi braindead odores kill and infect, aere implent left four dead.
     </Modal.Body>
@@ -129,8 +129,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value}>
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -173,8 +173,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value}> 
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -201,8 +201,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value}> 
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -222,15 +222,15 @@ const ModalController = (props) => {
 ```jsx
 import {Button} from 'beautiful-ui';
 
-const close = () => alert('NOOOO!! DO NOT CLOSE ME!!');
+const close = () => alert('Are you sure you want to close the modal?');
 
 const ModalController = (props) => {
   const [value, setValue] = React.useState(false);
   
   return(
     <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal isOpen={value}> 
+    <Modal.Title {...props} onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De     carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.
     </Modal.Body>
@@ -252,15 +252,15 @@ const ModalController = (props) => {
 ```jsx
 import {Button} from 'beautiful-ui';
 
-const backDrop = (props) => (<div style={{background:'blue', width:'100%'}} />);
+const backDrop = (props) => (<div style={{background:'blue', top:'0', width:'100%', height:'100%', position:'fixed'}}> Some text here </div>);
 
 const ModalController = (props) => {
   const [value, setValue] = React.useState(false);
   
   return(
     <>
-  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value}> 
+    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De     carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.
     </Modal.Body>
@@ -279,17 +279,21 @@ const ModalController = (props) => {
 `closeButtonRender` props accept a function that will change the normal behaviour of the close modal button.
 
 ```jsx
-import {Button} from 'beautiful-ui';
+import {Button, Icon} from 'beautiful-ui';
 
-const closeButton = () => alert("AH! I WONT CLOSE ANYMORE!!");
+const closeButton = () => (
+  <Button color="danger" className="close-button">
+    <Icon name='home' />
+  </Button>
+);
 
 const ModalController = (props) => {
   const [value, setValue] = React.useState(false);
   
   return(
     <>
-  <Modal {...props} isOpen={value}> 
-    <Modal.Title>Amazing modal title</Modal.Title>
+  <Modal isOpen={value}> 
+    <Modal.Title {...props}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>

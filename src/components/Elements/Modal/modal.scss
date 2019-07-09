@@ -2,7 +2,7 @@
 
 .bi-show-modal {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 
   .modal-backdrop {
     @apply inset-0 w-full h-full fixed;
@@ -18,6 +18,10 @@
       @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4;
 
       border-color: theme("colors.default");
+
+      .close-button {
+        @apply float-right p-0;
+      }
     }
 
     .bi-modal-body {
@@ -81,10 +85,6 @@
 
     &.modal-slideBottom {
       @include slideBottom();
-    }
-
-    .close-button {
-      @apply float-right p-4;
     }
   }
 }
