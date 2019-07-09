@@ -56,7 +56,7 @@ const Modal = (props) => {
     }
     return () => {
       if (modalDiv) {
-        document.body.removeChild(modalDiv);
+        modalDiv.remove();
       }
     };
   }, []);
