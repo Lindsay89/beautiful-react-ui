@@ -4,6 +4,9 @@ import Button from '../Button';
 import { warn } from '../../../shared';
 import CloseIcon from '../_CloseIcon';
 
+/**
+ * this component is rendering the header of the modal window.
+ */
 const ModalTitle = (props) => {
   const { children, onToggle, onClose, closeButtonRender } = props;
   const onCloseClickHandler = () => {
@@ -29,7 +32,7 @@ const ModalTitle = (props) => {
       {closeButtonRender && closeButtonRender()}
       {!closeButtonRender
         && (
-          <Button color="transparent" className="close-button" onClick={onCloseClickHandler}>
+          <Button color="transparent" className="modal-button" onClick={onCloseClickHandler}>
             <CloseIcon />
           </Button>
         )

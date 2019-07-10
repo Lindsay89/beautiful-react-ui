@@ -1,5 +1,6 @@
 ### Basic Usage
-
+Modal component looks like a smaller window  with some content that shows up disabling the main window.
+ 
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -9,7 +10,7 @@ const ModalController = (props) => {
   return(
     <>
       <Modal isOpen={value}>
-        <Modal.Title>Amazing modal title</Modal.Title>
+        <Modal.Title>Amazing modal.Window title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
         </Modal.Body>
@@ -29,7 +30,7 @@ const ModalController = (props) => {
 
 
 ### Closable button
-The prop `onToggle` accept a function that will be run when click close button.
+The prop `onToggle` accept a function that will be run when clicking on closable button.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -88,7 +89,7 @@ const ModalController = (props) => {
 ```
 
 ### Sizes
-`size` props could be used to decide the modal size.
+`size` props could be used to change the modal size.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -190,7 +191,7 @@ const ModalController = (props) => {
 ```
 
 
-`onShow` props accept a function that will be run when the modal is active.
+`onShow` props accept a function that will be run when the modal is opening.
 ```jsx
 import {Button} from 'beautiful-ui';
 
@@ -218,7 +219,7 @@ const ModalController = (props) => {
 ```
 
 
-`onClose` props accept a function that will be run when the modal is closed.
+`onClose` props accept a function that will be run when the modal is closing.
 ```jsx
 import {Button} from 'beautiful-ui';
 
@@ -247,7 +248,7 @@ const ModalController = (props) => {
 
 ### Renderers
 
-`backdropRender` props accept a function that will change the normal behaviour of the component.
+`backdropRender` props accept a function that will change the normal behaviour of the backdrop component.
 
 ```jsx
 import {Button} from 'beautiful-ui';
@@ -276,7 +277,7 @@ const ModalController = (props) => {
 ```
 
 
-`closeButtonRender` props accept a function that will change the normal behaviour of the close modal button.
+`closeButtonRender` props accept a function that will change the normal behaviour of the modal close button.
 
 ```jsx
 import {Button, Icon} from 'beautiful-ui';
