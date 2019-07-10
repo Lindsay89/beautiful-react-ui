@@ -1,8 +1,7 @@
 @import "../../../theme/utils/animations.scss";
 
-.bi-show-modal {
-  display: flex;
-  flex-direction: column;
+.bi-modal-wrapper {
+  @apply flex;
 
   .modal-backdrop {
     @apply inset-0 w-full h-full fixed;
@@ -18,10 +17,14 @@
       @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4;
 
       border-color: theme("colors.default");
+
+      .modal-button {
+        @apply float-right p-0;
+      }
     }
 
     .bi-modal-body {
-      @apply p-4 overflow-y-scroll m-1;
+      @apply p-4 overflow-y-scroll;
 
       max-height: 10rem;
     }
@@ -44,9 +47,12 @@
       @apply mt-0;
 
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(0, -50%);
     }
+
+    // ----------------------------
+    // SIZES
+    // ----------------------------
 
     &.modal-small {
       max-width: 15rem;
@@ -81,10 +87,6 @@
 
     &.modal-slideBottom {
       @include slideBottom();
-    }
-
-    .close-button {
-      @apply float-right p-4;
     }
   }
 }

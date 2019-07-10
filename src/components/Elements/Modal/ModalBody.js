@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
+/**
+ * The ModalBody component is used to show the content of the modal.
+ */
 const ModalBody = (props) => {
   const { children } = props;
-  const classList = classNames('bi-modal-body');
+
   return (
-    <div className={classList}>
+    <div className="bi-modal-body">
       {children}
     </div>
   );

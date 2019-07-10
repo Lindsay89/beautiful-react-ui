@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 
+/**
+ * The ModalFooter compoent manage the  footer of the modal component.
+ */
 const ModalFooter = (props) => {
   const { children } = props;
-  const classList = classNames('bi-modal-footer');
+
   return (
-    <footer className={classList}>{children}</footer>
+    <footer className="bi-modal-footer">{children}</footer>
   );
 };
 
