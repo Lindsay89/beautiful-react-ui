@@ -7,7 +7,7 @@ import './modal.scss';
 
 /**
  * Modal window is rendering the modal window, which is a small window with some content.
- * When the modal is open, it will in front of everything else into the webpage.
+ * When the modal is open, it will be in front of everything else into the webpage.
  */
 const ModalWindow = (props) => {
   const {
