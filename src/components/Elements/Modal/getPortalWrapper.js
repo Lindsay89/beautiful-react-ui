@@ -1,6 +1,5 @@
 /*
-* Function used to create div for modal component if this div doesn't exist
-* This getPortalWrapper create modal div on first component render.
+* This function returns the element having the given id, if that element doesn’t exist then create and return it
 */
 const getPortalWrapper = (id) => {
   let element = document.getElementById(id);

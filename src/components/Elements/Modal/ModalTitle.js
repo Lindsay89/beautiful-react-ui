@@ -11,12 +11,11 @@ const ModalTitle = (props) => {
   const { children, onToggle, onClose, closeButtonRender } = props;
   const onCloseClickHandler = () => {
     if (onToggle) {
-      if (onClose) {
-        onToggle();
-        onClose();
-      } else {
-        onToggle();
-      }
+      onToggle();
+    }
+
+    if (onClose) {
+      onClose();
     }
   };
 
@@ -44,7 +43,7 @@ const ModalTitle = (props) => {
 
 ModalTitle.propTypes = {
   /**
-   * If defined, this prop will affect closable button into modal window.
+   * The callback to be performed when clicking on clasable button
    */
   onToggle: PropTypes.func,
   /**
@@ -52,7 +51,7 @@ ModalTitle.propTypes = {
    */
   onClose: PropTypes.func,
   /**
- * this prop will effect the modal closable button.
+ * it will be render instead of the close button
  */
   closeButtonRender: PropTypes.func,
   /**

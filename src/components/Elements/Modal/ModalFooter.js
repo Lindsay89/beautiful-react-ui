@@ -4,13 +4,7 @@ import PropTypes from 'prop-types';
 /**
  * The ModalFooter compoent manage the  footer of the modal component.
  */
-const ModalFooter = (props) => {
-  const { children } = props;
-
-  return (
-    <footer className="bi-modal-footer">{children}</footer>
-  );
-};
+const ModalFooter = ({ children }) => (<footer className="bi-modal-footer">{children}</footer>);
 
 ModalFooter.propTypes = {
   /**

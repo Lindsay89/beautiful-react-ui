@@ -4,10 +4,10 @@
   @apply flex;
 
   .modal-backdrop {
-    @apply inset-0 w-full h-full fixed;
+    @apply inset-0 fixed;
 
     z-index: 9999;
-    background-color: #8c97a57a;
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   .bi.bi-modal {

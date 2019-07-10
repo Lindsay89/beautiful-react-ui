@@ -15,6 +15,10 @@ const ModalWindow = (props) => {
     backdropRender,
   } = props;
 
+  if (!isOpen) {
+    return null;
+  }
+
   const classList = classNames('bi bi-modal', {
     'modal-open': isOpen,
     'modal-centered': centered,
@@ -27,10 +31,6 @@ const ModalWindow = (props) => {
     'modal-slideBottom': animation === 'slideBottom',
     'modal-slideTop': animation === 'slideTop',
   }, className);
-
-  if (!isOpen) {
-    return null;
-  }
 
   return (
     <div className="bi-modal-wrapper">

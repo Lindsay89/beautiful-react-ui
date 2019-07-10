@@ -92,7 +92,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('style')).to.equal('margin: 10px;');
   });
 
-  it('should create backdrop div if backdropRender is not defined', () => {
+  it('should create a backdrop', () => {
     render(
       <Modal isOpen onToggle={noop}>
         <Modal.Title>Amazing modal title</Modal.Title>
@@ -107,7 +107,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class')).to.equal('modal-backdrop');
   });
 
-  it('should not create modal div if open is false', () => {
+  it('should not create modal div if isOpen prop is false', () => {
     render(
       <Modal onToggle={noop}>
         <Modal.Title>Amazing modal title</Modal.Title>
@@ -235,7 +235,7 @@ describe('Modal component', () => {
     expect(onToggleSpy.calledOnce).to.be.equal(true);
   });
 
-  it('should perform BackDrop render', () => {
+  it('should render a custom backdrop if provided', () => {
     const backDrop = () => (
       <div
         className="backdrop"
@@ -261,7 +261,7 @@ describe('Modal component', () => {
     expect(modalNewBackdrop).to.exist;
   });
 
-  it('should perform closeButton render', () => {
+  it('should render a custom close button if provided', () => {
     const closeButton = () => (
       <Button color="danger" className="some-button">
         <Icon name="home" />
@@ -285,7 +285,7 @@ describe('Modal component', () => {
     expect(modalNewButton).to.exist;
   });
 
-  it('should perform onClose prop when closing modal', () => {
+  it('should perform onClose callback when closing modal, if provided', () => {
     const onCloseSpy = sinon.spy();
 
     render(
@@ -304,7 +304,7 @@ describe('Modal component', () => {
     expect(onCloseSpy.calledOnce).to.be.equal(true);
   });
 
-  it('should perform onShow prop when show modal', () => {
+  it('should perform onShow callback when showing modal, if provided', () => {
     const onShowSpy = sinon.spy();
 
     render(
