@@ -11,69 +11,40 @@ describe('Modal component', () => {
     cleanup();
   });
 
-  it('should render component outside is container', () => {
+  it('should render the component outside its container (without explode)', () => {
     const { container } = render(
-      <Modal>
-        <Modal.Title>Amazing modal title</Modal.Title>
+      <Modal isOpen onToggle={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer>
-          <Button>Adios!</Button>
-        </Modal.Footer>
       </Modal>,
     );
 
-    const modalContainer = container.querySelector('#bi-modals');
-
-    expect(modalContainer).to.equal(null);
-
-    const modalBody = document.querySelector('#bi-modals');
-
-    expect(modalBody).to.exist;
-  });
-
-  it('should render without explode', () => {
-    render(
-      <Modal isOpen>
-        <Modal.Title>Amazing modal title</Modal.Title>
-        <Modal.Body>
-          Zombie ipsum brains reversus ab cerebellum viral...
-        </Modal.Body>
-        <Modal.Footer>
-          <Button>Adios!</Button>
-        </Modal.Footer>
-      </Modal>,
-    );
-
-    const modal = document.getElementById('bi-modals').querySelector('.bi.bi-modal').querySelectorAll('div').length;
-
-    expect(modal).to.equal(2);
+    // container should not have the 'bi-modals' wrapper as it is rendered by a portal
+    expect(container.querySelector('#bi-modals')).to.equal(null);
+    expect(document.querySelector('#bi-modals')).to.exist;
+    expect(document.querySelector('#bi-modals').querySelector('.bi.bi-modal')).to.exist;
   });
 
   it('should accept an "id" prop', () => {
     render(
-      <Modal isOpen id="modalTest">
-        <Modal.Title>Amazing modal title</Modal.Title>
+      <Modal isOpen onToggle={noop} id="foo">
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi.bi-modal');
-    expect(modal.id).to.equal('modalTest');
+    const modal = document.querySelector('#bi-modals .bi.bi-modal');
+    expect(modal.id).to.equal('foo');
   });
 
-  it('should accept default classes', () => {
+  it('should have default classes', () => {
     render(
-      <Modal isOpen onToggle={noop} id="modalTest">
-        <Modal.Title>Amazing modal title</Modal.Title>
+      <Modal isOpen onToggle={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
@@ -92,11 +63,11 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal-wrapper').querySelectorAll('div')[1];
+    const modal = document.querySelector('#bi-modals .bi.bi-modal');
     expect(modal.getAttribute('style')).to.equal('margin: 10px;');
   });
 
-  it('should create a backdrop', () => {
+  it('should have a backdrop', () => {
     render(
       <Modal isOpen onToggle={noop}>
         <Modal.Title>Amazing modal title</Modal.Title>
@@ -107,60 +78,52 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal-wrapper').querySelectorAll('div')[0];
-    expect(modal.getAttribute('class')).to.equal('modal-backdrop');
+    const backdrop = document.querySelector('#bi-modals .modal-backdrop');
+    expect(backdrop).to.exist;
   });
 
-  it('should not create modal div if isOpen prop is false', () => {
+  it('should not render the modal component is isOpen prop is set to false', () => {
     render(
-      <Modal onToggle={noop}>
-        <Modal.Title>Amazing modal title</Modal.Title>
+      <Modal isOpen={false} onToggle={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal-wrapper');
-    expect(modal).to.not.exist;
+
+    expect(document.querySelector('#bi-modals .bi.bi-modal')).to.not.exist;
   });
 
   it('should accept centered prop', () => {
     render(
       <Modal isOpen onToggle={noop} centered>
-        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal');
+    const modal = document.querySelector('#bi-modals .bi.bi-modal');
     expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-centered']);
   });
 
   it('should accept size prop', () => {
     const { rerender } = render(
       <Modal isOpen onToggle={noop} size="small">
-        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal');
+    const modal = document.querySelector('#bi-modals .bi.bi-modal');
     expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-small']);
 
     rerender(
       <Modal isOpen onToggle={noop} size="large">
-        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
@@ -169,11 +132,9 @@ describe('Modal component', () => {
 
     rerender(
       <Modal isOpen onToggle={noop}>
-        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
@@ -181,7 +142,7 @@ describe('Modal component', () => {
   });
 
 
-  it('should accept animation prop', () => {
+  it('should accept the animation prop', () => {
     const { rerender } = render(
       <Modal isOpen onToggle={noop} animation="scale">
         <Modal.Title>Amazing modal title</Modal.Title>
@@ -192,7 +153,7 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal');
+    const modal = document.querySelector('#bi-modals .bi.bi-modal');
     expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-scale']);
 
     rerender(
@@ -221,48 +182,45 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-slideTop']);
   });
 
-  it('should accept onToggle prop', () => {
+  it('the onToggle required prop should be performed on close button click', () => {
     const onToggleSpy = sinon.spy();
+
     render(
       <Modal isOpen onToggle={onToggleSpy}>
-        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
-    const modalCloseButton = document.querySelector('.modal-button');
+    const modal = document.querySelector('#bi-modals .bi.bi-modal');
+    const modalCloseButton = modal.querySelector('.modal-button');
+
     fireEvent.click(modalCloseButton);
 
     expect(onToggleSpy.calledOnce).to.be.equal(true);
   });
 
   it('should render a custom backdrop if provided', () => {
-    const backDrop = () => (
-      <div
-        className="backdrop"
-        style={{ background: 'blue', top: '0', width: '100%', height: '100%', position: 'fixed' }}
-      >
-        Some text here
+    const CustomBackdrop = () => (
+      <div className="custom-backdrop">
+        Custom backdrop
       </div>
     );
     render(
-      <Modal isOpen backdropRender={backDrop}>
-        <Modal.Title onToggle={noop}>Amazing modal title</Modal.Title>
+      <Modal isOpen onToggle={noop} backdropRender={CustomBackdrop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
-    const modalOriginalBackDrop = document.getElementById('bi-modals').querySelector('.modal-backdrop');
-    expect(modalOriginalBackDrop).to.not.exist;
+    const modalWrapper = document.querySelector('#bi-modals');
+    const modalOriginalBackdrop = modalWrapper.querySelector('.modal-backdrop');
+    expect(modalOriginalBackdrop).to.not.exist;
 
-    const modalNewBackdrop = document.getElementById('bi-modals').querySelector('.backdrop');
-    expect(modalNewBackdrop).to.exist;
+    const customBackdrop = modalWrapper.querySelector('.custom-backdrop');
+    expect(customBackdrop).to.exist;
   });
 
   it('should render a custom close button if provided', () => {
@@ -289,16 +247,14 @@ describe('Modal component', () => {
     expect(modalNewButton).to.exist;
   });
 
-  it('should perform onClose callback when closing modal, if provided', () => {
+  it('should perform the onClose callback, if provided, when closing the modal', () => {
     const onCloseSpy = sinon.spy();
 
     render(
       <Modal isOpen onClose={onCloseSpy} onToggle={noop}>
-        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 
@@ -308,16 +264,14 @@ describe('Modal component', () => {
     expect(onCloseSpy.calledOnce).to.be.equal(true);
   });
 
-  it('should perform onShow callback when showing modal, if provided', () => {
+  it('should perform the onShow callback, if provided, when showing the modal', () => {
     const onShowSpy = sinon.spy();
 
     render(
       <Modal isOpen onShow={onShowSpy}>
-        <Modal.Title onToggle={noop}>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
-        <Modal.Footer />
       </Modal>,
     );
 

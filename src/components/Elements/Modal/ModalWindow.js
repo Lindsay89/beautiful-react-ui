@@ -5,8 +5,6 @@ import Button from '../Button';
 import CloseIcon from '../_CloseIcon';
 import { BaseProps, makeCallback, warn } from '../../../shared';
 
-import './modal.scss';
-
 /**
  * Modal window is rendering the modal window, which is a small window with some content.
  * When the modal is open, it will be in front of everything else into the webpage.
@@ -20,7 +18,6 @@ const ModalWindow = (props) => {
   if (!isOpen) {
     return null;
   }
-
 
   // one of the two following props must be defined.
   if (!onToggle && !closeButtonRender) {
@@ -64,15 +61,19 @@ const ModalWindow = (props) => {
       )}
       {backdropRender && backdropRender(props)}
       <div id={id} style={style} className={classList}>
-        {closeButtonRender && closeButtonRender()}
-        {!closeButtonRender
-          && (
-            <Button color="transparent" className="modal-button" onClick={onCloseClickHandler}>
-              <CloseIcon />
-            </Button>
-          )
-        }
-        {children}
+        <div className="modal-button-wrapper">
+          {closeButtonRender && closeButtonRender()}
+          {!closeButtonRender
+            && (
+              <Button color="transparent" className="modal-button" onClick={onCloseClickHandler}>
+                <CloseIcon />
+              </Button>
+            )
+          }
+        </div>
+        <div className="modal-content-wrapper">
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 /*
-* This function returns the element having the given id, if that element doesn’t exist then create and return it
+* This function returns the element having the given id, if that element doesn’t exist then creates and returns it
 */
 const getPortalWrapper = (id) => {
   let element = document.getElementById(id);
