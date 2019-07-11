@@ -2,28 +2,11 @@ import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import noop from 'lodash/noop';
 import Modal from '.';
-import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
 
 describe('Modal component', () => {
   afterEach(() => {
     sinon.restore();
     cleanup();
-  });
-
-  it('should render the component outside its container (without explode)', () => {
-    const { container } = render(
-      <Modal isOpen onToggle={noop}>
-        <Modal.Body>
-          Zombie ipsum brains reversus ab cerebellum viral...
-        </Modal.Body>
-      </Modal>,
-    );
-
-    // container should not have the 'bi-modals' wrapper as it is rendered by a portal
-    expect(container.querySelector('#bi-modals')).to.equal(null);
-    expect(document.querySelector('#bi-modals')).to.exist;
-    expect(document.querySelector('#bi-modals').querySelector('.bi.bi-modal')).to.exist;
   });
 
   it('should accept an "id" prop', () => {
@@ -82,7 +65,7 @@ describe('Modal component', () => {
     expect(backdrop).to.exist;
   });
 
-  it('should not render the modal component is isOpen prop is set to false', () => {
+  it('should not render the modal component if the \'isOpen\' prop is set to false', () => {
     render(
       <Modal isOpen={false} onToggle={noop}>
         <Modal.Body>
@@ -94,7 +77,7 @@ describe('Modal component', () => {
     expect(document.querySelector('#bi-modals .bi.bi-modal')).to.not.exist;
   });
 
-  it('should accept centered prop', () => {
+  it('should accept a \'centered\' prop', () => {
     render(
       <Modal isOpen onToggle={noop} centered>
         <Modal.Body>
@@ -107,7 +90,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-centered']);
   });
 
-  it('should accept size prop', () => {
+  it('should accept a \'size\' prop', () => {
     const { rerender } = render(
       <Modal isOpen onToggle={noop} size="small">
         <Modal.Body>
@@ -142,7 +125,7 @@ describe('Modal component', () => {
   });
 
 
-  it('should accept the animation prop', () => {
+  it('should accept the \'animation\' prop', () => {
     const { rerender } = render(
       <Modal isOpen onToggle={noop} animation="scale">
         <Modal.Title>Amazing modal title</Modal.Title>
@@ -182,7 +165,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-slideTop']);
   });
 
-  it('the onToggle required prop should be performed on close button click', () => {
+  it('the \'onToggle\' required prop should be performed when close button is clicked', () => {
     const onToggleSpy = sinon.spy();
 
     render(
@@ -223,31 +206,7 @@ describe('Modal component', () => {
     expect(customBackdrop).to.exist;
   });
 
-  it('should render a custom close button if provided', () => {
-    const closeButton = () => (
-      <Button color="danger" className="some-button">
-        <Icon name="home" />
-      </Button>
-    );
-
-    render(
-      <Modal isOpen closeButtonRender={closeButton}>
-        <Modal.Title onToggle={noop}>Amazing modal title</Modal.Title>
-        <Modal.Body>
-          Zombie ipsum brains reversus ab cerebellum viral...
-        </Modal.Body>
-        <Modal.Footer />
-      </Modal>,
-    );
-
-    const modalOriginalButton = document.getElementById('bi-modals').querySelector('.modal-close-button');
-    expect(modalOriginalButton).to.not.exist;
-
-    const modalNewButton = document.getElementById('bi-modals').querySelector('.some-button');
-    expect(modalNewButton).to.exist;
-  });
-
-  it('should perform the onClose callback, if provided, when closing the modal', () => {
+  it('should perform the \'onClose\' callback, if provided, when closing the modal', () => {
     const onCloseSpy = sinon.spy();
 
     render(
@@ -264,11 +223,11 @@ describe('Modal component', () => {
     expect(onCloseSpy.calledOnce).to.be.equal(true);
   });
 
-  it('should perform the onShow callback, if provided, when showing the modal', () => {
+  it('should perform the \'onShow\' callback, if provided, when showing the modal', () => {
     const onShowSpy = sinon.spy();
 
     render(
-      <Modal isOpen onShow={onShowSpy}>
+      <Modal onToggle={noop} isOpen onShow={onShowSpy}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import CloseIcon from '.';
 
-describe('CloseIcon component', () => {
+describe('CloseIcon private component', () => {
   afterEach(cleanup);
 
   it('should render without explode', () => {
