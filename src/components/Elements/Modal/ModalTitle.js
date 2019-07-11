@@ -7,7 +7,6 @@ import PropTypes from 'prop-types';
  */
 const ModalTitle = (props) => {
   const { children } = props;
-
   return (
     <div className="bi-modal-title">
       {children}

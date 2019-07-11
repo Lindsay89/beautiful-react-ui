@@ -11,7 +11,7 @@ describe('Modal component', () => {
 
   it('should accept an "id" prop', () => {
     render(
-      <Modal isOpen onToggle={noop} id="foo">
+      <Modal isOpen onBackdropClick={noop} id="foo">
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -24,7 +24,7 @@ describe('Modal component', () => {
 
   it('should have default classes', () => {
     render(
-      <Modal isOpen onToggle={noop}>
+      <Modal isOpen onBackdropClick={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -37,7 +37,7 @@ describe('Modal component', () => {
 
   it('should allow to define custom style', () => {
     render(
-      <Modal isOpen onToggle={noop} style={{ margin: '10px' }}>
+      <Modal isOpen onBackdropClick={noop} style={{ margin: '10px' }}>
         <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
@@ -52,7 +52,7 @@ describe('Modal component', () => {
 
   it('should have a backdrop', () => {
     render(
-      <Modal isOpen onToggle={noop}>
+      <Modal isOpen onBackdropClick={noop}>
         <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
@@ -67,7 +67,7 @@ describe('Modal component', () => {
 
   it('should not render the modal component if the \'isOpen\' prop is set to false', () => {
     render(
-      <Modal isOpen={false} onToggle={noop}>
+      <Modal isOpen={false} onBackdropClick={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -79,7 +79,7 @@ describe('Modal component', () => {
 
   it('should accept a \'centered\' prop', () => {
     render(
-      <Modal isOpen onToggle={noop} centered>
+      <Modal isOpen onBackdropClick={noop} centered>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -92,7 +92,7 @@ describe('Modal component', () => {
 
   it('should accept a \'size\' prop', () => {
     const { rerender } = render(
-      <Modal isOpen onToggle={noop} size="small">
+      <Modal isOpen onBackdropClick={noop} size="small">
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -103,7 +103,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-small']);
 
     rerender(
-      <Modal isOpen onToggle={noop} size="large">
+      <Modal isOpen onBackdropClick={noop} size="large">
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -114,7 +114,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-small']);
 
     rerender(
-      <Modal isOpen onToggle={noop}>
+      <Modal isOpen onBackdropClick={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -127,7 +127,7 @@ describe('Modal component', () => {
 
   it('should accept the \'animation\' prop', () => {
     const { rerender } = render(
-      <Modal isOpen onToggle={noop} animation="scale">
+      <Modal isOpen onBackdropClick={noop} animation="scale">
         <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
@@ -140,7 +140,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-scale']);
 
     rerender(
-      <Modal isOpen onToggle={noop} animation="slideTop">
+      <Modal isOpen onBackdropClick={noop} animation="slideTop">
         <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
@@ -153,7 +153,7 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-scale']);
 
     rerender(
-      <Modal isOpen onToggle={noop}>
+      <Modal isOpen onBackdropClick={noop}>
         <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
@@ -165,23 +165,23 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-slideTop']);
   });
 
-  it('the \'onToggle\' required prop should be performed when close button is clicked', () => {
-    const onToggleSpy = sinon.spy();
+  it('the \'onBackdropClick\' required prop should be performed when clicking on backdrop', () => {
+    const onBackdropClickSpy = sinon.spy();
 
     render(
-      <Modal isOpen onToggle={onToggleSpy}>
+      <Modal isOpen onBackdropClick={onBackdropClickSpy}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
       </Modal>,
     );
 
-    const modal = document.querySelector('#bi-modals .bi.bi-modal');
-    const modalCloseButton = modal.querySelector('.modal-button');
+    const modal = document.querySelector('#bi-modals .bi-modal-wrapper');
+    const modalBackdrop = modal.querySelector('.modal-backdrop');
 
-    fireEvent.click(modalCloseButton);
+    fireEvent.click(modalBackdrop);
 
-    expect(onToggleSpy.calledOnce).to.be.equal(true);
+    expect(onBackdropClickSpy.calledOnce).to.be.equal(true);
   });
 
   it('should render a custom backdrop if provided', () => {
@@ -191,7 +191,7 @@ describe('Modal component', () => {
       </div>
     );
     render(
-      <Modal isOpen onToggle={noop} backdropRender={CustomBackdrop}>
+      <Modal isOpen onBackdropClick={noop} backdropRender={CustomBackdrop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -210,15 +210,15 @@ describe('Modal component', () => {
     const onCloseSpy = sinon.spy();
 
     render(
-      <Modal isOpen onClose={onCloseSpy} onToggle={noop}>
+      <Modal isOpen onClose={onCloseSpy} onBackdropClick={noop}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
       </Modal>,
     );
 
-    const modalCloseButton = document.querySelector('.modal-button');
-    fireEvent.click(modalCloseButton);
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    fireEvent.click(modalBackdrop);
 
     expect(onCloseSpy.calledOnce).to.be.equal(true);
   });
@@ -227,7 +227,7 @@ describe('Modal component', () => {
     const onShowSpy = sinon.spy();
 
     render(
-      <Modal onToggle={noop} isOpen onShow={onShowSpy}>
+      <Modal onBackdropClick={noop} isOpen onShow={onShowSpy}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>

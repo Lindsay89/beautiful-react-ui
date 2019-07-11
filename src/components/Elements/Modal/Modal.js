@@ -1,11 +1,11 @@
 import React, { Children, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import Portal from '../_Portal';
-import ModalWindow from './ModalWindow';
 import ModalTitle from './ModalTitle';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
-import { BaseProps, warn } from '../../../shared';
+import { BaseProps, makeCallback, warn } from '../../../shared';
 
 import './modal.scss';
 
@@ -26,7 +26,44 @@ const wipeOutIncorrectChildren = (child) => {
  */
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Modal = React.memo((props) => {
-  const { children, isOpen, onShow } = props;
+  const { children,
+    id, style, className, isOpen, centered, size, animation, onBackdropClick,
+    backdropRender, onClose, onShow } = props;
+
+
+  if (!isOpen) {
+    return null;
+  }
+
+
+  // one of the two following props must be defined.
+  if (!onBackdropClick) {
+    warn('onBackdropClick must be define to close the modal');
+  }
+
+  const onCloseClickHandler = () => {
+    if (onBackdropClick) {
+      if (onClose) {
+        onBackdropClick();
+        onClose();
+      } else {
+        onBackdropClick();
+      }
+    }
+  };
+
+  const classList = classNames('bi bi-modal', {
+    'modal-open': isOpen,
+    'modal-centered': centered,
+    'modal-small': size === 'small',
+    'modal-large': size === 'large',
+    'modal-fade': animation === 'fade',
+    'modal-scale': animation === 'scale',
+    'modal-slideRight': animation === 'slideRight',
+    'modal-slideLeft': animation === 'slideLeft',
+    'modal-slideBottom': animation === 'slideBottom',
+    'modal-slideTop': animation === 'slideTop',
+  }, className);
 
   // useEffect is used to run onShow prop only when modal shows up
   useEffect(() => {
@@ -35,11 +72,26 @@ const Modal = React.memo((props) => {
     }
   }, [isOpen]);
 
+  const childrenArray = Children.map(children, wipeOutIncorrectChildren);
   return (
     <Portal id="bi-modals">
-      <ModalWindow {...props}>
-        {Children.map(children, wipeOutIncorrectChildren)}
-      </ModalWindow>
+      <div className="bi-modal-wrapper">
+        {!backdropRender && (
+          <div
+            className="modal-backdrop"
+            onClick={makeCallback(onCloseClickHandler)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={makeCallback(onCloseClickHandler)}
+          />
+        )}
+        {backdropRender && backdropRender(props)}
+        <div id={id} style={style} className={classList}>
+          <div className="modal-content-wrapper">
+            {childrenArray}
+          </div>
+        </div>
+      </div>
     </Portal>
   );
 });
@@ -54,10 +106,6 @@ Modal.propTypes = {
    * onShow will be performed when each time the modal will be open
    */
   onShow: PropTypes.func,
-  /**
-   * The callback to be performed when clicking on clasable button
-   */
-  onToggle: PropTypes.func.isRequired,
   /**
    * Centered prop center the modal to place it in the middle of the screen viewport.
    */
@@ -78,10 +126,6 @@ Modal.propTypes = {
    * this prop will replace the normal behavior of modal component
    */
   backdropRender: PropTypes.func,
-  /**
-  * it will be render instead of the close button
-  */
-  closeButtonRender: PropTypes.func,
 };
 
 Modal.defaultProps = {
@@ -91,7 +135,6 @@ Modal.defaultProps = {
   animation: 'fade',
   onBackdropClick: undefined,
   backdropRender: undefined,
-  closeButtonRender: undefined,
 };
 
 Modal.Title = ModalTitle;

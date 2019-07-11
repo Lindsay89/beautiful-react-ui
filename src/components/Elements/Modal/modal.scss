@@ -11,16 +11,16 @@
   }
 
   .bi.bi-modal {
-    @apply block mx-auto mt-4 bg-white border border-solid rounded font-sans inset-x-0 top-0;
+    @apply mx-auto mt-4 bg-white border border-solid rounded font-sans inset-x-0 top-0;
 
     .bi-modal-title {
-      @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4;
+      @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4 flex flex-row;
 
       border-color: theme("colors.default");
-    }
 
-    .modal-button {
-      @apply float-right pt-4;
+      .modal-title-content {
+        @apply flex-1 self-center pl-2;
+      }
     }
 
     .bi-modal-body {
