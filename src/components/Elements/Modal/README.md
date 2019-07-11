@@ -1,5 +1,5 @@
 ### Basic Usage
-Modal component looks like a smaller window  with some content that shows up disabling the main window.
+A Modal component shows its children contents positioned over everything else in the document.
  
 
 ```jsx
@@ -9,14 +9,10 @@ const ModalController = (props) => {
   
   return(
     <>
-      <Modal isOpen={value}>
-        <Modal.Title>Amazing modal.Window title</Modal.Title>
+      <Modal isOpen={value} onToggle={()=>{setValue(!value)}}>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
         </Modal.Body>
-        <Modal.Footer>
-          <Button>Adios!</Button>
-        </Modal.Footer>
       </Modal>
       <Button block color="primary" onClick={()=>{setValue(!value)}}>View live demo</Button>
     </>
@@ -39,8 +35,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value}>
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -69,8 +65,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value} centered>
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal isOpen={value} centered onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -98,8 +94,8 @@ const ModalController = (props) => {
   
   return(
   <>
-  <Modal {...props} isOpen={value}>
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead. Cum horribilem walking dead resurgere de crazed sepulcris creaturis, zombie sicut de grave feeding iride et serpens. Pestilentia, shaun ofthe dead scythe animated corpses ipsa screams. Pestilentia est plague haec decaying ambulabat mortuos. Sicut zeder apathetic malus voodoo. Aenean a dolor plan et terror soulless vulnerum contagium accedunt, mortui iam vivam unlife. Qui tardius moveri, brid eof reanimator sed in magna copia sint terribiles undeath legionis. Alii missing oculis aliorum sicut serpere crabs nostram. Putridi braindead odores kill and infect, aere implent left four dead.
     </Modal.Body>
@@ -130,8 +126,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value}>
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -174,8 +170,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value}> 
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -202,8 +198,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value}> 
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>
@@ -230,8 +226,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value}> 
-    <Modal.Title {...props} onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title {...props}>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De     carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.
     </Modal.Body>
@@ -260,8 +256,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal {...props} isOpen={value}> 
-    <Modal.Title onToggle={()=>{setValue(!value)}}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}>
+    <Modal.Title>Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De     carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris.
     </Modal.Body>
@@ -293,8 +289,8 @@ const ModalController = (props) => {
   
   return(
     <>
-  <Modal isOpen={value}> 
-    <Modal.Title {...props}>Amazing modal title</Modal.Title>
+  <Modal {...props} isOpen={value} onToggle={()=>{setValue(!value)}}> 
+    <Modal.Title >Amazing modal title</Modal.Title>
     <Modal.Body>
       Zombie ipsum brains reversus ab cerebellum viral inferno, brein nam rick mend grimes malum cerveau cerebro. De carne cerebro lumbering animata cervello corpora quaeritis. Summus thalamus brains sit​​, morbo basal ganglia vel maleficia? De braaaiiiins apocalypsi gorger omero prefrontal cortex undead survivor fornix dictum mauris. 
     </Modal.Body>

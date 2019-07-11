@@ -11,7 +11,7 @@ describe('Modal component', () => {
     cleanup();
   });
 
-  it('should not render the component', () => {
+  it('should render component outside is container', () => {
     const { container } = render(
       <Modal>
         <Modal.Title>Amazing modal title</Modal.Title>
@@ -24,9 +24,13 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    const modal = container.querySelector('#bi-modals');
+    const modalContainer = container.querySelector('#bi-modals');
 
-    expect(modal).to.equal(null);
+    expect(modalContainer).to.equal(null);
+
+    const modalBody = document.querySelector('#bi-modals');
+
+    expect(modalBody).to.exist;
   });
 
   it('should render without explode', () => {
@@ -73,7 +77,7 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    const modal = document.getElementById('bi-modals').querySelector('.bi-modal-wrapper').querySelectorAll('div')[1];
+    const modal = document.querySelector('#bi-modals .bi-modal-wrapper > div + div');
     expect(modal.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-modal']);
   });
 
@@ -220,8 +224,8 @@ describe('Modal component', () => {
   it('should accept onToggle prop', () => {
     const onToggleSpy = sinon.spy();
     render(
-      <Modal isOpen>
-        <Modal.Title onToggle={onToggleSpy}>Amazing modal title</Modal.Title>
+      <Modal isOpen onToggle={onToggleSpy}>
+        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -241,7 +245,7 @@ describe('Modal component', () => {
         className="backdrop"
         style={{ background: 'blue', top: '0', width: '100%', height: '100%', position: 'fixed' }}
       >
-          Some text here
+        Some text here
       </div>
     );
     render(
@@ -269,8 +273,8 @@ describe('Modal component', () => {
     );
 
     render(
-      <Modal isOpen>
-        <Modal.Title onToggle={noop} closeButtonRender={closeButton}>Amazing modal title</Modal.Title>
+      <Modal isOpen closeButtonRender={closeButton}>
+        <Modal.Title onToggle={noop}>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>
@@ -289,8 +293,8 @@ describe('Modal component', () => {
     const onCloseSpy = sinon.spy();
 
     render(
-      <Modal isOpen>
-        <Modal.Title onToggle={noop} onClose={onCloseSpy}>Amazing modal title</Modal.Title>
+      <Modal isOpen onClose={onCloseSpy} onToggle={noop}>
+        <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
         </Modal.Body>

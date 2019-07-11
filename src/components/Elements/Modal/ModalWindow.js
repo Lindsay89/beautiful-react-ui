@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { BaseProps, makeCallback } from '../../../shared';
+import Button from '../Button';
+import CloseIcon from '../_CloseIcon';
+import { BaseProps, makeCallback, warn } from '../../../shared';
 
 import './modal.scss';
 
@@ -12,12 +14,29 @@ import './modal.scss';
 const ModalWindow = (props) => {
   const {
     id, style, className, children, isOpen, centered, size, animation, onBackdropClick,
-    backdropRender,
+    backdropRender, closeButtonRender, onToggle, onClose,
   } = props;
 
   if (!isOpen) {
     return null;
   }
+
+
+  // one of the two following props must be defined.
+  if (!onToggle && !closeButtonRender) {
+    warn('It must be define one of the following two props to close the modal: onToggle or closeButtonRender');
+  }
+
+  const onCloseClickHandler = () => {
+    if (onToggle) {
+      if (onClose) {
+        onToggle();
+        onClose();
+      } else {
+        onToggle();
+      }
+    }
+  };
 
   const classList = classNames('bi bi-modal', {
     'modal-open': isOpen,
@@ -45,6 +64,14 @@ const ModalWindow = (props) => {
       )}
       {backdropRender && backdropRender(props)}
       <div id={id} style={style} className={classList}>
+        {closeButtonRender && closeButtonRender()}
+        {!closeButtonRender
+          && (
+            <Button color="transparent" className="modal-button" onClick={onCloseClickHandler}>
+              <CloseIcon />
+            </Button>
+          )
+        }
         {children}
       </div>
     </div>
@@ -77,6 +104,10 @@ ModalWindow.propTypes = {
    * this prop will replace the normal behavior of modal component
    */
   backdropRender: PropTypes.func,
+  /**
+  * it will be render instead of the close button
+  */
+  closeButtonRender: PropTypes.func,
 };
 
 ModalWindow.defaultProps = {
@@ -85,6 +116,7 @@ ModalWindow.defaultProps = {
   animation: 'fade',
   onBackdropClick: undefined,
   backdropRender: undefined,
+  closeButtonRender: undefined,
 };
 
 export default ModalWindow;
