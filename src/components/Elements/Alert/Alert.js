@@ -34,11 +34,11 @@ Alert.propTypes = {
   /**
    * A solid background style variant with white text and without border.
    */
-  solid: PropTypes.string,
+  solid: PropTypes.bool,
   /**
    * Shows the outlines only
    */
-  outline: PropTypes.string,
+  outline: PropTypes.bool,
   /**
    * onClose accept a function. If there's any function, it will show a button
    */
