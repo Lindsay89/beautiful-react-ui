@@ -1,17 +1,19 @@
 @import "../../../theme/utils/animations.scss";
 
 .bi-modal-wrapper {
-  @apply flex;
+  @apply inset-0 fixed overflow-hidden;
 
   .modal-backdrop {
     @apply inset-0 fixed;
 
     z-index: 9999;
     background-color: rgba(0, 0, 0, 0.25);
+
+    @include fadeIn(0.25s);
   }
 
   .bi.bi-modal {
-    @apply mx-auto mt-4 bg-white border border-solid rounded font-sans inset-x-0 top-0;
+    @apply mx-auto mt-8 bg-white rounded font-sans inset-x-0 top-0 shadow-lg;
 
     .bi-modal-title {
       @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4 flex flex-row;
@@ -36,7 +38,7 @@
     }
 
     &.modal-open {
-      @apply bg-white fixed mt-4;
+      @apply bg-white fixed;
 
       z-index: 9999;
       max-width: 31rem;
@@ -63,22 +65,22 @@
     }
 
     // ----------------------------
-    // ANIMATION
+    // ANIMATIONS
     // ----------------------------
     &.modal-fade {
-      @include fadeIn;
+      @include fadeIn();
     }
 
     &.modal-scale {
-      @include scale;
+      @include scale();
     }
 
     &.modal-slideRight {
-      @include slideRight;
+      @include slideRight();
     }
 
     &.modal-slideLeft {
-      @include slideLeft;
+      @include slideLeft();
     }
 
     &.modal-slideTop {

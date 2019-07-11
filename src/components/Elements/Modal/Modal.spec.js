@@ -127,7 +127,7 @@ describe('Modal component', () => {
 
   it('should accept the \'animation\' prop', () => {
     const { rerender } = render(
-      <Modal isOpen onBackdropClick={noop} animation="scale">
+      <Modal isOpen onBackdropClick={noop} animation="zoom">
         <Modal.Title>Amazing modal title</Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral...
@@ -161,7 +161,7 @@ describe('Modal component', () => {
         <Modal.Footer />
       </Modal>,
     );
-    expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-fade']);
+    expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-scale']);
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-slideTop']);
   });
 

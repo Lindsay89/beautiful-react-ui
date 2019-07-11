@@ -11,6 +11,7 @@ export { default as Pill } from './components/Elements/Pill';
 export { default as Placeholder } from './components/Elements/Placeholder';
 export { default as Spinner } from './components/Elements/Spinner';
 export { default as Tab } from './components/Elements/Tab';
+export { default as Modal } from './components/Elements/Modal';
 
 // Forms
 export { default as Toggle } from './components/Forms/Toggle';

@@ -2,20 +2,17 @@
 // FADEIN ANIMATION
 // ---------------------
 @mixin fadeIn($duration: 0.5s) {
-  opacity: 0;
   animation-name: AnimationFadeIn;
   animation-duration: $duration;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-delay: 0.1s;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes AnimationFadeIn {
-  0% {
+  from {
     opacity: 0;
   }
 
-  100% {
+  to {
     opacity: 1;
   }
 }
@@ -23,91 +20,104 @@
 // ---------------------
 // SCALE ANIMATION
 // ---------------------
-@mixin scale() {
-  animation-name: scaleAnimation;
-  animation-duration: 0.4s;
+@mixin scale($duration: 0.5s) {
+  animation-name: AnimationScale;
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
 }
 
-@keyframes scaleAnimation {
+@keyframes AnimationScale {
   from {
-    transform: scale(0);
+    opacity: 0;
+    transform: scale(0.95);
   }
 
   to {
+    opacity: 1;
     transform: scale(1);
   }
 }
 
 // ---------------------
-// SLIDETOP ANIMATION
+// SLIDE TOP ANIMATION
 // ---------------------
-@mixin slideTop() {
-  animation-name: animateTop;
-  animation-duration: 0.4s;
+@mixin slideTop($duration: 0.5s) {
+  animation-name: AnimationSlideTop;
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
 }
 
-@keyframes animateTop {
+@keyframes AnimationSlideTop {
   from {
+    opacity: 0;
     transform: translateY(-10%);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0%);
   }
 }
 
 // ---------------------
-// SLIDEBOTTOM ANIMATION
+// SLIDE BOTTOM ANIMATION
 // ---------------------
-@mixin slideBottom() {
-  animation-name: animateBottom;
-  animation-duration: 0.4s;
+@mixin slideBottom($duration: 0.5s) {
+  animation-name: AnimationSlideBottom;
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
 }
 
-@keyframes animateBottom {
+@keyframes AnimationSlideBottom {
   from {
+    opacity: 0;
     transform: translateY(10%);
   }
 
   to {
+    opacity: 1;
     transform: translateY(0%);
   }
 }
 
 // ---------------------
-// SLIDERIGHT ANIMATION
+// SLIDE RIGHT ANIMATION
 // ---------------------
-@mixin slideRight() {
-  animation-name: slideRightAnimation;
-  animation-duration: 0.4s;
-  transition-timing-function: linear;
+@mixin slideRight($duration: 0.5s) {
+  animation-name: AnimationSlideRight;
+  animation-duration: $duration;
+  animation-timing-function: ease-in-out;
 }
 
-@keyframes slideRightAnimation {
+@keyframes AnimationSlideRight {
   from {
+    opacity: 0;
     transform: translateX(10%);
   }
 
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }
 
 // ---------------------
-// SLIDELEFT ANIMATION
+// SLIDE LEFT ANIMATION
 // ---------------------
-@mixin slideLeft() {
-  animation-name: slideLeftAnimation;
-  animation-duration: 0.4s;
-  transition-timing-function: linear;
+@mixin slideLeft($duration: 0.5s) {
+  animation-name: AnimationSlideLeft;
+  animation-duration: $duration;
+  animation-timing-function: linear;
 }
 
-@keyframes slideLeftAnimation {
+@keyframes AnimationSlideLeft {
   from {
+    opacity: 0;
     transform: translateX(-10%);
   }
 
   to {
+    opacity: 1;
     transform: translateX(0);
   }
 }

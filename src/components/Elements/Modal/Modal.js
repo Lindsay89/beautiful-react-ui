@@ -26,9 +26,9 @@ const wipeOutIncorrectChildren = (child) => {
  */
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Modal = React.memo((props) => {
-  const { children,
-    id, style, className, isOpen, centered, size, animation, onBackdropClick,
-    backdropRender, onClose, onShow } = props;
+  const {
+    children, id, style, className, isOpen, centered, size, animation, onBackdropClick, backdropRender, onClose, onShow,
+  } = props;
 
 
   if (!isOpen) {
@@ -50,7 +50,7 @@ const Modal = React.memo((props) => {
     'modal-small': size === 'small',
     'modal-large': size === 'large',
     'modal-fade': animation === 'fade',
-    'modal-scale': animation === 'scale',
+    'modal-scale': animation === 'zoom',
     'modal-slideRight': animation === 'slideRight',
     'modal-slideLeft': animation === 'slideLeft',
     'modal-slideBottom': animation === 'slideBottom',
@@ -109,7 +109,7 @@ Modal.propTypes = {
   /**
    * It defines what kind of animation should be performed
    */
-  animation: PropTypes.string,
+  animation: PropTypes.oneOf(['fade', 'zoom', 'slideRight', 'slideLeft', 'slideBottom', 'slideTop']),
   /**
    * If defined, this function will be run when clicking on backdrop
    */
@@ -124,7 +124,7 @@ Modal.defaultProps = {
   onShow: undefined,
   centered: false,
   size: 'default',
-  animation: 'fade',
+  animation: 'zoom',
   backdropRender: undefined,
 };
 
