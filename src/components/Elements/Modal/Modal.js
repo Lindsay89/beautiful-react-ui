@@ -35,20 +35,12 @@ const Modal = React.memo((props) => {
     return null;
   }
 
-
-  // one of the two following props must be defined.
-  if (!onBackdropClick) {
-    warn('onBackdropClick must be define to close the modal');
-  }
-
   const onCloseClickHandler = () => {
     if (onBackdropClick) {
-      if (onClose) {
-        onBackdropClick();
-        onClose();
-      } else {
-        onBackdropClick();
-      }
+      onBackdropClick();
+    }
+    if (onClose) {
+      onClose();
     }
   };
 
@@ -121,7 +113,7 @@ Modal.propTypes = {
   /**
    * If defined, this function will be run when clicking on backdrop
    */
-  onBackdropClick: PropTypes.func,
+  onBackdropClick: PropTypes.func.isRequired,
   /**
    * this prop will replace the normal behavior of modal component
    */
@@ -133,7 +125,6 @@ Modal.defaultProps = {
   centered: false,
   size: 'default',
   animation: 'fade',
-  onBackdropClick: undefined,
   backdropRender: undefined,
 };
 
