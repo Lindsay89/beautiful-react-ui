@@ -26,10 +26,13 @@ const wipeOutIncorrectChildren = (child) => {
 /**
  * Modal component looks like a smaller window  with some content that shows up disabling the main window.
  */
+// the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Modal = React.memo((props) => {
   const { children, isOpen, onShow } = props;
 
-  // getPortalWrapper is a function that create the div if it doesn't exist
+  /* getPortalWrapper returns the element with the given id, in this case bi-modals
+  * if it doesn't exist create a new div with the given id and returns it.
+  */
   const modalDiv = getPortalWrapper('bi-modals');
 
   useEffect(() => () => {
@@ -52,7 +55,7 @@ const Modal = React.memo((props) => {
      * In this way the modal will be always in front of everything else present in the webpage.
      */
   return ReactDOM.createPortal(
-    <ModalWindow isOpen={isOpen} {...props}>{childrenArray}</ModalWindow>,
+    <ModalWindow {...props}>{childrenArray}</ModalWindow>,
     modalDiv,
   );
 });
@@ -60,17 +63,51 @@ const Modal = React.memo((props) => {
 Modal.propTypes = {
   ...BaseProps,
   /**
-   * This prop is required to show or hide the modal window.
+   * This prop defines whether the modal is shown or not.
    */
   isOpen: PropTypes.bool.isRequired,
   /**
    * onShow will be performed when each time the modal will be open
    */
   onShow: PropTypes.func,
+  /**
+   * The callback to be performed when clicking on clasable button
+   */
+  onToggle: PropTypes.func.isRequired,
+  /**
+   * Centered prop center the modal to place it in the middle of the screen viewport.
+   */
+  centered: PropTypes.bool,
+  /**
+   * It defines the modal's dimension
+   */
+  size: PropTypes.string,
+  /**
+   * It defines what kind of animation should be performed
+   */
+  animation: PropTypes.string,
+  /**
+   * If defined, this function will be run when clicking on backdrop
+   */
+  onBackdropClick: PropTypes.func,
+  /**
+   * this prop will replace the normal behavior of modal component
+   */
+  backdropRender: PropTypes.func,
+  /**
+  * it will be render instead of the close button
+  */
+  closeButtonRender: PropTypes.func,
 };
 
 Modal.defaultProps = {
   onShow: undefined,
+  centered: false,
+  size: 'default',
+  animation: 'fade',
+  onBackdropClick: undefined,
+  backdropRender: undefined,
+  closeButtonRender: undefined,
 };
 
 Modal.Title = ModalTitle;

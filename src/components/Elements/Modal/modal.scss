@@ -4,10 +4,10 @@
   @apply flex;
 
   .modal-backdrop {
-    @apply inset-0 w-full h-full fixed;
+    @apply inset-0 fixed;
 
     z-index: 9999;
-    background-color: #8c97a57a;
+    background-color: rgba(0, 0, 0, 0.25);
   }
 
   .bi.bi-modal {
@@ -17,10 +17,10 @@
       @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4;
 
       border-color: theme("colors.default");
+    }
 
-      .modal-button {
-        @apply float-right p-0;
-      }
+    .modal-button {
+      @apply float-right pt-4;
     }
 
     .bi-modal-body {
