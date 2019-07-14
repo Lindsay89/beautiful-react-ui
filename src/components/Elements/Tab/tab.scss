@@ -1,4 +1,4 @@
-@import "../../../theme/utils/mixins.scss";
+@import "../../../theme/utils/animations.scss";
 
 @mixin create-tab-color($colorName) {
   &.tab-color-#{$colorName} {

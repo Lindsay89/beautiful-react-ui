@@ -196,3 +196,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improved Alert documentation
 - `nyc` added to `devDependencies`
 - Avatar sizes bug fixed
+
+## [0.17.0]  - 2019-07-05
+
+### Added
+
+- Portal component
+- Portal component tests
+- Modal component
+- Modal component tests
+
+### Fixed
+
+- Few PropTypes validation errors

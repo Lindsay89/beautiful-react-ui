@@ -19,7 +19,12 @@ const Placeholder = ({ paragraphs, image, title, id, className, style }) => {
       {image && (<span className="bi-placeholder-img" />)}
       <div className="bi-placeholder-parag-wrapper">
         {title && <span className="bi-placeholder-title" />}
-        {Array.from({ length: paragraphs }).map(() => <span className="bi-placeholder-paragraph" />)}
+        {Array.from({ length: paragraphs }).map((und, index) => (
+          // this is the only way to assign a key to the generated span component, for this reason
+          // I'm are disabling the following ESLint rule.
+          // eslint-disable-next-line react/no-array-index-key
+          <span key={`par-${index}`} className="bi-placeholder-paragraph" />
+        ))}
       </div>
     </div>
   );

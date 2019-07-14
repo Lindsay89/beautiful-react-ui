@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color, IconProp } from '../../../shared';
+import { BaseProps, Color, IconProp, warn } from '../../../shared';
 import AccordionContent from './AccordionContent';
 
 import './accordion.scss';
@@ -11,14 +11,7 @@ import './accordion.scss';
  */
 const cloneAccordionContents = (child, index, props) => {
   if (child.type !== AccordionContent) {
-    /**
-     * Eslint forces the developer to not have any `console` statement, in this case we want to warn the
-     * user without throwing an error so it's perfectly safe to disable this rule.
-     */
-    /* eslint-disable-next-line no-console */
-    console.warn(
-      'Accordion allows only Accordion.Content children, other kind of elements will be wiped out',
-    );
+    warn('Accordion allows only Accordion.Content children, other kind of elements will be wiped out');
 
     return null;
   }
