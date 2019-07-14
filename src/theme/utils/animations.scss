@@ -2,6 +2,9 @@
 // FADEIN ANIMATION
 // ---------------------
 @mixin fadeIn($duration: 0.5s) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1vh;
   animation-name: AnimationFadeIn;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
@@ -17,19 +20,26 @@
   }
 }
 
+.bi.bi-anim-fade-in {
+  @include fadeIn();
+}
+
 // ---------------------
 // SCALE ANIMATION
 // ---------------------
-@mixin scale($duration: 0.5s) {
-  animation-name: AnimationScale;
+@mixin zoomIn($duration: 0.5s) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1vh;
+  animation-name: AnimationZoomIn;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
 }
 
-@keyframes AnimationScale {
+@keyframes AnimationZoomIn {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.975);
   }
 
   to {
@@ -38,10 +48,17 @@
   }
 }
 
+.bi.bi-anim-zoom-in {
+  @include zoomIn();
+}
+
 // ---------------------
 // SLIDE TOP ANIMATION
 // ---------------------
 @mixin slideTop($duration: 0.5s) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1vh;
   animation-name: AnimationSlideTop;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
@@ -50,7 +67,7 @@
 @keyframes AnimationSlideTop {
   from {
     opacity: 0;
-    transform: translateY(-10%);
+    transform: translateY(-2.5%);
   }
 
   to {
@@ -59,10 +76,17 @@
   }
 }
 
+.bi.bi-anim-slide-top {
+  @include slideTop();
+}
+
 // ---------------------
 // SLIDE BOTTOM ANIMATION
 // ---------------------
 @mixin slideBottom($duration: 0.5s) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1vh;
   animation-name: AnimationSlideBottom;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
@@ -71,7 +95,7 @@
 @keyframes AnimationSlideBottom {
   from {
     opacity: 0;
-    transform: translateY(10%);
+    transform: translateY(2.5%);
   }
 
   to {
@@ -80,10 +104,17 @@
   }
 }
 
+.bi.bi-anim-slide-bottom {
+  @include slideBottom();
+}
+
 // ---------------------
 // SLIDE RIGHT ANIMATION
 // ---------------------
 @mixin slideRight($duration: 0.5s) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1vh;
   animation-name: AnimationSlideRight;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
@@ -92,7 +123,7 @@
 @keyframes AnimationSlideRight {
   from {
     opacity: 0;
-    transform: translateX(10%);
+    transform: translateX(2.5%);
   }
 
   to {
@@ -101,10 +132,17 @@
   }
 }
 
+.bi.bi-anim-slide-right {
+  @include slideRight();
+}
+
 // ---------------------
 // SLIDE LEFT ANIMATION
 // ---------------------
 @mixin slideLeft($duration: 0.5s) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1vh;
   animation-name: AnimationSlideLeft;
   animation-duration: $duration;
   animation-timing-function: linear;
@@ -113,11 +151,15 @@
 @keyframes AnimationSlideLeft {
   from {
     opacity: 0;
-    transform: translateX(-10%);
+    transform: translateX(-2.5%);
   }
 
   to {
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+.bi.bi-anim-slide-left {
+  @include slideLeft();
 }

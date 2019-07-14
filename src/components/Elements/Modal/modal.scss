@@ -1,22 +1,26 @@
 @import "../../../theme/utils/animations.scss";
 
 .bi-modal-wrapper {
-  @apply inset-0 fixed overflow-hidden;
+  @apply inset-0 fixed overflow-hidden text-default-darker leading-tight font-normal font-sans text-base;
+  @apply flex flex-wrap items-start;
 
-  .modal-backdrop {
-    @apply inset-0 fixed;
+  .bi-backdrop {
+    @apply inset-0 fixed p-6;
 
-    z-index: 9999;
     background-color: rgba(0, 0, 0, 0.25);
 
-    @include fadeIn(0.25s);
+    @include fadeIn(0.15s);
   }
 
   .bi.bi-modal {
-    @apply mx-auto mt-8 bg-white rounded font-sans inset-x-0 top-0 shadow-lg;
+    @apply mx-auto mt-8 bg-white rounded font-sans shadow-lg bg-white p-4;
+
+    z-index: 9999;
+    max-width: 31rem;
+    border-color: theme("colors.default");
 
     .bi-modal-title {
-      @apply border-t-0 border-r-0 border-l-0 border-b border-solid p-4 flex flex-row;
+      @apply border-t-0 border-r-0 border-l-0 border-b border-solid pb-4 font-medium;
 
       border-color: theme("colors.default");
 
@@ -26,79 +30,34 @@
     }
 
     .bi-modal-body {
-      @apply p-4 overflow-y-scroll;
+      @apply py-4 overflow-y-scroll;
 
       max-height: 10rem;
     }
 
     .bi-modal-footer {
-      @apply border-b-0 border-r-0 border-l-0 border-t border-solid p-4 flex flex-row-reverse;
+      @apply border-b-0 border-r-0 border-l-0 border-t border-solid pt-4 flex flex-row-reverse;
 
       border-color: theme("colors.default");
-    }
-
-    &.modal-open {
-      @apply bg-white fixed;
-
-      z-index: 9999;
-      max-width: 31rem;
-      border-color: theme("colors.default");
-    }
-
-    &.modal-centered {
-      @apply mt-0;
-
-      top: 50%;
-      transform: translate(0, -50%);
     }
 
     // ----------------------------
     // SIZES
     // ----------------------------
-
-    &.modal-small {
+    &.modal-sm {
       max-width: 15rem;
     }
 
-    &.modal-large {
+    &.modal-lg {
       max-width: 60rem;
     }
-
-    // ----------------------------
-    // ANIMATIONS
-    // ----------------------------
-    &.modal-fade {
-      @include fadeIn();
-    }
-
-    &.modal-scale {
-      @include scale();
-    }
-
-    &.modal-slideRight {
-      @include slideRight();
-    }
-
-    &.modal-slideLeft {
-      @include slideLeft();
-    }
-
-    &.modal-slideTop {
-      @include slideTop();
-    }
-
-    &.modal-slideBottom {
-      @include slideBottom();
-    }
   }
-}
 
-.bi.bi-btn.btn-block.align-button {
-  @apply ml-4;
+  &.center-modals {
+    @apply items-center;
 
-  width: 15rem;
-
-  + .bi.bi-btn.btn-block.align-button {
-    @apply ml-4  float-left;
+    .bi.bi-modal {
+      margin-top: 0;
+    }
   }
 }

@@ -17,7 +17,7 @@ export { default as Modal } from './components/Elements/Modal';
 export { default as Toggle } from './components/Forms/Toggle';
 
 /**
- * Writing an accessibility-first library of components is one of our main goals, but we need help.
+ * Writing an accessibility-first library of components is one of our goals, but it's a difficult task and we need help.
  * For this reason we are using AxE (and jsx-a11y eslint plugin).
  * AxE is a testing library that highlights potential accessibility issues in console.
  * In this case is safe to disable ESLint as we will use AXE only in development mode.

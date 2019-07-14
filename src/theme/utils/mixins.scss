@@ -3,6 +3,8 @@
 // --------------------
 @mixin ripple($opacity: 0.2) {
   &::after {
+    backface-visibility: hidden;
+    perspective: 1vh;
     content: "";
     display: block;
     position: absolute;

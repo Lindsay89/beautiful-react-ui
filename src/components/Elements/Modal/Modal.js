@@ -12,78 +12,52 @@ import './modal.scss';
 // this function wipes out the wrong children and warns about it.
 const wipeOutIncorrectChildren = (child) => {
   if (child.type !== ModalTitle && child.type !== ModalBody && child.type !== ModalFooter) {
-    warn(
-      'Modal allows only Modal.Title, Modal.Body or Modal.Footer children, other kind of elements will be wiped out',
-    );
+    warn('Modal allows Modal.Title, Modal.Body or Modal.Footer children only, other elements types are wiped out');
     return null;
   }
   return child;
 };
 
-
 /**
  * A Modal component shows its children contents positioned over everything else in the document.
  */
-// the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
+// the React.memo has been used here rather than on the export line (like other cases) to avoid wrapping the shortcut.
 const Modal = React.memo((props) => {
   const {
-    children, id, style, className, isOpen, centered, size, animation, onBackdropClick, backdropRender, onClose, onShow,
+    children, id, style, className, isOpen, centered, size, animation, onBackdropClick, backdropRender, onShow,
   } = props;
 
-
-  if (!isOpen) {
-    return null;
-  }
-
-  const onCloseClickHandler = () => {
-    if (onBackdropClick) {
-      onBackdropClick();
-    }
-    if (onClose) {
-      onClose();
-    }
-  };
-
-  const classList = classNames('bi bi-modal', {
-    'modal-open': isOpen,
-    'modal-centered': centered,
-    'modal-small': size === 'small',
-    'modal-large': size === 'large',
-    'modal-fade': animation === 'fade',
-    'modal-scale': animation === 'zoom',
-    'modal-slideRight': animation === 'slideRight',
-    'modal-slideLeft': animation === 'slideLeft',
-    'modal-slideBottom': animation === 'slideBottom',
-    'modal-slideTop': animation === 'slideTop',
-  }, className);
-
-  // useEffect is used to run onShow prop only when modal shows up
+  // this effect is used to run onShow prop only when modal shows up
   useEffect(() => {
-    if (onShow && isOpen) {
+    if (onShow && isOpen === true) {
       onShow();
     }
   }, [isOpen]);
 
-  const childrenArray = Children.map(children, wipeOutIncorrectChildren);
+  const classList = classNames('bi bi-modal', {
+    'modal-sm': size === 'small',
+    'modal-lg': size === 'large',
+    'bi-anim-fade-in': animation === 'fade',
+    'bi-anim-zoom-in': animation === 'zoom',
+    'bi-anim-slide-right': animation === 'slideRight',
+    'bi-anim-slide-left': animation === 'slideLeft',
+    'bi-anim-slide-bottom': animation === 'slideBottom',
+    'bi-anim-slide-top': animation === 'slideTop',
+  }, className);
+
   return (
     <Portal id="bi-modals">
-      <div className="bi-modal-wrapper">
-        {!backdropRender && (
-          <div
-            className="modal-backdrop"
-            onClick={makeCallback(onCloseClickHandler)}
-            role="button"
-            tabIndex={0}
-            onKeyDown={makeCallback(onCloseClickHandler)}
-          />
-        )}
-        {backdropRender && backdropRender(props)}
-        <div id={id} style={style} className={classList}>
-          <div className="modal-content-wrapper">
-            {childrenArray}
+      {isOpen && (
+        <div className={classNames('bi-modal-wrapper', { 'center-modals': centered })}>
+          {!backdropRender && (
+            <div role="presentation" onClick={makeCallback(onBackdropClick)} className="bi-backdrop" />
+          )}
+          {backdropRender && backdropRender(props)}
+          <div id={id} style={style} className={classList}>
+            {Children.map(children, wipeOutIncorrectChildren)}
           </div>
         </div>
-      </div>
+      )}
     </Portal>
   );
 });
@@ -109,11 +83,11 @@ Modal.propTypes = {
   /**
    * It defines what kind of animation should be performed
    */
-  animation: PropTypes.oneOf(['fade', 'zoom', 'slideRight', 'slideLeft', 'slideBottom', 'slideTop']),
+  animation: PropTypes.oneOf(['none', 'fade', 'zoom', 'slideRight', 'slideLeft', 'slideBottom', 'slideTop']),
   /**
    * If defined, this function will be run when clicking on backdrop
    */
-  onBackdropClick: PropTypes.func.isRequired,
+  onBackdropClick: PropTypes.func,
   /**
    * this prop will replace the normal behavior of modal component
    */
@@ -126,6 +100,7 @@ Modal.defaultProps = {
   size: 'default',
   animation: 'zoom',
   backdropRender: undefined,
+  onBackdropClick: undefined,
 };
 
 Modal.Title = ModalTitle;
