@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Color, BaseProps } from '../../../shared';
+import { Color } from '../../../shared';
 
 import './label.scss';
 
@@ -9,13 +9,13 @@ import './label.scss';
  * The Label component is used within this very same library to render forms' related labels
  */
 const Label = (props) => {
-  const { color, text, required, className, id, style, htmlFor, children } = props;
+  const { color, text, required, className, htmlFor, children, ...rest } = props;
 
   const classes = classNames('bi bi-label', `label-${color}`, { required }, className);
 
   return (
     /* eslint-disable-next-line jsx-a11y/label-has-for */
-    <label htmlFor={htmlFor} className={classes} id={id} style={style}>
+    <label htmlFor={htmlFor} className={classes} {...rest}>
       {children}
       {text}
       {required && <span>*</span>}
@@ -24,7 +24,6 @@ const Label = (props) => {
 };
 
 Label.propTypes = {
-  ...BaseProps,
   /**
    * The label text
    */

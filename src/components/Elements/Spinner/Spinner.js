@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { BaseProps, Color, Size } from '../../../shared';
+import { Color, Size } from '../../../shared';
 
 import './spinner.scss';
 
@@ -9,7 +9,7 @@ import './spinner.scss';
  * A Spinner component is used to show an animated glyph, mostly used to point that an activity has to complete.
  */
 const Spinner = (props) => {
-  const { color, type, size, id, className, style } = props;
+  const { color, type, size, className, ...rest } = props;
 
   const classes = classNames('bi', 'bi-spinner', `spinner-${color}`, {
     'spin-sm': size === 'small',
@@ -19,12 +19,11 @@ const Spinner = (props) => {
   }, className);
 
   return (
-    <span className={classes} id={id} style={style} />
+    <span className={classes} {...rest} />
   );
 };
 
 Spinner.propTypes = {
-  ...BaseProps,
   /**
    * Defines the spinner color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */

@@ -209,3 +209,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Few PropTypes validation errors
+
+## [0.18.0]  - 2019-07-14
+
+### Added
+
+- Props are spread down to the component's first element (when possible)
+
+### Fixed
+
+- Removed `BaseProps` shared prop type

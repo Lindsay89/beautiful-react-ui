@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color, IconProp } from '../../../shared';
-import BreadcrumbItems from './BreadcrumbItems';
+import { Color, IconProp } from '../../../shared';
+import BreadcrumbItem from './BreadcrumbItem';
 
 import './breadcrumb.scss';
 
@@ -10,16 +10,16 @@ import './breadcrumb.scss';
  * Breadcrumb components are used to show page hierarchy.
  */
 const Breadcrumb = (props) => {
-  const { items, color, style, id, className } = props;
+  const { items, color, className, ...rest } = props;
   const classList = classNames(`bi bi-breadcrumb breadcrumb-${color}`, className);
 
   return (
-    <nav className={classList} style={style} id={id}>
+    <nav className={classList} {...rest}>
       <ol>
         {items.map(item => (
           item.render
             ? item.render(item)
-            : <BreadcrumbItems path={item.path} label={item.label} icon={item.icon} />
+            : <BreadcrumbItem path={item.path} label={item.label} icon={item.icon} />
         ))}
       </ol>
     </nav>
@@ -27,7 +27,6 @@ const Breadcrumb = (props) => {
 };
 
 Breadcrumb.propTypes = {
-  ...BaseProps,
   /**
    * Defines the color of links in breadcrumb, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`,
    * `danger`.

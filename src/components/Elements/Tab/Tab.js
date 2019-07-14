@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TabContent from './TabContent';
 import TabButton from './TabButton';
-import { BaseProps, Color, warn } from '../../../shared';
+import { Color, warn } from '../../../shared';
 import './tab.scss';
 
 /**
@@ -32,14 +32,14 @@ const filterTabChildren = (child, index, props) => {
  */
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Tab = React.memo((props) => {
-  const { id, className, style, children, active, onChange, color, orientation } = props;
+  const { children, active, onChange, color, orientation, className, ...rest } = props;
   const tabContents = Children.toArray(children).map((child, index) => filterTabChildren(child, index, props));
   const classList = classNames(`bi bi-tab tab-color-${color}`, {
     'tab-orientation': orientation === 'vertical',
   }, className);
 
   return (
-    <div id={id} style={style} className={classList}>
+    <div className={classList} {...rest}>
       <nav className="bi-tab-nav">
         <ul>
           {tabContents.map(({ title, icon, disabled }, index) => (
@@ -63,7 +63,6 @@ const Tab = React.memo((props) => {
 });
 
 Tab.propTypes = {
-  ...BaseProps,
   /**
    * Defines the color of the link into the label tab, can be one of the following:
    * `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.

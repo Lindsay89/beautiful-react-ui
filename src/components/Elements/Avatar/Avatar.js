@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../Image';
-import { BaseProps, makePillFromProp, PillProp, Size, warn } from '../../../shared';
+import { makePillFromProp, PillProp, Size, warn } from '../../../shared';
 
 import './avatar.scss';
 
 /**
  * Avatar component is meant to show the user's face image or the user initials.
  */
-const Avatar = ({ src, alt, shape, initials, size, state, pill, className, id, style }) => {
+const Avatar = ({ src, alt, shape, initials, size, state, pill, className, ...rest }) => {
   const classList = classNames('bi bi-avatar', {
     'avt-sm': size === 'small',
     'avt-lg': size === 'large',
@@ -19,12 +19,12 @@ const Avatar = ({ src, alt, shape, initials, size, state, pill, className, id, s
   }, className);
 
   if (!initials && !src) {
-    warn('Avatar component has been used without providing a "src" nor a "initial" prop');
+    warn('Avatar component has been used without providing a \'src\' nor a \'initial\' prop');
     return null;
   }
 
   return (
-    <div className={classList} id={id} style={style}>
+    <div className={classList} {...rest}>
       <div className="avatar-item">
         {src && (<Image src={src} alt={alt} rounded={shape === 'rounded'} />)}
         {initials && (<span className="initials">{initials.slice(0, 2)}</span>)}
@@ -36,7 +36,6 @@ const Avatar = ({ src, alt, shape, initials, size, state, pill, className, id, s
 };
 
 Avatar.propTypes = {
-  ...BaseProps,
   /**
    * Defines the avatar size
    */

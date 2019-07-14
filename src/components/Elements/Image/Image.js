@@ -1,24 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { BaseProps } from '../../../shared';
 
 import './image.scss';
 
 /**
  * A lightweight image wrapper to show responsive images in style.
  */
-const Image = ({ src, alt, thumb, rounded, id, className, style, ...props }) => {
+const Image = ({ src, alt, thumb, rounded, className, ...props }) => {
   const classList = classNames('bi bi-image', {
     'bi-img-thumb': thumb,
     'bi-img-rounded': rounded,
   }, className);
 
-  return (<img src={src} alt={alt} id={id} style={style} className={classList} {...props} />);
+  return (<img src={src} alt={alt} className={classList} {...props} />);
 };
 
 Image.propTypes = {
-  ...BaseProps,
   /**
    * The image source
    */

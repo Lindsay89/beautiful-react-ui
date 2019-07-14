@@ -5,7 +5,7 @@ import Portal from '../_Portal';
 import ModalTitle from './ModalTitle';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
-import { BaseProps, makeCallback, warn } from '../../../shared';
+import { makeCallback, warn } from '../../../shared';
 
 import './modal.scss';
 
@@ -24,7 +24,7 @@ const wipeOutIncorrectChildren = (child) => {
 // the React.memo has been used here rather than on the export line (like other cases) to avoid wrapping the shortcut.
 const Modal = React.memo((props) => {
   const {
-    children, id, style, className, isOpen, centered, size, animation, onBackdropClick, backdropRender, onShow,
+    children, className, isOpen, centered, size, animation, onBackdropClick, backdropRender, onShow, ...rest
   } = props;
 
   // this effect is used to run onShow prop only when modal shows up
@@ -53,7 +53,7 @@ const Modal = React.memo((props) => {
             <div role="presentation" onClick={makeCallback(onBackdropClick)} className="bi-backdrop" />
           )}
           {backdropRender && backdropRender(props)}
-          <div id={id} style={style} className={classList}>
+          <div className={classList} {...rest}>
             {Children.map(children, wipeOutIncorrectChildren)}
           </div>
         </div>
@@ -63,7 +63,6 @@ const Modal = React.memo((props) => {
 });
 
 Modal.propTypes = {
-  ...BaseProps,
   /**
    * This prop defines whether the modal is shown or not.
    */
