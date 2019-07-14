@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color, IconProp, warn } from '../../../shared';
+import { Color, IconProp, warn } from '../../../shared';
 import AccordionContent from './AccordionContent';
 
 import './accordion.scss';
@@ -31,15 +31,12 @@ const cloneAccordionContents = (child, index, props) => {
  */
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Accordion = React.memo((props) => {
-  const { id, style, className, children, color } = props;
-
+  const { children, color, className, ...rest } = props;
   const classList = classNames('bi bi-accordion', `acc-color-${color}`, className);
 
   return (
-    <div id={id} style={style} className={classList}>
-      {Children.map(children, (child, index) => (
-        cloneAccordionContents(child, index, props)
-      ))}
+    <div className={classList} {...rest}>
+      {Children.map(children, (child, index) => cloneAccordionContents(child, index, props))}
     </div>
   );
 });
@@ -48,9 +45,7 @@ const Accordion = React.memo((props) => {
  * It is perfectly safe to disable the following eslint rule as the props it is referring to are actually passed
  * down to the cloneAccordionContents method.
  */
-/* eslint-disable react/no-unused-prop-types */
 Accordion.propTypes = {
-  ...BaseProps,
   /**
    * Defines the color of the accordion, can be one of the following:
    * `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
@@ -87,7 +82,6 @@ Accordion.defaultProps = {
   iconOpen: 'minus',
   iconClose: 'plus',
 };
-/* eslint-enable react/no-unused-prop-types */
 
 // shortcut to AccordionContent so that we can use it as the following: `Accordion.Content`
 Accordion.Content = AccordionContent;

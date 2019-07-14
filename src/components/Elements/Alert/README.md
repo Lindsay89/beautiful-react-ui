@@ -4,7 +4,6 @@
 <Alert>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 ```
 
-
 ### Alert Colors
 
 Color highlight different alerts.
@@ -24,7 +23,7 @@ import { Alert } from 'beautiful-ui';
 
 ### Solid brackground
 
-A solid background style variant with white text and without border.
+A solid background style variant, with white text and without border.
 
 ``` jsx
 import { Alert } from 'beautiful-ui';
@@ -43,7 +42,7 @@ import { Alert } from 'beautiful-ui';
 
 ### Outline
 
-Shows the outline only.
+Shows the outlines only.
 
 ``` jsx
 import { Alert } from 'beautiful-ui';
@@ -62,6 +61,7 @@ import { Alert } from 'beautiful-ui';
 ### Icons
 
 Adding icon to different alert.
+
 ``` jsx
 import { Alert, Icon } from 'beautiful-ui';
 
@@ -83,7 +83,7 @@ import { Alert, Icon } from 'beautiful-ui';
 
 ### Closable button
 
-Adding onClose prop, accept a function, and show button.
+The `onClose` prop if provided shows a closable "X" button that will perform the given prop when clicked.
 
 ``` jsx
 import { Alert, Button } from 'beautiful-ui';
@@ -104,5 +104,7 @@ const AlertController = (props) => {
   );
 };
 
-<AlertController color="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</AlertController>
+<AlertController color="primary">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+</AlertController>
 ```

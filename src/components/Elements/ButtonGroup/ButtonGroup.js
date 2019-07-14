@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color, Size, warn } from '../../../shared';
+import { Color, Size, warn } from '../../../shared';
 import Button from '../Button';
 
 import './button.group.scss';
@@ -23,11 +23,12 @@ const cloneButton = (buttonInstance, props) => {
 /**
  * Wraps a number of buttons and makes a group out of them
  */
-const ButtonGroup = ({ children, id, className, style, block, ...props }) => {
+// eslint-disable-next-line react/prop-types
+const ButtonGroup = ({ children, className, block, id, style, ...props }) => {
   // the reason I'm disabling eslint "react/destructuring-assignment" rule is that I want to keep some props within the
   // props constant, as it will then be passed as a parameter to the cloneButton function.
   /* eslint-disable react/destructuring-assignment */
-  const classList = classNames('bi bi-btn-group', `btn-group-${props.color}`, {
+  const classList = classNames('bi bi-btn-group', `btn-group-${props.color || 'default'}`, {
     'group-block': block,
     'group-outline': props.outline,
     'group-rounded': props.rounded,
@@ -43,7 +44,6 @@ const ButtonGroup = ({ children, id, className, style, block, ...props }) => {
 
 
 ButtonGroup.propTypes = {
-  ...BaseProps,
   /**
    * Defines the buttons color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`
    * or `transparent`

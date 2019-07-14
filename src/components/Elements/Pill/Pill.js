@@ -1,18 +1,15 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps, Color } from '../../../shared';
+import { Color } from '../../../shared';
 
 import './pill.scss';
 
 /**
- * A component for labeling/small counting
- * @param props
- * @returns {*}
- * @constructor
+ * A tiny component for labeling and small counting/notifications
  */
 const Pill = (props) => {
-  const { id, style, className, children, color, href, render, rounded } = props;
+  const { className, children, color, href, render, rounded, ...rest } = props;
   const El = href ? 'a' : 'span';
 
   const classList = classNames('bi bi-pill', `pill-${color}`, {
@@ -21,7 +18,7 @@ const Pill = (props) => {
   }, className);
 
   return (
-    <El id={id} style={style} className={classList} href={href}>
+    <El className={classList} href={href} {...rest}>
       {!render && children}
       {render && render(props)}
     </El>
@@ -29,7 +26,6 @@ const Pill = (props) => {
 };
 
 Pill.propTypes = {
-  ...BaseProps,
   /**
    * Defines the pill's color, can be `default`, `primary`, `secondary`,
    * `info`, `warning`, `success`, `danger`.

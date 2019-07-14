@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import uniqueId from 'lodash/fp/uniqueId';
 import PropTypes from 'prop-types';
-import { Color, Size, makeCallback, BaseProps, BaseFormProps } from '../../../shared';
+import { Color, Size, makeCallback, BaseFormProps } from '../../../shared';
 import Label from '../_Label';
 import HelpText from '../_HelpText';
 
@@ -12,8 +12,8 @@ import './toggle.scss';
  * Toggle is an controlled component to be used as a glorified checkbox
  */
 const Toggle = (props) => {
-  const { color, size, value, onChange, className, label, helpText, name, style, id } = props;
-  const uid = id || uniqueId('bi-toggle-');
+  const { color, size, value, onChange, className, label, helpText, name, ...rest } = props;
+  const uid = rest.id || uniqueId('bi-toggle-');
 
   const classes = classNames('bi bi-toggle', `toggle-${color}`, {
     toggled: value,
@@ -25,7 +25,7 @@ const Toggle = (props) => {
   const onChangeCb = makeCallback(onChange, !value);
 
   return (
-    <span className={classes} style={style} id={uid}>
+    <span className={classes} id={uid} {...rest}>
       {label && (
         <Label text={label} htmlFor={`${uid}-input`}>
           <input type="checkbox" defaultChecked={value} name={name} id={`${uid}-input`} />
@@ -51,7 +51,6 @@ const Toggle = (props) => {
 
 
 Toggle.propTypes = {
-  ...BaseProps,
   ...BaseFormProps,
   /**
    * Defines the toggle background color when toggled, can be `default`, `primary`, `secondary`, `info`, `warning`,
@@ -77,4 +76,4 @@ Toggle.defaultProps = {
   size: 'default',
 };
 
-export default Toggle;
+export default React.memo(Toggle);

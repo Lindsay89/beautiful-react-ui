@@ -8,7 +8,7 @@ import { makeIconFromProp, warn } from '../../../shared';
  * BreadcrumbsItems is a sub-component of Breadcrumb.
  * It handle the logic of creating a single item.
  */
-const BreadcrumbItems = (props) => {
+const BreadcrumbItem = (props) => {
   const { path, label, icon } = props;
 
   if (!label && !icon) {
@@ -35,7 +35,7 @@ const BreadcrumbItems = (props) => {
 };
 
 
-BreadcrumbItems.propTypes = {
+BreadcrumbItem.propTypes = {
   path: PropTypes.string,
   label: PropTypes.string,
   icon: PropTypes.oneOfType([
@@ -45,10 +45,10 @@ BreadcrumbItems.propTypes = {
   ]),
 };
 
-BreadcrumbItems.defaultProps = {
+BreadcrumbItem.defaultProps = {
   path: undefined,
   label: undefined,
   icon: undefined,
 };
 
-export default BreadcrumbItems;
+export default BreadcrumbItem;
