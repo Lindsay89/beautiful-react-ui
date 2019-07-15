@@ -1,26 +1,28 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { BaseProps } from '../../../shared';
 import Button from '../Button';
+import { IconProp } from '../../../shared';
 
 /**
  * Accordion content shows its content if active is provided
  */
 const AccordionContent = (props) => {
-  const { internalId, id, style, children, active, title, onChange, iconOpen, iconClose } = props;
+  const { internalId, children, active, title, onChange, iconOpen, iconClose, ...rest } = props;
   const classList = classNames('bi', 'bi-acc-content', {
     'acc-content-show': active,
   });
   const icon = active ? iconOpen : iconClose;
 
   return (
-    <div id={id} style={style} className={classList}>
+    <div className={classList} {...rest}>
       <Button
         block
         color="transparent"
         outline
-        onClick={() => { onChange(internalId); }}
+        onClick={() => {
+          onChange(internalId);
+        }}
         className="acc-title-button"
         icon={icon}
       >
@@ -34,15 +36,18 @@ const AccordionContent = (props) => {
 };
 
 AccordionContent.propTypes = {
-  ...BaseProps,
-  active: PropTypes.bool,
+  internalId: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
+  iconOpen: IconProp,
+  iconClose: IconProp,
   title: PropTypes.string,
 };
 
 AccordionContent.defaultProps = {
-  active: false,
-  title: null,
+  title: undefined,
+  iconOpen: 'minus',
+  iconClose: 'plus',
 };
 
 export default React.memo(AccordionContent);

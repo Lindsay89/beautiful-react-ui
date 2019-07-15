@@ -55,6 +55,7 @@ module.exports = {
             'src/components/Elements/Placeholder/Placeholder.js',
             'src/components/Elements/Spinner/Spinner.js',
             'src/components/Elements/Tab/Tab.js',
+            'src/components/Elements/Modal/Modal.js',
           ],
         },
         {

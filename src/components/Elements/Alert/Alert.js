@@ -3,14 +3,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import CloseIcon from '../_CloseIcon';
-import { BaseProps, Color } from '../../../shared';
+import { Color } from '../../../shared';
 import './alert.scss';
 
 /**
  * Alert component provides a contextual feedback messages for the user actions.
  */
 const Alert = (props) => {
-  const { children, id, style, className, color, solid, outline, onClose } = props;
+  const { color, solid, outline, onClose, children, className, ...rest } = props;
 
   const classList = classNames(`bi bi-alert alert-${color}`, {
     'alert-solid': solid,
@@ -18,7 +18,7 @@ const Alert = (props) => {
   }, className);
 
   return (
-    <div id={id} style={style} className={classList}>
+    <div className={classList} {...rest}>
       {children}
       {onClose && <Button color="transparent" className="alert-button" onClick={onClose}><CloseIcon /></Button>}
     </div>
@@ -26,7 +26,6 @@ const Alert = (props) => {
 };
 
 Alert.propTypes = {
-  ...BaseProps,
   /**
    * Defines the color of the alert, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
@@ -34,11 +33,11 @@ Alert.propTypes = {
   /**
    * A solid background style variant with white text and without border.
    */
-  solid: PropTypes.string,
+  solid: PropTypes.bool,
   /**
    * Shows the outlines only
    */
-  outline: PropTypes.string,
+  outline: PropTypes.bool,
   /**
    * onClose accept a function. If there's any function, it will show a button
    */

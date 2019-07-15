@@ -11,7 +11,6 @@ import {
   getFirstChild,
   makeSpinnerFromProp,
   makePillFromProp,
-  BaseProps,
   Size,
   Color,
   IconProp,
@@ -20,14 +19,13 @@ import {
 
 import './button.scss';
 
-
 /**
  * Button components are used to provide a visual indication user actions.
  */
 const Button = (props) => {
   const {
-    children, type, block, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
-    className, id, style,
+    type, block, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
+    className, children, ...rest
   } = props;
 
   const lastChild = getLastChild(children);
@@ -51,16 +49,8 @@ const Button = (props) => {
 
   return (
     // it is quite safe to disable the following Eslint rule as the button type is guaranteed by the defaultProp
-    /* eslint-disable-next-line react/button-has-type */
-    <button
-      id={id}
-      disabled={disabled}
-      type={type}
-      onClick={makeCallback(onClick)}
-      className={classList}
-      style={style}
-      aria-label={`Button ${children}`}
-    >
+    // eslint-disable-next-line react/button-has-type
+    <button disabled={disabled} type={type} onClick={makeCallback(onClick)} className={classList} {...rest}>
       {/* Generate icon if exists */}
       {!!icon && makeIconFromProp(icon)}
       {/* Generate spinner if exists */}
@@ -73,7 +63,6 @@ const Button = (props) => {
 };
 
 Button.propTypes = {
-  ...BaseProps,
   /**
    * Defines the button color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`
    * or `transparent`
@@ -131,7 +120,6 @@ Button.propTypes = {
    * Show a pill into the button. You can pass both a valid pill label prop or the instance of an pill component
    */
   pill: PillProp,
-
   /**
    * @ignore
    */
