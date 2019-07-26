@@ -228,3 +228,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Popup tests
 - getElementAbsolutePosition function
 - getElementAbsolutePosition tests
+
+## [0.20.0]  - 2019-07-18
+
+### Added
+
+- Input component
+- Icon component
+- Icon component tests

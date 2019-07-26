@@ -63,7 +63,7 @@ module.exports = {
           name: 'Forms',
           pagePerSection: true,
           components: () => [
-            'src/components/Forms/Toggle/Toggle.js',
+            'src/components/Forms/Input/Input.js',
           ],
         },
         {

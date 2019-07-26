@@ -1,10 +1,11 @@
 {
-  "name": "beautiful-ui-react",
-  "version": "0.19.0",
+  "name": "beautiful-ui",
+  "version": "0.20.0",
   "description": "A charming set of beautiful ui components",
   "main": "dist/index.js",
+  "files": [ "dist/**" ],
   "scripts": {
-    "build": "npm test && npm run clean-build && npm run build-js && npm run build-style",
+    "build": "NODE_ENV=production npm test && npm run clean-build && npm run build-js && npm run build-style",
     "build-js": "babel src --out-dir dist --source-maps --config-file ./babel.build.js",
     "build-style": "sass src:dist -s compressed && webpack --config webpack.style.build.config.js && rm dist/delete.this.*",
     "clean-build": "del-cli dist",

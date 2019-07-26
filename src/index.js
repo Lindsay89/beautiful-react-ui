@@ -15,7 +15,7 @@ export { default as Modal } from './components/Elements/Modal';
 export { default as Popup } from './components/Elements/Popup';
 
 // Forms
-export { default as Toggle } from './components/Forms/Toggle';
+export { default as Input } from './components/Forms/Input';
 
 /**
  * Writing an accessibility-first library of components is one of our goals, but it's a difficult task and we need help.

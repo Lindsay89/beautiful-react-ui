@@ -1,0 +1,137 @@
+@mixin make-input-color($color: 'default') {
+  &.input-#{$color} {
+    @apply border-#{$color};
+
+    input:focus {
+      box-shadow: 0 0 0 0.2rem theme('colors.#{$color}-lightest');
+    }
+
+    .bi.bi-icon {
+      color: theme('colors.#{$color}');
+    }
+  }
+}
+
+.bi.bi-input {
+  box-sizing: border-box;
+
+  @apply inline-flex relative align-baseline flex-col font-normal font-sans text-base tracking-normal text-default-darker;
+
+  input {
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    text-align: start;
+    // line-height: 1.15;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transition: box-shadow ease-in-out 0.25s;
+
+    @apply bg-white leading-tight border border-default-light border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
+
+    // placeholder
+    &::-webkit-input-placeholder {
+      @apply font-light;
+
+      opacity: 0.55;
+    }
+
+    &::-moz-placeholder {
+      @apply font-light;
+
+      opacity: 0.55;
+    }
+
+    &:-ms-input-placeholder {
+      @apply font-light;
+
+      opacity: 0.55;
+    }
+
+    &:-moz-placeholder {
+      @apply font-light;
+
+      opacity: 0.55;
+    }
+
+    // focus
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem theme('colors.primary-lightest');
+    }
+  }
+
+  + .bi.bi-input {
+    @apply ml-2;
+  }
+
+  // ----------------------------
+  // DISABLED
+  // ----------------------------
+  &.disabled input[disabled] {
+    @apply bg-default-lighter cursor-not-allowed;
+  }
+
+  // ----------------------------
+  // COLORS
+  // ----------------------------
+  @include make-input-color('primary');
+  @include make-input-color('secondary');
+  @include make-input-color('info');
+  @include make-input-color('success');
+  @include make-input-color('warning');
+  @include make-input-color('danger');
+
+  // ----------------------------
+  // ICONS
+  // ----------------------------
+  &.has-icon {
+    input {
+      @apply pr-8;
+    }
+
+    .bi.bi-icon {
+      @apply absolute fill-current right-0 top-0 bottom-0 px-3 pt-3 pointer-events-none;
+    }
+
+    &.icon-left {
+      input {
+        @apply pl-8 pr-3;
+      }
+
+      .bi.bi-icon {
+        @apply left-0 right-auto;
+      }
+    }
+  }
+
+  // ----------------------------
+  // SIZE
+  // ----------------------------
+  &.input-sm {
+    /* stylelint-disable-next-line no-descending-specificity */
+    input {
+      @apply pl-2 py-1 text-sm;
+    }
+
+    &.has-icon .bi.bi-icon {
+      @apply px-2 py-0;
+
+      height: 1.6875rem; // same height of the input when small
+    }
+  }
+
+  &.input-lg {
+    /* stylelint-disable-next-line no-descending-specificity */
+    input {
+      @apply pl-4 py-2 leading-normal text-xl;
+    }
+
+    &.has-icon .bi.bi-icon {
+      @apply px-2 py-0;
+
+      height: 3rem; // same height of the input when large
+    }
+  }
+}
+
