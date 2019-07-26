@@ -219,3 +219,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed `BaseProps` shared prop type
+
+## [0.19.0]  - 2019-07-19
+
+### Added
+
+- Popup component
+- Popup tests
+- getElementAbsolutePosition function
+- getElementAbsolutePosition tests

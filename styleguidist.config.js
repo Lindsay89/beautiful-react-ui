@@ -56,6 +56,7 @@ module.exports = {
             'src/components/Elements/Spinner/Spinner.js',
             'src/components/Elements/Tab/Tab.js',
             'src/components/Elements/Modal/Modal.js',
+            'src/components/Elements/Popup/Popup.js',
           ],
         },
         {
