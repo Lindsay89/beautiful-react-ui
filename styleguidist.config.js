@@ -56,13 +56,14 @@ module.exports = {
             'src/components/Elements/Spinner/Spinner.js',
             'src/components/Elements/Tab/Tab.js',
             'src/components/Elements/Modal/Modal.js',
+            'src/components/Elements/Popup/Popup.js',
           ],
         },
         {
           name: 'Forms',
           pagePerSection: true,
           components: () => [
-            'src/components/Forms/Toggle/Toggle.js',
+            'src/components/Forms/Input/Input.js',
           ],
         },
         {

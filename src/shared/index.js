@@ -1,7 +1,6 @@
 // types
 export { default as Color } from './types/Color';
 export { default as Size } from './types/Size';
-export { default as BaseFormProps } from './types/BaseFormProps';
 export { default as IconProp } from './types/IconProp';
 export { default as PillProp } from './types/PillProp';
 
@@ -14,3 +13,6 @@ export { default as emptyChildren } from './functions/emptyChildren';
 export { default as getLastChild } from './functions/getLastChild';
 export { default as getFirstChild } from './functions/getFirstChild';
 export { default as warn } from './functions/warn';
+
+// hooks
+export { default as useWindowResize } from './hooks/useWindowResize';

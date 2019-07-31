@@ -16,8 +16,8 @@ const Label = (props) => {
   return (
     /* eslint-disable-next-line jsx-a11y/label-has-for */
     <label htmlFor={htmlFor} className={classes} {...rest}>
-      {children}
       {text}
+      {children}
       {required && <span>*</span>}
     </label>
   );
@@ -27,7 +27,7 @@ Label.propTypes = {
   /**
    * The label text
    */
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   /**
    * The label `for` attribute
    */
@@ -44,6 +44,7 @@ Label.propTypes = {
 
 
 Label.defaultProps = {
+  text: undefined,
   color: 'default',
   required: false,
 };

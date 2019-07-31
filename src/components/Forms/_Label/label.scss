@@ -6,7 +6,7 @@
 
 
 .bi.bi-label {
-  @apply inline-block font-sans font-normal text-sm text-default-dark mb-2;
+  @apply inline-block font-sans font-normal text-sm text-default-dark;
 
   @include make-colored-label('primary');
   @include make-colored-label('secondary');

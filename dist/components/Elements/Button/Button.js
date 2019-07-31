@@ -11,21 +11,22 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
-var _Icon = _interopRequireDefault(require("../Icon"));
-
 var _Spinner = _interopRequireDefault(require("../Spinner"));
+
+var _Pill = _interopRequireDefault(require("../Pill"));
 
 var _shared = require("../../../shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Button = function Button(props) {
-  var children = props.children,
-      type = props.type,
+  var type = props.type,
       block = props.block,
       color = props.color,
       rounded = props.rounded,
@@ -36,10 +37,13 @@ var Button = function Button(props) {
       hover = props.hover,
       spinner = props.spinner,
       onClick = props.onClick,
+      pill = props.pill,
       className = props.className,
-      id = props.id,
-      style = props.style;
+      children = props.children,
+      rest = _objectWithoutProperties(props, ["type", "block", "color", "rounded", "outline", "disabled", "size", "icon", "hover", "spinner", "onClick", "pill", "className", "children"]);
+
   var lastChild = (0, _shared.getLastChild)(children);
+  var firstChild = (0, _shared.getFirstChild)(children);
   var classList = (0, _classnames["default"])('bi bi-btn', "btn-".concat(color), {
     'btn-block': block,
     'btn-outline': outline,
@@ -52,21 +56,20 @@ var Button = function Button(props) {
     'btn-sm': size === 'small',
     'btn-lg': size === 'large',
     'btn-icon-only': (0, _shared.emptyChildren)(children),
-    'btn-lci': lastChild && typeof lastChild !== 'string'
+    'btn-lci': lastChild && typeof lastChild !== 'string',
+    'btn-fcp': firstChild && firstChild.type === _Pill["default"]
   }, className);
-  return _react["default"].createElement("button", {
-    id: id,
+  return _react["default"].createElement("button", _extends({
     disabled: disabled,
     type: type,
     onClick: (0, _shared.makeCallback)(onClick),
-    className: classList,
-    style: style
-  }, !!icon && (0, _shared.makeIconFromProp)(icon), !!spinner && (0, _shared.makeSpinnerFromProp)(spinner, {
+    className: classList
+  }, rest), !!icon && (0, _shared.makeIconFromProp)(icon), !!spinner && (0, _shared.makeSpinnerFromProp)(spinner, {
     size: size
-  }), children);
+  }), children, !!pill && (0, _shared.makePillFromProp)(pill));
 };
 
-Button.propTypes = _objectSpread({}, _shared.BaseProps, {
+Button.propTypes = {
   color: _shared.Color,
   size: _shared.Size,
   outline: _propTypes["default"].bool,
@@ -76,10 +79,11 @@ Button.propTypes = _objectSpread({}, _shared.BaseProps, {
   block: _propTypes["default"].bool,
   hover: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['round', 'zoom', 'shrink', 'float', 'reflection'])]),
   onClick: _propTypes["default"].func,
-  icon: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].instanceOf(_Icon["default"])]),
+  icon: _shared.IconProp,
   spinner: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].instanceOf(_Spinner["default"])]),
+  pill: _shared.PillProp,
   children: _propTypes["default"].node
-});
+};
 Button.defaultProps = {
   color: 'default',
   size: 'default',
@@ -92,6 +96,7 @@ Button.defaultProps = {
   icon: undefined,
   spinner: false,
   onClick: null,
+  pill: undefined,
   children: null
 };
 
