@@ -19,7 +19,7 @@ const Avatar = ({ src, alt, shape, initials, size, state, pill, className, ...re
   }, className);
 
   if (!initials && !src) {
-    warn('Avatar component has been used without providing a \'src\' nor a \'initial\' prop');
+    warn('Avatar component has been used without providing a \'src\' nor an \'initial\' prop');
     return null;
   }
 

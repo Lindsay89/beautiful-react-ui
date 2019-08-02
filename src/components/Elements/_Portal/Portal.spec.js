@@ -22,18 +22,28 @@ describe('Portal private component', () => {
 });
 
 describe('getPortalWrapper utility', () => {
+  afterEach(cleanup);
+
   it('should return the element with the given id', () => {
     const div = document.createElement('div');
     div.id = 'foo';
     document.body.appendChild(div);
 
     expect(getPortalWrapper('foo')).to.equal(div);
+
+    div.remove();
   });
 
   it('should return a new element if the given id does not exists', () => {
+    const div = document.createElement('div');
+    div.id = 'foo';
+    document.body.appendChild(div);
+
     const el = getPortalWrapper('bar');
 
     expect(el).to.not.equal(null);
     expect(el).to.be.instanceOf(HTMLDivElement);
+
+    div.remove();
   });
 });

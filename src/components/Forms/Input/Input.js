@@ -7,11 +7,11 @@ import { Color, IconProp, Size, makeIconFromProp, makeCallback } from '../../../
 import './input.scss';
 
 /**
- * Input component
+ * An Input component is a field used to get a response from the user
  */
 const Input = (props) => {
   const {
-    value, onChange, color, placeholder, disabled, size, helpText, icon, iconPosition, className, ...rest
+    value, onChange, color, placeholder, disabled, size, helpText, icon, iconPosition, className, style, ...rest
   } = props;
 
   const classList = classNames('bi bi-input', `input-${color}`, {
@@ -23,7 +23,7 @@ const Input = (props) => {
   }, className);
 
   return (
-    <div className={classList}>
+    <div className={classList} style={style}>
       <input
         value={value}
         onChange={makeCallback(onChange)}
@@ -75,16 +75,21 @@ Input.propTypes = {
    * Defines the icon position
    */
   iconPosition: PropTypes.oneOf(['right', 'left']),
+  /**
+   * @ignore
+   */
+  style: PropTypes.shape({}),
 };
 
 Input.defaultProps = {
-  placeholder: 'Input',
+  placeholder: 'text...',
   disabled: false,
   helpText: undefined,
   color: 'default',
   size: 'default',
   icon: undefined,
   iconPosition: 'right',
+  style: undefined,
 };
 
 export default Input;

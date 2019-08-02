@@ -43,7 +43,7 @@ describe('Alert component', () => {
     expect(getByText(/some text here/).textContent).to.equal('some text here');
   });
 
-  it('shoul allow to define custom style', () => {
+  it('should allow to define custom style', () => {
     const { container } = render(<Alert style={{ margin: '10px' }}>some text here</Alert>);
     const alert = container.querySelector('.bi.bi-alert');
 
