@@ -235,4 +235,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Input component
 - Icon component
-- Icon component tests
+
+## [0.20.1]  - 2019-07-18
+
+### Added
+
+- Input component tests
