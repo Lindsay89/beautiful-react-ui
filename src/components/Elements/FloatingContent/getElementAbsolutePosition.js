@@ -9,9 +9,9 @@ const getTopPosition = (bodyHeight, element, offset) => bodyHeight - element.off
 const getBottomPosition = (bodyHeight, coord, elem, offset) => bodyHeight - elem.offsetTop - coord.height - offset;
 
 /**
- * Accepts an HTML element and returns its absolute position relative to the document.
+ * Returns the absolute position of a given HTML element to the document.
  */
-const getElementAbsolutePosition = (element, position = 'top-center', offset = 10) => {
+const getElementAbsolutePosition = (element, placement = 'top-center', offset = 10) => {
   const { clientHeight, clientWidth } = document.body;
   let bottom;
   let right;
@@ -26,7 +26,7 @@ const getElementAbsolutePosition = (element, position = 'top-center', offset = 1
     ? element.children[0].getBoundingClientRect()
     : element.getBoundingClientRect();
 
-  switch (position) {
+  switch (placement) {
     case 'top-left':
       bottom = getTopPosition(clientHeight, element, offset);
       left = getLeftPosition(boundingClientRect);

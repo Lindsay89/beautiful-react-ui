@@ -81,10 +81,16 @@ Object.defineProperty(exports, "Modal", {
     return _Modal["default"];
   }
 });
-Object.defineProperty(exports, "Popup", {
+Object.defineProperty(exports, "Popover", {
   enumerable: true,
   get: function get() {
-    return _Popup["default"];
+    return _Popover["default"];
+  }
+});
+Object.defineProperty(exports, "FloatingContent", {
+  enumerable: true,
+  get: function get() {
+    return _FloatingContent["default"];
   }
 });
 Object.defineProperty(exports, "Input", {
@@ -120,10 +126,11 @@ var _Tab = _interopRequireDefault(require("./components/Elements/Tab"));
 
 var _Modal = _interopRequireDefault(require("./components/Elements/Modal"));
 
-var _Popup = _interopRequireDefault(require("./components/Elements/Popup"));
+var _Popover = _interopRequireDefault(require("./components/Elements/Popover"));
+
+var _FloatingContent = _interopRequireDefault(require("./components/Elements/FloatingContent"));
 
 var _Input = _interopRequireDefault(require("./components/Forms/Input"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 //# sourceMappingURL=index.js.map

@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "default", {
   enumerable: true,
   get: function get() {
-    return _Popup["default"];
+    return _Popover["default"];
   }
 });
 
-var _Popup = _interopRequireDefault(require("./Popup"));
+var _Popover = _interopRequireDefault(require("./Popover"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

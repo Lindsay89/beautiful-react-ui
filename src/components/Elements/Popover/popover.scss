@@ -1,0 +1,218 @@
+@import "../../../theme/utils/animations";
+
+.bi.bi-popover {
+  @apply border border-solid p-2 bg-white rounded text-default-darker leading-tight font-normal font-sans text-base;
+
+  border-color: theme("colors.default-light");
+
+  @include fadeIn(0.25s);
+
+  .bi-popover-title {
+    @apply mx-0 mt-0 mb-2 pb-2 font-medium text-base;
+
+    border-bottom: 0.065rem solid theme("colors.default-light");
+  }
+
+  // ----------------------------
+  // ARROW
+  // ----------------------------
+  &::before {
+    @apply absolute w-0 h-0;
+
+    content: "";
+    z-index: 999;
+  }
+
+  &::after {
+    @apply border h-0 absolute;
+
+    content: "";
+  }
+}
+
+// ----------------------------
+// ARROW POSITION
+// ----------------------------
+.bi.bi-floater.float-top-center .bi.bi-popover {
+  &::before {
+    bottom: -0.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-top: 0.5rem solid white;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0 solid transparent;
+  }
+
+  &::after {
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-top: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0 solid transparent;
+    border-top-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-top-left .bi.bi-popover {
+  &::before {
+    bottom: -0.4rem;
+    left: 10%;
+    transform: translate(-50%, 0);
+    border-top: 0.5rem solid white;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0 solid transparent;
+  }
+
+  &::after {
+    bottom: -0.5rem;
+    left: 10%;
+    transform: translate(-50%, 0);
+    border-top: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0 solid transparent;
+    border-top-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-top-right .bi.bi-popover {
+  &::before {
+    bottom: -0.4rem;
+    left: 90%;
+    transform: translate(-50%, 0);
+    border-top: 0.5rem solid white;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0 solid transparent;
+  }
+
+  &::after {
+    bottom: -0.5rem;
+    left: 90%;
+    transform: translate(-50%, 0);
+    border-top: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0 solid transparent;
+    border-top-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-bottom-center .bi.bi-popover {
+  &::before {
+    top: -0.4rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-bottom: 0.5rem solid white;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0 solid transparent;
+  }
+
+  &::after {
+    top: -0.5rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-bottom: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0 solid transparent;
+    border-bottom-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-bottom-left .bi.bi-popover {
+  &::before {
+    top: -0.4rem;
+    left: 10%;
+    transform: translate(-50%, 0);
+    border-bottom: 0.5rem solid white;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0 solid transparent;
+  }
+
+  &::after {
+    top: -0.5rem;
+    left: 10%;
+    transform: translate(-50%, 0);
+    border-bottom: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0 solid transparent;
+    border-bottom-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-bottom-right .bi.bi-popover {
+  &::before {
+    top: -0.4rem;
+    left: 90%;
+    transform: translate(-50%, 0);
+    border-bottom: 0.5rem solid white;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0 solid transparent;
+  }
+
+  &::after {
+    top: -0.5rem;
+    left: 90%;
+    transform: translate(-50%, 0);
+    border-bottom: 0.5rem solid;
+    border-right: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-top: 0 solid transparent;
+    border-bottom-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-left-center .bi.bi-popover {
+  &::before {
+    left: 99%;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-left: 0.5rem solid white;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-right: 0 solid transparent;
+  }
+
+  &::after {
+    top: 50%;
+    left: 100%;
+    transform: translate(0, -50%);
+    border-left: 0.5rem solid;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-right: 0 solid transparent;
+    border-left-color: theme("colors.default-light");
+  }
+}
+
+.bi.bi-floater.float-right-center .bi.bi-popover {
+  &::before {
+    right: 99%;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-right: 0.5rem solid white;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0 solid transparent;
+  }
+
+  &::after {
+    top: 50%;
+    right: 100%;
+    transform: translate(0, -50%);
+    border-right: 0.5rem solid;
+    border-top: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    border-left: 0 solid transparent;
+    border-right-color: theme("colors.default-light");
+  }
+}

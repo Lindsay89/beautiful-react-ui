@@ -26,7 +26,7 @@ var getBottomPosition = function getBottomPosition(bodyHeight, coord, elem, offs
 };
 
 var getElementAbsolutePosition = function getElementAbsolutePosition(element) {
-  var position = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top-center';
+  var placement = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top-center';
   var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 10;
   var _document$body = document.body,
       clientHeight = _document$body.clientHeight,
@@ -37,7 +37,7 @@ var getElementAbsolutePosition = function getElementAbsolutePosition(element) {
   var transform;
   var boundingClientRect = element.children.length !== 0 ? element.children[0].getBoundingClientRect() : element.getBoundingClientRect();
 
-  switch (position) {
+  switch (placement) {
     case 'top-left':
       bottom = getTopPosition(clientHeight, element, offset);
       left = getLeftPosition(boundingClientRect);

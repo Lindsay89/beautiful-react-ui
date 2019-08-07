@@ -241,3 +241,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Input component tests
+
+
+## [0.21.0]  - 2019-07-18
+
+### Added
+
+- FloatingContent component
+- FloatingContent component tests
+- Renaming Popup component as Popover
+- Rewriting Popover on top of FloatingContent
+- Dependencies updated

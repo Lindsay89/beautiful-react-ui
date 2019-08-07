@@ -43,7 +43,7 @@ var Avatar = function Avatar(_ref) {
   }, className);
 
   if (!initials && !src) {
-    (0, _shared.warn)('Avatar component has been used without providing a \'src\' nor a \'initial\' prop');
+    (0, _shared.warn)('Avatar component has been used without providing a \'src\' nor an \'initial\' prop');
     return null;
   }
 
