@@ -12,7 +12,8 @@ export { default as Placeholder } from './components/Elements/Placeholder';
 export { default as Spinner } from './components/Elements/Spinner';
 export { default as Tab } from './components/Elements/Tab';
 export { default as Modal } from './components/Elements/Modal';
-export { default as Popup } from './components/Elements/Popup';
+export { default as Popover } from './components/Elements/Popover';
+export { default as FloatingContent } from './components/Elements/FloatingContent';
 
 // Forms
 export { default as Input } from './components/Forms/Input';

@@ -1,0 +1,141 @@
+### Basic Usage
+
+Using a FloatingContent requires the `trigger` prop (generally another React component) to be defined.
+<br/>
+As the FloatingContent component is a controlled component we should also define both `onToggle`
+and `isShown` props.
+
+```jsx
+import { FloatingContent, Button } from 'beautiful-ui';
+
+const FloatingContentController = (props) => {
+  const [isShown, setIsShown] = React.useState(false); 
+
+  return (
+    <FloatingContent {...props} onToggle={() => setIsShown(!isShown)} isShown={isShown}>
+      <div style={{ padding: '0.625rem', background: '#ED254E', borderRadius: '0.315rem' }}>
+        Lorem ipsum&hellip;
+      </div>
+    </FloatingContent>
+  );
+};
+
+<>
+  <FloatingContentController trigger={<Button style={{ marginRight: '1rem' }}>Button trigger, click me</Button>} />
+  <FloatingContentController trigger="String trigger, click me" />
+</>
+```
+
+### Placement
+
+The `placement` prop defines the position of the floating content over the `trigger`:
+
+```jsx
+import { FloatingContent, Button } from 'beautiful-ui';
+
+const Trigger = ({ title }) => (
+  <Button block color="primary">show a <strong>{title}</strong> placed floating content</Button>
+);
+
+const FloatingContentController = (props) => {
+  const [isShown, setIsShown] = React.useState(false); 
+
+  return (
+    <FloatingContent onToggle={() => setIsShown(!isShown)} isShown={isShown} trigger={<Trigger title={props.placement} />} {...props} >
+      <div style={{ padding: '0.625rem', background: '#ED254E', borderRadius: '0.315rem' }}>
+        Lorem ipsum&hellip;
+      </div>
+    </FloatingContent>
+  );
+};
+
+<>
+  <FloatingContentController placement="top-left"/>
+  <FloatingContentController placement="top-right"/>
+  <FloatingContentController placement="top-center"/>
+  <FloatingContentController placement="bottom-left"/>
+  <FloatingContentController placement="bottom-right"/>
+  <FloatingContentController placement="bottom-center"/>
+  <FloatingContentController placement="left-center"/>
+  <FloatingContentController placement="right-center"/>
+</>
+```
+
+### Action
+
+The `action` defines when to fire the `onToggle` callback, it can be `click` or `hover`.
+
+```jsx
+import { FloatingContent, Button } from 'beautiful-ui';
+
+const Trigger = ({ title }) => (
+  <Button color="success" style={{marginRight: '1.25rem'}}>Show a floating content on <strong>{title}</strong></Button>
+);
+
+const FloatingContentController = (props) => {
+  const [isShown, setIsShown] = React.useState(false); 
+
+  return (
+    <FloatingContent onToggle={() => setIsShown(!isShown)} isShown={isShown} trigger={<Trigger title={props.action} />} {...props} >
+      <div style={{ padding: '0.625rem', background: '#ED254E', borderRadius: '0.315rem' }}>
+        Lorem ipsum&hellip;
+      </div>
+    </FloatingContent>
+  );
+};
+
+<>
+  <FloatingContentController action="hover"/>
+  <FloatingContentController action="click"/>
+</>
+```
+
+### Click outside
+
+By design, if the `action` prop is set to `click`, the floating content will toggle when clicking 
+outside of it, it's possible to disable this feature by setting `clickOutsideToToggle` to false.
+
+```jsx 
+import { Button, FloatingContent } from 'beautiful-ui';
+
+const Trigger = (<Button>Click to close</Button>);
+
+const FloatingContentController = (props) => {
+  const [isShown, setIsShown] = React.useState(false); 
+
+  return (
+    <FloatingContent onToggle={() => setIsShown(!isShown)} isShown={isShown} trigger={Trigger} {...props} >
+      <div style={{ padding: '0.625rem', background: '#ED254E', borderRadius: '0.315rem' }}>
+        Lorem ipsum&hellip;
+      </div>
+    </FloatingContent>
+  );
+};
+
+<FloatingContentController clickOutsideToToggle={false}/>
+```
+
+
+### Offset
+
+The `offset` defines a number in pixel to possibly separate the floating content from its trigger
+
+```jsx
+import { Button, FloatingContent } from 'beautiful-ui';
+
+const Trigger = (<Button>Show a floating content with a 40px offset</Button>);
+
+const FloatingContentController = (props) => {
+  const [isShown, setIsShown] = React.useState(false); 
+
+  return (
+    <FloatingContent onToggle={() => setIsShown(!isShown)} isShown={isShown} trigger={Trigger} {...props} >
+      <div style={{ padding: '0.625rem', background: '#ED254E', borderRadius: '0.315rem' }}>
+        Lorem ipsum&hellip;
+      </div>
+    </FloatingContent>
+  );
+};
+
+<FloatingContentController offset={40}/>
+```

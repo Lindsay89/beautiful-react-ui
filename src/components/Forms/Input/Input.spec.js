@@ -55,7 +55,7 @@ describe('Input component', () => {
     expect(actualInputTag.value).to.equal('foo');
   });
 
-  it('should perform the onChange callback when the input value changes', async () => {
+  it('should perform the onChange callback when the input value changes', () => {
     const onChange = sinon.spy();
     const { container } = render(<Input value="foo" onChange={onChange} />);
     const actualInputTag = container.querySelector('.bi.bi-input input');

@@ -35,20 +35,20 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Popup = function Popup(props) {
+var FloatingContent = function FloatingContent(props) {
   var trigger = props.trigger,
-      isOpen = props.isOpen,
+      isShown = props.isShown,
       onToggle = props.onToggle,
       action = props.action,
-      title = props.title,
       placement = props.placement,
-      hideArrow = props.hideArrow,
       offset = props.offset,
+      clickOutsideToToggle = props.clickOutsideToToggle,
       children = props.children,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["trigger", "isOpen", "onToggle", "action", "title", "placement", "hideArrow", "offset", "children", "className"]);
+      rest = _objectWithoutProperties(props, ["trigger", "isShown", "onToggle", "action", "placement", "offset", "clickOutsideToToggle", "children", "className"]);
 
   var triggerWrapperRef = (0, _react.useRef)(null);
+  var contentWrapperRef = (0, _react.useRef)(null);
 
   var _useState = (0, _react.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -60,27 +60,43 @@ var Popup = function Popup(props) {
       mouseIsHovering = _useState4[0],
       setMouseHover = _useState4[1];
 
-  var classList = (0, _classnames["default"])('bi bi-popup', {
-    'popup-top-left': placement === 'top-left',
-    'popup-top-center': placement === 'top-center',
-    'popup-top-right': placement === 'top-right',
-    'popup-left-center': placement === 'left-center',
-    'popup-right-center': placement === 'right-center',
-    'popup-bottom-left': placement === 'bottom-left',
-    'popup-bottom-center': placement === 'bottom-center',
-    'popup-bottom-right': placement === 'bottom-right',
-    'popup-hide-arrow': hideArrow === true
+  var classList = (0, _classnames["default"])('bi bi-floater', {
+    'float-top-left': placement === 'top-left',
+    'float-top-center': placement === 'top-center',
+    'float-top-right': placement === 'top-right',
+    'float-left-center': placement === 'left-center',
+    'float-right-center': placement === 'right-center',
+    'float-bottom-left': placement === 'bottom-left',
+    'float-bottom-center': placement === 'bottom-center',
+    'float-bottom-right': placement === 'bottom-right'
   }, className);
 
   var calcPopupPosition = function calcPopupPosition() {
-    if (isOpen && triggerWrapperRef.current) {
+    if (isShown && triggerWrapperRef.current) {
       var nextStyle = (0, _getElementAbsolutePosition["default"])(triggerWrapperRef.current, placement, offset);
       setElementStyle(nextStyle);
     }
   };
 
-  (0, _react.useEffect)(calcPopupPosition, [isOpen, offset, title, placement, children, hideArrow]);
+  var clickOutsideHandler = function clickOutsideHandler(_ref) {
+    var target = _ref.target;
+
+    if (isShown && triggerWrapperRef.current && !triggerWrapperRef.current.contains(target) && contentWrapperRef.current && !contentWrapperRef.current.contains(target)) {
+      onToggle();
+    }
+  };
+
+  (0, _react.useEffect)(calcPopupPosition, [isShown, offset, placement, children]);
   (0, _shared.useWindowResize)(calcPopupPosition);
+  (0, _react.useEffect)(function () {
+    if (triggerWrapperRef.current && contentWrapperRef.current && clickOutsideToToggle && action === 'click') {
+      document.addEventListener('click', clickOutsideHandler);
+    }
+
+    return function () {
+      document.removeEventListener('click', clickOutsideHandler);
+    };
+  }, [triggerWrapperRef.current, contentWrapperRef.current]);
 
   var onMouseEnter = function onMouseEnter() {
     if (!mouseIsHovering) {
@@ -102,41 +118,36 @@ var Popup = function Popup(props) {
     onMouseLeave: action === 'hover' ? onMouseLeave : undefined
   };
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("span", _extends({
-    className: "bi-popup-trigger",
+    className: "bi-float-trigger",
     ref: triggerWrapperRef,
     role: "complementary"
-  }, actions), trigger), !isOpen ? null : _react["default"].createElement(_Portal["default"], {
-    id: "bi-popups"
+  }, actions), trigger), !isShown ? null : _react["default"].createElement(_Portal["default"], {
+    id: "bi-floats"
   }, _react["default"].createElement("div", _extends({}, rest, {
     className: classList,
-    style: elementStyle
-  }), title && _react["default"].createElement("h1", {
-    className: "popup-title"
-  }, title), _react["default"].createElement("div", {
-    className: "popup-content"
-  }, children))));
+    style: elementStyle,
+    ref: contentWrapperRef
+  }), children)));
 };
 
-Popup.propTypes = {
+FloatingContent.propTypes = {
   trigger: _propTypes["default"].node.isRequired,
   onToggle: _propTypes["default"].func.isRequired,
-  isOpen: _propTypes["default"].bool,
+  isShown: _propTypes["default"].bool,
   action: _propTypes["default"].oneOf(['click', 'hover']),
-  title: _propTypes["default"].string,
-  placement: _propTypes["default"].string,
-  hideArrow: _propTypes["default"].bool,
+  clickOutsideToToggle: _propTypes["default"].bool,
+  placement: _shared.Placement,
   offset: _propTypes["default"].number
 };
-Popup.defaultProps = {
-  isOpen: false,
+FloatingContent.defaultProps = {
+  isShown: false,
   action: 'click',
-  title: null,
+  clickOutsideToToggle: true,
   placement: 'top-center',
-  hideArrow: false,
   offset: 10
 };
 
-var _default = _react["default"].memo(Popup);
+var _default = _react["default"].memo(FloatingContent);
 
 exports["default"] = _default;
-//# sourceMappingURL=Popup.js.map
+//# sourceMappingURL=FloatingContent.js.map

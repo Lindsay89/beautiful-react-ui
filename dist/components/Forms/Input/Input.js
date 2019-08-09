@@ -34,7 +34,8 @@ var Input = function Input(props) {
       icon = props.icon,
       iconPosition = props.iconPosition,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["value", "onChange", "color", "placeholder", "disabled", "size", "helpText", "icon", "iconPosition", "className"]);
+      style = props.style,
+      rest = _objectWithoutProperties(props, ["value", "onChange", "color", "placeholder", "disabled", "size", "helpText", "icon", "iconPosition", "className", "style"]);
 
   var classList = (0, _classnames["default"])('bi bi-input', "input-".concat(color), {
     disabled: disabled,
@@ -44,7 +45,8 @@ var Input = function Input(props) {
     'input-lg': size === 'large'
   }, className);
   return _react["default"].createElement("div", {
-    className: classList
+    className: classList,
+    style: style
   }, _react["default"].createElement("input", _extends({
     value: value,
     onChange: (0, _shared.makeCallback)(onChange),
@@ -68,16 +70,18 @@ Input.propTypes = {
   color: _shared.Color,
   size: _shared.Size,
   icon: _shared.IconProp,
-  iconPosition: _propTypes["default"].oneOf(['right', 'left'])
+  iconPosition: _propTypes["default"].oneOf(['right', 'left']),
+  style: _propTypes["default"].shape({})
 };
 Input.defaultProps = {
-  placeholder: 'Input',
+  placeholder: 'text...',
   disabled: false,
   helpText: undefined,
   color: 'default',
   size: 'default',
   icon: undefined,
-  iconPosition: 'right'
+  iconPosition: 'right',
+  style: undefined
 };
 var _default = Input;
 exports["default"] = _default;

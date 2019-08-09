@@ -15,6 +15,12 @@ Object.defineProperty(exports, "Size", {
     return _Size["default"];
   }
 });
+Object.defineProperty(exports, "Placement", {
+  enumerable: true,
+  get: function get() {
+    return _Placement["default"];
+  }
+});
 Object.defineProperty(exports, "IconProp", {
   enumerable: true,
   get: function get() {
@@ -85,6 +91,8 @@ Object.defineProperty(exports, "useWindowResize", {
 var _Color = _interopRequireDefault(require("./types/Color"));
 
 var _Size = _interopRequireDefault(require("./types/Size"));
+
+var _Placement = _interopRequireDefault(require("./types/Placement"));
 
 var _IconProp = _interopRequireDefault(require("./types/IconProp"));
 
