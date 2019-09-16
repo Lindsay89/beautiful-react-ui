@@ -8,7 +8,7 @@ and `isShown` props.
 ```jsx
 import { FloatingContent, Button } from 'beautiful-ui';
 
-const FloatingContentController = (props) => {
+const UncontrolledFloatingContent = (props) => {
   const [isShown, setIsShown] = React.useState(false); 
 
   return (
@@ -21,8 +21,8 @@ const FloatingContentController = (props) => {
 };
 
 <>
-  <FloatingContentController trigger={<Button style={{ marginRight: '1rem' }}>Button trigger, click me</Button>} />
-  <FloatingContentController trigger="String trigger, click me" />
+  <UncontrolledFloatingContent trigger={<Button style={{ marginRight: '1rem' }}>Button trigger, click me</Button>} />
+  <UncontrolledFloatingContent trigger="String trigger, click me" />
 </>
 ```
 
@@ -37,7 +37,7 @@ const Trigger = ({ title }) => (
   <Button block color="primary">show a <strong>{title}</strong> placed floating content</Button>
 );
 
-const FloatingContentController = (props) => {
+const UncontrolledFloatingContent = (props) => {
   const [isShown, setIsShown] = React.useState(false); 
 
   return (
@@ -50,14 +50,14 @@ const FloatingContentController = (props) => {
 };
 
 <>
-  <FloatingContentController placement="top-left"/>
-  <FloatingContentController placement="top-right"/>
-  <FloatingContentController placement="top-center"/>
-  <FloatingContentController placement="bottom-left"/>
-  <FloatingContentController placement="bottom-right"/>
-  <FloatingContentController placement="bottom-center"/>
-  <FloatingContentController placement="left-center"/>
-  <FloatingContentController placement="right-center"/>
+  <UncontrolledFloatingContent placement="top-left"/>
+  <UncontrolledFloatingContent placement="top-right"/>
+  <UncontrolledFloatingContent placement="top-center"/>
+  <UncontrolledFloatingContent placement="bottom-left"/>
+  <UncontrolledFloatingContent placement="bottom-right"/>
+  <UncontrolledFloatingContent placement="bottom-center"/>
+  <UncontrolledFloatingContent placement="left-center"/>
+  <UncontrolledFloatingContent placement="right-center"/>
 </>
 ```
 
@@ -72,7 +72,7 @@ const Trigger = ({ title }) => (
   <Button color="success" style={{marginRight: '1.25rem'}}>Show a floating content on <strong>{title}</strong></Button>
 );
 
-const FloatingContentController = (props) => {
+const UncontrolledFloatingContent = (props) => {
   const [isShown, setIsShown] = React.useState(false); 
 
   return (
@@ -85,8 +85,8 @@ const FloatingContentController = (props) => {
 };
 
 <>
-  <FloatingContentController action="hover"/>
-  <FloatingContentController action="click"/>
+  <UncontrolledFloatingContent action="hover"/>
+  <UncontrolledFloatingContent action="click"/>
 </>
 ```
 
@@ -100,7 +100,7 @@ import { Button, FloatingContent } from 'beautiful-ui';
 
 const Trigger = (<Button>Click to close</Button>);
 
-const FloatingContentController = (props) => {
+const UncontrolledFloatingContent = (props) => {
   const [isShown, setIsShown] = React.useState(false); 
 
   return (
@@ -112,7 +112,7 @@ const FloatingContentController = (props) => {
   );
 };
 
-<FloatingContentController clickOutsideToToggle={false}/>
+<UncontrolledFloatingContent clickOutsideToToggle={false}/>
 ```
 
 
@@ -125,7 +125,7 @@ import { Button, FloatingContent } from 'beautiful-ui';
 
 const Trigger = (<Button>Show a floating content with a 40px offset</Button>);
 
-const FloatingContentController = (props) => {
+const UncontrolledFloatingContent = (props) => {
   const [isShown, setIsShown] = React.useState(false); 
 
   return (
@@ -137,5 +137,5 @@ const FloatingContentController = (props) => {
   );
 };
 
-<FloatingContentController offset={40}/>
+<UncontrolledFloatingContent offset={40}/>
 ```

@@ -12,7 +12,8 @@ import './floating-content.scss';
  */
 const FloatingContent = (props) => {
   const {
-    trigger, isShown, onToggle, action, placement, offset, clickOutsideToToggle, children, className, ...rest
+    trigger, isShown, onToggle, action, placement, offset, clickOutsideToToggle, widthAsTrigger,
+    children, className, ...rest
   } = props;
   const triggerWrapperRef = useRef(null);
   const contentWrapperRef = useRef(null);
@@ -33,7 +34,8 @@ const FloatingContent = (props) => {
   // Derives the component's position from the trigger's wrapper element then set it as elementStyle state.
   const calcPopupPosition = () => {
     if (isShown && triggerWrapperRef.current) {
-      const nextStyle = getElementAbsolutePosition(triggerWrapperRef.current, placement, offset);
+      const nextStyle = getElementAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
+
       setElementStyle(nextStyle);
     }
   };
@@ -91,7 +93,7 @@ const FloatingContent = (props) => {
   return (
     <>
       {/* To easily access the trigger's position we wrap it within a referenced span */}
-      <span className="bi-float-trigger" ref={triggerWrapperRef} role="complementary" {...actions}>
+      <span className="bi bi-float-trigger" ref={triggerWrapperRef} role="complementary" {...actions}>
         {trigger}
       </span>
       {!isShown ? null : (
@@ -137,6 +139,10 @@ FloatingContent.propTypes = {
    * Defines a number in pixel to possibly separate the popup from the trigger
    */
   offset: PropTypes.number,
+  /**
+   * Defines if the floating content should have the same width of its trigger
+   */
+  widthAsTrigger: PropTypes.bool,
 };
 
 FloatingContent.defaultProps = {
@@ -145,6 +151,7 @@ FloatingContent.defaultProps = {
   clickOutsideToToggle: true,
   placement: 'top-center',
   offset: 10,
+  widthAsTrigger: false,
 };
 
 export default React.memo(FloatingContent);

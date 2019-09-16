@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import getPortalWrapper from './getPortalWrapper';
 
 /**
- * Create a React with the given id
+ * Just creates a React Portal with the given id
  */
 const Portal = ({ id, children }) => {
   const wrapper = getPortalWrapper(id);

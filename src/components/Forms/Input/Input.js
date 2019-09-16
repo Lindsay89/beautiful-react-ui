@@ -29,7 +29,6 @@ const Input = (props) => {
         onChange={makeCallback(onChange)}
         placeholder={placeholder}
         disabled={disabled}
-        className={classList}
         {...rest}
       />
       {icon && makeIconFromProp(icon, { size })}

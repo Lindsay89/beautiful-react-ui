@@ -65,6 +65,7 @@ module.exports = {
           pagePerSection: true,
           components: () => [
             'src/components/Forms/Input/Input.js',
+            'src/components/Forms/Select/Select.js',
           ],
         },
         {

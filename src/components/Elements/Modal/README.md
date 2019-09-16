@@ -8,7 +8,7 @@ within the `Modal.Body` child component.
 ```jsx
 import { Button, Modal } from 'beautiful-ui';
 
-const ModalController = () => {
+const UncontrolledModal = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -27,7 +27,7 @@ const ModalController = () => {
   );
 };
 
-<ModalController />
+<UncontrolledModal />
 ```
 
 
@@ -39,7 +39,7 @@ the modal's title and footer
 ```jsx
 import { Button, Modal } from 'beautiful-ui';
 
-const ModalController = () => {
+const UncontrolledModal = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -62,7 +62,7 @@ const ModalController = () => {
   );
 };
 
-<ModalController />
+<UncontrolledModal />
 ```
 
 ##### Title with closable button:
@@ -72,7 +72,7 @@ const ModalController = () => {
 import { Button, Modal } from 'beautiful-ui';
 import CloseIcon from '../_CloseIcon';
 
-const ModalController = (props) => {
+const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -101,7 +101,7 @@ const ModalController = (props) => {
     </>
 )};
 
-<ModalController />
+<UncontrolledModal />
 ```
 
 ### Centered
@@ -112,7 +112,7 @@ The `centered` prop set the modal position right in the middle of the viewport.
 ```jsx
 import { Button, Modal } from 'beautiful-ui';
 
-const ModalController = () => {
+const UncontrolledModal = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -135,7 +135,7 @@ const ModalController = () => {
   );
 };
 
-<ModalController />
+<UncontrolledModal />
 ```
 
 ### Modal Size
@@ -146,7 +146,7 @@ The `size` prop could be used to change the modal's size.
 ```jsx
 import { Button, Modal } from 'beautiful-ui';
 
-const ModalController = (props) => {
+const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -165,9 +165,9 @@ const ModalController = (props) => {
 };
 
 <>
-  <ModalController size="small" />
-  <ModalController size="default" />
-  <ModalController size="large" />
+  <UncontrolledModal size="small" />
+  <UncontrolledModal size="default" />
+  <UncontrolledModal size="large" />
 </>
 ```
 
@@ -180,7 +180,7 @@ this behaviour by changing the value of the `animation` prop.
 ```jsx
 import { Button } from 'beautiful-ui';
 
-const ModalController = (props) => {
+const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -204,13 +204,13 @@ const ModalController = (props) => {
 };
 
 <>
-  <ModalController animation='none' />
-  <ModalController animation='fade' />
-  <ModalController animation='zoom' />
-  <ModalController animation='slideTop' />
-  <ModalController animation='slideBottom' />
-  <ModalController animation='slideRight' />
-  <ModalController animation='slideLeft' />
+  <UncontrolledModal animation='none' />
+  <UncontrolledModal animation='fade' />
+  <UncontrolledModal animation='zoom' />
+  <UncontrolledModal animation='slideTop' />
+  <UncontrolledModal animation='slideBottom' />
+  <UncontrolledModal animation='slideRight' />
+  <UncontrolledModal animation='slideLeft' />
 </>
 ```
 
@@ -222,7 +222,7 @@ import {Button} from 'beautiful-ui';
 
 const onShow = () => alert('this will be an amazing modal');
 
-const ModalController = (props) => {
+const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -245,7 +245,7 @@ const ModalController = (props) => {
   );
 };
 
-<ModalController onShow={onShow} />  
+<UncontrolledModal onShow={onShow} />  
 ```
 
 ### Backdrop Render
@@ -264,7 +264,7 @@ const CustomBackdrop = (props) => (
 );
 
 
-const ModalController = (props) => {
+const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   
   return(
@@ -284,5 +284,5 @@ const ModalController = (props) => {
   );
 };
 
-<ModalController/>
+<UncontrolledModal/>
 ```

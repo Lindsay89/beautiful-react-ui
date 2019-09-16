@@ -11,12 +11,13 @@ const getBottomPosition = (bodyHeight, coord, elem, offset) => bodyHeight - elem
 /**
  * Returns the absolute position of a given HTML element to the document.
  */
-const getElementAbsolutePosition = (element, placement = 'top-center', offset = 10) => {
+const getElementAbsolutePosition = (element, placement = 'top-center', offset = 10, setWidth = false) => {
   const { clientHeight, clientWidth } = document.body;
   let bottom;
   let right;
   let left;
   let transform;
+
   /**
    * As we assume the span is wrapping a React component, we try to get its bounding client rect by accessing the span's
    * children from the `element.children` property, if it is not available or is empty we then use the span itself to
@@ -69,7 +70,7 @@ const getElementAbsolutePosition = (element, placement = 'top-center', offset = 
       break;
   }
 
-  return ({ bottom, right, left, transform, minWidth: '5rem', maxWidth: '30rem' });
+  return ({ bottom, right, left, transform, ...setWidth && { width: boundingClientRect.width } });
 };
 
 export default getElementAbsolutePosition;

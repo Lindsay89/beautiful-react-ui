@@ -89,9 +89,9 @@ The `onClose` prop if provided shows a closable "X" button that will perform the
 import { Alert, Button } from 'beautiful-ui';
 
 /**
- * AlertController is a statefull component wrapping an Alert
+ * UncontrolledAlert is a statefull component wrapping an Alert
  */
-const AlertController = (props) => {
+const UncontrolledAlert = (props) => {
   const [showAlert, setShowAlert] = React.useState(true);
 
   return (
@@ -104,7 +104,7 @@ const AlertController = (props) => {
   );
 };
 
-<AlertController color="primary">
+<UncontrolledAlert color="primary">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit
-</AlertController>
+</UncontrolledAlert>
 ```
