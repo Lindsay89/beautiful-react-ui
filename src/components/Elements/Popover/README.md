@@ -8,7 +8,7 @@ All the valid props of [FloatingContent](#/Components/Elements/Popover) are also
 ```jsx
 import { Popover, Button } from 'beautiful-ui';
 
-const PopoverController = (props) => {
+const UncontrolledPopover = (props) => {
   const [isOpen, setIsOpen] = React.useState(false); 
 
   return (
@@ -19,8 +19,8 @@ const PopoverController = (props) => {
 };
 
 <>
-  <PopoverController trigger={<Button style={{ marginRight: '1rem' }}>Button trigger, click me</Button>} />
-  <PopoverController trigger="String trigger, click me" />
+  <UncontrolledPopover trigger={<Button style={{ marginRight: '1rem' }}>Button trigger, click me</Button>} />
+  <UncontrolledPopover trigger="String trigger, click me" />
 </>
 ```
 
@@ -34,7 +34,7 @@ import { Button } from 'beautiful-ui';
 
 const Trigger = (<Button>Show a popup with a title</Button>);
 
-const PopoverController = (props) => {
+const UncontrolledPopover = (props) => {
   const [isOpen, setIsOpen] = React.useState(false); 
 
   return (
@@ -44,7 +44,7 @@ const PopoverController = (props) => {
   );
 };
 
-<PopoverController title="A fancy title" trigger={Trigger} />
+<UncontrolledPopover title="A fancy title" trigger={Trigger} />
 ```
 
 ### Placement
@@ -58,7 +58,7 @@ const Trigger = ({ title }) => (
   <Button block color="primary">show a <strong>{title}</strong> placed popover</Button>
 );
 
-const PopoverController = ({ placement }) => {
+const UncontrolledPopover = ({ placement }) => {
   const [isOpen, setIsOpen] = React.useState(false); 
 
   return (
@@ -69,14 +69,14 @@ const PopoverController = ({ placement }) => {
 };
 
 <>
-  <PopoverController placement="top-left"/>
-  <PopoverController placement="top-right"/>
-  <PopoverController placement="top-center"/>
-  <PopoverController placement="bottom-left"/>
-  <PopoverController placement="bottom-right"/>
-  <PopoverController placement="bottom-center"/>
-  <PopoverController placement="left-center"/>
-  <PopoverController placement="right-center"/>
+  <UncontrolledPopover placement="top-left"/>
+  <UncontrolledPopover placement="top-right"/>
+  <UncontrolledPopover placement="top-center"/>
+  <UncontrolledPopover placement="bottom-left"/>
+  <UncontrolledPopover placement="bottom-right"/>
+  <UncontrolledPopover placement="bottom-center"/>
+  <UncontrolledPopover placement="left-center"/>
+  <UncontrolledPopover placement="right-center"/>
 </>
 ```
 
@@ -92,7 +92,7 @@ const Trigger = ({ title }) => (
   <Button color="success" style={{marginRight: 12}}>show a popup on <strong>{title}</strong></Button>
 );
 
-const PopoverController = ({ action }) => {
+const UncontrolledPopover = ({ action }) => {
   const [isOpen, setIsOpen] = React.useState(false); 
 
   return (
@@ -103,7 +103,7 @@ const PopoverController = ({ action }) => {
 };
 
 <>
-  <PopoverController action="hover"/>
-  <PopoverController action="click"/>
+  <UncontrolledPopover action="hover"/>
+  <UncontrolledPopover action="click"/>
 </>
 ```

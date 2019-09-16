@@ -140,34 +140,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Tab component is now exported from index.js
 
-## [0.10.0]  - 2019-07-02
+## [0.10.0] - 2019-07-02
 
 ### Added
 
 - Test coverage report with NYC
 - Test coverage should now be >= 80%
 
-## [0.11.0]  - 2019-07-02
+## [0.11.0] - 2019-07-02
 
 ### Added
 
 - Tests on shared functions
 
-## [0.12.0]  - 2019-07-02
+## [0.12.0] - 2019-07-02
 
 ### Added
 
 - Placeholder component
 - Placeholder component tests
 
-## [0.13.0]  - 2019-07-02
+## [0.13.0] - 2019-07-02
 
 ### Added
 
 - Image component
 - Image component tests
 
-## [0.14.0]  - 2019-07-03
+## [0.14.0] - 2019-07-03
 
 ### Added
 
@@ -175,20 +175,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Avatar component
 - Avatar component tests
 
-## [0.15.0]  - 2019-07-04
+## [0.15.0] - 2019-07-04
 
 ### Added
 
 - `warn` utility function has been added to have a more readable codebase
 
-## [0.16.0]  - 2019-07-04
+## [0.16.0] - 2019-07-04
 
 ### Added
 
 - Close Icon
 - Close Icon tests
 
-## [0.16.1]  - 2019-07-04
+## [0.16.1] - 2019-07-04
 
 ### Fixed
 
@@ -197,7 +197,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `nyc` added to `devDependencies`
 - Avatar sizes bug fixed
 
-## [0.17.0]  - 2019-07-05
+## [0.17.0] - 2019-07-05
 
 ### Added
 
@@ -210,7 +210,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Few PropTypes validation errors
 
-## [0.18.0]  - 2019-07-14
+## [0.18.0] - 2019-07-14
 
 ### Added
 
@@ -220,7 +220,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Removed `BaseProps` shared prop type
 
-## [0.19.0]  - 2019-07-19
+## [0.19.0] - 2019-07-19
 
 ### Added
 
@@ -229,21 +229,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - getElementAbsolutePosition function
 - getElementAbsolutePosition tests
 
-## [0.20.0]  - 2019-07-18
+## [0.20.0] - 2019-07-18
 
 ### Added
 
 - Input component
 - Icon component
 
-## [0.20.1]  - 2019-07-18
+## [0.20.1] - 2019-08-04
 
 ### Added
 
 - Input component tests
 
 
-## [0.21.0]  - 2019-07-18
+## [0.21.0] - 2019-08-07
 
 ### Added
 
@@ -252,3 +252,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Renaming Popup component as Popover
 - Rewriting Popover on top of FloatingContent
 - Dependencies updated
+
+## [0.22.0] - 2019-08-07
+
+### Added
+
+- Select component
+- Select component tests
+
+### Fixed
+- Input component: removed className from <input> tag

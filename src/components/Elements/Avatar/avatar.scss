@@ -1,5 +1,5 @@
 .bi.bi-avatar {
-  @apply inline-flex items-end relative;
+  @apply inline-flex items-end relative align-bottom;
 
   + .bi.bi-avatar {
     @apply ml-2;
