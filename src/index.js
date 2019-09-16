@@ -18,3 +18,8 @@ export { default as FloatingContent } from './components/Elements/FloatingConten
 // Forms
 export { default as Input } from './components/Forms/Input';
 export { default as Select } from './components/Forms/Select';
+
+
+// Layout
+
+export { default as Grid } from './components/Layout/Grid';

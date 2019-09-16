@@ -262,3 +262,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Input component: removed className from <input> tag
+
+
+### [0.23.0] - 2019-09-16
+
+### Added
+
+- Layout folder
+- Grid component
