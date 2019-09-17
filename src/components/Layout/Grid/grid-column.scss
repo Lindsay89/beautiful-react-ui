@@ -1,0 +1,24 @@
+.bi.bi-grid-column {
+  @apply w-full;
+  
+  @media screen and (max-width: theme('screens.sm')) {
+    &.col-sm-1{
+      width: (1/12) * 100%;
+    }
+    &.col-sm-2{
+      width: (2/12) *100%;
+    }
+    &.col-sm-3{
+      width: (3/12) *100%;
+    }
+    &.col-sm-4{
+      width: (4/12) *100%;
+    }
+    &.col-sm-5{
+      width: (5/12) *100%;
+    }
+    &.col-sm-6{
+      width: (6/12) *100%;
+    }
+  }
+}

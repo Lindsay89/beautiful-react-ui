@@ -1,30 +1,14 @@
-import React, { Children } from 'react';
+import React from 'react';
 import GridColumn from './GridColumn';
-import { warn } from '../../../shared';
 
+import './grid.scss';
 
-const cloneGridColumn = (child, index, props) => {
-  if (child.type !== GridColumn) {
-    warn('Grid allows only GridColumn children, other kind of elements will be wiped out');
+const Grid = ({ children }) => (
+  <div className="bi bi-grid">
+    {children}
+  </div>
+);
 
-    return null;
-  }
-
-  return React.cloneElement(child, {
-    internalId: index,
-  });
-};
-
-
-const Grid = (props) => {
-  const { children } = props;
-
-  return (
-    <div className="bi bi-grid border">
-      
-      {Children.map(children, (child, index) => cloneGridColumn(child, index, props))}
-    </div>
-  );
-};
+Grid.Column = GridColumn;
 
 export default Grid;
