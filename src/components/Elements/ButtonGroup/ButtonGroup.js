@@ -7,7 +7,7 @@ import Button from '../Button';
 import './button.group.scss';
 
 /**
- * overrides the button instance props with the group ones
+ * overrides the button instance's props with the group ones
  * @param buttonInstance
  * @param props
  */

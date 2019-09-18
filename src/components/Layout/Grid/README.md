@@ -8,23 +8,24 @@ window.Content = Content;
 
 
 ```jsx
-<Grid>
-   <Grid.Column> <Content /> </Grid.Column>
-   <Grid.Column> <Content /> </Grid.Column>
-   <Grid.Column> <Content /> </Grid.Column>
+import { Grid } from 'beautiful-ui';
 
+<Grid>
+  <Grid.Column><Content /></Grid.Column>
+  <Grid.Column><Content /></Grid.Column>
+  <Grid.Column><Content /></Grid.Column>
 </Grid>
 ```
 
 ### Column size
 
 ```jsx
+import { Grid } from 'beautiful-ui';
  
 <Grid>
    <Grid.Column sm={6} md={1} lg={7} xl={12}> <Content /> </Grid.Column>
    <Grid.Column sm={6}> <Content /> </Grid.Column>
    <Grid.Column sm={10}> <Content /> </Grid.Column>
-
 </Grid>
 ```
 
