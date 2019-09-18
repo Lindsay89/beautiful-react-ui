@@ -3,18 +3,25 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import './grid-column.scss';
+import checkColumnSize from './checkColumnSize';
 
 const GridColumn = (props) => {
-  const { children, sm, md, lg, xl } = props;
+  const { children, sm, md, lg, xl, offset } = props;
 
 
   const classList = classNames('bi bi-grid-column', {
-    [`col-sm-${sm}`]: !!sm,
-    [`col-md-${md}`]: !!md,
-    [`col-lg-${lg}`]: !!lg,
-    [`col-xl-${xl}`]: !!xl,
+    [`offset-${offset}`]: !!offset && offset <= 12,
+    [`bi-col-sm-${sm}`]: !!sm && sm <= 12,
+    [`bi-col-md-${md}`]: !!md && md <= 12,
+    [`bi-col-lg-${lg}`]: !!lg && lg <= 12,
+    [`bi-col-xl-${xl}`]: !!xl && xl <= 12,
+    [`offset-sm-${offset}`]: !!sm && sm <= 12 && !!offset,
+    [`offset-md-${offset}`]: !!md && md <= 12 && !!offset,
+    [`offset-lg-${offset}`]: !!lg && lg <= 12 && !!offset,
+    [`offset-xl-${offset}`]: !!xl && xl <= 12 && !!offset,
   });
 
+  checkColumnSize(sm, md, lg, xl, offset)
 
   return (
     <div className={classList}>
@@ -30,10 +37,13 @@ GridColumn.propTypes = ({
    * this props accept a value to define column width
    */
   sm: AccetableWidthValue,
-
   md: AccetableWidthValue,
   lg: AccetableWidthValue,
   xl: AccetableWidthValue,
+  /**
+   * this prop accept a value to add a padding to the columns
+   */
+  offset: AccetableWidthValue,
 });
 
 GridColumn.defaultProps = ({
@@ -41,6 +51,7 @@ GridColumn.defaultProps = ({
   md: undefined,
   lg: undefined,
   xl: undefined,
+  offset: undefined,
 });
 
 export default GridColumn;
