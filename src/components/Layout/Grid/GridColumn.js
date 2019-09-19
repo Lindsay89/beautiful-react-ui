@@ -7,21 +7,22 @@ import checkColumnSize from './checkColumnSize';
  * A single column component
  */
 const GridColumn = (props) => {
-  const { children, sm, md, lg, xl, offset } = props;
+  const { children, sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl, selfAlign } = props;
   const classList = classNames('bi bi-grid-column', {
-    [`offset-${offset}`]: !!offset && offset <= 12,
+    [`bi-offset-${offset}`]: !!offset && offset <= 12,
     [`bi-col-sm-${sm}`]: !!sm && sm <= 12,
     [`bi-col-md-${md}`]: !!md && md <= 12,
     [`bi-col-lg-${lg}`]: !!lg && lg <= 12,
     [`bi-col-xl-${xl}`]: !!xl && xl <= 12,
-    [`bi-offset-sm-${offset}`]: !!sm && sm <= 12 && !!offset,
-    [`bi-offset-md-${offset}`]: !!md && md <= 12 && !!offset,
-    [`bi-offset-lg-${offset}`]: !!lg && lg <= 12 && !!offset,
-    [`bi-offset-xl-${offset}`]: !!xl && xl <= 12 && !!offset,
+    [`bi-offset-sm-${offsetSm}`]: !!offsetSm && offsetSm <= 12,
+    [`bi-offset-md-${offsetMd}`]: !!offsetMd && offsetMd <= 12,
+    [`bi-offset-lg-${offsetLg}`]: !!offsetLg && offsetLg <= 12,
+    [`bi-offset-xl-${offsetXl}`]: !!offsetXl && offsetXl <= 12,
+    [`self-${selfAlign}`]: !!selfAlign,
   });
 
   // checks the column total size
-  checkColumnSize(sm, md, lg, xl, offset);
+  checkColumnSize(sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl);
 
   return (<div className={classList}>{children}</div>);
 };
@@ -53,6 +54,14 @@ GridColumn.propTypes = ({
    * this prop accept a value to add a padding to the columns
    */
   offset: ColumnWidth,
+  offsetSm: ColumnWidth,
+  offsetMd: ColumnWidth,
+  offsetLg: ColumnWidth,
+  offsetXl: ColumnWidth,
+  /**
+     * Defines the position of the n individual flex item along its container's cross axis.
+     */
+  selfAlign: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'auto']),
 });
 
 GridColumn.defaultProps = ({
@@ -61,6 +70,11 @@ GridColumn.defaultProps = ({
   lg: undefined,
   xl: undefined,
   offset: undefined,
+  offsetSm: undefined,
+  offsetMd: undefined,
+  offsetLg: undefined,
+  offsetXl: undefined,
+  selfAlign: 'auto',
 });
 
 export default GridColumn;

@@ -2,10 +2,10 @@
 $cols: 12;
 
 /* Column classes prefix */
-$col-prefix: 'bi-col';
+$col-prefix: "bi-col";
 
 /* Offset classes prefix */
-$offset-prefix: 'bi-offset';
+$offset-prefix: "bi-offset";
 
 /* Grid system class names */
 $col-sm-class: #{$col-prefix}-sm !default;
@@ -47,11 +47,51 @@ $offset-xl-class: #{$offset-prefix}-xl !default;
     @apply flex-row-reverse;
   }
 
+  &.items-start {
+    @apply items-start;
+  }
+
+  &.items-center {
+    @apply items-center;
+  }
+
+  &.items-end {
+    @apply items-end;
+  }
+
+  &.items-stretch {
+    @apply items-stretch;
+  }
+
+  &.items-baseline {
+    @apply items-baseline;
+  }
+
   .bi.bi-grid-column {
     flex-basis: 0;
     box-sizing: border-box;
 
     @apply w-full flex-grow flex-shrink p-1;
+
+    &.self-auto {
+      @apply self-auto;
+    }
+
+    &.self-start {
+      @apply self-start;
+    }
+
+    &.self-center {
+      @apply self-center;
+    }
+
+    &.self-end {
+      @apply self-end;
+    }
+
+    &.self-stretch {
+      @apply self-stretch;
+    }
 
     // creates standard columns and offset classes
     @include create-columns($col-prefix);
