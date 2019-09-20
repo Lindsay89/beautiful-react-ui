@@ -44,19 +44,40 @@ const ColumnWidth = PropTypes.oneOf([
 
 GridColumn.propTypes = ({
   /**
-   * this props accept a value to define column width
+   * this props accept a value that will change the column width based on screens dimension
    */
   sm: ColumnWidth,
+  /**
+     * this props accept a value that will change the column width based on screens dimension
+     */
   md: ColumnWidth,
+  /**
+   * this props accept a value that will change the column width based on screens dimension
+   */
   lg: ColumnWidth,
+  /**
+     * this props accept a value that will change the column width based on screens dimension
+     */
   xl: ColumnWidth,
   /**
-   * this prop accept a value to add a padding to the columns
+   * this prop accept a value to add a space to the left of the columns
    */
   offset: ColumnWidth,
+  /**
+   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   */
   offsetSm: ColumnWidth,
+  /**
+   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   */
   offsetMd: ColumnWidth,
+  /**
+   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   */
   offsetLg: ColumnWidth,
+  /**
+   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   */
   offsetXl: ColumnWidth,
   /**
      * Defines the position of the n individual flex item along its container's cross axis.
