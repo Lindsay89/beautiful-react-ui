@@ -271,3 +271,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Layout folder
 - Grid component
 - GridColumn component
+
+
+### [0.23.1] - 2019-09-20
+
+### Added
+
+- Grid component tests
+- GridColumn component tests
