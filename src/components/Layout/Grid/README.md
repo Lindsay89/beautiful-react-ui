@@ -10,7 +10,7 @@ window.Content = Content;
 
 ### Basic usage
 
-The `Grid` component is a component use to build layouts of all shapes and sizes thanks to a twelve column system.
+A `Grid` component can be used to build layouts based on a 12-columns system.
 
 ```jsx
 import { Grid } from 'beautiful-ui';
@@ -24,7 +24,7 @@ import { Grid } from 'beautiful-ui';
 
 ### Column size
 
-It could be possible to define column size differently for all screen dimension by using the following props:`sm`,`md`,`lg`,`xl`,
+It’s possible to define the column size accordingly to the screen dimension by using on of the following props: `sm`, `md`, `lg`, `xl`.
 
 ```jsx
 import { Grid } from 'beautiful-ui';
@@ -38,8 +38,8 @@ import { Grid } from 'beautiful-ui';
 
 ### Offset
 
-The `offset` prop add a padding left to the column.
-This prop could be also customize based on screen dimension, using `offsetSm`, `offsetMd`, `offsetLg` and `offsetXl`.
+The `offset` prop add a padding left to columns.
+It’s even possible to define the offset dimension accordingly to the screen dimension by using on of the following props: `sm`, `md`, `lg`, `xl`.
 
 ```jsx 
 import { Grid } from 'beautiful-ui';
