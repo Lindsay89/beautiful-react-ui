@@ -83,6 +83,17 @@ describe('GridColumn component', () => {
     expect(gridComp.classList.contains('bi-offset-sm-6 bi-offset-md-1 bi-offset-3'));
   });
 
+  it('should not accept \'size\' \'offset\' or \'offset size\' props bigger than 12', () => {
+    const { container } = render(
+      <Grid>
+        <Grid.Column offsetLg={13} offsetXl={19} offset={33} sm={23}><Content /></Grid.Column>
+      </Grid>,
+    );
+    const gridComp = container.querySelector('.bi.bi-grid-column');
+
+    expect(gridComp.classList.contains('bi-offset-lg-13 bi-offset-xl-19 bi-offset-33 col-sm-23')).to.be.false;
+  });
+
   it('should accept a \'selfAlign\' props', () => {
     const { container } = render(<Grid><Grid.Column selfAlign="end"><Content /></Grid.Column></Grid>);
     const gridComp = container.querySelector('.bi.bi-grid-column');
