@@ -70,7 +70,10 @@ module.exports = {
         },
         {
           name: 'Layout',
-          components: 'src/components/Layout/**/index.{js,jsx}',
+          pagePerSection: true,
+          components: () => [
+            'src/components/Layout/Grid/Grid.js',
+          ],
         },
         {
           name: 'Utils',
