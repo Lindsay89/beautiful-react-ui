@@ -7,6 +7,9 @@ $col-prefix: "bi-col";
 /* Offset classes prefix */
 $offset-prefix: "bi-offset";
 
+/* Size classes prefix */
+$size-prefix: "col-size";
+
 /* Grid system class names */
 $col-sm-class: #{$col-prefix}-sm !default;
 $col-md-class: #{$col-prefix}-md !default;
@@ -95,6 +98,7 @@ $offset-xl-class: #{$offset-prefix}-xl !default;
 
     // creates standard columns and offset classes
     @include create-columns($col-prefix);
+    @include create-columns($size-prefix);
     @include create-offset($offset-prefix);
 
     // overrides previous classes with small-screen classes

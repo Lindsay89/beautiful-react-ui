@@ -7,8 +7,9 @@ import checkColumnSize from './checkColumnSize';
  * A single column component
  */
 const GridColumn = (props) => {
-  const { children, sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl, selfAlign } = props;
+  const { children, size, sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl, selfAlign } = props;
   const classList = classNames('bi bi-grid-column', {
+    [`col-size-${size}`]: !!size,
     [`bi-offset-${offset}`]: !!offset && offset <= 12,
     [`bi-col-sm-${sm}`]: !!sm && sm <= 12,
     [`bi-col-md-${md}`]: !!md && md <= 12,
@@ -43,6 +44,10 @@ const ColumnWidth = PropTypes.oneOf([
 ]);
 
 GridColumn.propTypes = ({
+  /**
+   * Accepts a value from 1 to 12 to set the column width
+   */
+  size: ColumnWidth,
   /**
    * Accepts a value from 1 to 12 to set the column width on small screen devices
    */
@@ -86,6 +91,7 @@ GridColumn.propTypes = ({
 });
 
 GridColumn.defaultProps = ({
+  size: undefined,
   sm: undefined,
   md: undefined,
   lg: undefined,

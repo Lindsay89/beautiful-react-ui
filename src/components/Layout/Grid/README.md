@@ -1,7 +1,7 @@
 ```jsx noeditor 
-const Content = ({ style }) => (
+const Content = ({ style, children }) => (
    <div style={{ maxWidth: '100%', minHeight: '2.25rem', height:'100%', padding: '0.85rem', backgroundColor: '#38acff', borderRadius: '5px', boxSizing:'border-box', ...style }}>
-      Content
+      {children || 'Content'}
    </div>
 );
 
@@ -24,14 +24,70 @@ import { Grid } from 'beautiful-ui';
 
 ### Size
 
+It’s possible to define the column size using `size` prop.
+
 ```jsx
 import { Grid } from 'beautiful-ui';
-
-<Grid>
-  <Grid.Column size="12"><Content /></Grid.Column>
-  <Grid.Column size="11"><Content /></Grid.Column>
-  <Grid.Column size="10"><Content /></Grid.Column>
-</Grid>
+<>
+  <Grid>
+    <Grid.Column size="12"><Content>12</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="11"><Content>11</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="10"><Content>10</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="9"><Content>9</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="8"><Content>8</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="7"><Content>7</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="6"><Content>6</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="5"><Content>5</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="4"><Content>4</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="3"><Content>3</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="2"><Content>2</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+  
+  <Grid>
+    <Grid.Column size="1"><Content>1</Content></Grid.Column>
+    <Grid.Column><Content>auto</Content></Grid.Column>
+  </Grid>
+</>
 ```
 
 ### Responsive sizes
