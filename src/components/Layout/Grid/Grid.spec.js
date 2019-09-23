@@ -65,7 +65,14 @@ describe('GridColumn component', () => {
     cleanup();
   });
 
-  it('should accept \'size\' props', () => {
+  it('should accept a \'size\' prop', () => {
+    const { container } = render(<Grid><Grid.Column size={6}><Content /></Grid.Column></Grid>);
+    const gridComp = container.querySelector('.bi.bi-grid-column');
+
+    expect(gridComp.classList.contains('col-size-6'));
+  });
+
+  it('should accept one of the following props: \'sm, md, lg, xl\'', () => {
     const { container } = render(<Grid><Grid.Column sm={6} md={1} lg={7} xl={12}><Content /></Grid.Column></Grid>);
     const gridComp = container.querySelector('.bi.bi-grid-column');
 
