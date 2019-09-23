@@ -44,44 +44,44 @@ const ColumnWidth = PropTypes.oneOf([
 
 GridColumn.propTypes = ({
   /**
-   * this props accept a value that will change the column width based on screens dimension
+   * Accepts a value from 1 to 12 to set the column width on small screen devices
    */
   sm: ColumnWidth,
   /**
-     * this props accept a value that will change the column width based on screens dimension
-     */
+   * Accepts a value from 1 to 12 to set the column width on medium screen devices
+   */
   md: ColumnWidth,
   /**
-   * this props accept a value that will change the column width based on screens dimension
+   * Accepts a value from 1 to 12 to set the column width on large screen devices
    */
   lg: ColumnWidth,
   /**
-     * this props accept a value that will change the column width based on screens dimension
-     */
+   * Accepts a value from 1 to 12 to set the column width on extra-large screen devices
+   */
   xl: ColumnWidth,
   /**
-   * this prop accept a value to add a space to the left of the columns
+   * Accepts a value from 1 to 12 to set the column padding-left
    */
   offset: ColumnWidth,
   /**
-   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   * Accepts a value from 1 to 12 to set the column padding-left on small screen devices
    */
   offsetSm: ColumnWidth,
   /**
-   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   * Accepts a value from 1 to 12 to set the column padding-left on medium screen devices
    */
   offsetMd: ColumnWidth,
   /**
-   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   * Accepts a value from 1 to 12 to set the column padding-left on large screen devices
    */
   offsetLg: ColumnWidth,
   /**
-   * this prop accept a value to add a space to the left of the columns based on screens dimension
+   * Accepts a value from 1 to 12 to set the column padding-left on extra-large screen devices
    */
   offsetXl: ColumnWidth,
   /**
-     * Defines the position of the n individual flex item along its container's cross axis.
-     */
+   * Defines the position of the the content along its container's cross axis.
+   */
   selfAlign: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'auto']),
 });
 

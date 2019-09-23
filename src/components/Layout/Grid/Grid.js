@@ -34,7 +34,6 @@ Grid.defaultProps = {
    * this props will reverse the grid's items direction
    */
   reversed: false,
-
   /**
    * this props will align the grid's items
    */
