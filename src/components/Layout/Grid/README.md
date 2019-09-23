@@ -1,6 +1,19 @@
 ```jsx noeditor 
-const Content = ({ style, children }) => (
-   <div style={{ maxWidth: '100%', minHeight: '2.25rem', height:'100%', padding: '0.85rem', backgroundColor: '#38acff', borderRadius: '5px', boxSizing:'border-box', ...style }}>
+const style = {
+  maxWidth: '100%', 
+  minHeight: '2.25rem', 
+  height:'100%', 
+  padding: '0.85rem', 
+  backgroundColor: '#38acff', 
+  borderRadius: '5px', 
+  boxSizing:'border-box',
+  color: 'white',
+  textAlign: 'center',
+  fontFamily: '"Open Sans", "sans-serif", light'
+}
+
+const Content = ({ children, style: customStyle }) => (
+   <div style={{ ...style, ...(children === 'auto' ? {backgroundColor: '#A4D9FF'} : null), ...customStyle }}>
       {children || 'Content'}
    </div>
 );
@@ -24,10 +37,11 @@ import { Grid } from 'beautiful-ui';
 
 ### Size
 
-It’s possible to define the column size using `size` prop.
+It’s possible to define the column by using the `size` prop.
 
 ```jsx
 import { Grid } from 'beautiful-ui';
+
 <>
   <Grid>
     <Grid.Column size="12"><Content>12</Content></Grid.Column>
@@ -90,7 +104,7 @@ import { Grid } from 'beautiful-ui';
 </>
 ```
 
-### Responsive sizes
+### Responsiveness
 
 It’s possible to define the column size accordingly to the screen dimension by using on of the following props: 
 `sm`, `md`, `lg`, `xl`.
@@ -142,16 +156,13 @@ An offset can also be defined accordingly to the screen dimension by using on of
 import { Grid } from 'beautiful-ui';
 
 <Grid>
-  <Grid.Column offset={3} xl={6}>
+  <Grid.Column offset="3">
     <Content />
   </Grid.Column>
-  <Grid.Column offset={9} offsetSm={1}>
+  <Grid.Column offset="2" size="10">
     <Content />
   </Grid.Column>
-  <Grid.Column offset={1} offsetMd={4}>
-    <Content />
-  </Grid.Column>
-  <Grid.Column offset={1} offsetLg={5}>
+  <Grid.Column offsetSm="4" sm="8" offsetMd="6" md="6" offsetLg="2" lg="10" offset="1" size="11">
     <Content />
   </Grid.Column>
 </Grid>
@@ -165,8 +176,8 @@ The `itemsAlign` prop could be used to set items in position accordingly to the 
 import { Grid } from 'beautiful-ui';
 
 <>
-  <Grid itemsAlign="center" style={{height: '150px', background:"#afdeff", borderBottom:"solid white"}}>
-     <Grid.Column><Content /></Grid.Column>
+  <Grid itemsAlign="center" style={{background:"#afdeff", borderBottom:"solid white"}}>
+     <Grid.Column><Content style={{height: '150px'}} /></Grid.Column>
      <Grid.Column><Content /></Grid.Column>
      <Grid.Column><Content /></Grid.Column>
   </Grid>
