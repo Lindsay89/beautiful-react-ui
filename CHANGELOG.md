@@ -273,3 +273,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GridColumn component
 - Grid component tests
 - GridColumn component tests
+
+### [0.24.0] - 2019-09-20
+
+### Added
+
+- Dependencies updated

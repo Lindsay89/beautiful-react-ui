@@ -16,7 +16,7 @@ const Breadcrumb = (props) => {
   return (
     <nav className={classList} {...rest}>
       <ol>
-        {items.map(item => (
+        {items.map((item) => (
           item.render
             ? item.render(item)
             : <BreadcrumbItem path={item.path} label={item.label} icon={item.icon} />

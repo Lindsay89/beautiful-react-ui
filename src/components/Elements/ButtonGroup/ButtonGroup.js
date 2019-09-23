@@ -37,7 +37,7 @@ const ButtonGroup = ({ children, className, block, id, style, ...props }) => {
 
   return (
     <span className={classList} id={id} style={style}>
-      {Children.map(children, child => cloneButton(child, props))}
+      {Children.map(children, (child) => cloneButton(child, props))}
     </span>
   );
 };

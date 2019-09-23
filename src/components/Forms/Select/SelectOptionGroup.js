@@ -12,7 +12,7 @@ import ValueType from './utils/ValueType';
 const SelectOptionGroup = ({ group, value, onClick }) => (
   <div className="select-group">
     <div className="group-title">{group.name}</div>
-    {group.options.map(option => (
+    {group.options.map((option) => (
       <SelectOption option={option} selected={isSelected(option, value)} onClick={onClick} key={option.value} />
     ))}
   </div>

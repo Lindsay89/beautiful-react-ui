@@ -6,7 +6,7 @@
  * @returns {*}
  */
 const filterOverOptions = (options, filter) => (
-  options.filter(option => option.label.toLowerCase().includes(filter.toLowerCase()))
+  options.filter((option) => option.label.toLowerCase().includes(filter.toLowerCase()))
 );
 
 /**

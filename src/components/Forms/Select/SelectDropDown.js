@@ -31,7 +31,7 @@ const SelectDropDown = (props) => {
       {filtrable && (
         <Input value={filter} onChange={(event, nextFilter) => setFilter(nextFilter)} placeholder={placeholder} />
       )}
-      {filteredOptions.map(option => (
+      {filteredOptions.map((option) => (
         hasOptionGroups
           ? <SelectOptionGroup group={option} onClick={onChange} value={value} key={option.name} />
           : <SelectOption option={option} selected={isSelected(option, value)} onClick={onChange} key={option.value} />

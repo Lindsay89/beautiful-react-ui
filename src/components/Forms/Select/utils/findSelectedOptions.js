@@ -1,5 +1,5 @@
-const findSingleOption = (options, value) => options.find(option => option.value === value);
-const findMultipleOptions = (options, value) => options.filter(option => value.includes(option.value));
+const findSingleOption = (options, value) => options.find((option) => option.value === value);
+const findMultipleOptions = (options, value) => options.filter((option) => value.includes(option.value));
 
 /**
  * The following function takes an array of options an return those matching the given value.
