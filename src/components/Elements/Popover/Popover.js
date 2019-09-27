@@ -14,7 +14,14 @@ const Popover = (props) => {
   const { trigger, isOpen, onToggle, action, title, placement, children, className, ...rest } = props;
 
   return (
-    <FloatingContent trigger={trigger} onToggle={onToggle} isShown={isOpen} action={action} placement={placement}>
+    <FloatingContent
+      trigger={trigger}
+      onToggle={onToggle}
+      isShown={isOpen}
+      action={action}
+      placement={placement}
+      offset={10}
+    >
       <div className={classNames('bi bi-popover', className)} {...rest}>
         {title && (<h2 className="bi-popover-title">{title}</h2>)}
         {children}

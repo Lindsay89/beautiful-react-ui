@@ -150,7 +150,7 @@ FloatingContent.defaultProps = {
   action: 'click',
   clickOutsideToToggle: true,
   placement: 'top-center',
-  offset: 10,
+  offset: 0,
   widthAsTrigger: false,
 };
 

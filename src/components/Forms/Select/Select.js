@@ -56,6 +56,7 @@ const Select = (props) => {
       isShown={isOpen}
       placement="bottom-center"
       widthAsTrigger
+      offset={10}
     >
       <SelectDropDown
         options={options}
