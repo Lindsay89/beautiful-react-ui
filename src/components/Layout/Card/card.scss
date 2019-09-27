@@ -1,0 +1,185 @@
+// ----------------------------------------------
+// mixin to add text-align classes to component
+// ----------------------------------------------
+@mixin textAlign {
+  &.text-align-center {
+    @apply text-center;
+  }
+
+  &.text-align-left {
+    @apply text-left;
+  }
+
+  &.text-align-right {
+    @apply text-right;
+  }
+
+  &.text-align-justify {
+    @apply text-justify;
+  }
+}
+
+// ---------------------------------------
+// mixin to give width to icon container
+// ---------------------------------------
+@mixin div-icon-image-container {
+  @apply relative;
+
+  max-width: 50%;
+}
+
+// ---------------------------------------
+// mixin to defines image background
+// ---------------------------------------
+@mixin icon-bg {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.bi.bi-card {
+  @apply flex flex-col rounded-t shadow-lg max-w-sm relative;
+
+  @include textAlign();
+
+  .card-action-button-icon {
+    @apply absolute top-0 right-0 p-2 pr-4 w-full h-16 rounded;
+
+    @include icon-bg;
+
+    box-sizing: border-box;
+
+    .bi.bi-btn.btn-dots {
+      @apply absolute text-white right-0;
+    }
+  }
+
+  .card-img > img {
+    @apply w-full rounded-b-none;
+  }
+
+  .card-img {
+    min-width: 30%;
+  }
+
+  .content {
+    @apply flex-none flex flex-col;
+
+    .card-content {
+      @apply px-6 my-4 flex-grow;
+
+      @include textAlign();
+    }
+
+    .card-title {
+      @apply px-6 my-4;
+
+      @include textAlign();
+
+      + .card-content {
+        @apply mt-0;
+      }
+    }
+
+    // ----------------------------------------------
+    // FOOTER
+    // ----------------------------------------------
+
+    .card-footer {
+      @apply px-6 py-4 order-last leading-tight font-sans text-base font-normal text-default-darker bg-default-lighter;
+
+      @include textAlign();
+    }
+  }
+
+  // ----------------------------------------------
+  // ORIENTATION
+  // ----------------------------------------------
+  &.horizontal {
+    @apply flex-row max-w-xl;
+
+    .card-action-button-icon {
+      background: none;
+
+      .bi.bi-btn.btn-dots {
+        color: theme("colors.default");
+      }
+    }
+
+    .card-img {
+      max-width: 50%;
+
+      > img {
+        @apply rounded-none rounded-l;
+      }
+    }
+
+    .icon-img-container {
+      @include div-icon-image-container;
+
+      .card-img {
+        @apply max-w-full;
+      }
+    }
+
+    .content {
+      @apply flex-grow flex-shrink;
+    }
+
+    // ----------------------------------------------
+    // REVERSE HORIZONTAL CONTENT
+    // ----------------------------------------------
+    &.reversed {
+      @apply flex-row-reverse;
+
+      .card-action-button-icon {
+        @include icon-bg;
+
+        .bi.bi-btn.btn-dots {
+          color: white;
+        }
+      }
+
+      .icon-img-container {
+        .card-img > img {
+          @apply rounded-none rounded-r;
+        }
+      }
+    }
+  }
+
+  // ----------------------------------------------
+  // REVERSE CONTENT
+  // ----------------------------------------------
+
+  &.reversed {
+    @apply flex-col-reverse;
+    /* stylelint-disable-next-line no-descending-specificity */
+    .card-action-button-icon {
+      background: none;
+      /* stylelint-disable-next-line no-descending-specificity */
+      .bi.bi-btn.btn-dots {
+        color: theme("colors.default");
+      }
+
+      .icon-img-container {
+        @include div-icon-image-container;
+
+        .card-img {
+          @apply max-w-full;
+        }
+      }
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .card-img > img {
+      @apply rounded-none rounded-b;
+    }
+  }
+
+  // ----------------------------------------------
+  // FLUID -- adapt card to its container
+  // ----------------------------------------------
+  &.fluid {
+    @apply max-w-full;
+  }
+}

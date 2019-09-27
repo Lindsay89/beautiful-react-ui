@@ -73,6 +73,7 @@ module.exports = {
           pagePerSection: true,
           components: () => [
             'src/components/Layout/Grid/Grid.js',
+            'src/components/Layout/Card/Card.js',
           ],
         },
         {

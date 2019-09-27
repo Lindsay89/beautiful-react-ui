@@ -21,5 +21,5 @@ export { default as Select } from './components/Forms/Select';
 
 
 // Layout
-
 export { default as Grid } from './components/Layout/Grid';
+export { default as Card } from './components/Layout/Card';

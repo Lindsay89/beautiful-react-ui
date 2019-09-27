@@ -4,7 +4,7 @@ const getRightPosition = (coordinates, bodyWidth) => bodyWidth - coordinates.x -
 
 const getLeftPosition = (coordinates) => coordinates.x;
 
-const getTopPosition = (bodyHeight, element, offset) => bodyHeight - element.offsetTop + offset;
+const getTopPosition = (bodyHeight, element, offset) => bodyHeight - element.offsetTop - offset;
 
 const getBottomPosition = (bodyHeight, coord, elem, offset) => bodyHeight - elem.offsetTop - coord.height - offset;
 

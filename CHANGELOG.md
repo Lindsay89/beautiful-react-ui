@@ -279,3 +279,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Dependencies updated
+
+### [0.25.0] - 2019-09-20
+
+### Added
+
+- Card component
+- CartTitle component
+- CardImage component
+- CardContent component
+- CardFooter component
+- Title component
+- Paragraph component
+
+- Card component tests
+- CartTitle component tests
+- CardImage component tests
+- CardContent component tests
+- CardFooter component tests
+- Title component tests
+- Paragraph component tests
