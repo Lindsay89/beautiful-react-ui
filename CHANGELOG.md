@@ -311,3 +311,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Added className prop to CardTitle, CardContent, CardFooter components.
+- Removed margin-left from Input component, when there are two Input component closer.
