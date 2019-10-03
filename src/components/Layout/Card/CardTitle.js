@@ -7,10 +7,10 @@ import { Color } from '../../../shared';
 /**
  * CardTitle component wraps the card's title.
  */
-const CardTitle = ({ children, textAlign, color }) => {
+const CardTitle = ({ children, textAlign, color, className }) => {
   const classList = classNames('card-title', {
     [`text-align-${textAlign}`]: !!textAlign,
-  });
+  }, className);
 
   return (
     <Title color={color} className={classList}>{children}</Title>

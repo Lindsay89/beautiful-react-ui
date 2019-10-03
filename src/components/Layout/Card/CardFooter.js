@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 /**
  * CardFooter component wraps the card's footer
  */
-const CardFooter = ({ children, textAlign }) => {
+const CardFooter = ({ children, textAlign, className }) => {
   const classList = classNames('card-footer', {
     [`text-align-${textAlign}`]: !!textAlign,
-  });
+  }, className);
 
   return (
     <footer className={classList}>{children}</footer>

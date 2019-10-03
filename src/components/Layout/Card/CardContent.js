@@ -7,10 +7,10 @@ import Paragraph from '../../Typography/_Paragraph';
  * CardContent component wraps the card's content.
  */
 
-const CardContent = ({ children, textAlign }) => {
+const CardContent = ({ children, textAlign, className }) => {
   const classList = classNames('card-content', {
     [`text-align-${textAlign}`]: !!textAlign,
-  });
+  }, className);
   return (
     <Paragraph className={classList}>{children}</Paragraph>
   );

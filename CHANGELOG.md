@@ -305,3 +305,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Rewriting getElementAbsolutePosition function to return the right element position and get rid of the previous bug.
+
+### [0.25.2] - 2019-09-30
+
+### Fixed
+
+- Added className prop to CardTitle, CardContent, CardFooter components.

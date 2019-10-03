@@ -41,6 +41,10 @@
 
   @include textAlign();
 
+  .bi.bi-btn.btn-dots {
+    @apply absolute text-white right-0;
+  }
+
   .card-action-button-icon {
     @apply absolute top-0 right-0 p-2 pr-4 w-full h-16 rounded;
 
@@ -48,8 +52,12 @@
 
     box-sizing: border-box;
 
-    .bi.bi-btn.btn-dots {
-      @apply absolute text-white right-0;
+    &.no-img {
+      background: none;
+
+      .bi.bi-btn.btn-dots {
+        color: theme("colors.default");
+      }
     }
   }
 
@@ -62,7 +70,7 @@
   }
 
   .content {
-    @apply flex-none flex flex-col;
+    @apply flex-none flex flex-col flex-grow;
 
     .card-content {
       @apply px-6 my-4 flex-grow;

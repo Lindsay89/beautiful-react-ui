@@ -249,6 +249,13 @@ describe('CardTitle component', () => {
     expect(titleCardComp.classList.contains('card-title')).to.be.true;
   });
 
+  it('should accept custom classes', () => {
+    const { container } = render(<CardTitle className="foo"> Foo </CardTitle>);
+    const titleCardComp = container.querySelector('.bi-title.card-title');
+
+    expect(titleCardComp.classList.contains('foo')).to.be.true;
+  });
+
   it('should accept a \'textAlign\' prop', () => {
     const { container } = render(<CardTitle textAlign="center">foo</CardTitle>);
     const titleCardComp = container.querySelector('.bi-title.card-title');
@@ -289,6 +296,13 @@ describe('CardContent component', () => {
     expect(contentCardComp.classList.contains('card-content')).to.be.true;
   });
 
+  it('should accept custom classes', () => {
+    const { container } = render(<CardContent className="foo"> Foo </CardContent>);
+    const contentCardComp = container.querySelector('.bi-p.card-content');
+
+    expect(contentCardComp.classList.contains('foo')).to.be.true;
+  });
+
   it('should accept a \'textAlign\' prop', () => {
     const { container } = render(<CardContent textAlign="center">foo</CardContent>);
     const contentCardComp = container.querySelector('.bi-p.card-content');
@@ -315,6 +329,13 @@ describe('CardFooter component', () => {
     const footerCardComp = container.querySelector('footer');
 
     expect(footerCardComp.classList.contains('card-footer')).to.be.true;
+  });
+
+  it('should accept custom classes', () => {
+    const { container } = render(<CardFooter className="foo"> Foo </CardFooter>);
+    const footerCardComp = container.querySelector('.card-footer');
+
+    expect(footerCardComp.classList.contains('foo')).to.be.true;
   });
 
   it('should accept a \'textAlign\' prop', () => {

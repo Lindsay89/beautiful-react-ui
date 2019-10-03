@@ -158,7 +158,7 @@ import { Card, Avatar } from 'beautiful-ui';
 If defined, the `actionButtonRender` property will change the default actionButton behaviour.
 
 ```jsx
-import { Icon, Button } from 'beautiful-ui';
+import { Icon, Button, Avatar } from 'beautiful-ui';
 
 ActionButtons = () => (
   <> 
@@ -172,7 +172,10 @@ ActionButtons = () => (
   <Card.Image src="https://placeimg.com/460/250" alt="Alt text" />
   <Card.Title> Title </Card.Title>
   <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
-  <Card.Footer> Footer </Card.Footer>
+  <Card.Footer> 
+    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
+    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+  </Card.Footer>
 </Card>
 </>
 ```

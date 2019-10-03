@@ -43,7 +43,7 @@ const Card = React.memo((props) => {
   return (
     <div className={classList} {...rest}>
       <PossibleImageWrapper {...possibleImageWrapperProps}>
-        <div className={classNames({ 'card-action-button-icon': !!actionButton })}>
+        <div className={classNames({ 'card-action-button-icon': !!actionButton, 'no-img': !cardImage })}>
           { /* the actionButtonRender overrides the standard action button behaviour */}
           {actionButton && actionButtonRender && actionButtonRender()}
           {actionButton && !actionButtonRender && (
