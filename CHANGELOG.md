@@ -317,3 +317,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Removed margin-left from Input component, when there are two Input component closer.
+
+### [0.25.4] - 2019-10-04
+
+- Run build
