@@ -6,14 +6,21 @@
 image: node:10.15.3
 
 pipelines:
-  branches:
-    - master:
-      - step:
+  default:
+    - step:
         caches:
           - node
-        script: # Modify the commands below to build your repository.
-          - rm -rf ./dist ./node_modules ./package-lock.json
+        script:
           - npm install
-          - npm run build
-        after-script:
-          - git add -A && git commit -a -m "New version built" && git push
+          - npm run test
+  branches:
+    master:
+      - step:
+          caches:
+            - node
+          script: # Modify the commands below to build your repository.
+            - rm -rf ./dist ./node_modules ./package-lock.json
+            - npm install
+            - npm run build
+          after-script:
+            - git add -A && git commit -a -m "New version built" && git push
