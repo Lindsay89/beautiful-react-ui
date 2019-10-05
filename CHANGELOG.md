@@ -310,14 +310,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Added className prop to CardTitle, CardContent, CardFooter components.
+- className prop support added to CardTitle, CardContent and CardFooter.
 
 ### [0.25.3] - 2019-10-03
 
 ### Fixed
 
-- Removed margin-left from Input component, when there are two Input component closer.
+- margin-left layout glitch fixed on Input component.
 
 ### [0.25.4] - 2019-10-04
 
-- Run build
+### Fixed
+
+- Adding distribution ready files that were supposed to be in the previous release
+
+### [0.26.0] - 2019-10-05
+
+### Added
+
+- Adding Bit-bucket pipelines support
