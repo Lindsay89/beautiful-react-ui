@@ -329,3 +329,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Adding Bit-bucket pipelines support
+
+### [0.26.1] - 2019-10-05
+
+### Fixed
+
+- Bit-bucket pipeline now runs only on branch `master`

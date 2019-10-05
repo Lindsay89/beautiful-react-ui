@@ -6,10 +6,14 @@
 image: node:10.15.3
 
 pipelines:
-  default:
-    - step:
+  branches:
+    - master:
+      - step:
         caches:
           - node
         script: # Modify the commands below to build your repository.
+          - rm -rf ./dist ./node_modules ./package-lock.json
           - npm install
           - npm run build
+        after-script:
+          - git add -A && git commit -a -m "New version built" && git push
