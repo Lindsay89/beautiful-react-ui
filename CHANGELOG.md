@@ -341,3 +341,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Bit-bucket pipeline configuration fixed
+
+### [0.26.3] - 2019-10-05
+
+### Fixed
+
+- Some other minor fixes on the bit-bucket pipeline configuration
