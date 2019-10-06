@@ -347,3 +347,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Some other minor fixes on the bit-bucket pipeline configuration
+
+
+### [0.27.0] - 2019-10-06
+
+### Added
+
+- Avatar supports further information props such as `displayName` and `furtherInfo`

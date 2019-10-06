@@ -5,7 +5,7 @@
     @apply ml-2;
   }
 
-  .avatar-item {
+  .bi-avatar-item {
     @apply inline-block w-12 h-12 bg-default-dark overflow-hidden shadow relative;
 
     box-sizing: border-box;
@@ -21,7 +21,7 @@
   // ----------------------------
   // INITIALS
   // ----------------------------
-  &.avt-initials .avatar-item .initials {
+  &.avt-initials .bi-avatar-item .initials {
     @apply font-semibold font-sans absolute top-0 right-0 left-0 bottom-0 text-white uppercase text-xl;
     @apply flex flex-wrap  content-center justify-center;
   }
@@ -29,11 +29,11 @@
   // ----------------------------
   // SHAPES
   // ----------------------------
-  &.avt-square .avatar-item {
+  &.avt-square .bi-avatar-item {
     @apply rounded;
   }
 
-  &.avt-rounded .avatar-item {
+  &.avt-rounded .bi-avatar-item {
     @apply rounded-full;
   }
 
@@ -63,7 +63,7 @@
   // SIZES
   // ----------------------------
   &.avt-sm {
-    .avatar-item {
+    .bi-avatar-item {
       @apply w-8 h-8;
     }
 
@@ -79,7 +79,7 @@
   }
 
   &.avt-lg {
-    .avatar-item {
+    .bi-avatar-item {
       @apply w-16 h-16;
     }
 
@@ -100,5 +100,28 @@
   > .bi.bi-pill {
     position: absolute;
     right: -10%;
+  }
+
+  // ----------------------------
+  // AVATAR FURTHER INFO
+  // ----------------------------
+  + .bi-avatar-info {
+    @apply inline-flex flex-col mx-2 h-12 justify-center;
+
+    .avtr-disp-name {
+      @apply mb-0;
+    }
+
+    .avtr-furth-info {
+      @apply mt-1 mb-0 text-xs;
+    }
+  }
+
+  &.avt-sm + .bi-avatar-info {
+    @apply h-8;
+  }
+
+  &.avt-lg + .bi-avatar-info {
+    @apply h-16;
   }
 }
