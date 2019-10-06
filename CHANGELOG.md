@@ -348,9 +348,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Some other minor fixes on the bit-bucket pipeline configuration
 
-
 ### [0.27.0] - 2019-10-06
 
 ### Added
 
 - Avatar supports further information props such as `displayName` and `furtherInfo`
+
+### [0.27.1] - 2019-10-06
+
+### Fixed
+
+- Pipeline script fix: push is not part of the script, not the after-script and removed personal git information

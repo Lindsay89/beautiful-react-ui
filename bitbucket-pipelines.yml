@@ -22,9 +22,6 @@ pipelines:
             - rm -rf ./dist ./node_modules ./package-lock.json
             - npm install
             - npm run build
-          after-script:
-            - git config --global user.email "antonio@beautifulinteractions.com"
-            - git config --global user.name "Antonio Russo"
             - git add -A
-            - git commit -a -m "Production build"
+            - git commit -a -m "Automatically built production version [skip ci]"
             - git push
