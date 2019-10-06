@@ -366,3 +366,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Webpack `Hot module reloading` is not perfectly working with styleguidist, so I've changed its config to
 disable `Hot` and enable `live reloading` (it refresh when something changes)
+
+### [0.27.3] - 2019-10-06
+
+### Fixed
+
+- Card component layout glitches

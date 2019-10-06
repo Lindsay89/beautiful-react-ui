@@ -7,8 +7,8 @@ import CardTitle from './CardTitle';
 import CardContent from './CardContent';
 import CardImage from './CardImage';
 import CardFooter from './CardFooter';
-import takeCardImageOutOfChildren from './takeCardImageOutOfChildren';
-import getPossibleImageWrapper from './getPossibleImageWrapper';
+import takeCardImageOutOfChildren from './utils/takeCardImageOutOfChildren';
+import getPossibleImageWrapper from './utils/getPossibleImageWrapper';
 
 import './card.scss';
 
@@ -42,23 +42,27 @@ const Card = React.memo((props) => {
 
   return (
     <div className={classList} {...rest}>
-      <PossibleImageWrapper {...possibleImageWrapperProps}>
-        <div className={classNames({ 'card-action-button-icon': !!actionButton, 'no-img': !cardImage })}>
-          { /* the actionButtonRender overrides the standard action button behaviour */}
-          {actionButton && actionButtonRender && actionButtonRender()}
-          {actionButton && !actionButtonRender && (
-            <Button
-              color="transparent"
-              icon={<Icon name={actionButtonIcon} />}
-              onClick={onActionButtonClick}
-              className="btn-dots"
-              rounded
-            />
+      {(cardImage || actionButton) && (
+        <PossibleImageWrapper {...possibleImageWrapperProps}>
+          {actionButton && (
+            <div className={classNames({ 'bi-card-actbtn-icn': !!actionButton, 'no-img': !cardImage })}>
+              { /* the actionButtonRender overrides the standard action button behaviour */}
+              {actionButton && actionButtonRender && actionButtonRender()}
+              {actionButton && !actionButtonRender && (
+                <Button
+                  color="transparent"
+                  icon={<Icon name={actionButtonIcon} />}
+                  onClick={onActionButtonClick}
+                  className="btn-dots"
+                  rounded
+                />
+              )}
+            </div>
           )}
-        </div>
-        {cardImage && (cardImage)}
-      </PossibleImageWrapper>
-      <div className="content">{childrenWithoutImg}</div>
+          {cardImage && (cardImage)}
+        </PossibleImageWrapper>
+      )}
+      <div className="card-content-wrapper">{childrenWithoutImg}</div>
     </div>
   );
 });
@@ -109,6 +113,7 @@ Card.defaultProps = {
   reversed: false,
 };
 
+// shortcuts
 Card.Title = CardTitle;
 Card.Content = CardContent;
 Card.Image = CardImage;

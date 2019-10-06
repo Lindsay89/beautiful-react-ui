@@ -1,5 +1,5 @@
 import { Children } from 'react';
-import CardImage from './CardImage';
+import CardImage from '../CardImage';
 
 // It takes out the possible CardImage component from children and returns them all
 const takeCardImageOutOfChildren = (children) => {

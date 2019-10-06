@@ -1,18 +1,17 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import Paragraph from '../../Typography/_Paragraph';
 
 /**
  * CardContent component wraps the card's content.
  */
-
 const CardContent = ({ children, textAlign, className }) => {
   const classList = classNames('card-content', {
     [`text-align-${textAlign}`]: !!textAlign,
   }, className);
+
   return (
-    <Paragraph className={classList}>{children}</Paragraph>
+    <section className={classList}>{children}</section>
   );
 };
 

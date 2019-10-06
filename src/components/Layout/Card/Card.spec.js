@@ -150,7 +150,7 @@ describe('Card component', () => {
     );
     const cardComp = container.querySelector('.bi.bi-card');
 
-    expect(cardComp.querySelector('.card-action-button-icon')).to.exist;
+    expect(cardComp.querySelector('.bi-card-actbtn-icn')).to.exist;
     expect(cardComp.querySelector('.bi.bi-btn')).to.exist;
   });
 
@@ -163,10 +163,9 @@ describe('Card component', () => {
         <CardFooter>foo</CardFooter>
       </Card>,
     );
-    const cardComp = container.querySelector('.bi.bi-card .card-action-button-icon .bi.bi-btn').querySelector('svg');
+    const cardComp = container.querySelector('.bi.bi-card .bi-card-actbtn-icn .bi.bi-btn').querySelector('svg');
 
-    expect(cardComp.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-icon']);
-    expect(cardComp.getAttribute('data-icon')).to.equal('heart');
+    expect(cardComp.classList.contains('fa-heart')).to.be.true;
 
     rerender(
       <Card actionButton>
@@ -176,7 +175,8 @@ describe('Card component', () => {
         <CardFooter>foo</CardFooter>
       </Card>,
     );
-    expect(cardComp.getAttribute('data-icon')).to.equal('ellipsis-v');
+
+    expect(cardComp.classList.contains('fa-ellipsis-v')).to.be.true;
   });
 
   it('should accept an \'onActionButtonClick\' prop', () => {
@@ -189,7 +189,7 @@ describe('Card component', () => {
         <CardFooter>foo</CardFooter>
       </Card>,
     );
-    const cardComp = container.querySelector('.bi.bi-card .card-action-button-icon .bi.bi-btn');
+    const cardComp = container.querySelector('.bi.bi-card .bi-card-actbtn-icn .bi.bi-btn');
 
     fireEvent.click(cardComp);
 
@@ -224,7 +224,7 @@ describe('Card component', () => {
 
     expect(cardComp).to.exist;
     expect(cardComp.querySelector('.icon-img-container')).to.exist;
-    expect(cardComp.querySelector('.icon-img-container .card-action-button-icon')).to.exist;
+    expect(cardComp.querySelector('.icon-img-container .bi-card-actbtn-icn')).to.exist;
   });
 });
 
@@ -285,27 +285,19 @@ describe('CardContent component', () => {
     const { container } = render(<CardContent>Foo</CardContent>);
 
     expect(container).to.exist;
-    expect(container.querySelector('.bi-p.card-content')).to.exist;
-  });
-
-  it('should accept default classes', () => {
-    const { container } = render(<CardContent> Foo </CardContent>);
-    const contentCardComp = container.querySelector('p');
-
-    expect(contentCardComp.classList.contains('bi-p')).to.be.true;
-    expect(contentCardComp.classList.contains('card-content')).to.be.true;
+    expect(container.querySelector('.card-content')).to.exist;
   });
 
   it('should accept custom classes', () => {
     const { container } = render(<CardContent className="foo"> Foo </CardContent>);
-    const contentCardComp = container.querySelector('.bi-p.card-content');
+    const contentCardComp = container.querySelector('.card-content');
 
     expect(contentCardComp.classList.contains('foo')).to.be.true;
   });
 
   it('should accept a \'textAlign\' prop', () => {
     const { container } = render(<CardContent textAlign="center">foo</CardContent>);
-    const contentCardComp = container.querySelector('.bi-p.card-content');
+    const contentCardComp = container.querySelector('.card-content');
 
     expect(contentCardComp.classList.contains('text-align-center')).to.be.true;
   });

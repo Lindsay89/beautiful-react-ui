@@ -37,15 +37,23 @@
 }
 
 .bi.bi-card {
-  @apply flex flex-col rounded-t shadow-lg max-w-sm relative;
+  @apply flex flex-col rounded shadow-md max-w-sm relative overflow-hidden;
 
   @include textAlign();
+
+  transition: transform 0.25s ease-in-out, box-shadow 0.4s ease-in;
+
+  &:hover {
+    @apply shadow-lg;
+
+    transform: translateY(-0.2rem);
+  }
 
   .bi.bi-btn.btn-dots {
     @apply absolute text-white right-0;
   }
 
-  .card-action-button-icon {
+  .bi-card-actbtn-icn {
     @apply absolute top-0 right-0 p-2 pr-4 w-full h-16 rounded;
 
     @include icon-bg;
@@ -62,20 +70,24 @@
   }
 
   .card-img > img {
-    @apply w-full rounded-b-none;
+    @apply w-full rounded-b-none shadow-none;
   }
 
   .card-img {
     min-width: 30%;
   }
 
-  .content {
+  .card-content-wrapper {
     @apply flex-none flex flex-col flex-grow;
 
     .card-content {
-      @apply px-6 my-4 flex-grow;
+      @apply px-6 my-4 flex-grow leading-tight font-sans text-base font-normal text-default-darker;
 
       @include textAlign();
+
+      > p {
+        @apply my-0;
+      }
     }
 
     .card-title {
@@ -105,7 +117,7 @@
   &.horizontal {
     @apply flex-row max-w-xl;
 
-    .card-action-button-icon {
+    .bi-card-actbtn-icn {
       background: none;
 
       .bi.bi-btn.btn-dots {
@@ -129,7 +141,7 @@
       }
     }
 
-    .content {
+    .card-content-wrapper {
       @apply flex-grow flex-shrink;
     }
 
@@ -139,7 +151,7 @@
     &.reversed {
       @apply flex-row-reverse;
 
-      .card-action-button-icon {
+      .bi-card-actbtn-icn {
         @include icon-bg;
 
         .bi.bi-btn.btn-dots {
@@ -162,7 +174,7 @@
   &.reversed {
     @apply flex-col-reverse;
     /* stylelint-disable-next-line no-descending-specificity */
-    .card-action-button-icon {
+    .bi-card-actbtn-icn {
       background: none;
       /* stylelint-disable-next-line no-descending-specificity */
       .bi.bi-btn.btn-dots {

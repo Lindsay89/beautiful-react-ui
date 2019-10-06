@@ -4,12 +4,16 @@
 import { Card, Avatar } from 'beautiful-ui';
 
 <Card>
-  <Card.Image src="https://placeimg.com/460/250/nature" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
+  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <p>Vanity and pride are different things, though the words are often used synonymously. 
+    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+  </Card.Content>
   <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
   </Card.Footer>
 </Card>
 ```
@@ -22,12 +26,15 @@ The `fluid` prop will adapt the Card's width to its container.
 import { Card, Avatar } from 'beautiful-ui';
 
 <Card fluid>
-  <Card.Image src="https://placeimg.com/640/250/nature" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
+  <Card.Image src="https://placeimg.com/1024/300/nature" alt="A stunning title" />
+  <Card.Title> 
+    The creature
+  </Card.Title>
+  <Card.Content> 
+    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+  </Card.Content>
   <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+    <Avatar src="https://placeimg.com/120/120/people" displayName="Mary Shelley" size="small" state="online" /> 
   </Card.Footer>
 </Card>
 ```
@@ -40,13 +47,17 @@ it allows to horizontally align the text.
 ```jsx
 import { Card, Avatar } from 'beautiful-ui';
 
-<Card textAlign="center">
-  <Card.Image src="https://placeimg.com/460/250/nature" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
+<Card textAlign="right">
+  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <p>Vanity and pride are different things, though the words are often used synonymously. 
+    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+  </Card.Content>
   <Card.Footer textAlign="left"> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
   </Card.Footer>
 </Card>
 ```
@@ -60,10 +71,19 @@ The `horizontal` prop defines the card's orientation.
 import { Card, Pill } from 'beautiful-ui';
 
 <Card horizontal>
-  <Card.Image src="https://placeimg.com/640/800/nature" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
-  <Card.Footer> <Pill color="info"> Nature </Pill> </Card.Footer>
+  <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
+  <Card.Title> 
+    The creature
+  </Card.Title>
+  <Card.Content> 
+    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+  </Card.Content>
+  <Card.Footer> 
+    <Pill color="info">#ghotic</Pill> 
+    <Pill color="info">#novel</Pill>
+    <Pill color="info">#english</Pill>
+    <Pill color="info">#litterature</Pill>
+  </Card.Footer>
 </Card>
 ```
 
@@ -75,44 +95,42 @@ defined orientation.
 ```jsx
 import { Card, Pill, Alert, Icon } from 'beautiful-ui';
 
-<>
-  <Card horizontal reversed>
-    <Card.Image src="https://placeimg.com/640/800" alt="Alt text" />
-    <Card.Title> Title </Card.Title>
-    <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
-    <Card.Footer> 
-      <Pill color="info"> Horizontal </Pill> 
-      <Pill color="info"> Reversed </Pill> 
-    </Card.Footer>
-  </Card>
-  
-  <Card reversed style={{marginTop:"2rem"}}>
-    <Card.Image src="https://placeimg.com/640/480" alt="Alt text" />
-    <Card.Title> Title </Card.Title>
-    <Card.Content> some content </Card.Content>
-    <Card.Footer> 
-      <Alert color="warning" outline> The image is below! 
-        <Icon name="arrow-down" />
-      </Alert>
-    </Card.Footer>
-  </Card>
-</>
+<Card horizontal reversed>
+  <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
+  <Card.Title> 
+    The creature
+  </Card.Title>
+  <Card.Content> 
+    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+  </Card.Content>
+  <Card.Footer> 
+    <Pill color="info">#ghotic</Pill> 
+    <Pill color="info">#novel</Pill>
+    <Pill color="info">#english</Pill>
+    <Pill color="info">#litterature</Pill>
+  </Card.Footer>
+</Card>
 ```
 
 ### Action Button
 
-The `actionButton` prop will add a little menu-like icon to the top right of the card.
+The `actionButton` prop shows a menu-like icon to the top right corner of the card, 
+whilst the `onActionButtonClick` prop defines the function to be performed when clicked.
 
 ```jsx
 import { Card, Avatar } from 'beautiful-ui';
 
-<Card actionButton>
-  <Card.Image src="https://placeimg.com/460/250/nature" alt="Alt text" />
-  <Card.Title color="primary"> A fancy title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
+<Card actionButton onActionButtonClick={() => alert('Button clicked')}>
+  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <p>Vanity and pride are different things, though the words are often used synonymously. 
+    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+  </Card.Content>
   <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
   </Card.Footer>
 </Card>
 ```
@@ -124,31 +142,16 @@ The `actionButtonIcon` prop allows to override the default action button's icon.
 ```jsx
 import { Card, Avatar } from 'beautiful-ui';
 
-<Card actionButton actionButtonIcon="arrow-down" horizontal>
-  <Card.Image src="https://placeimg.com/640/800/animals" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
+<Card horizontal actionButton actionButtonIcon="heart" onActionButtonClick={() => alert('Button clicked')}>
+  <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
+  <Card.Title> 
+    The creature
+  </Card.Title>
+  <Card.Content> 
+    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+  </Card.Content>
   <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
-  </Card.Footer>
-</Card>
-```
-
-### Action Button onClick function
-
-The `onActionButtonClick` prop defines the function to be performed when action button is clicked
-
-```jsx
-import { Card, Avatar } from 'beautiful-ui';
-
-<Card actionButton onActionButtonClick={() => alert('new alert')}>
-  <Card.Image src="https://placeimg.com/640/250/animals" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
-  <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Mary Shelley" size="small" state="online" /> 
   </Card.Footer>
 </Card>
 ```
@@ -167,15 +170,17 @@ ActionButtons = () => (
   </>
 );
 
-<>
 <Card actionButton actionButtonRender={ActionButtons}>
-  <Card.Image src="https://placeimg.com/460/250" alt="Alt text" />
-  <Card.Title> Title </Card.Title>
-  <Card.Content> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil. </Card.Content>
+  <Card.Image src="https://placeimg.com/460/250" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <p>Vanity and pride are different things, though the words are often used synonymously. 
+    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+  </Card.Content>
   <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/nature/grayscale" /> 
-    <p style={{display:"inline-block", marginLeft:"2rem"}}>Written by John Doe</p>
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
   </Card.Footer>
 </Card>
-</>
 ```
