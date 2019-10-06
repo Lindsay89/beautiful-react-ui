@@ -23,9 +23,9 @@ var _CardImage = _interopRequireDefault(require("./CardImage"));
 
 var _CardFooter = _interopRequireDefault(require("./CardFooter"));
 
-var _takeCardImageOutOfChildren = _interopRequireDefault(require("./takeCardImageOutOfChildren"));
+var _takeCardImageOutOfChildren = _interopRequireDefault(require("./utils/takeCardImageOutOfChildren"));
 
-var _getPossibleImageWrapper = _interopRequireDefault(require("./getPossibleImageWrapper"));
+var _getPossibleImageWrapper = _interopRequireDefault(require("./utils/getPossibleImageWrapper"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -73,9 +73,9 @@ var Card = _react["default"].memo(function (props) {
   var classList = (0, _classnames["default"])('bi bi-card', (_classNames = {}, _defineProperty(_classNames, "text-align-".concat(textAlign), !!textAlign), _defineProperty(_classNames, "fluid", !!fluid), _defineProperty(_classNames, "horizontal", !!horizontal), _defineProperty(_classNames, "reversed", reversed), _classNames), className);
   return _react["default"].createElement("div", _extends({
     className: classList
-  }, rest), _react["default"].createElement(PossibleImageWrapper, possibleImageWrapperProps, _react["default"].createElement("div", {
+  }, rest), (cardImage || actionButton) && _react["default"].createElement(PossibleImageWrapper, possibleImageWrapperProps, actionButton && _react["default"].createElement("div", {
     className: (0, _classnames["default"])({
-      'card-action-button-icon': !!actionButton,
+      'bi-card-actbtn-icn': !!actionButton,
       'no-img': !cardImage
     })
   }, actionButton && actionButtonRender && actionButtonRender(), actionButton && !actionButtonRender && _react["default"].createElement(_Button["default"], {
@@ -87,7 +87,7 @@ var Card = _react["default"].memo(function (props) {
     className: "btn-dots",
     rounded: true
   })), cardImage && cardImage), _react["default"].createElement("div", {
-    className: "content"
+    className: "card-content-wrapper"
   }, childrenWithoutImg));
 });
 

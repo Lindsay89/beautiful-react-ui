@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _react = require("react");
 
-var _CardImage = _interopRequireDefault(require("./CardImage"));
+var _CardImage = _interopRequireDefault(require("../CardImage"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
