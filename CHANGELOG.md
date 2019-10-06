@@ -359,3 +359,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Pipeline script fix: push is not part of the script, not the after-script and removed personal git information
+
+### [0.27.2] - 2019-10-06
+
+### Fixed
+
+- Webpack `Hot module reloading` is not perfectly working with styleguidist, so I've changed its config to
+disable `Hot` and enable `live reloading` (it refresh when something changes)

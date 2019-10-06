@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -14,10 +15,13 @@ module.exports = () => ({
     filename: 'beautiful-ui.dev.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
-    alias: {
-      'beautiful-ui': sourcePath,
-    },
+    alias: { 'beautiful-ui': sourcePath },
+  },
+  devServer: {
+    open: true,
+    hot: false,
+    liveReload: true,
+    watchContentBase: true,
   },
   mode: 'development',
   module: {
