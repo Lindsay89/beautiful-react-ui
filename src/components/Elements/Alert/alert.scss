@@ -9,9 +9,9 @@
     }
 
     &.alert-outline {
-      background: transparent;
       @apply text-#{$colorName} font-normal border-2 leading-tight;
 
+      background: transparent;
       border-color: theme("colors.#{$colorName}");
     }
   }

@@ -7,7 +7,9 @@ import checkColumnSize from './checkColumnSize';
  * A single column component
  */
 const GridColumn = (props) => {
-  const { children, size, sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl, selfAlign } = props;
+  const {
+    children, size, sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl, className, selfAlign,
+  } = props;
   const classList = classNames('bi bi-grid-column', {
     [`col-size-${size}`]: !!size,
     [`bi-offset-${offset}`]: !!offset && offset <= 12,
@@ -20,7 +22,7 @@ const GridColumn = (props) => {
     [`bi-offset-lg-${offsetLg}`]: !!offsetLg && offsetLg <= 12,
     [`bi-offset-xl-${offsetXl}`]: !!offsetXl && offsetXl <= 12,
     [`self-${selfAlign}`]: !!selfAlign,
-  });
+  }, className);
 
   // checks the column total size
   checkColumnSize(sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl);
@@ -88,6 +90,10 @@ GridColumn.propTypes = ({
    * Defines the position of the the content along its container's cross axis.
    */
   selfAlign: PropTypes.oneOf(['start', 'center', 'end', 'stretch', 'auto']),
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
 });
 
 GridColumn.defaultProps = ({
@@ -102,6 +108,7 @@ GridColumn.defaultProps = ({
   offsetLg: undefined,
   offsetXl: undefined,
   selfAlign: 'auto',
+  className: undefined,
 });
 
 export default GridColumn;

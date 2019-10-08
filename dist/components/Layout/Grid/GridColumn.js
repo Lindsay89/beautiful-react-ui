@@ -31,8 +31,9 @@ var GridColumn = function GridColumn(props) {
       offsetMd = props.offsetMd,
       offsetLg = props.offsetLg,
       offsetXl = props.offsetXl,
+      className = props.className,
       selfAlign = props.selfAlign;
-  var classList = (0, _classnames["default"])('bi bi-grid-column', (_classNames = {}, _defineProperty(_classNames, "col-size-".concat(size), !!size), _defineProperty(_classNames, "bi-offset-".concat(offset), !!offset && offset <= 12), _defineProperty(_classNames, "bi-col-sm-".concat(sm), !!sm && sm <= 12), _defineProperty(_classNames, "bi-col-md-".concat(md), !!md && md <= 12), _defineProperty(_classNames, "bi-col-lg-".concat(lg), !!lg && lg <= 12), _defineProperty(_classNames, "bi-col-xl-".concat(xl), !!xl && xl <= 12), _defineProperty(_classNames, "bi-offset-sm-".concat(offsetSm), !!offsetSm && offsetSm <= 12), _defineProperty(_classNames, "bi-offset-md-".concat(offsetMd), !!offsetMd && offsetMd <= 12), _defineProperty(_classNames, "bi-offset-lg-".concat(offsetLg), !!offsetLg && offsetLg <= 12), _defineProperty(_classNames, "bi-offset-xl-".concat(offsetXl), !!offsetXl && offsetXl <= 12), _defineProperty(_classNames, "self-".concat(selfAlign), !!selfAlign), _classNames));
+  var classList = (0, _classnames["default"])('bi bi-grid-column', (_classNames = {}, _defineProperty(_classNames, "col-size-".concat(size), !!size), _defineProperty(_classNames, "bi-offset-".concat(offset), !!offset && offset <= 12), _defineProperty(_classNames, "bi-col-sm-".concat(sm), !!sm && sm <= 12), _defineProperty(_classNames, "bi-col-md-".concat(md), !!md && md <= 12), _defineProperty(_classNames, "bi-col-lg-".concat(lg), !!lg && lg <= 12), _defineProperty(_classNames, "bi-col-xl-".concat(xl), !!xl && xl <= 12), _defineProperty(_classNames, "bi-offset-sm-".concat(offsetSm), !!offsetSm && offsetSm <= 12), _defineProperty(_classNames, "bi-offset-md-".concat(offsetMd), !!offsetMd && offsetMd <= 12), _defineProperty(_classNames, "bi-offset-lg-".concat(offsetLg), !!offsetLg && offsetLg <= 12), _defineProperty(_classNames, "bi-offset-xl-".concat(offsetXl), !!offsetXl && offsetXl <= 12), _defineProperty(_classNames, "self-".concat(selfAlign), !!selfAlign), _classNames), className);
   (0, _checkColumnSize["default"])(sm, md, lg, xl, offset, offsetSm, offsetMd, offsetLg, offsetXl);
   return _react["default"].createElement("div", {
     className: classList
@@ -52,7 +53,8 @@ GridColumn.propTypes = {
   offsetMd: ColumnWidth,
   offsetLg: ColumnWidth,
   offsetXl: ColumnWidth,
-  selfAlign: _propTypes["default"].oneOf(['start', 'center', 'end', 'stretch', 'auto'])
+  selfAlign: _propTypes["default"].oneOf(['start', 'center', 'end', 'stretch', 'auto']),
+  className: _propTypes["default"].string
 };
 GridColumn.defaultProps = {
   size: undefined,
@@ -65,7 +67,8 @@ GridColumn.defaultProps = {
   offsetMd: undefined,
   offsetLg: undefined,
   offsetXl: undefined,
-  selfAlign: 'auto'
+  selfAlign: 'auto',
+  className: undefined
 };
 var _default = GridColumn;
 exports["default"] = _default;
