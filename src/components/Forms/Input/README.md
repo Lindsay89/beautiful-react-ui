@@ -85,3 +85,11 @@ import { Input } from 'beautiful-ui';
   <Input icon="rocket" iconPosition="right" />
 </>
 ```
+
+### Fluid
+
+```jsx
+import { Input } from 'beautiful-ui';
+
+<Input icon="search" fluid />
+```

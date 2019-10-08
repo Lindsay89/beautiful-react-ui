@@ -27,7 +27,7 @@
     transition: box-shadow ease-in-out 0.25s;
     min-width: 12.5rem;
 
-    @apply bg-white leading-tight border border-default-light border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
+    @apply bg-white font-normal font-sans text-base tracking-normal text-default-darker border border-default-light border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
 
     // placeholder
     &::-webkit-input-placeholder {
@@ -53,6 +53,12 @@
     }
   }
 
+  // ----------------------------
+  // FLUID
+  // ----------------------------
+  &.fluid {
+    width: 100%;
+  }
 
   // ----------------------------
   // DISABLED

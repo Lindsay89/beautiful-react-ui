@@ -34,15 +34,17 @@ var Input = function Input(props) {
       icon = props.icon,
       iconPosition = props.iconPosition,
       className = props.className,
+      fluid = props.fluid,
       style = props.style,
-      rest = _objectWithoutProperties(props, ["value", "onChange", "color", "placeholder", "disabled", "size", "helpText", "icon", "iconPosition", "className", "style"]);
+      rest = _objectWithoutProperties(props, ["value", "onChange", "color", "placeholder", "disabled", "size", "helpText", "icon", "iconPosition", "className", "fluid", "style"]);
 
   var classList = (0, _classnames["default"])('bi bi-input', "input-".concat(color), {
     disabled: disabled,
     'has-icon': !!icon,
     'icon-left': iconPosition === 'left',
     'input-sm': size === 'small',
-    'input-lg': size === 'large'
+    'input-lg': size === 'large',
+    fluid: fluid
   }, className);
   return _react["default"].createElement("div", {
     className: classList,
@@ -70,6 +72,7 @@ Input.propTypes = {
   size: _shared.Size,
   icon: _shared.IconProp,
   iconPosition: _propTypes["default"].oneOf(['right', 'left']),
+  fluid: _propTypes["default"].bool,
   style: _propTypes["default"].shape({})
 };
 Input.defaultProps = {
@@ -80,6 +83,7 @@ Input.defaultProps = {
   size: 'default',
   icon: undefined,
   iconPosition: 'right',
+  fluid: false,
   style: undefined
 };
 var _default = Input;

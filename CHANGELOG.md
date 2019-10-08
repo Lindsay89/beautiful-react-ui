@@ -372,3 +372,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Card component layout glitches
+
+
+### [0.27.4] - 2019-10-06
+
+### Fixed
+
+- Card component background is now set to white
+- Input font-size and color set as the others
+- Removed pipelines
+- Outlined Alert has transparent background

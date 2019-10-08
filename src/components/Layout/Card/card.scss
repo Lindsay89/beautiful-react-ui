@@ -37,7 +37,7 @@
 }
 
 .bi.bi-card {
-  @apply flex flex-col rounded shadow-md max-w-sm relative overflow-hidden;
+  @apply flex flex-col rounded shadow-md max-w-sm relative overflow-hidden bg-white;
 
   @include textAlign();
 

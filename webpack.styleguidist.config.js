@@ -15,6 +15,7 @@ module.exports = () => ({
     filename: 'beautiful-ui.dev.js',
   },
   resolve: {
+    extensions: ['.js', '.jsx', 'scss'],
     alias: { 'beautiful-ui': sourcePath },
   },
   devServer: {

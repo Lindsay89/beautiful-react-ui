@@ -9,7 +9,8 @@
     }
 
     &.alert-outline {
-      @apply bg-white text-#{$colorName} font-normal border-2 leading-tight;
+      background: transparent;
+      @apply text-#{$colorName} font-normal border-2 leading-tight;
 
       border-color: theme("colors.#{$colorName}");
     }

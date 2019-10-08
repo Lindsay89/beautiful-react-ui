@@ -11,7 +11,7 @@ import './input.scss';
  */
 const Input = (props) => {
   const {
-    value, onChange, color, placeholder, disabled, size, helpText, icon, iconPosition, className, style, ...rest
+    value, onChange, color, placeholder, disabled, size, helpText, icon, iconPosition, className, fluid, style, ...rest
   } = props;
 
   const classList = classNames('bi bi-input', `input-${color}`, {
@@ -20,6 +20,7 @@ const Input = (props) => {
     'icon-left': iconPosition === 'left',
     'input-sm': size === 'small',
     'input-lg': size === 'large',
+    fluid,
   }, className);
 
   return (
@@ -75,6 +76,10 @@ Input.propTypes = {
    */
   iconPosition: PropTypes.oneOf(['right', 'left']),
   /**
+   * Defines if the input should take all the possible width
+   */
+  fluid: PropTypes.bool,
+  /**
    * @ignore
    */
   style: PropTypes.shape({}),
@@ -88,6 +93,7 @@ Input.defaultProps = {
   size: 'default',
   icon: undefined,
   iconPosition: 'right',
+  fluid: false,
   style: undefined,
 };
 
