@@ -49,7 +49,7 @@ var SelectTrigger = function SelectTrigger(props) {
     }
   };
 
-  return _react["default"].createElement("div", _extends({
+  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", _extends({
     className: className
   }, rest), _react["default"].createElement("div", {
     className: "bi-select-element",
@@ -67,7 +67,7 @@ var SelectTrigger = function SelectTrigger(props) {
     onKeyDown: onClearHandler,
     role: "button",
     tabIndex: 0
-  }, _react["default"].createElement(_CloseIcon["default"], null)), _react["default"].createElement(_Caret["default"], null)), helpText && _react["default"].createElement(_HelpText["default"], {
+  }, _react["default"].createElement(_CloseIcon["default"], null)), _react["default"].createElement(_Caret["default"], null))), helpText && _react["default"].createElement(_HelpText["default"], {
     text: helpText
   }));
 };

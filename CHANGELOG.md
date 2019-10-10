@@ -404,7 +404,7 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Modal body: replace padding-y with padding to better show elements into it.
 - Modal component: changed max-width in width
 
-### [0.27.8] - 2019-10-06
+### [0.27.8] - 2019-10-10
 
 ### Fixed
 
@@ -416,3 +416,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Select Trigger now doesn't contain Helptext: this way the dropdown will be over the helptext itself.
+
+
+### [0.27.10] - 2019-10-10
+
+### Fixed
+
+- Adding built files 
