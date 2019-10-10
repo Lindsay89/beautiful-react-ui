@@ -402,4 +402,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Modal footer: replace row-reverse with justify-content to avoid objects reversing into the footer.
 - Modal body: replace padding-y with padding to better show elements into it.
-- Modal component: changed max-width in width 
+- Modal component: changed max-width in width
+
+### [0.27.8] - 2019-10-06
+
+### Fixed
+
+- Added min-width to the Card component image when horizontally reversed
+- Removed margins and add padding to all side of card's content whene there's not image and title.
