@@ -15,7 +15,9 @@ Here's a quick check list for a good pull request (PR):
     variables, exposed ports, useful file locations and container parameters.
 3.  Increase the version numbers in any examples files and the README.md to the new version that this
     Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4.  One commit per PR
+4.  Keep PRs as tidy as possible. If need be, please use 
+    `git reset --soft <hash>`, `git commit -m "..."` and `git push -f` to
+    compact your commits into a single one and rewrite the history of your branch.
 5.  One feature/change per PR
 6.  GITLAB issue number in commit comment
 7.  No changes to code not directly related to your change (e.g. no formatting changes or refactoring to existing code)
