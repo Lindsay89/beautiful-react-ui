@@ -387,3 +387,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Grid.Column accepts className
+
+### [0.27.6] - 2019-10-10
+
+### Added
+
+- Additional information on how to contribute to this project and how to 
+  compact the history of a specific branch
+
