@@ -16,7 +16,7 @@
     @apply mx-auto mt-8 bg-white rounded font-sans shadow-lg bg-white p-4;
 
     z-index: 9999;
-    max-width: 31rem;
+    width: 31rem;
     border-color: theme("colors.default");
 
     .bi-modal-title {
@@ -30,13 +30,13 @@
     }
 
     .bi-modal-body {
-      @apply py-4 overflow-y-scroll;
+      @apply p-4 overflow-y-scroll;
 
       max-height: 10rem;
     }
 
     .bi-modal-footer {
-      @apply border-b-0 border-r-0 border-l-0 border-t border-solid pt-4 flex flex-row-reverse;
+      @apply border-b-0 border-r-0 border-l-0 border-t border-solid pt-4 flex justify-end;
 
       border-color: theme("colors.default");
     }
@@ -45,11 +45,11 @@
     // SIZES
     // ----------------------------
     &.modal-sm {
-      max-width: 15rem;
+      width: 15rem;
     }
 
     &.modal-lg {
-      max-width: 60rem;
+      width: 60rem;
     }
   }
 

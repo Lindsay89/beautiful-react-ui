@@ -395,3 +395,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Additional information on how to contribute to this project and how to 
   compact the history of a specific branch
 
+
+### [0.27.7] - 2019-10-10
+
+### Fixed
+
+- Modal footer: replace row-reverse with justify-content to avoid objects reversing into the footer.
+- Modal body: replace padding-y with padding to better show elements into it.
+- Modal component: changed max-width in width 
