@@ -410,3 +410,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Added min-width to the Card component image when horizontally reversed
 - Removed margins and add padding to all side of card's content whene there's not image and title.
+
+### [0.27.9] - 2019-10-06
+
+### Fixed
+
+- Select Trigger now doesn't contain Helptext: this way the dropdown will be over the helptext itself.

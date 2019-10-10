@@ -25,24 +25,32 @@ const SelectTrigger = (props) => {
   };
 
   return (
-    <div className={className} {...rest}>
-      <div className="bi-select-element" role="button" tabIndex={0}>
-        <SelectLabel
-          value={value}
-          options={options}
-          placeholder={placeholder}
-          hasOptionGroups={hasOptionGroups}
-          multiStyle={multiStyle}
-        />
-        {clearable && (
-          <span className="sel-clear-x" onClick={onClearHandler} onKeyDown={onClearHandler} role="button" tabIndex={0}>
-            <CloseIcon />
-          </span>
-        )}
-        <Caret />
+    <>
+      <div className={className} {...rest}>
+        <div className="bi-select-element" role="button" tabIndex={0}>
+          <SelectLabel
+            value={value}
+            options={options}
+            placeholder={placeholder}
+            hasOptionGroups={hasOptionGroups}
+            multiStyle={multiStyle}
+          />
+          {clearable && (
+            <span
+              className="sel-clear-x"
+              onClick={onClearHandler}
+              onKeyDown={onClearHandler}
+              role="button"
+              tabIndex={0}
+            >
+              <CloseIcon />
+            </span>
+          )}
+          <Caret />
+        </div>
       </div>
       {helpText && <HelpText text={helpText} />}
-    </div>
+    </>
   );
 };
 
