@@ -1,0 +1,37 @@
+// -------------------------------
+// mixin to add color to title
+// -------------------------------
+@mixin p-color($colorName: 'default') {
+  @if ($colorName != "default") {
+    &.bi-p-#{$colorName} {
+      @apply text-#{$colorName};
+    }
+  }
+}
+
+.bi-p {
+  @apply leading-tight font-sans text-base font-normal text-default-darker mt-0 mb-2;
+
+  &.bi-p-center {
+    @apply text-center;
+  }
+
+  &.bi-p-left {
+    @apply text-left;
+  }
+
+  &.bi-p-right {
+    @apply text-right;
+  }
+
+  &.bi-p-justify {
+    @apply text-justify;
+  }
+
+  @include p-color("primary");
+  @include p-color("secondary");
+  @include p-color("info");
+  @include p-color("warning");
+  @include p-color("danger");
+  @include p-color("success");
+}

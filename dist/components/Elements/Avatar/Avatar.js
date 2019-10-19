@@ -13,7 +13,7 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _Image = _interopRequireDefault(require("../Image"));
 
-var _Paragraph = _interopRequireDefault(require("../../Typography/_Paragraph"));
+var _Paragraph = _interopRequireDefault(require("../../Typography/Paragraph"));
 
 var _shared = require("../../../shared");
 

@@ -117,6 +117,18 @@ Object.defineProperty(exports, "Card", {
     return _Card["default"];
   }
 });
+Object.defineProperty(exports, "Title", {
+  enumerable: true,
+  get: function get() {
+    return _Title["default"];
+  }
+});
+Object.defineProperty(exports, "Paragraph", {
+  enumerable: true,
+  get: function get() {
+    return _Paragraph["default"];
+  }
+});
 
 var _Accordion = _interopRequireDefault(require("./components/Elements/Accordion"));
 
@@ -155,6 +167,10 @@ var _Select = _interopRequireDefault(require("./components/Forms/Select"));
 var _Grid = _interopRequireDefault(require("./components/Layout/Grid"));
 
 var _Card = _interopRequireDefault(require("./components/Layout/Card"));
+
+var _Title = _interopRequireDefault(require("./components/Typography/Title"));
+
+var _Paragraph = _interopRequireDefault(require("./components/Typography/Paragraph"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

@@ -69,16 +69,20 @@ module.exports = {
           ],
         },
         {
+          name: 'Typography',
+          pagePerSection: true,
+          components: () => [
+            'src/components/Typography/Paragraph/Paragraph.js',
+            'src/components/Typography/Title/Title.js',
+          ],
+        },
+        {
           name: 'Layout',
           pagePerSection: true,
           components: () => [
             'src/components/Layout/Grid/Grid.js',
             'src/components/Layout/Card/Card.js',
           ],
-        },
-        {
-          name: 'Utils',
-          components: 'src/components/Utils/**/index.{js,jsx}',
         },
       ],
     },

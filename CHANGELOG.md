@@ -264,7 +264,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Input component: removed className from <input> tag
 
 
-### [0.23.0] - 2019-09-20
+## [0.23.0] - 2019-09-20
 
 ### Added
 
@@ -274,13 +274,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Grid component tests
 - GridColumn component tests
 
-### [0.24.0] - 2019-09-20
+## [0.24.0] - 2019-09-20
 
 ### Added
 
 - Dependencies updated
 
-### [0.25.0] - 2019-09-20
+## [0.25.0] - 2019-09-20
 
 ### Added
 
@@ -300,80 +300,80 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Title component tests
 - Paragraph component tests
 
-### [0.25.1] - 2019-09-27
+## [0.25.1] - 2019-09-27
 
 ### Fixed
 
 - Rewriting getElementAbsolutePosition function to return the right element position and get rid of the previous bug.
 
-### [0.25.2] - 2019-09-30
+## [0.25.2] - 2019-09-30
 
 ### Fixed
 
 - className prop support added to CardTitle, CardContent and CardFooter.
 
-### [0.25.3] - 2019-10-03
+## [0.25.3] - 2019-10-03
 
 ### Fixed
 
 - margin-left layout glitch fixed on Input component.
 
-### [0.25.4] - 2019-10-04
+## [0.25.4] - 2019-10-04
 
 ### Fixed
 
 - Adding distribution ready files that were supposed to be in the previous release
 
-### [0.26.0] - 2019-10-05
+## [0.26.0] - 2019-10-05
 
 ### Added
 
 - Adding Bit-bucket pipelines support
 
-### [0.26.1] - 2019-10-05
+## [0.26.1] - 2019-10-05
 
 ### Fixed
 
 - Bit-bucket pipeline now runs only on branch `master`
 
-### [0.26.2] - 2019-10-05
+## [0.26.2] - 2019-10-05
 
 ### Fixed
 
 - Bit-bucket pipeline configuration fixed
 
-### [0.26.3] - 2019-10-05
+## [0.26.3] - 2019-10-05
 
 ### Fixed
 
 - Some other minor fixes on the bit-bucket pipeline configuration
 
-### [0.27.0] - 2019-10-06
+## [0.27.0] - 2019-10-06
 
 ### Added
 
 - Avatar supports further information props such as `displayName` and `furtherInfo`
 
-### [0.27.1] - 2019-10-06
+## [0.27.1] - 2019-10-06
 
 ### Fixed
 
 - Pipeline script fix: push is not part of the script, not the after-script and removed personal git information
 
-### [0.27.2] - 2019-10-06
+## [0.27.2] - 2019-10-06
 
 ### Fixed
 
 - Webpack `Hot module reloading` is not perfectly working with styleguidist, so I've changed its config to
 disable `Hot` and enable `live reloading` (it refresh when something changes)
 
-### [0.27.3] - 2019-10-06
+## [0.27.3] - 2019-10-06
 
 ### Fixed
 
 - Card component layout glitches
 
-### [0.27.4] - 2019-10-06
+## [0.27.4] - 2019-10-06
 
 ### Fixed
 
@@ -382,13 +382,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Removed pipelines
 - Outlined Alert has transparent background
 
-### [0.27.5] - 2019-10-06
+## [0.27.5] - 2019-10-06
 
 ### Fixed
 
 - Grid.Column accepts className
 
-### [0.27.6] - 2019-10-10
+## [0.27.6] - 2019-10-10
 
 ### Added
 
@@ -396,7 +396,7 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
   compact the history of a specific branch
 
 
-### [0.27.7] - 2019-10-10
+## [0.27.7] - 2019-10-10
 
 ### Fixed
 
@@ -404,27 +404,27 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Modal body: replace padding-y with padding to better show elements into it.
 - Modal component: changed max-width in width
 
-### [0.27.8] - 2019-10-10
+## [0.27.8] - 2019-10-10
 
 ### Fixed
 
 - Added min-width to the Card component image when horizontally reversed
 - Removed margins and add padding to all side of card's content whene there's not image and title.
 
-### [0.27.9] - 2019-10-06
+## [0.27.9] - 2019-10-06
 
 ### Fixed
 
 - Select Trigger element does not contain help-text anymore so that the dropdown will not go over the it.
 
-### [0.27.10] - 2019-10-10
+## [0.27.10] - 2019-10-10
 
 ### Fixed
 
 - Adding built files 
 
 
-### [0.27.11] - 2019-10-10
+## [0.27.11] - 2019-10-19
 
 ### Fixed
 
@@ -432,6 +432,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Card component useless border-radius style on images
 - Card component `horizontal` prop changed to `orientation`
 
-## Added
+### Added
 
 - More renderer to the Card component 
+
+## [0.28.0] - 2019-10-19
+
+### Added
+
+- Title Component
+- Title Component tests

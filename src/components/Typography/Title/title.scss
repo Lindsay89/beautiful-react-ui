@@ -1,0 +1,62 @@
+// -------------------------------
+// mixin to add color to title
+// -------------------------------
+@mixin title-color($colorName: 'default') {
+  @if ($colorName != "default") {
+    &.bi-title-#{$colorName} {
+      @apply text-#{$colorName};
+    }
+  }
+}
+
+.bi-title {
+  @apply leading-tight font-sans font-medium mb-2 mt-0 text-default-darker;
+
+
+  &.bi-title-center {
+    @apply text-center;
+  }
+
+  &.bi-title-left {
+    @apply text-left;
+  }
+
+  &.bi-title-right {
+    @apply text-right;
+  }
+
+  &.bi-title-justify {
+    @apply text-justify;
+  }
+
+  @include title-color("primary");
+  @include title-color("secondary");
+  @include title-color("info");
+  @include title-color("warning");
+  @include title-color("danger");
+  @include title-color("success");
+}
+
+h1.bi-title {
+  @apply text-4xl;
+}
+
+h2.bi-title {
+  @apply text-3xl;
+}
+
+h3.bi-title {
+  @apply text-2xl;
+}
+
+h4.bi-title {
+  @apply text-xl;
+}
+
+h5.bi-title {
+  @apply text-lg;
+}
+
+h6.bi-title {
+  @apply text-base;
+}

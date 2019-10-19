@@ -34,7 +34,7 @@ const Card = React.memo((props) => {
   const [PossibleImageWrapper, possibleImageWrapperProps] = getPossibleImageWrapper(reversed, orientation);
 
   const classList = classNames('bi bi-card', {
-    [`text-align-${textAlign}`]: !!textAlign,
+    [`card-text-${textAlign}`]: !!textAlign,
     'orientation-h': orientation === 'horizontal',
     fluid: !!fluid,
     reversed,

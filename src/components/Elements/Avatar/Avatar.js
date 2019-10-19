@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Image from '../Image';
-import Paragraph from '../../Typography/_Paragraph';
+import Paragraph from '../../Typography/Paragraph';
 import { makePillFromProp, PillProp, Size, warn } from '../../../shared';
 
 import './avatar.scss';
