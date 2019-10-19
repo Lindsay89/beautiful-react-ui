@@ -51,34 +51,36 @@ var Card = _react["default"].memo(function (props) {
   var children = props.children,
       textAlign = props.textAlign,
       fluid = props.fluid,
-      horizontal = props.horizontal,
+      orientation = props.orientation,
       actionButton = props.actionButton,
       actionButtonIcon = props.actionButtonIcon,
-      actionButtonRender = props.actionButtonRender,
       onActionButtonClick = props.onActionButtonClick,
       reversed = props.reversed,
+      _float = props["float"],
+      actionButtonRenderer = props.actionButtonRenderer,
+      imageRenderer = props.imageRenderer,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["children", "textAlign", "fluid", "horizontal", "actionButton", "actionButtonIcon", "actionButtonRender", "onActionButtonClick", "reversed", "className"]);
+      rest = _objectWithoutProperties(props, ["children", "textAlign", "fluid", "orientation", "actionButton", "actionButtonIcon", "onActionButtonClick", "reversed", "float", "actionButtonRenderer", "imageRenderer", "className"]);
 
   var _takeCardImageOutOfCh = (0, _takeCardImageOutOfChildren["default"])(children),
       _takeCardImageOutOfCh2 = _slicedToArray(_takeCardImageOutOfCh, 2),
       cardImage = _takeCardImageOutOfCh2[0],
       childrenWithoutImg = _takeCardImageOutOfCh2[1];
 
-  var _getPossibleImageWrap = (0, _getPossibleImageWrapper["default"])(reversed, horizontal),
+  var _getPossibleImageWrap = (0, _getPossibleImageWrapper["default"])(reversed, orientation),
       _getPossibleImageWrap2 = _slicedToArray(_getPossibleImageWrap, 2),
       PossibleImageWrapper = _getPossibleImageWrap2[0],
       possibleImageWrapperProps = _getPossibleImageWrap2[1];
 
-  var classList = (0, _classnames["default"])('bi bi-card', (_classNames = {}, _defineProperty(_classNames, "text-align-".concat(textAlign), !!textAlign), _defineProperty(_classNames, "fluid", !!fluid), _defineProperty(_classNames, "horizontal", !!horizontal), _defineProperty(_classNames, "reversed", reversed), _classNames), className);
+  var classList = (0, _classnames["default"])('bi bi-card', (_classNames = {}, _defineProperty(_classNames, "text-align-".concat(textAlign), !!textAlign), _defineProperty(_classNames, 'orientation-h', orientation === 'horizontal'), _defineProperty(_classNames, "fluid", !!fluid), _defineProperty(_classNames, "reversed", reversed), _defineProperty(_classNames, "float", _float), _classNames), className);
   return _react["default"].createElement("div", _extends({
     className: classList
-  }, rest), (cardImage || actionButton) && _react["default"].createElement(PossibleImageWrapper, possibleImageWrapperProps, actionButton && _react["default"].createElement("div", {
+  }, rest), (cardImage || actionButton || imageRenderer) && _react["default"].createElement(PossibleImageWrapper, possibleImageWrapperProps, actionButton && _react["default"].createElement("div", {
     className: (0, _classnames["default"])({
       'bi-card-actbtn-icn': !!actionButton,
       'no-img': !cardImage
     })
-  }, actionButton && actionButtonRender && actionButtonRender(), actionButton && !actionButtonRender && _react["default"].createElement(_Button["default"], {
+  }, actionButton && actionButtonRenderer && actionButtonRenderer(), actionButton && !actionButtonRenderer && _react["default"].createElement(_Button["default"], {
     color: "transparent",
     icon: _react["default"].createElement(_Icon["default"], {
       name: actionButtonIcon
@@ -86,7 +88,7 @@ var Card = _react["default"].memo(function (props) {
     onClick: onActionButtonClick,
     className: "btn-dots",
     rounded: true
-  })), cardImage && cardImage), _react["default"].createElement("div", {
+  })), cardImage && !imageRenderer && cardImage, imageRenderer && imageRenderer()), _react["default"].createElement("div", {
     className: "card-content-wrapper"
   }, childrenWithoutImg));
 });
@@ -94,22 +96,26 @@ var Card = _react["default"].memo(function (props) {
 Card.propTypes = {
   textAlign: _propTypes["default"].oneOf(['center', 'left', 'right', 'justify']),
   fluid: _propTypes["default"].bool,
-  horizontal: _propTypes["default"].bool,
+  orientation: _propTypes["default"].oneOf(['horizontal', 'vertical']),
   actionButton: _propTypes["default"].bool,
   actionButtonIcon: _propTypes["default"].oneOfType([_propTypes["default"].instanceOf(_Icon["default"]), 'string']),
-  actionButtonRender: _propTypes["default"].func,
   onActionButtonClick: _propTypes["default"].func,
-  reversed: _propTypes["default"].bool
+  reversed: _propTypes["default"].bool,
+  "float": _propTypes["default"].bool,
+  actionButtonRenderer: _propTypes["default"].func,
+  imageRenderer: _propTypes["default"].func
 };
 Card.defaultProps = {
   textAlign: undefined,
   fluid: false,
-  horizontal: false,
+  orientation: 'vertical',
   actionButton: false,
   actionButtonIcon: 'ellipsis-v',
-  actionButtonRender: undefined,
   onActionButtonClick: undefined,
-  reversed: false
+  reversed: false,
+  "float": false,
+  actionButtonRenderer: undefined,
+  imageRenderer: undefined
 };
 Card.Title = _CardTitle["default"];
 Card.Content = _CardContent["default"];

@@ -415,11 +415,23 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 ### Fixed
 
-- Select Trigger now doesn't contain Helptext: this way the dropdown will be over the helptext itself.
-
+- Select Trigger element does not contain help-text anymore so that the dropdown will not go over the it.
 
 ### [0.27.10] - 2019-10-10
 
 ### Fixed
 
 - Adding built files 
+
+
+### [0.27.11] - 2019-10-10
+
+### Fixed
+
+- Card component hover effect is now actionable by the `float` prop
+- Card component useless border-radius style on images
+- Card component `horizontal` prop changed to `orientation`
+
+## Added
+
+- More renderer to the Card component 
