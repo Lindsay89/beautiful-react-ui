@@ -1,5 +1,5 @@
 // ----------------------------------------------
-// mixin to add text-align classes to component
+// mixin adding text-align classes to component
 // ----------------------------------------------
 @mixin textAlign {
   &.text-align-center {
@@ -20,7 +20,7 @@
 }
 
 // ---------------------------------------
-// mixin to give width to icon container
+// mixin giving width to icon container
 // ---------------------------------------
 @mixin div-icon-image-container {
   @apply relative;
@@ -30,9 +30,9 @@
 }
 
 // ---------------------------------------
-// mixin to defines image background
+// mixin to defines icon backdrop
 // ---------------------------------------
-@mixin icon-bg {
+@mixin icon-backdrop {
   background: rgb(0, 0, 0);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
 }
@@ -42,45 +42,32 @@
 
   @include textAlign();
 
-  transition: transform 0.25s ease-in-out, box-shadow 0.4s ease-in;
+  transition: box-shadow 0.4s ease-in;
 
   &:hover {
     @apply shadow-lg;
-
-    transform: translateY(-0.2rem);
   }
 
-  .bi.bi-btn.btn-dots {
-    @apply absolute text-white right-0;
-  }
+  // ----------------------------------------------
+  // Card Image
+  // ----------------------------------------------
+  .card-img {
+    min-width: 30%;
 
-  .bi-card-actbtn-icn {
-    @apply absolute top-0 right-0 p-2 pr-4 w-full h-16 rounded;
-
-    @include icon-bg;
-
-    box-sizing: border-box;
-
-    &.no-img {
-      background: none;
-
-      .bi.bi-btn.btn-dots {
-        color: theme("colors.default");
-      }
+    > img {
+      @apply w-full shadow-none rounded-none;
     }
   }
 
-  .card-img > img {
-    @apply w-full rounded-b-none shadow-none;
-  }
-
-  .card-img {
-    min-width: 30%;
-  }
-
+  // ----------------------------------------------
+  // Card Content
+  // ----------------------------------------------
   .card-content-wrapper {
     @apply flex-none flex flex-col flex-grow;
 
+    // ----------------------------------------------
+    // The actual content
+    // ----------------------------------------------
     .card-content {
       @apply px-6 my-4 flex-grow leading-tight font-sans text-base font-normal text-default-darker;
 
@@ -97,12 +84,12 @@
       @include textAlign();
 
       + .card-content {
-        @apply mt-0;
+        @apply pt-0;
       }
     }
 
     // ----------------------------------------------
-    // FOOTER
+    // Card's Footer
     // ----------------------------------------------
 
     .card-footer {
@@ -112,10 +99,35 @@
     }
   }
 
+
   // ----------------------------------------------
-  // ORIENTATION
+  // Card top buttons
   // ----------------------------------------------
-  &.horizontal {
+
+  .bi.bi-btn.btn-dots {
+    @apply absolute text-white right-0;
+  }
+
+  .bi-card-actbtn-icn {
+    @apply absolute top-0 right-0 p-2 pr-4 w-full h-16;
+
+    @include icon-backdrop;
+
+    box-sizing: border-box;
+
+    &.no-img {
+      background: none;
+
+      .bi.bi-btn.btn-dots {
+        color: theme("colors.default");
+      }
+    }
+  }
+
+  // ----------------------------------------------
+  // Orientation
+  // ----------------------------------------------
+  &.orientation-h {
     @apply flex-row max-w-xl;
 
     .bi-card-actbtn-icn {
@@ -128,10 +140,6 @@
 
     .card-img {
       max-width: 50%;
-
-      > img {
-        @apply rounded-none rounded-l;
-      }
     }
 
     .icon-img-container {
@@ -147,29 +155,23 @@
     }
 
     // ----------------------------------------------
-    // REVERSE HORIZONTAL CONTENT
+    // Horizontal reverse
     // ----------------------------------------------
     &.reversed {
       @apply flex-row-reverse;
 
       .bi-card-actbtn-icn {
-        @include icon-bg;
+        @include icon-backdrop;
 
         .bi.bi-btn.btn-dots {
           color: white;
-        }
-      }
-
-      .icon-img-container {
-        .card-img > img {
-          @apply rounded-none rounded-r;
         }
       }
     }
   }
 
   // ----------------------------------------------
-  // REVERSE CONTENT
+  // Reverse Content
   // ----------------------------------------------
 
   &.reversed {
@@ -190,15 +192,10 @@
         }
       }
     }
-
-    /* stylelint-disable-next-line no-descending-specificity */
-    .card-img > img {
-      @apply rounded-none rounded-b;
-    }
   }
 
   // ----------------------------------------------
-  // FLUID -- adapt card to its container
+  // Fluid, adapts the Card to its container
   // ----------------------------------------------
   &.fluid {
     @apply max-w-full;
@@ -215,5 +212,17 @@
       margin: 0;
     }
   }
+
   /* stylelint-enable */
+
+  // ----------------------------------------------
+  // Floating card
+  // ----------------------------------------------
+  &.float {
+    transition: transform 0.25s ease-in-out, box-shadow 0.4s ease-in;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+  }
 }

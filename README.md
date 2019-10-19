@@ -2,7 +2,6 @@
 
 > Beautiful-UI is a set of lightweight and easy-to-customise uncontrolled React components, built on top of  [Tailwind](https://tailwindcss.com/).
 
-
 ## Prerequisites
 
 This project requires NodeJS (at least version 6) and NPM.

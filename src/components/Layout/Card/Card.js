@@ -26,29 +26,30 @@ import './card.scss';
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Card = React.memo((props) => {
   const {
-    children, textAlign, fluid, horizontal, actionButton, actionButtonIcon, actionButtonRender, onActionButtonClick,
-    reversed, className, ...rest
+    children, textAlign, fluid, orientation, actionButton, actionButtonIcon, onActionButtonClick, reversed, float,
+    actionButtonRenderer, imageRenderer, className, ...rest
   } = props;
 
   const [cardImage, childrenWithoutImg] = takeCardImageOutOfChildren(children);
-  const [PossibleImageWrapper, possibleImageWrapperProps] = getPossibleImageWrapper(reversed, horizontal);
+  const [PossibleImageWrapper, possibleImageWrapperProps] = getPossibleImageWrapper(reversed, orientation);
 
   const classList = classNames('bi bi-card', {
     [`text-align-${textAlign}`]: !!textAlign,
+    'orientation-h': orientation === 'horizontal',
     fluid: !!fluid,
-    horizontal: !!horizontal,
     reversed,
+    float,
   }, className);
 
   return (
     <div className={classList} {...rest}>
-      {(cardImage || actionButton) && (
+      {(cardImage || actionButton || imageRenderer) && (
         <PossibleImageWrapper {...possibleImageWrapperProps}>
           {actionButton && (
             <div className={classNames({ 'bi-card-actbtn-icn': !!actionButton, 'no-img': !cardImage })}>
-              { /* the actionButtonRender overrides the standard action button behaviour */}
-              {actionButton && actionButtonRender && actionButtonRender()}
-              {actionButton && !actionButtonRender && (
+              { /* the actionButtonRenderer overrides the standard action button behaviour */}
+              {actionButton && actionButtonRenderer && actionButtonRenderer()}
+              {actionButton && !actionButtonRenderer && (
                 <Button
                   color="transparent"
                   icon={<Icon name={actionButtonIcon} />}
@@ -59,7 +60,8 @@ const Card = React.memo((props) => {
               )}
             </div>
           )}
-          {cardImage && (cardImage)}
+          {cardImage && !imageRenderer && (cardImage)}
+          {imageRenderer && imageRenderer()}
         </PossibleImageWrapper>
       )}
       <div className="card-content-wrapper">{childrenWithoutImg}</div>
@@ -77,9 +79,9 @@ Card.propTypes = {
    */
   fluid: PropTypes.bool,
   /**
-   * Defines if the card should be horizontal or not
+   * Defines the card orientation
    */
-  horizontal: PropTypes.bool,
+  orientation: PropTypes.oneOf(['horizontal', 'vertical']),
   /**
    * If true, it shows an actionButton that will run a callback
    */
@@ -89,10 +91,6 @@ Card.propTypes = {
    */
   actionButtonIcon: PropTypes.oneOfType([PropTypes.instanceOf(Icon), 'string']),
   /**
-   * Allows to render different actionButton insted of the default one
-   */
-  actionButtonRender: PropTypes.func,
-  /**
    * The callback to be performed on action button click
    */
   onActionButtonClick: PropTypes.func,
@@ -100,17 +98,31 @@ Card.propTypes = {
    * Defines weather the card should reverse its column or not
    */
   reversed: PropTypes.bool,
+  /**
+   * Defines weather the card should float on mouse hover or not
+   */
+  float: PropTypes.bool,
+  /**
+   * Allows to change the standard action button behaviour by defining a custom renderer
+   */
+  actionButtonRenderer: PropTypes.func,
+  /**
+   * Allows to change the standard card's image behaviour by defining a custom renderer
+   */
+  imageRenderer: PropTypes.func,
 };
 
 Card.defaultProps = {
   textAlign: undefined,
   fluid: false,
-  horizontal: false,
+  orientation: 'vertical',
   actionButton: false,
   actionButtonIcon: 'ellipsis-v',
-  actionButtonRender: undefined,
   onActionButtonClick: undefined,
   reversed: false,
+  float: false,
+  actionButtonRenderer: undefined,
+  imageRenderer: undefined,
 };
 
 // shortcuts

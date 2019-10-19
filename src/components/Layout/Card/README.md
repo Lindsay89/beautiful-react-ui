@@ -18,6 +18,29 @@ import { Card, Avatar } from 'beautiful-ui';
 </Card>
 ```
 
+### Float
+
+By setting the `float` prop to `true` the card will float up a bit on mouse hover
+
+```jsx
+import { Card, Avatar } from 'beautiful-ui';
+
+<Card float>
+  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <p>Vanity and pride are different things, though the words are often used synonymously. 
+    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+  </Card.Content>
+  <Card.Footer> 
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
+  </Card.Footer>
+</Card>
+```
+
+
 ### Fluid
 
 The `fluid` prop will adapt the Card's width to its container.
@@ -65,12 +88,12 @@ import { Card, Avatar } from 'beautiful-ui';
 
 ### Orientation
 
-The `horizontal` prop defines the card's orientation.
+The `orientation` prop defines the card's orientation, by default is set the `vertical`.
 
 ```jsx
 import { Card, Pill } from 'beautiful-ui';
 
-<Card horizontal>
+<Card orientation="horizontal">
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
   <Card.Title> 
     The creature
@@ -95,7 +118,7 @@ defined orientation.
 ```jsx
 import { Card, Pill, Alert, Icon } from 'beautiful-ui';
 
-<Card horizontal reversed>
+<Card orientation="horizontal" reversed>
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
   <Card.Title> 
     The creature
@@ -142,7 +165,7 @@ The `actionButtonIcon` prop allows to override the default action button's icon.
 ```jsx
 import { Card, Avatar } from 'beautiful-ui';
 
-<Card horizontal actionButton actionButtonIcon="heart" onActionButtonClick={() => alert('Button clicked')}>
+<Card orientation="horizontal" actionButton actionButtonIcon="heart" onActionButtonClick={() => alert('Button clicked')}>
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
   <Card.Title> 
     The creature
@@ -156,22 +179,52 @@ import { Card, Avatar } from 'beautiful-ui';
 </Card>
 ```
 
-### Render
+### Renders
 
-If defined, the `actionButtonRender` property will change the default actionButton behaviour.
+The Card component comes with a set of renders to override the standard behaviour:
+
+#### Action button renderer
+
+If defined, an `actionButtonRenderer` prop will change the default actionButton behaviour.
 
 ```jsx
 import { Icon, Button, Avatar } from 'beautiful-ui';
 
-ActionButtons = () => (
-  <> 
+CustomRenderer = () => [
+  <Button icon="envelope" color="primary">Mail</Button>,
+  <Button icon="heart" color="primary" />
+];
+
+<Card actionButton actionButtonRenderer={CustomRenderer}>
+  <Card.Image src="https://placeimg.com/460/250" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <p>Vanity and pride are different things, though the words are often used synonymously. 
+    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+  </Card.Content>
+  <Card.Footer> 
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
+  </Card.Footer>
+</Card>
+```
+
+#### Image Renderer
+
+If defined, an `imageRenderer` prop will change the default image behaviour.
+
+```jsx
+import { Icon, Button, Avatar } from 'beautiful-ui';
+
+CustomRenderer = () => (
+  <div class="custom-image-render"> 
     <Button icon="envelope" color="primary">Mail</Button>
     <Button icon="heart" color="primary" />
-  </>
+  </div>
 );
 
-<Card actionButton actionButtonRender={ActionButtons}>
-  <Card.Image src="https://placeimg.com/460/250" alt="A stunning title" />
+<Card imageRenderer={CustomRenderer}>
   <Card.Title> 
     Pride and Prejudice
   </Card.Title>

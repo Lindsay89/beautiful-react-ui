@@ -7,8 +7,8 @@ exports["default"] = void 0;
 
 var _react = require("react");
 
-var getPossibleImageWrapper = function getPossibleImageWrapper(reversed, horizontal) {
-  var needsTheWrapper = reversed && horizontal;
+var getPossibleImageWrapper = function getPossibleImageWrapper(reversed, orientation) {
+  var needsTheWrapper = reversed && orientation === 'horizontal';
   var PossibleImageWrapper = needsTheWrapper ? 'div' : _react.Fragment;
   var possibleImageWrapperProps = needsTheWrapper ? {
     className: 'icon-img-container'
