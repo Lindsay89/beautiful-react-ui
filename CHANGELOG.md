@@ -442,3 +442,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Title Component
 - Title Component tests
+
+## [0.29.0] - 2019-10-19
+
+### Added
+
+- Checkbox component
+- Checkbox component tests

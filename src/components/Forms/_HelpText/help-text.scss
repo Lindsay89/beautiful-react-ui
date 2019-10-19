@@ -1,17 +1,3 @@
-@mixin make-colored-helptext($colorName: 'default', $colorValue: $colorName) {
-  &.helptext-#{$colorName} {
-    @apply text-#{$colorValue};
-  }
-}
-
-
 .bi.bi-helptext {
-  @apply mt-2 mb-3 leading-none text-default text-sm font-sans font-normal;
-
-  @include make-colored-helptext('primary');
-  @include make-colored-helptext('secondary');
-  @include make-colored-helptext('info');
-  @include make-colored-helptext('success');
-  @include make-colored-helptext('warning');
-  @include make-colored-helptext('danger');
+  @apply mt-2 mb-3 leading-none text-default text-sm;
 }

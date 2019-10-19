@@ -42,7 +42,7 @@ Pill.propTypes = {
   /**
    * rounded indicated the pill shape, by default the shape is rounded
    */
-  rounded: PropTypes.string,
+  rounded: PropTypes.bool,
   /**
    * @ignore
    */

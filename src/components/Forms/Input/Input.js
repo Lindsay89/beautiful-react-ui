@@ -52,7 +52,7 @@ Input.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
-   * Defines input type
+   * Disables the input
    */
   disabled: PropTypes.bool,
   /**

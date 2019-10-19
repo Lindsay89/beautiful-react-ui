@@ -394,7 +394,7 @@ describe('SelectTrigger component', () => {
     expect(onClear.called).to.be.true;
   });
 
-  it('should possibly show the helpText if provided', () => {
+  it('should possibly show a helping text', () => {
     render(<SelectTrigger options={optionsMock} helpText="foo" />);
     const helpTextComp = document.querySelector('.bi.bi-helptext');
 

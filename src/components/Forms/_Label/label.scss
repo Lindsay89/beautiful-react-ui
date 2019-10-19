@@ -6,7 +6,9 @@
 
 
 .bi.bi-label {
-  @apply inline-block font-sans font-normal text-sm text-default-dark;
+  cursor: inherit; // so that it would be exactly the one of its input
+
+  @apply inline-block font-normal font-sans text-base tracking-normal text-default-darker;
 
   @include make-colored-label('primary');
   @include make-colored-label('secondary');

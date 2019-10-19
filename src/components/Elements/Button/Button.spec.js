@@ -166,7 +166,7 @@ describe('Button component', () => {
     const firstCallArgs = onClickSpy.args[0];
 
     expect(onClickSpy.callCount).to.equal(1);
-    expect(firstCallArgs[0]).to.be.instanceOf(MouseEvent);
+    expect(firstCallArgs[0]).to.exist;
   });
 
   it('should possibly render an icon', () => {

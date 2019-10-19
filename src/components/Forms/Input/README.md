@@ -11,14 +11,14 @@ import { Input } from 'beautiful-ui';
 ```jsx
 import { Input } from 'beautiful-ui';
 
-const ControlledInput = (props) => {
+const UncontrolledInput = (props) => {
   const [value, setValue] = React.useState();
 
   return (<Input value={value} onChange={(event, nextValue) => setValue(nextValue)} />);
 }
 
 <>
-  <ControlledInput />
+  <UncontrolledInput />
 </>
 ```
 
@@ -67,9 +67,11 @@ import { Input } from 'beautiful-ui';
 
 ### Help Text
 
+It's possible to show a help text giving further information right under the input field
+by setting a `helpText` prop.
+
 ```jsx
 import { Input } from 'beautiful-ui';
-
 
 <Input color="danger" helpText="Please provide a valid value" />
 ```

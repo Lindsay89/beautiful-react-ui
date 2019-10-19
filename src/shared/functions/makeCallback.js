@@ -1,24 +1,24 @@
 /**
  * This function takes a callbackProp and a possible overrideValue as parameters and return a function
- * that, given a React SyntheticEvent, will perform the callbackProp with the original nativeEvent taken from the
- * React SyntheticEvent.
- * The purpose of this function is to generate callbacks that receive the nativeEvent rather than the
- * React SyntheticEvent to be used as the following:
+ * that, given a React SyntheticEvent, will perform the callbackProp passing the event as first parameter
+ * and a possible value as second parameter.
+ * The purpose of this function is to generate callbacks having similar signatures.
+ *
+ * Usage:
  *
  * ```
  * <SomeComponent onClick={makeCallback(callbackProp)} />
  *
- * // callbackProp will then be performed receiving the nativeEvent rather than the SyntheticEvent
+ * // callbackProp will then be performed receiving the SyntheticEvent as first parameter
  * ```
  *
- * Another purpose of this function is to pass the possible target's value as a second parameter of the callbackProp;
  *
  * Example:
  *
  * ```
  * <Input onChange={makeCallback(onChangeProp)} />
  *
- * // onChangeProp will then be performed receiving the nativeEvent and the Input value
+ * // onChangeProp will then be performed receiving the event and the Input value
  * ```
  *
  * It is possible to override the input value by defining the overrideValue:
@@ -28,17 +28,12 @@
  *
  * // onChangeProp will then be performed receiving the nativeEvent and 10
  * ```
- *
- * Although we do understand the performance improvements that React SyntheticEvent implied, we prefer avoid
- * passing it down to the component's callbacks as it is impossible to access to the nativeEvent asynchronously.
  */
 const makeCallback = (callbackProp, overrideValue) => (event) => {
   if (typeof callbackProp === 'function') {
-    event.persist();
-    const { nativeEvent, currentTarget } = event;
-    const { value } = currentTarget;
+    const { value } = event.currentTarget;
 
-    return callbackProp(nativeEvent, overrideValue === undefined ? value : overrideValue);
+    return callbackProp(event, overrideValue === undefined ? value : overrideValue);
   }
 
   return undefined;

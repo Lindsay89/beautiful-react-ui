@@ -20,32 +20,32 @@ describe('Input component', () => {
   it('should have default classes', () => {
     const { container } = render(<Input value="foo" onChange={noop} />);
     // using div just to test if it has default classes
-    const inputComp = container.querySelector('div');
+    const inputEl = container.querySelector('div');
 
-    expect(inputComp.classList.contains('bi')).to.be.true;
-    expect(inputComp.classList.contains('bi-input')).to.be.true;
-    expect(inputComp.classList.contains('input-default')).to.be.true;
+    expect(inputEl.classList.contains('bi')).to.be.true;
+    expect(inputEl.classList.contains('bi-input')).to.be.true;
+    expect(inputEl.classList.contains('input-default')).to.be.true;
   });
 
-  it('shoud accept an "id" prop', () => {
+  it('should accept an "id" prop', () => {
     const { container } = render(<Input value="foo" onChange={noop} id="foo" />);
-    const inputComp = container.querySelector('.bi.bi-input input');
+    const inputEl = container.querySelector('.bi.bi-input input');
 
-    expect(inputComp.id).to.equal('foo');
+    expect(inputEl.id).to.equal('foo');
   });
 
   it('should allow adding custom classes', () => {
     const { container } = render(<Input value="foo" onChange={noop} className="foo" />);
-    const inputComp = container.querySelector('.bi.bi-input');
+    const inputEl = container.querySelector('.bi.bi-input');
 
-    expect(inputComp.classList.contains('foo')).to.be.true;
+    expect(inputEl.classList.contains('foo')).to.be.true;
   });
 
   it('should allow to define custom style', () => {
     const { container } = render(<Input value="foo" onChange={noop} style={{ margin: '10px' }} />);
-    const inputComp = container.querySelector('.bi.bi-input');
+    const inputEl = container.querySelector('.bi.bi-input');
 
-    expect(inputComp.getAttribute('style')).to.equal('margin: 10px;');
+    expect(inputEl.getAttribute('style')).to.equal('margin: 10px;');
   });
 
   it('should pass the value prop down to the actual input tag', () => {
@@ -87,7 +87,7 @@ describe('Input component', () => {
     expect(actualInputTag.disabled).to.equal(true);
   });
 
-  it('should possibly allow to define a helping text', () => {
+  it('should possibly show a helping text', () => {
     const helpText = 'Help text';
     const { getByText } = render(<Input value="foo" onChange={noop} helpText={helpText} />);
     const helpTextComponent = getByText(helpText);
@@ -98,41 +98,41 @@ describe('Input component', () => {
 
   it('should allow to define the input color', () => {
     const { container, rerender } = render(<Input value="foo" onChange={noop} color="primary" />);
-    const inputComp = container.querySelector('.bi.bi-input');
+    const inputEl = container.querySelector('.bi.bi-input');
 
-    expect(inputComp.classList.contains('input-primary')).to.be.true;
-    expect(inputComp.classList.contains('input-default')).to.not.be.true;
+    expect(inputEl.classList.contains('input-primary')).to.be.true;
+    expect(inputEl.classList.contains('input-default')).to.not.be.true;
 
     rerender(<Input value="foo" onChange={noop} color="warning" />);
-    expect(inputComp.classList.contains('input-warning')).to.be.true;
+    expect(inputEl.classList.contains('input-warning')).to.be.true;
 
     rerender(<Input value="foo" onChange={noop} />);
-    expect(inputComp.classList.contains('input-default')).to.be.true;
-    expect(inputComp.classList.contains('input-primary')).to.not.be.true;
-    expect(inputComp.classList.contains('input-warning')).to.not.be.true;
+    expect(inputEl.classList.contains('input-default')).to.be.true;
+    expect(inputEl.classList.contains('input-primary')).to.not.be.true;
+    expect(inputEl.classList.contains('input-warning')).to.not.be.true;
   });
 
   it('should allow to define the input size', () => {
     const { container, rerender } = render(<Input value="foo" onChange={noop} size="small" />);
-    const inputComp = container.querySelector('.bi.bi-input');
+    const inputEl = container.querySelector('.bi.bi-input');
 
-    expect(inputComp.classList.contains('input-sm')).to.be.true;
+    expect(inputEl.classList.contains('input-sm')).to.be.true;
 
     rerender(<Input value="foo" onChange={noop} size="large" />);
-    expect(inputComp.classList.contains('input-sm')).to.not.be.true;
-    expect(inputComp.classList.contains('input-lg')).to.be.true;
+    expect(inputEl.classList.contains('input-sm')).to.not.be.true;
+    expect(inputEl.classList.contains('input-lg')).to.be.true;
 
     rerender(<Input value="foo" onChange={noop} />);
-    expect(inputComp.classList.contains('input-sm')).to.not.be.true;
-    expect(inputComp.classList.contains('input-lg')).to.not.be.true;
+    expect(inputEl.classList.contains('input-sm')).to.not.be.true;
+    expect(inputEl.classList.contains('input-lg')).to.not.be.true;
   });
 
   it('should possibly render an icon', () => {
     const { container } = render(<Input value="foo" onChange={noop} icon="heart" />);
-    const inputComp = container.querySelector('.bi.bi-input');
+    const inputEl = container.querySelector('.bi.bi-input');
     const icon = container.querySelector('.bi.bi-input').querySelector('svg');
 
-    expect(inputComp.classList.contains('has-icon')).to.be.true;
+    expect(inputEl.classList.contains('has-icon')).to.be.true;
     expect(icon.classList.contains('bi')).to.be.true;
     expect(icon.classList.contains('bi-icon')).to.be.true;
     expect(icon.classList.contains('fa-heart')).to.be.true;
@@ -140,8 +140,8 @@ describe('Input component', () => {
 
   it('should possibly allow to define the icon position', () => {
     const { container } = render(<Input value="foo" onChange={noop} icon="heart" iconPosition="left" />);
-    const inputComp = container.querySelector('.bi.bi-input');
+    const inputEl = container.querySelector('.bi.bi-input');
 
-    expect(inputComp.classList.contains('icon-left')).to.be.true;
+    expect(inputEl.classList.contains('icon-left')).to.be.true;
   });
 });

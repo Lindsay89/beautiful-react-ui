@@ -5,7 +5,6 @@ import { Color } from '../../../shared';
 
 import './paragraph.scss';
 
-
 /**
  * As Beautiful-ui does not impose a general styles by creating and applying extra css classes,
  * a set of typography components as been created to possibly have the same style both for UI components and texts.
@@ -15,7 +14,7 @@ import './paragraph.scss';
  */
 const Paragraph = (props) => {
   const { children, color, textAlign, className, ...rest } = props;
-  const classList = classNames('bi-p', `bi-p-${color}`, {
+  const classList = classNames('bi bi-p', `bi-p-${color}`, {
     [`bi-p-${textAlign}`]: !!textAlign,
   }, className);
 
