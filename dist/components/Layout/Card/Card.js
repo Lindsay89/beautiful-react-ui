@@ -72,7 +72,7 @@ var Card = _react["default"].memo(function (props) {
       PossibleImageWrapper = _getPossibleImageWrap2[0],
       possibleImageWrapperProps = _getPossibleImageWrap2[1];
 
-  var classList = (0, _classnames["default"])('bi bi-card', (_classNames = {}, _defineProperty(_classNames, "text-align-".concat(textAlign), !!textAlign), _defineProperty(_classNames, 'orientation-h', orientation === 'horizontal'), _defineProperty(_classNames, "fluid", !!fluid), _defineProperty(_classNames, "reversed", reversed), _defineProperty(_classNames, "float", _float), _classNames), className);
+  var classList = (0, _classnames["default"])('bi bi-card', (_classNames = {}, _defineProperty(_classNames, "card-text-".concat(textAlign), !!textAlign), _defineProperty(_classNames, 'orientation-h', orientation === 'horizontal'), _defineProperty(_classNames, "fluid", !!fluid), _defineProperty(_classNames, "reversed", reversed), _defineProperty(_classNames, "float", _float), _classNames), className);
   return _react["default"].createElement("div", _extends({
     className: classList
   }, rest), (cardImage || actionButton || imageRenderer) && _react["default"].createElement(PossibleImageWrapper, possibleImageWrapperProps, actionButton && _react["default"].createElement("div", {

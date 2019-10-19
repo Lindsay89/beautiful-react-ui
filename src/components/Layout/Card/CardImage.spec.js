@@ -12,7 +12,7 @@ describe('CardImage component', () => {
     expect(container.querySelector('.card-img')).to.exist;
   });
 
-  it('should accept default classes', () => {
+  it('should have default classes', () => {
     const { container } = render(<CardImage src="https://placeimg.com/460/250/nature" alt="Alt text" />);
     const footerCardComp = container.querySelector('div');
 

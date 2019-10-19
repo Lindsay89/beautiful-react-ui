@@ -181,7 +181,7 @@ import { Card, Avatar } from 'beautiful-ui';
 
 ### Renders
 
-The Card component comes with a set of renders to override the standard behaviour:
+The Card component comes with a set of renderers to override the standard behaviour:
 
 #### Action button renderer
 

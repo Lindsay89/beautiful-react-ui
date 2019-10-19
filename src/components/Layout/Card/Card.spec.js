@@ -122,7 +122,7 @@ describe('Card component', () => {
     );
     const cardComp = container.querySelector('.bi.bi-card');
 
-    expect(cardComp.classList.contains('text-align-center')).to.be.true;
+    expect(cardComp.classList.contains('card-text-center')).to.be.true;
   });
 
   it('should accept an \'orientation\' prop', () => {
@@ -153,7 +153,7 @@ describe('Card component', () => {
     expect(cardComp.classList.contains('reversed')).to.be.true;
   });
 
-  it('shold accept an \'actionButton\' prop', () => {
+  it('should accept an \'actionButton\' prop', () => {
     const { container } = render(
       <Card actionButton>
         <CardImage src="https://placeimg.com/460/250/nature" alt="Alt text" />

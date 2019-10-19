@@ -19,7 +19,10 @@ export { default as FloatingContent } from './components/Elements/FloatingConten
 export { default as Input } from './components/Forms/Input';
 export { default as Select } from './components/Forms/Select';
 
-
 // Layout
 export { default as Grid } from './components/Layout/Grid';
 export { default as Card } from './components/Layout/Card';
+
+// Typography
+export { default as Title } from './components/Typography/Title';
+export { default as Paragraph } from './components/Typography/Paragraph';

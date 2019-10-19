@@ -12,7 +12,7 @@ describe('CardFooter component', () => {
     expect(container.querySelector('.card-footer')).to.exist;
   });
 
-  it('should accept default classes', () => {
+  it('should have default classes', () => {
     const { container } = render(<CardFooter> Foo </CardFooter>);
     const footerCardComp = container.querySelector('footer');
 
