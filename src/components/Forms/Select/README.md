@@ -53,9 +53,10 @@ const UncontrolledSelect = (props) => {
 </>
 ```
 
-### HelpText
+### Help Text
 
-It is possible to add an `helpText` prop to give further information.
+It's possible to show a help text giving further information right under the select
+by setting a `helpText` prop.
 
 ```jsx
 import { Select, Input, Button } from 'beautiful-ui';

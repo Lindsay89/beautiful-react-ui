@@ -11,6 +11,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
+var _Paragraph = _interopRequireDefault(require("../../Typography/Paragraph"));
+
 var _shared = require("../../../shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -23,12 +25,11 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var HelpText = function HelpText(_ref) {
   var text = _ref.text,
-      color = _ref.color,
       className = _ref.className,
-      rest = _objectWithoutProperties(_ref, ["text", "color", "className"]);
+      rest = _objectWithoutProperties(_ref, ["text", "className"]);
 
-  return _react["default"].createElement("p", _extends({
-    className: (0, _classnames["default"])('bi bi-helptext', "helptext-".concat(color), className)
+  return _react["default"].createElement(_Paragraph["default"], _extends({
+    className: (0, _classnames["default"])('bi-helptext', className)
   }, rest), text);
 };
 

@@ -16,7 +16,7 @@ describe('HelpText component', () => {
     const { container } = render(<HelpText text="foo" />);
     const helpText = container.querySelector('p');
 
-    expect(helpText.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-helptext', 'helptext-default']);
+    expect(helpText.classList.contains('bi-helptext')).to.be.true;
   });
 
   it('should accept an "id" prop', () => {
@@ -30,7 +30,7 @@ describe('HelpText component', () => {
     const { container } = render(<HelpText text="foo" className="foo" />);
     const helpText = container.querySelector('p');
 
-    expect(helpText.getAttribute('class').split(' ')).to.include.members(['foo']);
+    expect(helpText.classList.contains('foo')).to.be.true;
   });
 
   it('should allow to define custom style', () => {
@@ -46,20 +46,5 @@ describe('HelpText component', () => {
 
     expect(possibleHelpText.tagName).to.equal('P');
     expect(possibleHelpText.textContent).to.equal('foo');
-  });
-
-  it('should allow to define the text color', () => {
-    const { container, rerender } = render(<HelpText text="foo" color="primary" />);
-    const helpText = container.querySelector('p');
-
-    expect(helpText.getAttribute('class').split(' ')).to.include.members(['helptext-primary']);
-    expect(helpText.getAttribute('class').split(' ')).to.not.include.members(['helptext-default']);
-
-    rerender(<HelpText text="foo" color="warning" />);
-    expect(helpText.getAttribute('class').split(' ')).to.include.members(['helptext-warning']);
-
-    rerender(<HelpText text="foo" />);
-    expect(helpText.getAttribute('class').split(' ')).to.include.members(['helptext-default']);
-    expect(helpText.getAttribute('class').split(' ')).to.not.include.members(['helptext-primary', 'helptext-warning']);
   });
 });

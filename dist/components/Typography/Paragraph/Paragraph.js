@@ -30,7 +30,7 @@ var Paragraph = function Paragraph(props) {
       className = props.className,
       rest = _objectWithoutProperties(props, ["children", "color", "textAlign", "className"]);
 
-  var classList = (0, _classnames["default"])('bi-p', "bi-p-".concat(color), _defineProperty({}, "bi-p-".concat(textAlign), !!textAlign), className);
+  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), _defineProperty({}, "bi-p-".concat(textAlign), !!textAlign), className);
   return _react["default"].createElement("p", _extends({
     className: classList
   }, rest), children);

@@ -45,7 +45,7 @@ Pill.propTypes = {
   color: _shared.Color,
   href: _propTypes["default"].string,
   render: _propTypes["default"].func,
-  rounded: _propTypes["default"].string,
+  rounded: _propTypes["default"].bool,
   children: _propTypes["default"].node
 };
 Pill.defaultProps = {

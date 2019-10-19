@@ -93,6 +93,12 @@ Object.defineProperty(exports, "FloatingContent", {
     return _FloatingContent["default"];
   }
 });
+Object.defineProperty(exports, "Checkbox", {
+  enumerable: true,
+  get: function get() {
+    return _Checkbox["default"];
+  }
+});
 Object.defineProperty(exports, "Input", {
   enumerable: true,
   get: function get() {
@@ -159,6 +165,8 @@ var _Modal = _interopRequireDefault(require("./components/Elements/Modal"));
 var _Popover = _interopRequireDefault(require("./components/Elements/Popover"));
 
 var _FloatingContent = _interopRequireDefault(require("./components/Elements/FloatingContent"));
+
+var _Checkbox = _interopRequireDefault(require("./components/Forms/Checkbox"));
 
 var _Input = _interopRequireDefault(require("./components/Forms/Input"));
 

@@ -8,11 +8,8 @@ exports["default"] = void 0;
 var makeCallback = function makeCallback(callbackProp, overrideValue) {
   return function (event) {
     if (typeof callbackProp === 'function') {
-      event.persist();
-      var nativeEvent = event.nativeEvent,
-          currentTarget = event.currentTarget;
-      var value = currentTarget.value;
-      return callbackProp(nativeEvent, overrideValue === undefined ? value : overrideValue);
+      var value = event.currentTarget.value;
+      return callbackProp(event, overrideValue === undefined ? value : overrideValue);
     }
 
     return undefined;

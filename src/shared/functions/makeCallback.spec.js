@@ -29,13 +29,13 @@ describe('makeCallback function utility', () => {
     expect(fn.calledOnce).to.be.true;
   });
 
-  it('should return a callback receiving \'nativeEvent\' and \'value\' from a React SyntheticEvent', () => {
+  it('should return a callback receiving the \'event\' and a possible \'value\'', () => {
     const fn = sinon.fake.returns(syntheticEventMock);
     const cb = makeCallback(fn);
 
     cb(syntheticEventMock);
 
-    expect(fn.args[0][0]).to.equal(syntheticEventMock.nativeEvent);
+    expect(fn.args[0][0]).to.equal(syntheticEventMock);
     expect(fn.args[0][1]).to.equal(syntheticEventMock.currentTarget.value);
   });
 
@@ -46,7 +46,7 @@ describe('makeCallback function utility', () => {
 
     cb(syntheticEventMock);
 
-    expect(fn.args[0][0]).to.equal(syntheticEventMock.nativeEvent);
+    expect(fn.args[0][0]).to.equal(syntheticEventMock);
     expect(fn.args[0][1]).to.equal(override);
   });
 });
