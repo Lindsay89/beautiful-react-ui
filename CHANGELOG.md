@@ -468,3 +468,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Title `size` prop
 - Paragraph `fontFamily` prop
 
+## [0.29.3] - 2019-10-20
+
+### Added
+
+- Typescript support, first setup, first types
+
