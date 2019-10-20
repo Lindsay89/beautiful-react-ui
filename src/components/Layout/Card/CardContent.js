@@ -28,4 +28,4 @@ CardContent.defaultProps = {
 };
 
 
-export default CardContent;
+export default React.memo(CardContent);

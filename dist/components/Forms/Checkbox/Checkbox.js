@@ -11,9 +11,11 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
+var _shared = require("../../../shared");
+
 var _HelpText = _interopRequireDefault(require("../_HelpText"));
 
-var _shared = require("../../../shared");
+var _Label = _interopRequireDefault(require("../_Label"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -23,71 +25,62 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Input = function Input(props) {
+var Checkbox = function Checkbox(props) {
   var value = props.value,
       onChange = props.onChange,
+      label = props.label,
       color = props.color,
-      placeholder = props.placeholder,
-      disabled = props.disabled,
-      size = props.size,
       helpText = props.helpText,
-      icon = props.icon,
-      iconPosition = props.iconPosition,
       className = props.className,
-      fluid = props.fluid,
       style = props.style,
-      rest = _objectWithoutProperties(props, ["value", "onChange", "color", "placeholder", "disabled", "size", "helpText", "icon", "iconPosition", "className", "fluid", "style"]);
+      rest = _objectWithoutProperties(props, ["value", "onChange", "label", "color", "helpText", "className", "style"]);
 
-  var classList = (0, _classnames["default"])('bi bi-input', "input-".concat(color), {
-    disabled: disabled,
-    'has-icon': !!icon,
-    'icon-left': iconPosition === 'left',
-    'input-sm': size === 'small',
-    'input-lg': size === 'large',
-    fluid: fluid
+  var clickHandler = !rest.disabled ? (0, _shared.makeCallback)(onChange, !value) : undefined;
+  var classList = (0, _classnames["default"])('bi bi-checkbox', "checkbox-".concat(color), {
+    checked: !!value,
+    disabled: rest.disabled
   }, className);
-  return _react["default"].createElement("div", {
+  return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", {
     className: classList,
+    onClick: clickHandler,
+    tabIndex: 0,
+    role: "checkbox",
+    "aria-checked": value,
     style: style
   }, _react["default"].createElement("input", _extends({
-    value: value,
-    onChange: (0, _shared.makeCallback)(onChange),
-    placeholder: placeholder,
-    disabled: disabled
-  }, rest)), icon && (0, _shared.makeIconFromProp)(icon, {
-    size: size
-  }), helpText && _react["default"].createElement(_HelpText["default"], {
-    text: helpText,
-    color: color
+    type: "checkbox",
+    value: value
+  }, rest)), _react["default"].createElement("span", {
+    className: "check-icon"
+  }, _react["default"].createElement("svg", {
+    viewBox: "0 0 12 10"
+  }, _react["default"].createElement("polyline", {
+    points: "1.5 6 4.5 9 10.5 1"
+  }))), _react["default"].createElement(_Label["default"], {
+    htmlFor: rest.id,
+    required: rest.required
+  }, label)), helpText && _react["default"].createElement(_HelpText["default"], {
+    text: helpText
   }));
 };
 
-Input.propTypes = {
-  value: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]).isRequired,
+Checkbox.propTypes = {
+  value: _propTypes["default"].bool.isRequired,
   onChange: _propTypes["default"].func.isRequired,
-  placeholder: _propTypes["default"].string,
+  label: _propTypes["default"].string.isRequired,
+  color: _shared.Color,
   disabled: _propTypes["default"].bool,
   helpText: _propTypes["default"].string,
-  color: _shared.Color,
-  size: _shared.Size,
-  icon: _shared.IconProp,
-  iconPosition: _propTypes["default"].oneOf(['right', 'left']),
-  fluid: _propTypes["default"].bool,
   style: _propTypes["default"].shape({})
 };
-Input.defaultProps = {
-  placeholder: 'text...',
-  disabled: false,
-  helpText: undefined,
+Checkbox.defaultProps = {
+  style: undefined,
   color: 'default',
-  size: 'default',
-  icon: undefined,
-  iconPosition: 'right',
-  fluid: false,
-  style: undefined
+  disabled: false,
+  helpText: undefined
 };
 
-var _default = _react["default"].memo(Input);
+var _default = _react["default"].memo(Checkbox);
 
 exports["default"] = _default;
-//# sourceMappingURL=Input.js.map
+//# sourceMappingURL=Checkbox.js.map

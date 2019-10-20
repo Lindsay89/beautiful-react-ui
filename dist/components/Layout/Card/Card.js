@@ -11,6 +11,8 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _shared = require("../../../shared");
+
 var _Icon = _interopRequireDefault(require("../../Elements/Icon"));
 
 var _Button = _interopRequireDefault(require("../../Elements/Button"));
@@ -98,7 +100,7 @@ Card.propTypes = {
   fluid: _propTypes["default"].bool,
   orientation: _propTypes["default"].oneOf(['horizontal', 'vertical']),
   actionButton: _propTypes["default"].bool,
-  actionButtonIcon: _propTypes["default"].oneOfType([_propTypes["default"].instanceOf(_Icon["default"]), 'string']),
+  actionButtonIcon: _shared.IconProp,
   onActionButtonClick: _propTypes["default"].func,
   reversed: _propTypes["default"].bool,
   "float": _propTypes["default"].bool,

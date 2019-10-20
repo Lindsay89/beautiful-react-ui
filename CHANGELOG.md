@@ -449,3 +449,14 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Checkbox component
 - Checkbox component tests
+
+## [0.29.1] - 2019-10-20
+
+### Added
+
+- Adding `React.memo` where missing 
+
+### Fixed
+
+- Missing build
+- Card's icon propType warning

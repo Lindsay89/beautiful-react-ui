@@ -28,4 +28,4 @@ HelpText.defaultProps = {
   color: 'default',
 };
 
-export default HelpText;
+export default React.memo(HelpText);

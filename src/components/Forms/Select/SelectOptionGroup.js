@@ -24,4 +24,4 @@ SelectOptionGroup.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-export default SelectOptionGroup;
+export default React.memo(SelectOptionGroup);

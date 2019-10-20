@@ -20,6 +20,7 @@ var Caret = function Caret() {
   })));
 };
 
-var _default = Caret;
+var _default = _react["default"].memo(Caret);
+
 exports["default"] = _default;
 //# sourceMappingURL=Caret.js.map

@@ -40,6 +40,8 @@ HelpText.propTypes = {
 HelpText.defaultProps = {
   color: 'default'
 };
-var _default = HelpText;
+
+var _default = _react["default"].memo(HelpText);
+
 exports["default"] = _default;
 //# sourceMappingURL=HelpText.js.map

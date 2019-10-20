@@ -97,4 +97,4 @@ Input.defaultProps = {
   style: undefined,
 };
 
-export default Input;
+export default React.memo(Input);

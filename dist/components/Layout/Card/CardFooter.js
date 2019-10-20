@@ -31,6 +31,8 @@ CardFooter.propTypes = {
 CardFooter.defaultProps = {
   textAlign: undefined
 };
-var _default = CardFooter;
+
+var _default = _react["default"].memo(CardFooter);
+
 exports["default"] = _default;
 //# sourceMappingURL=CardFooter.js.map
