@@ -13,8 +13,8 @@ import './paragraph.scss';
  * Here's the Paragraph component
  */
 const Paragraph = (props) => {
-  const { children, color, textAlign, className, ...rest } = props;
-  const classList = classNames('bi bi-p', `bi-p-${color}`, {
+  const { children, color, fontFamily, textAlign, className, ...rest } = props;
+  const classList = classNames('bi bi-p', `bi-p-${color}`, `bi-ff-${fontFamily}`, {
     [`bi-p-${textAlign}`]: !!textAlign,
   }, className);
 
@@ -29,6 +29,11 @@ Paragraph.propTypes = {
    * `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
   color: Color,
+  /*
+   * Defines the paragraph font-family, can be one of the following:
+   * `sans`, `serif`, `mono`.
+   */
+  fontFamily: PropTypes.oneOf(['sans', 'serif', 'mono']),
   /**
    * Defines the paragraph text align
    */
@@ -38,6 +43,7 @@ Paragraph.propTypes = {
 
 Paragraph.defaultProps = {
   color: 'default',
+  fontFamily: 'sans',
   textAlign: undefined,
 };
 

@@ -13,6 +13,9 @@
   @apply leading-tight font-sans font-medium mb-2 mt-0 text-default-darker;
 
 
+  // ----------------------------
+  // Text align
+  // ----------------------------
   &.bi-title-center {
     @apply text-center;
   }
@@ -29,12 +32,42 @@
     @apply text-justify;
   }
 
+  // ----------------------------
+  // Colors
+  // ----------------------------
   @include title-color("primary");
   @include title-color("secondary");
   @include title-color("info");
   @include title-color("warning");
   @include title-color("danger");
   @include title-color("success");
+
+  // ----------------------------
+  // Sizes
+  // ----------------------------
+  &.title-base {
+    @apply text-base;
+  }
+
+  &.title-lg {
+    @apply text-lg;
+  }
+
+  &.title-xl {
+    @apply text-xl;
+  }
+
+  &.title-2xl {
+    @apply text-2xl;
+  }
+
+  &.title-3xl {
+    @apply text-3xl;
+  }
+
+  &.title-4xl {
+    @apply text-4xl;
+  }
 }
 
 h1.bi-title {

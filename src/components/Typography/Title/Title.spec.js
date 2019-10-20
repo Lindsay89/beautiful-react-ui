@@ -26,7 +26,7 @@ describe('Title component', () => {
     expect(titleEl.classList.contains('foo')).to.be.true;
   });
 
-  it('should allow to change the title color by accepting a \'color\' prop', () => {
+  it('should allow to change the title color by setting a \'color\' prop', () => {
     const { container, rerender } = render(<Title color="primary">Foo</Title>);
     const titleEl = container.querySelector('.bi-title');
 
@@ -37,10 +37,32 @@ describe('Title component', () => {
     expect(titleEl.classList.contains('bi-title-primary')).to.be.false;
   });
 
-  it('should allow to align the text by accepting a \'textAlign\' prop', () => {
+  it('should allow to align the text by setting a \'textAlign\' prop', () => {
     const { container } = render(<Title textAlign="center">Foo</Title>);
     const titleEl = container.querySelector('.bi-title');
 
     expect(titleEl.classList.contains('bi-title-center')).to.be.true;
+  });
+
+  it('should allow to define the html tag to be used by setting a \'tagName\' prop', () => {
+    const { container } = render(<Title tagName="h4">Foo</Title>);
+    const titleEl = container.querySelector('.bi-title');
+
+    expect(titleEl.tagName).to.equal('H4');
+  });
+
+  it('should fallback to the h1 html tag when an invalid \'tagName\' is provided', () => {
+    const { container } = render(<Title tagName="h7">Foo</Title>);
+    const titleEl = container.querySelector('.bi-title');
+
+    expect(titleEl.tagName).to.equal('H1');
+  });
+
+
+  it('should allow to define the title size by setting a \'size\' prop', () => {
+    const { container } = render(<Title size="xl">Foo</Title>);
+    const titleEl = container.querySelector('.bi-title');
+
+    expect(titleEl.classList.contains('title-xl')).to.be.true;
   });
 });

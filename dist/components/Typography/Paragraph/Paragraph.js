@@ -26,11 +26,12 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Paragraph = function Paragraph(props) {
   var children = props.children,
       color = props.color,
+      fontFamily = props.fontFamily,
       textAlign = props.textAlign,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["children", "color", "textAlign", "className"]);
+      rest = _objectWithoutProperties(props, ["children", "color", "fontFamily", "textAlign", "className"]);
 
-  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), _defineProperty({}, "bi-p-".concat(textAlign), !!textAlign), className);
+  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), "bi-ff-".concat(fontFamily), _defineProperty({}, "bi-p-".concat(textAlign), !!textAlign), className);
   return _react["default"].createElement("p", _extends({
     className: classList
   }, rest), children);
@@ -38,10 +39,12 @@ var Paragraph = function Paragraph(props) {
 
 Paragraph.propTypes = {
   color: _shared.Color,
+  fontFamily: _propTypes["default"].oneOf(['sans', 'serif', 'mono']),
   textAlign: _propTypes["default"].oneOf(['center', 'left', 'right', 'justify'])
 };
 Paragraph.defaultProps = {
   color: 'default',
+  fontFamily: 'sans',
   textAlign: undefined
 };
 

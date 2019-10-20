@@ -26,13 +26,21 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Title = function Title(props) {
   var children = props.children,
       color = props.color,
+      size = props.size,
       tagName = props.tagName,
       textAlign = props.textAlign,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["children", "color", "tagName", "textAlign", "className"]);
+      rest = _objectWithoutProperties(props, ["children", "color", "size", "tagName", "textAlign", "className"]);
 
   var TitleTag = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName) ? tagName : 'h1';
-  var classList = (0, _classnames["default"])('bi-title', "bi-title-".concat(color), _defineProperty({}, "bi-title-".concat(textAlign), !!textAlign), className);
+  var classList = (0, _classnames["default"])('bi-title', "bi-title-".concat(color), _defineProperty({
+    'title-base': size === 'base',
+    'title-lg': size === 'lg',
+    'title-xl': size === 'xl',
+    'title-2xl': size === '2xl',
+    'title-3xl': size === '3xl',
+    'title-4xl': size === '4xl'
+  }, "bi-title-".concat(textAlign), !!textAlign), className);
   return _react["default"].createElement(TitleTag, _extends({
     className: classList
   }, rest), children);
@@ -40,12 +48,14 @@ var Title = function Title(props) {
 
 Title.propTypes = {
   color: _shared.Color,
+  size: _propTypes["default"].oneOf(['base', 'lg', 'xl', '2xl', '3xl', '4xl']),
   tagName: _propTypes["default"].oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
   textAlign: _propTypes["default"].oneOf(['center', 'left', 'right', 'justify'])
 };
 Title.defaultProps = {
   color: 'default',
   tagName: 'h1',
+  size: undefined,
   textAlign: undefined
 };
 
