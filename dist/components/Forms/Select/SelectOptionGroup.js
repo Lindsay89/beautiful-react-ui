@@ -42,6 +42,8 @@ SelectOptionGroup.propTypes = {
   value: _ValueType["default"].isRequired,
   onClick: _propTypes["default"].func.isRequired
 };
-var _default = SelectOptionGroup;
+
+var _default = _react["default"].memo(SelectOptionGroup);
+
 exports["default"] = _default;
 //# sourceMappingURL=SelectOptionGroup.js.map

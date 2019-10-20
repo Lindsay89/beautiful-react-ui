@@ -50,17 +50,17 @@ describe('Input component', () => {
 
   it('should pass the value prop down to the actual input tag', () => {
     const { container } = render(<Input value="foo" onChange={noop} />);
-    const actualInputTag = container.querySelector('.bi.bi-input input');
+    const inputEl = container.querySelector('.bi.bi-input input');
 
-    expect(actualInputTag.value).to.equal('foo');
+    expect(inputEl.value).to.equal('foo');
   });
 
   it('should perform the onChange callback when the input value changes', () => {
     const onChange = sinon.spy();
     const { container } = render(<Input value="foo" onChange={onChange} />);
-    const actualInputTag = container.querySelector('.bi.bi-input input');
+    const inputEl = container.querySelector('.bi.bi-input input');
 
-    fireEvent.change(actualInputTag, { target: { value: 'bar' } });
+    fireEvent.change(inputEl, { target: { value: 'bar' } });
 
     wait(() => expect(onChange.called).to.equal(true));
   });
@@ -68,23 +68,23 @@ describe('Input component', () => {
   it('should allow to define the input placeholder', () => {
     const placeholder = 'bar';
     const { container } = render(<Input value="foo" onChange={noop} placeholder="bar" />);
-    const actualInputTag = container.querySelector('.bi.bi-input input');
+    const inputEl = container.querySelector('.bi.bi-input input');
 
-    expect(actualInputTag.placeholder).to.equal(placeholder);
+    expect(inputEl.placeholder).to.equal(placeholder);
   });
 
   it('should have a default placeholder', () => {
     const { container } = render(<Input value="foo" onChange={noop} />);
-    const actualInputTag = container.querySelector('.bi.bi-input input');
+    const inputEl = container.querySelector('.bi.bi-input input');
 
-    expect(actualInputTag.placeholder).to.equal(Input.defaultProps.placeholder);
+    expect(inputEl.placeholder).to.equal(Input.type.defaultProps.placeholder);
   });
 
   it('should allow to define set the input disabled', () => {
     const { container } = render(<Input value="foo" onChange={noop} disabled />);
-    const actualInputTag = container.querySelector('.bi.bi-input input');
+    const inputEl = container.querySelector('.bi.bi-input input');
 
-    expect(actualInputTag.disabled).to.equal(true);
+    expect(inputEl.disabled).to.equal(true);
   });
 
   it('should possibly show a helping text', () => {

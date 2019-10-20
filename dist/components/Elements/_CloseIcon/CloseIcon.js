@@ -18,6 +18,7 @@ var CloseIcon = function CloseIcon() {
   }));
 };
 
-var _default = CloseIcon;
+var _default = _react["default"].memo(CloseIcon);
+
 exports["default"] = _default;
 //# sourceMappingURL=CloseIcon.js.map

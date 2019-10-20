@@ -26,4 +26,4 @@ CardFooter.propTypes = {
 CardFooter.defaultProps = {
   textAlign: undefined,
 };
-export default CardFooter;
+export default React.memo(CardFooter);

@@ -17,4 +17,4 @@ CardTitle.defaultProps = {
   color: 'default',
 };
 
-export default CardTitle;
+export default React.memo(CardTitle);

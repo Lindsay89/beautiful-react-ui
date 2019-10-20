@@ -96,7 +96,7 @@ Tab.defaultProps = {
   children: undefined,
 };
 
-// shorcut
+// shortcut
 Tab.Content = TabContent;
 
 export default Tab;

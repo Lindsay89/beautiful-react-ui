@@ -13,4 +13,4 @@ const CardImage = (props) => (
 
 CardImage.propTypes = Image.propTypes;
 
-export default CardImage;
+export default React.memo(CardImage);

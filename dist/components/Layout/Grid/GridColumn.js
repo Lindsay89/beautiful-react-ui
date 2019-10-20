@@ -70,6 +70,8 @@ GridColumn.defaultProps = {
   selfAlign: 'auto',
   className: undefined
 };
-var _default = GridColumn;
+
+var _default = _react["default"].memo(GridColumn);
+
 exports["default"] = _default;
 //# sourceMappingURL=GridColumn.js.map

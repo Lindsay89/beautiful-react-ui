@@ -111,4 +111,4 @@ GridColumn.defaultProps = ({
   className: undefined,
 });
 
-export default GridColumn;
+export default React.memo(GridColumn);

@@ -13,4 +13,4 @@ const Caret = () => (
   </div>
 );
 
-export default Caret;
+export default React.memo(Caret);

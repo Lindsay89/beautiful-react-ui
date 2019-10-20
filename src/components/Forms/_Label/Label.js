@@ -49,4 +49,4 @@ Label.defaultProps = {
   required: false,
 };
 
-export default Label;
+export default React.memo(Label);

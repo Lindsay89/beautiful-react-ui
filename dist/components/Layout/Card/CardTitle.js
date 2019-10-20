@@ -35,6 +35,8 @@ CardTitle.defaultProps = {
   textAlign: undefined,
   color: 'default'
 };
-var _default = CardTitle;
+
+var _default = _react["default"].memo(CardTitle);
+
 exports["default"] = _default;
 //# sourceMappingURL=CardTitle.js.map

@@ -50,6 +50,8 @@ Label.defaultProps = {
   color: 'default',
   required: false
 };
-var _default = Label;
+
+var _default = _react["default"].memo(Label);
+
 exports["default"] = _default;
 //# sourceMappingURL=Label.js.map

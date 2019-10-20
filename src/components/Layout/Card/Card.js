@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import { IconProp } from '../../../shared';
 import Icon from '../../Elements/Icon';
 import Button from '../../Elements/Button';
 import CardTitle from './CardTitle';
@@ -11,7 +12,6 @@ import takeCardImageOutOfChildren from './utils/takeCardImageOutOfChildren';
 import getPossibleImageWrapper from './utils/getPossibleImageWrapper';
 
 import './card.scss';
-
 
 /**
  * The Card component displays its content in a manner similar to a playing card.
@@ -89,7 +89,7 @@ Card.propTypes = {
   /**
    * Allows to change actionButton's icon
    */
-  actionButtonIcon: PropTypes.oneOfType([PropTypes.instanceOf(Icon), 'string']),
+  actionButtonIcon: IconProp,
   /**
    * The callback to be performed on action button click
    */

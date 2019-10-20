@@ -31,6 +31,8 @@ CardContent.propTypes = {
 CardContent.defaultProps = {
   textAlign: undefined
 };
-var _default = CardContent;
+
+var _default = _react["default"].memo(CardContent);
+
 exports["default"] = _default;
 //# sourceMappingURL=CardContent.js.map

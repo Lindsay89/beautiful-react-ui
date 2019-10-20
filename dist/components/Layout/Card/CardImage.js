@@ -18,6 +18,8 @@ var CardImage = function CardImage(props) {
 };
 
 CardImage.propTypes = _Image["default"].propTypes;
-var _default = CardImage;
+
+var _default = _react["default"].memo(CardImage);
+
 exports["default"] = _default;
 //# sourceMappingURL=CardImage.js.map
