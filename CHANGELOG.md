@@ -460,3 +460,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Missing build
 - Card's icon propType warning
+
+## [0.29.2] - 2019-10-20
+
+### Added
+
+- Title `size` prop
+- Paragraph `fontFamily` prop
+

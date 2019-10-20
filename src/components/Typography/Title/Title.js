@@ -13,9 +13,15 @@ import './title.scss';
  * Here's the Title component
  */
 const Title = (props) => {
-  const { children, color, tagName, textAlign, className, ...rest } = props;
+  const { children, color, size, tagName, textAlign, className, ...rest } = props;
   const TitleTag = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName) ? tagName : 'h1';
   const classList = classNames('bi-title', `bi-title-${color}`, {
+    'title-base': size === 'base',
+    'title-lg': size === 'lg',
+    'title-xl': size === 'xl',
+    'title-2xl': size === '2xl',
+    'title-3xl': size === '3xl',
+    'title-4xl': size === '4xl',
     [`bi-title-${textAlign}`]: !!textAlign,
   }, className);
 
@@ -32,6 +38,11 @@ Title.propTypes = {
    * `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
   color: Color,
+  /*
+   * Defines the title size, can be one of the following:
+   * `base`, `lg`, `xl`, `2xl`, `3xl`, `4xl`.
+   */
+  size: PropTypes.oneOf(['base', 'lg', 'xl', '2xl', '3xl', '4xl']),
   /**
    * Defines which tag should be used to render the title
    */
@@ -45,6 +56,7 @@ Title.propTypes = {
 Title.defaultProps = {
   color: 'default',
   tagName: 'h1',
+  size: undefined,
   textAlign: undefined,
 };
 

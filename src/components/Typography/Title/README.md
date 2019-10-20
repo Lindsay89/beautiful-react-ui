@@ -6,9 +6,26 @@ import { Title } from 'beautiful-ui';
 <Title>Page title</Title>
 ```
 
-### Size <small>(defined by tag)</small>
+### Size
 
-By defining the `tagName` it's possible to define the title size
+#### By size prop
+
+```jsx
+import { Title } from 'beautiful-ui';
+
+<>
+  <Title size="4xl">Page title</Title>
+  <Title size="3xl">Page title</Title>
+  <Title size="2xl">Page title</Title>
+  <Title size="xl">Page title</Title>
+  <Title size="lg">Page title</Title>
+  <Title size="base">Page title</Title>
+</>
+```
+
+#### By tag
+
+By defining the `tagName` it's also possible to define the title size
 
 ```jsx
 import { Title } from 'beautiful-ui';

@@ -14,33 +14,46 @@ describe('Paragraph component', () => {
 
   it('should have default classes', () => {
     const { container } = render(<Paragraph>Foo</Paragraph>);
-    const titleEl = container.querySelector('p');
+    const pEl = container.querySelector('p');
 
-    expect(titleEl.classList.contains('bi-p')).to.be.true;
+    expect(pEl.classList.contains('bi-p')).to.be.true;
   });
 
   it('should accept custom classes', () => {
     const { container } = render(<Paragraph className="foo">Foo</Paragraph>);
-    const titleEl = container.querySelector('.bi-p');
+    const pEl = container.querySelector('.bi-p');
 
-    expect(titleEl.classList.contains('foo')).to.be.true;
+    expect(pEl.classList.contains('foo')).to.be.true;
   });
 
-  it('should allow to change the title color by accepting a \'color\' prop', () => {
+  it('should allow to change the paragraph color by setting a \'color\' prop', () => {
     const { container, rerender } = render(<Paragraph color="primary">Foo</Paragraph>);
-    const titleEl = container.querySelector('.bi-p');
+    const pEl = container.querySelector('.bi-p');
 
-    expect(titleEl.classList.contains('bi-p-primary')).to.be.true;
+    expect(pEl.classList.contains('bi-p-primary')).to.be.true;
 
     rerender(<Paragraph>Foo</Paragraph>);
 
-    expect(titleEl.classList.contains('bi-p-primary')).to.be.false;
+    expect(pEl.classList.contains('bi-p-primary')).to.be.false;
   });
 
-  it('should allow to align the text by accepting a \'textAlign\' prop', () => {
+  it('should allow to align the text by setting a \'textAlign\' prop', () => {
     const { container } = render(<Paragraph textAlign="justify">Foo</Paragraph>);
-    const titleEl = container.querySelector('.bi-p');
+    const pEl = container.querySelector('.bi-p');
 
-    expect(titleEl.classList.contains('bi-p-justify')).to.be.true;
+    expect(pEl.classList.contains('bi-p-justify')).to.be.true;
+  });
+
+
+  it('should allow to change the paragraph font by setting a \'fontFamily\' prop', () => {
+    const { container, rerender } = render(<Paragraph fontFamily="mono">Foo</Paragraph>);
+    const pEl = container.querySelector('.bi-p');
+
+    expect(pEl.classList.contains('bi-ff-mono')).to.be.true;
+
+    rerender(<Paragraph>Foo</Paragraph>);
+
+    expect(pEl.classList.contains('bi-ff-sans')).to.be.true;
+    expect(pEl.classList.contains('bi-ff-mono')).to.be.false;
   });
 });

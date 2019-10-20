@@ -17,6 +17,30 @@ import { Paragraph } from 'beautiful-ui';
 </Paragraph>
 ```
 
+### Font Family
+
+```jsx
+import { Paragraph } from 'beautiful-ui';
+
+<>
+  <Paragraph fontFamily="sans">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Vivamus vitae interdum urna, vel porta neque.
+    Curabitur placerat pretium lectus id laoreet. 
+  </Paragraph>
+  <Paragraph fontFamily="serif">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Vivamus vitae interdum urna, vel porta neque.
+    Curabitur placerat pretium lectus id laoreet. 
+  </Paragraph>
+  <Paragraph fontFamily="mono">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Vivamus vitae interdum urna, vel porta neque.
+    Curabitur placerat pretium lectus id laoreet. 
+  </Paragraph>
+</>
+```
+
 ### Color
 
 ```jsx
