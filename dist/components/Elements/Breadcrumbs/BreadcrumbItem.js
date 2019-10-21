@@ -9,9 +9,9 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _Icon = _interopRequireDefault(require("../Icon"));
-
 var _shared = require("../../../shared");
+
+var _Icon = _interopRequireDefault(require("../Icon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -21,12 +21,12 @@ var BreadcrumbItem = function BreadcrumbItem(props) {
       icon = props.icon;
 
   if (!label && !icon) {
-    (0, _shared.warn)('One of your breadcrumb items has been wiped out as it has no label nor icon');
+    (0, _shared.warn)('One of your breadcrumb has been wiped out as it has no label nor icon');
     return null;
   }
 
   return _react["default"].createElement("li", {
-    className: "bi bi-breadcrumb breadcrumb-item"
+    className: "bi breadcrumb-item"
   }, !!path && _react["default"].createElement("a", {
     href: path
   }, !!icon && (0, _shared.makeIconFromProp)(icon), label), !path && _react["default"].createElement(_react["default"].Fragment, null, !!icon && (0, _shared.makeIconFromProp)(icon), label));

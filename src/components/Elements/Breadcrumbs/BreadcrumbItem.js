@@ -1,23 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './breadcrumb.scss';
-import Icon from '../Icon';
 import { makeIconFromProp, warn } from '../../../shared';
+import Icon from '../Icon';
 
 /**
- * BreadcrumbsItems is a sub-component of Breadcrumb.
- * It handle the logic of creating a single item.
+ * BreadcrumbItems is a sub-component of Breadcrumbs.
+ * It handle the business-logic of a single breadcrumb.
  */
 const BreadcrumbItem = (props) => {
   const { path, label, icon } = props;
 
   if (!label && !icon) {
-    warn('One of your breadcrumb items has been wiped out as it has no label nor icon');
+    warn('One of your breadcrumb has been wiped out as it has no label nor icon');
     return null;
   }
 
   return (
-    <li className="bi bi-breadcrumb breadcrumb-item">
+    <li className="bi breadcrumb-item">
       {!!path && (
         <a href={path}>
           {!!icon && makeIconFromProp(icon)}

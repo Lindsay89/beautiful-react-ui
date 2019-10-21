@@ -474,3 +474,15 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Typescript support, first setup, first types
 
+## [0.29.4] - 2019-10-21
+
+### Fixed
+
+- Breadcrumb renamed to Breadcrumbs (with a final 's')
+
+### Added
+
+- Breadcrumb types
+- Title types
+- Paragraph types
+- Spinner types

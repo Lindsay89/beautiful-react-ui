@@ -1,6 +1,7 @@
-import { ComponentClass } from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 import { Color, Size, Callback } from './shared';
 import { IconProp } from './Icon';
+import { SpinnerProp } from './Spinner';
 
 export type ButtonProps = {
   color?: Color,
@@ -13,10 +14,10 @@ export type ButtonProps = {
   hover?: boolean | 'round' | 'zoom' | 'shrink' | 'float' | 'reflection',
   onClick?: Callback<Event, undefined>,
   icon?: IconProp,
-  spinner?: any, //TODO: fix
+  spinner?: boolean | ReactElement<SpinnerProp>
   pill?: any, // TODO: fix
 };
 
-declare const Button: ComponentClass<ButtonProps>;
+declare const Button: FunctionComponent<ButtonProps>;
 
 export default Button;

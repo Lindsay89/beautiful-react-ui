@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 import { Color, IconProp } from '../../../shared';
 import BreadcrumbItem from './BreadcrumbItem';
 
-import './breadcrumb.scss';
+import './breadcrumbs.scss';
 
 /**
- * Breadcrumb components are used to show page hierarchy.
+ * Breadcrumbs component is used to show a page hierarchy.
+ * Defining clickable paths helps the user navigating your app.
  */
-const Breadcrumb = (props) => {
+const Breadcrumbs = (props) => {
   const { items, color, className, ...rest } = props;
-  const classList = classNames(`bi bi-breadcrumb breadcrumb-${color}`, className);
+  const classList = classNames(`bi bi-breadcrumbs breadcrumbs-${color}`, className);
 
   return (
     <nav className={classList} {...rest}>
@@ -19,19 +20,14 @@ const Breadcrumb = (props) => {
         {items.map((item) => (
           item.render
             ? item.render(item)
-            : <BreadcrumbItem path={item.path} label={item.label} icon={item.icon} />
+            : <BreadcrumbItem path={item.path} label={item.label} icon={item.icon} key={item.path || item.label} />
         ))}
       </ol>
     </nav>
   );
 };
 
-Breadcrumb.propTypes = {
-  /**
-   * Defines the color of links in breadcrumb, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`,
-   * `danger`.
-   */
-  color: Color,
+Breadcrumbs.propTypes = {
   /**
    * Defines the items type, it must be an array of object, with label required.
    * The breadcrumb component accept an array of values, in order to show the path of pages.
@@ -42,10 +38,16 @@ Breadcrumb.propTypes = {
     icon: IconProp,
     render: PropTypes.func,
   })).isRequired,
+  /**
+   * Defines the link color of breadcrumbs, can be: `default`, `primary`, `secondary`, `info`, `warning`, `success`,
+   * `danger`.
+   * @default primary
+   */
+  color: Color,
 };
 
-Breadcrumb.defaultProps = {
+Breadcrumbs.defaultProps = {
   color: 'primary',
 };
 
-export default React.memo(Breadcrumb);
+export default React.memo(Breadcrumbs);

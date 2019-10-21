@@ -46,7 +46,7 @@ module.exports = {
             'src/components/Elements/Accordion/Accordion.js',
             'src/components/Elements/Alert/Alert.js',
             'src/components/Elements/Avatar/Avatar.js',
-            'src/components/Elements/Breadcrumb/Breadcrumb.js',
+            'src/components/Elements/Breadcrumbs/Breadcrumbs.js',
             'src/components/Elements/Button/Button.js',
             'src/components/Elements/ButtonGroup/ButtonGroup.js',
             'src/components/Elements/Icon/Icon.js',
