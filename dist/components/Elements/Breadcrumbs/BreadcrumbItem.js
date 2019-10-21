@@ -9,9 +9,9 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _Icon = _interopRequireDefault(require("../Icon"));
-
 var _shared = require("../../../shared");
+
+var _Icon = _interopRequireDefault(require("../Icon"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -21,7 +21,7 @@ var BreadcrumbItem = function BreadcrumbItem(props) {
       icon = props.icon;
 
   if (!label && !icon) {
-    (0, _shared.warn)('One of your breadcrumb items has been wiped out as it has no label nor icon');
+    (0, _shared.warn)('One of your breadcrumb has been wiped out as it has no label nor icon');
     return null;
   }
 

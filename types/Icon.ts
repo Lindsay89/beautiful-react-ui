@@ -1,4 +1,4 @@
-import { ComponentClass } from 'react';
+import { FunctionComponent } from 'react';
 import { Color, Size } from './shared';
 
 export type IconProp = {
@@ -7,6 +7,6 @@ export type IconProp = {
   size?: Size,
 };
 
-declare const Icon: ComponentClass<IconProp>;
+declare const Icon: FunctionComponent<IconProp>;
 
 export default Icon;

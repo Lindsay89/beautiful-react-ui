@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "default", {
   enumerable: true,
   get: function get() {
-    return _Breadcrumb["default"];
+    return _Breadcrumbs["default"];
   }
 });
 
-var _Breadcrumb = _interopRequireDefault(require("./Breadcrumb"));
+var _Breadcrumbs = _interopRequireDefault(require("./Breadcrumbs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

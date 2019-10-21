@@ -23,13 +23,13 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Breadcrumb = function Breadcrumb(props) {
+var Breadcrumbs = function Breadcrumbs(props) {
   var items = props.items,
       color = props.color,
       className = props.className,
       rest = _objectWithoutProperties(props, ["items", "color", "className"]);
 
-  var classList = (0, _classnames["default"])("bi bi-breadcrumb breadcrumb-".concat(color), className);
+  var classList = (0, _classnames["default"])("bi bi-breadcrumbs breadcrumbs-".concat(color), className);
   return _react["default"].createElement("nav", _extends({
     className: classList
   }, rest), _react["default"].createElement("ol", null, items.map(function (item) {
@@ -41,20 +41,20 @@ var Breadcrumb = function Breadcrumb(props) {
   })));
 };
 
-Breadcrumb.propTypes = {
-  color: _shared.Color,
+Breadcrumbs.propTypes = {
   items: _propTypes["default"].arrayOf(_propTypes["default"].shape({
     path: _propTypes["default"].string,
     label: _propTypes["default"].string,
     icon: _shared.IconProp,
     render: _propTypes["default"].func
-  })).isRequired
+  })).isRequired,
+  color: _shared.Color
 };
-Breadcrumb.defaultProps = {
+Breadcrumbs.defaultProps = {
   color: 'primary'
 };
 
-var _default = _react["default"].memo(Breadcrumb);
+var _default = _react["default"].memo(Breadcrumbs);
 
 exports["default"] = _default;
-//# sourceMappingURL=Breadcrumb.js.map
+//# sourceMappingURL=Breadcrumbs.js.map

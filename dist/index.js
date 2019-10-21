@@ -21,10 +21,10 @@ Object.defineProperty(exports, "Avatar", {
     return _Avatar["default"];
   }
 });
-Object.defineProperty(exports, "Breadcrumb", {
+Object.defineProperty(exports, "Breadcrumbs", {
   enumerable: true,
   get: function get() {
-    return _Breadcrumb["default"];
+    return _Breadcrumbs["default"];
   }
 });
 Object.defineProperty(exports, "Button", {
@@ -142,7 +142,7 @@ var _Alert = _interopRequireDefault(require("./components/Elements/Alert"));
 
 var _Avatar = _interopRequireDefault(require("./components/Elements/Avatar"));
 
-var _Breadcrumb = _interopRequireDefault(require("./components/Elements/Breadcrumb"));
+var _Breadcrumbs = _interopRequireDefault(require("./components/Elements/Breadcrumbs"));
 
 var _Button = _interopRequireDefault(require("./components/Elements/Button"));
 
