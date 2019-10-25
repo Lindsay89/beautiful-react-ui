@@ -1,6 +1,6 @@
 {
   "name": "beautiful-ui",
-  "version": "0.29.4",
+  "version": "0.29.5",
   "description": "A charming set of beautiful ui components",
   "main": "dist/index.js",
   "files": [

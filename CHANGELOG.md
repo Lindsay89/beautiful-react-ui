@@ -486,3 +486,14 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Title types
 - Paragraph types
 - Spinner types
+
+
+## [0.29.5] - 2019-10-21
+
+### Fixed
+
+- Pill defaultProps 
+
+### Added
+
+- Pill types

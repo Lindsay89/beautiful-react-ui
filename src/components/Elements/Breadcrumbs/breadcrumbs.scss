@@ -1,10 +1,10 @@
 .bi.bi-breadcrumbs {
   box-sizing: border-box;
+
   @apply m-2 p-3 rounded bg-gray-200;
 
   ol {
     @apply list-none m-0 p-0;
-
 
     .bi.breadcrumb-item {
       @apply inline text-default font-sans font-normal text-base leading-tight;

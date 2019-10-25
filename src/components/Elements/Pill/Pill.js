@@ -27,22 +27,23 @@ const Pill = (props) => {
 
 Pill.propTypes = {
   /**
-   * Defines the pill's color, can be `default`, `primary`, `secondary`,
+   * Defines the pill's background color, can be `default`, `primary`, `secondary`,
    * `info`, `warning`, `success`, `danger`.
    */
   color: Color,
   /**
-   * Pills can also accept links, the resulting tag is changed from <span> to <a> if href is present.
+   * Pill can possibly render a link, if this prop is set to a string the resulting tag will change from <span> to <a>.
    */
   href: PropTypes.string,
+  /**
+   * Indicates the Pill shape.
+   * @default true
+   */
+  rounded: PropTypes.bool,
   /**
    * Accepts a function/component and renders the returning value within the Pill component
    */
   render: PropTypes.func,
-  /**
-   * rounded indicated the pill shape, by default the shape is rounded
-   */
-  rounded: PropTypes.bool,
   /**
    * @ignore
    */
@@ -55,7 +56,7 @@ Pill.defaultProps = {
   color: 'default',
   href: undefined,
   render: undefined,
-  rounded: 'pill-rounded',
+  rounded: true,
 };
 
 
