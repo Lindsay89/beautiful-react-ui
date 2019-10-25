@@ -44,8 +44,8 @@ var Pill = function Pill(props) {
 Pill.propTypes = {
   color: _shared.Color,
   href: _propTypes["default"].string,
-  render: _propTypes["default"].func,
   rounded: _propTypes["default"].bool,
+  render: _propTypes["default"].func,
   children: _propTypes["default"].node
 };
 Pill.defaultProps = {
@@ -53,7 +53,7 @@ Pill.defaultProps = {
   color: 'default',
   href: undefined,
   render: undefined,
-  rounded: 'pill-rounded'
+  rounded: true
 };
 
 var _default = _react["default"].memo(Pill);
