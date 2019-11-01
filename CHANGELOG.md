@@ -514,12 +514,22 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Label types
 - Label documentation
 
-### [0.32.0] - 2019-11-01
+## [0.32.0] - 2019-11-01
+
+### Added
 
 - FormGroup component
 - FormGroup component tests
 - FormGroup component types
 
-### [0.33.0] - 2019-11-01
+## [0.33.0] - 2019-11-01
+
+### Added
 
 - Introducing node scripts: `postinstall.js`
+
+## [0.33.1] - 2019-11-01
+
+### Fixed
+
+- `postinstall.js` should've been part of the distribution package 
