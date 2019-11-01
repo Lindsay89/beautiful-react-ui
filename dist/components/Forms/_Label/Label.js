@@ -25,15 +25,17 @@ var Label = function Label(props) {
   var color = props.color,
       text = props.text,
       required = props.required,
-      className = props.className,
+      tagName = props.tagName,
       htmlFor = props.htmlFor,
       children = props.children,
-      rest = _objectWithoutProperties(props, ["color", "text", "required", "className", "htmlFor", "children"]);
+      className = props.className,
+      rest = _objectWithoutProperties(props, ["color", "text", "required", "tagName", "htmlFor", "children", "className"]);
 
-  var classes = (0, _classnames["default"])('bi bi-label', "label-".concat(color), {
+  var Tag = ['span', 'label'].includes(tagName) ? tagName : 'label';
+  var classes = (0, _classnames["default"])('bi bi-label', "bi-label-".concat(color), {
     required: required
   }, className);
-  return _react["default"].createElement("label", _extends({
+  return _react["default"].createElement(Tag, _extends({
     htmlFor: htmlFor,
     className: classes
   }, rest), text, children, required && _react["default"].createElement("span", null, "*"));
@@ -41,14 +43,16 @@ var Label = function Label(props) {
 
 Label.propTypes = {
   text: _propTypes["default"].string,
-  htmlFor: _propTypes["default"].string.isRequired,
   color: _shared.Color,
-  required: _propTypes["default"].bool
+  tagName: _propTypes["default"].oneOf(['span', 'label']),
+  required: _propTypes["default"].bool,
+  htmlFor: _propTypes["default"].string.isRequired
 };
 Label.defaultProps = {
   text: undefined,
   color: 'default',
-  required: false
+  required: false,
+  tagName: 'label'
 };
 
 var _default = _react["default"].memo(Label);

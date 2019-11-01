@@ -64,9 +64,10 @@ module.exports = {
           name: 'Forms',
           pagePerSection: true,
           components: () => [
-            'src/components/Forms/Checkbox/Checkbox.js',
             'src/components/Forms/Input/Input.js',
+            'src/components/Forms/Checkbox/Checkbox.js',
             'src/components/Forms/Select/Select.js',
+            'src/components/Forms/DisplayField/DisplayField.js',
           ],
         },
         {

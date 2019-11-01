@@ -487,7 +487,6 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Paragraph types
 - Spinner types
 
-
 ## [0.29.5] - 2019-10-21
 
 ### Fixed
@@ -497,3 +496,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Added
 
 - Pill types
+
+## [0.30.0] - 2019-11-01
+
+### Added
+
+- DisplayField component 
+- DisplayField tests 
+- DisplayField types 

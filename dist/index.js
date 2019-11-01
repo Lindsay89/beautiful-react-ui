@@ -111,6 +111,12 @@ Object.defineProperty(exports, "Select", {
     return _Select["default"];
   }
 });
+Object.defineProperty(exports, "DisplayField", {
+  enumerable: true,
+  get: function get() {
+    return _DisplayField["default"];
+  }
+});
 Object.defineProperty(exports, "Grid", {
   enumerable: true,
   get: function get() {
@@ -171,6 +177,8 @@ var _Checkbox = _interopRequireDefault(require("./components/Forms/Checkbox"));
 var _Input = _interopRequireDefault(require("./components/Forms/Input"));
 
 var _Select = _interopRequireDefault(require("./components/Forms/Select"));
+
+var _DisplayField = _interopRequireDefault(require("./components/Forms/DisplayField"));
 
 var _Grid = _interopRequireDefault(require("./components/Layout/Grid"));
 
