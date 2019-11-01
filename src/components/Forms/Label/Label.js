@@ -43,7 +43,7 @@ Label.propTypes = {
   /**
    * Defines the possible label `for` attribute
    */
-  htmlFor: PropTypes.string.isRequired,
+  htmlFor: PropTypes.string,
 };
 
 
@@ -52,6 +52,7 @@ Label.defaultProps = {
   color: 'default',
   required: false,
   tagName: 'label',
+  htmlFor: undefined,
 };
 
 export default React.memo(Label);

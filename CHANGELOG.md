@@ -504,3 +504,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - DisplayField component 
 - DisplayField tests 
 - DisplayField types 
+
+## [0.31.0] - 2019-11-01
+
+### Added
+
+- Label component has been made a public component
+- Label types
+- Label documentation

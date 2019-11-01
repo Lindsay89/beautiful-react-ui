@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Label from '../_Label';
+import Label from '../Label';
 import { Color } from '../../../shared';
 
 import './display-field.scss';

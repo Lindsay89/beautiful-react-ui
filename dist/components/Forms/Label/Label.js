@@ -46,13 +46,14 @@ Label.propTypes = {
   color: _shared.Color,
   tagName: _propTypes["default"].oneOf(['span', 'label']),
   required: _propTypes["default"].bool,
-  htmlFor: _propTypes["default"].string.isRequired
+  htmlFor: _propTypes["default"].string
 };
 Label.defaultProps = {
   text: undefined,
   color: 'default',
   required: false,
-  tagName: 'label'
+  tagName: 'label',
+  htmlFor: undefined
 };
 
 var _default = _react["default"].memo(Label);
