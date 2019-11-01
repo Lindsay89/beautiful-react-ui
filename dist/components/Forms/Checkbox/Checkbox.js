@@ -15,7 +15,7 @@ var _shared = require("../../../shared");
 
 var _HelpText = _interopRequireDefault(require("../_HelpText"));
 
-var _Label = _interopRequireDefault(require("../_Label"));
+var _Label = _interopRequireDefault(require("../Label"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

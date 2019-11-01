@@ -11,7 +11,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
-var _Label = _interopRequireDefault(require("../_Label"));
+var _Label = _interopRequireDefault(require("../Label"));
 
 var _shared = require("../../../shared");
 

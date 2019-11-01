@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Color, makeCallback } from '../../../shared';
 import HelpText from '../_HelpText';
-import Label from '../_Label';
+import Label from '../Label';
 
 import './checkbox.scss';
 
