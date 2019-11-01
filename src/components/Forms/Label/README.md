@@ -19,13 +19,12 @@ import { Label } from 'beautiful-ui';
 ```jsx
 import { Label } from 'beautiful-ui';
 
-// the display: block is for layout purposes only
 <>
-  <Label color="primary" style={{display: 'block'}}>Primary label</Label>
-  <Label color="secondary" style={{display: 'block'}}>Secondary label</Label>
-  <Label color="info" style={{display: 'block'}}>Info label</Label>
-  <Label color="success" style={{display: 'block'}}>Success label</Label>
-  <Label color="warning" style={{display: 'block'}}>Warning label</Label>
-  <Label color="danger" style={{display: 'block'}}>Danger label</Label>
+  <Label color="primary">Primary label</Label>
+  <Label color="secondary">Secondary label</Label>
+  <Label color="info">Info label</Label>
+  <Label color="success">Success label</Label>
+  <Label color="warning">Warning label</Label>
+  <Label color="danger">Danger label</Label>
 </>
 ```

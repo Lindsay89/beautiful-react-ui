@@ -117,6 +117,12 @@ Object.defineProperty(exports, "Select", {
     return _Select["default"];
   }
 });
+Object.defineProperty(exports, "FormGroup", {
+  enumerable: true,
+  get: function get() {
+    return _FormGroup["default"];
+  }
+});
 Object.defineProperty(exports, "DisplayField", {
   enumerable: true,
   get: function get() {
@@ -185,6 +191,8 @@ var _Checkbox = _interopRequireDefault(require("./components/Forms/Checkbox"));
 var _Input = _interopRequireDefault(require("./components/Forms/Input"));
 
 var _Select = _interopRequireDefault(require("./components/Forms/Select"));
+
+var _FormGroup = _interopRequireDefault(require("./components/Forms/FormGroup"));
 
 var _DisplayField = _interopRequireDefault(require("./components/Forms/DisplayField"));
 

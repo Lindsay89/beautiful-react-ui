@@ -17,6 +17,10 @@
 
   @apply inline-flex align-top relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
 
+  + .bi.bi-input {
+    @apply ml-2;
+  }
+
   input {
     word-spacing: normal;
     text-transform: none;

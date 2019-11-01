@@ -5,6 +5,10 @@
 
   @apply inline-flex relative align-top flex-col font-normal font-sans text-base tracking-normal text-default-darker;
 
+  + .bi.bi-select {
+    @apply ml-2;
+  }
+
   // ----------------------------
   // SELECT ELEMENT
   // ----------------------------
