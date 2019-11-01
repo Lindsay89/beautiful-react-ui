@@ -9,37 +9,41 @@ import './label.scss';
  * The Label component is used within this very same library to render forms' related labels
  */
 const Label = (props) => {
-  const { color, text, required, className, htmlFor, children, ...rest } = props;
+  const { color, text, required, tagName, htmlFor, children, className, ...rest } = props;
+  const Tag = ['span', 'label'].includes(tagName) ? tagName : 'label';
 
-  const classes = classNames('bi bi-label', `label-${color}`, { required }, className);
+  const classes = classNames('bi bi-label', `bi-label-${color}`, { required }, className);
 
   return (
-    /* eslint-disable-next-line jsx-a11y/label-has-for */
-    <label htmlFor={htmlFor} className={classes} {...rest}>
+    <Tag htmlFor={htmlFor} className={classes} {...rest}>
       {text}
       {children}
       {required && <span>*</span>}
-    </label>
+    </Tag>
   );
 };
 
 Label.propTypes = {
   /**
-   * The label text
+   * Defines the text to be shown
    */
   text: PropTypes.string,
   /**
-   * The label `for` attribute
-   */
-  htmlFor: PropTypes.string.isRequired,
-  /**
-   * The label color
+   * Defines the label color
    */
   color: Color,
+  /**
+   * Defines the label html tag
+   */
+  tagName: PropTypes.oneOf(['span', 'label']),
   /**
    * Defines whether the label is referring to a required input or not
    */
   required: PropTypes.bool,
+  /**
+   * Defines the possible label `for` attribute
+   */
+  htmlFor: PropTypes.string.isRequired,
 };
 
 
@@ -47,6 +51,7 @@ Label.defaultProps = {
   text: undefined,
   color: 'default',
   required: false,
+  tagName: 'label',
 };
 
 export default React.memo(Label);

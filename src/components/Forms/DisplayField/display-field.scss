@@ -1,0 +1,54 @@
+// -------------------------------
+// color mixin
+// -------------------------------
+@mixin make-colored-display-field($colorName: 'default') {
+  @if ($colorName != "default") {
+    &.bi-df-#{$colorName} .bi-df-value {
+      @apply text-#{$colorName};
+    }
+  }
+}
+
+.bi.bi-df {
+  border-color: theme('colors.default');
+
+  @apply flex pb-1 mb-4;
+
+  .bi-df-label {
+    @apply font-bold;
+  }
+
+  .bi-df-value {
+    @apply inline-block font-normal font-sans text-base tracking-normal text-default ml-auto;
+  }
+
+  // ----------------------------
+  // COLORS
+  // ----------------------------
+  @include make-colored-display-field('primary');
+  @include make-colored-display-field('secondary');
+  @include make-colored-display-field('info');
+  @include make-colored-display-field('warning');
+  @include make-colored-display-field('success');
+  @include make-colored-display-field('danger');
+
+  // ----------------------------
+  // BORDERS
+  // ----------------------------
+  &.bi-df-border-solid {
+    @apply border-0 border-b border-solid;
+  }
+
+  &.bi-df-border-dashed {
+    @apply border-0 border-b border-dashed;
+  }
+
+  &.bi-df-border-dotted {
+    @apply border-0 border-b border-dotted;
+  }
+
+  &.bi-df-border-double {
+    @apply border-0 border-b border-double;
+  }
+}
+

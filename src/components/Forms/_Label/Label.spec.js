@@ -14,37 +14,37 @@ describe('Label component', () => {
 
   it('should have default classes', () => {
     const { container } = render(<Label htmlFor="foo" text="bar" />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-label', 'label-default']);
+    expect(el.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-label', 'bi-label-default']);
   });
 
   it('should accept an "id" prop', () => {
     const { container } = render(<Label htmlFor="foo" text="bar" id="foo" />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.id).to.equal('foo');
+    expect(el.id).to.equal('foo');
   });
 
   it('should allow adding custom classes', () => {
     const { container } = render(<Label htmlFor="foo" text="bar" className="foo" />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.getAttribute('class').split(' ')).to.include.members(['foo']);
+    expect(el.getAttribute('class').split(' ')).to.include.members(['foo']);
   });
 
   it('should allow to define custom style', () => {
     const { container } = render(<Label htmlFor="foo" text="bar" style={{ margin: '10px' }} />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.getAttribute('style')).to.equal('margin: 10px;');
+    expect(el.getAttribute('style')).to.equal('margin: 10px;');
   });
 
   it('must have an htmlFor prop', () => {
     const { container } = render(<Label htmlFor="foo" text="bar" />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.getAttribute('for')).to.equal('foo');
+    expect(el.getAttribute('for')).to.equal('foo');
   });
 
   it('must have a text prop', () => {
@@ -57,31 +57,52 @@ describe('Label component', () => {
 
   it('can render and wrap an input tag', () => {
     const { container } = render(<Label htmlFor="foo" text="bar"><input type="hidden" id="foo" /></Label>);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.querySelector('input')).to.exist;
+    expect(el.querySelector('input')).to.exist;
   });
 
   it('should allow to define the label color', () => {
     const { container, rerender } = render(<Label htmlFor="foo" text="bar" color="primary" />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.getAttribute('class').split(' ')).to.include.members(['label-primary']);
-    expect(label.getAttribute('class').split(' ')).to.not.include.members(['label-default']);
+    expect(el.getAttribute('class').split(' ')).to.include.members(['bi-label-primary']);
+    expect(el.getAttribute('class').split(' ')).to.not.include.members(['bi-label-default']);
 
     rerender(<Label htmlFor="foo" text="bar" color="warning" />);
-    expect(label.getAttribute('class').split(' ')).to.include.members(['label-warning']);
+    expect(el.getAttribute('class').split(' ')).to.include.members(['bi-label-warning']);
 
     rerender(<Label htmlFor="foo" text="bar" />);
-    expect(label.getAttribute('class').split(' ')).to.include.members(['label-default']);
-    expect(label.getAttribute('class').split(' ')).to.not.include.members(['label-primary', 'label-warning']);
+    expect(el.getAttribute('class').split(' ')).to.include.members(['bi-label-default']);
+    expect(el.getAttribute('class').split(' ')).to.not.include.members(['bi-label-primary', 'bi-label-warning']);
   });
 
   it('can be required', () => {
     const { container, getByText } = render(<Label htmlFor="foo" text="bar" required />);
-    const label = container.querySelector('label');
+    const el = container.querySelector('.bi.bi-label');
 
-    expect(label.querySelector('span')).to.exist;
+    expect(el.querySelector('span')).to.exist;
     expect(getByText(/\*/).tagName).to.equal('SPAN');
+  });
+
+  it('should allow to define a \'span\' tagName', () => {
+    const { container } = render(<Label text="bar" tagName="span" />);
+    const el = container.querySelector('.bi.bi-label');
+
+    expect(el.tagName).to.equal('SPAN');
+  });
+
+  it('should allow to define a \'label\' tagName', () => {
+    const { container } = render(<Label text="bar" tagName="label" />);
+    const el = container.querySelector('.bi.bi-label');
+
+    expect(el.tagName).to.equal('LABEL');
+  });
+
+  it('should fallback to a label if the wrong \'tagName\' has been provided', () => {
+    const { container } = render(<Label text="bar" tagName="p" />);
+    const el = container.querySelector('.bi.bi-label');
+
+    expect(el.tagName).to.equal('LABEL');
   });
 });

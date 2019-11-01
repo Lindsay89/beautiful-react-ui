@@ -1,5 +1,5 @@
 // -------------------------------
-// mixin to add color to title
+// color mixin
 // -------------------------------
 @mixin p-color($colorName: 'default') {
   @if ($colorName != "default") {

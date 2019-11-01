@@ -1,9 +1,8 @@
 @mixin make-colored-label($colorName: 'default', $colorValue: $colorName) {
-  &.label-#{$colorName} {
+  &.bi-label-#{$colorName} {
     @apply text-#{$colorValue};
   }
 }
-
 
 .bi.bi-label {
   cursor: inherit; // so that it would be exactly the one of its input
