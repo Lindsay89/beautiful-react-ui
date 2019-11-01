@@ -519,3 +519,7 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - FormGroup component
 - FormGroup component tests
 - FormGroup component types
+
+### [0.33.0] - 2019-11-01
+
+- Introducing node scripts: `postinstall.js`
