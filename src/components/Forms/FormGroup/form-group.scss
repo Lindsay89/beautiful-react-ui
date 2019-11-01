@@ -1,0 +1,23 @@
+.bi.bi-fgroup {
+  @apply flex flex-no-wrap items-start;
+
+  + .bi.bi-fgroup {
+    @apply mb-2;
+  }
+
+  &.bi-vertical-fgroup {
+    @apply flex-col;
+
+    .bi.bi-label {
+      @apply mb-2;
+    }
+  }
+
+  &.bi-horizontal-fgroup {
+    @apply items-center;
+
+    .bi.bi-label {
+      @apply mr-2;
+    }
+  }
+}

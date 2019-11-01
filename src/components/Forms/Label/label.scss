@@ -17,6 +17,10 @@
   @include make-colored-label('danger');
 
   span {
-    @apply text-danger;
+    @apply text-danger ml-1;
+  }
+
+  + .bi.bi-label {
+    @apply ml-2;
   }
 }

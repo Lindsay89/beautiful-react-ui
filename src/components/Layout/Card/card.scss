@@ -1,7 +1,7 @@
 // ----------------------------------------------
 // mixin adding text-align classes to component
 // ----------------------------------------------
-@mixin textAlign {
+@mixin textAlign() {
   &.card-text-center {
     @apply text-center;
   }
@@ -22,7 +22,7 @@
 // ---------------------------------------
 // mixin giving width to icon container
 // ---------------------------------------
-@mixin div-icon-image-container {
+@mixin div-icon-image-container() {
   @apply relative;
 
   min-width: 30%;
@@ -32,7 +32,7 @@
 // ---------------------------------------
 // mixin to defines icon backdrop
 // ---------------------------------------
-@mixin icon-backdrop {
+@mixin icon-backdrop() {
   background: rgb(0, 0, 0);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
 }
@@ -91,7 +91,6 @@
     // ----------------------------------------------
     // Card's Footer
     // ----------------------------------------------
-
     .card-footer {
       @apply px-6 py-4 order-last leading-tight font-sans text-base font-normal text-default-darker bg-default-lighter;
 
@@ -103,7 +102,6 @@
   // ----------------------------------------------
   // Card top buttons
   // ----------------------------------------------
-
   .bi.bi-btn.btn-dots {
     @apply absolute text-white right-0;
   }
@@ -173,7 +171,6 @@
   // ----------------------------------------------
   // Reverse Content
   // ----------------------------------------------
-
   &.reversed {
     @apply flex-col-reverse;
     /* stylelint-disable-next-line no-descending-specificity */
@@ -204,7 +201,6 @@
   // ----------------------------------------------------------------------------
   // if there's no title and image, give same padding to all card's content side
   // ----------------------------------------------------------------------------
-
   /* stylelint-disable no-descending-specificity */
   > .card-content-wrapper {
     > .card-content {
@@ -213,7 +209,7 @@
     }
   }
 
-  /* stylelint-enable */
+  /* stylelint-enable no-descending-specificity */
 
   // ----------------------------------------------
   // Floating card
@@ -224,5 +220,13 @@
     &:hover {
       transform: translateY(-0.2rem);
     }
+  }
+
+  // ----------------------------------------------
+  // Children components hacks
+  // ----------------------------------------------
+  .bi.bi-input + .bi.bi-input,
+  .bi.bi-select + .bi.bi-select {
+    @apply ml-0;
   }
 }

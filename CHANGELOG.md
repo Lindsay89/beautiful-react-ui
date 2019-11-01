@@ -316,6 +316,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+<<<<<<< HEAD
 - margin-left layout glitch fixed on Input component.
 
 ## [0.25.4] - 2019-10-04
@@ -512,3 +513,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Label component has been made a public component
 - Label types
 - Label documentation
+
+### [0.32.0] - 2019-11-01
+
+- FormGroup component
+- FormGroup component tests
+- FormGroup component types
