@@ -100,7 +100,7 @@ Button.propTypes = {
     PropTypes.oneOf(['round', 'zoom', 'shrink', 'float', 'reflection']),
   ]),
   /**
-   * Attaches a callback on the 'click' event
+   * Attaches a callback to the 'click' event
    */
   onClick: PropTypes.func,
   /**

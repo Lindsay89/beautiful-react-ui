@@ -533,3 +533,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - `postinstall.js` should've been part of the distribution package 
+
+## [0.33.2] - 2019-11-02
+
+### Fixed
+
+- Missing component types `Grid`, `Select`, `Checkbox`, `Popover` and `Placeholder` have been added
+- Shared type `DefaultProps` has been added
+- `Button` prop `pill` has been fixed

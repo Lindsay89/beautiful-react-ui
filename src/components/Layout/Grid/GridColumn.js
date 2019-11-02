@@ -47,43 +47,43 @@ const ColumnWidth = PropTypes.oneOf([
 
 GridColumn.propTypes = ({
   /**
-   * Accepts a value from 1 to 12 to set the column width
+   * Accepts a value from 1 to 12 to define the column width
    */
   size: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column width on small screen devices
+   * Accepts a value from 1 to 12 to define the column width on small screen devices
    */
   sm: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column width on medium screen devices
+   * Accepts a value from 1 to 12 to define the column width on medium screen devices
    */
   md: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column width on large screen devices
+   * Accepts a value from 1 to 12 to define the column width on large screen devices
    */
   lg: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column width on extra-large screen devices
+   * Accepts a value from 1 to 12 to define the column width on extra-large screen devices
    */
   xl: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column padding-left
+   * Accepts a value from 1 to 12 to define the column padding-left
    */
   offset: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column padding-left on small screen devices
+   * Accepts a value from 1 to 12 to define the column padding-left on small screen devices
    */
   offsetSm: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column padding-left on medium screen devices
+   * Accepts a value from 1 to 12 to define the column padding-left on medium screen devices
    */
   offsetMd: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column padding-left on large screen devices
+   * Accepts a value from 1 to 12 to define the column padding-left on large screen devices
    */
   offsetLg: ColumnWidth,
   /**
-   * Accepts a value from 1 to 12 to set the column padding-left on extra-large screen devices
+   * Accepts a value from 1 to 12 to define the column padding-left on extra-large screen devices
    */
   offsetXl: ColumnWidth,
   /**

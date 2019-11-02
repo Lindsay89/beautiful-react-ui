@@ -58,6 +58,8 @@ DisplayField.defaultProps = {
   valueColor: 'default',
   borderStyle: 'solid'
 };
-var _default = DisplayField;
+
+var _default = _react["default"].memo(DisplayField);
+
 exports["default"] = _default;
 //# sourceMappingURL=DisplayField.js.map
