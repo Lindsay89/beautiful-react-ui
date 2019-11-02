@@ -16,10 +16,14 @@
 
   .bi-df-label {
     @apply font-bold;
+
+    flex: 1;
   }
 
   .bi-df-value {
-    @apply inline-block font-normal font-sans text-base tracking-normal text-default ml-auto;
+    @apply inline-block font-normal font-sans text-base tracking-normal text-default ml-auto pl-2 text-right;
+
+    flex: 2;
   }
 
   // ----------------------------
