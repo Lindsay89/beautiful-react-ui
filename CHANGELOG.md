@@ -554,3 +554,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Grid props issue with Column sub-component fixed
+
+## [0.33.5] - 2019-11-02
+
+### Fixed
+
+- DisplayField style fix
