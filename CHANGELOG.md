@@ -541,3 +541,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Missing component types `Grid`, `Select`, `Checkbox`, `Popover` and `Placeholder` have been added
 - Shared type `DefaultProps` has been added
 - `Button` prop `pill` has been fixed
+
+## [0.33.3] - 2019-11-02
+
+### Fixed
+
+- Adding missing types from the previous version to the `index.d.ts` file
+- Adding missing type `Input`
