@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import './placeholder.scss';
 
 /**
- * A placeholder component is used in place of a content that will soon appear within the layout.
+ * A placeholder component is used in place of a content that will soon appear into the layout.
  */
 const Placeholder = ({ paragraphs, image, title, className, ...rest }) => {
   const classList = classNames('bi bi-placeholder', {
@@ -19,8 +19,8 @@ const Placeholder = ({ paragraphs, image, title, className, ...rest }) => {
       <div className="bi-placeholder-parag-wrapper">
         {title && <span className="bi-placeholder-title" />}
         {Array.from({ length: paragraphs }).map((und, index) => (
-          // this is the only way to assign a key to the generated span component, for this reason
-          // I'm are disabling the following ESLint rule.
+          // As this is the only way to assign a key to the generated
+          // span component the following ESLint rule has been disabled.
           // eslint-disable-next-line react/no-array-index-key
           <span key={`par-${index}`} className="bi-placeholder-paragraph" />
         ))}

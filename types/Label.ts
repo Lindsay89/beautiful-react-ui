@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
-import { Color } from './shared';
+import { Color, DefaultProps } from './_shared';
 
-export type LabelProps = {
+export type LabelProps = DefaultProps & {
   /**
    * Defines the text to be shown
    */

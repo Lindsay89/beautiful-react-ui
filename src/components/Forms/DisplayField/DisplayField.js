@@ -54,4 +54,4 @@ DisplayField.defaultProps = {
   borderStyle: 'solid',
 };
 
-export default DisplayField;
+export default React.memo(DisplayField);

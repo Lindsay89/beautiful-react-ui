@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
-import { Color } from './shared';
+import { Color, DefaultProps } from './_shared';
 
-export type DisplayFieldProps = {
+export type DisplayFieldProps = DefaultProps & {
   /**
    * Defines the field label
    */

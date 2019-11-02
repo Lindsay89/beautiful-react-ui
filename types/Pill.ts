@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
-import { Color } from './shared';
+import { Color, DefaultProps } from './_shared';
 
-export type PillProps = {
+export type PillProps = DefaultProps & {
   /**
    * Defines the pill's background color, can be `default`, `primary`, `secondary`,
    * `info`, `warning`, `success`, `danger`.

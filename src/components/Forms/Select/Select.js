@@ -82,6 +82,28 @@ Select.propTypes = {
    *    { label: 'Option 3', value: 'option3', disabled: true },
    * ];
    * ```
+   *
+   * or an array of options group like: <br />
+   * ```
+   * const optionsGroup = [
+   *  {
+   *    name: 'Group 1',
+   *    options: [
+   *      { label: 'Option 1', value: 1 },
+   *      { label: 'Option 2', value: 2 },
+   *      { label: 'Option 3', value: 'option3', disabled: true },
+   *    ],
+   *  },
+   *  {
+   *    name: 'Group 2',
+   *    options: [
+   *      { label: 'Option 4', value: 4 },
+   *      { label: 'Option 5', value: 5 },
+   *      { label: 'Option 6', value: 6 },
+   *    ],
+   *  }
+   * ];
+   * ```
    */
   options: OptionsType.isRequired,
   /**

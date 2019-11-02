@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react';
+import { DefaultProps } from './_shared';
 
-export type FormGroupProps = {
+export type FormGroupProps = DefaultProps & {
   /**
    * Defines if children should be vertically or horizontally aligned
    */

@@ -1,21 +1,61 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { Color, Size, Callback } from './shared';
+import { Color, Size, Callback, DefaultProps } from './_shared';
 import { IconProp } from './Icon';
 import { SpinnerProp } from './Spinner';
+import { PillProps } from './Pill';
 
-export type ButtonProps = {
+export type ButtonProps = DefaultProps & {
+  /**
+   * Defines the button color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`
+   * or `transparent`
+   */
   color?: Color,
+  /**
+   * Defines the button's size, can be `small`, `default`, `large`
+   */
   size?: Size,
+  /**
+   * Shows the outlines only
+   */
   outline?: boolean,
+  /**
+   * Makes the button rounded
+   */
   rounded?: boolean,
+  /**
+   * Defines the button's type
+   */
   type?: 'submit' | 'button' | 'reset',
+  /**
+   * Disables the button
+   */
   disabled?: boolean,
+  /**
+   * Makes the button completely fluid (full width)
+   */
   block?: boolean,
+  /**
+   * Defines the hover effect, can be `round`, `zoom`,  `shrink`,  `float`, `reflection`
+   */
   hover?: boolean | 'round' | 'zoom' | 'shrink' | 'float' | 'reflection',
+  /**
+   * Attaches a callback to the 'click' event
+   */
   onClick?: Callback<Event, undefined>,
-  icon?: IconProp,
+  /**
+   * Shows an icon, you can pass both a valid Icon component name prop or the instance of an Icon component
+   */
+  icon?: string | string[] | ReactElement<IconProp>,
+  /**
+   * Shows a spinner icon within the button. The prop value can be "true" to show a standard <Spinner />
+   * or the actual instance of a <Spinner /> component.
+   * If the prop value is "false" or any falsy value (undefined or null) the spinner won't show.
+   */
   spinner?: boolean | ReactElement<SpinnerProp>
-  pill?: any, // TODO: fix
+  /**
+   * Show a pill into the button. You can pass both a valid pill label prop or the instance of an pill component
+   */
+  pill?: string | ReactElement<PillProps>
 };
 
 declare const Button: FunctionComponent<ButtonProps>;
