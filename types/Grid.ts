@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import GridColumn, { GridColumnProps } from './GridColumn';
+import GridColumn from './GridColumn';
 import { DefaultProps } from './_shared';
 
 export type GridProps = DefaultProps & {
@@ -16,8 +16,8 @@ export type GridProps = DefaultProps & {
 /**
  * Declares the Grid functional component
  */
-declare const Grid: FunctionComponent<GridProps> & { GridColumn: FunctionComponent<GridColumnProps> };
+declare const Grid: FunctionComponent<GridProps> & { Column: typeof GridColumn };
 
-Grid.GridColumn = GridColumn;
+Grid.Column = GridColumn;
 
 export default Grid;
