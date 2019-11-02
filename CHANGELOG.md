@@ -548,3 +548,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Adding missing types from the previous version to the `index.d.ts` file
 - Adding missing type `Input`
+
+## [0.33.4] - 2019-11-02
+
+### Fixed
+
+- Grid props issue with Column sub-component fixed
