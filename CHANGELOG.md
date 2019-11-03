@@ -560,3 +560,12 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - DisplayField style fix
+
+## [0.33.6] - 2019-11-03
+
+### Fixed
+
+- DisplayField supports bold style for value and makes it optional for labels
+- DisplayField supports React node values, not only strings
+- Removing the postinstall.js script as the Node community strongly discourage having ads in the console
+- Fixed `tdd` script

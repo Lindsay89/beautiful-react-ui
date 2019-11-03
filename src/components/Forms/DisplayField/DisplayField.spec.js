@@ -90,4 +90,22 @@ describe('DisplayField component', () => {
     expect(el.classList.contains('bi-df-border-dotted')).to.not.be.true;
     expect(el.classList.contains('bi-df-border-dashed')).to.not.be.true;
   });
+
+  it('should allow to set the value font-weight to bold', () => {
+    const { container } = render(<DisplayField label="Foo" value="bar" boldValue />);
+    const el = container.querySelector('.bi.bi-df');
+
+    expect(el.classList.contains('bi-df-bold-value')).to.be.true;
+  });
+
+  it('should allow to set the label font-weight to bold', () => {
+    const { container, rerender } = render(<DisplayField label="Foo" value="bar" boldLabel />);
+    const el = container.querySelector('.bi.bi-df');
+
+    expect(el.classList.contains('bi-df-bold-label')).to.be.true;
+
+    rerender(<DisplayField label="Foo" value="bar" boldLabel={false} />);
+
+    expect(el.classList.contains('bi-df-bold-label')).to.be.false;
+  });
 });
