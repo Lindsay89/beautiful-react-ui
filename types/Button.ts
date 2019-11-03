@@ -33,7 +33,7 @@ export type ButtonProps = DefaultProps & {
   /**
    * Makes the button completely fluid (full width)
    */
-  block?: boolean,
+  fluid?: boolean,
   /**
    * Defines the hover effect, can be `round`, `zoom`,  `shrink`,  `float`, `reflection`
    */

@@ -58,10 +58,10 @@
   // ----------------------------
   // BLOCK
   // ----------------------------
-  &.btn-block {
+  &.btn-fluid {
     @apply w-full my-2;
 
-    + .btn-block {
+    + .btn-fluid {
       @apply mx-0;
     }
   }

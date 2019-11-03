@@ -569,3 +569,15 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - DisplayField supports React node values, not only strings
 - Removing the postinstall.js script as the Node community strongly discourage having ads in the console
 - Fixed `tdd` script
+
+## [0.33.7] - 2019-11-03
+
+### Fixed
+
+- Input css fixes such as icon position, max-width, fluid
+- Select css fixes
+- Button component's `block` prop renamed to `fluid`
+
+### Added
+
+- Support to `fluid` layout for Select component.

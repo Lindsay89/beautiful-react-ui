@@ -52,9 +52,10 @@ var Select = function Select(props) {
       filtrable = props.filtrable,
       filterInputPlaceholder = props.filterInputPlaceholder,
       filterNoResultLabel = props.filterNoResultLabel,
+      fluid = props.fluid,
       multiStyle = props.multiStyle,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["options", "value", "placeholder", "onChange", "toggleOnChange", "filtrable", "filterInputPlaceholder", "filterNoResultLabel", "multiStyle", "className"]);
+      rest = _objectWithoutProperties(props, ["options", "value", "placeholder", "onChange", "toggleOnChange", "filtrable", "filterInputPlaceholder", "filterNoResultLabel", "fluid", "multiStyle", "className"]);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -65,6 +66,7 @@ var Select = function Select(props) {
   var hasOptionGroups = (0, _optionsAreGrouped["default"])(options);
   var classList = (0, _classnames["default"])('bi bi-select', {
     clearable: clearable,
+    fluid: fluid,
     open: isOpen
   }, className);
 
@@ -115,6 +117,7 @@ Select.propTypes = {
   onChange: _propTypes["default"].func,
   helpText: _propTypes["default"].string,
   placeholder: _propTypes["default"].string,
+  fluid: _propTypes["default"].bool,
   toggleOnChange: _propTypes["default"].bool,
   filtrable: _propTypes["default"].bool,
   multiStyle: _propTypes["default"].oneOf(['strings', 'pills']),
@@ -126,6 +129,7 @@ Select.defaultProps = {
   onChange: undefined,
   placeholder: 'Select...',
   helpText: undefined,
+  fluid: false,
   toggleOnChange: true,
   filtrable: false,
   multiStyle: 'pills',

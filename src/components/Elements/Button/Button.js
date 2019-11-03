@@ -24,7 +24,7 @@ import './button.scss';
  */
 const Button = (props) => {
   const {
-    type, block, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
+    type, fluid, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
     className, children, ...rest
   } = props;
 
@@ -32,7 +32,7 @@ const Button = (props) => {
   const firstChild = getFirstChild(children);
 
   const classList = classNames('bi bi-btn', `btn-${color}`, {
-    'btn-block': block,
+    'btn-fluid': fluid,
     'btn-outline': outline,
     'btn-rounded': rounded,
     'btn-he-zoom': hover === 'zoom',
@@ -91,7 +91,7 @@ Button.propTypes = {
   /**
    * Makes the button completely fluid (full width)
    */
-  block: PropTypes.bool,
+  fluid: PropTypes.bool,
   /**
    * Defines the hover effect, can be `round`, `zoom`,  `shrink`,  `float`, `reflection`
    */
@@ -131,7 +131,7 @@ Button.defaultProps = {
   size: 'default',
   rounded: false,
   outline: false,
-  block: false,
+  fluid: false,
   type: 'button',
   disabled: false,
   hover: undefined,

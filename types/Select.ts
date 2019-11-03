@@ -66,6 +66,10 @@ export type SelectProps = DefaultProps & {
    */
   placeholder?: string,
   /**
+   * Defines if the select should take all the possible width
+   */
+  fluid?: boolean,
+  /**
    * Defines whether the onChange callback should be fired on option select
    */
   toggleOnChange?: boolean,

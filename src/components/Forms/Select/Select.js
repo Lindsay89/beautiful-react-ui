@@ -16,7 +16,7 @@ import './select.scss';
 const Select = (props) => {
   const {
     options, value, placeholder, onChange, toggleOnChange, filtrable, filterInputPlaceholder, filterNoResultLabel,
-    multiStyle, className, ...rest
+    fluid, multiStyle, className, ...rest
   } = props;
   const [isOpen, setIsOpen] = useState(false);
   const clearable = Array.isArray(value) ? value.length !== 0 : !!value;
@@ -24,6 +24,7 @@ const Select = (props) => {
 
   const classList = classNames('bi bi-select', {
     clearable,
+    fluid,
     open: isOpen,
   }, className);
 
@@ -123,6 +124,10 @@ Select.propTypes = {
    */
   placeholder: PropTypes.string,
   /**
+   * Defines if the select should take all the possible width
+   */
+  fluid: PropTypes.bool,
+  /**
    * Defines whether the onChange callback should be fired on option select
    */
   toggleOnChange: PropTypes.bool,
@@ -144,12 +149,12 @@ Select.propTypes = {
   filterNoResultLabel: PropTypes.string,
 };
 
-
 Select.defaultProps = {
   value: '',
   onChange: undefined,
   placeholder: 'Select...',
   helpText: undefined,
+  fluid: false,
   toggleOnChange: true,
   filtrable: false,
   multiStyle: 'pills',
