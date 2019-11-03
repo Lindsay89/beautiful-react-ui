@@ -9,6 +9,10 @@
     @apply ml-2;
   }
 
+  + .bi.bi-input {
+    @apply ml-2;
+  }
+
   // ----------------------------
   // SELECT ELEMENT
   // ----------------------------
@@ -20,10 +24,10 @@
     text-align: start;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     transition: box-shadow ease-in-out 0.25s;
-    // max-width: 15rem;
     white-space: nowrap;
     text-overflow: ellipsis;
-    min-width: 9.625rem;
+    width: 9.625rem;
+    max-width: 100%;
 
     @apply appearance-none bg-white border border-default-light border-solid py-2 pl-3 pr-8 m-0 rounded leading-tight;
     @apply relative overflow-hidden cursor-pointer select-none;
@@ -52,6 +56,17 @@
   // ----------------------------
   &.open .bi-select-element .bi.bi-caret {
     transform: rotate(180deg);
+  }
+
+  // ----------------------------
+  // FLUID
+  // ----------------------------
+  &.fluid {
+    width: 100%;
+
+    .bi-select-element {
+      width: auto;
+    }
   }
 
   // ----------------------------

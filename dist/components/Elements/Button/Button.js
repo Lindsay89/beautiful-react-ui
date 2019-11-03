@@ -27,7 +27,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Button = function Button(props) {
   var type = props.type,
-      block = props.block,
+      fluid = props.fluid,
       color = props.color,
       rounded = props.rounded,
       outline = props.outline,
@@ -40,12 +40,12 @@ var Button = function Button(props) {
       pill = props.pill,
       className = props.className,
       children = props.children,
-      rest = _objectWithoutProperties(props, ["type", "block", "color", "rounded", "outline", "disabled", "size", "icon", "hover", "spinner", "onClick", "pill", "className", "children"]);
+      rest = _objectWithoutProperties(props, ["type", "fluid", "color", "rounded", "outline", "disabled", "size", "icon", "hover", "spinner", "onClick", "pill", "className", "children"]);
 
   var lastChild = (0, _shared.getLastChild)(children);
   var firstChild = (0, _shared.getFirstChild)(children);
   var classList = (0, _classnames["default"])('bi bi-btn', "btn-".concat(color), {
-    'btn-block': block,
+    'btn-fluid': fluid,
     'btn-outline': outline,
     'btn-rounded': rounded,
     'btn-he-zoom': hover === 'zoom',
@@ -76,7 +76,7 @@ Button.propTypes = {
   rounded: _propTypes["default"].bool,
   type: _propTypes["default"].oneOf(['submit', 'button', 'reset']),
   disabled: _propTypes["default"].bool,
-  block: _propTypes["default"].bool,
+  fluid: _propTypes["default"].bool,
   hover: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].oneOf(['round', 'zoom', 'shrink', 'float', 'reflection'])]),
   onClick: _propTypes["default"].func,
   icon: _shared.IconProp,
@@ -89,7 +89,7 @@ Button.defaultProps = {
   size: 'default',
   rounded: false,
   outline: false,
-  block: false,
+  fluid: false,
   type: 'button',
   disabled: false,
   hover: undefined,

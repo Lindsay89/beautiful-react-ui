@@ -127,14 +127,14 @@ describe('Button component', () => {
     expect(button.getAttribute('disabled')).to.be.null;
   });
 
-  it('should allow to define whether the button is full width (block) or not', () => {
-    const { container, rerender } = render(<Button block>Hello Button</Button>);
+  it('should allow to define whether the button is full width (fluid) or not', () => {
+    const { container, rerender } = render(<Button fluid>Hello Button</Button>);
     const button = container.querySelector('button');
 
-    expect(button.getAttribute('class').split(' ')).to.include.members(['btn-block']);
-    rerender(<Button block={false}>Hello Button</Button>);
+    expect(button.getAttribute('class').split(' ')).to.include.members(['btn-fluid']);
+    rerender(<Button fluid={false}>Hello Button</Button>);
 
-    expect(button.getAttribute('class').split(' ')).to.not.include.members(['btn-block']);
+    expect(button.getAttribute('class').split(' ')).to.not.include.members(['btn-fluid']);
   });
 
   it('should allow to define the hover animation effect', () => {

@@ -1,9 +1,11 @@
 @mixin make-input-color($color: 'default') {
   &.input-#{$color} {
-    @apply border-#{$color};
+    input {
+      @apply border-#{$color};
 
-    input:focus {
-      box-shadow: 0 0 0 0.2rem theme('colors.#{$color}-lightest');
+      &:focus {
+        box-shadow: 0 0 0 0.2rem theme('colors.#{$color}-lightest');
+      }
     }
 
     .bi.bi-icon {
@@ -15,9 +17,13 @@
 .bi.bi-input {
   box-sizing: border-box;
 
-  @apply inline-flex align-top relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
+  @apply inline-flex align-baseline relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
 
   + .bi.bi-input {
+    @apply ml-2;
+  }
+
+  + .bi.bi-select {
     @apply ml-2;
   }
 
@@ -29,7 +35,8 @@
     text-align: start;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     transition: box-shadow ease-in-out 0.25s;
-    min-width: 12.5rem;
+    // width: 12.5rem;
+    max-width: 100%;
 
     @apply bg-white font-normal font-sans text-base tracking-normal text-default-darker border border-default-light border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
 
@@ -62,6 +69,10 @@
   // ----------------------------
   &.fluid {
     width: 100%;
+
+    /*input {
+      width: auto;
+    }*/
   }
 
   // ----------------------------
@@ -90,7 +101,7 @@
     }
 
     .bi.bi-icon {
-      @apply absolute fill-current right-0 top-0 bottom-0 px-3 pt-3 pointer-events-none;
+      @apply absolute fill-current right-0 top-0 bottom-0 px-3 pointer-events-none h-full;
     }
 
     &.icon-left {
@@ -110,6 +121,8 @@
   &.input-sm {
     /* stylelint-disable-next-line no-descending-specificity */
     input {
+      // width: 9.5rem;
+
       @apply pl-2 py-1 text-sm;
     }
 
@@ -123,6 +136,8 @@
   &.input-lg {
     /* stylelint-disable-next-line no-descending-specificity */
     input {
+      // width: 15.5rem;
+
       @apply pl-4 py-2 leading-normal text-xl;
     }
 
