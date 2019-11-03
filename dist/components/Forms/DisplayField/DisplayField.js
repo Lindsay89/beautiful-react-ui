@@ -26,15 +26,19 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var DisplayField = function DisplayField(props) {
+  var _classNames;
+
   var className = props.className,
       value = props.value,
       valueColor = props.valueColor,
       label = props.label,
       labelColor = props.labelColor,
       borderStyle = props.borderStyle,
-      rest = _objectWithoutProperties(props, ["className", "value", "valueColor", "label", "labelColor", "borderStyle"]);
+      boldLabel = props.boldLabel,
+      boldValue = props.boldValue,
+      rest = _objectWithoutProperties(props, ["className", "value", "valueColor", "label", "labelColor", "borderStyle", "boldLabel", "boldValue"]);
 
-  var classList = (0, _classnames["default"])('bi bi-df', "bi-df-".concat(valueColor), _defineProperty({}, "bi-df-border-".concat(borderStyle), !!borderStyle), className);
+  var classList = (0, _classnames["default"])('bi bi-df', "bi-df-".concat(valueColor), (_classNames = {}, _defineProperty(_classNames, "bi-df-border-".concat(borderStyle), !!borderStyle), _defineProperty(_classNames, 'bi-df-bold-label', boldLabel), _defineProperty(_classNames, 'bi-df-bold-value', boldValue), _classNames), className);
   return _react["default"].createElement("div", _extends({
     className: classList
   }, rest), _react["default"].createElement(_Label["default"], {
@@ -49,14 +53,18 @@ var DisplayField = function DisplayField(props) {
 DisplayField.propTypes = {
   label: _propTypes["default"].string.isRequired,
   labelColor: _shared.Color,
-  value: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number]).isRequired,
+  value: _propTypes["default"].node.isRequired,
   valueColor: _shared.Color,
-  borderStyle: _propTypes["default"].oneOf(['solid', 'dashed', 'dotted', 'double', 'none'])
+  borderStyle: _propTypes["default"].oneOf(['solid', 'dashed', 'dotted', 'double', 'none']),
+  boldLabel: _propTypes["default"].bool,
+  boldValue: _propTypes["default"].bool
 };
 DisplayField.defaultProps = {
   labelColor: 'default',
   valueColor: 'default',
-  borderStyle: 'solid'
+  borderStyle: 'solid',
+  boldLabel: true,
+  boldValue: false
 };
 
 var _default = _react["default"].memo(DisplayField);

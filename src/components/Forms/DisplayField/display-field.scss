@@ -15,8 +15,6 @@
   @apply flex pb-1 mb-4;
 
   .bi-df-label {
-    @apply font-bold;
-
     flex: 1;
   }
 
@@ -24,6 +22,11 @@
     @apply inline-block font-normal font-sans text-base tracking-normal text-default ml-auto pl-2 text-right;
 
     flex: 2;
+  }
+
+  &.bi-df-bold-value .bi-df-value,
+  &.bi-df-bold-label .bi-df-label {
+    @apply font-bold;
   }
 
   // ----------------------------
