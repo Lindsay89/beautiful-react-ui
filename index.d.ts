@@ -12,6 +12,7 @@ export { default as Placeholder } from './types/Placeholder';
 export { default as Spinner } from './types/Spinner';
 // export { default as Tab } from './types/Tab';
 // export { default as Modal } from './types/Modal';
+export { default as Divider } from './types/Divider';
 export { default as Popover } from './types/Popover';
 // export { default as FloatingContent } from './types/FloatingContent';
 

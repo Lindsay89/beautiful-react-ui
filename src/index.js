@@ -30,3 +30,4 @@ export { default as Card } from './components/Layout/Card';
 // Typography
 export { default as Title } from './components/Typography/Title';
 export { default as Paragraph } from './components/Typography/Paragraph';
+export { default as Divider } from './components/Typography/Divider';
