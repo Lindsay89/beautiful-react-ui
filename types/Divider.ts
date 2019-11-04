@@ -5,19 +5,19 @@ export type DividerProps = DefaultProps & {
   /**
    * shows 2 lines instead of one
    */
-  fancy: boolean,
+  fancy?: boolean,
   /**
    * clears the content both left and right
    */
-  clear: boolean,
+  clear?: boolean,
   /**
    * changes the line color from dark (default) to light
    */
-  light: boolean,
+  light?: boolean,
   /**
    * changes the line style
    */
-  line:'solid' | 'dashed' | 'dotted',
+  line?:'solid' | 'dashed' | 'dotted',
 };
 
 declare const Divider: FunctionComponent<DividerProps>;
