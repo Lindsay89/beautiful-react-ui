@@ -9,13 +9,14 @@ describe('Paragraph component', () => {
     const { container } = render(<Paragraph>Foo</Paragraph>);
 
     expect(container).to.exist;
-    expect(container.querySelector('.bi-p')).to.exist;
+    expect(container.querySelector('p')).to.exist;
   });
 
   it('should have default classes', () => {
     const { container } = render(<Paragraph>Foo</Paragraph>);
     const pEl = container.querySelector('p');
 
+    expect(pEl.classList.contains('bi')).to.be.true;
     expect(pEl.classList.contains('bi-p')).to.be.true;
   });
 

@@ -581,3 +581,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Added
 
 - Support to `fluid` layout for Select component.
+
+## [0.34.0] - 2019-11-04
+
+### Added
+
+- Divider component
+- Divider component types
+- Divider component tests

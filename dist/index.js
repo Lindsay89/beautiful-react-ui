@@ -153,6 +153,12 @@ Object.defineProperty(exports, "Paragraph", {
     return _Paragraph["default"];
   }
 });
+Object.defineProperty(exports, "Divider", {
+  enumerable: true,
+  get: function get() {
+    return _Divider["default"];
+  }
+});
 
 var _Accordion = _interopRequireDefault(require("./components/Elements/Accordion"));
 
@@ -203,6 +209,8 @@ var _Card = _interopRequireDefault(require("./components/Layout/Card"));
 var _Title = _interopRequireDefault(require("./components/Typography/Title"));
 
 var _Paragraph = _interopRequireDefault(require("./components/Typography/Paragraph"));
+
+var _Divider = _interopRequireDefault(require("./components/Typography/Divider"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

@@ -76,8 +76,9 @@ module.exports = {
           name: 'Typography',
           pagePerSection: true,
           components: () => [
-            'src/components/Typography/Paragraph/Paragraph.js',
             'src/components/Typography/Title/Title.js',
+            'src/components/Typography/Paragraph/Paragraph.js',
+            'src/components/Typography/Divider/Divider.js',
           ],
         },
         {
