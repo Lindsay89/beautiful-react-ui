@@ -589,3 +589,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Divider component
 - Divider component types
 - Divider component tests
+
+## [0.34.1] - 2019-11-04
+
+### Fixed
+
+- Divider component required types
