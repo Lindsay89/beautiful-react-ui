@@ -1,5 +1,5 @@
 // Elements
-// export { default as Accordion } from './types/Accordion';
+export { default as Accordion } from './types/Accordion';
 // export { default as Alert } from './types/Alert';
 // export { default as Avatar } from './types/Avatar';
 export { default as Breadcrumbs } from './types/Breadcrumbs';

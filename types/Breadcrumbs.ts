@@ -1,11 +1,12 @@
 import { FunctionComponent } from 'react';
 import { Color, DefaultProps } from './_shared';
-import { IconProp } from './Icon';
+import { IconProps } from './Icon';
+
 
 export type BreadcrumbItem = {
   path?: string,
   label?: string,
-  icon?: IconProp,
+  icon?: IconProps,
   render: (item: BreadcrumbItem) => unknown,
 }
 
