@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react';
 import { Color, DefaultProps, Size } from './_shared';
 
-export type IconProp = DefaultProps & {
+export type IconProps = DefaultProps & {
   /**
    * The [font-awesome](https://fontawesome.com/) icon name
    */
@@ -16,6 +16,6 @@ export type IconProp = DefaultProps & {
   size?: Size,
 };
 
-declare const Icon: FunctionComponent<IconProp>;
+declare const Icon: FunctionComponent<IconProps>;
 
 export default Icon;

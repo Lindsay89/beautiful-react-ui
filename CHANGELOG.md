@@ -595,3 +595,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Divider component required types
+
+## [0.34.2] - 2019-11-06
+
+### Fixed
+
+- Accordion missing types
