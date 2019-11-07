@@ -601,3 +601,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Accordion missing types
+
+## [0.34.3] - 2019-11-07
+
+### Fixed
+
+- CSS build optimization
+- Tailwind fonts

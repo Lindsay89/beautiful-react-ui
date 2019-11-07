@@ -66,9 +66,9 @@ module.exports = {
         /* eslint-enable quote-props */
       },
       fontFamily: {
-        sans: ['Roboto', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif'],
-        serif: ['Constantia', 'Lucida Bright', 'Lucidabright', 'Lucida Serif', 'Lucida', 'DejaVu Serif', 'serif'],
-        mono: ['Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+        sans: ['"Ubuntu"', 'sans-serif'],
+        serif: ['"PT Serif"', 'serif'],
+        mono: ['"Ubuntu Mono"', 'monospace'],
       },
     },
   },
