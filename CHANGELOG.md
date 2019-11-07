@@ -608,3 +608,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - CSS build optimization
 - Tailwind fonts
+
+## [0.34.4] - 2019-11-07
+
+### Fixed
+
+- Icon now uses a FontAwesome fixed width component
+- Button icon only size
+- DisplayField default label style is normal
+- Paragraph breakStyle prop
+- Title breakStyle prop

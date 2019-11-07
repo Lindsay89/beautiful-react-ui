@@ -12,6 +12,14 @@
 .bi.bi-p {
   @apply leading-tight antialiased text-base font-normal tracking-normal text-default-darker mt-0 mb-2;
 
+  strong {
+    @apply font-semibold;
+  }
+
+  i {
+    @apply italic;
+  }
+
   // ----------------------------
   // Font family
   // ----------------------------
@@ -45,6 +53,25 @@
 
   &.bi-p-justify {
     @apply text-justify;
+  }
+
+  // ----------------------------
+  // Word break
+  // ----------------------------
+  &.bi-p-break-normal {
+    @apply break-normal;
+  }
+
+  &.bi-p-break-words {
+    @apply break-words;
+  }
+
+  &.bi-p-break-all {
+    @apply break-all;
+  }
+
+  &.bi-p-break-truncate {
+    @apply truncate;
   }
 
   // ----------------------------

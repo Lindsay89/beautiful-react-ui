@@ -27,7 +27,7 @@ const Icon = ({ name, color, size, className, ...rest }) => {
     faSize = 'lg';
   }
 
-  return (<FontAwesomeIcon icon={name} size={faSize} className={classList} {...rest} />);
+  return (<FontAwesomeIcon icon={name} size={faSize} className={classList} fixedWidth {...rest} />);
 };
 
 Icon.propTypes = {

@@ -24,14 +24,17 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var Paragraph = function Paragraph(props) {
+  var _classNames;
+
   var children = props.children,
       color = props.color,
       fontFamily = props.fontFamily,
       textAlign = props.textAlign,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["children", "color", "fontFamily", "textAlign", "className"]);
+      wordBreak = props.wordBreak,
+      rest = _objectWithoutProperties(props, ["children", "color", "fontFamily", "textAlign", "className", "wordBreak"]);
 
-  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), "bi-ff-".concat(fontFamily), _defineProperty({}, "bi-p-".concat(textAlign), !!textAlign), className);
+  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), "bi-ff-".concat(fontFamily), (_classNames = {}, _defineProperty(_classNames, "bi-p-".concat(textAlign), !!textAlign), _defineProperty(_classNames, "bi-p-break-".concat(wordBreak), !!wordBreak), _classNames), className);
   return _react["default"].createElement("p", _extends({
     className: classList
   }, rest), children);
@@ -40,12 +43,14 @@ var Paragraph = function Paragraph(props) {
 Paragraph.propTypes = {
   color: _shared.Color,
   fontFamily: _propTypes["default"].oneOf(['sans', 'serif', 'mono']),
-  textAlign: _propTypes["default"].oneOf(['center', 'left', 'right', 'justify'])
+  textAlign: _propTypes["default"].oneOf(['center', 'left', 'right', 'justify']),
+  wordBreak: _propTypes["default"].oneOf(['normal', 'words', 'all', 'truncate'])
 };
 Paragraph.defaultProps = {
   color: 'default',
   fontFamily: 'sans',
-  textAlign: undefined
+  textAlign: undefined,
+  wordBreak: 'normal'
 };
 
 var _default = _react["default"].memo(Paragraph);

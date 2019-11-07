@@ -6,16 +6,19 @@ import { Color } from '../../../shared';
 import './paragraph.scss';
 
 /**
- * As Beautiful-ui does not impose a general styles by creating and applying extra css classes,
- * a set of typography components as been created to possibly have the same style both for UI components and texts.
- * The Typography components are used within the library itself.
- *
- * Here's the Paragraph component
+ * Beautiful-ui does not force the developer to use its own styles nor creates extra global rules that can possibly
+ * collide with the application's ones.<br/>
+ * For this reason, in order to possibly have the same style between UI components and texts when needed, few
+ * typography specialised components has been created.<br/>
+ * The typography specialised components are used within the library itself.
+ * <br/>
+ * Here's the Paragraph component.
  */
 const Paragraph = (props) => {
-  const { children, color, fontFamily, textAlign, className, ...rest } = props;
+  const { children, color, fontFamily, textAlign, className, wordBreak, ...rest } = props;
   const classList = classNames('bi bi-p', `bi-p-${color}`, `bi-ff-${fontFamily}`, {
     [`bi-p-${textAlign}`]: !!textAlign,
+    [`bi-p-break-${wordBreak}`]: !!wordBreak,
   }, className);
 
   return (
@@ -38,6 +41,10 @@ Paragraph.propTypes = {
    * Defines the paragraph text align
    */
   textAlign: PropTypes.oneOf(['center', 'left', 'right', 'justify']),
+  /**
+   * Defines the paragraph breaks
+   */
+  wordBreak: PropTypes.oneOf(['normal', 'words', 'all', 'truncate']),
 };
 
 
@@ -45,6 +52,7 @@ Paragraph.defaultProps = {
   color: 'default',
   fontFamily: 'sans',
   textAlign: undefined,
+  wordBreak: 'normal',
 };
 
 export default React.memo(Paragraph);

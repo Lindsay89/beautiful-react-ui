@@ -73,7 +73,7 @@
 
       @include textAlign();
 
-      > p {
+      > .bi.bi-p:only-child {
         @apply my-0;
       }
     }

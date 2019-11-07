@@ -49,3 +49,14 @@ import { DisplayField } from 'beautiful-ui';
   <DisplayField label="No border:" value="field value" borderStyle="none" />
 </>
 ```
+
+### Bold style
+
+```jsx
+import { DisplayField } from 'beautiful-ui';
+
+<>
+  <DisplayField label="Solid border:" value="field value" boldLabel />
+  <DisplayField label="Solid border:" value="field value" boldValue />
+</>
+```

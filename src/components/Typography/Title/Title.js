@@ -6,14 +6,16 @@ import { Color } from '../../../shared';
 import './title.scss';
 
 /**
- * As Beautiful-ui does not impose a general styles by creating and applying extra css classes,
- * a set of typography components as been created to possibly have the same style both for UI components and texts.
- * The Typography components are used within the library itself.
- *
- * Here's the Title component
+ * Beautiful-ui does not force the developer to use its own styles nor creates extra global rules that can possibly
+ * collide with the application's ones.<br/>
+ * For this reason, in order to possibly have the same style between UI components and texts when needed, few
+ * typography specialised components has been created.<br/>
+ * The typography specialised components are used within the library itself.
+ * <br/>
+ * Here's the Title component.
  */
 const Title = (props) => {
-  const { children, color, size, tagName, textAlign, className, ...rest } = props;
+  const { children, color, size, tagName, textAlign, wordBreak, className, ...rest } = props;
   const TitleTag = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName) ? tagName : 'h1';
   const classList = classNames('bi-title', `bi-title-${color}`, {
     'title-base': size === 'base',
@@ -23,6 +25,7 @@ const Title = (props) => {
     'title-3xl': size === '3xl',
     'title-4xl': size === '4xl',
     [`bi-title-${textAlign}`]: !!textAlign,
+    [`bi-title-break-${wordBreak}`]: !!wordBreak,
   }, className);
 
   return (
@@ -51,6 +54,10 @@ Title.propTypes = {
    * Defines the title text align
    */
   textAlign: PropTypes.oneOf(['center', 'left', 'right', 'justify']),
+  /**
+   * Defines the title breaks
+   */
+  wordBreak: PropTypes.oneOf(['normal', 'words', 'all', 'truncate']),
 };
 
 Title.defaultProps = {
@@ -58,6 +65,7 @@ Title.defaultProps = {
   tagName: 'h1',
   size: undefined,
   textAlign: undefined,
+  wordBreak: 'normal',
 };
 
 export default React.memo(Title);

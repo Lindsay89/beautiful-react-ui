@@ -20,6 +20,10 @@ export type TitleProps = DefaultProps & {
    * Defines the title text align
    */
   textAlign?: 'center' | 'left' | 'right' | 'justify',
+  /**
+   * Defines the title breaks
+   */
+  wordBreak?: 'normal' | 'words' | 'all' | 'truncate',
 };
 
 declare const Title: FunctionComponent<TitleProps>;
