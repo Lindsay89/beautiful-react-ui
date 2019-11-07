@@ -63,7 +63,7 @@ DisplayField.defaultProps = {
   labelColor: 'default',
   valueColor: 'default',
   borderStyle: 'solid',
-  boldLabel: true,
+  boldLabel: false,
   boldValue: false
 };
 

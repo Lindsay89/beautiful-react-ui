@@ -52,7 +52,8 @@ var Icon = function Icon(_ref) {
   return _react["default"].createElement(_reactFontawesome.FontAwesomeIcon, _extends({
     icon: name,
     size: faSize,
-    className: classList
+    className: classList,
+    fixedWidth: true
   }, rest));
 };
 

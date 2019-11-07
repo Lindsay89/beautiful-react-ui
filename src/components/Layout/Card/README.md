@@ -1,7 +1,7 @@
 ### Basic Usage
 
 ```jsx
-import { Card, Avatar } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-ui';
 
 <Card>
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -9,8 +9,10 @@ import { Card, Avatar } from 'beautiful-ui';
     Pride and Prejudice
   </Card.Title>
   <Card.Content> 
-    <p>Vanity and pride are different things, though the words are often used synonymously. 
-    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
@@ -23,7 +25,7 @@ import { Card, Avatar } from 'beautiful-ui';
 By setting the `float` prop to `true` the card will float up a bit on mouse hover
 
 ```jsx
-import { Card, Avatar } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-ui';
 
 <Card float>
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -31,8 +33,10 @@ import { Card, Avatar } from 'beautiful-ui';
     Pride and Prejudice
   </Card.Title>
   <Card.Content> 
-    <p>Vanity and pride are different things, though the words are often used synonymously. 
-    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
@@ -46,7 +50,7 @@ import { Card, Avatar } from 'beautiful-ui';
 The `fluid` prop will adapt the Card's width to its container.
 
 ```jsx
-import { Card, Avatar } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-ui';
 
 <Card fluid>
   <Card.Image src="https://placeimg.com/1024/300/nature" alt="A stunning title" />
@@ -54,7 +58,9 @@ import { Card, Avatar } from 'beautiful-ui';
     The creature
   </Card.Title>
   <Card.Content> 
-    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+    <Paragraph>
+      Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/120/120/people" displayName="Mary Shelley" size="small" state="online" /> 
@@ -68,7 +74,7 @@ the `textAlign` prop is a valid prop for both Card component and its children, e
 it allows to horizontally align the text.
 
 ```jsx
-import { Card, Avatar } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-ui';
 
 <Card textAlign="right">
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -76,8 +82,10 @@ import { Card, Avatar } from 'beautiful-ui';
     Pride and Prejudice
   </Card.Title>
   <Card.Content> 
-    <p>Vanity and pride are different things, though the words are often used synonymously. 
-    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer textAlign="left"> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
@@ -91,7 +99,7 @@ import { Card, Avatar } from 'beautiful-ui';
 The `orientation` prop defines the card's orientation, by default is set the `vertical`.
 
 ```jsx
-import { Card, Pill } from 'beautiful-ui';
+import { Card, Pill, Paragraph } from 'beautiful-ui';
 
 <Card orientation="horizontal">
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
@@ -99,7 +107,9 @@ import { Card, Pill } from 'beautiful-ui';
     The creature
   </Card.Title>
   <Card.Content> 
-    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+    <Paragraph>
+      Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Pill color="info">#ghotic</Pill> 
@@ -124,7 +134,9 @@ import { Card, Pill, Alert, Icon } from 'beautiful-ui';
     The creature
   </Card.Title>
   <Card.Content> 
-    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+    <Paragraph>
+      Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Pill color="info">#ghotic</Pill> 
@@ -141,7 +153,7 @@ The `actionButton` prop shows a menu-like icon to the top right corner of the ca
 whilst the `onActionButtonClick` prop defines the function to be performed when clicked.
 
 ```jsx
-import { Card, Avatar } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-ui';
 
 <Card actionButton onActionButtonClick={() => alert('Button clicked')}>
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -149,8 +161,10 @@ import { Card, Avatar } from 'beautiful-ui';
     Pride and Prejudice
   </Card.Title>
   <Card.Content> 
-    <p>Vanity and pride are different things, though the words are often used synonymously. 
-    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
@@ -163,7 +177,7 @@ import { Card, Avatar } from 'beautiful-ui';
 The `actionButtonIcon` prop allows to override the default action button's icon.
 
 ```jsx
-import { Card, Avatar } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-ui';
 
 <Card orientation="horizontal" actionButton actionButtonIcon="heart" onActionButtonClick={() => alert('Button clicked')}>
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
@@ -171,7 +185,9 @@ import { Card, Avatar } from 'beautiful-ui';
     The creature
   </Card.Title>
   <Card.Content> 
-    <p>Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.</p> 
+    <Paragraph>
+      Even broken in spirit as he is, no one can feel more deeply than he does the beauties of nature. The starry sky, the sea, and every sight afforded by these wonderful regions, seems still to have the power of elevating his soul from earth. Such a man has a double existence: he may suffer misery, and be overwhelmed by disappointments; yet, when he has retired into himself, he will be like a celestial spirit that has a halo around him, within whose circle no grief or folly ventures.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Mary Shelley" size="small" state="online" /> 
@@ -188,7 +204,7 @@ The Card component comes with a set of renderers to override the standard behavi
 If defined, an `actionButtonRenderer` prop will change the default actionButton behaviour.
 
 ```jsx
-import { Icon, Button, Avatar } from 'beautiful-ui';
+import { Icon, Button, Avatar, Paragraph } from 'beautiful-ui';
 
 CustomRenderer = () => [
   <Button icon="envelope" color="primary">Mail</Button>,
@@ -201,8 +217,10 @@ CustomRenderer = () => [
     Pride and Prejudice
   </Card.Title>
   <Card.Content> 
-    <p>Vanity and pride are different things, though the words are often used synonymously. 
-    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
@@ -215,7 +233,7 @@ CustomRenderer = () => [
 If defined, an `imageRenderer` prop will change the default image behaviour.
 
 ```jsx
-import { Icon, Button, Avatar } from 'beautiful-ui';
+import { Icon, Button, Avatar, Paragraph } from 'beautiful-ui';
 
 CustomRenderer = () => (
   <div class="custom-image-render"> 
@@ -229,8 +247,10 @@ CustomRenderer = () => (
     Pride and Prejudice
   </Card.Title>
   <Card.Content> 
-    <p>Vanity and pride are different things, though the words are often used synonymously. 
-    A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.</p> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
   </Card.Content>
   <Card.Footer> 
     <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 

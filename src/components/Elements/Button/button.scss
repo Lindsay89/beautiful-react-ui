@@ -112,17 +112,21 @@
   // ----------------------------
   // ICON
   // ----------------------------
+  // @todo: the following sizes should derive from some tailwind instruction
   &.btn-icon-only {
     @apply px-0;
 
+    height: 2.25rem;
     width: 2.25rem;
 
     &.btn-sm {
       width: 1.625rem;
+      height: 1.625rem;
     }
 
     &.btn-lg {
       width: 2.875rem;
+      height: 2.875rem;
     }
 
     > .bi.bi-icon {

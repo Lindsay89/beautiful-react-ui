@@ -19,11 +19,11 @@ export type AccordionProps = DefaultProps & {
   /**
    * Overrides the standard open icon
    */
-  iconOpen: IconProps
+  iconOpen?: IconProps
   /**
    * Overrides the standard close icon
    */
-  iconClose: IconProps,
+  iconClose?: IconProps,
 };
 
 declare const Accordion: FunctionComponent<AccordionProps>;

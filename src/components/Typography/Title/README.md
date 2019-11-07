@@ -67,3 +67,27 @@ import { Title } from 'beautiful-ui';
   <Title textAlign="right" tagName="h4">Right alinged title</Title>
 </>
 ```
+
+### Word break
+
+```jsx
+import { Title, Divider } from 'beautiful-ui';
+
+<>
+  <Title wordBreak="normal" style={{ maxWidth: '7rem', background: '#edf2f7', padding: '1rem' }}>
+    A very, very looooooooooong title
+  </Title>
+  <Divider line="dotted" />
+  <Title wordBreak="words" style={{ maxWidth: '7rem', background: '#edf2f7', padding: '1rem' }}>
+    A very, very looooooooooong title
+  </Title>
+  <Divider line="dotted" />
+  <Title wordBreak="all" style={{ maxWidth: '7rem', background: '#edf2f7', padding: '1rem' }}>
+    A very, very looooooooooong title
+  </Title>
+  <Divider line="dotted" />
+  <Title wordBreak="truncate" style={{ maxWidth: '7rem', background: '#edf2f7', padding: '1rem' }}>
+    A very, very looooooooooong title
+  </Title>
+</>
+```

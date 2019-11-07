@@ -15,9 +15,13 @@ export type ParagraphProps = DefaultProps & {
   /**
    * Defines the paragraph text align
    */
- textAlign?: 'center' | 'left' | 'right' | 'justify',
+  textAlign?: 'center' | 'left' | 'right' | 'justify',
+  /**
+   * Defines the paragraph breaks
+   */
+  wordBreak?: 'normal' | 'words' | 'all' | 'truncate',
 };
 
-declare const Title: FunctionComponent<ParagraphProps>;
+declare const Paragraph: FunctionComponent<ParagraphProps>;
 
-export default Title;
+export default Paragraph;

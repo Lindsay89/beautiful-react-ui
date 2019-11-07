@@ -33,6 +33,26 @@
   }
 
   // ----------------------------
+  // Word break
+  // ----------------------------
+  &.bi-title-break-normal {
+    @apply break-normal;
+  }
+
+  &.bi-title-break-words {
+    @apply break-words;
+  }
+
+  &.bi-title-break-all {
+    @apply break-all;
+  }
+
+  &.bi-title-break-truncate {
+    @apply truncate;
+  }
+
+
+  // ----------------------------
   // Colors
   // ----------------------------
   @include title-color("primary");
