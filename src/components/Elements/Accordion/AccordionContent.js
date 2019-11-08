@@ -1,34 +1,28 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Caret from '../_Caret';
 import Button from '../Button';
-import { IconProp } from '../../../shared';
+import { makeCallback } from '../../../shared';
 
 /**
  * Accordion content shows its content if active is provided
  */
 const AccordionContent = (props) => {
-  const { internalId, children, active, title, onChange, iconOpen, iconClose, ...rest } = props;
-  const classList = classNames('bi', 'bi-acc-content', {
-    'acc-content-show': active,
+  const { internalId, children, active, title, onChange, ...rest } = props;
+  const classList = classNames('bi', 'bi-accordion-item', {
+    'bi-item-open': active,
   });
-  const icon = active ? iconOpen : iconClose;
+
+  const onClickHandler = makeCallback(onChange, internalId);
 
   return (
     <div className={classList} {...rest}>
-      <Button
-        block
-        color="transparent"
-        outline
-        onClick={() => {
-          onChange(internalId);
-        }}
-        className="acc-title-button"
-        icon={icon}
-      >
+      <Button fluid color="transparent" onClick={onClickHandler} className="bi-accordion-toggle">
+        <Caret />
         {title}
       </Button>
-      <div className="acc-content">
+      <div className="bi-accordion-content">
         {children}
       </div>
     </div>
@@ -36,18 +30,16 @@ const AccordionContent = (props) => {
 };
 
 AccordionContent.propTypes = {
-  internalId: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
-  iconOpen: IconProp,
-  iconClose: IconProp,
-  title: PropTypes.string,
+  internalId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  active: PropTypes.bool,
+  onChange: PropTypes.func,
+  title: PropTypes.node,
 };
 
 AccordionContent.defaultProps = {
+  active: false,
   title: undefined,
-  iconOpen: 'minus',
-  iconClose: 'plus',
+  onChange: undefined,
 };
 
 export default React.memo(AccordionContent);

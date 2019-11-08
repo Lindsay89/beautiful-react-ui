@@ -10,7 +10,7 @@
 
 .bi.bi-pill {
   @apply bg-default-lighter text-default-darker font-sans font-normal text-xs font-normal text-center px-2 py-1;
-  @apply leading-none uppercase;
+  @apply leading-none antialiased uppercase;
 
   box-sizing: border-box;
 

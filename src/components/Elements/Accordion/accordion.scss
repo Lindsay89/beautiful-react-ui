@@ -1,99 +1,85 @@
-@mixin create-acc-color($colorName) {
-  &.acc-color-#{$colorName} {
-    @apply border-t border-b-0 border-r border-l border-solid;
-
-    border-color: theme("colors.#{$colorName}");
-
-    .bi.bi-acc-content {
-      @apply border-t-0;
-
-      &.acc-content-show {
-        @apply border-t-0 border-b;
-
-        border-color: theme("colors.#{$colorName}");
-
-        .acc-title-button {
-          @apply text-#{$colorName} border-b-0;
-        }
-
-        .acc-content {
-          flex-basis: auto;
-        }
-
-        &:last-child {
-          @apply border-b;
-        }
-      }
-
-      .acc-title-button {
-        @apply text-#{$colorName}-darker border-t-0  border-b border-solid;
-
-        border-color: theme("colors.#{$colorName}");
+@mixin make-accordion-color($colorName) {
+  &.bi-accordion-#{$colorName} {
+    .bi.bi-accordion-item {
+      > .bi-accordion-toggle {
+        @apply text-#{$colorName};
       }
     }
   }
 }
 
 .bi.bi-accordion {
-  @apply max-w-full rounded font-sans overflow-hidden border border-solid border-t-0;
+  @apply max-w-full rounded font-sans shadow-lg overflow-hidden border border-default-light border-solid;
 
-  border-color: theme("colors.default");
+  transition: box-shadow 0.25s ease-in-out;
+
+  &:hover {
+    @apply shadow-xl;
+  }
 
   + .bi.bi-accordion {
     @apply mt-4;
   }
 
-  .bi.bi-acc-content {
-    flex-basis: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-color: theme("colors.default");
+  // ----------------------------
+  // Accordion Item
+  // ----------------------------
+  .bi.bi-accordion-item {
 
-    @apply text-default-darker border-t border-r-0  border-l-0 border-b-0 border-solid;
+    // the actual button
+    > .bi-accordion-toggle {
+      @apply text-left m-0 border-b border-solid border-default-lighter rounded-none bg-white text-default;
 
-    &:last-child {
+      background-image: linear-gradient(to top, rgba(207, 207, 207, 0.07), rgba(211, 211, 211, 0.06), rgba(216, 216, 216, 0.06), rgba(220, 220, 220, 0.05), rgba(224, 224, 224, 0.04), rgba(229, 229, 229, 0.04), rgba(233, 233, 233, 0.03), rgba(238, 238, 238, 0.03), rgba(242, 242, 242, 0.02), rgba(246, 246, 246, 0.01), rgba(251, 251, 251, 0.01), rgba(255, 255, 255, 0));
+
+      &:hover {
+        @apply text-default-darker;
+      }
+
+      .bi.bi-caret {
+        transition: transform 0.25s ease-in-out;
+      }
+    }
+
+    // the content
+    .bi-accordion-content {
+      @apply leading-tight antialiased text-base font-normal tracking-normal text-default-darker h-0 overflow-hidden opacity-0;
+
+      transform: translateY(-0.35rem);
+      transition: opacity 0.35s ease-in-out, transform 0.25s ease-in-out;
+    }
+
+    // last child
+    &:last-child > .bi-accordion-toggle {
       @apply border-b-0;
     }
 
-    &.acc-vertical {
-      flex-direction: row;
-    }
-
-    .acc-title-button {
-      @apply font-sans text-default-darker text-left m-0 p-3 font-medium bg-default-lighter rounded-none;
-    }
-
-    > .acc-content {
-      @apply px-3 overflow-hidden;
-
-      flex-basis: 0;
-    }
-  }
-
-  &.acc-color-default {
-    .acc-content-show {
-      @apply bg-white;
-
-      .acc-title-button {
-        @apply text-primary bg-white;
+    // item open
+    &.bi-item-open {
+      > .bi-accordion-toggle {
+        @apply text-default-darker border-b-0;
       }
 
-      .acc-content {
-        @apply text-default-darker;
+      .bi-accordion-content {
+        @apply h-auto p-4 bg-default-lighter shadow-inner opacity-100;
 
-        flex-basis: auto;
+        transform: translateY(0);
+      }
+
+      .bi.bi-caret {
+        transform: rotate(180deg);
       }
     }
   }
 
+
   // ----------------------------
-  // COLORS
+  // Colors
   // ----------------------------
-  @include create-acc-color("primary");
-  @include create-acc-color("secondary");
-  @include create-acc-color("info");
-  @include create-acc-color("warning");
-  @include create-acc-color("danger");
-  @include create-acc-color("success");
+  @include make-accordion-color("primary");
+  @include make-accordion-color("secondary");
+  @include make-accordion-color("info");
+  @include make-accordion-color("warning");
+  @include make-accordion-color("danger");
+  @include make-accordion-color("success");
 }

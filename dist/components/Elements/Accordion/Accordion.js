@@ -38,9 +38,7 @@ var cloneAccordionContents = function cloneAccordionContents(child, index, props
   return _react["default"].cloneElement(child, {
     internalId: index,
     active: props.active === index,
-    onChange: props.onChange,
-    iconOpen: props.iconOpen,
-    iconClose: props.iconClose
+    onChange: props.onChange
   });
 };
 
@@ -50,7 +48,7 @@ var Accordion = _react["default"].memo(function (props) {
       className = props.className,
       rest = _objectWithoutProperties(props, ["children", "color", "className"]);
 
-  var classList = (0, _classnames["default"])('bi bi-accordion', "acc-color-".concat(color), className);
+  var classList = (0, _classnames["default"])('bi bi-accordion', "bi-accordion-".concat(color), className);
   return _react["default"].createElement("div", _extends({
     className: classList
   }, rest), _react.Children.map(children, function (child, index) {
@@ -60,17 +58,15 @@ var Accordion = _react["default"].memo(function (props) {
 
 Accordion.propTypes = {
   color: _shared.Color,
-  onChange: _propTypes["default"].func.isRequired,
-  active: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]).isRequired,
-  iconOpen: _shared.IconProp,
-  iconClose: _shared.IconProp,
+  onChange: _propTypes["default"].func,
+  active: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
   children: _propTypes["default"].node
 };
 Accordion.defaultProps = {
   children: undefined,
-  color: 'default',
-  iconOpen: 'minus',
-  iconClose: 'plus'
+  onChange: undefined,
+  active: undefined,
+  color: 'default'
 };
 Accordion.Content = _AccordionContent["default"];
 var _default = Accordion;

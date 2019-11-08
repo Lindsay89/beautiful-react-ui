@@ -11,6 +11,8 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _Caret = _interopRequireDefault(require("../_Caret"));
+
 var _Button = _interopRequireDefault(require("../Button"));
 
 var _shared = require("../../../shared");
@@ -29,42 +31,34 @@ var AccordionContent = function AccordionContent(props) {
       active = props.active,
       title = props.title,
       onChange = props.onChange,
-      iconOpen = props.iconOpen,
-      iconClose = props.iconClose,
-      rest = _objectWithoutProperties(props, ["internalId", "children", "active", "title", "onChange", "iconOpen", "iconClose"]);
+      rest = _objectWithoutProperties(props, ["internalId", "children", "active", "title", "onChange"]);
 
-  var classList = (0, _classnames["default"])('bi', 'bi-acc-content', {
-    'acc-content-show': active
+  var classList = (0, _classnames["default"])('bi', 'bi-accordion-item', {
+    'bi-item-open': active
   });
-  var icon = active ? iconOpen : iconClose;
+  var onClickHandler = (0, _shared.makeCallback)(onChange, internalId);
   return _react["default"].createElement("div", _extends({
     className: classList
   }, rest), _react["default"].createElement(_Button["default"], {
-    block: true,
+    fluid: true,
     color: "transparent",
-    outline: true,
-    onClick: function onClick() {
-      onChange(internalId);
-    },
-    className: "acc-title-button",
-    icon: icon
-  }, title), _react["default"].createElement("div", {
-    className: "acc-content"
+    onClick: onClickHandler,
+    className: "bi-accordion-toggle"
+  }, _react["default"].createElement(_Caret["default"], null), title), _react["default"].createElement("div", {
+    className: "bi-accordion-content"
   }, children));
 };
 
 AccordionContent.propTypes = {
-  internalId: _propTypes["default"].string.isRequired,
-  active: _propTypes["default"].bool.isRequired,
-  onChange: _propTypes["default"].func.isRequired,
-  iconOpen: _shared.IconProp,
-  iconClose: _shared.IconProp,
-  title: _propTypes["default"].string
+  internalId: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].number]).isRequired,
+  active: _propTypes["default"].bool,
+  onChange: _propTypes["default"].func,
+  title: _propTypes["default"].node
 };
 AccordionContent.defaultProps = {
+  active: false,
   title: undefined,
-  iconOpen: 'minus',
-  iconClose: 'plus'
+  onChange: undefined
 };
 
 var _default = _react["default"].memo(AccordionContent);
