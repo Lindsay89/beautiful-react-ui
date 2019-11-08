@@ -1,7 +1,7 @@
 @import "../../../theme/utils/animations";
 
 .bi.bi-popover {
-  @apply border border-solid p-2 bg-white rounded text-default-darker leading-tight font-normal font-sans text-base;
+  @apply border border-solid p-2 bg-white rounded antialiased text-default-darker leading-tight font-normal font-sans text-base;
 
   border-color: theme("colors.default-light");
 

@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Color, IconProp, warn } from '../../../shared';
+import { Color, warn } from '../../../shared';
 import AccordionContent from './AccordionContent';
 
 import './accordion.scss';
@@ -20,8 +20,6 @@ const cloneAccordionContents = (child, index, props) => {
     internalId: index,
     active: props.active === index,
     onChange: props.onChange,
-    iconOpen: props.iconOpen,
-    iconClose: props.iconClose,
   });
 };
 
@@ -32,7 +30,7 @@ const cloneAccordionContents = (child, index, props) => {
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Accordion = React.memo((props) => {
   const { children, color, className, ...rest } = props;
-  const classList = classNames('bi bi-accordion', `acc-color-${color}`, className);
+  const classList = classNames('bi bi-accordion', `bi-accordion-${color}`, className);
 
   return (
     <div className={classList} {...rest}>
@@ -54,22 +52,14 @@ Accordion.propTypes = {
   /**
    * The callback to be performed on content change
    */
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   /**
    * Defines the current active tab index
    */
   active: PropTypes.oneOfType([
     PropTypes.number,
     PropTypes.string,
-  ]).isRequired,
-  /**
-   * Overrides the standard open icon
-   */
-  iconOpen: IconProp,
-  /**
-   * Overrides the standard close icon
-   */
-  iconClose: IconProp,
+  ]),
   /**
    * @ignore
    */
@@ -78,9 +68,9 @@ Accordion.propTypes = {
 
 Accordion.defaultProps = {
   children: undefined,
+  onChange: undefined,
+  active: undefined,
   color: 'default',
-  iconOpen: 'minus',
-  iconClose: 'plus',
 };
 
 // shortcut to AccordionContent so that we can use it as the following: `Accordion.Content`

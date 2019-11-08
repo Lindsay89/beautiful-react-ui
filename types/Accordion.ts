@@ -1,6 +1,5 @@
 import { FunctionComponent } from 'react';
 import { Callback, Color, DefaultProps } from './_shared';
-import { IconProps } from './Icon';
 
 export type AccordionProps = DefaultProps & {
   /**
@@ -11,21 +10,13 @@ export type AccordionProps = DefaultProps & {
   /**
    * The callback to be performed on content change
    */
-  onChange: Callback<string>,
+  onChange?: Callback<string>,
   /**
    * Defines the current active tab index
    */
-  active: number | string,
-  /**
-   * Overrides the standard open icon
-   */
-  iconOpen?: IconProps
-  /**
-   * Overrides the standard close icon
-   */
-  iconClose?: IconProps,
+  active?: number | string,
 };
 
-declare const Accordion: FunctionComponent<AccordionProps>;
+declare const Accordion: FunctionComponent<AccordionProps> & { Content: FunctionComponent<{ title?: React.ReactNode }> };
 
 export default Accordion;

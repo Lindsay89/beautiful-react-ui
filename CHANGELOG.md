@@ -618,3 +618,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - DisplayField default label style is normal
 - Paragraph breakStyle prop
 - Title breakStyle prop
+
+## [0.34.5] - 2019-11-07
+
+### Fixed
+
+- Accordion general glitches
+- Removed Accodion icons, added caret

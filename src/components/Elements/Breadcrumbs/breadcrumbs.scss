@@ -7,7 +7,7 @@
     @apply list-none m-0 p-0;
 
     .bi.breadcrumb-item {
-      @apply inline text-default font-sans font-normal text-base leading-tight;
+      @apply inline antialiased text-default font-sans font-normal text-base leading-tight;
 
       &::after {
         @apply mx-2;

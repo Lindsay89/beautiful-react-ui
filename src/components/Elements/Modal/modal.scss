@@ -1,7 +1,7 @@
 @import "../../../theme/utils/animations.scss";
 
 .bi-modal-wrapper {
-  @apply inset-0 fixed overflow-hidden text-default-darker leading-tight font-normal font-sans text-base;
+  @apply inset-0 fixed overflow-hidden antialiased text-default-darker leading-tight font-normal font-sans text-base;
   @apply flex flex-wrap items-start;
 
   .bi-backdrop {

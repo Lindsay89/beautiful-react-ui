@@ -17,7 +17,7 @@
   // NAV BAR
   // ----------------------------
   .bi-tab-nav {
-    @apply border-t-0 border-r-0 border-l-0 border-b border-solid font-sans font-normal text-base;
+    @apply border-t-0 border-r-0 border-l-0 border-b border-solid antialiased font-sans font-normal text-base;
 
     border-color: theme("colors.default");
 

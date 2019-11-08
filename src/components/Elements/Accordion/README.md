@@ -3,109 +3,91 @@
 As the Accordion is a controlled component, we need to wrap it within a stateful one
 
 ```jsx
-// stateful accordion component
-const AccordionStateful = () => {
+import { Accordion } from 'beautiful-ui';
+
+/**
+ * Since Accordion is a controlled component, an uncontrolled accordion 
+ * has been created for the example purpose.
+ */ 
+const UncontrolledAccordion = (props) => {
   const [current, setCurrent] = React.useState(0);
 
+  const onChangeHandler = (e, id) => {
+     setCurrent(id === current ? null : id);
+  };
+
   return (
-    <Accordion onChange={setCurrent} active={current}>
-      <Accordion.Content title="fancy title">
-        <div>
-          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? </p>
-        </div>
+    <Accordion onChange={onChangeHandler} active={current} {...props}>
+      <Accordion.Content title="Content title">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Proin at ex nec tellus blandit ultricies. Nulla facilisi. 
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+        Sed finibus, est sed interdum feugiat, metus diam laoreet lacus, ut viverra ex tellus vitae lorem.
       </Accordion.Content>
-      <Accordion.Content title="a different fancy title">
-        <div>
-          <p>Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-        </div>
+      <Accordion.Content title="Content title">
+        Vivamus sed condimentum risus. Nullam pretium dolor ut odio vestibulum eleifend. 
+        Donec vulputate, lectus non sollicitudin ullamcorper, neque tellus facilisis mauris, a vehicula justo diam ut diam. 
+        Suspendisse id sapien congue, consequat dui et, vulputate mauris.
       </Accordion.Content>
-      <Accordion.Content title="a new different fancy title">
-        <div>
-          <p> The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.</p>
-        </div>
+      <Accordion.Content title="Content title">
+        Quisque tellus nunc, pharetra vel massa nec, elementum tincidunt purus. 
+        Etiam id orci eu ex volutpat vehicula. Nullam blandit nibh venenatis, elementum arcu vel, vestibulum purus. 
+        Mauris eu augue eu mi faucibus viverra.
       </Accordion.Content>
     </Accordion>
   );
 };
 
 
-<AccordionStateful />
+<UncontrolledAccordion />
 ```
 
+### Color
 
-### Colors
-
-The `color` prop defines both the accordion background color and its contents color.
+The `color` prop defines the accordion title color
 
 ```jsx
-// stateful accordion component
-const AccordionStateful = (props) => {
+import { Accordion } from 'beautiful-ui';
+
+/**
+ * Since Accordion is a controlled component, an uncontrolled accordion 
+ * has been created for the example purpose.
+ */ 
+const UncontrolledAccordion = (props) => {
   const [current, setCurrent] = React.useState(0);
 
+  const onChangeHandler = (e, id) => {
+     setCurrent(id === current ? null : id);
+  };
+
   return (
-    <Accordion {...props} onChange={setCurrent} active={current}>
-      <Accordion.Content title="fancy title">
-        <div>
-          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? </p>
-        </div>
+    <Accordion onChange={onChangeHandler} active={current} {...props}>
+      <Accordion.Content title="Content title">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Proin at ex nec tellus blandit ultricies. Nulla facilisi. 
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+        Sed finibus, est sed interdum feugiat, metus diam laoreet lacus, ut viverra ex tellus vitae lorem.
       </Accordion.Content>
-      <Accordion.Content title="a different fancy title">
-        <div>
-          <p>Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-        </div>
+      <Accordion.Content title="Content title">
+        Vivamus sed condimentum risus. Nullam pretium dolor ut odio vestibulum eleifend. 
+        Donec vulputate, lectus non sollicitudin ullamcorper, neque tellus facilisis mauris, a vehicula justo diam ut diam. 
+        Suspendisse id sapien congue, consequat dui et, vulputate mauris.
       </Accordion.Content>
-      <Accordion.Content title="a new different fancy title">
-        <div>
-          <p> The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.</p>
-        </div>
+      <Accordion.Content title="Content title">
+        Quisque tellus nunc, pharetra vel massa nec, elementum tincidunt purus. 
+        Etiam id orci eu ex volutpat vehicula. Nullam blandit nibh venenatis, elementum arcu vel, vestibulum purus. 
+        Mauris eu augue eu mi faucibus viverra.
       </Accordion.Content>
     </Accordion>
   );
 };
 
 <>
-  <AccordionStateful color="primary" />
-  <AccordionStateful color="secondary" />
-  <AccordionStateful color="info" />
-  <AccordionStateful color="success" />
-  <AccordionStateful color="warning" />
-  <AccordionStateful color="danger" />
+  <UncontrolledAccordion color="primary" />
+  <UncontrolledAccordion color="secondary" />
+  <UncontrolledAccordion color="info" />
+  <UncontrolledAccordion color="success" />
+  <UncontrolledAccordion color="warning" />
+  <UncontrolledAccordion color="danger" />
 </>
-```
-
-### Icons
-
-It is possible to override the standard icons by passing using the `iconOpen` and `iconClose` props. 
-The both of them accept an icon name, an icon names array or the instance of an ``Icon``  component.
-
-```jsx
-import { Icon } from 'beautiful-ui';
-
-// stateful accordion component
-const AccordionStateful = (props) => {
-  const [current, setCurrent] = React.useState(0);
-
-  return (
-    <Accordion {...props} onChange={setCurrent} active={current}>
-      <Accordion.Content title="fancy title">
-        <div>
-          <p>Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? </p>
-        </div>
-      </Accordion.Content>
-      <Accordion.Content title="a different fancy title">
-        <div>
-          <p>Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium.</p>
-        </div>
-      </Accordion.Content>
-      <Accordion.Content title="a new different fancy title">
-        <div>
-          <p> The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.</p>
-        </div>
-      </Accordion.Content>
-    </Accordion>
-  );
-};
-
-
-<AccordionStateful iconOpen="angle-double-up" iconClose={<Icon name="angle-double-down" />} />
 ```

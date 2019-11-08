@@ -12,102 +12,71 @@ describe('Accordion component', () => {
   it('should render without explode', () => {
     const { container } = render(
       <Accordion onChange={noop} active={1}>
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title">
+          Lorem ipsum
         </Accordion.Content>
       </Accordion>,
     );
 
-    const contentsTags = container.querySelectorAll('.bi.bi-acc-content').length;
+    const accordionEl = container.querySelectorAll('div');
 
-    expect(contentsTags).to.equal(2);
+    expect(container).to.exist;
+    expect(accordionEl).to.exist;
   });
 
   it('should have default classes', () => {
     const { container } = render(
       <Accordion onChange={noop} active={1}>
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title">
+          Lorem ipsum...
         </Accordion.Content>
       </Accordion>,
     );
-    const accordionClass = container.querySelector('div');
+    const accordionEl = container.querySelector('div');
 
-    expect(accordionClass.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-accordion']);
+    expect(accordionEl.classList.contains('bi')).to.be.true;
+    expect(accordionEl.classList.contains('bi-accordion')).to.be.true;
+    expect(accordionEl.classList.contains('bi-accordion-default')).to.be.true;
 
-    const childrenAcc = accordionClass.querySelector('div > div');
+    const childrenEl = accordionEl.querySelector('.bi.bi-accordion > div');
 
-    expect(childrenAcc.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-acc-content']);
+    expect(childrenEl.classList.contains('bi')).to.be.true;
+    expect(childrenEl.classList.contains('bi-accordion-item')).to.be.true;
   });
 
   it('should accept an "id" prop', () => {
     const { container } = render(
-      <Accordion onChange={noop} active={1} id="newAcc">
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+      <Accordion onChange={noop} active={1} id="foo">
+        <Accordion.Content title="Title">
+          Lorem ipsum...
         </Accordion.Content>
       </Accordion>,
     );
 
-    const accordion = container.querySelector('.bi.bi-accordion');
+    const accordionEl = container.querySelector('.bi.bi-accordion');
 
-    expect(accordion.id).to.equal('newAcc');
+    expect(accordionEl.id).to.equal('foo');
   });
 
   it('should allow adding custom classes', () => {
     const { container } = render(
-      <Accordion onChange={noop} active={1} className="custom-acc-class">
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+      <Accordion onChange={noop} active={1} className="foo">
+        <Accordion.Content title="Title">
+          Lorem ipsum
         </Accordion.Content>
       </Accordion>,
     );
 
-    const accordion = container.querySelector('.bi.bi-accordion');
+    const accordionEl = container.querySelector('.bi.bi-accordion');
 
-    expect(accordion.getAttribute('class').split(' ')).to.include.members(['custom-acc-class']);
+    expect(accordionEl.classList.contains('foo')).to.be.true;
   });
 
   it('should allow to define custom style', () => {
     const { container } = render(
       <Accordion onChange={noop} active={1} style={{ margin: '30px' }}>
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title">
+          Lorem ipsum...
         </Accordion.Content>
       </Accordion>,
     );
@@ -116,142 +85,120 @@ describe('Accordion component', () => {
     expect(accordion.getAttribute('style')).to.equal('margin: 30px;');
   });
 
+  it('should wipe out non Accordion.Content items', () => {
+    const warnSpy = sinon.spy(console, 'warn');
+
+    const { container } = render(
+      <Accordion onChange={noop} active={1}>
+        <Accordion.Content title="Title">
+          Lorem ipsum...
+        </Accordion.Content>
+        <p id="unwanted">Unwanted</p>
+      </Accordion>,
+    );
+
+    const unwantedItem = container.querySelector('#unwanted');
+
+    expect(unwantedItem).to.equal(null);
+    expect(warnSpy.callCount).to.equal(1);
+  });
+
   it('should allow to change accordion link color', () => {
     const { container, rerender } = render(
-      <Accordion onChange={noop} active={1} color="info">
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+      <Accordion onChange={noop} active={1} color="primary">
+        <Accordion.Content title="Title">
+          Lorem ipsum...
         </Accordion.Content>
       </Accordion>,
     );
 
-    const accordion = container.querySelector('.bi.bi-accordion');
+    const accordionEl = container.querySelector('.bi.bi-accordion');
 
-    expect(accordion.getAttribute('class').split(' ')).to.include.members(['acc-color-info']);
-    expect(accordion.getAttribute('class').split(' ')).to.not.include.members(['acc-color-default']);
+    expect(accordionEl.classList.contains('bi-accordion-primary')).to.be.true;
+    expect(accordionEl.classList.contains('bi-accordion-default')).to.be.false;
 
     rerender(
-      <Accordion onChange={noop} active={1} color="primary">
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+      <Accordion onChange={noop} active={1} color="secondary">
+        <Accordion.Content title="Title">
+          Lorem ipsum...
         </Accordion.Content>
       </Accordion>,
     );
 
-    expect(accordion.getAttribute('class').split(' ')).to.include.members(['acc-color-primary']);
-    expect(accordion.getAttribute('class').split(' ')).to.not.include.members(['acc-color-info']);
+    expect(accordionEl.classList.contains('bi-accordion-secondary')).to.be.true;
+    expect(accordionEl.classList.contains('bi-accordion-primary')).to.be.false;
 
     rerender(
       <Accordion onChange={noop} active={1}>
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title">
+          Lorem ipsum...
         </Accordion.Content>
       </Accordion>,
     );
 
-    expect(accordion.getAttribute('class').split(' ')).to.include.members(['acc-color-default']);
-    expect(accordion.getAttribute('class').split(' ')).to.not.include.members(['acc-color-primary']);
+    expect(accordionEl.classList.contains('bi-accordion-default')).to.be.true;
+    expect(accordionEl.classList.contains('bi-accordion-secondary')).to.be.false;
   });
 
-  it('should possibly allow to override standard icons', () => {
-    const { container, rerender } = render(
-      <Accordion onChange={noop} active={1} iconOpen="heart">
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
+  it('should render the provided number of Accordion.Content', () => {
+    const { container } = render(
+      <Accordion onChange={noop} active={1}>
+        <Accordion.Content title="Title 1">
+          Lorem ipsum
         </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title 2">
+          Lorem ipsum 2
         </Accordion.Content>
-      </Accordion>,
-    );
-
-    const accordion = container.querySelector('.bi.bi-accordion').querySelector('svg');
-    expect(accordion.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-icon']);
-
-    rerender(
-      <Accordion onChange={noop} active={1} iconClose="plus">
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
-        </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title 3">
+          Lorem ipsum 3
         </Accordion.Content>
       </Accordion>,
     );
 
-    expect(accordion.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-icon']);
+    const contentsLen = container.querySelectorAll('.bi-accordion-item').length;
+
+    expect(contentsLen).to.equal(3);
   });
 
   it('should show only one element per time', () => {
     const { container } = render(
       <Accordion onChange={noop} active={1}>
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
+        <Accordion.Content title="Title 1">
+          Lorem ipsum
         </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title 2">
+          Lorem ipsum 2
+        </Accordion.Content>
+        <Accordion.Content title="Title 3">
+          Lorem ipsum 3
         </Accordion.Content>
       </Accordion>,
     );
 
-    const activeElement = container.querySelector('.bi.bi-acc-content.acc-content-show');
+    const activeEl = container.querySelector('.bi.bi-accordion-item.bi-item-open');
 
-    expect(activeElement).to.exist;
+    expect(activeEl).to.exist;
   });
 
-  it('should if provided perform the onChange function when clicking on the title button', () => {
+  it('should fire the onChange callback when switching between panels', () => {
     const onChangeSpy = sinon.spy();
     const { container } = render(
       <Accordion onChange={onChangeSpy} active={1}>
-        <Accordion.Content title="fancy title">
-          <div>
-            <p>some text here</p>
-          </div>
+        <Accordion.Content title="Title 1">
+          Lorem ipsum
         </Accordion.Content>
-        <Accordion.Content title="a new title">
-          <div>
-            <p>a new text here</p>
-          </div>
+        <Accordion.Content title="Title 2">
+          Lorem ipsum 2
+        </Accordion.Content>
+        <Accordion.Content title="Title 3">
+          Lorem ipsum 3
         </Accordion.Content>
       </Accordion>,
     );
 
-    const accordionButton = container.querySelector('.bi.bi-btn.acc-title-button');
+    const firstItemButton = container.querySelector('.bi-accordion-toggle');
 
-    fireEvent.click(accordionButton);
+    fireEvent.click(firstItemButton);
 
     expect(onChangeSpy.calledOnce).to.be.equal(true);
   });
