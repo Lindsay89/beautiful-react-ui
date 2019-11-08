@@ -21,7 +21,7 @@ full-width fluid button group
 ```jsx
 import { ButtonGroup, Button } from 'beautiful-ui';
 
-<ButtonGroup block>
+<ButtonGroup fluid>
   <Button icon="home">Home</Button>
   <Button icon="file">File</Button>
   <Button icon="paperclip">Paperclip</Button>
@@ -35,37 +35,37 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 import { ButtonGroup, Button } from 'beautiful-ui';
 
 <>
-  <ButtonGroup block color="primary">
+  <ButtonGroup fluid color="primary">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup block color="secondary">
+  <ButtonGroup fluid color="secondary">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup block color="info">
+  <ButtonGroup fluid color="info">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup block color="warning">
+  <ButtonGroup fluid color="warning">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup block color="success">
+  <ButtonGroup fluid color="success">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup block color="danger">
+  <ButtonGroup fluid color="danger">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
@@ -80,19 +80,19 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 import { ButtonGroup, Button } from 'beautiful-ui';
 
 <>
-  <ButtonGroup block size="small">
+  <ButtonGroup fluid size="small">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup color="primary" block size="default">
+  <ButtonGroup color="primary" fluid size="default">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup color="info" block size="large">
+  <ButtonGroup color="info" fluid size="large">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
@@ -107,37 +107,37 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 import { ButtonGroup, Button } from 'beautiful-ui';
 
 <>
-  <ButtonGroup outline block color="primary">
+  <ButtonGroup outline fluid color="primary">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup outline block color="secondary">
+  <ButtonGroup outline fluid color="secondary">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup outline block color="info">
+  <ButtonGroup outline fluid color="info">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup outline block color="warning">
+  <ButtonGroup outline fluid color="warning">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup outline block color="success">
+  <ButtonGroup outline fluid color="success">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>
     <Button icon="coffee">Coffee</Button>
   </ButtonGroup>
-  <ButtonGroup outline block color="danger">
+  <ButtonGroup outline fluid color="danger">
     <Button icon="home">Home</Button>
     <Button icon="file">File</Button>
     <Button icon="paperclip">Paperclip</Button>

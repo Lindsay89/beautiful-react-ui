@@ -6,7 +6,7 @@
     @apply bg-#{$color} border-#{$color} text-white;
 
     &:hover {
-      // box-shadow: 0 0.125rem 0.6875rem 0 rgba(37, 44, 97, 0.15), 0 0.25rem 0.375rem 0 rgba(93, 100, 148, 0.2);
+      // box-shadow: 0 0 0 0.07rem rgba(37, 44, 97, 0.1), 0 0.1rem 0.1rem 0 rgba(93, 100, 148, 0.1);
 
       @apply bg-#{$color}-light;
     }
@@ -26,7 +26,7 @@
     @apply bg-default-lightest text-default-darker;
 
     &:hover {
-      // box-shadow: 0 0.125rem 0.6875rem 0 rgba(37, 44, 97, 0.15), 0 0.25rem 0.375rem 0 rgba(93, 100, 148, 0.2);
+      // box-shadow: 0 0 0 0.07rem rgba(37, 44, 97, 0.1), 0 0.1rem 0.1rem 0 rgba(93, 100, 148, 0.1);
 
       @apply bg-default-lighter;
     }

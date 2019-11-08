@@ -39,6 +39,12 @@ Object.defineProperty(exports, "makeCallback", {
     return _makeCallback["default"];
   }
 });
+Object.defineProperty(exports, "makeKeyboardCallback", {
+  enumerable: true,
+  get: function get() {
+    return _makeKeyboardCallback["default"];
+  }
+});
 Object.defineProperty(exports, "makeIconFromProp", {
   enumerable: true,
   get: function get() {
@@ -99,6 +105,8 @@ var _IconProp = _interopRequireDefault(require("./types/IconProp"));
 var _PillProp = _interopRequireDefault(require("./types/PillProp"));
 
 var _makeCallback = _interopRequireDefault(require("./functions/makeCallback"));
+
+var _makeKeyboardCallback = _interopRequireDefault(require("./functions/makeKeyboardCallback"));
 
 var _makeIconFromProp = _interopRequireDefault(require("./functions/makeIconFromProp"));
 

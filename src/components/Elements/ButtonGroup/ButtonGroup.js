@@ -24,12 +24,12 @@ const cloneButton = (buttonInstance, props) => {
  * Wraps a number of buttons and makes a group out of them
  */
 // eslint-disable-next-line react/prop-types
-const ButtonGroup = ({ children, className, block, id, style, ...props }) => {
+const ButtonGroup = ({ children, className, fluid, id, style, ...props }) => {
   // the reason I'm disabling eslint "react/destructuring-assignment" rule is that I want to keep some props within the
   // props constant, as it will then be passed as a parameter to the cloneButton function.
   /* eslint-disable react/destructuring-assignment */
-  const classList = classNames('bi bi-btn-group', `btn-group-${props.color || 'default'}`, {
-    'group-block': block,
+  const classList = classNames('bi bi-btn-group', `btn-group-${props.color}`, {
+    'group-fluid': fluid,
     'group-outline': props.outline,
     'group-rounded': props.rounded,
   }, className);
@@ -64,7 +64,7 @@ ButtonGroup.propTypes = {
   /**
    * Makes the button completely fluid (full width)
    */
-  block: PropTypes.bool,
+  fluid: PropTypes.bool,
   /**
    * @ignore
    */
@@ -76,7 +76,7 @@ ButtonGroup.defaultProps = {
   size: 'default',
   outline: false,
   rounded: false,
-  block: false,
+  fluid: false,
   children: null,
 };
 

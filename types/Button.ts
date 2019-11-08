@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Color, Size, Callback, DefaultProps } from './_shared';
-import { IconProp } from './Icon';
+import { IconProps } from './Icon';
 import { SpinnerProp } from './Spinner';
 import { PillProps } from './Pill';
 
@@ -45,7 +45,7 @@ export type ButtonProps = DefaultProps & {
   /**
    * Shows an icon, you can pass both a valid Icon component name prop or the instance of an Icon component
    */
-  icon?: string | string[] | ReactElement<IconProp>,
+  icon?: string | string[] | ReactElement<IconProps>,
   /**
    * Shows a spinner icon within the button. The prop value can be "true" to show a standard <Spinner />
    * or the actual instance of a <Spinner /> component.

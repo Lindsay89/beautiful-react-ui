@@ -54,6 +54,7 @@ module.exports = {
             'src/components/Elements/Pill/Pill.js',
             'src/components/Elements/Placeholder/Placeholder.js',
             'src/components/Elements/Spinner/Spinner.js',
+            'src/components/Elements/List/List.js',
             'src/components/Elements/Tab/Tab.js',
             'src/components/Elements/Modal/Modal.js',
             'src/components/Elements/Popover/Popover.js',

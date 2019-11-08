@@ -1,11 +1,11 @@
 /**
- * This function takes a callbackProp and a possible overrideValue as parameters and return a function
+ * This function takes a callbackProp and a possible overrideValue as parameters and returns a function
  * that, given a React SyntheticEvent, will perform the callbackProp passing the event as first parameter
- * and a possible value as second parameter.
- * The purpose of this function is to generate callbacks having similar signatures.
+ * and the possible overrideValue as second parameter.
+ * The purpose of this function is to generate callbacks having a similar signatures.
  *
  * Usage:
- *
+ *s
  * ```
  * <SomeComponent onClick={makeCallback(callbackProp)} />
  *

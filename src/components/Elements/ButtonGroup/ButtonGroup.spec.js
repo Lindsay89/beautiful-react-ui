@@ -98,10 +98,10 @@ describe('ButtonGroup component', () => {
     expect(group.querySelector('button').getAttribute('class').split(' ')).to.include.members(['btn-rounded']);
   });
 
-  it('should allow to apply the block style to all group buttons', () => {
-    const { container } = render(<ButtonGroup block><Button /></ButtonGroup>);
+  it('should allow to apply the fluid style to all group buttons', () => {
+    const { container } = render(<ButtonGroup fluid><Button /></ButtonGroup>);
     const group = container.querySelector('.bi-btn-group');
 
-    expect(group.getAttribute('class').split(' ')).to.include.members(['group-block']);
+    expect(group.getAttribute('class').split(' ')).to.include.members(['group-fluid']);
   });
 });

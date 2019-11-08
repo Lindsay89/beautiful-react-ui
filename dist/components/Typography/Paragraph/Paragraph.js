@@ -30,11 +30,13 @@ var Paragraph = function Paragraph(props) {
       color = props.color,
       fontFamily = props.fontFamily,
       textAlign = props.textAlign,
-      className = props.className,
       wordBreak = props.wordBreak,
-      rest = _objectWithoutProperties(props, ["children", "color", "fontFamily", "textAlign", "className", "wordBreak"]);
+      tiny = props.tiny,
+      light = props.light,
+      className = props.className,
+      rest = _objectWithoutProperties(props, ["children", "color", "fontFamily", "textAlign", "wordBreak", "tiny", "light", "className"]);
 
-  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), "bi-ff-".concat(fontFamily), (_classNames = {}, _defineProperty(_classNames, "bi-p-".concat(textAlign), !!textAlign), _defineProperty(_classNames, "bi-p-break-".concat(wordBreak), !!wordBreak), _classNames), className);
+  var classList = (0, _classnames["default"])('bi bi-p', "bi-p-".concat(color), "bi-ff-".concat(fontFamily), (_classNames = {}, _defineProperty(_classNames, "bi-p-".concat(textAlign), !!textAlign), _defineProperty(_classNames, "bi-p-break-".concat(wordBreak), !!wordBreak), _defineProperty(_classNames, 'bi-p-tiny', tiny), _defineProperty(_classNames, 'bi-p-light', light), _classNames), className);
   return _react["default"].createElement("p", _extends({
     className: classList
   }, rest), children);
@@ -44,13 +46,17 @@ Paragraph.propTypes = {
   color: _shared.Color,
   fontFamily: _propTypes["default"].oneOf(['sans', 'serif', 'mono']),
   textAlign: _propTypes["default"].oneOf(['center', 'left', 'right', 'justify']),
-  wordBreak: _propTypes["default"].oneOf(['normal', 'words', 'all', 'truncate'])
+  wordBreak: _propTypes["default"].oneOf(['normal', 'words', 'all', 'truncate']),
+  tiny: _propTypes["default"].bool,
+  light: _propTypes["default"].bool
 };
 Paragraph.defaultProps = {
   color: 'default',
   fontFamily: 'sans',
   textAlign: undefined,
-  wordBreak: 'normal'
+  wordBreak: 'normal',
+  tiny: false,
+  light: false
 };
 
 var _default = _react["default"].memo(Paragraph);

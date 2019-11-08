@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import noop from 'lodash/noop';
-import Accordion from '.';
+import Accordion from './index';
 
 describe('Accordion component', () => {
   afterEach(() => {

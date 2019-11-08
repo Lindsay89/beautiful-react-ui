@@ -134,7 +134,7 @@ import { Button } from 'beautiful-ui';
 </>
 ```
 
-### Block
+### Fluid
 
 full-width fluid buttons
 
@@ -142,13 +142,13 @@ full-width fluid buttons
 import { Button } from 'beautiful-ui';
 
 <>
-  <Button block>Block button</Button>
-  <Button block color="primary">Block button</Button>
-  <Button block color="secondary">Block button</Button>
-  <Button block color="info">Block button</Button>
-  <Button block color="success">Block button</Button>
-  <Button block color="warning">Block button</Button>
-  <Button block color="danger">Block button</Button>
+  <Button fluid>Block button</Button>
+  <Button fluid color="primary">Block button</Button>
+  <Button fluid color="secondary">Block button</Button>
+  <Button fluid color="info">Block button</Button>
+  <Button fluid color="success">Block button</Button>
+  <Button fluid color="warning">Block button</Button>
+  <Button fluid color="danger">Block button</Button>
 </>
 ```
 

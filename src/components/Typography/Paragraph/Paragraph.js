@@ -15,10 +15,12 @@ import './paragraph.scss';
  * Here's the Paragraph component.
  */
 const Paragraph = (props) => {
-  const { children, color, fontFamily, textAlign, className, wordBreak, ...rest } = props;
+  const { children, color, fontFamily, textAlign, wordBreak, tiny, light, className, ...rest } = props;
   const classList = classNames('bi bi-p', `bi-p-${color}`, `bi-ff-${fontFamily}`, {
     [`bi-p-${textAlign}`]: !!textAlign,
     [`bi-p-break-${wordBreak}`]: !!wordBreak,
+    'bi-p-tiny': tiny,
+    'bi-p-light': light,
   }, className);
 
   return (
@@ -45,6 +47,14 @@ Paragraph.propTypes = {
    * Defines the paragraph breaks
    */
   wordBreak: PropTypes.oneOf(['normal', 'words', 'all', 'truncate']),
+  /**
+   * Makes the text even smaller
+   */
+  tiny: PropTypes.bool,
+  /**
+   * Makes the text color lighter
+   */
+  light: PropTypes.bool,
 };
 
 
@@ -53,6 +63,8 @@ Paragraph.defaultProps = {
   fontFamily: 'sans',
   textAlign: undefined,
   wordBreak: 'normal',
+  tiny: false,
+  light: false,
 };
 
 export default React.memo(Paragraph);

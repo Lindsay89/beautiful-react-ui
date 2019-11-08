@@ -64,9 +64,9 @@ var Button = function Button(props) {
     type: type,
     onClick: (0, _shared.makeCallback)(onClick),
     className: classList
-  }, rest), !!icon && (0, _shared.makeIconFromProp)(icon), !!spinner && (0, _shared.makeSpinnerFromProp)(spinner, {
+  }, rest), _react["default"].createElement(_react["default"].Fragment, null, !!icon && (0, _shared.makeIconFromProp)(icon), !!spinner && (0, _shared.makeSpinnerFromProp)(spinner, {
     size: size
-  }), children, !!pill && (0, _shared.makePillFromProp)(pill));
+  }), children, !!pill && (0, _shared.makePillFromProp)(pill)));
 };
 
 Button.propTypes = {
