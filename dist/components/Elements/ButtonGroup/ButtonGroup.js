@@ -39,13 +39,13 @@ var cloneButton = function cloneButton(buttonInstance, props) {
 var ButtonGroup = function ButtonGroup(_ref) {
   var children = _ref.children,
       className = _ref.className,
-      block = _ref.block,
+      fluid = _ref.fluid,
       id = _ref.id,
       style = _ref.style,
-      props = _objectWithoutProperties(_ref, ["children", "className", "block", "id", "style"]);
+      props = _objectWithoutProperties(_ref, ["children", "className", "fluid", "id", "style"]);
 
-  var classList = (0, _classnames["default"])('bi bi-btn-group', "btn-group-".concat(props.color || 'default'), {
-    'group-block': block,
+  var classList = (0, _classnames["default"])('bi bi-btn-group', "btn-group-".concat(props.color), {
+    'group-fluid': fluid,
     'group-outline': props.outline,
     'group-rounded': props.rounded
   }, className);
@@ -63,7 +63,7 @@ ButtonGroup.propTypes = {
   size: _shared.Size,
   outline: _propTypes["default"].bool,
   rounded: _propTypes["default"].bool,
-  block: _propTypes["default"].bool,
+  fluid: _propTypes["default"].bool,
   children: _propTypes["default"].node
 };
 ButtonGroup.defaultProps = {
@@ -71,7 +71,7 @@ ButtonGroup.defaultProps = {
   size: 'default',
   outline: false,
   rounded: false,
-  block: false,
+  fluid: false,
   children: null
 };
 

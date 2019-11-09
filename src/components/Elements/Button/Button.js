@@ -51,13 +51,15 @@ const Button = (props) => {
     // it is quite safe to disable the following Eslint rule as the button type is guaranteed by the defaultProp
     // eslint-disable-next-line react/button-has-type
     <button disabled={disabled} type={type} onClick={makeCallback(onClick)} className={classList} {...rest}>
-      {/* Generate icon if exists */}
-      {!!icon && makeIconFromProp(icon)}
-      {/* Generate spinner if exists */}
-      {!!spinner && makeSpinnerFromProp(spinner, { size })}
-      {/* Generate pill if exists */}
-      {children}
-      {!!pill && makePillFromProp(pill)}
+      <>
+        {/* Generate icon if exists */}
+        {!!icon && makeIconFromProp(icon)}
+        {/* Generate spinner if exists */}
+        {!!spinner && makeSpinnerFromProp(spinner, { size })}
+        {/* Generate pill if exists */}
+        {children}
+        {!!pill && makePillFromProp(pill)}
+      </>
     </button>
   );
 };

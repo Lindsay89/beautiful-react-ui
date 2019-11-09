@@ -625,3 +625,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Accordion general glitches
 - Removed Accodion icons, added caret
+
+## [0.35.0] - 2019-11-08
+
+### Added
+
+- List component
+- List component tests
+- List component types
+- `tiny` prop to Paragraph component
+- `light` prop to Paragraph component

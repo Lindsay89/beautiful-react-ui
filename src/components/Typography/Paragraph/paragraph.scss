@@ -5,6 +5,10 @@
   @if ($colorName != "default") {
     &.bi-p-#{$colorName} {
       @apply text-#{$colorName};
+
+      &.bi-p-light {
+        @apply text-#{$colorName}-light;
+      }
     }
   }
 }
@@ -72,6 +76,20 @@
 
   &.bi-p-break-truncate {
     @apply truncate;
+  }
+
+  // ----------------------------
+  // Tiny
+  // ----------------------------
+  &.bi-p-tiny {
+    @apply text-sm mb-1;
+  }
+
+  // ----------------------------
+  // Light
+  // ----------------------------
+  &.bi-p-light {
+    @apply text-default;
   }
 
   // ----------------------------

@@ -91,3 +91,42 @@ const UncontrolledAccordion = (props) => {
   <UncontrolledAccordion color="danger" />
 </>
 ```
+
+### With list
+
+```jsx
+import { Accordion, List } from 'beautiful-ui';
+
+/**
+ * Since Accordion is a controlled component, an uncontrolled accordion 
+ * has been created for the example purpose.
+ */ 
+const UncontrolledAccordion = (props) => {
+  const [current, setCurrent] = React.useState(0);
+
+  const onChangeHandler = (e, id) => {
+     setCurrent(id === current ? null : id);
+  };
+
+  return (
+    <Accordion onChange={onChangeHandler} active={current} {...props}>
+      <Accordion.Content title="Content title">
+        <List>
+          <List.Item>List item 1</List.Item>
+          <List.Item>List item 2</List.Item>
+          <List.Item>List item 3</List.Item>
+        </List>
+      </Accordion.Content>
+      <Accordion.Content title="Content title">
+        <List>
+         <List.Item>List item 4</List.Item>
+         <List.Item>List item 5</List.Item>
+         <List.Item>List item 6</List.Item>
+       </List>
+      </Accordion.Content>
+    </Accordion>
+  );
+};
+
+<UncontrolledAccordion />
+```

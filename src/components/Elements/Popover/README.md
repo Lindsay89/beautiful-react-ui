@@ -55,7 +55,7 @@ The `placement` prop defines the position of the popover over the `trigger`:
 import { Button } from 'beautiful-ui';
 
 const Trigger = ({ title }) => (
-  <Button block color="primary">show a <strong>{title}</strong> placed popover</Button>
+  <Button fluid color="primary">show a <strong>{title}</strong> placed popover</Button>
 );
 
 const UncontrolledPopover = ({ placement }) => {

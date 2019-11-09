@@ -104,3 +104,25 @@ import { Paragraph, Divider } from 'beautiful-ui';
   </Paragraph>
 </>
 ```
+
+### Tiny
+
+```jsx
+import { Paragraph } from 'beautiful-ui';
+
+<Paragraph tiny>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Vivamus vitae interdum urna, vel porta neque. 
+</Paragraph>  
+```
+
+### Light
+
+```jsx
+import { Paragraph } from 'beautiful-ui';
+
+<Paragraph light>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+  Vivamus vitae interdum urna, vel porta neque. 
+</Paragraph>
+```

@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Callback, Size, Color, DefaultProps } from './_shared';
-import { IconProp } from './Icon';
+import { IconProps } from './Icon';
 
 export type InputProps = DefaultProps & {
   /**
@@ -34,7 +34,7 @@ export type InputProps = DefaultProps & {
   /**
    * Shows the possible icon
    */
-  icon?: string | string[] | ReactElement<IconProp>,
+  icon?: string | string[] | ReactElement<IconProps>,
   /**
    * Defines the icon position
    */

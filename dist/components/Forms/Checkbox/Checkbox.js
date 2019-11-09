@@ -35,14 +35,14 @@ var Checkbox = function Checkbox(props) {
       style = props.style,
       rest = _objectWithoutProperties(props, ["value", "onChange", "label", "color", "helpText", "className", "style"]);
 
-  var clickHandler = !rest.disabled ? (0, _shared.makeCallback)(onChange, !value) : undefined;
   var classList = (0, _classnames["default"])('bi bi-checkbox', "checkbox-".concat(color), {
     checked: !!value,
     disabled: rest.disabled
   }, className);
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", {
     className: classList,
-    onClick: clickHandler,
+    onClick: !rest.disabled ? (0, _shared.makeCallback)(onChange, !value) : undefined,
+    onKeyUp: (0, _shared.makeKeyboardCallback)(onChange, !value),
     tabIndex: 0,
     role: "checkbox",
     "aria-checked": value,

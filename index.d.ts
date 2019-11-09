@@ -7,6 +7,7 @@ export { default as Button } from './types/Button';
 // export { default as ButtonGroup } from './types/ButtonGroup';
 export { default as Icon } from './types/Icon';
 // export { default as Image } from './types/Image';
+export { default as List } from './types/List';
 export { default as Pill } from './types/Pill';
 export { default as Placeholder } from './types/Placeholder';
 export { default as Spinner } from './types/Spinner';

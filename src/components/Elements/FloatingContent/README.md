@@ -34,7 +34,7 @@ The `placement` prop defines the position of the floating content over the `trig
 import { FloatingContent, Button } from 'beautiful-ui';
 
 const Trigger = ({ title }) => (
-  <Button block color="primary">show a <strong>{title}</strong> placed floating content</Button>
+  <Button fluid color="primary">show a <strong>{title}</strong> placed floating content</Button>
 );
 
 const UncontrolledFloatingContent = (props) => {

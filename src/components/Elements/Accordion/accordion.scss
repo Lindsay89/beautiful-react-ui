@@ -25,10 +25,9 @@
   // Accordion Item
   // ----------------------------
   .bi.bi-accordion-item {
-
     // the actual button
     > .bi-accordion-toggle {
-      @apply text-left m-0 border-b border-solid border-default-lighter rounded-none bg-white text-default;
+      @apply justify-start m-0 border-b border-solid border-default-lighter rounded-none bg-white text-default;
 
       background-image: linear-gradient(to top, rgba(207, 207, 207, 0.07), rgba(211, 211, 211, 0.06), rgba(216, 216, 216, 0.06), rgba(220, 220, 220, 0.05), rgba(224, 224, 224, 0.04), rgba(229, 229, 229, 0.04), rgba(233, 233, 233, 0.03), rgba(238, 238, 238, 0.03), rgba(242, 242, 242, 0.02), rgba(246, 246, 246, 0.01), rgba(251, 251, 251, 0.01), rgba(255, 255, 255, 0));
 
@@ -82,4 +81,12 @@
   @include make-accordion-color("warning");
   @include make-accordion-color("danger");
   @include make-accordion-color("success");
+
+
+  // ----------------------------
+  // Accordion list
+  // ----------------------------
+  .bi.bi-list {
+    @apply -my-3 -mx-1;
+  }
 }

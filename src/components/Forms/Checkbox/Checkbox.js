@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Color, makeCallback } from '../../../shared';
+import { Color, makeCallback, makeKeyboardCallback } from '../../../shared';
 import HelpText from '../_HelpText';
 import Label from '../Label';
 
@@ -12,7 +12,6 @@ import './checkbox.scss';
  */
 const Checkbox = (props) => {
   const { value, onChange, label, color, helpText, className, style, ...rest } = props;
-  const clickHandler = !rest.disabled ? makeCallback(onChange, !value) : undefined;
 
   const classList = classNames('bi bi-checkbox', `checkbox-${color}`, {
     checked: !!value,
@@ -21,8 +20,15 @@ const Checkbox = (props) => {
 
   return (
     <>
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
-      <div className={classList} onClick={clickHandler} tabIndex={0} role="checkbox" aria-checked={value} style={style}>
+      <div
+        className={classList}
+        onClick={!rest.disabled ? makeCallback(onChange, !value) : undefined}
+        onKeyUp={makeKeyboardCallback(onChange, !value)}
+        tabIndex={0}
+        role="checkbox"
+        aria-checked={value}
+        style={style}
+      >
         <input type="checkbox" value={value} {...rest} />
         <span className="check-icon">
           <svg viewBox="0 0 12 10">
