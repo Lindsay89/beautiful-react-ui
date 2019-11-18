@@ -15,7 +15,7 @@
 }
 
 .bi.bi-input {
-  box-sizing: border-box;
+  box-sizing: content-box;
 
   @apply inline-flex align-bottom relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
 
