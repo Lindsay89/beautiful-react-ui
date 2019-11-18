@@ -635,3 +635,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - List component types
 - `tiny` prop to Paragraph component
 - `light` prop to Paragraph component
+
+
+## [0.35.1] - 2019-11-15
+
+### Added
+
+Input component box-sizing changed from 'border-box' to 'content-box'   
