@@ -641,4 +641,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 ### Added
 
-Input component box-sizing changed from 'border-box' to 'content-box'   
+- Input component box-sizing changed from 'border-box' to 'content-box'   
+
+## [0.36.0] - 2019-11-19
+
+### Added
+
+- Breadcrumbs maxDisplayedItems prop

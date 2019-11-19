@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Breadcrumbs from '.';
+import BreadcrumbMenu from './BreadcrumbMenu';
 
 
 describe('Breadcrumbs component', () => {
@@ -109,5 +110,69 @@ describe('Breadcrumbs component', () => {
     render(<Breadcrumbs items={pages} />);
 
     expect(spy.calledOnce).to.be.equal(true);
+  });
+
+  it('should create a button menu when \'maxDisplayedItems\' is defined', () => {
+    const pages = [
+      { path: '/', label: 'home' },
+      { path: '/section1', label: 'Section1' },
+      { path: '/section2', label: 'Section2' },
+      { path: '/section3', label: 'Section3' },
+    ];
+    const { container } = render(<Breadcrumbs items={pages} maxDisplayedItems={2} />);
+
+    const breadcrumbButton = container.querySelector('.bi-breadcrumbs-menu-button');
+
+    expect(breadcrumbButton).to.exist;
+  });
+
+  it('should show only the number defined into \'maxDisplayedItems\' prop', () => {
+    const pages = [
+      { path: '/', label: 'home' },
+      { path: '/section1', label: 'Section1' },
+      { path: '/section2', label: 'Section2' },
+      { path: '/section3', label: 'Section3' },
+    ];
+    const { container } = render(<Breadcrumbs items={pages} maxDisplayedItems={2} />);
+
+    const renderedLi = container.querySelectorAll('li');
+
+    expect(renderedLi.length).to.be.equal(3);
+    expect(renderedLi[0].getAttribute('class').split(' ')).to.include.members(['breadcrumb-item-button']);
+    expect(renderedLi[1].getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-item-button']);
+    expect(renderedLi[2].getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-item-button']);
+  });
+});
+
+// test for Breadcrumb menu
+describe('Breadcrumb menu component', () => {
+  afterEach(() => {
+    sinon.restore();
+    cleanup();
+  });
+
+  it('it should render without explode', () => {
+    const pages = [
+      { path: '/', label: 'home' },
+      { path: '/section1', label: 'Section1' },
+      { path: '/section2', label: 'Section2' },
+      { path: '/section3', label: 'Section3' },
+    ];
+    const { container } = render(<BreadcrumbMenu items={pages} maxDisplayedItems={2} />);
+
+    should.exist(container);
+  });
+
+  it('should render a menu button', () => {
+    const pages = [
+      { path: '/', label: 'home' },
+      { path: '/section1', label: 'Section1' },
+      { path: '/section2', label: 'Section2' },
+      { path: '/section3', label: 'Section3' },
+    ];
+    const { container } = render(<BreadcrumbMenu items={pages} maxDisplayedItems={2} />);
+    const buttonMenu = container.querySelector('.bi-breadcrumbs-menu-button');
+
+    expect(buttonMenu).to.exist;
   });
 });

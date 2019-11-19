@@ -15,6 +15,8 @@ var _shared = require("../../../shared");
 
 var _BreadcrumbItem = _interopRequireDefault(require("./BreadcrumbItem"));
 
+var _BreadcrumbMenu = _interopRequireDefault(require("./BreadcrumbMenu"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
@@ -26,13 +28,23 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 var Breadcrumbs = function Breadcrumbs(props) {
   var items = props.items,
       color = props.color,
+      maxDisplayedItems = props.maxDisplayedItems,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["items", "color", "className"]);
+      rest = _objectWithoutProperties(props, ["items", "color", "maxDisplayedItems", "className"]);
 
   var classList = (0, _classnames["default"])("bi bi-breadcrumbs breadcrumbs-".concat(color), className);
+
+  if (maxDisplayedItems > items.length) {
+    (0, _shared.warn)('It is no possible to show an items number bigger than the items provided');
+    return null;
+  }
+
   return _react["default"].createElement("nav", _extends({
     className: classList
-  }, rest), _react["default"].createElement("ol", null, items.map(function (item) {
+  }, rest), _react["default"].createElement("ol", null, typeof maxDisplayedItems === 'number' && maxDisplayedItems > 0 ? _react["default"].createElement(_BreadcrumbMenu["default"], {
+    items: items,
+    maxDisplayedItems: maxDisplayedItems
+  }) : items.map(function (item) {
     return item.render ? item.render(item) : _react["default"].createElement(_BreadcrumbItem["default"], {
       path: item.path,
       label: item.label,
@@ -49,10 +61,12 @@ Breadcrumbs.propTypes = {
     icon: _shared.IconProp,
     render: _propTypes["default"].func
   })).isRequired,
-  color: _shared.Color
+  color: _shared.Color,
+  maxDisplayedItems: _propTypes["default"].number
 };
 Breadcrumbs.defaultProps = {
-  color: 'primary'
+  color: 'primary',
+  maxDisplayedItems: 0
 };
 
 var _default = _react["default"].memo(Breadcrumbs);
