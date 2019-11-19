@@ -22,6 +22,10 @@ export type BreadcrumbsProps = DefaultProps & {
    * @default primary
    */
   color?: Color,
+  /*
+   * Defines how many items should be displayed into the breadcrumbs
+   */
+  maxDisplayedItems: number | string,
 };
 
 declare const Breadcrumbs: FunctionComponent<BreadcrumbsProps>;

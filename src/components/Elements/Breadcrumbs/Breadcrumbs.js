@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Color, IconProp } from '../../../shared';
+import { Color, IconProp, warn } from '../../../shared';
 import BreadcrumbItem from './BreadcrumbItem';
+import BreadcrumbMenu from './BreadcrumbMenu';
 
 import './breadcrumbs.scss';
 
@@ -11,13 +12,21 @@ import './breadcrumbs.scss';
  * Defining clickable paths helps the user navigating your app.
  */
 const Breadcrumbs = (props) => {
-  const { items, color, className, ...rest } = props;
+  const { items, color, maxDisplayedItems, className, ...rest } = props;
   const classList = classNames(`bi bi-breadcrumbs breadcrumbs-${color}`, className);
+  const itemsToHide = maxDisplayedItems ? parseInt(maxDisplayedItems, 10) : undefined;
+
+  // Returns a warning massage if the number of displayed items is bigger than the items themselves.
+  if (maxDisplayedItems > items.length) {
+    warn('It is no possible to show an items number bigger than the items provided');
+    return null;
+  }
 
   return (
     <nav className={classList} {...rest}>
       <ol>
-        {items.map((item) => (
+        {itemsToHide && <BreadcrumbMenu items={items} maxDisplayedItems={maxDisplayedItems} key="u" />}
+        {!itemsToHide && items.map((item) => (
           item.render
             ? item.render(item)
             : <BreadcrumbItem path={item.path} label={item.label} icon={item.icon} key={item.path || item.label} />
@@ -44,10 +53,15 @@ Breadcrumbs.propTypes = {
    * @default primary
    */
   color: Color,
+  /*
+  * Defines how many items should be displayed into the breadcrumbs
+  */
+  maxDisplayedItems: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
 
 Breadcrumbs.defaultProps = {
   color: 'primary',
+  maxDisplayedItems: undefined,
 };
 
 export default React.memo(Breadcrumbs);

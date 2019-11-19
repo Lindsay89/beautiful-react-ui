@@ -60,7 +60,7 @@ If defined, the `render` property changes the usual behavior of that breadcrumb.
 ```jsx
 import { Icon } from 'beautiful-ui';
 
-const CustomRenderer = (props) => (<span style={{background:'red'}}>{props.label}</span>);
+const CustomRenderer = (props) => (<span key="test" style={{background:'red'}}>{props.label}</span>);
 
 const pages = [
     { path: '/', label: 'Home' ,icon:'home' },
@@ -69,4 +69,27 @@ const pages = [
 ];
 
 <Breadcrumbs items={pages}/>
+```
+
+### MaxDisplayedItems
+
+If defines, the `maxDisplayedItems` allows to show only a certain number of breadcrumbs elements, hiding the others in a drop-down menu.
+
+
+```jsx
+import { Icon } from 'beautiful-ui';
+
+const CustomRenderer = (props) => (<span key="test" style={{background:'red'}}>{props.label}</span>);
+
+const pages = [
+    { path: '/', label: 'Home' ,icon:'home' },
+    { path: '/section1', label: 'Section1'},
+    { path: '/section2', label: 'Section2'},
+    { path: '/section3', label: 'Section3'},
+    { path: '/section4', label: 'Section4'},
+    { path: '/section5', label: 'Section5' , icon:['fab', 'react'] },
+    { label: 'Current page',icon:<Icon name="bicycle" />   }
+];
+
+<Breadcrumbs items={pages} maxDisplayedItems={2}/>
 ```

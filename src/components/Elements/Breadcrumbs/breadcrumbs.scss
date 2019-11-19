@@ -28,6 +28,10 @@
       .bi.bi-icon {
         @apply mr-2;
       }
+
+      .bi.bi-btn .bi.bi-icon {
+        @apply mr-0;
+      }
     }
   }
 
@@ -57,5 +61,24 @@
 
   &.breadcrumbs-danger ol .bi.breadcrumb-item a {
     @apply text-danger;
+  }
+}
+
+// logic for the hidden breadcrumb menu
+.bi.bi-floater {
+  .bi.bi-list {
+    @apply text-default font-sans font-normal text-base leading-tight bg-white mt-1 border border-default-light border-solid leading-tight rounded shadow-lg;
+
+    .bi-list-item {
+      &:hover {
+        @apply bg-primary-lightest;
+      }
+
+      .bi-list-item-content {
+        a > svg {
+          @apply mr-1;
+        }
+      }
+    }
   }
 }
