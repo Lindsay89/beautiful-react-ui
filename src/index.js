@@ -33,3 +33,6 @@ export { default as Title } from './components/Typography/Title';
 export { default as Paragraph } from './components/Typography/Paragraph';
 export { default as Divider } from './components/Typography/Divider';
 export { default as Link } from './components/Typography/Link';
+
+// Hooks
+export { useWindowResize } from './shared';

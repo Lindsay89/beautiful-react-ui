@@ -12,13 +12,13 @@ var _debounce = _interopRequireDefault(require("lodash/debounce"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var useWindowResize = function useWindowResize(resizeHandler) {
+  var debouncedHandler = (0, _react.useCallback)((0, _debounce["default"])(resizeHandler, 150), [resizeHandler]);
   (0, _react.useEffect)(function () {
-    var debouncedHandler = (0, _debounce["default"])(resizeHandler, 150);
     window.addEventListener('resize', debouncedHandler);
     return function () {
       window.removeEventListener('resize', debouncedHandler);
     };
-  });
+  }, [resizeHandler]);
 };
 
 var _default = useWindowResize;

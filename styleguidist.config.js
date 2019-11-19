@@ -21,18 +21,12 @@ module.exports = {
       description: 'General info about the project',
     },
     {
-      name: 'Documentation',
-      sectionDepth: 2,
-      sections: [
-        {
-          name: 'Installation',
-          content: 'docs/installation.md',
-        },
-        {
-          name: 'Configuration',
-          content: 'docs/configuration.md',
-        },
-      ],
+      name: 'Installation',
+      content: 'docs/configuration.md',
+    },
+    {
+      name: 'Configuration',
+      content: 'docs/configuration.md',
     },
     {
       name: 'Components',
@@ -92,6 +86,10 @@ module.exports = {
           ],
         },
       ],
+    },
+    {
+      name: 'Hooks',
+      content: 'docs/hooks.md',
     },
   ],
   require: [
