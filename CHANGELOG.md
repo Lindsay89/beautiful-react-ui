@@ -660,3 +660,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - `types` directory renamed to `@types` as per the TS convention
+
+## [0.38.0] - 2019-11-19
+
+### Added
+
+- Export for `useWindowResize` hook
+- Hooks documentation page
