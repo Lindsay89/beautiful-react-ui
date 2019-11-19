@@ -15,6 +15,8 @@ var _FloatingContent = _interopRequireDefault(require("../FloatingContent"));
 
 var _List = _interopRequireDefault(require("../List"));
 
+var _Button = _interopRequireDefault(require("../Button/Button"));
+
 var _shared = require("../../../shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -22,8 +24,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
 
@@ -41,23 +41,35 @@ var BreadcrumbsHiddenList = function BreadcrumbsHiddenList(props) {
       isShown = _useState2[0],
       setIsShown = _useState2[1];
 
+  var toggleHandler = (0, _react.useCallback)(function () {
+    setIsShown(!isShown);
+  }, [isShown]);
+
+  var Trigger = _react["default"].createElement(_Button["default"], {
+    icon: "ellipsis-v",
+    color: "transparent",
+    outline: true,
+    size: "small",
+    className: "bi-breadcrumbs-menu-button"
+  });
+
   return _react["default"].createElement("li", {
     className: "bi breadcrumb-item breadcrumb-item-button"
-  }, _react["default"].createElement(_FloatingContent["default"], _extends({
-    onToggle: function onToggle() {
-      return setIsShown(!isShown);
-    },
+  }, _react["default"].createElement(_FloatingContent["default"], {
+    onToggle: toggleHandler,
     isShown: isShown,
-    placement: "bottom-left",
+    trigger: Trigger,
+    placement: "bottom-left"
+  }, _react["default"].createElement(_List["default"], {
+    condensed: true,
     className: "bi-anim-fade-in"
-  }, props), _react["default"].createElement(_List["default"], {
-    condensed: true
   }, hiddenItems.map(function (item) {
     return _react["default"].createElement(_List["default"].Item, {
       style: {
         paddingLeft: '.25rem',
         paddingRight: '1rem'
-      }
+      },
+      key: item.path || item.label
     }, !!item.path && _react["default"].createElement("a", {
       href: item.path
     }, !!item.icon && (0, _shared.makeIconFromProp)(item.icon), item.label), !item.path && _react["default"].createElement(_react["default"].Fragment, null, !!item.icon && (0, _shared.makeIconFromProp)(item.icon), item.label));

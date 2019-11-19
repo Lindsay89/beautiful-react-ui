@@ -165,6 +165,12 @@ Object.defineProperty(exports, "Divider", {
     return _Divider["default"];
   }
 });
+Object.defineProperty(exports, "Link", {
+  enumerable: true,
+  get: function get() {
+    return _Link["default"];
+  }
+});
 
 var _Accordion = _interopRequireDefault(require("./components/Elements/Accordion"));
 
@@ -219,6 +225,8 @@ var _Title = _interopRequireDefault(require("./components/Typography/Title"));
 var _Paragraph = _interopRequireDefault(require("./components/Typography/Paragraph"));
 
 var _Divider = _interopRequireDefault(require("./components/Typography/Divider"));
+
+var _Link = _interopRequireDefault(require("./components/Typography/Link"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

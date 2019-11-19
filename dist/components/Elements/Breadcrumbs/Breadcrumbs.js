@@ -33,6 +33,7 @@ var Breadcrumbs = function Breadcrumbs(props) {
       rest = _objectWithoutProperties(props, ["items", "color", "maxDisplayedItems", "className"]);
 
   var classList = (0, _classnames["default"])("bi bi-breadcrumbs breadcrumbs-".concat(color), className);
+  var itemsToHide = maxDisplayedItems ? parseInt(maxDisplayedItems, 10) : undefined;
 
   if (maxDisplayedItems > items.length) {
     (0, _shared.warn)('It is no possible to show an items number bigger than the items provided');
@@ -41,10 +42,11 @@ var Breadcrumbs = function Breadcrumbs(props) {
 
   return _react["default"].createElement("nav", _extends({
     className: classList
-  }, rest), _react["default"].createElement("ol", null, typeof maxDisplayedItems === 'number' && maxDisplayedItems > 0 ? _react["default"].createElement(_BreadcrumbMenu["default"], {
+  }, rest), _react["default"].createElement("ol", null, itemsToHide && _react["default"].createElement(_BreadcrumbMenu["default"], {
     items: items,
-    maxDisplayedItems: maxDisplayedItems
-  }) : items.map(function (item) {
+    maxDisplayedItems: maxDisplayedItems,
+    key: "u"
+  }), !itemsToHide && items.map(function (item) {
     return item.render ? item.render(item) : _react["default"].createElement(_BreadcrumbItem["default"], {
       path: item.path,
       label: item.label,
@@ -62,11 +64,11 @@ Breadcrumbs.propTypes = {
     render: _propTypes["default"].func
   })).isRequired,
   color: _shared.Color,
-  maxDisplayedItems: _propTypes["default"].number
+  maxDisplayedItems: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string])
 };
 Breadcrumbs.defaultProps = {
   color: 'primary',
-  maxDisplayedItems: 0
+  maxDisplayedItems: undefined
 };
 
 var _default = _react["default"].memo(Breadcrumbs);

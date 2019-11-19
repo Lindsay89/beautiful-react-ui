@@ -1,5 +1,5 @@
 /docs
 /dist
-/types
+/@types
 index.d.ts
 /ts-old-codebase
