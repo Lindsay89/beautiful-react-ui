@@ -114,14 +114,14 @@ FloatingContent.propTypes = {
    */
   trigger: PropTypes.node.isRequired,
   /**
+   * Defines whether the floating content is shown or not
+   */
+  isShown: PropTypes.bool,
+  /**
    * Defines the callback to be performed each time the event defined by the `action` prop fires,
    * by default a `click` event
    */
   onToggle: PropTypes.func.isRequired,
-  /**
-   * Defines whether the floating content is shown or not
-   */
-  isShown: PropTypes.bool,
   /**
    * Defines when to fire the onToggle callback, it can be `click` or `hover`
    */

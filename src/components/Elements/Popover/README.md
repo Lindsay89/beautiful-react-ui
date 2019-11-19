@@ -49,7 +49,9 @@ const UncontrolledPopover = (props) => {
 
 ### Placement
 
-The `placement` prop defines the position of the popover over the `trigger`:
+The `placement` prop defines the placement of the popover over the `trigger`:
+Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`, `left-center`, `right-center`.
+
 
 ```jsx
 import { Button } from 'beautiful-ui';

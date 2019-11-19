@@ -171,6 +171,12 @@ Object.defineProperty(exports, "Link", {
     return _Link["default"];
   }
 });
+Object.defineProperty(exports, "useWindowResize", {
+  enumerable: true,
+  get: function get() {
+    return _shared.useWindowResize;
+  }
+});
 
 var _Accordion = _interopRequireDefault(require("./components/Elements/Accordion"));
 
@@ -227,6 +233,8 @@ var _Paragraph = _interopRequireDefault(require("./components/Typography/Paragra
 var _Divider = _interopRequireDefault(require("./components/Typography/Divider"));
 
 var _Link = _interopRequireDefault(require("./components/Typography/Link"));
+
+var _shared = require("./shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

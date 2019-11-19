@@ -36,12 +36,23 @@ module.exports = {
     },
     Heading: {
       heading: {
-        color: '#3a7bd5',
+        color: '#2d8acc',
+        fontFamily: '\'Ubuntu\', sans-serif',
+      },
+    },
+    Code: {
+      code: {
+        fontFamily: '\'Ubuntu Mono\', sans-serif',
+        backgroundColor: '#D36A81',
+        color: '#fff',
+        fontWeight: '400',
+        padding: '0 5px',
       },
     },
     Para: {
       para: {
-        color: '#332E2E',
+        color: '#606f7b',
+        fontFamily: '\'Ubuntu\', sans-serif',
       },
     },
     StyleGuide: {

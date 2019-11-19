@@ -13,7 +13,6 @@ export { default as Placeholder } from './@types/Placeholder';
 export { default as Spinner } from './@types/Spinner';
 // export { default as Tab } from './types/Tab';
 // export { default as Modal } from './types/Modal';
-export { default as Divider } from './@types/Divider';
 export { default as Popover } from './@types/Popover';
 // export { default as FloatingContent } from './types/FloatingContent';
 
@@ -32,3 +31,8 @@ export { default as Grid } from './@types/Grid';
 // Typography
 export { default as Title } from './@types/Title';
 export { default as Paragraph } from './@types/Paragraph';
+export { default as Divider } from './@types/Divider';
+export { default as Link } from './@types/Link';
+
+// Hooks
+export { default as useWindowResize } from './@types/useWindowResize';

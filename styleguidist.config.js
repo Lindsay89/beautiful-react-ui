@@ -21,18 +21,12 @@ module.exports = {
       description: 'General info about the project',
     },
     {
-      name: 'Documentation',
-      sectionDepth: 2,
-      sections: [
-        {
-          name: 'Installation',
-          content: 'docs/installation.md',
-        },
-        {
-          name: 'Configuration',
-          content: 'docs/configuration.md',
-        },
-      ],
+      name: 'Installation',
+      content: 'docs/configuration.md',
+    },
+    {
+      name: 'Configuration',
+      content: 'docs/configuration.md',
     },
     {
       name: 'Components',
@@ -49,6 +43,7 @@ module.exports = {
             'src/components/Elements/Breadcrumbs/Breadcrumbs.js',
             'src/components/Elements/Button/Button.js',
             'src/components/Elements/ButtonGroup/ButtonGroup.js',
+            'src/components/Elements/DropDown/DropDown.js',
             'src/components/Elements/Icon/Icon.js',
             'src/components/Elements/Image/Image.js',
             'src/components/Elements/Pill/Pill.js',
@@ -92,6 +87,10 @@ module.exports = {
           ],
         },
       ],
+    },
+    {
+      name: 'Hooks',
+      content: 'docs/hooks.md',
     },
   ],
   require: [

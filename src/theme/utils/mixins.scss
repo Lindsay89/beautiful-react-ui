@@ -1,5 +1,5 @@
 // --------------------
-// RIPPLE EFFECT
+// Ripple effect
 // --------------------
 @mixin ripple($opacity: 0.2, $duration: 0.3s) {
   position: relative;
@@ -33,7 +33,7 @@
 }
 
 // --------------------
-// CREATE PLACEHOLDER
+// Create placeholder
 // --------------------
 @mixin create-placeholder($colorName: "default-light") {
   // stylelint-disable
@@ -56,9 +56,217 @@
 }
 
 // ---------------------
-// MATERIAL STYLE GRADIENT
+// Material style gradient
 // ---------------------
 @mixin shadow-gradient() {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.1) 100%);
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#00000000', endColorstr='#0d000000', GradientType=0);
+}
+
+
+// ----------------------------
+// Create pointer arrow
+// ----------------------------
+@mixin make-arrow-pointer($arrowPlacement: 'top-center') {
+  $arrowColor: theme("colors.default-light");
+
+  // ----------------------------
+  // Arrow
+  // ----------------------------
+  &::before {
+    @apply absolute w-0 h-0;
+
+    content: "";
+    z-index: 999;
+  }
+
+  &::after {
+    @apply border h-0 absolute;
+
+    content: "";
+  }
+
+  @if ($arrowPlacement == 'top-center') {
+    &::before {
+      bottom: -0.4rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-top: 0.5rem solid white;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+    }
+
+    &::after {
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-top: 0.5rem solid;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+      border-top-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'top-left') {
+    &::before {
+      bottom: -0.4rem;
+      left: 10%;
+      transform: translate(-50%, 0);
+      border-top: 0.5rem solid white;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+    }
+
+    &::after {
+      bottom: -0.5rem;
+      left: 10%;
+      transform: translate(-50%, 0);
+      border-top: 0.5rem solid;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+      border-top-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'top-right') {
+    &::before {
+      bottom: -0.4rem;
+      left: 90%;
+      transform: translate(-50%, 0);
+      border-top: 0.5rem solid white;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+    }
+
+    &::after {
+      bottom: -0.5rem;
+      left: 90%;
+      transform: translate(-50%, 0);
+      border-top: 0.5rem solid;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-bottom: 0 solid transparent;
+      border-top-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'bottom-center') {
+    &::before {
+      top: -0.4rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-bottom: 0.5rem solid white;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-top: 0 solid transparent;
+    }
+
+    &::after {
+      top: -0.5rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-bottom: 0.5rem solid;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-top: 0 solid transparent;
+      border-bottom-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'bottom-left') {
+    &::before {
+      top: -0.4rem;
+      left: 10%;
+      transform: translate(-50%, 0);
+      border-bottom: 0.5rem solid white;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-top: 0 solid transparent;
+    }
+
+    &::after {
+      top: -0.5rem;
+      left: 10%;
+      transform: translate(-50%, 0);
+      border-bottom: 0.5rem solid;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-top: 0 solid transparent;
+      border-bottom-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'bottom-right') {
+    &::before {
+      top: -0.4rem;
+      left: 90%;
+      transform: translate(-50%, 0);
+      border-bottom: 0.5rem solid white;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-top: 0 solid transparent;
+    }
+
+    &::after {
+      top: -0.5rem;
+      left: 90%;
+      transform: translate(-50%, 0);
+      border-bottom: 0.5rem solid;
+      border-right: 0.5rem solid transparent;
+      border-left: 0.5rem solid transparent;
+      border-top: 0 solid transparent;
+      border-bottom-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'left-center') {
+    &::before {
+      left: 99%;
+      top: 50%;
+      transform: translate(0, -50%);
+      border-left: 0.5rem solid white;
+      border-top: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid transparent;
+      border-right: 0 solid transparent;
+    }
+
+    &::after {
+      top: 50%;
+      left: 100%;
+      transform: translate(0, -50%);
+      border-left: 0.5rem solid;
+      border-top: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid transparent;
+      border-right: 0 solid transparent;
+      border-bottom-color: $arrowColor;
+    }
+  }
+
+  @if ($arrowPlacement == 'right-center') {
+    &::before {
+      right: 99%;
+      top: 50%;
+      transform: translate(0, -50%);
+      border-right: 0.5rem solid white;
+      border-top: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid transparent;
+      border-left: 0 solid transparent;
+    }
+
+    &::after {
+      top: 50%;
+      right: 100%;
+      transform: translate(0, -50%);
+      border-right: 0.5rem solid;
+      border-top: 0.5rem solid transparent;
+      border-bottom: 0.5rem solid transparent;
+      border-left: 0 solid transparent;
+      border-bottom-color: $arrowColor;
+    }
+  }
 }

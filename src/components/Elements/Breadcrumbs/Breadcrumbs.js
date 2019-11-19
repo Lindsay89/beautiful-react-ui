@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Color, IconProp, warn } from '../../../shared';
 import BreadcrumbItem from './BreadcrumbItem';
-import BreadcrumbMenu from './BreadcrumbMenu';
+import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
 
 import './breadcrumbs.scss';
 
@@ -25,7 +25,7 @@ const Breadcrumbs = (props) => {
   return (
     <nav className={classList} {...rest}>
       <ol>
-        {itemsToHide && <BreadcrumbMenu items={items} maxDisplayedItems={maxDisplayedItems} key="u" />}
+        {itemsToHide && <CollapsedBreadcrumbs items={items} maxDisplayedItems={maxDisplayedItems} key="u" />}
         {!itemsToHide && items.map((item) => (
           item.render
             ? item.render(item)
