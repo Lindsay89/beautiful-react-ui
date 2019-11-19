@@ -15,30 +15,18 @@ var _BreadcrumbsHiddenList = _interopRequireDefault(require("./BreadcrumbsHidden
 
 var _shared = require("../../../shared");
 
-var _Button = _interopRequireDefault(require("../Button/Button"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var BreadcrumbMenu = function BreadcrumbMenu(props) {
   var items = props.items,
       maxDisplayedItems = props.maxDisplayedItems;
-  var nrElementToHide = items.length - maxDisplayedItems;
-  var itemsToHide = items.slice(0, nrElementToHide);
-  var itemsToShow = items.slice(nrElementToHide);
-
-  var trigger = _react["default"].createElement(_Button["default"], {
-    icon: "ellipsis-v",
-    color: "transparent",
-    outline: true,
-    size: "small",
-    className: "bi-breadcrumbs-menu-button"
-  });
-
+  var hidingItemsNum = items.length - maxDisplayedItems;
+  var hidingItems = items.slice(0, hidingItemsNum);
+  var displayingItems = items.slice(hidingItemsNum);
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_BreadcrumbsHiddenList["default"], {
-    hiddenItems: itemsToHide,
-    trigger: trigger,
-    className: "bi-breadcrumbs-hidden-menu"
-  }), itemsToShow.map(function (item) {
+    hiddenItems: hidingItems,
+    className: "bi-breadcrumbs-hiding-menu"
+  }), displayingItems.map(function (item) {
     return item.render ? item.render(item) : _react["default"].createElement(_BreadcrumbItem["default"], {
       path: item.path,
       label: item.label,
@@ -57,6 +45,8 @@ BreadcrumbMenu.propTypes = {
   })).isRequired,
   maxDisplayedItems: _propTypes["default"].number.isRequired
 };
-var _default = BreadcrumbMenu;
+
+var _default = _react["default"].memo(BreadcrumbMenu);
+
 exports["default"] = _default;
 //# sourceMappingURL=BreadcrumbMenu.js.map

@@ -1,7 +1,7 @@
 // -------------------------------
 // color mixin
 // -------------------------------
-@mixin p-color($colorName: 'default') {
+@mixin make-paragraph-color($colorName: 'default') {
   @if ($colorName != "default") {
     &.bi-p-#{$colorName} {
       @apply text-#{$colorName};
@@ -95,10 +95,10 @@
   // ----------------------------
   // Colors
   // ----------------------------
-  @include p-color("primary");
-  @include p-color("secondary");
-  @include p-color("info");
-  @include p-color("warning");
-  @include p-color("danger");
-  @include p-color("success");
+  @include make-paragraph-color("primary");
+  @include make-paragraph-color("secondary");
+  @include make-paragraph-color("info");
+  @include make-paragraph-color("warning");
+  @include make-paragraph-color("danger");
+  @include make-paragraph-color("success");
 }

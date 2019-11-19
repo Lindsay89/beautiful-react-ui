@@ -648,3 +648,15 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Added
 
 - Breadcrumbs maxDisplayedItems prop
+
+## [0.37.0] - 2019-11-19
+
+### Added
+
+- Link component
+- Link tests
+- Link types
+
+### Fixed
+
+- `types` directory renamed to `@types` as per the TS convention

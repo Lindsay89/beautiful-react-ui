@@ -79,6 +79,7 @@ module.exports = {
           components: () => [
             'src/components/Typography/Title/Title.js',
             'src/components/Typography/Paragraph/Paragraph.js',
+            'src/components/Typography/Link/Link.js',
             'src/components/Typography/Divider/Divider.js',
           ],
         },
