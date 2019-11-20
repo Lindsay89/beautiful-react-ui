@@ -137,8 +137,8 @@ var FloatingContent = function FloatingContent(props) {
 
 FloatingContent.propTypes = {
   trigger: _propTypes["default"].node.isRequired,
-  onToggle: _propTypes["default"].func.isRequired,
   isShown: _propTypes["default"].bool,
+  onToggle: _propTypes["default"].func.isRequired,
   action: _propTypes["default"].oneOf(['click', 'hover']),
   clickOutsideToToggle: _propTypes["default"].bool,
   placement: _shared.Placement,
