@@ -15,7 +15,7 @@ var _shared = require("../../../shared");
 
 var _BreadcrumbItem = _interopRequireDefault(require("./BreadcrumbItem"));
 
-var _BreadcrumbMenu = _interopRequireDefault(require("./BreadcrumbMenu"));
+var _CollapsedBreadcrumbs = _interopRequireDefault(require("./CollapsedBreadcrumbs"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -42,7 +42,7 @@ var Breadcrumbs = function Breadcrumbs(props) {
 
   return _react["default"].createElement("nav", _extends({
     className: classList
-  }, rest), _react["default"].createElement("ol", null, itemsToHide && _react["default"].createElement(_BreadcrumbMenu["default"], {
+  }, rest), _react["default"].createElement("ol", null, itemsToHide && _react["default"].createElement(_CollapsedBreadcrumbs["default"], {
     items: items,
     maxDisplayedItems: maxDisplayedItems,
     key: "u"

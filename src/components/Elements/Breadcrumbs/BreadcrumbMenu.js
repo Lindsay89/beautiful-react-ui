@@ -1,36 +1,44 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import BreadcrumbItem from './BreadcrumbItem';
-import BreadcrumbsHiddenList from './BreadcrumbsHiddenList';
+import Button from '../Button/Button';
 import { IconProp } from '../../../shared';
+import DropDown from '../DropDown';
 
 /**
- * BreadcrumbMenu is a sub-component of Breadcrumbs.
- * It handle the business-logic of the breadcrumbs menu.
+ * BreadcrumbHiddenItems is a sub-component of Breadcrumbs.
+ * It handle the business-logic of the hidden breadcrumbs list.
  */
 const BreadcrumbMenu = (props) => {
-  const { items, maxDisplayedItems } = props;
-  const hidingItemsNum = items.length - maxDisplayedItems;
-  const hidingItems = items.slice(0, hidingItemsNum);
-  const displayingItems = items.slice(hidingItemsNum);
+  const { items } = props;
+  const [shown, setIsShown] = useState(false);
+
+  const Trigger = (
+    <Button icon="ellipsis-v" color="transparent" outline size="small" className="bi-breadcrumbs-menu-button" />
+  );
+
+  const onToggleHandler = useCallback(() => {
+    setIsShown(!shown);
+  }, [shown]);
 
   return (
-    <>
-      <BreadcrumbsHiddenList hiddenItems={hidingItems} className="bi-breadcrumbs-hiding-menu" />
-      {(displayingItems.map((item) => (
-        item.render
-          ? item.render(item)
-          : <BreadcrumbItem path={item.path} label={item.label} icon={item.icon} key={item.path || item.label} />
-      )))}
-    </>
+    <li className="bi breadcrumb-item breadcrumb-menu">
+      <DropDown trigger={Trigger} isShown={shown} onToggle={onToggleHandler} placement="bottom-left">
+        {items.map((item) => {
+          if (item.render) {
+            return item.render();
+          }
+
+          return <DropDown.Link href={item.path} icon={item.icon}>{item.label}</DropDown.Link>;
+        })}
+      </DropDown>
+    </li>
   );
 };
 
 
 BreadcrumbMenu.propTypes = {
   /**
-   * Defines the items type, it must be an array of object, with label required.
-   * The breadcrumb component accept an array of values, in order to show the path of pages.
+   * Defines the items to be shown within a dropdown menu
    */
   items: PropTypes.arrayOf(PropTypes.shape({
     path: PropTypes.string,
@@ -38,11 +46,7 @@ BreadcrumbMenu.propTypes = {
     icon: IconProp,
     render: PropTypes.func,
   })).isRequired,
-  /*
-   * Defines the item numbers to display
-   */
-  maxDisplayedItems: PropTypes.number.isRequired,
 };
 
 
-export default React.memo(BreadcrumbMenu);
+export default BreadcrumbMenu;

@@ -43,6 +43,7 @@ module.exports = {
             'src/components/Elements/Breadcrumbs/Breadcrumbs.js',
             'src/components/Elements/Button/Button.js',
             'src/components/Elements/ButtonGroup/ButtonGroup.js',
+            'src/components/Elements/DropDown/DropDown.js',
             'src/components/Elements/Icon/Icon.js',
             'src/components/Elements/Image/Image.js',
             'src/components/Elements/Pill/Pill.js',

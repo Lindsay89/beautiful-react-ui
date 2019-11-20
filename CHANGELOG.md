@@ -667,3 +667,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Export for `useWindowResize` hook
 - Hooks documentation page
+
+## [0.39.0] - 2019-11-20
+
+### Added
+
+- DropDown component
+- DropDown tests
+- DropDown types

@@ -5,6 +5,7 @@ export { default as Avatar } from './components/Elements/Avatar';
 export { default as Breadcrumbs } from './components/Elements/Breadcrumbs';
 export { default as Button } from './components/Elements/Button';
 export { default as ButtonGroup } from './components/Elements/ButtonGroup';
+export { default as DropDown } from './components/Elements/DropDown';
 export { default as Icon } from './components/Elements/Icon';
 export { default as Image } from './components/Elements/Image';
 export { default as List } from './components/Elements/List';
@@ -15,6 +16,7 @@ export { default as Tab } from './components/Elements/Tab';
 export { default as Modal } from './components/Elements/Modal';
 export { default as Popover } from './components/Elements/Popover';
 export { default as FloatingContent } from './components/Elements/FloatingContent';
+
 
 // Forms
 export { default as Label } from './components/Forms/Label';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Breadcrumbs from '.';
-import BreadcrumbMenu from './BreadcrumbMenu';
+import BreadcrumbMenu from './CollapsedBreadcrumbs';
 
 
 describe('Breadcrumbs component', () => {
@@ -112,7 +112,7 @@ describe('Breadcrumbs component', () => {
     expect(spy.calledOnce).to.be.equal(true);
   });
 
-  it('should create a button menu when \'maxDisplayedItems\' is defined', () => {
+  it('should show a sub-menu when \'maxDisplayedItems\' is defined', () => {
     const pages = [
       { path: '/', label: 'home' },
       { path: '/section1', label: 'Section1' },
@@ -121,12 +121,12 @@ describe('Breadcrumbs component', () => {
     ];
     const { container } = render(<Breadcrumbs items={pages} maxDisplayedItems={2} />);
 
-    const breadcrumbButton = container.querySelector('.bi-breadcrumbs-menu-button');
+    const breadcrumbButton = container.querySelector('.breadcrumb-menu');
 
     expect(breadcrumbButton).to.exist;
   });
 
-  it('should show only the number defined into \'maxDisplayedItems\' prop', () => {
+  it('should only show the number of items defined into the \'maxDisplayedItems\' prop', () => {
     const pages = [
       { path: '/', label: 'home' },
       { path: '/section1', label: 'Section1' },
@@ -138,9 +138,6 @@ describe('Breadcrumbs component', () => {
     const renderedLi = container.querySelectorAll('li');
 
     expect(renderedLi.length).to.be.equal(3);
-    expect(renderedLi[0].getAttribute('class').split(' ')).to.include.members(['breadcrumb-item-button']);
-    expect(renderedLi[1].getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-item-button']);
-    expect(renderedLi[2].getAttribute('class').split(' ')).to.not.include.members(['breadcrumb-item-button']);
   });
 });
 

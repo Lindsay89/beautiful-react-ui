@@ -28,7 +28,9 @@ const UncontrolledFloatingContent = (props) => {
 
 ### Placement
 
-The `placement` prop defines the position of the floating content over the `trigger`:
+The `placement` prop defines the placement of the floating content over the `trigger`:
+Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, `bottom-right`, `left-center`, `right-center`.
+
 
 ```jsx
 import { FloatingContent, Button } from 'beautiful-ui';
