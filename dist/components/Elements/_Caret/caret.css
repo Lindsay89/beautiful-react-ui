@@ -1,1 +1,2 @@
-.bi.bi-caret{@apply pointer-events-none absolute inset-y-0 right-0 flex items-center px-2}.bi.bi-caret>svg{@apply fill-current h-4 w-4}/*# sourceMappingURL=caret.css.map */
+.bi.bi-caret{pointer-events:none;position:absolute;top:0;bottom:0;right:0;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;padding-left:.5rem;padding-right:.5rem}.bi.bi-caret>svg{fill:currentColor;height:16px;height:1rem;width:16px;width:1rem}
+/*# sourceMappingURL=caret.css.map */

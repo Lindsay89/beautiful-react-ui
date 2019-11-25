@@ -1,1 +1,2 @@
-.bi.bi-image{vertical-align:middle;box-sizing:border-box;max-width:100%;height:auto;@apply rounded shadow}.bi.bi-image+.bi.bi-image{@apply ml-4}.bi.bi-image.bi-img-thumb{@apply border-2 border-solid border-white}.bi.bi-image.bi-img-rounded{@apply rounded-full}/*# sourceMappingURL=image.css.map */
+.bi.bi-image{vertical-align:middle;box-sizing:border-box;max-width:100%;height:auto;border-radius:.25rem;box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.bi.bi-image+.bi.bi-image{margin-left:1rem}.bi.bi-image.bi-img-thumb{border:2px solid #fff}.bi.bi-image.bi-img-rounded{border-radius:9999px}
+/*# sourceMappingURL=image.css.map */

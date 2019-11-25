@@ -1,27 +1,30 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-/**
- * The following Webpack configuration is used to generate the styles only.
- */
-module.exports = {
+// local constants
+const sourcePath = path.resolve(__dirname, 'src');
+
+module.exports = () => ({
   entry: [
-    path.resolve(__dirname, 'src', 'index.js'),
+    `${sourcePath}/theme/index.scss`,
+    `${sourcePath}/index.js`,
   ],
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'delete.this.js',
+    filename: 'beautiful-ui.dev.js',
   },
-  performance: {
-    hints: false,
-  },
-  mode: 'production',
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', 'scss'],
+    alias: { 'beautiful-ui': sourcePath },
   },
+  devServer: {
+    open: true,
+    hot: false,
+    liveReload: true,
+    watchContentBase: true,
+  },
+  mode: 'development',
   module: {
     rules: [
       {
@@ -33,6 +36,7 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -59,28 +63,9 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=assets/[name].[ext]',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.(jpg|png|svg)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 8000,
-          },
-        },
-      },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'beautiful-ui.css' }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }],
-      },
-    }),
+    new MiniCssExtractPlugin({ filename: 'beautiful-ui.dev.css' }),
   ],
-};
+});

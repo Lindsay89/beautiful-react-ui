@@ -1,1 +1,2 @@
-#bi-floats{@apply relative}#bi-floats .bi-floater{@apply absolute}/*# sourceMappingURL=floating-content.css.map */
+#bi-floats{position:relative}#bi-floats .bi-floater{position:absolute}
+/*# sourceMappingURL=floating-content.css.map */

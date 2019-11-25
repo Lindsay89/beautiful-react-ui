@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../../src/components/Elements/List/index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './List';\n"],"file":"index.js"}
+{"version":3,"sources":["components/Elements/List/index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './List';\n"],"file":"index.js"}

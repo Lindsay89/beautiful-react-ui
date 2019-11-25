@@ -3,7 +3,7 @@ const theme = require('./styleguidist.theme');
 
 module.exports = {
   /* eslint-disable global-require */
-  webpackConfig: require('./webpack.styleguidist.config'),
+  webpackConfig: require('./styleguidist.webpack'),
   /* eslint-enable global-require */
   ignore: ['test/**/*.spec.{js,jsx}', 'node_modules', 'docs', 'test'],
   ribbon: {

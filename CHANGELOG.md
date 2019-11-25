@@ -675,3 +675,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - DropDown component
 - DropDown tests
 - DropDown types
+
+## [0.40.0] - 2019-11-25
+
+### Added
+
+- New build system based on `gulp`
+

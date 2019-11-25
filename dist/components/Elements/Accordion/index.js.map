@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../../src/components/Elements/Accordion/index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './Accordion';\n"],"file":"index.js"}
+{"version":3,"sources":["components/Elements/Accordion/index.js"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './Accordion';\n"],"file":"index.js"}
