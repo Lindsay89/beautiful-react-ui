@@ -141,6 +141,12 @@ Object.defineProperty(exports, "DisplayField", {
     return _DisplayField["default"];
   }
 });
+Object.defineProperty(exports, "TextArea", {
+  enumerable: true,
+  get: function get() {
+    return _TextArea["default"];
+  }
+});
 Object.defineProperty(exports, "Grid", {
   enumerable: true,
   get: function get() {
@@ -229,6 +235,8 @@ var _Select = _interopRequireDefault(require("./components/Forms/Select"));
 var _FormGroup = _interopRequireDefault(require("./components/Forms/FormGroup"));
 
 var _DisplayField = _interopRequireDefault(require("./components/Forms/DisplayField"));
+
+var _TextArea = _interopRequireDefault(require("./components/Forms/TextArea"));
 
 var _Grid = _interopRequireDefault(require("./components/Layout/Grid"));
 

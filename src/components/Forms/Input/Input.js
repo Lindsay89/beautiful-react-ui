@@ -86,7 +86,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  placeholder: 'text...',
+  placeholder: 'Input field...',
   disabled: false,
   helpText: undefined,
   color: 'default',

@@ -11,9 +11,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
-var _HelpText = _interopRequireDefault(require("../_HelpText"));
-
 var _shared = require("../../../shared");
+
+var _HelpText = _interopRequireDefault(require("../_HelpText"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -23,71 +23,63 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
-var Input = function Input(props) {
-  var value = props.value,
+var TextArea = function TextArea(props) {
+  var color = props.color,
       onChange = props.onChange,
-      color = props.color,
+      value = props.value,
+      fluid = props.fluid,
+      size = props.size,
       placeholder = props.placeholder,
       disabled = props.disabled,
-      size = props.size,
       helpText = props.helpText,
-      icon = props.icon,
-      iconPosition = props.iconPosition,
+      resizable = props.resizable,
       className = props.className,
-      fluid = props.fluid,
-      style = props.style,
-      rest = _objectWithoutProperties(props, ["value", "onChange", "color", "placeholder", "disabled", "size", "helpText", "icon", "iconPosition", "className", "fluid", "style"]);
+      rest = _objectWithoutProperties(props, ["color", "onChange", "value", "fluid", "size", "placeholder", "disabled", "helpText", "resizable", "className"]);
 
-  var classList = (0, _classnames["default"])('bi bi-input', "input-".concat(color), {
+  var classList = (0, _classnames["default"])('bi bi-textarea', "textarea-".concat(color), {
     disabled: disabled,
-    'has-icon': !!icon,
-    'icon-left': iconPosition === 'left',
-    'input-sm': size === 'small',
-    'input-lg': size === 'large',
-    fluid: fluid
+    'textarea-sm': size === 'small',
+    'textarea-lg': size === 'large',
+    fluid: fluid,
+    resizable: resizable
   }, className);
   return _react["default"].createElement("div", {
-    className: classList,
-    style: style
-  }, _react["default"].createElement("input", _extends({
+    className: classList
+  }, _react["default"].createElement("textarea", _extends({
     value: value,
     onChange: (0, _shared.makeCallback)(onChange),
     placeholder: placeholder,
     disabled: disabled
-  }, rest)), icon && (0, _shared.makeIconFromProp)(icon, {
-    size: size
-  }), helpText && _react["default"].createElement(_HelpText["default"], {
+  }, rest)), helpText && _react["default"].createElement(_HelpText["default"], {
     text: helpText,
     color: color
   }));
 };
 
-Input.propTypes = {
-  value: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]).isRequired,
-  onChange: _propTypes["default"].func.isRequired,
+TextArea.propTypes = {
+  value: _propTypes["default"].oneOfType([_propTypes["default"].number, _propTypes["default"].string]),
+  onChange: _propTypes["default"].func,
   placeholder: _propTypes["default"].string,
   disabled: _propTypes["default"].bool,
-  helpText: _propTypes["default"].string,
   color: _shared.Color,
   size: _shared.Size,
-  icon: _shared.IconProp,
-  iconPosition: _propTypes["default"].oneOf(['right', 'left']),
   fluid: _propTypes["default"].bool,
-  style: _propTypes["default"].shape({})
+  helpText: _propTypes["default"].string,
+  resizable: _propTypes["default"].bool
 };
-Input.defaultProps = {
-  placeholder: 'Input field...',
+TextArea.defaultProps = {
+  value: null,
+  onChange: undefined,
+  placeholder: 'Insert your text...',
   disabled: false,
-  helpText: undefined,
   color: 'default',
   size: 'default',
-  icon: undefined,
-  iconPosition: 'right',
   fluid: false,
-  style: undefined
+  helpText: undefined,
+  resizable: false
 };
 
-var _default = _react["default"].memo(Input);
+var _default = _react["default"].memo(TextArea);
 
 exports["default"] = _default;
-//# sourceMappingURL=Input.js.map
+//# sourceMappingURL=TextArea.js.map

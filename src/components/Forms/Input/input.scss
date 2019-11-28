@@ -1,3 +1,5 @@
+@import "../../../theme/utils/mixins";
+
 @mixin make-input-color($color: 'default') {
   &.input-#{$color} {
     input {
@@ -17,7 +19,7 @@
 .bi.bi-input {
   box-sizing: content-box;
 
-  @apply inline-flex align-bottom relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
+  @apply inline-flex align-top relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
 
   + .bi.bi-input {
     @apply ml-2;
@@ -35,27 +37,13 @@
     text-align: start;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     transition: box-shadow ease-in-out 0.25s;
-    // width: 12.5rem;
     max-width: 100%;
 
-    @apply bg-white font-normal font-sans text-base tracking-normal text-default-darker border border-default-light border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
+    @apply bg-white font-normal font-sans text-base tracking-normal text-default-darker border border-default-light;
+    @apply w-48 border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
 
     // placeholder
-    &::-webkit-input-placeholder {
-      @apply font-light opacity-50;
-    }
-
-    &::-moz-placeholder {
-      @apply font-light opacity-50;
-    }
-
-    &:-ms-input-placeholder {
-      @apply font-light opacity-50;
-    }
-
-    &:-moz-placeholder {
-      @apply font-light opacity-50;
-    }
+    @include create-placeholder();
 
     // focus
     &:focus {
