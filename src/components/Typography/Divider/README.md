@@ -31,7 +31,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
     Quisque vestibulum pharetra ultrices. Etiam id mattis odio. 
     Nam vulputate elit ac tellus luctus imperdiet.
   </Paragraph>
-  <Divider style="dashed" />
+  <Divider line="dashed" />
   <Paragraph>
     Aenean mattis tempus libero, auctor rhoncus odio. 
     Mauris eget tincidunt enim. Donec quis diam et metus tristique elementum at ac dui. 
@@ -51,7 +51,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
     Quisque vestibulum pharetra ultrices. Etiam id mattis odio. 
     Nam vulputate elit ac tellus luctus imperdiet.
   </Paragraph>
-  <Divider style="dotted" />
+  <Divider line="dotted" />
   <Paragraph>
     Aenean mattis tempus libero, auctor rhoncus odio. 
     Mauris eget tincidunt enim. Donec quis diam et metus tristique elementum at ac dui. 

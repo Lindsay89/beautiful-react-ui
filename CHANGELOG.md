@@ -696,3 +696,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Input component minor style glitches
 - TextArea component fluid style glitch
+
+## [0.41.2] - 2019-11-27
+
+### Fixed
+
+- Divider line prop documentation
