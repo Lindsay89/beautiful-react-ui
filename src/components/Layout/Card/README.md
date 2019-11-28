@@ -126,7 +126,7 @@ The `reversed` prop flips the Card.Image position both from left to right or fro
 defined orientation.
 
 ```jsx
-import { Card, Pill, Alert, Icon } from 'beautiful-ui';
+import { Card, Pill, Paragraph, Icon } from 'beautiful-ui';
 
 <Card orientation="horizontal" reversed>
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />

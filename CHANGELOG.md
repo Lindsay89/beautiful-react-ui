@@ -682,3 +682,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - New build system based on `gulp`
 
+## [0.41.0] - 2019-11-27
+
+### Added
+
+- TextArea component
+- TextArea tests
+- TextArea types

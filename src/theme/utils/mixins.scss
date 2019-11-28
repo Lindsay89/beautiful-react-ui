@@ -35,22 +35,22 @@
 // --------------------
 // Create placeholder
 // --------------------
-@mixin create-placeholder($colorName: "default-light") {
+@mixin create-placeholder() {
   // stylelint-disable
   &::-webkit-input-placeholder {
-    @apply text-#{$colorName};
+    @apply font-light opacity-50;
   }
 
   &::-moz-placeholder {
-    @apply text-#{$colorName};
+    @apply font-light opacity-50;
   }
 
   &:-ms-input-placeholder {
-    @apply text-#{$colorName};
+    @apply font-light opacity-50;
   }
 
   &:-moz-placeholder {
-    @apply text-#{$colorName};
+    @apply font-light opacity-50;
   }
   // stylelint-enable
 }
