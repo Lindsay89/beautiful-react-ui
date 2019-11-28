@@ -689,3 +689,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - TextArea component
 - TextArea tests
 - TextArea types
+
+## [0.41.1] - 2019-11-27
+
+### Fixed
+
+- Input component minor style glitches
+- TextArea component fluid style glitch
