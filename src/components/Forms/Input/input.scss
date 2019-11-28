@@ -19,7 +19,7 @@
 .bi.bi-input {
   box-sizing: content-box;
 
-  @apply inline-flex align-top relative flex-col font-normal font-sans text-base tracking-normal text-default-darker;
+  @apply inline-flex align-top relative flex-col font-normal font-sans text-base tracking-normal text-default-darker w-48;
 
   + .bi.bi-input {
     @apply ml-2;
@@ -30,6 +30,7 @@
   }
 
   input {
+    box-sizing: border-box;
     word-spacing: normal;
     text-transform: none;
     text-indent: 0;
@@ -40,7 +41,7 @@
     max-width: 100%;
 
     @apply bg-white font-normal font-sans text-base tracking-normal text-default-darker border border-default-light;
-    @apply w-48 border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
+    @apply border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
 
     // placeholder
     @include create-placeholder();
@@ -56,7 +57,11 @@
   // FLUID
   // ----------------------------
   &.fluid {
-    width: 100%;
+    @apply w-full;
+
+    input {
+      @apply w-full;
+    }
   }
 
   // ----------------------------
@@ -86,6 +91,8 @@
 
     .bi.bi-icon {
       @apply absolute fill-current right-0 top-0 bottom-0 px-3 pointer-events-none h-full;
+
+      max-height: 2.25rem;
     }
 
     &.icon-left {
@@ -105,30 +112,26 @@
   &.input-sm {
     /* stylelint-disable-next-line no-descending-specificity */
     input {
-      // width: 9.5rem;
-
       @apply pl-2 py-1 text-sm;
     }
 
     &.has-icon .bi.bi-icon {
       @apply px-2 py-0;
 
-      height: 1.6875rem; // same height of the input when small
+      height: 1.625rem; // same height of the input when small
     }
   }
 
   &.input-lg {
     /* stylelint-disable-next-line no-descending-specificity */
     input {
-      // width: 15.5rem;
-
       @apply pl-4 py-2 leading-normal text-xl;
     }
 
     &.has-icon .bi.bi-icon {
       @apply px-2 py-0;
 
-      height: 3rem; // same height of the input when large
+      height: 3.25rem; // same height of the input when large
     }
   }
 }
