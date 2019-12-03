@@ -35,6 +35,9 @@ const transpileJs = () => {
     .pipe(dest(destDir));
 };
 
+transpileJs.displayName = 'transpile';
+transpileJs.description = 'Transpile javascript files';
+
 /**
  * Build the CSS bundle
  */
@@ -50,6 +53,9 @@ const buildBundledStyle = () => {
     .pipe(dest(`${destDir}`));
 };
 
+buildBundledStyle.displayName = 'style bundle';
+buildBundledStyle.description = 'Merge all styles within a single .css file';
+
 /**
  * Build single components styles
  */
@@ -64,10 +70,16 @@ const buildComponentsStyles = () => {
     .pipe(dest(`${destDir}/components`));
 };
 
+buildComponentsStyles.displayName = 'components style';
+buildComponentsStyles.description = 'Build a stylesheet file for each component';
+
 /**
  * Clean the destination folder before build
  */
 const cleanDest = () => del([destDir], { force: true });
+
+cleanDest.displayName = 'clean destination folder';
+cleanDest.description = 'Remove all the previously built files';
 
 // export tasks
 module.exports.cleanDest = cleanDest;

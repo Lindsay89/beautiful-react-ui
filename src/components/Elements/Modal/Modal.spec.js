@@ -105,7 +105,7 @@ describe('Modal component', () => {
 
     const modal = document.querySelector('#bi-modals .bi.bi-modal');
 
-    expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-sm']);
+    expect(modal.getAttribute('class').split(' ')).to.include.members(['bi-modal-sm']);
 
     rerender(
       <Modal isOpen size="large">
@@ -115,8 +115,8 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    expect(modal.getAttribute('class').split(' ')).to.include.members(['modal-lg']);
-    expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-sm']);
+    expect(modal.getAttribute('class').split(' ')).to.include.members(['bi-modal-lg']);
+    expect(modal.getAttribute('class').split(' ')).to.not.include.members(['bi-modal-sm']);
 
     rerender(
       <Modal isOpen>
@@ -126,7 +126,7 @@ describe('Modal component', () => {
       </Modal>,
     );
 
-    expect(modal.getAttribute('class').split(' ')).to.not.include.members(['modal-lg']);
+    expect(modal.getAttribute('class').split(' ')).to.not.include.members(['bi-modal-lg']);
   });
 
 

@@ -1,3 +1,5 @@
+import { ComponentClass, FunctionComponent, ReactInstance } from 'react';
+
 /**
  * Exports all the shared colors supported by the library
  */
@@ -26,3 +28,6 @@ export type DefaultProps = {
  */
 export type Placement = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center'
   | 'bottom-right' | 'left-center' | 'right-center';
+
+
+export type Renderer<Props> = ComponentClass<Props> | FunctionComponent<Props> | ReactInstance;

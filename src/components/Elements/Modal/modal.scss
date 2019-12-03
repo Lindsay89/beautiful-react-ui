@@ -30,9 +30,9 @@
     }
 
     .bi-modal-body {
-      @apply p-4 overflow-y-scroll;
+      @apply py-4 overflow-y-scroll;
 
-      max-height: 10rem;
+      // max-height: 10rem;
     }
 
     .bi-modal-footer {
@@ -44,11 +44,11 @@
     // ----------------------------
     // SIZES
     // ----------------------------
-    &.modal-sm {
+    &.bi-modal-sm {
       width: 15rem;
     }
 
-    &.modal-lg {
+    &.bi-modal-lg {
       width: 60rem;
     }
   }

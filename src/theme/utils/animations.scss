@@ -10,6 +10,15 @@
   animation-timing-function: ease-in-out;
 }
 
+@keyframes AnimationFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 .bi.bi-anim-fade-in {
   @include fadeIn();

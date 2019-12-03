@@ -710,3 +710,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - new `clearable` prop to the Select component
 - new `clearable` prop in Select types
 - Test for the `clearable` prop
+
+## [0.42.1] - 2019-12-02
+
+### Fixed
+
+- Modal body padding

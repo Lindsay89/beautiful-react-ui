@@ -62,8 +62,8 @@ var Modal = _react["default"].memo(function (props) {
     }
   }, [isOpen]);
   var classList = (0, _classnames["default"])('bi bi-modal', {
-    'modal-sm': size === 'small',
-    'modal-lg': size === 'large',
+    'bi-modal-sm': size === 'small',
+    'bi-modal-lg': size === 'large',
     'bi-anim-fade-in': animation === 'fade',
     'bi-anim-zoom-in': animation === 'zoom',
     'bi-anim-slide-right': animation === 'slideRight',
