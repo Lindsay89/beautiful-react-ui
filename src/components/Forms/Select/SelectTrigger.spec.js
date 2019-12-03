@@ -2,6 +2,7 @@ import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import SelectTrigger from './SelectTrigger';
 
+
 const optionsMock = [
   { label: 'Foo', value: 'foo' },
   { label: 'Bar', value: 'bar' },
@@ -30,7 +31,9 @@ describe('SelectTrigger component', () => {
 
   it('should perform the onClear callback when clicking on the close button', () => {
     const onClear = sinon.spy();
-    const { container } = render(<SelectTrigger options={optionsMock} onClear={onClear} clearable />);
+    const { container } = render(
+      <SelectTrigger options={optionsMock} onClear={onClear} clearable value={optionsMock[1].value} />,
+    );
     const selectTriggerComp = container.querySelector('.bi-select-element');
     const closeIcon = selectTriggerComp.querySelector('.sel-clear-x');
 

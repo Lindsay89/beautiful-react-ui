@@ -11,15 +11,14 @@ import Value from './utils/ValueType';
 import './select.scss';
 
 /**
- * Select component
+ * A Select component is a dropdown list that can be used to select between choices in a form.
  */
 const Select = (props) => {
   const {
     options, value, placeholder, onChange, toggleOnChange, filtrable, filterInputPlaceholder, filterNoResultLabel,
-    fluid, multiStyle, className, ...rest
+    fluid, multiStyle, clearable, className, ...rest
   } = props;
   const [isOpen, setIsOpen] = useState(false);
-  const clearable = Array.isArray(value) ? value.length !== 0 : !!value;
   const hasOptionGroups = optionsAreGrouped(options);
 
   const classList = classNames('bi bi-select', {
@@ -33,7 +32,6 @@ const Select = (props) => {
     if (onChange && option.value !== value) onChange(option.value, options, value);
     if (toggleOnChange) setIsOpen(false);
   };
-
   // defines the trigger for the FloatingContent
   const Trigger = (
     <SelectTrigger
@@ -108,7 +106,8 @@ Select.propTypes = {
    */
   options: OptionsType.isRequired,
   /**
-   * The value of the selected item, if not set will show the placeholder
+   * The value of the selected item, if not set will show the placeholder. <br/>
+   * It can be the value of an option or an array of values in case is a multi selection Select.
    */
   value: Value,
   /**
@@ -147,6 +146,10 @@ Select.propTypes = {
    * Defines the message to show when no results are found
    */
   filterNoResultLabel: PropTypes.string,
+  /**
+   * Defines whether show the clearable icon or not
+   */
+  clearable: PropTypes.bool,
 };
 
 Select.defaultProps = {
@@ -160,6 +163,7 @@ Select.defaultProps = {
   multiStyle: 'pills',
   filterInputPlaceholder: 'Filter options...',
   filterNoResultLabel: 'No options available',
+  clearable: true,
 };
 
 export default React.memo(Select);

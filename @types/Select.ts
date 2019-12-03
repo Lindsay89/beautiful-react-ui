@@ -89,6 +89,10 @@ export type SelectProps = DefaultProps & {
    * Defines the message to show when no results are found
    */
   filterNoResultLabel?: string,
+  /**
+   * Defines if the select should be clearable or not
+   */
+  clearable?: boolean,
 };
 
 declare const Select: FunctionComponent<SelectProps>;

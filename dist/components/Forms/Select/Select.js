@@ -56,15 +56,15 @@ var Select = function Select(props) {
       filterNoResultLabel = props.filterNoResultLabel,
       fluid = props.fluid,
       multiStyle = props.multiStyle,
+      clearable = props.clearable,
       className = props.className,
-      rest = _objectWithoutProperties(props, ["options", "value", "placeholder", "onChange", "toggleOnChange", "filtrable", "filterInputPlaceholder", "filterNoResultLabel", "fluid", "multiStyle", "className"]);
+      rest = _objectWithoutProperties(props, ["options", "value", "placeholder", "onChange", "toggleOnChange", "filtrable", "filterInputPlaceholder", "filterNoResultLabel", "fluid", "multiStyle", "clearable", "className"]);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isOpen = _useState2[0],
       setIsOpen = _useState2[1];
 
-  var clearable = Array.isArray(value) ? value.length !== 0 : !!value;
   var hasOptionGroups = (0, _optionsAreGrouped["default"])(options);
   var classList = (0, _classnames["default"])('bi bi-select', {
     clearable: clearable,
@@ -124,7 +124,8 @@ Select.propTypes = {
   filtrable: _propTypes["default"].bool,
   multiStyle: _propTypes["default"].oneOf(['strings', 'pills']),
   filterInputPlaceholder: _propTypes["default"].string,
-  filterNoResultLabel: _propTypes["default"].string
+  filterNoResultLabel: _propTypes["default"].string,
+  clearable: _propTypes["default"].bool
 };
 Select.defaultProps = {
   value: '',
@@ -136,7 +137,8 @@ Select.defaultProps = {
   filtrable: false,
   multiStyle: 'pills',
   filterInputPlaceholder: 'Filter options...',
-  filterNoResultLabel: 'No options available'
+  filterNoResultLabel: 'No options available',
+  clearable: true
 };
 
 var _default = _react["default"].memo(Select);

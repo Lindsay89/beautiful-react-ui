@@ -144,6 +144,13 @@ describe('Select component', () => {
     expect(currentArgs[2]).to.equal(optionsMock[1].value);
   });
 
+  it('should not show the \'clear\' button if the clearable prop is set to false', () => {
+    const { container } = render(<Select options={optionsMock} clearable={false} />);
+    const selectElement = container.querySelector('.bi-select-element');
+
+    expect(selectElement.querySelector('.sel-clear-x')).to.not.exist;
+  });
+
   it('should create a filtrable dropdown list if \'filtrable\' is true', () => {
     const { container } = render(<Select options={optionsMock} value={optionsMock[1].value} filtrable />);
     const selectComp = container.querySelector('.bi.bi-select');

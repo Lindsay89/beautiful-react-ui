@@ -702,3 +702,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Divider line prop documentation
+
+## [0.42.0] - 2019-12-02
+
+### Added
+
+- new `clearable` prop to the Select component
+- new `clearable` prop in Select types
+- Test for the `clearable` prop
