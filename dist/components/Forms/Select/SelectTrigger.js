@@ -9,6 +9,8 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _classnames = _interopRequireDefault(require("classnames"));
+
 var _SelectLabel = _interopRequireDefault(require("./SelectLabel"));
 
 var _Caret = _interopRequireDefault(require("../../Elements/_Caret"));
@@ -49,10 +51,13 @@ var SelectTrigger = function SelectTrigger(props) {
     }
   };
 
+  var classList = (0, _classnames["default"])('bi-select-element', {
+    'select-multi': Array.isArray(value) && value.length >= 1
+  });
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement("div", _extends({
     className: className
   }, rest), _react["default"].createElement("div", {
-    className: "bi-select-element",
+    className: classList,
     role: "button",
     tabIndex: 0
   }, _react["default"].createElement(_SelectLabel["default"], {
@@ -61,7 +66,7 @@ var SelectTrigger = function SelectTrigger(props) {
     placeholder: placeholder,
     hasOptionGroups: hasOptionGroups,
     multiStyle: multiStyle
-  }), clearable && _react["default"].createElement("span", {
+  }), clearable && value && value.length > 0 && _react["default"].createElement("span", {
     className: "sel-clear-x",
     onClick: onClearHandler,
     onKeyDown: onClearHandler,
@@ -88,7 +93,7 @@ SelectTrigger.defaultProps = {
   hasOptionGroups: false,
   helpText: undefined,
   multiStyle: 'pills',
-  clearable: false,
+  clearable: true,
   onClear: undefined
 };
 

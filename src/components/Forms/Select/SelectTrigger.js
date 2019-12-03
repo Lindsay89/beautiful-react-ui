@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import SelectLabel from './SelectLabel';
 import Caret from '../../Elements/_Caret';
 import CloseIcon from '../../Elements/_CloseIcon';
 import OptionsType from './utils/OptionsType';
 import HelpText from '../_HelpText';
 import ValueType from './utils/ValueType';
-
 
 /**
  * Shows the select element
@@ -23,11 +23,15 @@ const SelectTrigger = (props) => {
       onClear();
     }
   };
+  const classList = classNames('bi-select-element', {
+    'select-multi': Array.isArray(value) && value.length >= 1,
+  });
+
 
   return (
     <>
       <div className={className} {...rest}>
-        <div className="bi-select-element" role="button" tabIndex={0}>
+        <div className={classList} role="button" tabIndex={0}>
           <SelectLabel
             value={value}
             options={options}
@@ -35,7 +39,7 @@ const SelectTrigger = (props) => {
             hasOptionGroups={hasOptionGroups}
             multiStyle={multiStyle}
           />
-          {clearable && (
+          {clearable && value && value.length > 0 && (
             <span
               className="sel-clear-x"
               onClick={onClearHandler}
@@ -71,7 +75,7 @@ SelectTrigger.defaultProps = {
   hasOptionGroups: false,
   helpText: undefined,
   multiStyle: 'pills',
-  clearable: false,
+  clearable: true,
   onClear: undefined,
 };
 

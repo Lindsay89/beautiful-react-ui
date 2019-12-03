@@ -20,9 +20,7 @@ const UncontrolledSelect = (props) => {
   return <Select {...props} onChange={(item) => setSelected(item)} value={selected} />
 }
 
-<>
-  <UncontrolledSelect options={options} />
-</>
+<UncontrolledSelect options={options} />
 ```
 
 ### Filtrable list
@@ -74,9 +72,7 @@ const UncontrolledSelect = (props) => {
   return <Select {...props} onChange={(item) => setSelected(item)} value={selected} />
 }
 
-<>
-  <UncontrolledSelect options={options} helpText="open the dropdown list and select an option" />
-</>
+<UncontrolledSelect options={options} helpText="open the dropdown list and select an option" />
 ```
 
 ### Placeholder
@@ -102,6 +98,29 @@ const UncontrolledSelect = (props) => {
 <>
   <UncontrolledSelect options={options} placeholder="click to open the dropdown" />
 </>
+```
+
+### Clearable
+
+It's possible to hide the clearable icon by setting the `clearable` prop to false
+
+```jsx
+import { Select } from 'beautiful-ui';
+
+const options = [
+  { label: '😎 Sunglasses dude', value: 'option1' },
+  { label: '😘 Loving pal', value: 'option2' },
+  { label: '🖤 Blackpool magic', value: 'option3' },
+  { label: '😬 Dental adv mate', value: 'option4' }
+];
+
+const UncontrolledSelect = (props) => {
+  const [selected, setSelected] = React.useState();
+    
+  return <Select {...props} onChange={(item) => setSelected(item)} value={selected} />
+}
+
+<UncontrolledSelect options={options} clearable={false} />
 ```
 
 ### Grouping options
@@ -173,9 +192,7 @@ const UncontrolledSelect = (props) => {
   return <Select {...props} onChange={handleChange} value={selected} />
 }
 
-<>
-  <UncontrolledSelect options={options} />
-</>
+<UncontrolledSelect options={options} />
 ```
 
 ### Multiple selection style

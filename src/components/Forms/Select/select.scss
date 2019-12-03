@@ -24,6 +24,10 @@
     @apply appearance-none bg-white border border-default-light border-solid py-2 pl-3 pr-8 m-0 rounded leading-tight;
     @apply relative overflow-hidden cursor-pointer select-none;
 
+    &.select-multi {
+      @apply w-auto;
+    }
+
     &:hover {
       @apply border-default-light;
     }
