@@ -1,6 +1,8 @@
 ### Basic usage
 
 ``` jsx
+import { Alert } from 'beautiful-ui';
+
 <Alert>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 ```
 

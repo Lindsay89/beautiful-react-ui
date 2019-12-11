@@ -9,7 +9,7 @@ const optionsMock = [
 
 describe('optionIsSelected function', () => {
   it('should be a function', () => {
-    expect(optionIsSelected).to.be.instanceOf(Function);
+    expect(optionIsSelected).to.be.a('function');
   });
 
   it('should return true if value is selected', () => {

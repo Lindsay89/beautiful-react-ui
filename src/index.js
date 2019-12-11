@@ -17,7 +17,6 @@ export { default as Modal } from './components/Elements/Modal';
 export { default as Popover } from './components/Elements/Popover';
 export { default as FloatingContent } from './components/Elements/FloatingContent';
 
-
 // Forms
 export { default as Label } from './components/Forms/Label';
 export { default as Checkbox } from './components/Forms/Checkbox';
@@ -37,5 +36,8 @@ export { default as Paragraph } from './components/Typography/Paragraph';
 export { default as Divider } from './components/Typography/Divider';
 export { default as Link } from './components/Typography/Link';
 
+// Enterprise
+export { default as Diagram } from './components/Enterprise/Diagram';
+
 // Hooks
-export { useWindowResize } from './shared';
+export { useWindowResize, useDrag, useWindowScroll } from './shared';

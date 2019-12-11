@@ -11,7 +11,7 @@ const optionsGroup = [{
 
 describe('filterOptions function', () => {
   it('should be a function', () => {
-    expect(flattenGroupToOptions).to.be.instanceOf(Function);
+    expect(flattenGroupToOptions).to.be.a('function');
   });
 
   it('should return a flattered array', () => {

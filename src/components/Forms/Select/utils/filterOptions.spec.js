@@ -18,7 +18,7 @@ const optionsGroup = [{
 
 describe('filterOptions function', () => {
   it('should be a function', () => {
-    expect(filterOptions).to.be.instanceOf(Function);
+    expect(filterOptions).to.be.a('function');
   });
 
   it('should return a the same array if filter is not provided', () => {

@@ -31,7 +31,7 @@ var getBottomPosition = function getBottomPosition(bodyHeight, coord, scrollY, o
   return bodyHeight - coord.height - coord.top - scrollY - offset;
 };
 
-var getElementAbsolutePosition = function getElementAbsolutePosition(element) {
+var getFloaterAbsolutePosition = function getFloaterAbsolutePosition(el) {
   var placement = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top-center';
   var offset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
   var setWidth = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
@@ -44,54 +44,54 @@ var getElementAbsolutePosition = function getElementAbsolutePosition(element) {
   var transform;
   var _window = window,
       scrollY = _window.scrollY;
-  var boundingClientRect = element.children.length !== 0 ? element.children[0].getBoundingClientRect() : element.getBoundingClientRect();
+  var boundingRect = el.children.length !== 0 ? el.children[0].getBoundingClientRect() : el.getBoundingClientRect();
 
   switch (placement) {
     case 'top-left':
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset);
-      left = getLeftPosition(boundingClientRect);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset);
+      left = getLeftPosition(boundingRect);
       break;
 
     case 'top-center':
     default:
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getCenterPosition(boundingClientRect, clientWidth);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getCenterPosition(boundingRect, clientWidth);
       transform = 'translateX(50%)';
       break;
 
     case 'top-right':
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getRightPosition(boundingClientRect, clientWidth);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getRightPosition(boundingRect, clientWidth);
       transform = 'translate(0%,0%)';
       break;
 
     case 'bottom-left':
-      bottom = getBottomPosition(clientHeight, boundingClientRect, scrollY, offset);
-      left = getLeftPosition(boundingClientRect);
+      bottom = getBottomPosition(clientHeight, boundingRect, scrollY, offset);
+      left = getLeftPosition(boundingRect);
       transform = 'translateY(100%)';
       break;
 
     case 'bottom-center':
-      bottom = getBottomPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getCenterPosition(boundingClientRect, clientWidth);
+      bottom = getBottomPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getCenterPosition(boundingRect, clientWidth);
       transform = 'translate(50%,100%)';
       break;
 
     case 'bottom-right':
-      bottom = getBottomPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getRightPosition(boundingClientRect, clientWidth);
+      bottom = getBottomPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getRightPosition(boundingRect, clientWidth);
       transform = 'translateY(100%)';
       break;
 
     case 'left-center':
-      right = getRightPosition(boundingClientRect, clientWidth) + boundingClientRect.width + offset;
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset) - offset - boundingClientRect.height / 2;
+      right = getRightPosition(boundingRect, clientWidth) + boundingRect.width + offset;
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset) - offset - boundingRect.height / 2;
       transform = 'translateY(50%)';
       break;
 
     case 'right-center':
-      left = getLeftPosition(boundingClientRect) + boundingClientRect.width + offset;
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset) - offset - boundingClientRect.height / 2;
+      left = getLeftPosition(boundingRect) + boundingRect.width + offset;
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset) - offset - boundingRect.height / 2;
       transform = 'translateY(50%)';
       break;
   }
@@ -102,10 +102,10 @@ var getElementAbsolutePosition = function getElementAbsolutePosition(element) {
     left: left,
     transform: transform
   }, setWidth && {
-    width: boundingClientRect.width
+    width: boundingRect.width
   });
 };
 
-var _default = getElementAbsolutePosition;
+var _default = getFloaterAbsolutePosition;
 exports["default"] = _default;
-//# sourceMappingURL=getElementAbsolutePosition.js.map
+//# sourceMappingURL=getFloaterAbsolutePosition.js.map
