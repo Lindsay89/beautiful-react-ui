@@ -12,7 +12,7 @@ const optionsGroup = [{
 
 describe('filterOptions function', () => {
   it('should be a function', () => {
-    expect(findSelectedInGroups).to.be.instanceOf(Function);
+    expect(findSelectedInGroups).to.be.a('function');
   });
 
   it('should return a flattered and filtered array', () => {

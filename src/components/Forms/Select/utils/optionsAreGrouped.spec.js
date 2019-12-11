@@ -18,7 +18,7 @@ const optionsGroup = [{
 
 describe('optionsAreGrouped function', () => {
   it('should be a function', () => {
-    expect(optionsAreGrouped).to.be.instanceOf(Function);
+    expect(optionsAreGrouped).to.be.a('function');
   });
 
   it('should return true if the provided array is valid', () => {

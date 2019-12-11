@@ -5,7 +5,7 @@
 ## Prerequisites
 
 This project requires NodeJS (at least version 6) and NPM.
-[Node](http://nodejs.org/) and [NPM](https://npmjs.org/) are really easy to install.
+[NodesCanvas](http://nodejs.org/) and [NPM](https://npmjs.org/) are really easy to install.
 To make sure you have them available on your machine,
 try running the following command.
 
@@ -51,7 +51,7 @@ $ git clone https://github.com/ORG/PROJECT.git
 $ cd PROJECT
 ```
 
-Then install all the Node dependencies usin npm or Yarn
+Then install all the NodesCanvas dependencies usin npm or Yarn
 
 ```bash
 $ npm install

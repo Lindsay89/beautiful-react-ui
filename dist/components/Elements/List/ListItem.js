@@ -54,7 +54,7 @@ var ListItem = function ListItem(props) {
   var draggingProps = (0, _react.useMemo)(function () {
     return (0, _getDraggingFurtherProps["default"])(draggable, onDragStart, onDragEnd);
   }, [draggable, onDragStart, onDragEnd]);
-  var classList = (0, _classnames["default"])('bi-list-item', "bi-list-item-".concat(color), {
+  var classList = (0, _classnames["default"])('bi bi-list-item', "bi-list-item-".concat(color), {
     'bi-list-checkable': checkbox,
     'bi-list-item-checked': value,
     'bi-list-item-draggable': draggable

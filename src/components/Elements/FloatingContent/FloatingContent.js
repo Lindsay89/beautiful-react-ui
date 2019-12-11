@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Portal from '../_Portal/Portal';
-import getElementAbsolutePosition from './getElementAbsolutePosition';
+import getFloaterAbsolutePosition from './getFloaterAbsolutePosition';
 import { Placement, useWindowResize } from '../../../shared';
 
 import './floating-content.scss';
@@ -34,7 +34,7 @@ const FloatingContent = (props) => {
   // Derives the component's position from the trigger's wrapper element then set it as elementStyle state.
   const calcPopupPosition = () => {
     if (isShown && triggerWrapperRef.current) {
-      const nextStyle = getElementAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
+      const nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
 
       setElementStyle(nextStyle);
     }

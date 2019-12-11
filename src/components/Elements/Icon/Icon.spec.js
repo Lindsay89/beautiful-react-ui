@@ -3,10 +3,7 @@ import { render, cleanup } from '@testing-library/react';
 import Icon from '.';
 
 describe('Icon component', () => {
-  afterEach(() => {
-    sinon.restore();
-    cleanup();
-  });
+  afterEach(cleanup);
 
   it('should render without explode', () => {
     const { container } = render(<Icon name="heart" />);

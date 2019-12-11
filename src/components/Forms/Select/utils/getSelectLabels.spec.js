@@ -10,7 +10,7 @@ const optionsMock = [
 
 describe('getSelectLabels function', () => {
   it('should be a function', () => {
-    expect(getSelectedLabels).to.be.instanceOf(Function);
+    expect(getSelectedLabels).to.be.a('function');
   });
 
   it('should return string if multiStyle is equal to string', () => {

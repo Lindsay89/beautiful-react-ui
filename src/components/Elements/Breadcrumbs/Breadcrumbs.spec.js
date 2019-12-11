@@ -1,8 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Breadcrumbs from '.';
-import BreadcrumbMenu from './CollapsedBreadcrumbs';
-
 
 describe('Breadcrumbs component', () => {
   afterEach(() => {
@@ -139,37 +137,16 @@ describe('Breadcrumbs component', () => {
 
     expect(renderedLi.length).to.be.equal(3);
   });
-});
 
-// test for Breadcrumb menu
-describe('Breadcrumb menu component', () => {
-  afterEach(() => {
-    sinon.restore();
-    cleanup();
-  });
-
-  it('it should render without explode', () => {
+  it('should warn and return null if the \'maxDisplayedItems\' is bigger that the passed items', () => {
+    const warnSpy = sinon.spy(console, 'warn');
     const pages = [
       { path: '/', label: 'home' },
       { path: '/section1', label: 'Section1' },
-      { path: '/section2', label: 'Section2' },
-      { path: '/section3', label: 'Section3' },
     ];
-    const { container } = render(<BreadcrumbMenu items={pages} maxDisplayedItems={2} />);
+    const { container } = render(<Breadcrumbs items={pages} maxDisplayedItems={12} />);
 
-    should.exist(container);
-  });
-
-  it('should render a menu button', () => {
-    const pages = [
-      { path: '/', label: 'home' },
-      { path: '/section1', label: 'Section1' },
-      { path: '/section2', label: 'Section2' },
-      { path: '/section3', label: 'Section3' },
-    ];
-    const { container } = render(<BreadcrumbMenu items={pages} maxDisplayedItems={2} />);
-    const buttonMenu = container.querySelector('.bi-breadcrumbs-menu-button');
-
-    expect(buttonMenu).to.exist;
+    expect(warnSpy.callCount).to.equal(1);
+    expect(container.querySelector('.bi-breadcrumbs')).to.be.null;
   });
 });

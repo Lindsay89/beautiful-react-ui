@@ -12,7 +12,7 @@ const getBottomPosition = (bodyHeight, coord, scrollY, offset) => (
 /**
  * Returns the absolute position of a given HTML element to the document.
  */
-const getElementAbsolutePosition = (element, placement = 'top-center', offset = 0, setWidth = false) => {
+const getFloaterAbsolutePosition = (el, placement = 'top-center', offset = 0, setWidth = false) => {
   const { clientHeight, clientWidth } = document.body;
   let bottom;
   let right;
@@ -25,58 +25,56 @@ const getElementAbsolutePosition = (element, placement = 'top-center', offset = 
    * children from the `element.children` property, if it is not available or is empty we then use the span itself to
    * get the bounding client rect.
    */
-  const boundingClientRect = element.children.length !== 0
-    ? element.children[0].getBoundingClientRect()
-    : element.getBoundingClientRect();
+  const boundingRect = el.children.length !== 0 ? el.children[0].getBoundingClientRect() : el.getBoundingClientRect();
 
   switch (placement) {
     case 'top-left':
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset);
-      left = getLeftPosition(boundingClientRect);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset);
+      left = getLeftPosition(boundingRect);
       break;
     case 'top-center':
     default:
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getCenterPosition(boundingClientRect, clientWidth);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getCenterPosition(boundingRect, clientWidth);
       transform = 'translateX(50%)';
       break;
     case 'top-right':
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getRightPosition(boundingClientRect, clientWidth);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getRightPosition(boundingRect, clientWidth);
       transform = 'translate(0%,0%)';
       break;
     case 'bottom-left':
-      bottom = getBottomPosition(clientHeight, boundingClientRect, scrollY, offset);
-      left = getLeftPosition(boundingClientRect);
+      bottom = getBottomPosition(clientHeight, boundingRect, scrollY, offset);
+      left = getLeftPosition(boundingRect);
       transform = 'translateY(100%)';
       break;
     case 'bottom-center':
-      bottom = getBottomPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getCenterPosition(boundingClientRect, clientWidth);
+      bottom = getBottomPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getCenterPosition(boundingRect, clientWidth);
       transform = 'translate(50%,100%)';
       break;
     case 'bottom-right':
-      bottom = getBottomPosition(clientHeight, boundingClientRect, scrollY, offset);
-      right = getRightPosition(boundingClientRect, clientWidth);
+      bottom = getBottomPosition(clientHeight, boundingRect, scrollY, offset);
+      right = getRightPosition(boundingRect, clientWidth);
       transform = 'translateY(100%)';
       break;
     case 'left-center':
-      right = getRightPosition(boundingClientRect, clientWidth) + boundingClientRect.width + offset;
+      right = getRightPosition(boundingRect, clientWidth) + boundingRect.width + offset;
       // Disabling to avoid using more than one line for a mathematical operation
       // eslint-disable-next-line max-len
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset) - offset - (boundingClientRect.height / 2);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset) - offset - (boundingRect.height / 2);
       transform = 'translateY(50%)';
       break;
     case 'right-center':
-      left = getLeftPosition(boundingClientRect) + boundingClientRect.width + offset;
+      left = getLeftPosition(boundingRect) + boundingRect.width + offset;
       // Disabling to avoid using more than one line for a mathematical operation
       // eslint-disable-next-line max-len
-      bottom = getTopPosition(clientHeight, boundingClientRect, scrollY, offset) - offset - (boundingClientRect.height / 2);
+      bottom = getTopPosition(clientHeight, boundingRect, scrollY, offset) - offset - (boundingRect.height / 2);
       transform = 'translateY(50%)';
       break;
   }
 
-  return ({ bottom, right, left, transform, ...setWidth && { width: boundingClientRect.width } });
+  return ({ bottom, right, left, transform, ...setWidth && { width: boundingRect.width } });
 };
 
-export default getElementAbsolutePosition;
+export default getFloaterAbsolutePosition;

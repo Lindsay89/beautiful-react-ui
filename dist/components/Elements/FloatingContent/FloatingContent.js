@@ -15,7 +15,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _Portal = _interopRequireDefault(require("../_Portal/Portal"));
 
-var _getElementAbsolutePosition = _interopRequireDefault(require("./getElementAbsolutePosition"));
+var _getFloaterAbsolutePosition = _interopRequireDefault(require("./getFloaterAbsolutePosition"));
 
 var _shared = require("../../../shared");
 
@@ -78,7 +78,7 @@ var FloatingContent = function FloatingContent(props) {
 
   var calcPopupPosition = function calcPopupPosition() {
     if (isShown && triggerWrapperRef.current) {
-      var nextStyle = (0, _getElementAbsolutePosition["default"])(triggerWrapperRef.current, placement, offset, widthAsTrigger);
+      var nextStyle = (0, _getFloaterAbsolutePosition["default"])(triggerWrapperRef.current, placement, offset, widthAsTrigger);
       setElementStyle(nextStyle);
     }
   };

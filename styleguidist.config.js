@@ -87,6 +87,13 @@ module.exports = {
             'src/components/Layout/Card/Card.js',
           ],
         },
+        {
+          name: 'Enterprise',
+          pagePerSection: true,
+          components: () => [
+            'src/components/Enterprise/Diagram/Diagram.js',
+          ],
+        },
       ],
     },
     {

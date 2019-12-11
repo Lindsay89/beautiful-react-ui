@@ -226,8 +226,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Popup component
 - Popup tests
-- getElementAbsolutePosition function
-- getElementAbsolutePosition tests
+- getFloaterAbsolutePosition function
+- getFloaterAbsolutePosition tests
 
 ## [0.20.0] - 2019-07-18
 
@@ -304,7 +304,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Rewriting getElementAbsolutePosition function to return the right element position and get rid of the previous bug.
+- Rewriting getFloaterAbsolutePosition function to return the right element position and get rid of the previous bug.
 
 ## [0.25.2] - 2019-09-30
 
@@ -567,7 +567,7 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - DisplayField supports bold style for value and makes it optional for labels
 - DisplayField supports React node values, not only strings
-- Removing the postinstall.js script as the Node community strongly discourage having ads in the console
+- Removing the postinstall.js script as the NodesCanvas community strongly discourage having ads in the console
 - Fixed `tdd` script
 
 ## [0.33.7] - 2019-11-03
@@ -690,14 +690,14 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - TextArea tests
 - TextArea types
 
-## [0.41.1] - 2019-11-27
+## [0.41.1] - 2019-11-28
 
 ### Fixed
 
 - Input component minor style glitches
 - TextArea component fluid style glitch
 
-## [0.41.2] - 2019-11-27
+## [0.41.2] - 2019-11-28
 
 ### Fixed
 
@@ -716,3 +716,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Modal body padding
+
+## [0.43.0] - 2019-11-29
+
+### Added
+
+- Diagram component
+- useDrag hook
+- useWindowScroll hook

@@ -19,7 +19,7 @@ const ListItem = (props) => {
     getDraggingProps(draggable, onDragStart, onDragEnd)
   ), [draggable, onDragStart, onDragEnd]);
 
-  const classList = classNames('bi-list-item', `bi-list-item-${color}`, {
+  const classList = classNames('bi bi-list-item', `bi-list-item-${color}`, {
     'bi-list-checkable': checkbox,
     'bi-list-item-checked': value,
     'bi-list-item-draggable': draggable,

@@ -11,8 +11,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _shared = require("../../../shared");
 
-var _Icon = _interopRequireDefault(require("../Icon"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var BreadcrumbItem = function BreadcrumbItem(props) {
@@ -35,7 +33,7 @@ var BreadcrumbItem = function BreadcrumbItem(props) {
 BreadcrumbItem.propTypes = {
   path: _propTypes["default"].string,
   label: _propTypes["default"].string,
-  icon: _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].string), _propTypes["default"].instanceOf(_Icon["default"])])
+  icon: _shared.IconProp
 };
 BreadcrumbItem.defaultProps = {
   path: undefined,

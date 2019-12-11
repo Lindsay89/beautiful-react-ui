@@ -93,6 +93,30 @@ Object.defineProperty(exports, "useWindowResize", {
     return _useWindowResize["default"];
   }
 });
+Object.defineProperty(exports, "useWindowScroll", {
+  enumerable: true,
+  get: function get() {
+    return _useWindowScroll["default"];
+  }
+});
+Object.defineProperty(exports, "useDrag", {
+  enumerable: true,
+  get: function get() {
+    return _useDrag["default"];
+  }
+});
+Object.defineProperty(exports, "makeSvgPath", {
+  enumerable: true,
+  get: function get() {
+    return _makeSvgPath["default"];
+  }
+});
+Object.defineProperty(exports, "getPathMidpoint", {
+  enumerable: true,
+  get: function get() {
+    return _getPathMidpoint["default"];
+  }
+});
 
 var _Color = _interopRequireDefault(require("./types/Color"));
 
@@ -123,6 +147,14 @@ var _getFirstChild = _interopRequireDefault(require("./functions/getFirstChild")
 var _warn = _interopRequireDefault(require("./functions/warn"));
 
 var _useWindowResize = _interopRequireDefault(require("./hooks/useWindowResize"));
+
+var _useWindowScroll = _interopRequireDefault(require("./hooks/useWindowScroll"));
+
+var _useDrag = _interopRequireDefault(require("./hooks/useDrag"));
+
+var _makeSvgPath = _interopRequireDefault(require("../components/Enterprise/Diagram/utils/makeSvgPath"));
+
+var _getPathMidpoint = _interopRequireDefault(require("../components/Enterprise/Diagram/utils/getPathMidpoint"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeIconFromProp, warn } from '../../../shared';
-import Icon from '../Icon';
+import { makeIconFromProp, IconProp, warn } from '../../../shared';
 
 /**
  * BreadcrumbItems is a sub-component of Breadcrumbs.
@@ -37,11 +36,7 @@ const BreadcrumbItem = (props) => {
 BreadcrumbItem.propTypes = {
   path: PropTypes.string,
   label: PropTypes.string,
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-    PropTypes.instanceOf(Icon),
-  ]),
+  icon: IconProp,
 };
 
 BreadcrumbItem.defaultProps = {
