@@ -731,3 +731,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Accordion now checks for null children before warning about unsupported children type
 - Better Diagram types definition
+
+## [0.43.2] - 2019-12-12
+
+### Fixed
+
+- It turned out that types from the previous commit should've been exported and not only defined, what a world we are living in.
