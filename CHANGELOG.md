@@ -724,3 +724,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Diagram component
 - useDrag hook
 - useWindowScroll hook
+
+## [0.43.1] - 2019-12-12
+
+### Fixed
+
+- Accordion now checks for null children before warning about unsupported children type
+- Better Diagram types definition

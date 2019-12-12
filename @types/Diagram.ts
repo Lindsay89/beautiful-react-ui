@@ -3,13 +3,13 @@ import { Callback, DefaultProps } from './_shared';
 
 type Coordinate = [number, number];
 
-export type DiagramPort = {
+type DiagramPort = {
   id: string,
   canLink: (port: DiagramPort) => boolean,
   alignment: 'right' | 'left' | 'top' | 'bottom',
 }
 
-export type DiagramNode = {
+type DiagramNode = {
   id: string,
   coordinates: Coordinate,
   content?: string | ReactElement,
@@ -20,14 +20,14 @@ export type DiagramNode = {
   className?: string,
 }
 
-export type DiagramLink = {
+type DiagramLink = {
   input: string,
   output: string,
   label?: string | ReactElement,
   readonly?: boolean,
 }
 
-export type DiagramSchema = {
+type DiagramSchema = {
   nodes: DiagramNode[],
   links?: DiagramLink[],
 }

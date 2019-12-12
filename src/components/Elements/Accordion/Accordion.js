@@ -10,6 +10,8 @@ import './accordion.scss';
  * returns only AccordionContent children whilst wipes out the others
  */
 const cloneAccordionContents = (child, index, props) => {
+  if (!child) return null;
+
   if (child.type !== AccordionContent) {
     warn('Accordion allows only Accordion.Content children, other kind of elements will be wiped out');
 
