@@ -48,8 +48,8 @@ const initialSchema = {
   nodes: [
     {
       id: 'node-1',
-      content: 'Node 1',
-      coordinates: [120, 150],
+      content: 'Start',
+      coordinates: [100, 150],
       outputs: [
         { id: 'port-1', alignment: 'right' },
         { id: 'port-2', alignment: 'right' },
@@ -57,11 +57,24 @@ const initialSchema = {
     },
     {
       id: 'node-2',
-      content: 'Node 2',
-      coordinates: [400, 150],
+      content: 'Middle',
+      coordinates: [300, 150],
       inputs: [
         { id: 'port-3', alignment: 'left' },
         { id: 'port-4', alignment: 'left' },
+      ],
+      outputs: [
+        { id: 'port-5', alignment: 'right' },
+        { id: 'port-6', alignment: 'right' },
+      ],
+    },
+    {
+      id: 'node-3',
+      content: 'End',
+      coordinates: [600, 150],
+      inputs: [
+        { id: 'port-7', alignment: 'left' },
+        { id: 'port-8', alignment: 'left' },
       ],
     },
   ],

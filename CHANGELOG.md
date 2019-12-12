@@ -743,3 +743,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Port checks if the target is not itself before dispatching a new link creation
+
+
+## [0.43.4] - 2019-12-12
+
+### Fixed
+
+- Fixing Diagram canvas absolute position to avoid positioning glitches
