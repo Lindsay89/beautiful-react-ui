@@ -29,7 +29,7 @@ const Port = (props) => {
   onDragEnd((event) => {
     const targetPort = event.target.getAttribute('data-port-id');
     /* eslint-disable no-unused-expressions */
-    if (targetPort && canLink(id, targetPort)) {
+    if (targetPort && event.target !== ref.current && canLink(id, targetPort)) {
       onSegmentConnect && onSegmentConnect(id, targetPort);
     } else {
       onSegmentConnect && onSegmentFail(id);

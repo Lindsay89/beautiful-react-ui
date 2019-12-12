@@ -134,7 +134,7 @@ const CustomNode = (props) => {
       </div>
       <div style={{marginTop: '20px'}}>
         {inputs.map((port) => React.cloneElement(port, {
-          style: { width: '20px', height: '20px', background: '#1B263B' }
+          style: { width: '50px', height: '25px', background: '#1B263B' }
         }))}
       </div>
     </div>
@@ -163,7 +163,7 @@ const UncontrolledDiagram = () => {
   const [schema, setSchema] = React.useState(initialSchema);
 
   return (
-    <div style={{ height: '22.5rem' }}>
+    <div style={{ height: '22.5rem', padding: '3rem' }}>
       <Diagram schema={schema} onChange={setSchema} />
     </div>
   );

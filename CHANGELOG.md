@@ -737,3 +737,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - It turned out that types from the previous commit should've been exported and not only defined, what a world we are living in.
+
+## [0.43.3] - 2019-12-12
+
+### Fixed
+
+- Port checks if the target is not itself before dispatching a new link creation

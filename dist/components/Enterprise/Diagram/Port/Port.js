@@ -58,7 +58,7 @@ var Port = function Port(props) {
   onDragEnd(function (event) {
     var targetPort = event.target.getAttribute('data-port-id');
 
-    if (targetPort && canLink(id, targetPort)) {
+    if (targetPort && event.target !== ref.current && canLink(id, targetPort)) {
       onSegmentConnect && onSegmentConnect(id, targetPort);
     } else {
       onSegmentConnect && onSegmentFail(id);
