@@ -16,14 +16,14 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 var CustomDiagramRender = function CustomDiagramRender(props) {
-  var renderer = props.renderer,
-      rest = _objectWithoutProperties(props, ["renderer"]);
+  var render = props.render,
+      rest = _objectWithoutProperties(props, ["render"]);
 
-  return renderer(rest);
+  return render(rest);
 };
 
 CustomDiagramRender.propTypes = {
-  renderer: _propTypes["default"].func.isRequired,
+  render: _propTypes["default"].func.isRequired,
   id: _propTypes["default"].oneOfType([_propTypes["default"].string]).isRequired,
   content: _propTypes["default"].oneOfType([_propTypes["default"].elementType, _propTypes["default"].node]),
   inputs: _propTypes["default"].arrayOf(_propTypes["default"].node),

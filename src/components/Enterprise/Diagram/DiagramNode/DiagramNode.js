@@ -47,11 +47,11 @@ const DiagramNode = (props) => {
   // generate ports
   const InputPorts = inputs.map(portGenerator(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
   const OutputPorts = outputs.map(portGenerator(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
-  const customRenderProps = { id, content, type, inputs: InputPorts, outputs: OutputPorts, data, className };
+  const customRenderProps = { id, render, content, type, inputs: InputPorts, outputs: OutputPorts, data, className };
 
   return (
     <div className={classList} ref={ref} style={getDiagramNodeStyle(coordinates)}>
-      {render && typeof renderer === 'function' && (<CustomRenderer {...customRenderProps} />)}
+      {render && typeof render === 'function' && (<CustomRenderer {...customRenderProps} />)}
       {!render && (
         <>
           {content}

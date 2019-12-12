@@ -5,10 +5,10 @@ import CustomRenderer from './CustomRender';
 describe('CustomRenderer component', () => {
   afterEach(cleanup);
 
-  const renderer = () => <div />;
+  const CustomNode = () => <div />;
 
   it('should render without explode', () => {
-    const { container } = render(<CustomRenderer renderer={renderer} />);
+    const { container } = render(<CustomRenderer render={CustomNode} />);
 
     should.exist(container);
     expect(container.querySelector('div')).to.exist;

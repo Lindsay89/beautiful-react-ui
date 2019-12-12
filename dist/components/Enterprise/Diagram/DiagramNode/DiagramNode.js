@@ -78,6 +78,7 @@ var DiagramNode = function DiagramNode(props) {
   var OutputPorts = outputs.map((0, _portGenerator["default"])(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
   var customRenderProps = {
     id: id,
+    render: render,
     content: content,
     type: type,
     inputs: InputPorts,
@@ -89,7 +90,7 @@ var DiagramNode = function DiagramNode(props) {
     className: classList,
     ref: ref,
     style: (0, _getDiagramNodeStyle["default"])(coordinates)
-  }, render && typeof renderer === 'function' && _react["default"].createElement(_CustomRender["default"], customRenderProps), !render && _react["default"].createElement(_react["default"].Fragment, null, content, _react["default"].createElement("div", {
+  }, render && typeof render === 'function' && _react["default"].createElement(_CustomRender["default"], customRenderProps), !render && _react["default"].createElement(_react["default"].Fragment, null, content, _react["default"].createElement("div", {
     className: "bi-port-wrapper"
   }, _react["default"].createElement("div", {
     className: "bi-input-ports"

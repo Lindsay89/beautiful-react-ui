@@ -16,7 +16,7 @@ type DiagramNode = {
   inputs?: DiagramPort[],
   outputs?: DiagramPort[],
   type?: 'default',
-  renderer?: (props: DiagramProps) => unknown,
+  render?: (props: DiagramProps) => unknown,
   className?: string,
 }
 

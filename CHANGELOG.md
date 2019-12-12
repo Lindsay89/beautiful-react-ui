@@ -756,3 +756,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Add
 
 - A `data` property support to Diagram nodes to possibly keep data between renders
+
+
+## [0.44.1] - 2019-12-12
+
+### Fixed
+
+- Render function working again in Diagram nodes

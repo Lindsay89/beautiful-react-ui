@@ -195,7 +195,7 @@ const UncontrolledDiagram = () => {
   const [schema, setSchema] = React.useState(initialSchema);
 
   return (
-    <div style={{ height: '22.5rem', padding: '3rem' }}>
+    <div style={{ height: '22.5rem' }}>
       <Diagram schema={schema} onChange={setSchema} />
     </div>
   );

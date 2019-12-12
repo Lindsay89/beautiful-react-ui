@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CustomDiagramRender = (props) => {
-  const { renderer, ...rest } = props;
-  return renderer(rest);
+  const { render, ...rest } = props;
+  return render(rest);
 };
 
 CustomDiagramRender.propTypes = {
   /**
-   * The actual renderer
+   * The actual render function
    */
-  renderer: PropTypes.func.isRequired,
+  render: PropTypes.func.isRequired,
   /**
    * The diagram node id
    */
