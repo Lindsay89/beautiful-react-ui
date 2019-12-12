@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import CustomRenderer from './CustomRenderer';
+import CustomRenderer from './CustomRender';
 import getDiagramNodeStyle from './getDiagramNodeStyle';
 import { usePortRegistration, useNodeRegistration } from '../utils/useContextRegistration';
 import { PortType } from '../utils/Types';
@@ -15,8 +15,8 @@ import { useDrag } from '../../../../shared';
  */
 const DiagramNode = (props) => {
   const {
-    id, content, coordinates, type, inputs, outputs, onPositionChange, onPortRegister, onDragNewSegment, onMount,
-    onSegmentFail, onSegmentConnect, renderer, className,
+    id, content, coordinates, type, inputs, outputs, data, onPositionChange, onPortRegister, onDragNewSegment, onMount,
+    onSegmentFail, onSegmentConnect, render, className,
   } = props;
   const registerPort = usePortRegistration(inputs, outputs, onPortRegister); // get the port registration method
   const { ref, onDragStart, onDrag } = useDrag({ throttleBy: 14 }); // get the drag n drop methods
@@ -41,18 +41,18 @@ const DiagramNode = (props) => {
   useNodeRegistration(ref, onMount, id);
 
   const classList = useMemo(() => classNames('bi bi-diagram-node', {
-    [`bi-diagram-node-${type}`]: !!type && !renderer,
+    [`bi-diagram-node-${type}`]: !!type && !render,
   }, className), [type, className]);
 
   // generate ports
   const InputPorts = inputs.map(portGenerator(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
   const OutputPorts = outputs.map(portGenerator(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
-  const customRendererProps = { renderer, id, content, type, inputs: InputPorts, outputs: OutputPorts, className };
+  const customRenderProps = { id, content, type, inputs: InputPorts, outputs: OutputPorts, data, className };
 
   return (
     <div className={classList} ref={ref} style={getDiagramNodeStyle(coordinates)}>
-      {renderer && typeof renderer === 'function' && (<CustomRenderer {...customRendererProps} />)}
-      {!renderer && (
+      {render && typeof renderer === 'function' && (<CustomRenderer {...customRenderProps} />)}
+      {!render && (
         <>
           {content}
           <div className="bi-port-wrapper">
@@ -96,9 +96,13 @@ DiagramNode.propTypes = {
    */
   type: PropTypes.oneOf(['default']),
   /**
-   * Defines a custom renderer
+   * An object to possibly keep data between renders
    */
-  renderer: PropTypes.func,
+  data: PropTypes.shape({}),
+  /**
+   * Defines a custom render function
+   */
+  render: PropTypes.func,
   /**
    * The callback to be fired when position changes
    */
@@ -134,8 +138,9 @@ DiagramNode.defaultProps = {
   content: '',
   inputs: [],
   outputs: [],
+  data: {},
   onPositionChange: undefined,
-  renderer: undefined,
+  render: undefined,
   onMount: undefined,
   onPortRegister: undefined,
   onDragNewSegment: undefined,

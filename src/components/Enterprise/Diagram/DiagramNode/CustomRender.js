@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CustomDiagramRenderer = (props) => {
+const CustomDiagramRender = (props) => {
   const { renderer, ...rest } = props;
   return renderer(rest);
 };
 
-CustomDiagramRenderer.propTypes = {
+CustomDiagramRender.propTypes = {
   /**
    * The actual renderer
    */
@@ -29,4 +29,4 @@ CustomDiagramRenderer.propTypes = {
   outputs: PropTypes.arrayOf(PropTypes.node),
 };
 
-export default React.memo(CustomDiagramRenderer);
+export default React.memo(CustomDiagramRender);

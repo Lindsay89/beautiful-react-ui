@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import CustomRenderer from './CustomRenderer';
+import CustomRenderer from './CustomRender';
 
 describe('CustomRenderer component', () => {
   afterEach(cleanup);

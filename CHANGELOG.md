@@ -750,3 +750,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Fixing Diagram canvas absolute position to avoid positioning glitches
+
+## [0.44.0] - 2019-12-12
+
+### Add
+
+- A `data` property support to Diagram nodes to possibly keep data between renders

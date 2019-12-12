@@ -13,7 +13,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
-var _CustomRenderer = _interopRequireDefault(require("./CustomRenderer"));
+var _CustomRender = _interopRequireDefault(require("./CustomRender"));
 
 var _getDiagramNodeStyle = _interopRequireDefault(require("./getDiagramNodeStyle"));
 
@@ -40,13 +40,14 @@ var DiagramNode = function DiagramNode(props) {
       type = props.type,
       inputs = props.inputs,
       outputs = props.outputs,
+      data = props.data,
       onPositionChange = props.onPositionChange,
       onPortRegister = props.onPortRegister,
       onDragNewSegment = props.onDragNewSegment,
       onMount = props.onMount,
       onSegmentFail = props.onSegmentFail,
       onSegmentConnect = props.onSegmentConnect,
-      renderer = props.renderer,
+      render = props.render,
       className = props.className;
   var registerPort = (0, _useContextRegistration.usePortRegistration)(inputs, outputs, onPortRegister);
 
@@ -71,24 +72,24 @@ var DiagramNode = function DiagramNode(props) {
   });
   (0, _useContextRegistration.useNodeRegistration)(ref, onMount, id);
   var classList = (0, _react.useMemo)(function () {
-    return (0, _classnames["default"])('bi bi-diagram-node', _defineProperty({}, "bi-diagram-node-".concat(type), !!type && !renderer), className);
+    return (0, _classnames["default"])('bi bi-diagram-node', _defineProperty({}, "bi-diagram-node-".concat(type), !!type && !render), className);
   }, [type, className]);
   var InputPorts = inputs.map((0, _portGenerator["default"])(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
   var OutputPorts = outputs.map((0, _portGenerator["default"])(registerPort, onDragNewSegment, onSegmentFail, onSegmentConnect));
-  var customRendererProps = {
-    renderer: renderer,
+  var customRenderProps = {
     id: id,
     content: content,
     type: type,
     inputs: InputPorts,
     outputs: OutputPorts,
+    data: data,
     className: className
   };
   return _react["default"].createElement("div", {
     className: classList,
     ref: ref,
     style: (0, _getDiagramNodeStyle["default"])(coordinates)
-  }, renderer && typeof renderer === 'function' && _react["default"].createElement(_CustomRenderer["default"], customRendererProps), !renderer && _react["default"].createElement(_react["default"].Fragment, null, content, _react["default"].createElement("div", {
+  }, render && typeof renderer === 'function' && _react["default"].createElement(_CustomRender["default"], customRenderProps), !render && _react["default"].createElement(_react["default"].Fragment, null, content, _react["default"].createElement("div", {
     className: "bi-port-wrapper"
   }, _react["default"].createElement("div", {
     className: "bi-input-ports"
@@ -104,7 +105,8 @@ DiagramNode.propTypes = {
   inputs: _propTypes["default"].arrayOf(_Types.PortType),
   outputs: _propTypes["default"].arrayOf(_Types.PortType),
   type: _propTypes["default"].oneOf(['default']),
-  renderer: _propTypes["default"].func,
+  data: _propTypes["default"].shape({}),
+  render: _propTypes["default"].func,
   onPositionChange: _propTypes["default"].func,
   onMount: _propTypes["default"].func,
   onPortRegister: _propTypes["default"].func,
@@ -118,8 +120,9 @@ DiagramNode.defaultProps = {
   content: '',
   inputs: [],
   outputs: [],
+  data: {},
   onPositionChange: undefined,
-  renderer: undefined,
+  render: undefined,
   onMount: undefined,
   onPortRegister: undefined,
   onDragNewSegment: undefined,

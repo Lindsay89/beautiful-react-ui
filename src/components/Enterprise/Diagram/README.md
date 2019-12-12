@@ -54,6 +54,10 @@ const initialSchema = {
         { id: 'port-1', alignment: 'right' },
         { id: 'port-2', alignment: 'right' },
       ],
+      data: {
+        foo: 'bar',
+        count: 0,
+      }
     },
     {
       id: 'node-2',
@@ -67,6 +71,9 @@ const initialSchema = {
         { id: 'port-5', alignment: 'right' },
         { id: 'port-6', alignment: 'right' },
       ],
+      data: {
+        bar: 'foo',
+      }
     },
     {
       id: 'node-3',
@@ -76,6 +83,15 @@ const initialSchema = {
         { id: 'port-7', alignment: 'left' },
         { id: 'port-8', alignment: 'left' },
       ],
+      data: {
+        foo: true,
+        bar: false,
+        some: {
+          deep: {
+            object: true,
+          }
+        },
+      }
     },
   ],
   links: [
@@ -87,7 +103,10 @@ const UncontrolledDiagram = () => {
   // create diagrams schema
   const [schema, setSchema] = React.useState(initialSchema);
 
-  const handleChange =  (schema) => { setSchema(schema); }
+  const handleChange =  (schema) => {
+    schema.nodes[0].data.count += 1;
+    setSchema(schema); 
+  }
 
   return (
     <div style={{ height: '22.5rem' }}>
@@ -165,7 +184,7 @@ const initialSchema = {
     { 
       id: 'node-custom', 
       coordinates: [250, 60], 
-      renderer: CustomNode,
+      render: CustomNode,
       inputs: [ { id: 'custom-port-1',  alignment: 'left' } ],
     },
   ]
