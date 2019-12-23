@@ -763,3 +763,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Render function working again in Diagram nodes
+
+## [0.44.2] - 2019-12-23
+
+### Fixed
+
+- Button doesn't ignore anymore pills dimension

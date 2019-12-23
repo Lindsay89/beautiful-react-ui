@@ -118,7 +118,7 @@
     @apply px-0;
 
     height: 2.25rem;
-    width: 2.25rem;
+    min-width: 2.25rem;
 
     &.btn-sm {
       width: 1.625rem;
@@ -132,6 +132,10 @@
 
     > .bi.bi-icon {
       margin: 0;
+    }
+
+    .bi.bi-pill {
+      @apply mr-2;
     }
   }
 
@@ -172,6 +176,7 @@
   // ----------------------------
   // PILL
   // ----------------------------
+  /* stylelint-disable-next-line no-descending-specificity */
   .bi.bi-pill {
     @apply ml-2;
   }
