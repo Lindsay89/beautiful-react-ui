@@ -20,7 +20,6 @@ const DiagramCanvas = (props) => {
   const calculateBBox = useCallback((el) => {
     if (el) {
       const nextBBox = el.getBoundingClientRect();
-      console.log(nextBBox);
       if (!isEqual(nextBBox, bbox)) {
         setBoundingBox(nextBBox);
       }
