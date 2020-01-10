@@ -38,6 +38,3 @@ export { default as Link } from './components/Typography/Link';
 
 // Enterprise
 export { default as Diagram } from './components/Enterprise/Diagram';
-
-// Hooks
-export { useWindowResize, useDrag, useWindowScroll } from './shared';

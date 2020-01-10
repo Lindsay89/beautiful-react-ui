@@ -17,8 +17,6 @@ export { default as getFirstChild } from './functions/getFirstChild';
 export { default as warn } from './functions/warn';
 
 // hooks
-export { default as useWindowResize } from './hooks/useWindowResize';
-export { default as useWindowScroll } from './hooks/useWindowScroll';
 export { default as useDrag } from './hooks/useDrag';
 
 // geometries

@@ -1,1 +1,0 @@
-To install the thing type the N word in the terminal etc.

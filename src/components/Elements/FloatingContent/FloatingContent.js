@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { useWindowResize } from 'beautiful-react-hooks';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Portal from '../_Portal/Portal';
 import getFloaterAbsolutePosition from './getFloaterAbsolutePosition';
-import { Placement, useWindowResize } from '../../../shared';
+import { Placement } from '../../../shared';
 
 import './floating-content.scss';
 
