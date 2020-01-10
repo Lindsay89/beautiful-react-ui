@@ -795,3 +795,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - ButtonGroup glitch on Safari
+
+## [0.46.0] - 2020-01-10
+
+### Added
+
+- Improving documentation
