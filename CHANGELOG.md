@@ -769,3 +769,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Button doesn't ignore anymore pills dimension
+
+## [0.55.0] - 2020-01-10
+
+### Added
+
+- Better documentation
+- Preparing the repository for migrating to github
+- Adding CI

@@ -3,7 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // local constants
-const sourcePath = path.resolve(__dirname, 'src');
+const sourcePath = path.resolve(__dirname, '../..', 'src');
 
 module.exports = () => ({
   entry: [
@@ -62,6 +62,10 @@ module.exports = () => ({
             },
           },
         ],
+      },
+      {
+        test: /\.png$/,
+        loader: 'url-loader',
       },
     ],
   },
