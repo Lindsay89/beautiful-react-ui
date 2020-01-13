@@ -20,11 +20,25 @@ describe('Paragraph component', () => {
     expect(pEl.classList.contains('bi-p')).to.be.true;
   });
 
+  it('should accept an "id" prop', () => {
+    const { container } = render(<Paragraph id="foo">Foo</Paragraph>);
+    const pEl = container.querySelector('p');
+
+    expect(pEl.id).to.equal('foo');
+  });
+
   it('should accept custom classes', () => {
     const { container } = render(<Paragraph className="foo">Foo</Paragraph>);
     const pEl = container.querySelector('.bi-p');
 
     expect(pEl.classList.contains('foo')).to.be.true;
+  });
+
+  it('should allow to define custom style', () => {
+    const { container } = render(<Paragraph style={{ margin: '10px' }}>Foo</Paragraph>);
+    const pEl = container.querySelector('p');
+
+    expect(pEl.getAttribute('style')).to.equal('margin: 10px;');
   });
 
   it('should allow to change the paragraph color by setting a \'color\' prop', () => {

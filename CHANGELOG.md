@@ -770,10 +770,17 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Button doesn't ignore anymore pills dimension
 
-## [0.55.0] - 2020-01-10
+## [0.45.0] - 2020-01-10
 
 ### Added
 
 - Better documentation
 - Preparing the repository for migrating to github
 - Adding CI
+
+## [0.45.1] - 2020-01-13
+
+### Fixed
+
+- Paragraph and Title component now have tests for id and style props
+
