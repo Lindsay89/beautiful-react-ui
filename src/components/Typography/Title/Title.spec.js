@@ -19,11 +19,25 @@ describe('Title component', () => {
     expect(titleEl.classList.contains('bi-title')).to.be.true;
   });
 
+  it('should accept an "id" prop', () => {
+    const { container } = render(<Title id="foo">Foo</Title>);
+    const titleEl = container.querySelector('h1');
+
+    expect(titleEl.id).to.equal('foo');
+  });
+
   it('should accept custom classes', () => {
     const { container } = render(<Title className="foo">Foo</Title>);
     const titleEl = container.querySelector('.bi-title');
 
     expect(titleEl.classList.contains('foo')).to.be.true;
+  });
+
+  it('should allow to define custom style', () => {
+    const { container } = render(<Title style={{ margin: '10px' }}>Foo</Title>);
+    const titleEl = container.querySelector('h1');
+
+    expect(titleEl.getAttribute('style')).to.equal('margin: 10px;');
   });
 
   it('should allow to change the title color by setting a \'color\' prop', () => {
