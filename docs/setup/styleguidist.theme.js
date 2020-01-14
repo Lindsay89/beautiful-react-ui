@@ -49,7 +49,7 @@ module.exports = {
         maxWidth: '960px',
       },
       root: {
-        background: 'white',
+        background: '#FBFAF9',
       },
     },
     Playground: {

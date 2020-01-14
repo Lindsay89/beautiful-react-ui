@@ -12,23 +12,20 @@
 
 ## 💡 Why?
 
-In the last few year we've adopted and used a good number of ui-libraries, even though these libraries generally provide 
-a strong ally in developing user interfaces, sometimes the struggle to customise their components' style or behaviour 
-may be quite an effort, especially when customising few line of CSS costs the introduction of new technologies, languages 
-or compilers. <br />
-Not to mention the struggle with the hell, or the tendency of some libraries to export stateful components or the 
-matter of sizes and spaces completely spoiled between components by the customisations.<br />
-How to reduce the customising fatigue then? <br />
-Given the over-explored sea of the ui-libraries, was the idea of building another one a solution already?<br />
-Probably not, but thinking of a concrete, driven-by-props API for customising the components' behaviour whilst sticking 
-to the old good CSS for customising their style was, in my humble opinion, quite close to an answer.<br />
-That's why we created `beautiful-ui`, having in mind the intent to provide a lightweight yet easy-to-customise controlled 
-components library.
+In the last few year we've have had a chance to test a good number of UI libraries, each with its own strengths and 
+weaknesses, but none that matched our expectations in terms of ease of customization.
+
+In fact, our attempt at customizing the style and behavior of the libraries we've tested would generally result in 
+one or more of the following:
+- an inordinate growth in the number of dependencies of our projects, often in the form of language transpilers / compilers causing our build process to grow in complexity beyond reason;
+- a struggle with components carelessly implemented as stateful components where a stateless approach would have resulted in a much better, more performant, more reusable product.
+
+As a result, we've decided to develop a library putting ease of customization as our top priority, focusing on a solid, props-driven API and pure CSS. 
 
 ### 🎓 Principles
 
 - **Driven by grace**: instead of customising the padding/margin/color/whatever of a single component, 
-customise the value of padding/margin/color/whatever trough a [configuration file](./docs/configuring.md), the library 
+customise the value of padding/margin/color/whatever trough a [configuration file](./docs/customising.md), the library 
 will then generate a tailored style keeping grace between components.
 - **Render behaviour**: the majority of the exported components accept a `renderer` prop to possibly customise 
 their behaviour
