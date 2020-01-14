@@ -36,7 +36,3 @@ export { default as Link } from './@types/Link';
 
 // Enterprise
 export { default as Diagram }from './@types/Diagram';
-
-// Hooks
-export { default as useWindowResize } from './@types/useWindowResize';
-export { default as useWindowScroll } from './@types/useWindowResize';
