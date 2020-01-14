@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _beautifulReactHooks = require("beautiful-react-hooks");
+
 var _isEqual = _interopRequireDefault(require("lodash/isEqual"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -16,8 +18,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _classnames = _interopRequireDefault(require("classnames"));
 
 var _DiagramContext = _interopRequireDefault(require("../utils/DiagramContext"));
-
-var _shared = require("../../../../shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -65,7 +65,7 @@ var DiagramCanvas = function DiagramCanvas(props) {
   (0, _react.useEffect)(function () {
     return calculateBBox(canvasRef.current);
   }, [canvasRef.current]);
-  (0, _shared.useWindowScroll)(function () {
+  (0, _beautifulReactHooks.useWindowScroll)(function () {
     return calculateBBox(canvasRef.current);
   });
   return _react["default"].createElement("div", _extends({

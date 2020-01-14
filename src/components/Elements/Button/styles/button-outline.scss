@@ -4,7 +4,7 @@
     filter: none;
     box-shadow: unset;
 
-    @apply border border-default-lighter bg-transparent text-default-darker;
+    @apply border-solid border border-default-lighter bg-transparent text-default-darker;
 
     &:hover {
       @apply bg-default-lighter text-default-darker text-default-darker;
@@ -24,8 +24,6 @@
     @apply border-0 bg-transparent text-#{$color};
 
     &:hover {
-      box-shadow: 0 0 0 0.0625rem;
-
       @apply border-0 bg-#{$color} text-white;
     }
 

@@ -9,6 +9,8 @@ exports["default"] = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _beautifulReactHooks = require("beautiful-react-hooks");
+
 var _classnames = _interopRequireDefault(require("classnames"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -92,7 +94,7 @@ var FloatingContent = function FloatingContent(props) {
   };
 
   (0, _react.useEffect)(calcPopupPosition, [isShown, offset, placement, children]);
-  (0, _shared.useWindowResize)(calcPopupPosition);
+  (0, _beautifulReactHooks.useWindowResize)(calcPopupPosition);
   (0, _react.useEffect)(function () {
     if (triggerWrapperRef.current && contentWrapperRef.current && clickOutsideToToggle && action === 'click') {
       document.addEventListener('click', clickOutsideHandler);

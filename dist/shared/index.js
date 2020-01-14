@@ -87,18 +87,6 @@ Object.defineProperty(exports, "warn", {
     return _warn["default"];
   }
 });
-Object.defineProperty(exports, "useWindowResize", {
-  enumerable: true,
-  get: function get() {
-    return _useWindowResize["default"];
-  }
-});
-Object.defineProperty(exports, "useWindowScroll", {
-  enumerable: true,
-  get: function get() {
-    return _useWindowScroll["default"];
-  }
-});
 Object.defineProperty(exports, "useDrag", {
   enumerable: true,
   get: function get() {
@@ -145,10 +133,6 @@ var _getLastChild = _interopRequireDefault(require("./functions/getLastChild"));
 var _getFirstChild = _interopRequireDefault(require("./functions/getFirstChild"));
 
 var _warn = _interopRequireDefault(require("./functions/warn"));
-
-var _useWindowResize = _interopRequireDefault(require("./hooks/useWindowResize"));
-
-var _useWindowScroll = _interopRequireDefault(require("./hooks/useWindowScroll"));
 
 var _useDrag = _interopRequireDefault(require("./hooks/useDrag"));
 

@@ -784,3 +784,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Paragraph and Title component now have tests for id and style props
 
+## [0.45.2] - 2020-01-14
+
+### Fixed
+
+- glitch on outlined buttons on Safari
+
