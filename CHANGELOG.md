@@ -814,3 +814,4 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Renaming library
 - Preparing for NPM
+- Removing husky since the lib will be built by the CI
