@@ -18,7 +18,7 @@
 
 ## 💡 Why?
 
-In the last few year we've have had a chance to test a good number of UI libraries, each with its own strengths and 
+In the last few year we've had a chance to test a good number of UI libraries, each with its own strengths and 
 weaknesses, but none that matched our expectations in terms of ease of customization.
 
 In fact, our attempt at customizing the style and behavior of the libraries we've tested would generally result in 
@@ -30,17 +30,26 @@ As a result, we've decided to develop a library putting ease of customization as
 
 ## Installation
 
-As simple as:
+Install the `beautiful-react-ui` package from NPM:
 
 ```bash
 npm install beautiful-ui-react
 ```
 
-Or:
+or from yarn:
 
 ```bash
 yarn add beautiful-ui-react
 ```
+
+#### If using webpack:
+
+just import the CSS from the library:
+
+```js static noeditor
+import 'beautiful-react-ui/beautiful-react-ui.css';
+```
+
 
 ## 🎓 Principles
 

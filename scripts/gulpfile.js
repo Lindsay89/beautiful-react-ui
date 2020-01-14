@@ -48,9 +48,9 @@ const buildBundledStyle = () => {
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postCSS())
-    .pipe(concat('beautiful-ui.css'))
+    .pipe(concat('beautiful-react-ui.css'))
     .pipe(sourcemaps.write('.'))
-    .pipe(dest(`${destDir}`));
+    .pipe(dest('..')); // css is saved into the root directory when published
 };
 
 buildBundledStyle.displayName = 'style bundle';

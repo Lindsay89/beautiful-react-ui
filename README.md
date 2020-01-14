@@ -17,7 +17,7 @@
 
 ## 💡 Why?
 
-In the last few year we've have had a chance to test a good number of UI libraries, each with its own strengths and 
+In the last few year we've had a chance to test a good number of UI libraries, each with its own strengths and 
 weaknesses, but none that matched our expectations in terms of ease of customization.
 
 In fact, our attempt at customizing the style and behavior of the libraries we've tested would generally result in 
