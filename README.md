@@ -1,6 +1,11 @@
+[![Build Status](https://travis-ci.org/beautifulinteractions/beautiful-react-ui.svg?branch=master)](https://travis-ci.org/beautifulinteractions/beautiful-react-ui)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![npm](https://img.shields.io/npm/v/beautiful-react-ui)
+![GitHub stars](https://img.shields.io/github/stars/beautifulinteractions/beautiful-react-ui?style=social)
+
 <div align="center">
   <p align="center">
-    <img src="./logo.png" alt="Beautiful React Hooks" width="750px" />
+    <img src="./logo.png" alt="beautiful-react-ui" width="750px" />
   </p>
 </div>
 <br />
@@ -22,14 +27,14 @@ one or more of the following:
 
 As a result, we've decided to develop a library putting ease of customization as our top priority, focusing on a solid, props-driven API and pure CSS. 
 
-### 🎓 Principles
+## 🎓 Principles
 
 - **Driven by grace**: instead of customising the padding/margin/color/whatever of a single component, 
 customise the value of padding/margin/color/whatever trough a [configuration file](./docs/customising.md), the library 
 will then generate a tailored style keeping grace between components.
-- **Render behaviour**: the majority of the exported components accept a `renderer` prop to possibly customise 
+- **Render behaviour**: the majority of the exported components accept a `render` prop to possibly customise 
 their behaviour
-- **Controlled components**: components should be [controlled](https://reactjs.org/docs/forms.html#controlled-components), that's it.
+- **Controlled components**: exports [controlled](https://reactjs.org/docs/forms.html#controlled-components) components only
 - **Lightweights**: import nothing but lightweight javascript components.
 
 ## ☕️ Features
