@@ -6,7 +6,7 @@ requires the props `onToggle`, `isShown` and `trigger` to be defined.
 All the valid props of [FloatingContent](#/Components/Elements/Popover) are also valid for the Popover component.
 
 ```jsx
-import { Popover, Button } from 'beautiful-ui';
+import { Popover, Button } from 'beautiful-react-ui';
 
 const UncontrolledPopover = (props) => {
   const [isOpen, setIsOpen] = React.useState(false); 
@@ -30,7 +30,7 @@ const UncontrolledPopover = (props) => {
 If defined the `title` prop adds a little title to the Popover:
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 const Trigger = (<Button>Show a popup with a title</Button>);
 
@@ -54,7 +54,7 @@ Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, 
 
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
   <Button fluid color="primary">show a <strong>{title}</strong> placed popover</Button>
@@ -88,7 +88,7 @@ const UncontrolledPopover = ({ placement }) => {
 The `action` defines when to fire the `onToggle` callback, it can be `click` or `hover`.
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
   <Button color="success" style={{marginRight: 12}}>show a popup on <strong>{title}</strong></Button>

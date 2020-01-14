@@ -1,7 +1,7 @@
 ### Basic Usage:
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <Input />
 ```
@@ -9,7 +9,7 @@ import { Input } from 'beautiful-ui';
 ### Controlled Input:
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 const UncontrolledInput = (props) => {
   const [value, setValue] = React.useState();
@@ -25,7 +25,7 @@ const UncontrolledInput = (props) => {
 ### Placeholder
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <Input placeholder="Custom placeholder" />
 ```
@@ -33,7 +33,7 @@ import { Input } from 'beautiful-ui';
 ### Disabled
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <Input disabled />
 ```
@@ -41,7 +41,7 @@ import { Input } from 'beautiful-ui';
 ### Colors
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <>
   <Input color="primary" />
@@ -56,7 +56,7 @@ import { Input } from 'beautiful-ui';
 ### Size
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <>
   <Input size="small" />
@@ -71,7 +71,7 @@ It's possible to show a help text giving further information right under the inp
 by setting a `helpText` prop.
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <Input color="danger" helpText="Please provide a valid value" />
 ```
@@ -79,7 +79,7 @@ import { Input } from 'beautiful-ui';
 ### Icons
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <>
   <Input icon="search" />
@@ -91,7 +91,7 @@ import { Input } from 'beautiful-ui';
 ### Fluid
 
 ```jsx
-import { Input } from 'beautiful-ui';
+import { Input } from 'beautiful-react-ui';
 
 <Input icon="search" fluid />
 ```

@@ -2,13 +2,13 @@ const path = require('path');
 const theme = require('./styleguidist.theme');
 
 module.exports = {
-  title: 'Beautiful-ui | A collection of lightweight and easy-to-customise controlled React components',
+  title: 'beautiful-react-ui | A collection of lightweight and easy-to-customise controlled React components',
   /* eslint-disable global-require */
   webpackConfig: require('./styleguidist.webpack'),
   /* eslint-enable global-require */
   ignore: ['test/**/*.spec.{js,jsx}', 'node_modules', 'docs', 'test'],
   ribbon: {
-    url: 'https://github.com/beautifulinteractions/beautiful-ui',
+    url: 'https://github.com/beautifulinteractions/beautiful-react-ui',
     text: 'Fork me on GitHub',
   },
   styleguideDir: '../../dist-ghpages',
@@ -17,8 +17,13 @@ module.exports = {
   skipComponentsWithoutExample: true,
   sections: [
     {
-      name: 'Introduction',
-      content: '../../README.md',
+      name: 'Getting started',
+      content: '../getting-started.md',
+      sectionDepth: 1,
+    },
+    {
+      name: 'Customise',
+      content: '../customising.md',
       sectionDepth: 1,
     },
     {
@@ -80,17 +85,10 @@ module.exports = {
             '../../src/components/Layout/Card/Card.js',
           ],
         },
-        {
-          name: 'Enterprise',
-          pagePerSection: true,
-          components: () => [
-            '../../src/components/Enterprise/Diagram/Diagram.js',
-          ],
-        },
       ],
     },
   ],
-  // Override Styleguidist components
+  // Override styleguidist standard components
   styleguideComponents: {
     LogoRenderer: path.join(__dirname, 'CustomLogo'),
   },

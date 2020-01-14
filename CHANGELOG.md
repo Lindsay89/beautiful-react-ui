@@ -807,3 +807,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Added
 
 - Improving documentation
+
+## [0.47.0] - 2020-01-14
+
+### Added
+
+- Renaming library
+- Preparing for NPM

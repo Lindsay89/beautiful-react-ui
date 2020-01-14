@@ -1,7 +1,7 @@
 ### Basic Usage:
 
 ```jsx
-import { Label } from 'beautiful-ui';
+import { Label } from 'beautiful-react-ui';
 
 <Label>Field label</Label>
 ```
@@ -9,7 +9,7 @@ import { Label } from 'beautiful-ui';
 ### Required
 
 ```jsx
-import { Label } from 'beautiful-ui';
+import { Label } from 'beautiful-react-ui';
 
 <Label required>Field label</Label>
 ```
@@ -17,7 +17,7 @@ import { Label } from 'beautiful-ui';
 ### Colors
 
 ```jsx
-import { Label } from 'beautiful-ui';
+import { Label } from 'beautiful-react-ui';
 
 <>
   <Label color="primary">Primary label</Label>

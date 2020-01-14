@@ -1,7 +1,7 @@
 ### Basic usage
 
 ``` jsx
-import { Alert } from 'beautiful-ui';
+import { Alert } from 'beautiful-react-ui';
 
 <Alert>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
 ```
@@ -11,7 +11,7 @@ import { Alert } from 'beautiful-ui';
 Color highlight different alerts.
 
 ``` jsx
-import { Alert } from 'beautiful-ui';
+import { Alert } from 'beautiful-react-ui';
 
 <>
   <Alert color="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
@@ -28,7 +28,7 @@ import { Alert } from 'beautiful-ui';
 A solid background style variant, with white text and without border.
 
 ``` jsx
-import { Alert } from 'beautiful-ui';
+import { Alert } from 'beautiful-react-ui';
 
 <>
   <Alert color="default" solid="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
@@ -47,7 +47,7 @@ import { Alert } from 'beautiful-ui';
 Shows the outlines only.
 
 ``` jsx
-import { Alert } from 'beautiful-ui';
+import { Alert } from 'beautiful-react-ui';
 
 <>
   <Alert color="default" outline="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit</Alert>
@@ -65,7 +65,7 @@ import { Alert } from 'beautiful-ui';
 Adding icon to different alert.
 
 ``` jsx
-import { Alert, Icon } from 'beautiful-ui';
+import { Alert, Icon } from 'beautiful-react-ui';
 
 <>
   <Alert color="primary" solid="true">
@@ -88,7 +88,7 @@ import { Alert, Icon } from 'beautiful-ui';
 The `onClose` prop if provided shows a closable "X" button that will perform the given prop when clicked.
 
 ``` jsx
-import { Alert, Button } from 'beautiful-ui';
+import { Alert, Button } from 'beautiful-react-ui';
 
 /**
  * UncontrolledAlert is a statefull component wrapping an Alert

@@ -3,7 +3,7 @@
 As simple as the following:
 
 ```jsx
-import { Placeholder } from 'beautiful-ui';
+import { Placeholder } from 'beautiful-react-ui';
 
 <Placeholder />
 ```
@@ -13,7 +13,7 @@ import { Placeholder } from 'beautiful-ui';
 It is possible to define the number of paragraphs to show:
 
 ```jsx
-import { Placeholder } from 'beautiful-ui';
+import { Placeholder } from 'beautiful-react-ui';
 
 <Placeholder paragraphs={3} />
 ```
@@ -23,7 +23,7 @@ import { Placeholder } from 'beautiful-ui';
 A title-resembling block can be added on top of your paragraphs
 
 ```jsx
-import { Placeholder } from 'beautiful-ui';
+import { Placeholder } from 'beautiful-react-ui';
 
 <Placeholder paragraphs={3} title />
 ```
@@ -33,7 +33,7 @@ import { Placeholder } from 'beautiful-ui';
 Quite useful if loading a rich content
 
 ```jsx
-import { Placeholder } from 'beautiful-ui';
+import { Placeholder } from 'beautiful-react-ui';
 
 <Placeholder image />
 ```
@@ -41,7 +41,7 @@ import { Placeholder } from 'beautiful-ui';
 it is possible to define the image style
 
 ```jsx
-import { Placeholder } from 'beautiful-ui';
+import { Placeholder } from 'beautiful-react-ui';
 
 <Placeholder image="rounded" paragraphs={3} title />
 ```

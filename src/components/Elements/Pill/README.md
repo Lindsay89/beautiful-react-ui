@@ -3,7 +3,7 @@
 wrap a text within a Pill component
 
 ```jsx
-import { Pill } from 'beautiful-ui';
+import { Pill } from 'beautiful-react-ui';
 
 <Pill>some label</Pill>
 ```
@@ -13,7 +13,7 @@ import { Pill } from 'beautiful-ui';
 The `color` prop changes the appearance of a pill
 
 ``` jsx
-import { Pill } from 'beautiful-ui';
+import { Pill } from 'beautiful-react-ui';
 
 <>
   <Pill color="default">default</Pill>
@@ -29,7 +29,7 @@ import { Pill } from 'beautiful-ui';
 
 The `rounded` prop changes the shape of a pill
 ``` jsx
-import { Pill } from 'beautiful-ui';
+import { Pill } from 'beautiful-react-ui';
 
 <>
   <Pill>Rounded</Pill>
@@ -43,7 +43,7 @@ import { Pill } from 'beautiful-ui';
 The `href` prop providers an actionable pill
 
 ```jsx
-import { Pill } from 'beautiful-ui';
+import { Pill } from 'beautiful-react-ui';
 
 <>
   <Pill color="default" href="#">default</Pill>

@@ -5,7 +5,7 @@ The `Select` component is a controlled component that requires an array of optio
 The `value` prop defines the component's selected option.
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },
@@ -29,7 +29,7 @@ To filter the options by showing a filtering input within the dropdown set the `
 It is even possible to add a custom filter placeholder using the `filterInputPlaceholder` and a 'no results' message using the `filterNoResultLabel` prop.
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },
@@ -57,7 +57,7 @@ It's possible to show a help text giving further information right under the sel
 by setting a `helpText` prop.
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },
@@ -80,7 +80,7 @@ const UncontrolledSelect = (props) => {
 It is possible to add a `placeholder` prop to show text into the Select component.
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },
@@ -105,7 +105,7 @@ const UncontrolledSelect = (props) => {
 It's possible to hide the clearable icon by setting the `clearable` prop to false
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },
@@ -128,7 +128,7 @@ const UncontrolledSelect = (props) => {
 It is possible to provide an array of options grouped by a given name. 
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   {
@@ -162,7 +162,7 @@ const UncontrolledSelect = (props) => {
 In order to have the chance to select more values per time, it is necessary to define an onChange function that will set the internal component state to have an array of values instead of one value per time.
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },
@@ -201,7 +201,7 @@ When is possible to select multiple values, it is possible to show them as a str
 `multiStyle` prop is set to pill by design.
 
 ```jsx
-import { Select } from 'beautiful-ui';
+import { Select } from 'beautiful-react-ui';
 
 const options = [
   { label: '😎 Sunglasses dude', value: 'option1' },

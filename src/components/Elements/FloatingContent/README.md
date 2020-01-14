@@ -6,7 +6,7 @@ As the FloatingContent component is a controlled component we should also define
 and `isShown` props.
 
 ```jsx
-import { FloatingContent, Button } from 'beautiful-ui';
+import { FloatingContent, Button } from 'beautiful-react-ui';
 
 const UncontrolledFloatingContent = (props) => {
   const [isShown, setIsShown] = React.useState(false); 
@@ -33,7 +33,7 @@ Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, 
 
 
 ```jsx
-import { FloatingContent, Button } from 'beautiful-ui';
+import { FloatingContent, Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
   <Button fluid color="primary">show a <strong>{title}</strong> placed floating content</Button>
@@ -68,7 +68,7 @@ const UncontrolledFloatingContent = (props) => {
 The `action` defines when to fire the `onToggle` callback, it can be `click` or `hover`.
 
 ```jsx
-import { FloatingContent, Button } from 'beautiful-ui';
+import { FloatingContent, Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
   <Button color="success" style={{marginRight: '1.25rem'}}>Show a floating content on <strong>{title}</strong></Button>
@@ -98,7 +98,7 @@ By design, if the `action` prop is set to `click`, the floating content will tog
 outside of it, it's possible to disable this feature by setting `clickOutsideToToggle` to false.
 
 ```jsx 
-import { Button, FloatingContent } from 'beautiful-ui';
+import { Button, FloatingContent } from 'beautiful-react-ui';
 
 const Trigger = (<Button>Click to close</Button>);
 
@@ -123,7 +123,7 @@ const UncontrolledFloatingContent = (props) => {
 The `offset` defines a number in pixel to possibly separate the floating content from its trigger
 
 ```jsx
-import { Button, FloatingContent } from 'beautiful-ui';
+import { Button, FloatingContent } from 'beautiful-react-ui';
 
 const Trigger = (<Button>Show a floating content with a 40px offset</Button>);
 

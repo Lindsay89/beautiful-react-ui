@@ -12,11 +12,11 @@ module.exports = () => ({
   ],
   devtool: 'inline-source-map',
   output: {
-    filename: 'beautiful-ui.dev.js',
+    filename: 'beautiful-react-ui.dev.js',
   },
   resolve: {
     extensions: ['.js', '.jsx', 'scss'],
-    alias: { 'beautiful-ui': sourcePath },
+    alias: { 'beautiful-react-ui': sourcePath },
   },
   devServer: {
     open: true,
@@ -70,6 +70,6 @@ module.exports = () => ({
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'beautiful-ui.dev.css' }),
+    new MiniCssExtractPlugin({ filename: 'beautiful-react-ui.dev.css' }),
   ],
 });

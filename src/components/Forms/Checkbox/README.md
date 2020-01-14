@@ -1,7 +1,7 @@
 ### Basic Usage:
 
 ```jsx
-import { Checkbox } from 'beautiful-ui';
+import { Checkbox } from 'beautiful-react-ui';
 
 <Checkbox label="Check me if you can" />
 ```
@@ -9,7 +9,7 @@ import { Checkbox } from 'beautiful-ui';
 ### Controlled Input:
 
 ```jsx
-import { Checkbox } from 'beautiful-ui';
+import { Checkbox } from 'beautiful-react-ui';
 
 const UncontrolledCheckbox = (props) => {
   const [value, setValue] = React.useState(false);
@@ -23,7 +23,7 @@ const UncontrolledCheckbox = (props) => {
 ### Colors
 
 ```jsx
-import { Checkbox } from 'beautiful-ui';
+import { Checkbox } from 'beautiful-react-ui';
 
 const UncontrolledCheckbox = (props) => {
   const [value, setValue] = React.useState(true);
@@ -44,7 +44,7 @@ const UncontrolledCheckbox = (props) => {
 ### Disabled
 
 ```jsx
-import { Checkbox } from 'beautiful-ui';
+import { Checkbox } from 'beautiful-react-ui';
 
 <Checkbox label="Check me if you can" disabled color="primary" />
 ```
@@ -55,7 +55,7 @@ It's possible to show a help text giving further information right under the che
 by setting a `helpText` prop.
 
 ```jsx
-import { Checkbox } from 'beautiful-ui';
+import { Checkbox } from 'beautiful-react-ui';
 
 const UncontrolledCheckbox = (props) => {
   const [value, setValue] = React.useState(true);

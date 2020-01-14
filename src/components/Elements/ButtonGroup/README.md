@@ -3,7 +3,7 @@
 To group a series of button just wrap 'em within a ButtonGroup component:
 
 ```jsx
-import { ButtonGroup, Button } from 'beautiful-ui';
+import { ButtonGroup, Button } from 'beautiful-react-ui';
 
 const someAction = alert.bind(null, 'Some Action');
 
@@ -19,7 +19,7 @@ const someAction = alert.bind(null, 'Some Action');
 full-width fluid button group
 
 ```jsx
-import { ButtonGroup, Button } from 'beautiful-ui';
+import { ButtonGroup, Button } from 'beautiful-react-ui';
 
 <ButtonGroup fluid>
   <Button icon="home">Home</Button>
@@ -32,7 +32,7 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 ### Group Color
 
 ```jsx
-import { ButtonGroup, Button } from 'beautiful-ui';
+import { ButtonGroup, Button } from 'beautiful-react-ui';
 
 <>
   <ButtonGroup fluid color="primary">
@@ -77,7 +77,7 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 ### Group Size
 
 ```jsx
-import { ButtonGroup, Button } from 'beautiful-ui';
+import { ButtonGroup, Button } from 'beautiful-react-ui';
 
 <>
   <ButtonGroup fluid size="small">
@@ -104,7 +104,7 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 ### Group Outline
 
 ```jsx
-import { ButtonGroup, Button } from 'beautiful-ui';
+import { ButtonGroup, Button } from 'beautiful-react-ui';
 
 <>
   <ButtonGroup outline fluid color="primary">
@@ -149,7 +149,7 @@ import { ButtonGroup, Button } from 'beautiful-ui';
 ### Group rounded
 
 ```jsx
-import { ButtonGroup, Button } from 'beautiful-ui';
+import { ButtonGroup, Button } from 'beautiful-react-ui';
 
 <ButtonGroup rounded color="primary">
   <Button icon="home">Home</Button>

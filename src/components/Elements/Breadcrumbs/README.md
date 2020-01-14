@@ -1,7 +1,7 @@
 ### Basic Usage
 
 ```jsx
-import { Breadcrumbs } from 'beautiful-ui';
+import { Breadcrumbs } from 'beautiful-react-ui';
 
 const pages = [
   { path: '/', label: 'Home' },
@@ -17,7 +17,7 @@ const pages = [
 Defining a color helps highlighting the clickable paths, the default color is set to `primary`.
 
 ```jsx
-import { Breadcrumbs } from 'beautiful-ui';
+import { Breadcrumbs } from 'beautiful-react-ui';
 
 const pages = [
     { path: '/', label: 'Home' },
@@ -41,7 +41,7 @@ It's possible to attach an icon to a path label by passing a valid icon prop
 (the icon name, an array of valid icon names or the instance of an Icon component).
 
 ```jsx
-import { Breadcrumbs, Icon } from 'beautiful-ui';
+import { Breadcrumbs, Icon } from 'beautiful-react-ui';
 
 const pages = [
     { path: '/', label: 'Home' ,icon:'home'},
@@ -58,7 +58,7 @@ const pages = [
 If defined, the `render` property changes the usual behavior of that breadcrumb.
 
 ```jsx
-import { Icon } from 'beautiful-ui';
+import { Icon } from 'beautiful-react-ui';
 
 const CustomRenderer = (props) => (<span key="test" style={{background:'red'}}>{props.label}</span>);
 
@@ -77,7 +77,7 @@ If defines, the `maxDisplayedItems` allows to show only a certain number of brea
 
 
 ```jsx
-import { Icon } from 'beautiful-ui';
+import { Icon } from 'beautiful-react-ui';
 
 const CustomRenderer = (props) => (<span key="test" style={{background:'red'}}>{props.label}</span>);
 
