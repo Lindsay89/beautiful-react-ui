@@ -796,7 +796,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - ButtonGroup glitch on Safari
 
-## [0.46.0] - 2020-01-10
+## [0.45.4] - 2020-01-14
+
+### Fixed
+
+- issue relative to Input and Textarea overflow component
+
+## [0.46.0] - 2020-01-14
 
 ### Added
 
