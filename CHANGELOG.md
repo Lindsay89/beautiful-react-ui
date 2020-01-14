@@ -790,3 +790,8 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - glitch on outlined buttons on Safari
 
+## [0.45.3] - 2020-01-14
+
+### Fixed
+
+- ButtonGroup glitch on Safari
