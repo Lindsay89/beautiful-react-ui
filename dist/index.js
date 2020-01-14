@@ -189,24 +189,6 @@ Object.defineProperty(exports, "Diagram", {
     return _Diagram["default"];
   }
 });
-Object.defineProperty(exports, "useWindowResize", {
-  enumerable: true,
-  get: function get() {
-    return _shared.useWindowResize;
-  }
-});
-Object.defineProperty(exports, "useDrag", {
-  enumerable: true,
-  get: function get() {
-    return _shared.useDrag;
-  }
-});
-Object.defineProperty(exports, "useWindowScroll", {
-  enumerable: true,
-  get: function get() {
-    return _shared.useWindowScroll;
-  }
-});
 
 var _Accordion = _interopRequireDefault(require("./components/Elements/Accordion"));
 
@@ -269,8 +251,6 @@ var _Divider = _interopRequireDefault(require("./components/Typography/Divider")
 var _Link = _interopRequireDefault(require("./components/Typography/Link"));
 
 var _Diagram = _interopRequireDefault(require("./components/Enterprise/Diagram"));
-
-var _shared = require("./shared");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //# sourceMappingURL=index.js.map
