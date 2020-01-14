@@ -40,6 +40,8 @@
   // Rounded
   // ----------------------------
   &.group-rounded {
+    -webkit-transform: translateZ(0);
+
     @apply rounded-full;
   }
 
@@ -60,7 +62,8 @@
   // ----------------------------
   // stylelint-disable-next-line no-descending-specificity
   .bi.bi-btn {
-    @apply mx-0 shadow-none;
+    @apply m-0 shadow-none;
+
 
     &:hover {
       @apply shadow-none;
