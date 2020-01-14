@@ -1,7 +1,7 @@
 ### Basic Usage
 
 ```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 
 <Card>
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -25,7 +25,7 @@ import { Card, Avatar, Paragraph } from 'beautiful-ui';
 By setting the `float` prop to `true` the card will float up a bit on mouse hover
 
 ```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 
 <Card float>
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -50,7 +50,7 @@ import { Card, Avatar, Paragraph } from 'beautiful-ui';
 The `fluid` prop will adapt the Card's width to its container.
 
 ```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 
 <Card fluid>
   <Card.Image src="https://placeimg.com/1024/300/nature" alt="A stunning title" />
@@ -74,7 +74,7 @@ the `textAlign` prop is a valid prop for both Card component and its children, e
 it allows to horizontally align the text.
 
 ```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 
 <Card textAlign="right">
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -99,7 +99,7 @@ import { Card, Avatar, Paragraph } from 'beautiful-ui';
 The `orientation` prop defines the card's orientation, by default is set the `vertical`.
 
 ```jsx
-import { Card, Pill, Paragraph } from 'beautiful-ui';
+import { Card, Pill, Paragraph } from 'beautiful-react-ui';
 
 <Card orientation="horizontal">
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
@@ -126,7 +126,7 @@ The `reversed` prop flips the Card.Image position both from left to right or fro
 defined orientation.
 
 ```jsx
-import { Card, Pill, Paragraph, Icon } from 'beautiful-ui';
+import { Card, Pill, Paragraph, Icon } from 'beautiful-react-ui';
 
 <Card orientation="horizontal" reversed>
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
@@ -153,7 +153,7 @@ The `actionButton` prop shows a menu-like icon to the top right corner of the ca
 whilst the `onActionButtonClick` prop defines the function to be performed when clicked.
 
 ```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 
 <Card actionButton onActionButtonClick={() => alert('Button clicked')}>
   <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
@@ -177,7 +177,7 @@ import { Card, Avatar, Paragraph } from 'beautiful-ui';
 The `actionButtonIcon` prop allows to override the default action button's icon.
 
 ```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-ui';
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 
 <Card orientation="horizontal" actionButton actionButtonIcon="heart" onActionButtonClick={() => alert('Button clicked')}>
   <Card.Image src="https://placeimg.com/150/300/nature" alt="A stunning title" />
@@ -204,7 +204,7 @@ The Card component comes with a set of renderers to override the standard behavi
 If defined, an `actionButtonRenderer` prop will change the default actionButton behaviour.
 
 ```jsx
-import { Icon, Button, Avatar, Paragraph } from 'beautiful-ui';
+import { Icon, Button, Avatar, Paragraph } from 'beautiful-react-ui';
 
 CustomRenderer = () => [
   <Button icon="envelope" color="primary">Mail</Button>,
@@ -233,7 +233,7 @@ CustomRenderer = () => [
 If defined, an `imageRenderer` prop will change the default image behaviour.
 
 ```jsx
-import { Icon, Button, Avatar, Paragraph } from 'beautiful-ui';
+import { Icon, Button, Avatar, Paragraph } from 'beautiful-react-ui';
 
 CustomRenderer = () => (
   <div class="custom-image-render"> 

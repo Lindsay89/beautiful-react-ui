@@ -1,7 +1,7 @@
 ### Basic usage
 
 ```jsx
-import { Link } from 'beautiful-ui';
+import { Link } from 'beautiful-react-ui';
 
 <Link href="#">Nunc lobortis diam nec elementum finibus.</Link>
 ```
@@ -9,7 +9,7 @@ import { Link } from 'beautiful-ui';
 ### Color
 
 ```jsx
-import { Link, Divider } from 'beautiful-ui';
+import { Link, Divider } from 'beautiful-react-ui';
 
 <>
   <Link href="#" color="primary">A <strong>primary</strong> link</Link>

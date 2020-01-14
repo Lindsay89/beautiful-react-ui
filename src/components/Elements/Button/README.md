@@ -3,7 +3,7 @@
 As simple as the following:
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <Button>A simple button</Button>
 ```
@@ -13,7 +13,7 @@ import { Button } from 'beautiful-ui';
 Colors are meant to highlight the syntactic meaning of a button.
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <>
   <Button>Default</Button>
@@ -33,7 +33,7 @@ Subtle appearance can also be applied to a button, if in need of a
 get rid of the hefty, colorful background.
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <>
   <Button outline>Default</Button>
@@ -51,7 +51,7 @@ import { Button } from 'beautiful-ui';
 Buttons can also turn rounded by using the `rounded` prop
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <>
   <div>
@@ -84,7 +84,7 @@ or the instance of an `Icon` component.
  on top of it.</small>
 
 ```jsx 
-import { Button, Icon } from 'beautiful-ui';
+import { Button, Icon } from 'beautiful-react-ui';
 
 <>
   <div>
@@ -122,7 +122,7 @@ import { Button, Icon } from 'beautiful-ui';
 Buttons can have different sizes
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <>
   <Button size="small">Small size</Button>
@@ -139,7 +139,7 @@ import { Button } from 'beautiful-ui';
 full-width fluid buttons
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <>
   <Button fluid>Block button</Button>
@@ -154,7 +154,7 @@ import { Button } from 'beautiful-ui';
 
 ### Disabled state
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <Button disabled>disabled</Button>
 ```
@@ -164,7 +164,7 @@ import { Button } from 'beautiful-ui';
 It is possible to define the animation the button should perform on the `hover` event.
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 <>
   <Button color="primary" hover="round">I change shape</Button>
@@ -180,7 +180,7 @@ import { Button } from 'beautiful-ui';
 Buttons are meant to have a callback attached
 
 ```
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 const foo = event => { alert('Click'); };
 
@@ -192,7 +192,7 @@ const foo = event => { alert('Click'); };
 It's possible to add a pill within a button to show further information.
 
 ```jsx
-import { Pill, Button, Icon } from 'beautiful-ui';
+import { Pill, Button, Icon } from 'beautiful-react-ui';
 
 <>
   <Button pill="New messages" icon="envelope" color="primary">Mail</Button>
@@ -210,7 +210,7 @@ Similar to the `icon` prop, the `spinner` prop accepts both a boolean value or t
 component. 
 
 ```jsx
-import { Spinner, Button } from 'beautiful-ui';
+import { Spinner, Button } from 'beautiful-react-ui';
 
 <>
   <div>

@@ -6,7 +6,7 @@ The modal will close by clicking on its backdrop, whilst its content should be d
 within the `Modal.Body` child component.
 
 ```jsx
-import { Button, Modal } from 'beautiful-ui';
+import { Button, Modal } from 'beautiful-react-ui';
 
 const UncontrolledModal = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -37,7 +37,7 @@ By using the `Modal.Title` and the `Modal.Footer` components it's possible to de
 the modal's title and footer 
 
 ```jsx
-import { Button, Modal } from 'beautiful-ui';
+import { Button, Modal } from 'beautiful-react-ui';
 
 const UncontrolledModal = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -69,7 +69,7 @@ const UncontrolledModal = () => {
 
 
 ```jsx
-import { Button, Modal } from 'beautiful-ui';
+import { Button, Modal } from 'beautiful-react-ui';
 import CloseIcon from '../_CloseIcon';
 
 const UncontrolledModal = (props) => {
@@ -110,7 +110,7 @@ The `centered` prop set the modal position right in the middle of the viewport.
 
 
 ```jsx
-import { Button, Modal } from 'beautiful-ui';
+import { Button, Modal } from 'beautiful-react-ui';
 
 const UncontrolledModal = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -144,7 +144,7 @@ The `size` prop could be used to change the modal's size.
 
 
 ```jsx
-import { Button, Modal } from 'beautiful-ui';
+import { Button, Modal } from 'beautiful-react-ui';
 
 const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -178,7 +178,7 @@ By default, the modal pop-in performing a `zoom` animation, it's possible to cha
 this behaviour by changing the value of the `animation` prop.
 
 ```jsx
-import { Button } from 'beautiful-ui';
+import { Button } from 'beautiful-react-ui';
 
 const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -218,7 +218,7 @@ const UncontrolledModal = (props) => {
 ### onShow Callback
 
 ```jsx
-import {Button} from 'beautiful-ui';
+import {Button} from 'beautiful-react-ui';
 
 const onShow = () => alert('this will be an amazing modal');
 
@@ -253,7 +253,7 @@ const UncontrolledModal = (props) => {
 `backdropRender` prop is provided to change the standard backdrop behaviour.
 
 ```jsx
-import { Button} from 'beautiful-ui';
+import { Button} from 'beautiful-react-ui';
 
 const CustomBackdrop = (props) => (
   <div style={{background: 'rgba(8, 61, 119, 0.45)', width:'100%', height:'100%', position:'fixed'}}>

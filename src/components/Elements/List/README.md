@@ -1,7 +1,7 @@
 ### Basic usage
 
 ```jsx 
-import { List } from 'beautiful-ui';
+import { List } from 'beautiful-react-ui';
 
 <List>
   <List.Item>Item 1</List.Item>
@@ -13,7 +13,7 @@ import { List } from 'beautiful-ui';
 ### Selectable
 
 ```jsx 
-import { List } from 'beautiful-ui';
+import { List } from 'beautiful-react-ui';
 
 const SelectableList = () => {
   const [firstValue, setFirstValue] = React.useState(false);
@@ -38,7 +38,7 @@ const SelectableList = () => {
 ### Colors
 
 ```jsx 
-import { List, Divider } from 'beautiful-ui';
+import { List, Divider } from 'beautiful-react-ui';
 
 const SelectableList = (props) => {
   const [firstValue, setFirstValue] = React.useState(false);
@@ -94,7 +94,7 @@ const SelectableList = (props) => {
 ### Nested
 
 ```jsx 
-import { List, Title, Paragraph } from 'beautiful-ui';
+import { List, Title, Paragraph } from 'beautiful-react-ui';
 
 <List condensed>
   <List.Item icon="folder">
@@ -143,7 +143,7 @@ import { List, Title, Paragraph } from 'beautiful-ui';
 ### Condensed
 
 ```jsx 
-import { List, Title, Paragraph } from 'beautiful-ui';
+import { List, Title, Paragraph } from 'beautiful-react-ui';
 
 <List condensed>
   <List.Item icon="folder">
@@ -166,7 +166,7 @@ import { List, Title, Paragraph } from 'beautiful-ui';
 ### Draggable
 
 ```jsx 
-import { List } from 'beautiful-ui';
+import { List } from 'beautiful-react-ui';
 
 <List>
   <List.Item draggable>Item 1</List.Item>

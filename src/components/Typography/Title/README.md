@@ -1,7 +1,7 @@
 ### Basic usage
 
 ```jsx
-import { Title } from 'beautiful-ui';
+import { Title } from 'beautiful-react-ui';
 
 <Title>Page title</Title>
 ```
@@ -11,7 +11,7 @@ import { Title } from 'beautiful-ui';
 #### By size prop
 
 ```jsx
-import { Title } from 'beautiful-ui';
+import { Title } from 'beautiful-react-ui';
 
 <>
   <Title size="4xl">Page title</Title>
@@ -28,7 +28,7 @@ import { Title } from 'beautiful-ui';
 By defining the `tagName` it's also possible to define the title size
 
 ```jsx
-import { Title } from 'beautiful-ui';
+import { Title } from 'beautiful-react-ui';
 
 <>
   <Title tagName="h1">Page title</Title>
@@ -43,7 +43,7 @@ import { Title } from 'beautiful-ui';
 ### Color
 
 ```jsx
-import { Title } from 'beautiful-ui';
+import { Title } from 'beautiful-react-ui';
 
 <>
   <Title color="default">Page title</Title>
@@ -59,7 +59,7 @@ import { Title } from 'beautiful-ui';
 ### Text align
 
 ```jsx
-import { Title } from 'beautiful-ui';
+import { Title } from 'beautiful-react-ui';
 
 <>
   <Title textAlign="left" tagName="h4">Left aligned title</Title>
@@ -71,7 +71,7 @@ import { Title } from 'beautiful-ui';
 ### Word break
 
 ```jsx
-import { Title, Divider } from 'beautiful-ui';
+import { Title, Divider } from 'beautiful-react-ui';
 
 <>
   <Title wordBreak="normal" style={{ maxWidth: '7rem', background: '#edf2f7', padding: '1rem' }}>

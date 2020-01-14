@@ -3,7 +3,7 @@
 As the Accordion is a controlled component, we need to wrap it within a stateful one
 
 ```jsx
-import { Accordion } from 'beautiful-ui';
+import { Accordion } from 'beautiful-react-ui';
 
 /**
  * Since Accordion is a controlled component, an uncontrolled accordion 
@@ -47,7 +47,7 @@ const UncontrolledAccordion = (props) => {
 The `color` prop defines the accordion title color
 
 ```jsx
-import { Accordion } from 'beautiful-ui';
+import { Accordion } from 'beautiful-react-ui';
 
 /**
  * Since Accordion is a controlled component, an uncontrolled accordion 
@@ -95,7 +95,7 @@ const UncontrolledAccordion = (props) => {
 ### With list
 
 ```jsx
-import { Accordion, List } from 'beautiful-ui';
+import { Accordion, List } from 'beautiful-react-ui';
 
 /**
  * Since Accordion is a controlled component, an uncontrolled accordion 

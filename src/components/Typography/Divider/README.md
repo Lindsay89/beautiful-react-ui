@@ -1,7 +1,7 @@
 ### Basic Usage
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Paragraph>
@@ -23,7 +23,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 #### Dashed
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Paragraph>
@@ -43,7 +43,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 #### Dotted
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Paragraph>
@@ -62,7 +62,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 
 ### With center text
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <Divider>Some Title</Divider>
 ```
@@ -70,7 +70,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 ### Light
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <div style={{background: '#3d4852', padding: '20px 0'}}>
   <Divider light />
@@ -81,7 +81,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 ### Double lines
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Divider fancy />

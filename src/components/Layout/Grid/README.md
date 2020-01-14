@@ -26,7 +26,7 @@ window.Content = Content;
 A `Grid` component can be used to build layouts based on a 12-columns system.
 
 ```jsx
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
 
 <Grid>
   <Grid.Column><Content /></Grid.Column>
@@ -40,7 +40,7 @@ import { Grid } from 'beautiful-ui';
 It’s possible to define the column by using the `size` prop.
 
 ```jsx
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
 
 <>
   <Grid>
@@ -111,7 +111,7 @@ It’s possible to define the column size accordingly to the screen dimension by
 
 
 ```jsx
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
  
 <Grid>
   <Grid.Column sm="12" md="8" lg="6" xl="3">
@@ -134,7 +134,7 @@ If not defined the column will adapt its length accordingly to the other columns
 As per the following example:
 
 ```jsx
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
  
 <Grid>
    <Grid.Column sm="12" md="8" lg="6" xl="3">
@@ -153,7 +153,7 @@ An offset can also be defined accordingly to the screen dimension by using on of
 `sm`, `md`, `lg`, `xl`.
 
 ```jsx 
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
 
 <Grid>
   <Grid.Column offset="3">
@@ -173,7 +173,7 @@ import { Grid } from 'beautiful-ui';
 The `itemsAlign` prop could be used to set items in position accordingly to the grid's height.
 
 ```jsx 
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
 
 <>
   <Grid itemsAlign="center" style={{background:"#afdeff", borderBottom:"solid white"}}>
@@ -195,7 +195,7 @@ The `selfAlign` prop could be used to set items in position accordingly to the c
 
 
 ```jsx 
-import { Grid } from 'beautiful-ui';
+import { Grid } from 'beautiful-react-ui';
 
 <Grid itemsAlign="center" style={{height: '200px', background:'#afdeff', borderBottom:'solid white'}}>
    <Grid.Column selfAlign="stretch"><Content /> </Grid.Column>

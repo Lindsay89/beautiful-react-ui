@@ -1,7 +1,7 @@
 ### Basic Usage:
 
 ```jsx
-import { DisplayField } from 'beautiful-ui';
+import { DisplayField } from 'beautiful-react-ui';
 
 <DisplayField label="Field label:" value="field value" />
 ```
@@ -9,7 +9,7 @@ import { DisplayField } from 'beautiful-ui';
 ### Label colors
 
 ```jsx
-import { DisplayField } from 'beautiful-ui';
+import { DisplayField } from 'beautiful-react-ui';
 
 <>
   <DisplayField label="Primary label:" value="field value" labelColor="primary" />
@@ -24,7 +24,7 @@ import { DisplayField } from 'beautiful-ui';
 ### Value colors
 
 ```jsx
-import { DisplayField } from 'beautiful-ui';
+import { DisplayField } from 'beautiful-react-ui';
 
 <>
   <DisplayField label="Field label:" value="primary value" valueColor="primary" />
@@ -39,7 +39,7 @@ import { DisplayField } from 'beautiful-ui';
 ### Border style
 
 ```jsx
-import { DisplayField } from 'beautiful-ui';
+import { DisplayField } from 'beautiful-react-ui';
 
 <>
   <DisplayField label="Solid border:" value="field value" borderStyle="solid" />
@@ -53,7 +53,7 @@ import { DisplayField } from 'beautiful-ui';
 ### Bold style
 
 ```jsx
-import { DisplayField } from 'beautiful-ui';
+import { DisplayField } from 'beautiful-react-ui';
 
 <>
   <DisplayField label="Solid border:" value="field value" boldLabel />

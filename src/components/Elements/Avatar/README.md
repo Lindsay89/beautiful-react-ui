@@ -1,7 +1,7 @@
 ### Basic usage with image
 
 ```jsx
-import { Avatar } from 'beautiful-ui';
+import { Avatar } from 'beautiful-react-ui';
 
 <Avatar src="https://placeimg.com/96/96/people" />
 ```
@@ -9,7 +9,7 @@ import { Avatar } from 'beautiful-ui';
 ### Basic usage with initials
 
 ```jsx
-import { Avatar } from 'beautiful-ui';
+import { Avatar } from 'beautiful-react-ui';
 
 <Avatar initials="ar" />
 ```
@@ -17,7 +17,7 @@ import { Avatar } from 'beautiful-ui';
 ### Shapes
 
 ```jsx
-import { Avatar } from 'beautiful-ui';
+import { Avatar } from 'beautiful-react-ui';
 
 <>
   <Avatar src="https://placeimg.com/96/96/people" shape="rounded" />
@@ -28,7 +28,7 @@ import { Avatar } from 'beautiful-ui';
 ### Sizes
 
 ```jsx
-import { Avatar } from 'beautiful-ui';
+import { Avatar } from 'beautiful-react-ui';
 
 <>
   <Avatar initials="ar" size="small" />
@@ -40,7 +40,7 @@ import { Avatar } from 'beautiful-ui';
 ### Pills
 
 ```jsx
-import { Avatar, Pill } from 'beautiful-ui';
+import { Avatar, Pill } from 'beautiful-react-ui';
 
 <>
   <Avatar src="https://placeimg.com/96/96/people" pill="10" />
@@ -51,7 +51,7 @@ import { Avatar, Pill } from 'beautiful-ui';
 ### Avatar state
 
 ```jsx
-import { Avatar, Pill } from 'beautiful-ui';
+import { Avatar, Pill } from 'beautiful-react-ui';
 
 <>
   <Avatar initials="ar" state="offline" />
@@ -70,7 +70,7 @@ sometimes further descriptions are needed.
 ### Display name
 
 ```jsx
-import { Avatar, Pill } from 'beautiful-ui';
+import { Avatar, Pill } from 'beautiful-react-ui';
 
 <>
   <Avatar src="https://placeimg.com/96/96/people" displayName="John Doe" />
@@ -83,7 +83,7 @@ In addition to `displayName` we can possibly add further user information such a
 the user role or the user email by using the `furtherInfo` prop`
 
 ```jsx
-import { Avatar, Pill } from 'beautiful-ui';
+import { Avatar, Pill } from 'beautiful-react-ui';
 
 <>
   <Avatar src="https://placeimg.com/96/96/people" displayName="John Doe" furtherInfo="Admin" />

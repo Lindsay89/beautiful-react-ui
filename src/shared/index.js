@@ -20,5 +20,5 @@ export { default as warn } from './functions/warn';
 export { default as useDrag } from './hooks/useDrag';
 
 // geometries
-export { default as makeSvgPath } from '../components/Enterprise/Diagram/utils/makeSvgPath';
-export { default as getPathMidpoint } from '../components/Enterprise/Diagram/utils/getPathMidpoint';
+export { default as makeSvgPath } from '../components/__Enterprise/Diagram/utils/makeSvgPath';
+export { default as getPathMidpoint } from '../components/__Enterprise/Diagram/utils/getPathMidpoint';

@@ -1,7 +1,7 @@
 ### Basic usage
 
 ```jsx
-import { Paragraph } from 'beautiful-ui';
+import { Paragraph } from 'beautiful-react-ui';
 
 <Paragraph>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -20,7 +20,7 @@ import { Paragraph } from 'beautiful-ui';
 ### Font Family
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Paragraph fontFamily="sans">
@@ -46,7 +46,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 ### Color
 
 ```jsx
-import { Paragraph } from 'beautiful-ui';
+import { Paragraph } from 'beautiful-react-ui';
 
 <>
   <Paragraph color="default">Lorem ipsum dolor sit amet</Paragraph>
@@ -62,7 +62,7 @@ import { Paragraph } from 'beautiful-ui';
 ### Text align
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Paragraph textAlign="left">Lorem ipsum dolor sit amet</Paragraph>
@@ -76,7 +76,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 ### Word break
 
 ```jsx
-import { Paragraph, Divider } from 'beautiful-ui';
+import { Paragraph, Divider } from 'beautiful-react-ui';
 
 <>
   <Paragraph wordBreak="normal" style={{ maxWidth: '20rem', background: '#edf2f7', padding: '1rem' }}>
@@ -108,7 +108,7 @@ import { Paragraph, Divider } from 'beautiful-ui';
 ### Tiny
 
 ```jsx
-import { Paragraph } from 'beautiful-ui';
+import { Paragraph } from 'beautiful-react-ui';
 
 <Paragraph tiny>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -119,7 +119,7 @@ import { Paragraph } from 'beautiful-ui';
 ### Light
 
 ```jsx
-import { Paragraph } from 'beautiful-ui';
+import { Paragraph } from 'beautiful-react-ui';
 
 <Paragraph light>
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. 

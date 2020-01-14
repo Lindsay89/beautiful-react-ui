@@ -1,7 +1,7 @@
 ### Basic Usage:
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <TextArea />
 ```
@@ -9,7 +9,7 @@ import { TextArea } from 'beautiful-ui';
 ### Controlled TextArea:
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 const UncontrolledTextArea = (props) => {
   const [value, setValue] = React.useState();
@@ -23,7 +23,7 @@ const UncontrolledTextArea = (props) => {
 ### Resizable:
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <TextArea resizable/>
 ```
@@ -31,7 +31,7 @@ import { TextArea } from 'beautiful-ui';
 ### Placeholder
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <TextArea placeholder="Custom placeholder" />
 ```
@@ -39,7 +39,7 @@ import { TextArea } from 'beautiful-ui';
 ### Disabled
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <TextArea disabled />
 ```
@@ -47,7 +47,7 @@ import { TextArea } from 'beautiful-ui';
 ### Colors
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <>
   <TextArea color="primary" />
@@ -62,7 +62,7 @@ import { TextArea } from 'beautiful-ui';
 ### Size
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <>
   <TextArea size="small" />
@@ -77,7 +77,7 @@ It's possible to show a help text giving further information right under the tex
 by setting a `helpText` prop.
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <TextArea color="danger" helpText="Please provide a valid value" />
 ```
@@ -86,7 +86,7 @@ import { TextArea } from 'beautiful-ui';
 ### Fluid
 
 ```jsx
-import { TextArea } from 'beautiful-ui';
+import { TextArea } from 'beautiful-react-ui';
 
 <TextArea icon="search" fluid />
 ```
