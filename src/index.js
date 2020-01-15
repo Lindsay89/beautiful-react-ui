@@ -15,6 +15,7 @@ export { default as Spinner } from './components/Elements/Spinner';
 export { default as Tab } from './components/Elements/Tab';
 export { default as Modal } from './components/Elements/Modal';
 export { default as Popover } from './components/Elements/Popover';
+export { default as Tooltip } from './components/Elements/Tooltip';
 export { default as FloatingContent } from './components/Elements/FloatingContent';
 
 // Forms
@@ -29,6 +30,7 @@ export { default as TextArea } from './components/Forms/TextArea';
 // Layout
 export { default as Grid } from './components/Layout/Grid';
 export { default as Card } from './components/Layout/Card';
+export { default as Sidebar } from './components/Layout/Sidebar';
 
 // Typography
 export { default as Title } from './components/Typography/Title';

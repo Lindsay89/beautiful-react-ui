@@ -21,7 +21,7 @@ const Avatar = (props) => {
   }, className);
 
   if (!initials && !src) {
-    warn('Avatar component has been used without providing a \'src\' nor an \'initials\' prop');
+    warn('Avatar component cannot render since it has not a \'src\' nor an \'initials\' prop has been provided');
     return null;
   }
 

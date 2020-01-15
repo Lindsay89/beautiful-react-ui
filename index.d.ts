@@ -26,6 +26,7 @@ export { default as DisplayField } from './@types/DisplayField';
 
 // Layout
 export { default as Grid } from './@types/Grid';
+export { default as Sidebar } from './@types/Sidebar';
 // export { default as Card } from './types/Card';
 
 // Typography
@@ -33,6 +34,3 @@ export { default as Title } from './@types/Title';
 export { default as Paragraph } from './@types/Paragraph';
 export { default as Divider } from './@types/Divider';
 export { default as Link } from './@types/Link';
-
-// Enterprise
-export { default as Diagram }from './@types/Diagram';

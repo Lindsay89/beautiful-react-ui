@@ -5,16 +5,14 @@ import Portal from '../_Portal';
 import ModalTitle from './ModalTitle';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';
-import { makeCallback, warn } from '../../../shared';
+import { makeCallback, checkOnAllowedChildren } from '../../../shared';
 
 import './modal.scss';
 
-// this function wipes out the wrong children and warns about it.
-const wipeOutIncorrectChildren = (child) => {
-  if (child.type !== ModalTitle && child.type !== ModalBody && child.type !== ModalFooter) {
-    warn('Modal allows Modal.Title, Modal.Body or Modal.Footer children only, other elements types are wiped out');
-    return null;
-  }
+// this function warns if the provided children are not in the Modal.* domain
+const warnIfNotInDomain = (child) => {
+  checkOnAllowedChildren(child, [ModalBody, ModalFooter, ModalTitle], 'Modal');
+
   return child;
 };
 
@@ -54,7 +52,7 @@ const Modal = React.memo((props) => {
           )}
           {backdropRender && backdropRender(props)}
           <div className={classList} {...rest}>
-            {Children.map(children, wipeOutIncorrectChildren)}
+            {Children.map(children, warnIfNotInDomain)}
           </div>
         </div>
       )}

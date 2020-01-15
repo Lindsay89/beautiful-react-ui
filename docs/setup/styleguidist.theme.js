@@ -1,5 +1,13 @@
 module.exports = {
+  // https://github.com/styleguidist/react-styleguidist/blob/master/src/client/styles/theme.ts
   theme: {
+    color: {
+      base: '#606f7b',
+      text: '#606f7b',
+      link: '#1D6C8B',
+      linkHover: '#317995'
+    },
+    baseColor: '#606f7b',
     fontFamily: {
       base: '"Ubuntu", "sans-serif", light',
     },
@@ -8,16 +16,10 @@ module.exports = {
     favicon: 'https://beautifulinteractions.com/favicons/bi-favicon.ico',
   },
   styles: {
-    Heading: {
-      heading: {
-        color: '#1D6C8B',
-        fontFamily: '\'Ubuntu\', sans-serif',
-      },
-    },
     Code: {
       code: {
         fontFamily: '\'Ubuntu Mono\', sans-serif',
-        backgroundColor: '#BE496E',
+        backgroundColor: '#CF7A95',
         color: '#fff',
         fontWeight: '400',
         padding: '0 5px',
@@ -25,25 +27,18 @@ module.exports = {
     },
     Para: {
       para: {
-        color: '#143642',
         fontFamily: '\'Ubuntu\', sans-serif',
       },
     },
     StyleGuide: {
       logo: {
-        background: 'url(./docs-logo.png) no-repeat left center',
-        borderBottom: 'none',
-        backgroundSize: 'contain',
-        margin: '16px 16px',
-        height: '30px',
-        padding: 0,
+        display: 'none',
       },
       sidebar: {
         border: 0,
-        width: '260px',
+        width: '16rem',
         background: 'white',
         boxShadow: '0 0 20px 0 rgba(20, 20, 20, 0.1)',
-        color: '#1D6C8B',
       },
       content: {
         maxWidth: '960px',
@@ -51,6 +46,9 @@ module.exports = {
       root: {
         background: '#FBFAF9',
       },
+      hasSidebar: {
+        paddingLeft: '16rem',
+      }
     },
     Playground: {
       preview: {

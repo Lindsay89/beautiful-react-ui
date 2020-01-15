@@ -57,7 +57,7 @@ describe('Placeholder component', () => {
 
     const placeholder = container.querySelector('.bi.bi-placeholder');
 
-    expect(placeholder.querySelectorAll('.bi-placeholder-title')).to.exist;
+    expect(placeholder.querySelector('.bi-placeholder-title')).to.exist;
   });
 
   it('should possibly show an image-resembling block', () => {

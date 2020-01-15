@@ -1,5 +1,0 @@
-@mixin chevron-color($colorName: 'default' , $colorValue: $colorName) {
-  &.chevron-#{$colorName} {
-    @apply text-#{$colorValue};
-  }
-}

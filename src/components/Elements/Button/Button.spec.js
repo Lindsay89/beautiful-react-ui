@@ -2,6 +2,9 @@ import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 import Button from '.';
 import Pill from '../Pill';
+import performStandardTests from '../../../../test/utils/performStandardTests';
+import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
+import checkColorProp from '../../../../test/utils/checkColorProp';
 
 describe('Button component', () => {
   afterEach(() => {
@@ -9,39 +12,17 @@ describe('Button component', () => {
     cleanup();
   });
 
-  it('should render without explode', () => {
-    const { container } = render(<Button />);
+  // performs the standard tests
+  performStandardTests(Button);
+  // performs a test on default class names
+  hasDefaultClassNames(Button, undefined, ['bi-btn', 'btn-default']);
 
-    should.exist(container);
-    expect(container.querySelector('button')).to.exist;
-  });
-
-  it('should have default classes', () => {
-    const { container } = render(<Button>Hello Button</Button>);
-    const button = container.querySelector('button');
-
-    expect(button.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-btn', 'btn-default']);
-  });
-
-  it('should accept an "id" prop', () => {
-    const { container } = render(<Button id="foo">Hello Button</Button>);
-    const button = container.querySelector('button');
-
-    expect(button.id).to.equal('foo');
-  });
-
-  it('should allow adding custom classes', () => {
-    const { container } = render(<Button className="foo">Hello Button</Button>);
-    const button = container.querySelector('button');
-
-    expect(button.getAttribute('class').split(' ')).to.include.members(['foo']);
-  });
-
-  it('should allow to define custom style', () => {
-    const { container } = render(<Button style={{ margin: '10px' }}>Hello Button</Button>);
-    const button = container.querySelector('button');
-
-    expect(button.getAttribute('style')).to.equal('margin: 10px;');
+  checkColorProp(Button, undefined, {
+    colorProp: 'color',
+    defaultColor: 'primary',
+    defaultColorClass: 'btn-primary',
+    checkColor: 'warning',
+    checkColorClass: 'btn-warning',
   });
 
   it('should render the given child string', () => {
@@ -65,21 +46,6 @@ describe('Button component', () => {
 
     rerender(<Button type="reset">Hello Button</Button>);
     expect(button.getAttribute('type')).to.equal('reset');
-  });
-
-  it('should allow to define the button color', () => {
-    const { container, rerender } = render(<Button color="primary">Hello Button</Button>);
-    const button = container.querySelector('button');
-
-    expect(button.getAttribute('class').split(' ')).to.include.members(['btn-primary']);
-    expect(button.getAttribute('class').split(' ')).to.not.include.members(['btn-default']);
-
-    rerender(<Button color="warning">Hello Button</Button>);
-    expect(button.getAttribute('class').split(' ')).to.include.members(['btn-warning']);
-
-    rerender(<Button>Hello Button</Button>);
-    expect(button.getAttribute('class').split(' ')).to.include.members(['btn-default']);
-    expect(button.getAttribute('class').split(' ')).to.not.include.members(['btn-primary', 'btn-warning']);
   });
 
   it('should allow to define the button size', () => {

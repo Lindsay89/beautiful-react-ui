@@ -1,5 +1,0 @@
-@mixin make-close-icon-color($colorName: 'default' , $colorValue: $colorName) {
-  &.close-icon-#{$colorName} {
-    @apply text-#{$colorValue};
-  }
-}

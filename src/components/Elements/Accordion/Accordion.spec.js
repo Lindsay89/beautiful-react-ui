@@ -18,7 +18,7 @@ describe('Accordion component', () => {
       </Accordion>,
     );
 
-    const accordionEl = container.querySelectorAll('div');
+    const accordionEl = container.querySelector('div');
 
     expect(container).to.exist;
     expect(accordionEl).to.exist;
@@ -83,24 +83,6 @@ describe('Accordion component', () => {
     const accordion = container.querySelector('.bi.bi-accordion');
 
     expect(accordion.getAttribute('style')).to.equal('margin: 30px;');
-  });
-
-  it('should wipe out non Accordion.Content items', () => {
-    const warnSpy = sinon.spy(console, 'warn');
-
-    const { container } = render(
-      <Accordion onChange={noop} active={1}>
-        <Accordion.Content title="Title">
-          Lorem ipsum...
-        </Accordion.Content>
-        <p id="unwanted">Unwanted</p>
-      </Accordion>,
-    );
-
-    const unwantedItem = container.querySelector('#unwanted');
-
-    expect(unwantedItem).to.equal(null);
-    expect(warnSpy.callCount).to.equal(1);
   });
 
   it('should allow to change accordion link color', () => {

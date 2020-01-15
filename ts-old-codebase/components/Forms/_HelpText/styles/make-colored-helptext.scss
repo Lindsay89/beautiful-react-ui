@@ -1,5 +1,0 @@
-@mixin make-colored-helptext($colorName: 'default', $colorValue: $colorName) {
-  &.helptext-#{$colorName} {
-    @apply text-#{$colorValue};
-  }
-}

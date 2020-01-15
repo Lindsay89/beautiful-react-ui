@@ -15,10 +15,4 @@ export { default as emptyChildren } from './functions/emptyChildren';
 export { default as getLastChild } from './functions/getLastChild';
 export { default as getFirstChild } from './functions/getFirstChild';
 export { default as warn } from './functions/warn';
-
-// hooks
-export { default as useDrag } from './hooks/useDrag';
-
-// geometries
-export { default as makeSvgPath } from '../components/__Enterprise/Diagram/utils/makeSvgPath';
-export { default as getPathMidpoint } from '../components/__Enterprise/Diagram/utils/getPathMidpoint';
+export { default as checkOnAllowedChildren } from './functions/checkOnAllowedChildren';

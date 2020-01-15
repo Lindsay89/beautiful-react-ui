@@ -1,5 +1,0 @@
-@mixin create-toggle-group-color($colorName: 'default', $colorValue: $colorName) {
-  .bi.bi-btn.btn-#{$colorName}.toggled {
-    @apply bg-#{$colorValue}-dark;
-  }
-}
