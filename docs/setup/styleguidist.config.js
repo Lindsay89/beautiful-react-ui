@@ -13,7 +13,7 @@ module.exports = {
   },
   styleguideDir: '../../dist-ghpages',
   exampleMode: 'collapse',
-  usageMode: 'expand',
+  usageMode: 'collapse',
   pagePerSection: true,
   sortProps: props => props,
   skipComponentsWithoutExample: true,
@@ -28,7 +28,6 @@ module.exports = {
       content: '../customising.md',
       sectionDepth: 1,
     },
-    { name: 'Components', divider: true, content: '', },
     {
       name: 'Elements',
       pagePerSection: true,

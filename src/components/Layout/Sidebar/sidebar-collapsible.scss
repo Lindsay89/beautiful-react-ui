@@ -9,7 +9,7 @@
   // COLLAPSIBLE
   // ----------------------------
   .sidebar-collapsible-content {
-    @apply pl-2 h-0 overflow-hidden;
+    @apply h-0 overflow-hidden;
     transition: height 0.35s ease-in-out;
     background: rgba(20, 20, 20, 0.05);
     box-shadow: 0 0 0.15rem 0.15rem rgba(20, 20, 20, 0.05) inset;

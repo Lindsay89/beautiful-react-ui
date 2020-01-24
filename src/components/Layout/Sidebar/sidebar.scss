@@ -1,3 +1,5 @@
+@import "../../../theme/utils/mixins";
+
 $shrinkableOffsetLeft: calc(-1 * calc(theme('spacing.64') - theme('spacing.20')));
 $shrinkableOffsetRight: calc(calc(theme('spacing.64') - theme('spacing.20')));
 
@@ -20,7 +22,9 @@ $shrinkableOffsetRight: calc(calc(theme('spacing.64') - theme('spacing.20')));
   // NAVIGATION ITEM
   // ----------------------------
   .bi-sidebar-navigation {
-    @apply m-0 overflow-scroll;
+    @apply m-0 overflow-scroll h-full;
+
+    @include handle-scrolling-bar();
 
     ul {
       @apply m-0 p-0;

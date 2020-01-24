@@ -1,4 +1,5 @@
 @import "../../../theme/utils/animations.scss";
+@import "../../../theme/utils/mixins";
 
 .bi.bi-select {
   box-sizing: border-box;
@@ -96,6 +97,7 @@
   @apply font-normal font-sans text-base;
 
   @include slideTop(0.35s);
+  @include handle-scrolling-bar();
 
   .bi-select-opt {
     @apply py-2 px-3 font-normal font-sans text-base tracking-normal text-default-darker leading-tight cursor-pointer;
