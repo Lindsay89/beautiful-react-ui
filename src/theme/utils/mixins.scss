@@ -63,7 +63,6 @@
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#00000000', endColorstr='#0d000000', GradientType=0);
 }
 
-
 // ----------------------------
 // Create pointer arrow
 // ----------------------------
@@ -266,5 +265,25 @@
       border-left: 0 solid transparent;
       border-bottom-color: $borderColor;
     }
+  }
+}
+
+// ----------------------------
+// Handle scrolling bar
+// ----------------------------
+@mixin handle-scrolling-bar() {
+  /*
+    Firefox: https://developer.mozilla.org/en/docs/Web/CSS/overflow
+    overflow: -moz-scrollbars-none; (no longer works)
+    IE: https://msdn.microsoft.com/en-us/library/hh771902(v=vs.85).aspx
+  */
+  -ms-overflow-style: none;
+
+  /*
+    Chrome: https://css-tricks.com/custom-scrollbars-in-webkit
+  */
+  // stylelint-disable-next-line
+  &::-webkit-scrollbar {
+    display: none;
   }
 }

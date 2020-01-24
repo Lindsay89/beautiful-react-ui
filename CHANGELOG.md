@@ -840,3 +840,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Added react and react-dom to the dev dependencies 
 - improving tests
 - removed the old typescript codebase (FINALLY!)
+
+## [0.48.1] - 2020-01-24
+
+### Fixed
+
+- Sidebar scrolling issue
