@@ -1,0 +1,48 @@
+$shrinkableOffsetLeft: calc(-1 * calc(theme('spacing.64') - theme('spacing.20')));
+$shrinkableOffsetRight: calc(calc(theme('spacing.64') - theme('spacing.20')));
+
+.bi.bi-sidebar {
+  box-sizing: border-box;
+  box-shadow: 0 0 0.25rem 0.16rem rgba(20, 20, 20, 0.05), 0 0 0.5rem 0.4rem rgba(20, 20, 20, 0.1);
+  z-index: 4;
+  transform: translateX($shrinkableOffsetLeft);
+  transition: transform 0.35s;
+  @apply bg-white w-64 h-full overflow-hidden;
+
+  // ----------------------------
+  // TYPES
+  // ----------------------------
+  &.sidebar-offcanvas {
+    transform: translateX(-100%);
+  }
+
+  // ----------------------------
+  // NAVIGATION ITEM
+  // ----------------------------
+  .bi-sidebar-navigation {
+    @apply m-0 overflow-scroll;
+
+    ul {
+      @apply m-0 p-0;
+    }
+  }
+
+  // ----------------------------
+  // ORIENTATION
+  // ----------------------------
+  &.sidebar-left {
+    @apply mr-auto;
+  }
+
+  &.sidebar-right {
+    @apply ml-auto;
+    transform: translateX($shrinkableOffsetRight);
+  }
+
+  // ----------------------------
+  // SIDEBAR OPEN
+  // ----------------------------
+  &.sidebar-open {
+    transform: translateX(0);
+  }
+}

@@ -1,22 +1,16 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Color, warn } from '../../../shared';
+import { Color, checkOnAllowedChildren } from '../../../shared';
 import AccordionContent from './AccordionContent';
 
 import './accordion.scss';
 
 /**
- * returns only AccordionContent children whilst wipes out the others
+ * Enrich Accordion children
  */
-const cloneAccordionContents = (child, index, props) => {
-  if (!child) return null;
-
-  if (child.type !== AccordionContent) {
-    warn('Accordion allows only Accordion.Content children, other kind of elements will be wiped out');
-
-    return null;
-  }
+const enrichChild = (child, index, props) => {
+  checkOnAllowedChildren(child, [AccordionContent], 'Accordion');
 
   return React.cloneElement(child, {
     internalId: index,
@@ -36,7 +30,7 @@ const Accordion = React.memo((props) => {
 
   return (
     <div className={classList} {...rest}>
-      {Children.map(children, (child, index) => cloneAccordionContents(child, index, props))}
+      {Children.map(children, (child, index) => enrichChild(child, index, props))}
     </div>
   );
 });

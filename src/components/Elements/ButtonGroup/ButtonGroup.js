@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Color, Size, warn } from '../../../shared';
+import { Color, Size, checkOnAllowedChildren } from '../../../shared';
 import Button from '../Button';
 
 import './button.group.scss';
@@ -12,10 +12,7 @@ import './button.group.scss';
  * @param props
  */
 const cloneButton = (buttonInstance, props) => {
-  if (buttonInstance.type !== Button) {
-    warn('ButtonGroup\'s children can only be instances of the Button component, any other has been wiped out.');
-    return null;
-  }
+  checkOnAllowedChildren(buttonInstance, [Button], 'Button');
 
   return React.cloneElement(buttonInstance, props);
 };

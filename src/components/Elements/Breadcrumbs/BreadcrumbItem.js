@@ -10,7 +10,7 @@ const BreadcrumbItem = (props) => {
   const { path, label, icon } = props;
 
   if (!label && !icon) {
-    warn('One of your breadcrumb has been wiped out as it has no label nor icon');
+    warn('One of your breadcrumb items has been wiped out to avoid bugs or glitches as it has no label nor icon');
     return null;
   }
 

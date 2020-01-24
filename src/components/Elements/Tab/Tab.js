@@ -3,18 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import TabContent from './TabContent';
 import TabButton from './TabButton';
-import { Color, warn } from '../../../shared';
+import { checkOnAllowedChildren, Color } from '../../../shared';
+
 import './tab.scss';
 
 /**
- * The filterTabChildren function filters out all elements different from TabContent type.
- * It returns an object which contain the cloned element plus some props useful to create tab buttons.
+ * Returns an object which contain the cloned element plus some props useful to create tab buttons.
  */
 const filterTabChildren = (child, index, props) => {
-  if (child.type !== TabContent) {
-    warn('Tab allows only Tab.Content children, other kind of elements will be wiped out');
-    return null;
-  }
+  checkOnAllowedChildren(child, [TabContent], 'Accordion');
 
   const result = Object.create(null);
 

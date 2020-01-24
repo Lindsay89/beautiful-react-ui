@@ -1,14 +1,13 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
-import CloseIcon from '.';
+import { cleanup } from '@testing-library/react';
+import CloseIcon from './CloseIcon';
+import performStandardTests from '../../../../test/utils/performStandardTests';
+import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 
-describe('CloseIcon private component', () => {
+describe('CloseIcon component', () => {
   afterEach(cleanup);
 
-  it('should render without explode', () => {
-    const { container } = render(<CloseIcon />);
-
-    should.exist(container);
-    expect(container.querySelector('svg')).to.exist;
-  });
+  // performs the standard tests
+  performStandardTests(CloseIcon);
+  // performs a test on default class names
+  hasDefaultClassNames(CloseIcon, undefined, ['bi-close-icon']);
 });

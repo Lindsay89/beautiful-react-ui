@@ -1,7 +1,0 @@
-@mixin generate-toggle-color($colorName: 'default', $colorValue: $colorName) {
-  &.toggle-#{$colorName} {
-    &.toggled .toggle-switch {
-      @apply bg-#{$colorValue};
-    }
-  }
-}

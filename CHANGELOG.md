@@ -822,3 +822,21 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Fixing build system
 - Peer dependencies
+
+## [0.48.0] - 2020-01-18
+
+### Added
+
+- Sidebar component
+- Tooltip component
+- Improving documentation (styleguidist hacks)
+- test utility: checkColorProp
+- test utility: hasDefaultClassNames
+- test utility: performStandardTests
+
+### Fixed
+
+- Link component font fix
+- Added react and react-dom to the dev dependencies 
+- improving tests
+- removed the old typescript codebase (FINALLY!)
