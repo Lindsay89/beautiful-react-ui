@@ -25,6 +25,10 @@
       @apply m-0 text-2xl text-left antialiased leading-tight font-sans font-medium text-default-darker truncate;
     }
 
+    img {
+      @apply self-center;
+    }
+
     img,
     h1 {
       max-width: 100%;

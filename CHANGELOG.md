@@ -846,3 +846,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Sidebar scrolling issue
+
+## [0.48.2] - 2020-01-25
+
+### Fixed
+
+- Sidebar header image issue
