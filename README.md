@@ -17,7 +17,7 @@
 
 <div>
   <p align="center">
-    <a href="https://beautifulinteractions.github.io/beautiful-react-hooks/" target="_blank">
+    <a href="https://beautifulinteractions.github.io/beautiful-react-ui/" target="_blank">
     🌟 Live playground here 🌟
     </a>
   </p>
@@ -54,6 +54,14 @@ their behaviour
 * Fully written in old-school JS (although TS types are supported)
 * Based on [Tailwindcss](https://tailwindcss.com/)
 
+<div>
+  <p align="center">
+    <a href="https://beautifulinteractions.github.io/beautiful-react-ui/" target="_blank">
+    🌟 Live playground here 🌟
+    </a>
+  </p>
+</div>
+
 ## Contributing
 
 Contributions are very welcome and wanted. 
@@ -66,6 +74,14 @@ To submit your custom pull request, please make sure your read our [CONTRIBUTING
 3. make sure you run `npm test` and `npm build` before submitting your merge request.
 4. make sure you've added the documentation of your changes.
 5. if you've changed the signature of a component, please make sure you've updated the `index.d.ts` file.
+
+<div>
+  <p align="center">
+    <a href="https://beautifulinteractions.github.io/beautiful-react-ui/" target="_blank">
+    🌟 Live playground here 🌟
+    </a>
+  </p>
+</div>
 
 ### Credits
 
