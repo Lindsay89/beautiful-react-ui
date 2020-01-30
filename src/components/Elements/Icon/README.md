@@ -31,5 +31,5 @@ For the component is built on top of [font-awesome](https://fontawesome.com/) yo
 possibly use original font-awesome props
 
 ```jsx
-<Icon name="cross" color="danger" flip="vertical" />
+<Icon name="home" color="danger" flip="vertical" />
 ```

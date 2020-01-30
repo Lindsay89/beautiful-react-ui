@@ -36,7 +36,7 @@ Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, 
 import { FloatingContent, Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
-  <Button fluid color="primary">show a <strong>{title}</strong> placed floating content</Button>
+  <Button fluid color="primary">show a {title} placed floating content</Button>
 );
 
 const UncontrolledFloatingContent = (props) => {
@@ -71,7 +71,7 @@ The `action` defines when to fire the `onToggle` callback, it can be `click` or 
 import { FloatingContent, Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
-  <Button color="success" style={{marginRight: '1.25rem'}}>Show a floating content on <strong>{title}</strong></Button>
+  <Button color="success" style={{marginRight: '1.25rem'}}>Show a floating content on {title}</Button>
 );
 
 const UncontrolledFloatingContent = (props) => {

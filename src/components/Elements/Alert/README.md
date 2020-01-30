@@ -100,7 +100,7 @@ const UncontrolledAlert = (props) => {
     <>
       {showAlert && <Alert {...props} onClose={() => setShowAlert(!showAlert)} />}
       <Button color="primary" disabled={showAlert} onClick={() => setShowAlert(!showAlert)}>
-        {showAlert ? 'Alert shown' : 'Show the bloody alert'}
+        {showAlert ? 'Alert shown' : 'Show the alert'}
       </Button>
     </>
   );

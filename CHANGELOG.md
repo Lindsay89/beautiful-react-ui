@@ -852,3 +852,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Sidebar header image issue
+
+## [0.48.3] - 2020-01-30
+
+### Fixed
+
+- Rewrote part of Alert, Icon, Popover, Tooltip and FloatingContent documentation

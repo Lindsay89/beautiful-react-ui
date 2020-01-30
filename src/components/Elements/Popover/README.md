@@ -57,7 +57,7 @@ Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, 
 import { Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
-  <Button fluid color="primary">show a <strong>{title}</strong> placed popover</Button>
+  <Button fluid color="primary">show a {title} placed popover</Button>
 );
 
 const UncontrolledPopover = ({ placement }) => {
@@ -91,7 +91,7 @@ The `action` defines when to fire the `onToggle` callback, it can be `click` or 
 import { Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
-  <Button color="success" style={{marginRight: 12}}>show a popup on <strong>{title}</strong></Button>
+  <Button color="success" style={{marginRight: 12}}>show a popup on {title}</Button>
 );
 
 const UncontrolledPopover = ({ action }) => {

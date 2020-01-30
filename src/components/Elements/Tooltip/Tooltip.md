@@ -30,7 +30,7 @@ Could be `top-left`, `top-center`, `top-right`, `bottom-left`, `bottom-center`, 
 import { Button } from 'beautiful-react-ui';
 
 const Trigger = ({ title }) => (
-  <Button fluid color="primary">show a <strong>{title}</strong> placed popover</Button>
+  <Button fluid color="primary">show a {title} placed popover</Button>
 );
 
 const UncontrolledTooltip = ({ placement }) => {
