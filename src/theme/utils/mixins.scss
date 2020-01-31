@@ -287,3 +287,22 @@
     display: none;
   }
 }
+
+// ----------------------------
+// Text style
+// ----------------------------
+@mixin default-paragraph-style($applyFontSans: true) {
+  @apply leading-tight antialiased text-base font-normal tracking-normal text-default-darker;
+
+  @if ($applyFontSans) {
+    @apply font-sans;
+  }
+
+  strong {
+    @apply font-semibold;
+  }
+
+  i {
+    @apply italic;
+  }
+}

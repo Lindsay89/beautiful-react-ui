@@ -75,14 +75,6 @@ To submit your custom pull request, please make sure your read our [CONTRIBUTING
 4. make sure you've added the documentation of your changes.
 5. if you've changed the signature of a component, please make sure you've updated the `index.d.ts` file.
 
-<div>
-  <p align="center">
-    <a href="https://beautifulinteractions.github.io/beautiful-react-ui/" target="_blank">
-    🌟 Live playground here 🌟
-    </a>
-  </p>
-</div>
-
 ### Credits
 
 This library is provided and sponsored by: 

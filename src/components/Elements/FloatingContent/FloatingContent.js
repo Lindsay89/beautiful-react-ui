@@ -3,10 +3,12 @@ import { useWindowResize } from 'beautiful-react-hooks';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Portal from '../_Portal/Portal';
-import getFloaterAbsolutePosition from './getFloaterAbsolutePosition';
+import getFloaterAbsolutePosition from './utils/getFloaterAbsolutePosition';
 import { Placement } from '../../../shared';
 
 import './floating-content.scss';
+
+// @TODO: this component can be simplified quite a lot
 
 /**
  * A FloatingContent shows its own children components floating on a given trigger (possibly another React component).
