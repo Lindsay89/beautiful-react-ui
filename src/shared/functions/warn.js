@@ -1,4 +1,5 @@
-const consoleStyle = 'background-color: #BE496E; color: white; font-weight: 600';
+/* eslint-disable-next-line max-len */
+const consoleStyle = process.env.NODE_ENV !== 'test' ? 'background-color: #BE496E; color: white; font-weight: 600' : '';
 
 /**
  * The reason we are wrapping the standard console.log function here, is so that we have just one place where to disable

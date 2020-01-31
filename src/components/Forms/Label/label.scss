@@ -1,4 +1,6 @@
-@mixin make-colored-label($colorName: 'default', $colorValue: $colorName) {
+@import "../../../theme/utils/mixins";
+
+@mixin make-label-color($colorName: 'default', $colorValue: $colorName) {
   &.bi-label-#{$colorName} {
     @apply text-#{$colorValue};
   }
@@ -7,14 +9,16 @@
 .bi.bi-label {
   cursor: inherit; // so that it would be exactly the one of its input
 
-  @apply inline-block font-bold font-medium text-base tracking-normal text-default-darker;
+  @apply inline-block;
 
-  @include make-colored-label('primary');
-  @include make-colored-label('secondary');
-  @include make-colored-label('info');
-  @include make-colored-label('success');
-  @include make-colored-label('warning');
-  @include make-colored-label('danger');
+  @include default-paragraph-style();
+
+  @include make-label-color('primary');
+  @include make-label-color('secondary');
+  @include make-label-color('info');
+  @include make-label-color('success');
+  @include make-label-color('warning');
+  @include make-label-color('danger');
 
   span {
     @apply text-danger ml-1;

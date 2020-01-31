@@ -1,3 +1,5 @@
+@import "../../../theme/utils/mixins";
+
 // -------------------------------
 // color mixin
 // -------------------------------
@@ -10,15 +12,7 @@
 }
 
 .bi.bi-link {
-  @apply leading-tight antialiased text-base font-normal tracking-normal text-primary font-sans;
-
-  strong {
-    @apply font-semibold;
-  }
-
-  i {
-    @apply italic;
-  }
+  @include default-paragraph-style();
 
   // ----------------------------
   // Colors

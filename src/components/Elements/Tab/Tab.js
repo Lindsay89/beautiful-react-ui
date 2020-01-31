@@ -8,10 +8,10 @@ import { checkOnAllowedChildren, Color } from '../../../shared';
 import './tab.scss';
 
 /**
- * Returns an object which contain the cloned element plus some props useful to create tab buttons.
+ * Returns an object containing the cloned element plus some props useful to create tab buttons.
  */
 const filterTabChildren = (child, index, props) => {
-  checkOnAllowedChildren(child, [TabContent], 'Accordion');
+  checkOnAllowedChildren(child, [TabContent], 'Tab');
 
   const result = Object.create(null);
 

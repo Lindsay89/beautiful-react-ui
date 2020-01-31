@@ -857,4 +857,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 ### Fixed
 
-- Rewrote part of Alert, Icon, Popover, Tooltip and FloatingContent documentation
+- Improving documentation for Alert, Icon, Popover, Tooltip and FloatingContent
+
+## [0.48.4] - 2020-01-31
+
+### Fixed
+
+- improved getFloaterAbsolutePosition and its tests 
+- Label component text style
