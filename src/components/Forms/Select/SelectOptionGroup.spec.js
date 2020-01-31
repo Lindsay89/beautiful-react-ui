@@ -1,6 +1,6 @@
-import { cleanup, render } from '@testing-library/react';
-import noop from 'lodash/fp/noop';
 import React from 'react';
+import { cleanup, render } from '@testing-library/react';
+import noop from '../../../../test/utils/noop';
 import SelectOptionGroup from './SelectOptionGroup';
 
 const optionsGroupMock = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import noop from 'lodash/noop';
+import noop from '../../../../test/utils/noop';
 import Accordion from './index';
 
 describe('Accordion component', () => {

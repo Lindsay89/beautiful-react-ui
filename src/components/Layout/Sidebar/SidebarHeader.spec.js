@@ -1,6 +1,6 @@
 import { cleanup } from '@testing-library/react';
-import noop from 'lodash/noop';
 import SidebarHeader from './SidebarHeader';
+import noop from '../../../../test/utils/noop';
 import performStandardTests from '../../../../test/utils/performStandardTests';
 import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 import checkColorProp from '../../../../test/utils/checkColorProp';

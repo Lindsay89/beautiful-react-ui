@@ -1,6 +1,6 @@
 import React from 'react';
-import noop from 'lodash/noop';
 import { render, cleanup, wait, fireEvent } from '@testing-library/react';
+import noop from '../../../../test/utils/noop';
 import Checkbox from '.';
 
 describe('Checkbox component', () => {

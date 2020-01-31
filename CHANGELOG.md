@@ -865,3 +865,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - improved getFloaterAbsolutePosition and its tests 
 - Label component text style
+
+
+## [0.48.5] - 2020-01-31
+
+### Fixed
+
+- Adding src directory to the distribution package
+- Removing lodash/noop from dependencies

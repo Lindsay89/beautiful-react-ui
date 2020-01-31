@@ -1,6 +1,6 @@
 import React from 'react';
-import noop from 'lodash/noop';
 import { render, cleanup } from '@testing-library/react';
+import noop from '../../../../test/utils/noop';
 import Tab from './Tab';
 
 describe('Tab component', () => {

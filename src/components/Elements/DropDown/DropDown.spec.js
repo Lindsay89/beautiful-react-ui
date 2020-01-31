@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import noop from 'lodash/noop';
+import noop from '../../../../test/utils/noop';
 import Button from '../Button';
 import DropDown from '.';
 

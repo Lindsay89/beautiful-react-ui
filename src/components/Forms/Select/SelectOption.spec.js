@@ -1,6 +1,6 @@
 import React from 'react';
-import noop from 'lodash/fp/noop';
 import { cleanup, fireEvent, render } from '@testing-library/react';
+import noop from '../../../../test/utils/noop';
 import SelectOption from './SelectOption';
 
 const optionMock = { label: 'Foo', value: 'foo' };

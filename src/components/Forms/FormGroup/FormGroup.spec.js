@@ -1,6 +1,6 @@
 import React from 'react';
-import noop from 'lodash/noop';
 import { cleanup, render } from '@testing-library/react';
+import noop from '../../../../test/utils/noop';
 import FormGroup from './FormGroup';
 import Input from '../Input';
 
