@@ -30,7 +30,7 @@ const enrichChild = (child, orientation) => {
 const Sidebar = React.memo((props) => {
   const {
     isOpen, onToggle, title, titleColor, headerLogo, showToggle, toggleIcon, HeaderRender,
-    accent, orientation, type, className, children, ...rest
+    accent, orientation, type, transitionType, className, children, ...rest
   } = props;
 
   // defines class list
@@ -39,7 +39,8 @@ const Sidebar = React.memo((props) => {
     [`sidebar-${accent}`]: !!accent,
     [`sidebar-${orientation}`]: !!orientation,
     [`sidebar-${type}`]: !!type,
-  }, className), [isOpen, type, accent, orientation, className]);
+    [`sidebar-${transitionType}`]: !!transitionType,
+  }, className), [isOpen, type, accent, orientation, transitionType, className]);
 
   return (
     <aside className={classList} {...rest}>
@@ -100,11 +101,15 @@ Sidebar.propTypes = {
   /**
    * Defines whether the sidebar left or right orientated
    */
-  orientation: PropTypes.oneOf(['left', 'right', 'none']),
+  orientation: PropTypes.oneOf(['left', 'right']),
   /**
    * Defines the sidebar's type
    */
   type: PropTypes.oneOf(['shrinkable', 'offcanvas']),
+  /**
+   * Defines the sidebar transition should be by translate the sidebar or its left/right margin
+   */
+  transitionType: PropTypes.oneOf(['translate', 'margin']),
 };
 
 Sidebar.defaultProps = {
@@ -116,8 +121,9 @@ Sidebar.defaultProps = {
   toggleIcon: 'bars',
   showToggle: true,
   HeaderRender: SidebarHeader,
-  orientation: undefined,
+  orientation: 'left',
   type: 'shrinkable',
+  transitionType: 'translate',
 };
 
 

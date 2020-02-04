@@ -1,4 +1,5 @@
-import { ComponentClass, FunctionComponent, ReactInstance } from 'react';
+import {ComponentClass, FunctionComponent, ReactElement, ReactInstance} from 'react';
+import {IconProps} from "./Icon";
 
 /**
  * Exports all the shared colors supported by the library
@@ -29,5 +30,7 @@ export type DefaultProps = {
 export type Placement = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center'
   | 'bottom-right' | 'left-center' | 'right-center';
 
+export type IconProp = string | string[] | ReactElement<IconProps>;
 
+// TODO: to be improved
 export type Renderer<Props> = ComponentClass<Props> | FunctionComponent<Props> | ReactInstance;
