@@ -18,7 +18,7 @@ export type SidebarProps = DefaultProps & {
 
 export type SidebarItemProps = DefaultProps & {
   text: string,
-  to: string,
+  to?: string,
   Icon?: IconProp,
   current?: boolean,
   onClick?: Callback<SyntheticEvent<MouseEvent>>,

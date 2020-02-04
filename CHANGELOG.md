@@ -879,3 +879,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Adding `transitionType` to Sidebar component
 - Improving Sidebar component documentation & types
+
+## [0.48.7] - 2020-02-04
+
+### Fixed
+
+- Fixing types of Sidebar.Item
