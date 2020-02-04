@@ -266,6 +266,53 @@ const OffcanvasSidebarExample = ({ children, ...props }) => {
 <OffcanvasSidebarExample />
 ```
 
+### Transition type
+
+By design the transition type is defined as `translate`, in some cases to fit the Sidebar in your scaffold
+you need to have a transition defined on `margin` left/right.
+
+
+```jsx
+import React, { useState, useCallback } from 'react'; 
+import { Sidebar, Button } from 'beautiful-react-ui';
+
+// a styled container having a 'hidden' overflow set is used for demo purposes
+const constainerStyle = {
+  height: '450px', 
+  overflow: 'hidden', 
+  border: '1px solid #F2EFED', 
+  background: '#2C363F',
+  marginBottom: '20px',
+};
+
+const OffcanvasSidebarExample = ({ children, ...props }) => {
+  const [isOpen, setIsOpen] = useState(true);
+  
+  const handleOnChange = useCallback(() => {
+    setIsOpen(!isOpen);
+  }, [isOpen]);
+  
+  return (
+    <>
+      <div style={constainerStyle}>
+        <Sidebar isOpen={isOpen} onToggle={handleOnChange} transitionType="margin" type="offcanvas">
+          <Sidebar.Item text="Home" icon="home" to="#" onClick={(e) => e.preventDefault(e)} current />
+          <Sidebar.Item text="About" icon="user" to="#" onClick={(e) => e.preventDefault(e)} />
+          <Sidebar.Collapsible text="Settings" icon="cog" showOpen>
+            <Sidebar.Item text="Device" icon="mobile" />
+            <Sidebar.Item text="Performances" icon="tachometer-alt" />
+          </Sidebar.Collapsible>
+          <Sidebar.Item text="Logout" icon="power-off" onClick={(e) => e.preventDefault(e)} />
+        </Sidebar>
+      </div>
+      <Button outline rounded icon="bars" color="primary" onClick={handleOnChange}>Toggle sidebar</Button>
+    </>
+  );
+}
+
+<OffcanvasSidebarExample />
+```
+
 ### 🎓 Handlers:
 
 - `onToggle`: fires when clicking on the sidebar toggle

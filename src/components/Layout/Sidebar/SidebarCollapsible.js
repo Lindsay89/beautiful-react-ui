@@ -22,9 +22,9 @@ const animateToOpen = (element) => {
  */
 // eslint-disable-next-line react/prop-types
 const SidebarCollapsible = ({ orientation, ...props }) => {
-  const { text, icon, LinkRender, children, current, className, ...rest } = props;
+  const { text, icon, LinkRender, children, current, showOpen, className, ...rest } = props;
   const collapsibleRef = useRef();
-  const [isOpen, setIsOpen] = useState(!!current);
+  const [isOpen, setIsOpen] = useState(showOpen || !!current);
 
   const classList = useMemo(() => classNames('bi bi-sidebar-nav-item sidebar-collapsible', {
     'sidebar-collapsible-open': isOpen,
@@ -36,7 +36,9 @@ const SidebarCollapsible = ({ orientation, ...props }) => {
   }, [isOpen]);
 
   useEffect(() => {
-    setIsOpen(!!current);
+    if (current) {
+      setIsOpen(true);
+    }
   }, [current]);
 
   useEffect(() => {
@@ -73,12 +75,14 @@ SidebarCollapsible.propTypes = {
   icon: IconProp,
   current: PropTypes.bool,
   LinkRender: PropTypes.elementType,
+  showOpen: PropTypes.bool,
 };
 
 SidebarCollapsible.defaultProps = {
   icon: undefined,
   current: false,
   LinkRender: SidebarLink,
+  showOpen: false,
 };
 
 export default React.memo(SidebarCollapsible);
