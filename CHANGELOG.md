@@ -885,3 +885,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Fixing types of Sidebar.Item
+
+## [0.48.8] - 2020-02-04
+
+### Fixed
+
+- Sidebar.Collapsible initial open status fix

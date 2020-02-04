@@ -42,9 +42,11 @@ const SidebarCollapsible = ({ orientation, ...props }) => {
   }, [current]);
 
   useEffect(() => {
-    const animatingFunction = !isOpen ? animateToClose : animateToOpen;
-    animatingFunction(collapsibleRef.current);
-  }, [isOpen]);
+    if (collapsibleRef.current) {
+      const animatingFunction = !isOpen ? animateToClose : animateToOpen;
+      animatingFunction(collapsibleRef.current);
+    }
+  }, [isOpen, collapsibleRef.current]);
 
   return (
     <li className={classList} {...rest}>
