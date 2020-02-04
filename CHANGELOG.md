@@ -891,3 +891,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Sidebar.Collapsible initial open status fix
+
+## [0.48.9] - 2020-02-04
+
+### Fixed
+
+- Button and Avatar alignment changed from `bottom` to `middle`
