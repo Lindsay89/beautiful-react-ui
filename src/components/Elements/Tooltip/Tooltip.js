@@ -43,4 +43,4 @@ Tooltip.defaultProps = {
   placement: 'top-center',
 };
 
-export default Tooltip;
+export default React.memo(Tooltip);

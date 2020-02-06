@@ -45,4 +45,4 @@ BreadcrumbItem.defaultProps = {
   icon: undefined,
 };
 
-export default BreadcrumbItem;
+export default React.memo(BreadcrumbItem);

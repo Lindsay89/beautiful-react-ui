@@ -50,7 +50,7 @@ Checkbox.propTypes = {
   /**
    * The checkbox on change handler
    */
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   /**
    * Defines the checkbox label
    */
@@ -75,6 +75,7 @@ Checkbox.propTypes = {
 
 
 Checkbox.defaultProps = {
+  onChange: undefined,
   style: undefined,
   color: 'default',
   disabled: false,

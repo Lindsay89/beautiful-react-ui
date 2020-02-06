@@ -68,7 +68,7 @@ Tab.propTypes = {
   /**
    * The callback to be performed on content change
    */
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   /**
    * Defines the current active tab index
    */
@@ -88,6 +88,7 @@ Tab.propTypes = {
 };
 
 Tab.defaultProps = {
+  onChange: undefined,
   color: 'default',
   orientation: 'horizontal',
   children: undefined,

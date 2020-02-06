@@ -908,3 +908,5 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Input component onChange prop shan't be required
+- Checkbox component onChange prop shan't be required
+- React.memo added where were missing

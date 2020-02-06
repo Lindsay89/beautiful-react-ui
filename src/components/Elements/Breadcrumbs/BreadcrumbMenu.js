@@ -49,4 +49,4 @@ BreadcrumbMenu.propTypes = {
 };
 
 
-export default BreadcrumbMenu;
+export default React.memo(BreadcrumbMenu);

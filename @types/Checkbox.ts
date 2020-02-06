@@ -9,7 +9,7 @@ export type CheckboxProps = DefaultProps & {
   /**
    * The checkbox on change handler
    */
-  onChange: Callback<MouseEvent, boolean>
+  onChange?: Callback<MouseEvent, boolean>
   /**
    * Defines the checkbox label
    */

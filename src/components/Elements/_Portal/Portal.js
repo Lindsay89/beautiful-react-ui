@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import getPortalWrapper from './getPortalWrapper';
 
@@ -33,4 +33,4 @@ Portal.propTypes = {
   children: PropTypes.node,
 };
 
-export default Portal;
+export default React.memo(Portal);
