@@ -107,11 +107,9 @@
   }
 
   .bi-card-actbtn-icn {
-    @apply absolute top-0 right-0 p-2 pr-4 w-full h-16;
+    @apply box-border absolute top-0 right-0 p-2 pr-4 w-full h-16;
 
     @include icon-backdrop;
-
-    box-sizing: border-box;
 
     &.no-img {
       background: none;

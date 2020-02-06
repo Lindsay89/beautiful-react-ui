@@ -6,11 +6,10 @@
 .bi.bi-btn {
   transition: background-color 0.25s ease-out, color 0.3s ease-out, box-shadow ease-in 0.18s;
   box-shadow: 0 0.25rem 0.68rem 0 rgba(37, 44, 97, 0.15), 0 0.125rem 0.1875rem 0 rgba(93, 100, 148, 0.2);
-  box-sizing: border-box;
 
   @include shadow-gradient();
 
-  @apply inline-flex align-middle items-center justify-center;
+  @apply inline-flex align-middle items-center justify-center box-border;
   @apply cursor-pointer antialiased text-default-darker leading-tight font-normal font-sans text-base;
   @apply bg-default-lighter outline-none select-none py-2 px-4 border-0 rounded;
 

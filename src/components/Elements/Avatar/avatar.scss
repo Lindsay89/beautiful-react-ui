@@ -6,9 +6,7 @@
   }
 
   .bi-avatar-item {
-    @apply inline-block w-12 h-12 bg-default-dark overflow-hidden shadow relative;
-
-    box-sizing: border-box;
+    @apply inline-block w-12 h-12 bg-default-dark overflow-hidden shadow relative box-border;
 
     img {
       width: 100%;

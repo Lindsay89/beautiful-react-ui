@@ -910,3 +910,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Input component onChange prop shan't be required
 - Checkbox component onChange prop shan't be required
 - React.memo added where were missing
+
+
+## [0.50.0] - 2020-02-06
+
+### Added
+
+- Toggle component
+- Dependencies updated

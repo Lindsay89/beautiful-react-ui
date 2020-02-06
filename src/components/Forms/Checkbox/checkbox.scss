@@ -9,10 +9,9 @@
 }
 
 .bi.bi-checkbox {
-  box-sizing: border-box;
-  outline: none;
+  @apply outline-none;
 
-  @apply inline-flex items-center cursor-pointer;
+  @apply inline-flex box-border items-center cursor-pointer;
 
   + .bi.bi-checkbox {
     @apply ml-2;

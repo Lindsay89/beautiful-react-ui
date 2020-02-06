@@ -72,9 +72,8 @@ $offset-xl-class: #{$offset-prefix}-xl !default;
 
   .bi.bi-grid-column {
     flex-basis: 0;
-    box-sizing: border-box;
 
-    @apply w-full flex-grow flex-shrink p-1;
+    @apply box-border w-full flex-grow flex-shrink p-1;
 
     &.self-auto {
       @apply self-auto;

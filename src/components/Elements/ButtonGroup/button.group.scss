@@ -10,10 +10,9 @@
 
 
 .bi.bi-btn-group {
-  @apply inline-flex rounded overflow-hidden;
+  @apply inline-flex rounded overflow-hidden box-border;
 
   box-shadow: 0 0.25rem 0.68rem 0 rgba(37, 44, 97, 0.15), 0 0.125rem 0.1875rem 0 rgba(93, 100, 148, 0.2);
-  box-sizing: border-box;
 
   /*
   &:hover {

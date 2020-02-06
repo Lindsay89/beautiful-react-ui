@@ -1,10 +1,9 @@
 .bi.bi-image {
   vertical-align: middle;
-  box-sizing: border-box;
   max-width: 100%;
   height: auto;
 
-  @apply rounded shadow;
+  @apply rounded shadow box-border;
 
   + .bi.bi-image {
     @apply ml-4;

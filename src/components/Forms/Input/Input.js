@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import HelpText from '../_HelpText';
@@ -14,24 +14,20 @@ const Input = (props) => {
     value, onChange, color, placeholder, disabled, size, helpText, icon, iconPosition, className, fluid, style, ...rest
   } = props;
 
-  const classList = classNames('bi bi-input', `input-${color}`, {
+  const classList = useMemo(() => classNames('bi bi-input', `input-${color}`, {
     disabled,
     'has-icon': !!icon,
     'icon-left': iconPosition === 'left',
     'input-sm': size === 'small',
     'input-lg': size === 'large',
     fluid,
-  }, className);
+  }, className), [color, disabled, icon, iconPosition, size, fluid, className]);
+
+  const onChangeHandler = useCallback(makeCallback(onChange), [onChange]);
 
   return (
     <div className={classList} style={style}>
-      <input
-        value={value}
-        onChange={makeCallback(onChange)}
-        placeholder={placeholder}
-        disabled={disabled}
-        {...rest}
-      />
+      <input value={value} onChange={onChangeHandler} placeholder={placeholder} disabled={disabled} {...rest} />
       {icon && makeIconFromProp(icon, { size })}
       {helpText && <HelpText text={helpText} color={color} />}
     </div>
