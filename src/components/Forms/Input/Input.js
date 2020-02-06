@@ -46,7 +46,7 @@ Input.propTypes = {
   /**
    * The on change handler
    */
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   /**
    * Defines the input placeholder
    */
@@ -86,6 +86,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  onChange: undefined,
   placeholder: 'Input field...',
   disabled: false,
   helpText: undefined,

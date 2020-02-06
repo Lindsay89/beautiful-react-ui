@@ -6,7 +6,7 @@ import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 import Sidebar from './Sidebar';
 
 
-describe('SidebarHeader component', () => {
+describe('SidebarCollapsible component', () => {
   afterEach(() => {
     sinon.restore();
     cleanup();

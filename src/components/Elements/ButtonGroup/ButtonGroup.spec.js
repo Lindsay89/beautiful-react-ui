@@ -52,21 +52,6 @@ describe('ButtonGroup component', () => {
     expect(group.querySelector('button').id).to.equal('foo');
   });
 
-  it('should wipe out the non-buttons children and warn about it', () => {
-    const warnSpy = sinon.spy(console, 'warn');
-    const { container } = render(
-      <ButtonGroup>
-        <Button />
-        <p>Ops...</p>
-        <Button />
-      </ButtonGroup>,
-    );
-    const group = container.querySelector('.bi-btn-group');
-
-    expect(group.querySelectorAll('button').length).to.equal(2);
-    expect(warnSpy.callCount).to.equal(1);
-  });
-
   it('should allow to define the group color', () => {
     const { container } = render(<ButtonGroup color="primary"><Button /></ButtonGroup>);
     const group = container.querySelector('.bi-btn-group');

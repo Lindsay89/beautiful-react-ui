@@ -60,9 +60,10 @@ module.exports = {
         '../../src/components/Forms/Input/Input.js',
         '../../src/components/Forms/Checkbox/Checkbox.js',
         '../../src/components/Forms/Select/Select.js',
-        '../../src/components/Forms/FormGroup/FormGroup.js',
-        '../../src/components/Forms/DisplayField/DisplayField.js',
         '../../src/components/Forms/TextArea/TextArea.js',
+        '../../src/components/Forms/DisplayField/DisplayField.js',
+        '../../src/components/Forms/FormGroup/FormGroup.js',
+        '../../src/components/Forms/FormPanel/FormPanel.js',
       ],
     },
     {

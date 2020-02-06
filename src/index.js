@@ -24,6 +24,7 @@ export { default as Checkbox } from './components/Forms/Checkbox';
 export { default as Input } from './components/Forms/Input';
 export { default as Select } from './components/Forms/Select';
 export { default as FormGroup } from './components/Forms/FormGroup';
+export { default as FormPanel } from './components/Forms/FormPanel';
 export { default as DisplayField } from './components/Forms/DisplayField';
 export { default as TextArea } from './components/Forms/TextArea';
 

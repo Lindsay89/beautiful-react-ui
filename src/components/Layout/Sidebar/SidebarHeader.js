@@ -9,7 +9,8 @@ import './sidebar-header.scss';
 /**
  * Sidebar Header
  */
-const SidebarHeader = (props) => {
+// eslint-disable-next-line react/prop-types
+const SidebarHeader = ({ orientation, ...props }) => {
   const { onToggle, title, titleColor, toggleIcon, showToggle, logo, ...rest } = props;
   const classList = classNames('bi', 'bi-sidebar-header', `sidebar-header-${titleColor}`);
 

@@ -28,23 +28,6 @@ describe('Sidebar component', () => {
     checkColorClass: 'sidebar-info',
   });
 
-  it('should wipe out non allowed items', () => {
-    const warnSpy = sinon.spy(console, 'warn');
-
-    const { container } = render(
-      <Sidebar isOpen onToggle={noop} style={{ margin: '30px' }}>
-        <Sidebar.Item text="foo" />
-        <div id="#unwanted" />
-      </Sidebar>,
-    );
-
-    const unwantedItem = container.querySelector('#unwanted');
-
-    expect(unwantedItem).to.equal(null);
-    expect(warnSpy.callCount).to.equal(1);
-  });
-
-
   it('should set the title to \'Sidebar\' if no logo and no title are provided', () => {
     const { container } = render(
       <Sidebar isOpen onToggle={noop}>
