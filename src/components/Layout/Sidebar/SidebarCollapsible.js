@@ -51,14 +51,8 @@ const SidebarCollapsible = ({ orientation, ...props }) => {
   return (
     <li className={classList} {...rest}>
       <LinkRender onClick={handleClick} to="#">
-        {icon && (
-          <span className="bi-sidebar-icon">
-            {makeIconFromProp(icon)}
-          </span>
-        )}
-        <span className="bi-sidebar-item-content">
-          {text}
-        </span>
+        {icon && (<span className="bi-sidebar-icon">{makeIconFromProp(icon)}</span>)}
+        <span className="bi-sidebar-item-content">{text}</span>
         <div className="bi-sidebar-item-shrunk">
           {!icon && typeof text === 'string' && (<span className="shrunk-text">{text.charAt(0)}</span>)}
           {icon && makeIconFromProp(icon)}

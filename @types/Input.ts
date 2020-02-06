@@ -10,7 +10,7 @@ export type InputProps = DefaultProps & {
   /**
    * The on change handler
    */
-  onChange: Callback<KeyboardEvent, number | string>,
+  onChange?: Callback<KeyboardEvent, number | string>,
   /**
    * Defines the input placeholder
    */

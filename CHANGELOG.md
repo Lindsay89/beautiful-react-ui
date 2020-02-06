@@ -897,3 +897,14 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Button and Avatar alignment changed from `bottom` to `middle`
+
+## [0.49.0] - 2020-02-06
+
+### Added
+
+- FormPanel component
+- Sidebar.Group component
+
+### Fixed
+
+- Input component onChange prop shan't be required

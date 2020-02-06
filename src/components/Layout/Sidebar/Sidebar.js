@@ -1,9 +1,10 @@
 import React, { useMemo, Children } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Color, IconProp, checkOnAllowedChildren } from '../../../shared';
 import SidebarItem from './SidebarItem';
 import SidebarCollapsible from './SidebarCollapsible';
-import { Color, IconProp, checkOnAllowedChildren } from '../../../shared';
+import SidebarGroup from './SidebarGroup';
 import SidebarHeader from './SidebarHeader';
 import SidebarDivider from './SidebarDivider';
 
@@ -130,5 +131,6 @@ Sidebar.defaultProps = {
 Sidebar.Item = SidebarItem;
 Sidebar.Collapsible = SidebarCollapsible;
 Sidebar.Divider = SidebarDivider;
+Sidebar.Group = SidebarGroup;
 
 export default Sidebar;

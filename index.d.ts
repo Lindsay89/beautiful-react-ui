@@ -22,6 +22,7 @@ export { default as Checkbox } from './@types/Checkbox';
 export { default as Input } from './@types/Input';
 export { default as Select } from './@types/Select';
 export { default as FormGroup } from './@types/FormGroup';
+export { default as FormPanel } from './@types/FormPanel';
 export { default as DisplayField } from './@types/DisplayField';
 
 // Layout

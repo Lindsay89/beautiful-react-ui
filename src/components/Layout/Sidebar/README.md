@@ -42,9 +42,11 @@ const constainerStyle = {
 </div>
 ```
 
-### Collapsible and Divider
+### Collapsible, Group and Divider 
 
-A **Sidebar.Collapsible** component groups together components of type Sidebar.Item and/or Sidebar.Divider.
+A **Sidebar.Collapsible** component groups into a single collapsible item components of type Sidebar.Item and/or Sidebar.Divider
+
+A **Sidebar.Group** component groups together components of type Sidebar.Item and/or Sidebar.Divider.
 
 A **Sidebar.Divider** shows a divider line between two items.
 
@@ -79,6 +81,10 @@ const constainerStyle = {
   <UncontrolledSidebar>
     <Sidebar.Item text="Home" to="#" onClick={(e) => e.preventDefault(e)} current />
     <Sidebar.Divider />
+    <Sidebar.Group text="Admin">
+      <Sidebar.Item text="Users" />
+      <Sidebar.Item text="Settings" />
+    </Sidebar.Group>
     <Sidebar.Item text="About" to="#" onClick={(e) => e.preventDefault(e)} />
     <Sidebar.Collapsible text="Settings">
       <Sidebar.Item text="Device" />
