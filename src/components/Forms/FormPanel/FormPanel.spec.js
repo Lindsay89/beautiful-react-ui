@@ -5,10 +5,7 @@ import performStandardTests from '../../../../test/utils/performStandardTests';
 import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 
 describe('FormPanel component', () => {
-  afterEach(() => {
-    sinon.restore();
-    cleanup();
-  });
+  afterEach(cleanup);
 
   const defaultProps = {};
 

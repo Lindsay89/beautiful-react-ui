@@ -1,6 +1,5 @@
 .bi.bi-breadcrumbs {
-  box-sizing: border-box;
-  @apply m-2 p-3 rounded bg-gray-200;
+  @apply m-2 p-3 rounded bg-gray-200 box-border;
 
   ol {
     @apply list-none m-0 p-0 inline-flex w-full items-center;

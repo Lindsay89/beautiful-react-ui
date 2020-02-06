@@ -8,7 +8,7 @@
 
 
 .bi.bi-placeholder {
-  box-sizing: border-box;
+  @apply box-border;
 
   // ----------------------------
   // PARAGRAPHS

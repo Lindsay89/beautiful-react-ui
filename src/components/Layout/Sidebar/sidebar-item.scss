@@ -20,19 +20,17 @@
 }
 
 .bi.bi-sidebar .bi-sidebar-nav-item {
-  box-sizing: border-box;
   color: theme('colors.default-darker');
   transition: border-right 0.3s ease-out, border-left 0.3s ease-out;
-  @apply leading-tight font-normal block relative;
+  @apply box-border leading-tight font-normal block relative;
 
   // ----------------------------
   // LINK
   // ----------------------------
   > a,
   > span {
-    box-sizing: border-box;
     transition: color 0.3s ease-in-out, margin 0.3s ease-in-out;
-    @apply w-full py-2 pl-4 no-underline text-default-darker inline-block align-middle;
+    @apply box-border w-full py-2 pl-4 no-underline text-default-darker inline-block align-middle;
     @apply font-sans font-normal truncate leading-tight antialiased text-base font-normal tracking-normal;
     @include ripple();
 

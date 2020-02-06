@@ -2,9 +2,7 @@
 @import "../../../theme/utils/mixins";
 
 .bi.bi-select {
-  box-sizing: border-box;
-
-  @apply inline-flex relative align-top flex-col font-normal font-sans text-base tracking-normal text-default-darker;
+  @apply box-border inline-flex relative align-top flex-col font-normal font-sans text-base tracking-normal text-default-darker;
 
   // ----------------------------
   // SELECT ELEMENT
@@ -35,7 +33,7 @@
 
     // focus
     &:focus {
-      outline: 0;
+      @apply outline-none;
       box-shadow: 0 0 0 0.2rem theme("colors.primary-lightest");
     }
 

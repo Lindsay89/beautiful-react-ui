@@ -30,7 +30,6 @@
   }
 
   input {
-    box-sizing: border-box;
     word-spacing: normal;
     text-transform: none;
     text-indent: 0;
@@ -41,14 +40,14 @@
     max-width: 100%;
 
     @apply bg-white font-normal font-sans text-base tracking-normal text-default-darker border border-default-light;
-    @apply border-solid rounded px-3 py-2 m-0 outline-none appearance-none;
+    @apply border-solid rounded px-3 py-2 m-0 outline-none appearance-none box-border;
 
     // placeholder
     @include create-placeholder();
 
     // focus
     &:focus {
-      outline: 0;
+      @apply outline-none;
       box-shadow: 0 0 0 0.2rem theme('colors.primary-lightest');
     }
   }

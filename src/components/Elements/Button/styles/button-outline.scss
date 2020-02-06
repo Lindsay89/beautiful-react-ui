@@ -11,7 +11,7 @@
     }
 
     &:focus {
-      outline: 0;
+      @apply outline-none;
       box-shadow: 0 0 0 0.125rem theme("colors.default-light");
     }
   }
@@ -28,7 +28,7 @@
     }
 
     &:focus {
-      outline: 0;
+      @apply outline-none;
       box-shadow: 0 0 0 0.125rem theme("colors.#{$color}-light");
     }
   }

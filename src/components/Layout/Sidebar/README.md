@@ -327,5 +327,5 @@ const OffcanvasSidebarExample = ({ children, ...props }) => {
 ### 🎓 Renderers:
 
 - `HeaderRender`: defines the sidebar header component.
-- Sidebar.Item `LinkRender`: defines the item's link component, useful to integrate the Sidebar with third party
+- Sidebar.Item `LinkRender` & Sidebar.Collapsible `LinkRender`: defines the item's link component, useful to integrate the Sidebar with third party
 libraries such as `react-router`;
