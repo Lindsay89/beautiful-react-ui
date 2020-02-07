@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { ElementType, FunctionComponent } from 'react';
 import { Callback, Color, DefaultProps } from './_shared';
 
 export type CheckboxProps = DefaultProps & {
@@ -11,21 +11,21 @@ export type CheckboxProps = DefaultProps & {
    */
   onChange?: Callback<MouseEvent, boolean>
   /**
-   * Defines the checkbox label
-   */
-  label: string,
-  /**
    * Defines the checkbox background color
    */
   color?: Color,
   /**
-   * Defines input type
+   * Defines whether the checkbox shall be disabled or not
    */
   disabled?: boolean,
   /**
    * Displays a help text right under the component
    */
   helpText?: string,
+  /**
+   * Defines the check icon renderer
+   */
+  CheckIcon?: ElementType,
 };
 
 /**

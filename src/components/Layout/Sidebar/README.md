@@ -264,7 +264,7 @@ const OffcanvasSidebarExample = ({ children, ...props }) => {
           <Sidebar.Item text="Logout" icon="power-off" onClick={(e) => e.preventDefault(e)} />
         </Sidebar>
       </div>
-      <Button outline rounded icon="bars" color="primary" onClick={handleOnChange}>Toggle sidebar</Button>
+      <Button outline rounded icon="bars" color="primary" onClick={handleOnChange}>ToggleSwitch sidebar</Button>
     </>
   );
 }
@@ -311,7 +311,7 @@ const OffcanvasSidebarExample = ({ children, ...props }) => {
           <Sidebar.Item text="Logout" icon="power-off" onClick={(e) => e.preventDefault(e)} />
         </Sidebar>
       </div>
-      <Button outline rounded icon="bars" color="primary" onClick={handleOnChange}>Toggle sidebar</Button>
+      <Button outline rounded icon="bars" color="primary" onClick={handleOnChange}>ToggleSwitch sidebar</Button>
     </>
   );
 }

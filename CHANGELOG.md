@@ -27,10 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Toggle component
+- ToggleSwitch component
 - Label private component, to be used to render labels in form components
 - HelpText component, to be used to render help texts in form components
-- Toggle component tests
+- ToggleSwitch component tests
 - Label component tests
 - HelpText component tests
 
@@ -118,8 +118,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixes
 
-- Toggle component focus state defined by CSS
-- Accessibility issues on Toggle component fixed: added `aria-label`
+- ToggleSwitch component focus state defined by CSS
+- Accessibility issues on ToggleSwitch component fixed: added `aria-label`
 
 ## [0.9.4] - 2019-07-02
 
@@ -911,10 +911,16 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Checkbox component onChange prop shan't be required
 - React.memo added where were missing
 
-
 ## [0.50.0] - 2020-02-06
 
 ### Added
 
-- Toggle component
+- ToggleSwitch component
 - Dependencies updated
+
+## [0.51.0] - 2020-02-07
+
+### Added
+
+- Improved Checkbox
+- Improved SwitchToggle
