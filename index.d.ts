@@ -24,7 +24,7 @@ export { default as Select } from './@types/Select';
 export { default as FormGroup } from './@types/FormGroup';
 export { default as FormPanel } from './@types/FormPanel';
 export { default as DisplayField } from './@types/DisplayField';
-export { default as Toggle } from './@types/Toggle';
+export { default as ToggleSwitch } from './@types/ToggleSwitch';
 
 // Layout
 export { default as Grid } from './@types/Grid';

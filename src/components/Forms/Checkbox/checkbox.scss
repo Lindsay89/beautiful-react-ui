@@ -1,6 +1,12 @@
 @mixin checkbox-color($colorName: 'default', $colorValue: $colorName) {
-  &.checked.checkbox-#{$colorName} .check-icon {
+  &.checked.bi-checkbox-#{$colorName} .check-icon {
     @apply bg-#{$colorValue};
+
+    @if ($colorName == 'default') {
+      svg {
+        stroke: theme('colors.default-darker');
+      }
+    }
 
     &::before {
       @apply bg-#{$colorValue};
@@ -9,9 +15,7 @@
 }
 
 .bi.bi-checkbox {
-  @apply outline-none;
-
-  @apply inline-flex box-border items-center cursor-pointer;
+  @apply outline-none inline-flex box-border flex-col cursor-pointer;
 
   + .bi.bi-checkbox {
     @apply ml-2;
@@ -29,15 +33,15 @@
   // The check icon
   // ----------------------------
   .check-icon {
-    @apply relative inline-block rounded bg-default-light text-default-dark mr-2 w-4 h-4;
+    @apply relative inline-block rounded bg-default-light text-default-dark mr-2 w-5 h-5;
 
     transform: translateZ(0);
     transition: background-color 0.2s ease-in-out;
 
 
     svg {
-      width: 0.6rem;
-      height: 0.5rem;
+      width: 0.7rem;
+      height: 0.6rem;
       position: absolute;
       fill: none;
       stroke: theme('colors.white');
@@ -85,6 +89,7 @@
   // ----------------------------
   // Colors
   // ----------------------------
+  @include checkbox-color('default');
   @include checkbox-color('primary');
   @include checkbox-color('secondary');
   @include checkbox-color('info');

@@ -1,44 +1,35 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Color, makeCallback, makeKeyboardCallback } from '../../../shared';
+import CheckIconComponent from './CheckIcon';
 import HelpText from '../_HelpText';
-import Label from '../Label';
 
 import './checkbox.scss';
 
 /**
- * Checkbox component
+ * A Checkbox is a boolean input field mostly used to get a boolean-like response from the user:
+ * *yes/no*, *true/false*, etc...<br />
+ * Similar to ToggleSwitch a checkbox is commonly in classic forms.
  */
 const Checkbox = (props) => {
-  const { value, onChange, label, color, helpText, className, style, ...rest } = props;
-
-  const classList = classNames('bi bi-checkbox', `checkbox-${color}`, {
+  const { value, onChange, color, helpText, className, CheckIcon, style, ...rest } = props;
+  const classList = useMemo(() => classNames('bi bi-checkbox', `bi-checkbox-${color}`, {
     checked: !!value,
     disabled: rest.disabled,
-  }, className);
+  }, className), [color, value, rest.disabled]);
+
+  const onClick = !rest.disabled ? useCallback(makeCallback(onChange, !value), [onChange, value]) : undefined;
+  const onKeyUp = !rest.disabled ? useCallback(makeKeyboardCallback(onChange, !value), [onChange, value]) : undefined;
 
   return (
-    <>
-      <div
-        className={classList}
-        onClick={!rest.disabled ? makeCallback(onChange, !value) : undefined}
-        onKeyUp={makeKeyboardCallback(onChange, !value)}
-        tabIndex={0}
-        role="checkbox"
-        aria-checked={value}
-        style={style}
-      >
-        <input type="checkbox" value={value} {...rest} />
-        <span className="check-icon">
-          <svg viewBox="0 0 12 10">
-            <polyline points="1.5 6 4.5 9 10.5 1" />
-          </svg>
-        </span>
-        <Label htmlFor={rest.id} required={rest.required}>{label}</Label>
-      </div>
+    // eslint-disable-next-line max-len
+    <div className={classList} onClick={onClick} onKeyUp={onKeyUp} tabIndex={0} role="checkbox" aria-checked={value} style={style}>
+      <input type="checkbox" value={value} {...rest} />
+      <CheckIcon checked={!!value} color={color} />
       {helpText && <HelpText text={helpText} />}
-    </>
+    </div>
+
   );
 };
 
@@ -52,15 +43,11 @@ Checkbox.propTypes = {
    */
   onChange: PropTypes.func,
   /**
-   * Defines the checkbox label
-   */
-  label: PropTypes.string.isRequired,
-  /**
    * Defines the checkbox background color
    */
   color: Color,
   /**
-   * Defines input type
+   * Defines whether the checkbox should be disabled or not
    */
   disabled: PropTypes.bool,
   /**
@@ -68,18 +55,18 @@ Checkbox.propTypes = {
    */
   helpText: PropTypes.string,
   /**
-   * @ignore
+   * Defines the check icon renderer
    */
-  style: PropTypes.shape({}),
+  CheckIcon: PropTypes.elementType,
 };
 
 
 Checkbox.defaultProps = {
   onChange: undefined,
-  style: undefined,
   color: 'default',
   disabled: false,
   helpText: undefined,
+  CheckIcon: CheckIconComponent,
 };
 
 export default React.memo(Checkbox);

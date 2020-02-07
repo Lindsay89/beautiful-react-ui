@@ -21,7 +21,7 @@ export { default as FloatingContent } from './components/Elements/FloatingConten
 // Forms
 export { default as Label } from './components/Forms/Label';
 export { default as Checkbox } from './components/Forms/Checkbox';
-export { default as Toggle } from './components/Forms/Toggle';
+export { default as ToggleSwitch } from './components/Forms/ToggleSwitch';
 export { default as Input } from './components/Forms/Input';
 export { default as Select } from './components/Forms/Select';
 export { default as FormGroup } from './components/Forms/FormGroup';
