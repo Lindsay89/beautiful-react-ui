@@ -1,4 +1,4 @@
-### Basic usage with image
+### ✅ Basic usage:
 
 ```jsx
 import { Avatar } from 'beautiful-react-ui';
@@ -6,7 +6,7 @@ import { Avatar } from 'beautiful-react-ui';
 <Avatar src="https://placeimg.com/96/96/people" />
 ```
 
-### Basic usage with initials
+### Initials
 
 ```jsx
 import { Avatar } from 'beautiful-react-ui';
@@ -39,6 +39,9 @@ import { Avatar } from 'beautiful-react-ui';
 
 ### Pills
 
+It's possible to add a pill within a Avatar to possibly show further information such as a 
+notification number.
+
 ```jsx
 import { Avatar, Pill } from 'beautiful-react-ui';
 
@@ -48,7 +51,7 @@ import { Avatar, Pill } from 'beautiful-react-ui';
 </>
 ```
 
-### Avatar state
+### State
 
 ```jsx
 import { Avatar, Pill } from 'beautiful-react-ui';
@@ -61,31 +64,32 @@ import { Avatar, Pill } from 'beautiful-react-ui';
 ```
 
 
-## Additional information
+### Additional information
 
-Avatar component is meant to show the user's profile picture or its initials, 
-sometimes further descriptions are needed.
+Additionally an Avatar component can show the user display name or further information, if provided.
 
-
-### Display name
+#### Display name
 
 ```jsx
 import { Avatar, Pill } from 'beautiful-react-ui';
 
-<>
-  <Avatar src="https://placeimg.com/96/96/people" displayName="John Doe" />
-</>
+
+<Avatar src="https://placeimg.com/96/96/people" displayName="John Doe" />
 ```
 
-### Further info
+#### Further info
 
 In addition to `displayName` we can possibly add further user information such as
-the user role or the user email by using the `furtherInfo` prop`
+the user role or the user email by using the `furtherInfo` prop
 
 ```jsx
 import { Avatar, Pill } from 'beautiful-react-ui';
 
-<>
-  <Avatar src="https://placeimg.com/96/96/people" displayName="John Doe" furtherInfo="Admin" />
-</>
+<Avatar src="https://placeimg.com/96/96/people" displayName="John Doe" furtherInfo="Admin" />
 ```
+
+### 🎓 Renderers:
+
+- `ElementRender`: A render function to be used as the wrapper element component instead of the default one.
+- `ImageRender`: A render function to be used as the image component instead of the default one.
+- `TextRender`: A render function to be used as the text component instead of the default one.

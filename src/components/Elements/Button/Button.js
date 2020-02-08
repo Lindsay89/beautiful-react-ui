@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Spinner from '../Spinner';
@@ -25,7 +25,7 @@ import './button.scss';
 const Button = (props) => {
   const {
     type, fluid, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
-    className, children, ...rest
+    className, ButtonRender, children, ...rest
   } = props;
 
   const lastChild = getLastChild(children);
@@ -47,20 +47,20 @@ const Button = (props) => {
     'btn-fcp': firstChild && firstChild.type === Pill,
   }, className);
 
+  const onClickHandler = useCallback(makeCallback(onClick), [onClick]);
+
   return (
     // it is quite safe to disable the following Eslint rule as the button type is guaranteed by the defaultProp
     // eslint-disable-next-line react/button-has-type
-    <button disabled={disabled} type={type} onClick={makeCallback(onClick)} className={classList} {...rest}>
-      <>
-        {/* Generate icon if exists */}
-        {!!icon && makeIconFromProp(icon)}
-        {/* Generate spinner if exists */}
-        {!!spinner && makeSpinnerFromProp(spinner, { size })}
-        {/* Generate pill if exists */}
-        {children}
-        {!!pill && makePillFromProp(pill)}
-      </>
-    </button>
+    <ButtonRender disabled={disabled} type={type} onClick={onClickHandler} className={classList} {...rest}>
+      {/* Generate icon if exists */}
+      {!!icon && makeIconFromProp(icon)}
+      {/* Generate spinner if exists */}
+      {!!spinner && makeSpinnerFromProp(spinner, { size })}
+      {/* Generate pill if exists */}
+      {children}
+      {!!pill && makePillFromProp(pill)}
+    </ButtonRender>
   );
 };
 
@@ -123,9 +123,9 @@ Button.propTypes = {
    */
   pill: PillProp,
   /**
-   * @ignore
+   * A render function to be used as the button element instead of the default one
    */
-  children: PropTypes.node,
+  ButtonRender: PropTypes.elementType,
 };
 
 Button.defaultProps = {
@@ -141,7 +141,7 @@ Button.defaultProps = {
   spinner: false,
   onClick: null,
   pill: undefined,
-  children: null,
+  ButtonRender: 'button',
 };
 
 export default React.memo(Button);

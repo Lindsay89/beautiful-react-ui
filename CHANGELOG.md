@@ -924,3 +924,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Improved Checkbox
 - Improved SwitchToggle
+
+
+## [0.52.0] - 2020-02-06
+
+### Added
+
+- More renderers and test coverage

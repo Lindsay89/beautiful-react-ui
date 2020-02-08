@@ -1,45 +1,15 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, queryByText } from '@testing-library/react';
 import Avatar from './Avatar';
 import Pill from '../Pill/Pill';
+import performStandardTests from '../../../../test/utils/performStandardTests';
 
 describe('Avatar component', () => {
   afterEach(cleanup);
 
-  it('should render without explode', () => {
-    const { container } = render(<Avatar src="foo" />);
+  const defaultProps = { src: 'foo' };
 
-    should.exist(container);
-    expect(container.querySelector('div')).to.exist;
-  });
-
-  it('should have default classes', () => {
-    const { container } = render(<Avatar src="foo" />);
-    const avatar = container.querySelector('div');
-
-    expect(avatar.getAttribute('class').split(' ')).to.include.members(['bi', 'bi-avatar', 'avt-rounded']);
-  });
-
-  it('should accept an "id" prop', () => {
-    const { container } = render(<Avatar src="foo" id="foo" />);
-    const avatar = container.querySelector('.bi.bi-avatar');
-
-    expect(avatar.id).to.equal('foo');
-  });
-
-  it('should allow adding custom classes', () => {
-    const { container } = render(<Avatar src="foo" className="foo" />);
-    const avatar = container.querySelector('.bi.bi-avatar');
-
-    expect(avatar.getAttribute('class').split(' ')).to.include.members(['foo']);
-  });
-
-  it('should allow to define custom style', () => {
-    const { container } = render(<Avatar src="foo" style={{ margin: '10px' }} />);
-    const avatar = container.querySelector('.bi.bi-avatar');
-
-    expect(avatar.getAttribute('style')).to.equal('margin: 10px;');
-  });
+  performStandardTests(Avatar, defaultProps);
 
   it('should render and image if src prop is provided', () => {
     const { container } = render(<Avatar src="foo" />);
@@ -50,7 +20,7 @@ describe('Avatar component', () => {
     expect(image.getAttribute('src')).to.equal('foo');
   });
 
-  it('should render the initials if the `initial` prop is provided', () => {
+  it('should render the username initials if the `initials` prop is provided', () => {
     const { container } = render(<Avatar src="foo" initials="ar" />);
     const avatar = container.querySelector('.bi.bi-avatar');
     const initials = avatar.querySelector('.initials');
@@ -97,24 +67,36 @@ describe('Avatar component', () => {
     expect(pill.tagName).to.equal('SPAN');
   });
 
-  it('should possibly render the online or offline state if provided', () => {
+  it('should possibly render the online/offline state if provided', () => {
     const { container, rerender } = render(<Avatar src="foo" state="online" />);
     const avatar = container.querySelector('.bi.bi-avatar');
 
     expect(avatar.querySelector('.avt-state')).to.exist;
-    expect(avatar.querySelector('.avt-state').getAttribute('class').split(' ')).to.include.members(['state-online']);
+    expect(avatar.querySelector('.avt-state').classList.contains('state-online')).to.be.true;
 
     rerender(<Avatar src="foo" state="offline" />);
 
-    expect(avatar.querySelector('.avt-state').getAttribute('class').split(' ')).to.include.members(['state-offline']);
+    expect(avatar.querySelector('.avt-state').classList.contains('state-offline')).to.be.true;
   });
 
-  it('should warn if not src nor initials are provided', () => {
-    const warnSpy = sinon.spy(console, 'warn');
+  it('should possibly render further information if provided', () => {
+    const displayName = 'Name';
+    const furtherInfo = 'Role';
+    const { container } = render(<Avatar src="foo" displayName={displayName} furtherInfo={furtherInfo} />);
+    const nameElement = queryByText(container, displayName);
+    const infoElement = queryByText(container, furtherInfo);
+
+    expect(nameElement).to.exist;
+    expect(nameElement.classList.contains('avtr-disp-name')).to.be.true;
+
+    expect(infoElement).to.exist;
+    expect(infoElement.classList.contains('avtr-furth-info')).to.be.true;
+  });
+
+  it('should return null iof no src nor initials are provided', () => {
     const { container } = render(<Avatar />);
     const avatar = container.querySelector('.bi.bi-avatar');
 
     expect(avatar).to.not.exist;
-    expect(warnSpy.callCount).to.equal(1);
   });
 });
