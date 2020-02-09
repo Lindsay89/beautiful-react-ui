@@ -1,6 +1,4 @@
-### Basic Usage
-
-As simple as the following:
+### ✅ Basic usage:
 
 ```jsx
 import { Button } from 'beautiful-react-ui';
@@ -8,7 +6,7 @@ import { Button } from 'beautiful-react-ui';
 <Button>A simple button</Button>
 ```
 
-### Button colors
+### Colors
 
 Colors are meant to highlight the syntactic meaning of a button.
 
@@ -27,7 +25,7 @@ import { Button } from 'beautiful-react-ui';
 </>
 ```
 
-### Button outlines
+### Outlines
 
 Subtle appearance can also be applied to a button, if in need of a 
 get rid of the hefty, colorful background.
@@ -75,7 +73,7 @@ import { Button } from 'beautiful-react-ui';
 </>
 ```
 
-### Button icon
+### Icon
 
 It is possible to attach an icon to a button by passing both the icon name
 or the instance of an `Icon` component.
@@ -152,14 +150,14 @@ import { Button } from 'beautiful-react-ui';
 </>
 ```
 
-### Disabled state
+### Disabled
 ```jsx
 import { Button } from 'beautiful-react-ui';
 
 <Button disabled>disabled</Button>
 ```
 
-### Effects
+### Hover animations
 
 It is possible to define the animation the button should perform on the `hover` event.
 
@@ -175,9 +173,9 @@ import { Button } from 'beautiful-react-ui';
 </>
 ```
 
-### Click Action
+### Click action
 
-Buttons are meant to have a callback attached
+Buttons are meant to have a click handler attached
 
 ```
 import { Button } from 'beautiful-react-ui';
@@ -189,7 +187,7 @@ const foo = event => { alert('Click'); };
 
 ### Pills
 
-It's possible to add a pill within a button to show further information.
+It's possible to add a pill within a button to possibly show further information.
 
 ```jsx
 import { Pill, Button, Icon } from 'beautiful-react-ui';
@@ -204,7 +202,7 @@ import { Pill, Button, Icon } from 'beautiful-react-ui';
 
 ### Spinners
 
-It is possible to show a spinner glyph next to the label, possibly in case of loading data.<br/>
+It is possible to show a spinner glyph next to the label in case of data loading.<br/>
 
 Similar to the `icon` prop, the `spinner` prop accepts both a boolean value or the instance of a `Spinner`
 component. 
@@ -232,4 +230,16 @@ import { Spinner, Button } from 'beautiful-react-ui';
     <Button size="large" color="info">Loading&hellip; <Spinner type="pulse" /></Button>
   </div>
 </>
+```
+
+### 🎓 Renderers:
+
+- `ButtonRender`: A render function to be used as the image component instead of the default one.
+
+```jsx
+const LinkComponent = (props) => (<a {...props} />);
+
+<Button color="primary" href="#" ButtonRender={LinkComponent}>
+    A button-like link
+</Button>
 ```

@@ -11,7 +11,7 @@ const ENTER_KEY = 13;
  * The purpose of this function is to generate keyboard callbacks having a similar signatures.
  */
 const makeKeyboardCallback = (callbackProp, overrideValue, allowedKeys = [SPACE_BAR, ENTER_KEY]) => (event) => {
-  if (allowedKeys.includes(event.keyCode)) {
+  if (event && allowedKeys.includes(event.keyCode)) {
     const callback = makeCallback(callbackProp, overrideValue);
     callback(event);
   }
