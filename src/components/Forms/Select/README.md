@@ -1,4 +1,4 @@
-### Basic Usage:
+### Basic Usage
 
 The `Select` component is a controlled component that requires an array of options and the `onChange` handler.
 

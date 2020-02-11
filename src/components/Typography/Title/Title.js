@@ -6,10 +6,10 @@ import { Color } from '../../../shared';
 import './title.scss';
 
 /**
- * Beautiful-ui does not force the developer to use its own styles nor creates extra global rules that can possibly
- * collide with the application's ones.<br/>
- * For this reason, in order to possibly have the same style between UI components and texts when needed, few
- * typography specialised components has been created.<br/>
+ * beautiful-react-ui does not force the developer to use its own styles nor creates extra global rules that can
+ * possibly collide with the application's ones.<br/>
+ * For this reason, in order to have the consistent style between the UI components and the texts, few typography
+ * specialised components has been created.<br/>
  * The typography specialised components are used within the library itself.
  * <br/>
  * Here's the Title component.

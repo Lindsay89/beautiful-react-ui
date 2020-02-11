@@ -70,7 +70,6 @@ const UncontrolledModal = () => {
 
 ```jsx
 import { Button, Modal } from 'beautiful-react-ui';
-import CloseIcon from '../_CloseIcon';
 
 const UncontrolledModal = (props) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -81,11 +80,11 @@ const UncontrolledModal = (props) => {
         <Modal.Title>
           Amazing modal title
           <Button 
+            icon="times"
             color="transparent" 
-            style={{position:'absolute', top:0, right:0, padding:'1rem'}} 
-            onClick={() => setIsOpen(false)}>
-            <CloseIcon />
-          </Button>
+            style={{ position:'absolute', top:0, right:0, padding:'1rem' }} 
+            onClick={() => setIsOpen(false)}
+          />
         </Modal.Title>
         <Modal.Body>
           Zombie ipsum brains reversus ab cerebellum viral inferno,

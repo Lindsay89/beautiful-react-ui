@@ -1,4 +1,4 @@
-### ✅ Basic usage:
+### ✅ Basic usage
     
 Since ToggleSwitch is a controlled component, it needs to be wrapped it into an uncontrolled one providing its state.
 

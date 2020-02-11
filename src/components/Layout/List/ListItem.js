@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../Icon';
+import Icon from '../../Elements/Icon';
 import Checkbox from '../../Forms/Checkbox';
 import { IconProp, Color, makeIconFromProp } from '../../../shared';
 import getCheckboxProps from './getCheckboxFurtherProps';

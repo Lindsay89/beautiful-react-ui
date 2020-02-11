@@ -25,7 +25,7 @@ import './button.scss';
 const Button = (props) => {
   const {
     type, fluid, color, rounded, outline, disabled, size, icon, hover, spinner, onClick, pill,
-    className, ButtonRender, children, ...rest
+    className, ElementRender, children, ...rest
   } = props;
 
   const lastChild = getLastChild(children);
@@ -50,9 +50,7 @@ const Button = (props) => {
   const onClickHandler = useCallback(makeCallback(onClick), [onClick]);
 
   return (
-    // it is quite safe to disable the following Eslint rule as the button type is guaranteed by the defaultProp
-    // eslint-disable-next-line react/button-has-type
-    <ButtonRender disabled={disabled} type={type} onClick={onClickHandler} className={classList} {...rest}>
+    <ElementRender disabled={disabled} type={type} onClick={onClickHandler} className={classList} {...rest}>
       {/* Generate icon if exists */}
       {!!icon && makeIconFromProp(icon)}
       {/* Generate spinner if exists */}
@@ -60,7 +58,7 @@ const Button = (props) => {
       {/* Generate pill if exists */}
       {children}
       {!!pill && makePillFromProp(pill)}
-    </ButtonRender>
+    </ElementRender>
   );
 };
 
@@ -123,9 +121,9 @@ Button.propTypes = {
    */
   pill: PillProp,
   /**
-   * A render function to be used as the button element instead of the default one
+   * A renderer to replace the button element
    */
-  ButtonRender: PropTypes.elementType,
+  ElementRender: PropTypes.elementType,
 };
 
 Button.defaultProps = {
@@ -141,7 +139,7 @@ Button.defaultProps = {
   spinner: false,
   onClick: null,
   pill: undefined,
-  ButtonRender: 'button',
+  ElementRender: 'button',
 };
 
 export default React.memo(Button);

@@ -925,9 +925,18 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Improved Checkbox
 - Improved SwitchToggle
 
-
 ## [0.52.0] - 2020-02-06
 
 ### Added
 
 - More renderers and test coverage
+
+
+## [0.53.0] - 2020-02-06
+
+### Added
+
+- Renderers to the Accordion component
+- Types for the Avatar component
+- Renderers to the Paragraph component
+- Renderers to the Link component

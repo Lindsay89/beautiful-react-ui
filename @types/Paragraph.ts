@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { ElementType, FunctionComponent } from 'react';
 import { Color, DefaultProps } from './_shared';
 
 export type ParagraphProps = DefaultProps & {
@@ -20,6 +20,10 @@ export type ParagraphProps = DefaultProps & {
    * Defines the paragraph breaks
    */
   wordBreak?: 'normal' | 'words' | 'all' | 'truncate',
+  /**
+   * A renderer to replace the paragraph element
+   */
+  ElementRender?: ElementType,
 };
 
 declare const Paragraph: FunctionComponent<ParagraphProps>;

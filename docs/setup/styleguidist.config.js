@@ -32,7 +32,6 @@ module.exports = {
       name: 'Elements',
       pagePerSection: true,
       components: () => [
-        '../../src/components/Elements/Accordion/Accordion.js',
         '../../src/components/Elements/Alert/Alert.js',
         '../../src/components/Elements/Avatar/Avatar.js',
         '../../src/components/Elements/Breadcrumbs/Breadcrumbs.js',
@@ -44,9 +43,7 @@ module.exports = {
         '../../src/components/Elements/Pill/Pill.js',
         '../../src/components/Elements/Placeholder/Placeholder.js',
         '../../src/components/Elements/Spinner/Spinner.js',
-        '../../src/components/Elements/List/List.js',
         '../../src/components/Elements/Tab/Tab.js',
-        '../../src/components/Elements/Modal/Modal.js',
         '../../src/components/Elements/Popover/Popover.js',
         '../../src/components/Elements/Tooltip/Tooltip.js',
         '../../src/components/Elements/FloatingContent/FloatingContent.js',
@@ -81,9 +78,12 @@ module.exports = {
       name: 'Layout',
       pagePerSection: true,
       components: () => [
+        '../../src/components/Layout/Accordion/Accordion.js',
+        '../../src/components/Layout/List/List.js',
         '../../src/components/Layout/Grid/Grid.js',
         '../../src/components/Layout/Card/Card.js',
         '../../src/components/Layout/Sidebar/Sidebar.js',
+        '../../src/components/Layout/Modal/Modal.js',
       ],
     },
     {

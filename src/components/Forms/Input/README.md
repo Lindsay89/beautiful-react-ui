@@ -1,4 +1,4 @@
-### Basic Usage:
+### Basic Usage
 
 ```jsx
 import { Input } from 'beautiful-react-ui';

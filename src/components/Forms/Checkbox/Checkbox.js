@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Color, makeCallback, makeKeyboardCallback } from '../../../shared';
-import CheckIconComponent from './CheckIcon';
+import CheckIcon from './CheckIcon';
 import HelpText from '../_HelpText';
 
 import './checkbox.scss';
@@ -13,7 +13,7 @@ import './checkbox.scss';
  * Similar to ToggleSwitch a checkbox is commonly in classic forms.
  */
 const Checkbox = (props) => {
-  const { value, onChange, color, helpText, className, CheckIcon, style, ...rest } = props;
+  const { value, onChange, color, helpText, className, CheckIconRender, style, ...rest } = props;
   const classList = useMemo(() => classNames('bi bi-checkbox', `bi-checkbox-${color}`, {
     checked: !!value,
     disabled: rest.disabled,
@@ -26,7 +26,7 @@ const Checkbox = (props) => {
     // eslint-disable-next-line max-len
     <div className={classList} onClick={onClick} onKeyUp={onKeyUp} tabIndex={0} role="checkbox" aria-checked={value} style={style}>
       <input type="checkbox" value={value} {...rest} />
-      <CheckIcon checked={!!value} color={color} />
+      <CheckIconRender checked={!!value} color={color} />
       {helpText && <HelpText text={helpText} />}
     </div>
 
@@ -57,7 +57,7 @@ Checkbox.propTypes = {
   /**
    * Defines the check icon renderer
    */
-  CheckIcon: PropTypes.elementType,
+  CheckIconRender: PropTypes.elementType,
 };
 
 
@@ -66,7 +66,7 @@ Checkbox.defaultProps = {
   color: 'default',
   disabled: false,
   helpText: undefined,
-  CheckIcon: CheckIconComponent,
+  CheckIconRender: CheckIcon,
 };
 
 export default React.memo(Checkbox);

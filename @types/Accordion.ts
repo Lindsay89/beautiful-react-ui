@@ -1,22 +1,35 @@
-import { FunctionComponent } from 'react';
+import { ElementType, FunctionComponent } from 'react';
 import { Callback, Color, DefaultProps } from './_shared';
 
 export type AccordionProps = DefaultProps & {
+  /**
+   * Defines the current active tab index
+   */
+  active?: number | string,
+  /**
+   * The callback to be performed on content change
+   */
+  onChange?: Callback<MouseEvent, number | string>,
   /**
    * Defines the color of the accordion, can be one of the following:
    * `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
   color?: Color,
   /**
-   * The callback to be performed on content change
+   * A render function to be used as the accordion element instead of the default one
    */
-  onChange?: Callback<string>,
-  /**
-   * Defines the current active tab index
-   */
-  active?: number | string,
+  ElementRender?: ElementType,
 };
 
-declare const Accordion: FunctionComponent<AccordionProps> & { Content: FunctionComponent<{ title?: React.ReactNode }> };
+
+export type AccordionContentProps = DefaultProps & {
+  title?: ElementType,
+  ButtonRender: ElementType,
+  ContentRender: ElementType,
+  ElementRender: ElementType,
+  CaretRender: ElementType,
+}
+
+declare const Accordion: FunctionComponent<AccordionProps> & { Content: FunctionComponent<AccordionContentProps> };
 
 export default Accordion;

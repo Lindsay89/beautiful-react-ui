@@ -1,6 +1,6 @@
-### ✅ Basic usage:
+### ✅ Basic usage
 
-Since Sidebar is a controlled component, it needs to be wrapped it into an uncontrolled one providing its state.
+Since Sidebar is a controlled component, it needs to be wrapped within an uncontrolled one providing its state via props.
 
 The `isOpen` prop defines whether the sidebar should be shown or hidden (**or shrunk, accordingly to its `type`**)
 whilst the `onToggle` callback will be performed when clicking on the sidebar toggle button.

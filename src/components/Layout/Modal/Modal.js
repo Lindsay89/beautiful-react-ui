@@ -1,7 +1,7 @@
 import React, { Children, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Portal from '../_Portal';
+import Portal from '../../Elements/_Portal';
 import ModalTitle from './ModalTitle';
 import ModalBody from './ModalBody';
 import ModalFooter from './ModalFooter';

@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { ElementType, FunctionComponent, ReactElement } from 'react';
 import { Color, Size, Callback, DefaultProps } from './_shared';
 import { IconProps } from './Icon';
 import { SpinnerProp } from './Spinner';
@@ -56,6 +56,10 @@ export type ButtonProps = DefaultProps & {
    * Show a pill into the button. You can pass both a valid pill label prop or the instance of an pill component
    */
   pill?: string | ReactElement<PillProps>
+  /**
+   * A renderer to replace the button element
+   */
+  ElementRender?: ElementType,
 };
 
 declare const Button: FunctionComponent<ButtonProps>;

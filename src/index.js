@@ -1,5 +1,4 @@
 // Elements
-export { default as Accordion } from './components/Elements/Accordion';
 export { default as Alert } from './components/Elements/Alert';
 export { default as Avatar } from './components/Elements/Avatar';
 export { default as Breadcrumbs } from './components/Elements/Breadcrumbs';
@@ -8,12 +7,10 @@ export { default as ButtonGroup } from './components/Elements/ButtonGroup';
 export { default as DropDown } from './components/Elements/DropDown';
 export { default as Icon } from './components/Elements/Icon';
 export { default as Image } from './components/Elements/Image';
-export { default as List } from './components/Elements/List';
 export { default as Pill } from './components/Elements/Pill';
 export { default as Placeholder } from './components/Elements/Placeholder';
 export { default as Spinner } from './components/Elements/Spinner';
 export { default as Tab } from './components/Elements/Tab';
-export { default as Modal } from './components/Elements/Modal';
 export { default as Popover } from './components/Elements/Popover';
 export { default as Tooltip } from './components/Elements/Tooltip';
 export { default as FloatingContent } from './components/Elements/FloatingContent';
@@ -33,6 +30,9 @@ export { default as TextArea } from './components/Forms/TextArea';
 export { default as Grid } from './components/Layout/Grid';
 export { default as Card } from './components/Layout/Card';
 export { default as Sidebar } from './components/Layout/Sidebar';
+export { default as Accordion } from './components/Layout/Accordion';
+export { default as Modal } from './components/Layout/Modal';
+export { default as List } from './components/Layout/List';
 
 // Typography
 export { default as Title } from './components/Typography/Title';

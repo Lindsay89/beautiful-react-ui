@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { ElementType, FunctionComponent } from 'react';
 import { Color, DefaultProps } from './_shared';
 
 export type LinkProps = DefaultProps & {
@@ -11,6 +11,10 @@ export type LinkProps = DefaultProps & {
    * `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`.
    */
   color?: Color,
+  /**
+   * A renderer to replace the link element
+   */
+  ElementRender?: ElementType,
 };
 
 declare const Link: FunctionComponent<LinkProps>;

@@ -1,4 +1,4 @@
-### Basic Usage:
+### Basic Usage
 
 ```jsx
 import { TextArea } from 'beautiful-react-ui';

@@ -1,4 +1,4 @@
-### ✅ Basic usage:
+### ✅ Basic usage
 
 ```jsx
 import { FormPanel, FormGroup, Label, Input } from 'beautiful-react-ui';
