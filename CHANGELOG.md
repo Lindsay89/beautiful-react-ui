@@ -947,3 +947,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Sidebar types
 - Adding more renders to Sidebar component
 - Improving documentation
+
+## [0.53.2] - 2020-02-12
+
+### Fixing
+
+- Avoiding helpText css override
