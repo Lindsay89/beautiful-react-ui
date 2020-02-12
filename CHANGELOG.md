@@ -931,7 +931,6 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - More renderers and test coverage
 
-
 ## [0.53.0] - 2020-02-06
 
 ### Added
@@ -940,3 +939,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Types for the Avatar component
 - Renderers to the Paragraph component
 - Renderers to the Link component
+
+## [0.53.1] - 2020-02-12
+
+### Fixing
+
+- Sidebar types
+- Adding more renders to Sidebar component
+- Improving documentation

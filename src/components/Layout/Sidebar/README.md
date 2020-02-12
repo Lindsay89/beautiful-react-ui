@@ -326,6 +326,15 @@ const OffcanvasSidebarExample = ({ children, ...props }) => {
 
 ### 🎓 Renderers:
 
-- `HeaderRender`: defines the sidebar header component.
-- Sidebar.Item `LinkRender` & Sidebar.Collapsible `LinkRender`: defines the item's link component, useful to integrate the Sidebar with third party
-libraries such as `react-router`;
+- `HeaderRender`: a renderer to replace the standard sidebar Header component
+- `ElementRender`: a renderer to replace the standard sidebar element
+- `NavRender`: a renderer to replace the standard nav element
+- Sidebar.Item -> `LinkRender`: a render to replace the standard link component, useful to integrate third party libraries such as `react-router`;
+- Sidebar.Item -> `ElementRender`: a render to replace the standard item element
+- Sidebar.Collapsible -> `LinkRender`: a render to replace the standard link component, useful to integrate third party libraries such as `react-router`;
+- Sidebar.Collapsible -> `ElementRender`: a render to replace the standard collapsible element
+- Sidebar.Collapsible -> `ListRender`: a render to replace the standard list element
+- Sidebar.Divider -> `ElementRender`: a render to replace the standard divider element
+- Sidebar.SidebarGroup -> `ElementRender`: a render to replace the standard group element
+- Sidebar.SidebarGroup -> `ListRender`: a render to replace the standard list element
+- Sidebar.SidebarGroup -> `ItemRender`: a render to replace the standard item wrapper element

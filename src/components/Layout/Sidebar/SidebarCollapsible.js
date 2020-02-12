@@ -22,7 +22,7 @@ const animateToOpen = (element) => {
  */
 // eslint-disable-next-line react/prop-types
 const SidebarCollapsible = ({ orientation, ...props }) => {
-  const { text, icon, LinkRender, children, current, showOpen, className, ...rest } = props;
+  const { text, icon, LinkRender, ElementRender, ListRender, children, current, showOpen, className, ...rest } = props;
   const collapsibleRef = useRef();
   const [isOpen, setIsOpen] = useState(showOpen || !!current);
 
@@ -49,7 +49,7 @@ const SidebarCollapsible = ({ orientation, ...props }) => {
   }, [isOpen, collapsibleRef.current]);
 
   return (
-    <li className={classList} {...rest}>
+    <ElementRender className={classList} {...rest}>
       <LinkRender onClick={handleClick} to="#">
         {icon && (<span className="bi-sidebar-icon">{makeIconFromProp(icon)}</span>)}
         <span className="bi-sidebar-item-content">{text}</span>
@@ -59,10 +59,10 @@ const SidebarCollapsible = ({ orientation, ...props }) => {
         </div>
         <Caret />
       </LinkRender>
-      <ul className="sidebar-collapsible-content" ref={collapsibleRef}>
+      <ListRender className="sidebar-collapsible-content" ref={collapsibleRef}>
         {children}
-      </ul>
-    </li>
+      </ListRender>
+    </ElementRender>
   );
 };
 
@@ -72,6 +72,8 @@ SidebarCollapsible.propTypes = {
   current: PropTypes.bool,
   LinkRender: PropTypes.elementType,
   showOpen: PropTypes.bool,
+  ElementRender: PropTypes.elementType,
+  ListRender: PropTypes.elementType,
 };
 
 SidebarCollapsible.defaultProps = {
@@ -79,6 +81,8 @@ SidebarCollapsible.defaultProps = {
   current: false,
   LinkRender: SidebarLink,
   showOpen: false,
+  ElementRender: 'li',
+  ListRender: 'ul',
 };
 
 export default React.memo(SidebarCollapsible);

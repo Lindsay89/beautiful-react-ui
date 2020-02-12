@@ -30,8 +30,8 @@ const enrichChild = (child, orientation) => {
 // the React.memo has been used here rather than on the export line to avoid wrapping the shortcut.
 const Sidebar = React.memo((props) => {
   const {
-    isOpen, onToggle, title, titleColor, headerLogo, showToggle, toggleIcon, HeaderRender,
-    accent, orientation, type, transitionType, className, children, ...rest
+    isOpen, onToggle, title, titleColor, headerLogo, showToggle, toggleIcon, accent, orientation,
+    type, transitionType, className, children, HeaderRender, ElementRender, NavRender, ...rest
   } = props;
 
   // defines class list
@@ -44,7 +44,7 @@ const Sidebar = React.memo((props) => {
   }, className), [isOpen, type, accent, orientation, transitionType, className]);
 
   return (
-    <aside className={classList} {...rest}>
+    <ElementRender className={classList} {...rest}>
       <HeaderRender
         title={!title && !headerLogo ? 'Sidebar' : title}
         titleColor={titleColor}
@@ -53,12 +53,12 @@ const Sidebar = React.memo((props) => {
         logo={headerLogo}
         onToggle={onToggle}
       />
-      <nav className="bi-sidebar-navigation">
+      <NavRender className="bi-sidebar-navigation">
         <ul>
           {Children.map(children, (child) => enrichChild(child, orientation))}
         </ul>
-      </nav>
-    </aside>
+      </NavRender>
+    </ElementRender>
   );
 });
 
@@ -96,10 +96,6 @@ Sidebar.propTypes = {
    */
   showToggle: PropTypes.bool,
   /**
-   * A render function to be used as the sidebar header instead of the default component
-   */
-  HeaderRender: PropTypes.elementType,
-  /**
    * Defines whether the sidebar left or right orientated
    */
   orientation: PropTypes.oneOf(['left', 'right']),
@@ -111,6 +107,18 @@ Sidebar.propTypes = {
    * Defines the sidebar transition should be by translate the sidebar or its left/right margin
    */
   transitionType: PropTypes.oneOf(['translate', 'margin']),
+  /**
+   * A renderer to replace the standard sidebar Header component
+   */
+  HeaderRender: PropTypes.elementType,
+  /**
+   * A renderer to replace the standard sidebar element
+   */
+  ElementRender: PropTypes.elementType,
+  /**
+   * A renderer to replace the standard nav element
+   */
+  NavRender: PropTypes.elementType,
 };
 
 Sidebar.defaultProps = {
@@ -125,6 +133,8 @@ Sidebar.defaultProps = {
   orientation: 'left',
   type: 'shrinkable',
   transitionType: 'translate',
+  ElementRender: 'aside',
+  NavRender: 'nav',
 };
 
 

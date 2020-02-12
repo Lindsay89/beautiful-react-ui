@@ -11,7 +11,7 @@ import './sidebar-item.scss';
  * Sidebar navigation item
  */
 const SidebarItem = (props) => {
-  const { text, to, icon, current, LinkRender, onClick, className, orientation, ...rest } = props;
+  const { text, to, icon, current, LinkRender, ElementRender, onClick, className, orientation, ...rest } = props;
   const [tooltipVisible, setTooltipVisibility] = useState(false);
 
   const classList = useMemo(() => classNames('bi bi-sidebar-nav-item', {
@@ -23,7 +23,7 @@ const SidebarItem = (props) => {
   }, [tooltipVisible]);
 
   return (
-    <li className={classList} {...rest}>
+    <ElementRender className={classList} {...rest}>
       <LinkRender to={to} onClick={onClick}>
         {icon && (
           <span className="bi-sidebar-icon">
@@ -47,7 +47,7 @@ const SidebarItem = (props) => {
           {text}
         </Tooltip>
       </LinkRender>
-    </li>
+    </ElementRender>
   );
 };
 
@@ -60,6 +60,7 @@ SidebarItem.propTypes = {
   LinkRender: PropTypes.elementType,
   onClick: PropTypes.func,
   orientation: PropTypes.oneOf(['left', 'right']),
+  ElementRender: PropTypes.elementType,
 };
 
 SidebarItem.defaultProps = {
@@ -69,6 +70,7 @@ SidebarItem.defaultProps = {
   LinkRender: SidebarLink,
   onClick: undefined,
   orientation: 'left',
+  ElementRender: 'li',
 };
 
 export default React.memo(SidebarItem);
