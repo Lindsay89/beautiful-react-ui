@@ -87,7 +87,7 @@ This library is provided and sponsored by:
   </p>
 </div>
 
-As part of our commitment to support and provide the open source community.
+As part of our commitment to support and contribute to the open source community.
 
 ---
 
