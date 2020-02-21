@@ -6,7 +6,7 @@ $shrinkableOffsetRight: calc(calc(theme('spacing.64') - theme('spacing.20')));
 .bi.bi-sidebar {
   box-shadow: 0 0 0.25rem 0.16rem rgba(20, 20, 20, 0.05), 0 0 0.5rem 0.4rem rgba(20, 20, 20, 0.1);
   z-index: 4;
-  @apply box-border bg-white w-64 h-full overflow-hidden;
+  @apply flex flex-col box-border bg-white w-64 h-full overflow-hidden;
 
   // ----------------------------
   // TRANSITION TYPE

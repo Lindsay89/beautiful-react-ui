@@ -953,3 +953,20 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixing
 
 - Avoiding helpText css override
+
+## [0.53.3] - 2020-02-20
+
+### Fixing
+
+- adding babel lodash plugin to improve build size
+
+## [0.54.0] - 2020-02-21
+
+### Adding
+
+- first attempt of lazy exporting
+
+### Fixing
+
+- Icon component asynchronously load the font-awesome library (first try)
+- Sidebar full height glitch
