@@ -3,6 +3,6 @@
  * @param boundingRect
  * @returns {number}
  */
-const getAbsoluteLeft = ({ x = 0 }) => x;
+const getAbsoluteLeft = ({ left = 0 }) => left;
 
 export default getAbsoluteLeft;
