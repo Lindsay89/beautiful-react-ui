@@ -6,10 +6,10 @@ import calculatePositionByPlacementMap from './calculatePositionByPlacementMap';
  */
 const getFloaterAbsolutePosition = (el, placement = 'top-center', offset = 0, setWidth = false) => {
   const { clientHeight, clientWidth } = document.body;
-  const { scrollY } = window;
+  const { pageYOffset } = window;
   const boundingRect = getTargetBoundingClientRect(el);
   const calculatePosition = calculatePositionByPlacementMap[placement];
-  const position = calculatePosition(boundingRect, clientHeight, clientWidth, scrollY, offset);
+  const position = calculatePosition(boundingRect, clientHeight, clientWidth, pageYOffset, offset);
 
   return ({ ...position, ...setWidth && { width: boundingRect.width } });
 };

@@ -5,9 +5,9 @@
  * @returns {number}
  */
 const getAbsoluteCenter = (boundingRect, clientWidth) => {
-  const { width = 1, x = 0 } = boundingRect;
+  const { width = 1, left = 0 } = boundingRect;
 
-  return clientWidth - x - (width / 2);
+  return clientWidth - left - (width / 2);
 };
 
 export default getAbsoluteCenter;

@@ -970,3 +970,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Icon component asynchronously load the font-awesome library (first try)
 - Sidebar full height glitch
+
+## [0.54.1] - 2020-02-26
+
+### Fixing
+
+- Added ie support to the FloatingComponent by editing its util functions

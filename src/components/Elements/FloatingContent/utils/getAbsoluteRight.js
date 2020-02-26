@@ -5,9 +5,9 @@
  * @returns {number}
  */
 const getAbsoluteRight = (boundingRect, clientWidth) => {
-  const { width = 1, x = 0 } = boundingRect;
+  const { width = 1, left = 0 } = boundingRect;
 
-  return clientWidth - x - width;
+  return clientWidth - left - width;
 };
 
 export default getAbsoluteRight;
