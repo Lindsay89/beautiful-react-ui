@@ -3,12 +3,6 @@
 @mixin make-list-color($colorName) {
   &.bi-list-#{$colorName} {
     @apply text-#{$colorName};
-
-    /*
-    .bi-list-item.bi-list-checkitem.bi-list-item-checked {
-      @apply bg-#{$colorName}-lightest text-white;
-    }
-    */
   }
 
   .bi-list-item.bi-list-item-#{$colorName} {
@@ -74,6 +68,14 @@
         @apply text-default self-center;
       }
     }
+  }
+
+
+  // ----------------------------
+  // Bordered
+  // ----------------------------
+  &.bi-list-bordered {
+    @apply border border-solid border-default-light bg-white;
   }
 
   // ----------------------------

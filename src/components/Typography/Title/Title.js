@@ -17,7 +17,7 @@ import './title.scss';
 const Title = (props) => {
   const { children, color, size, tagName, textAlign, wordBreak, className, ...rest } = props;
   const TitleTag = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(tagName) ? tagName : 'h1';
-  const classList = classNames('bi-title', `bi-title-${color}`, {
+  const classList = classNames('bi bi-title', `bi-title-${color}`, {
     'title-base': size === 'base',
     'title-lg': size === 'lg',
     'title-xl': size === 'xl',

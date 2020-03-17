@@ -36,7 +36,7 @@ ToggleSwitch.propTypes = {
   /**
    * The toggle value, boolean
    */
-  value: PropTypes.bool.isRequired,
+  value: PropTypes.bool,
   /**
    * The toggle on change handler
    */
@@ -64,6 +64,7 @@ ToggleSwitch.propTypes = {
 };
 
 ToggleSwitch.defaultProps = {
+  value: false,
   onChange: undefined,
   color: 'success',
   helpText: undefined,

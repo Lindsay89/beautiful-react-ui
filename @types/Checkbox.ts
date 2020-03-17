@@ -5,7 +5,7 @@ export type CheckboxProps = DefaultProps & {
   /**
    * The checkbox value, boolean
    */
-  value: boolean,
+  value?: boolean,
   /**
    * The checkbox on change handler
    */

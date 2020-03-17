@@ -24,7 +24,6 @@ export type NotificationsStackProps = DefaultProps & {
 /**
  * Declares the NotificationsStack functional component
  */
-
-declare const NotificationsStack: FunctionComponent<NotificationsStackProps>
+declare const NotificationsStack: FunctionComponent<NotificationsStackProps>;
 
 export default NotificationsStack;

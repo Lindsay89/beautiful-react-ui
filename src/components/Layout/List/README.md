@@ -10,6 +10,18 @@ import { List } from 'beautiful-react-ui';
 </List>
 ```
 
+### Borders
+
+```jsx 
+import { List } from 'beautiful-react-ui';
+
+<List bordered>
+  <List.Item>Item 1</List.Item>
+  <List.Item>Item 2</List.Item>
+  <List.Item>Item 3</List.Item>
+</List>
+```
+
 ### Selectable
 
 ```jsx 

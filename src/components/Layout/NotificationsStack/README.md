@@ -1,8 +1,9 @@
-### Basic Usage
+### ✅ Basic Usage
+
 Since `NotificationsStack` is a controlled component it requires its state to be provided from the parent, meaning that an array of notifications and an onChange callback function should be provided.
 The notifications array is an array of objects: each object represent one notification, and it must have an id and a content property.
 The id is very important to the `NotificationsStack` component because it is used to manage the notification removal.
-For the other object's propeties please take a look at the props.
+For the other object's properties please take a look at the props.
 
 ```jsx 
 import { Button, NotificationsStack } from 'beautiful-react-ui';

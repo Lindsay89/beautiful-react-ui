@@ -38,9 +38,9 @@ Input.propTypes = {
   /**
    * The input value
    */
-  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   /**
-   * The on change handler
+   * The callback to be performed when input's value changes
    */
   onChange: PropTypes.func,
   /**
@@ -82,6 +82,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
+  value: '',
   onChange: undefined,
   placeholder: 'Input field...',
   disabled: false,
