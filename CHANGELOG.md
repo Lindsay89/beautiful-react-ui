@@ -976,3 +976,11 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixing
 
 - Added ie support to the FloatingComponent by editing its util functions
+
+
+## [0.55.0] - 2020-03-19
+
+### Added
+
+- NotificationsStack component
+- NotificationsStack tests

@@ -94,7 +94,7 @@
   @apply bg-white border border-default-light border-solid py-2 leading-tight rounded shadow-lg overflow-scroll;
   @apply font-normal font-sans text-base;
 
-  @include slideTop(0.35s);
+  @include slideTopIn(0.35s);
   @include handle-scrolling-bar();
 
   .bi-select-opt {

@@ -55,13 +55,21 @@
 // ---------------------
 // SLIDE TOP ANIMATION
 // ---------------------
-@mixin slideTop($duration: 0.5s) {
+//noinspection ALL
+@mixin slideTopIn($duration: 0.5s, $full: false) {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1vh;
-  animation-name: AnimationSlideTop;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
+
+  /* stylelint-disable */
+  @if $full {
+    animation-name: AnimationSlideTopFull;
+  } @else {
+    animation-name: AnimationSlideTop;
+  }
+  /* stylelint-enable */
 }
 
 @keyframes AnimationSlideTop {
@@ -76,20 +84,41 @@
   }
 }
 
+@keyframes AnimationSlideTopFull {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .bi.bi-anim-slide-top {
-  @include slideTop();
+  @include slideTopIn();
 }
 
 // ---------------------
 // SLIDE BOTTOM ANIMATION
 // ---------------------
-@mixin slideBottom($duration: 0.5s) {
+//noinspection ALL
+@mixin slideBottomIn($duration: 0.5s, $full: false) {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1vh;
   animation-name: AnimationSlideBottom;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
+
+  /* stylelint-disable */
+  @if $full {
+    animation-name: AnimationSlideBottomFull;
+  } @else {
+    animation-name: AnimationSlideBottom;
+  }
+  /* stylelint-enable */
 }
 
 @keyframes AnimationSlideBottom {
@@ -104,23 +133,44 @@
   }
 }
 
+@keyframes AnimationSlideBottomFull {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .bi.bi-anim-slide-bottom {
-  @include slideBottom();
+  @include slideBottomIn();
 }
 
 // ---------------------
 // SLIDE RIGHT ANIMATION
 // ---------------------
-@mixin slideRight($duration: 0.5s) {
+//noinspection ALL
+@mixin slideRightIn($duration: 0.5s, $full: false) {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1vh;
-  animation-name: AnimationSlideRight;
   animation-duration: $duration;
   animation-timing-function: ease-in-out;
+
+  /* stylelint-disable*/
+  @if $full {
+    animation-name: AnimationSlideRightInFull;
+  } @else {
+    animation-name: AnimationSlideRigh;
+  }
+  /* stylelint-enable*/
 }
 
-@keyframes AnimationSlideRight {
+
+@keyframes AnimationSlideRightIn {
   from {
     opacity: 0;
     transform: translateX(2.5%);
@@ -132,20 +182,41 @@
   }
 }
 
+@keyframes AnimationSlideRightInFull {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 .bi.bi-anim-slide-right {
-  @include slideRight();
+  @include slideRightIn();
 }
 
 // ---------------------
 // SLIDE LEFT ANIMATION
 // ---------------------
-@mixin slideLeft($duration: 0.5s) {
+//noinspection ALL
+@mixin slideLeftIn($duration: 0.5s, $full: false) {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1vh;
-  animation-name: AnimationSlideLeft;
   animation-duration: $duration;
   animation-timing-function: linear;
+
+  /* stylelint-disable */
+  @if $full {
+    animation-name: AnimationSlideLeftFull;
+  } @else {
+    animation-name: AnimationSlideLeft;
+  }
+  /* stylelint-enable*/
 }
 
 @keyframes AnimationSlideLeft {
@@ -160,6 +231,18 @@
   }
 }
 
+@keyframes AnimationSlideLeftFull {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .bi.bi-anim-slide-left {
-  @include slideLeft();
+  @include slideLeftIn();
 }
