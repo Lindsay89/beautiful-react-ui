@@ -33,6 +33,7 @@ export { default as Sidebar } from './components/Layout/Sidebar';
 export { default as Accordion } from './components/Layout/Accordion';
 export { default as Modal } from './components/Layout/Modal';
 export { default as List } from './components/Layout/List';
+export { default as NotificationsStack } from './components/Layout/NotificationsStack';
 
 // Typography
 export { default as Title } from './components/Typography/Title';

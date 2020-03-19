@@ -3,7 +3,7 @@
 
 .bi.bi-dropdown {
   @apply bg-white py-2 shadow-lg rounded;
-  @include slideTop(0.35s);
+  @include slideTopIn(0.35s);
   min-width: 8rem;
 
   ul {
