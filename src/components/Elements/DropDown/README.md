@@ -1,4 +1,4 @@
-### Basic Usage
+### ✅ Basic Usage
 
 Since the DropDown is a controlled component, a state is needed to control its showing behaviour.
 

@@ -5,7 +5,7 @@ export type ToggleSwitchProps = DefaultProps & {
   /**
    * The toggle value, boolean
    */
-  value: boolean,
+  value?: boolean,
   /**
    * The toggle on change handler
    */

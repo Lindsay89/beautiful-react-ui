@@ -46,6 +46,7 @@ module.exports = {
         '../../src/components/Elements/Tab/Tab.js',
         '../../src/components/Elements/Popover/Popover.js',
         '../../src/components/Elements/Tooltip/Tooltip.js',
+        '../../src/components/Elements/ProgressBar/ProgressBar.js',
         '../../src/components/Elements/FloatingContent/FloatingContent.js',
       ],
     },
@@ -62,6 +63,7 @@ module.exports = {
         '../../src/components/Forms/DisplayField/DisplayField.js',
         '../../src/components/Forms/FormGroup/FormGroup.js',
         '../../src/components/Forms/FormPanel/FormPanel.js',
+        '../../src/components/Forms/FileUploader/FileUploader.js',
       ],
     },
     {

@@ -14,6 +14,8 @@ export { default as Tab } from './components/Elements/Tab';
 export { default as Popover } from './components/Elements/Popover';
 export { default as Tooltip } from './components/Elements/Tooltip';
 export { default as FloatingContent } from './components/Elements/FloatingContent';
+export { default as ProgressBar } from './components/Elements/ProgressBar';
+
 
 // Forms
 export { default as Label } from './components/Forms/Label';
@@ -25,6 +27,7 @@ export { default as FormGroup } from './components/Forms/FormGroup';
 export { default as FormPanel } from './components/Forms/FormPanel';
 export { default as DisplayField } from './components/Forms/DisplayField';
 export { default as TextArea } from './components/Forms/TextArea';
+export { default as FileUploader } from './components/Forms/FileUploader';
 
 // Layout
 export { default as Grid } from './components/Layout/Grid';

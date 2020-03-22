@@ -977,10 +977,22 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Added ie support to the FloatingComponent by editing its util functions
 
-
 ## [0.55.0] - 2020-03-19
 
 ### Added
 
 - NotificationsStack component
 - NotificationsStack tests
+
+## [0.56.0] - 2020-03-22
+
+### Added
+
+- FileUploader component
+- FileUploader tests
+- ProgressBar component
+- ProgressBar tests
+
+### Fixed
+
+- Input fields value and onChange are not required anymore

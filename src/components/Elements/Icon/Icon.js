@@ -1,36 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Size, Color } from '../../../shared';
 
 import './icon.scss';
 
-// TODO: improve the async font-awesome loading business logic
-const fontAwesomeAlreadyLoaded = false;
-
-const useAsyncFontAwesomeLoader = () => {
-  const [isLoaded, setIsLoaded] = useState(fontAwesomeAlreadyLoaded);
-
-  useEffect(() => {
-    if (!fontAwesomeAlreadyLoaded) {
-      const loadLibs = () => import('@fortawesome/free-brands-svg-icons').then((fabLib) => {
-        library.add(fabLib.fab);
-
-        return import('@fortawesome/free-solid-svg-icons').then((fasLib) => {
-          library.add(fasLib.fas);
-        });
-      });
-
-      loadLibs().finally(() => {
-        setIsLoaded(true);
-      });
-    }
-  }, []);
-
-  return isLoaded;
-};
+library.add(fas, fab);
 
 const faSizes = { small: 'sm', large: 'lg' };
 
@@ -39,7 +18,6 @@ const faSizes = { small: 'sm', large: 'lg' };
  * Built on top of [font-awesome](https://fontawesome.com/);
  */
 const Icon = ({ name, color, size, className, ...rest }) => {
-  useAsyncFontAwesomeLoader();
   const classList = classNames('bi bi-icon', `${color ? `icon-${color}` : ''}`, className);
   const faSize = faSizes[size];
 

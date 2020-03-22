@@ -37,7 +37,7 @@ Checkbox.propTypes = {
   /**
    * The checkbox value, boolean
    */
-  value: PropTypes.bool.isRequired,
+  value: PropTypes.bool,
   /**
    * The checkbox on change handler
    */
@@ -62,6 +62,7 @@ Checkbox.propTypes = {
 
 
 Checkbox.defaultProps = {
+  value: false,
   onChange: undefined,
   color: 'default',
   disabled: false,

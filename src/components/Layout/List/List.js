@@ -16,9 +16,10 @@ const assignColor = (item, color) => React.cloneElement(item, { color: item.prop
  */
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const List = React.memo((props) => {
-  const { color, condensed, className, children, ...rest } = props;
+  const { color, condensed, className, bordered, children, ...rest } = props;
   const classList = classNames('bi bi-list', `bi-list-${color}`, {
     'bi-list-condensed': condensed,
+    'bi-list-bordered': bordered,
   }, className);
 
   return (
@@ -39,11 +40,16 @@ List.propTypes = {
    * Shrinks the list items so that it's possible to display more information
    */
   condensed: PropTypes.bool,
+  /*
+   * Defines whether the list should be bordered or not
+   */
+  bordered: PropTypes.bool,
 };
 
 List.defaultProps = {
   color: 'default',
   condensed: false,
+  bordered: false,
 };
 
 // shortcut to ListItem so that we can use it as the following: `List.Item`

@@ -37,6 +37,7 @@ As a result, we've decided to develop a library putting ease of customization as
 
 ## 🎓 Principles
 
+- **Unopinionated** and highly customisable.
 - **Driven by grace**: instead of customising the padding/margin/color/whatever of a single component, 
 customise the value of padding/margin/color/whatever trough a [configuration file](./docs/customising.md), the library 
 will then generate a tailored style keeping grace between components.
