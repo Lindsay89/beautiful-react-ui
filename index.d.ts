@@ -1,12 +1,12 @@
 // Elements
 export { default as Accordion } from './@types/Accordion';
-// export { default as Alert } from './types/Alert';
-// export { default as Avatar } from './types/Avatar';
+export { default as Alert } from './@types/Alert';
+export { default as Avatar } from './@types/Avatar';
 export { default as Breadcrumbs } from './@types/Breadcrumbs';
 export { default as Button } from './@types/Button';
 // export { default as ButtonGroup } from './types/ButtonGroup';
 export { default as Icon } from './@types/Icon';
-// export { default as Image } from './types/Image';
+export { default as Image } from './@types/Image';
 export { default as List } from './@types/List';
 export { default as Pill } from './@types/Pill';
 export { default as Placeholder } from './@types/Placeholder';
@@ -30,7 +30,7 @@ export { default as ToggleSwitch } from './@types/ToggleSwitch';
 // Layout
 export { default as Grid } from './@types/Grid';
 export { default as Sidebar } from './@types/Sidebar';
-// export { default as Card } from './types/Card';
+export { default as Card } from './@types/Card';
 
 // Typography
 export { default as Title } from './@types/Title';

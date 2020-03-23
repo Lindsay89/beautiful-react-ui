@@ -189,6 +189,12 @@
     }
   }
 
+  &.bi-card-loading .card-overlapping-loader {
+    @apply absolute inset-0 flex items-center justify-center;
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+
   // ----------------------------------------------
   // Fluid, adapts the Card to its container
   // ----------------------------------------------
