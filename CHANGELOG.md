@@ -996,3 +996,13 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Input fields value and onChange are not required anymore
+
+
+## [0.56.1] - 2020-03-23
+
+### Fixed
+
+- Card component types
+- Alert component type
+- Avatar component type
+- Image component type

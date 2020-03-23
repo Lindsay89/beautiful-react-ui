@@ -8,6 +8,7 @@ import CardTitle from './CardTitle';
 import CardContent from './CardContent';
 import CardImage from './CardImage';
 import CardFooter from './CardFooter';
+import Spinner from '../../Elements/Spinner';
 import takeCardImageOutOfChildren from './utils/takeCardImageOutOfChildren';
 import getPossibleImageWrapper from './utils/getPossibleImageWrapper';
 
@@ -26,8 +27,8 @@ import './card.scss';
 // the React.memo has been used here rather than on the export line like other cases, to avoid wrapping the shortcut.
 const Card = React.memo((props) => {
   const {
-    children, textAlign, fluid, orientation, actionButton, actionButtonIcon, onActionButtonClick, reversed, float,
-    actionButtonRenderer, imageRenderer, className, ...rest
+    children, textAlign, fluid, orientation, actionButton, actionButtonIcon, onActionButtonClick, reversed, loading,
+    float, actionButtonRenderer, imageRenderer, className, ...rest
   } = props;
 
   const [cardImage, childrenWithoutImg] = takeCardImageOutOfChildren(children);
@@ -35,6 +36,7 @@ const Card = React.memo((props) => {
 
   const classList = classNames('bi bi-card', {
     [`card-text-${textAlign}`]: !!textAlign,
+    'bi-card-loading': loading,
     'orientation-h': orientation === 'horizontal',
     fluid: !!fluid,
     reversed,
@@ -65,6 +67,7 @@ const Card = React.memo((props) => {
         </PossibleImageWrapper>
       )}
       <div className="card-content-wrapper">{childrenWithoutImg}</div>
+      {loading && <div className="card-overlapping-loader"><Spinner color="primary" /></div>}
     </div>
   );
 });
@@ -82,6 +85,10 @@ Card.propTypes = {
    * Defines the card orientation
    */
   orientation: PropTypes.oneOf(['horizontal', 'vertical']),
+  /**
+   * Shows an overlapping opaque layer with a Spinner in the middle
+   */
+  loading: PropTypes.bool,
   /**
    * If true, it shows an actionButton that will run a callback
    */
@@ -115,6 +122,7 @@ Card.propTypes = {
 Card.defaultProps = {
   textAlign: undefined,
   fluid: false,
+  loading: false,
   orientation: 'vertical',
   actionButton: false,
   actionButtonIcon: 'ellipsis-v',

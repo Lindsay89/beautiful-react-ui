@@ -1,4 +1,4 @@
-### Basic Usage
+### ✅ Basic usage
 
 ```jsx
 import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
@@ -19,31 +19,6 @@ import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
   </Card.Footer>
 </Card>
 ```
-
-### Float
-
-By setting the `float` prop to `true` the card will float up a bit on mouse hover
-
-```jsx
-import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
-
-<Card float>
-  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
-  <Card.Title> 
-    Pride and Prejudice
-  </Card.Title>
-  <Card.Content> 
-    <Paragraph>
-      Vanity and pride are different things, though the words are often used synonymously. 
-      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
-    </Paragraph> 
-  </Card.Content>
-  <Card.Footer> 
-    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
-  </Card.Footer>
-</Card>
-```
-
 
 ### Fluid
 
@@ -93,7 +68,6 @@ import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
 </Card>
 ```
 
-
 ### Orientation
 
 The `orientation` prop defines the card's orientation, by default is set the `vertical`.
@@ -119,6 +93,55 @@ import { Card, Pill, Paragraph } from 'beautiful-react-ui';
   </Card.Footer>
 </Card>
 ```
+
+### Loading
+
+By setting the `loading` prop to `true`, an overlapping opaque layer with a Spinner in the middle will appear
+
+```jsx
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
+
+<Card loading>
+  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
+  </Card.Content>
+  <Card.Footer> 
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
+  </Card.Footer>
+</Card>
+```
+
+### Float animation
+
+By setting the `float` prop to `true` the card will float up a bit on mouse hover
+
+```jsx
+import { Card, Avatar, Paragraph } from 'beautiful-react-ui';
+
+<Card float>
+  <Card.Image src="https://placeimg.com/460/250/nature" alt="A stunning title" />
+  <Card.Title> 
+    Pride and Prejudice
+  </Card.Title>
+  <Card.Content> 
+    <Paragraph>
+      Vanity and pride are different things, though the words are often used synonymously. 
+      A person may be proud without being vain. Pride relates more to our opinion of ourselves, vanity to what we would have others think of us.
+    </Paragraph> 
+  </Card.Content>
+  <Card.Footer> 
+    <Avatar src="https://placeimg.com/96/96/people" displayName="Jane Austen" size="small" state="online" /> 
+  </Card.Footer>
+</Card>
+```
+
 
 ### Reversed
 
