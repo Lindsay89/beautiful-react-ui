@@ -4,7 +4,7 @@ export { default as Alert } from './@types/Alert';
 export { default as Avatar } from './@types/Avatar';
 export { default as Breadcrumbs } from './@types/Breadcrumbs';
 export { default as Button } from './@types/Button';
-// export { default as ButtonGroup } from './types/ButtonGroup';
+export { default as ButtonGroup } from './@types/ButtonGroup';
 export { default as Icon } from './@types/Icon';
 export { default as Image } from './@types/Image';
 export { default as List } from './@types/List';
@@ -26,6 +26,7 @@ export { default as FormGroup } from './@types/FormGroup';
 export { default as FormPanel } from './@types/FormPanel';
 export { default as DisplayField } from './@types/DisplayField';
 export { default as ToggleSwitch } from './@types/ToggleSwitch';
+export { default as FileUploader } from './@types/FileUploader';
 
 // Layout
 export { default as Grid } from './@types/Grid';
