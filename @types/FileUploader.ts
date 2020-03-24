@@ -34,7 +34,7 @@ export type FileUploaderProps = DefaultProps & {
    * The icon to be displayed in the middle of the FileUploader content.
    * A valid Icon component name prop or the instance of an Icon component are both valid values.
    */
-  icon: IconProp,
+  icon?: IconProp,
   /**
    * Defines whether the component should allows the user to select more than one file
    */

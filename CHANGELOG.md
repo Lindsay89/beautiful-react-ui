@@ -1014,3 +1014,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Missing FileUploader types in index.d.ts
 - Missing ButtonGroup types
 - TextArea null default value
+
+## [0.56.3] - 2020-03-24
+
+### Fixed
+
+- FileUploader icon required value
