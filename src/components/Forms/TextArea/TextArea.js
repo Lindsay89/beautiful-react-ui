@@ -75,7 +75,7 @@ TextArea.propTypes = {
 };
 
 TextArea.defaultProps = {
-  value: null,
+  value: undefined,
   onChange: undefined,
   placeholder: 'Insert your text...',
   disabled: false,

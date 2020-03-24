@@ -997,7 +997,6 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - Input fields value and onChange are not required anymore
 
-
 ## [0.56.1] - 2020-03-23
 
 ### Fixed
@@ -1006,3 +1005,12 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 - Alert component type
 - Avatar component type
 - Image component type
+
+## [0.56.2] - 2020-03-24
+
+### Fixed
+
+- Alert component type required onClose prop
+- Missing FileUploader types in index.d.ts
+- Missing ButtonGroup types
+- TextArea null default value

@@ -17,7 +17,7 @@ export type AlertProps = DefaultProps & {
   /**
    * onClose accept a function. If there's any function, it will show a button
    */
-  onClose: Callback<Event>,
+  onClose?: Callback<Event>,
 };
 
 
