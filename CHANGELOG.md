@@ -1020,3 +1020,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - FileUploader icon required value
+
+## [0.56.4] - 2020-03-24
+
+### Fixed
+
+- ToggleSwitch conditional useCallback

@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Color, makeCallback, makeKeyboardCallback } from '../../../shared';
@@ -19,8 +19,8 @@ const ToggleSwitch = (props) => {
   }, className), [value, color, className, disabled]);
 
   // handlers
-  const onClick = !disabled ? useCallback(makeCallback(onChange, !value), [onChange, value]) : undefined;
-  const onKeyUp = !disabled ? useCallback(makeKeyboardCallback(onChange, !value), [onChange, value]) : undefined;
+  const onClick = !disabled ? makeCallback(onChange, !value) : undefined;
+  const onKeyUp = !disabled ? makeKeyboardCallback(onChange, !value) : undefined;
 
   return (
     <div className={classList} {...rest}>
