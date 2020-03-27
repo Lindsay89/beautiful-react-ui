@@ -1044,3 +1044,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Adding z-index:9999 to the #bi-floats element in order show floaters upon modals
+
+## [0.56.8] - 2020-03-27
+
+### Fixed
+
+- Import Element.remove polyfill into Modal component

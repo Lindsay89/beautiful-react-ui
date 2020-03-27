@@ -2,6 +2,8 @@ import { createPortal } from 'react-dom';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import getPortalWrapper from './getPortalWrapper';
+import './ElementRemovePolyfill';
+
 
 /**
  * Creates a React Portal with the given id.
