@@ -252,7 +252,7 @@ const UncontrolledModal = (props) => {
 `backdropRender` prop is provided to change the standard backdrop behaviour.
 
 ```jsx
-import { Button} from 'beautiful-react-ui';
+import { Button } from 'beautiful-react-ui';
 
 const CustomBackdrop = (props) => (
   <div style={{background: 'rgba(8, 61, 119, 0.45)', width:'100%', height:'100%', position:'fixed'}}>

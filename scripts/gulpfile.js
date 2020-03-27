@@ -24,11 +24,19 @@ const transpileJs = () => {
   return src(jsFiles)
     .pipe(sourcemaps.init())
     .pipe(babel({
-      presets: ['@babel/preset-env', '@babel/preset-react'],
+      presets: [
+        ['@babel/preset-env', {
+          targets: { browsers: '> 0.25%, not dead', ie: '10' },
+          useBuiltIns: 'usage',
+          corejs: 2,
+        }],
+        '@babel/preset-react',
+      ],
       ignore: ['src/**/*.spec.js', 'src/**/*.test.js'],
       comments: false,
       plugins: [
         ['babel-plugin-transform-require-ignore', { extensions: ['.less', '.sass', '.scss', '.css'] }],
+        'lodash',
       ],
     }))
     .pipe(sourcemaps.write('.'))

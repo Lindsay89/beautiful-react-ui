@@ -1026,3 +1026,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - ToggleSwitch conditional useCallback
+
+## [0.56.5] - 2020-03-27
+
+### Fixed
+
+- Added a Element.remove polyfill to make _Portal component work on IE10+ (stupid browser btw)
