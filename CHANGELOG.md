@@ -1038,3 +1038,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - ToggleSwitch CSS fix (top: 0 was missing)
+
+## [0.56.7] - 2020-03-27
+
+### Fixed
+
+- Adding z-index:9999 to the #bi-floats element in order show floaters upon modals
