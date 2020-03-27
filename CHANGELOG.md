@@ -1049,4 +1049,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 ### Fixed
 
-- Import Element.remove polyfill into Modal component
+- Import Element.remove polyfill into _Portal component
+
+## [0.56.9] - 2020-03-27
+
+### Fixed
+
+- Improve Element.remove polyfill
