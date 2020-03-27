@@ -1032,3 +1032,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Added a Element.remove polyfill to make _Portal component work on IE10+ (stupid browser btw)
+
+## [0.56.6] - 2020-03-27
+
+### Fixed
+
+- ToggleSwitch CSS fix (top: 0 was missing)

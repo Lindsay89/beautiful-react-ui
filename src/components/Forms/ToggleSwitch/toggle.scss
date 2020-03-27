@@ -30,7 +30,7 @@ $switchLeft: calc(100% - theme('spacing.8'));
     // SWITCH
     // ----------------------------
     > .bi-toggle-switch {
-      @apply box-border absolute w-8 h-8 rounded-full bg-white inline-block self-center left-0;
+      @apply box-border absolute w-8 h-8 rounded-full bg-white inline-block self-center left-0 top-0;
       transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1) 0s;
     }
 
