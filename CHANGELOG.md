@@ -1056,3 +1056,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Improve Element.remove polyfill
+
+## [0.56.10] - 2020-03-26
+
+### Fixed
+
+- FloatingContent change placement if there's no enough space to show.
+- Adding FloatingContent types
