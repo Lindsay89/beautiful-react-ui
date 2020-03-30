@@ -27,6 +27,7 @@ const checkAvailableSpace = (el, nextStyle, placement) => {
     if (floatingContentPosition === 'bottom') {
       return elDimension < nextStyle[styleProperty[placement]];
     }
+
     return elDimension + nextStyle[styleProperty[placement]] < document.body.clientHeight;
   }
 
