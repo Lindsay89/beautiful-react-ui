@@ -1063,3 +1063,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 
 - FloatingContent change placement if there's no enough space to show.
 - Adding FloatingContent types
+
+## [0.56.11] - 2020-03-30
+
+### Fixed
+
+- Icon component now has box-sizing:content-box

@@ -5,6 +5,8 @@
 }
 
 .bi.bi-icon {
+  @apply box-content;
+
   + .bi.bi-icon {
     @apply ml-1;
   }
