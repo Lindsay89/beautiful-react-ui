@@ -3,10 +3,13 @@ import { useWindowResize } from 'beautiful-react-hooks';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Portal from '../_Portal/Portal';
-import getFloaterAbsolutePosition from './utils/getFloaterAbsolutePosition';
 import { Placement } from '../../../shared';
+import getFloaterAbsolutePosition from './utils/getFloaterAbsolutePosition';
+import checkAvailableSpace from './utils/checkAvailableSpace';
+import getOppositePlacement from './utils/getOppositePlacement';
 
 import './floating-content.scss';
+
 
 // @TODO: this component can be simplified quite a lot
 
@@ -16,29 +19,34 @@ import './floating-content.scss';
 const FloatingContent = (props) => {
   const {
     trigger, isShown, onToggle, action, placement, offset, clickOutsideToToggle, widthAsTrigger,
-    children, className, ...rest
+    reversePlacementOnSmallSpace, children, className, ...rest
   } = props;
   const triggerWrapperRef = useRef(null);
   const contentWrapperRef = useRef(null);
   const [elementStyle, setElementStyle] = useState(null);
   const [mouseIsHovering, setMouseHover] = useState(false);
+  /**
+   * the derivedPlacement state is required to void using a non fitting placement.
+   * It will contain a placement value opposite to the given one.
+   */
+  const [derivedPlacement, setDerivedPlacement] = useState(placement);
 
-  const classList = classNames('bi bi-floater', {
-    'float-top-left': placement === 'top-left',
-    'float-top-center': placement === 'top-center',
-    'float-top-right': placement === 'top-right',
-    'float-left-center': placement === 'left-center',
-    'float-right-center': placement === 'right-center',
-    'float-bottom-left': placement === 'bottom-left',
-    'float-bottom-center': placement === 'bottom-center',
-    'float-bottom-right': placement === 'bottom-right',
-  }, className);
+  const classList = classNames('bi bi-floater', { [`float-${derivedPlacement}`]: !!derivedPlacement }, className);
 
   // Derives the component's position from the trigger's wrapper element then set it as elementStyle state.
   const calcPopupPosition = () => {
     if (isShown && triggerWrapperRef.current) {
-      const nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
+      let nextPlacement = placement;
+      let nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
+      const isThereEnoughSpace = checkAvailableSpace(contentWrapperRef.current, nextStyle, placement);
 
+      // if it is required to find the better position when there's no space to show the floating content
+      if (reversePlacementOnSmallSpace && !isThereEnoughSpace) {
+        nextPlacement = getOppositePlacement(placement);
+        nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, nextPlacement, offset, widthAsTrigger);
+      }
+
+      setDerivedPlacement(nextPlacement);
       setElementStyle(nextStyle);
     }
   };
@@ -146,6 +154,10 @@ FloatingContent.propTypes = {
    * Defines if the floating content should have the same width of its trigger
    */
   widthAsTrigger: PropTypes.bool,
+  /**
+   * Defines if the floating content placement must be reversed if there's not enough space to show it
+   */
+  reversePlacementOnSmallSpace: PropTypes.bool,
 };
 
 FloatingContent.defaultProps = {
@@ -155,6 +167,7 @@ FloatingContent.defaultProps = {
   placement: 'top-center',
   offset: 0,
   widthAsTrigger: false,
+  reversePlacementOnSmallSpace: true,
 };
 
 export default React.memo(FloatingContent);

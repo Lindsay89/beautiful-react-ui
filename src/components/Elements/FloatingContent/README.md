@@ -141,3 +141,27 @@ const UncontrolledFloatingContent = (props) => {
 
 <UncontrolledFloatingContent offset={40}/>
 ```
+
+### ReversePlacementOnSmallSpace
+
+The `reversePlacementOnSmallSpace` checks if the FloatingContent component has enough space to be shown.
+
+```jsx
+import { Button, FloatingContent } from 'beautiful-react-ui';
+
+const Trigger = (<Button>Button trigger, click me</Button>);
+
+const UncontrolledFloatingContent = (props) => {
+  const [isShown, setIsShown] = React.useState(false); 
+
+  return (
+    <FloatingContent placement="bottom-center" onToggle={() => setIsShown(!isShown)} isShown={isShown} trigger={Trigger} {...props} >
+      <div style={{ height:'300px',padding: '0.625rem', background: '#ED254E', borderRadius: '0.315rem' }}>
+        Lorem ipsum&hellip;
+      </div>
+    </FloatingContent>
+  );
+};
+
+<UncontrolledFloatingContent />
+```

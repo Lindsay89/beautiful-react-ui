@@ -14,7 +14,7 @@ export { default as Spinner } from './@types/Spinner';
 // export { default as Tab } from './types/Tab';
 // export { default as Modal } from './types/Modal';
 export { default as Popover } from './@types/Popover';
-// export { default as FloatingContent } from './types/FloatingContent';
+export { default as FloatingContent } from './@types/FloatingContent';
 export { default as ProgressBar } from './@types/ProgressBar';
 
 // Forms
