@@ -1069,3 +1069,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Icon component now has box-sizing:content-box
+
+## [0.56.12] - 2020-03-30
+
+### Fixed
+
+- Improving `checkAvailableSpace` function 

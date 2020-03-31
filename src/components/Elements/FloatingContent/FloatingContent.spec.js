@@ -142,19 +142,4 @@ describe('FloatingContent component', () => {
 
     expect(floatingContent.getAttribute('style')).not.equal('margin: 10px;');
   });
-
-
-  it('should change placement if there\'s no enough space to show the floating content', () => {
-    render(
-      <FloatingContent onToggle={noop} trigger={Trigger} isShown className="foo" reversePlacementOnSmallSpace>
-        some text here
-      </FloatingContent>,
-    );
-
-    const floatingContent = document.querySelector('#bi-floats > div');
-
-    expect(floatingContent.classList.contains('bi')).to.be.true;
-    expect(floatingContent.classList.contains('bi-floater')).to.be.true;
-    expect(floatingContent.classList.contains('float-bottom-center')).to.be.true;
-  });
 });
