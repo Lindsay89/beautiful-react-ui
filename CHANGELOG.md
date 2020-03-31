@@ -1075,3 +1075,9 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Improving `checkAvailableSpace` function 
+
+## [0.56.13] - 2020-03-30
+
+### Fixed
+
+- Better calculation for `checkAvailableSpace` function 

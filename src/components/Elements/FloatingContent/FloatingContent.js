@@ -36,20 +36,35 @@ const FloatingContent = (props) => {
   // Derives the component's position from the trigger's wrapper element then set it as elementStyle state.
   const calcPopupPosition = () => {
     if (isShown && triggerWrapperRef.current) {
+      const nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
+      setElementStyle(nextStyle);
+    }
+  };
+
+  // check if the rendered element has enough space in the viewport
+  useEffect(() => {
+    if (isShown && elementStyle) {
       let nextPlacement = placement;
-      let nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, placement, offset, widthAsTrigger);
-      const isThereEnoughSpace = checkAvailableSpace(contentWrapperRef.current, nextStyle, placement);
+      const isThereEnoughSpace = checkAvailableSpace(contentWrapperRef.current);
 
       // if it is required to find the better position when there's no space to show the floating content
       if (reversePlacementOnSmallSpace && !isThereEnoughSpace) {
         nextPlacement = getOppositePlacement(placement);
-        nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, nextPlacement, offset, widthAsTrigger);
+        const nextStyle = getFloaterAbsolutePosition(triggerWrapperRef.current, nextPlacement, offset, widthAsTrigger);
+        setElementStyle(nextStyle);
       }
 
       setDerivedPlacement(nextPlacement);
-      setElementStyle(nextStyle);
     }
-  };
+  }, [elementStyle]);
+
+
+  useEffect(() => {
+    if (!isShown) {
+      setElementStyle(undefined);
+      setDerivedPlacement(placement);
+    }
+  }, [isShown]);
 
   // handles the clicks outside the floating content (and outside the current trigger)
   const clickOutsideHandler = ({ target }) => {

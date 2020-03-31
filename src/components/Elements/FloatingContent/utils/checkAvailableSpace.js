@@ -1,16 +1,16 @@
-import getTargetBoundingClientRect from './getTargetBoundingClientRect';
-
 /**
  * This function checks if it has enough space for the FloatingContent to be shown
  */
 const checkAvailableSpace = (el) => {
-  const bounding = getTargetBoundingClientRect(el);
+  const bounding = el.getBoundingClientRect();
+  const h = window.innerHeight || document.documentElement.clientHeight;
+  const w = window.innerWidth || document.documentElement.clientWidth;
 
   return (
     bounding.top >= 0
     && bounding.left >= 0
-    && bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-    && bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    && bounding.bottom <= h
+    && bounding.right <= w
   );
 };
 
