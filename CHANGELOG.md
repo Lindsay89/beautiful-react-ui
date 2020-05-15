@@ -1081,3 +1081,10 @@ disable `Hot` and enable `live reloading` (it refresh when something changes)
 ### Fixed
 
 - Better calculation for `checkAvailableSpace` function 
+
+## [0.56.14] - 2020-05-15
+
+### Fixed
+
+- Render loop in FloatingContent caused by a recursive position calculation
+- drop-down/select component's pointer weird CSS glitch
