@@ -14,7 +14,7 @@ const enrichChild = (props) => (child, index) => {
 
   return React.cloneElement(child, {
     internalId: index,
-    active: props.active === index,
+    active: Array.isArray(props.active) ? props.active.includes(index) : props.active === index,
     onChange: props.onChange,
   });
 };
@@ -40,10 +40,7 @@ Accordion.propTypes = {
   /**
    * Defines the current active tab index
    */
-  active: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ]),
+  active: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.number), PropTypes.number]),
   /**
    * The callback to be performed on content change
    */
