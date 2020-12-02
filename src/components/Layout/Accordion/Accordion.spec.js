@@ -142,7 +142,7 @@ describe('Accordion component', () => {
     expect(contentsLen).to.equal(3);
   });
 
-  it('should show only one element per time', () => {
+  it('could show one element per time', () => {
     const { container } = render(
       <Accordion onChange={noop} active={1}>
         <Accordion.Content title="Title 1">
@@ -160,6 +160,26 @@ describe('Accordion component', () => {
     const activeEl = container.querySelector('.bi.bi-accordion-item.bi-item-open');
 
     expect(activeEl).to.exist;
+  });
+
+  it('could show more than one element per time', () => {
+    const { container } = render(
+      <Accordion onChange={noop} active={[1, 2]}>
+        <Accordion.Content title="Title 1">
+          Lorem ipsum
+        </Accordion.Content>
+        <Accordion.Content title="Title 2">
+          Lorem ipsum 2
+        </Accordion.Content>
+        <Accordion.Content title="Title 3">
+          Lorem ipsum 3
+        </Accordion.Content>
+      </Accordion>,
+    );
+
+    const activeEl = container.querySelectorAll('.bi-item-open');
+
+    expect(activeEl.length).to.equal(2);
   });
 
   it('should fire the onChange callback when switching between panels', () => {
