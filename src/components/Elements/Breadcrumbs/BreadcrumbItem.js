@@ -32,7 +32,6 @@ const BreadcrumbItem = (props) => {
   );
 };
 
-
 BreadcrumbItem.propTypes = {
   path: PropTypes.string,
   label: PropTypes.string,

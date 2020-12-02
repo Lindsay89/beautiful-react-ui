@@ -26,7 +26,6 @@ const CollapsedBreadcrumbs = (props) => {
   );
 };
 
-
 CollapsedBreadcrumbs.propTypes = {
   /**
    * Defines the items type, it must be an array of object, with label required.
@@ -43,6 +42,5 @@ CollapsedBreadcrumbs.propTypes = {
    */
   maxDisplayedItems: PropTypes.number.isRequired,
 };
-
 
 export default React.memo(CollapsedBreadcrumbs);

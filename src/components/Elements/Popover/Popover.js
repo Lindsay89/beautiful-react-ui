@@ -30,7 +30,6 @@ const Popover = (props) => {
   );
 };
 
-
 Popover.propTypes = {
   /**
    * Defines the React node to apply the popover to

@@ -51,7 +51,6 @@ describe('Link component', () => {
     const { container } = render(<Link href={href}>Hello Link</Link>);
     const anchorEl = container.querySelector('a');
 
-
     expect(anchorEl.getAttribute('href')).to.equal(href);
   });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, cleanup, fireEvent, waitForDomChange } from '@testing-library/react';
+import { render, cleanup, fireEvent, waitFor } from '@testing-library/react';
 import Select from '.';
 
 const optionsMock = [
@@ -71,61 +71,52 @@ describe('Select component', () => {
     expect(selectComp.classList.contains('fluid')).to.be.true;
   });
 
-  it('if provided, should perform the onChange callback when an option is selected', () => {
+  it('if provided, should perform the onChange callback when an option is selected', async () => {
     const onChange = sinon.spy();
 
     const { container } = render(<Select options={optionsMock} value={optionsMock[1].value} onChange={onChange} />);
     const selectComp = container.querySelector('.bi.bi-select');
 
-    const floatingComponentsWrapper = document.getElementById('bi-floats');
-
-    const waitingForDomChangesPromise = waitForDomChange({ container: floatingComponentsWrapper }).then(() => {
-      const optionItem = floatingComponentsWrapper.getElementsByClassName('bi-select-opt')[0];
-      fireEvent.click(optionItem);
-
-      expect(onChange.called).to.equal(true);
-
-      const currentArgs = onChange.args[0];
-      expect(currentArgs[0]).to.equal(optionsMock[0].value, optionsMock, optionsMock[1].value);
-    });
-
     fireEvent.click(selectComp);
 
-    return waitingForDomChangesPromise;
+    const floatingComponentsWrapper = await waitFor(() => document.getElementById('bi-floats'));
+    const optionItem = floatingComponentsWrapper.getElementsByClassName('bi-select-opt')[0];
+    fireEvent.click(optionItem);
+
+    expect(onChange.called).to.equal(true);
+
+    const currentArgs = onChange.args[0];
+
+    expect(currentArgs[0]).to.equal(optionsMock[0].value, optionsMock, optionsMock[1].value);
   });
 
-  it('should close the dropdown when an option is selected & \'toggleOnChange\' is true (as it is by default)', () => {
+  // eslint-disable-next-line max-len
+  it('should close the dropdown when an option is selected & \'toggleOnChange\' is true (as it is by default)', async () => {
     const { container } = render(<Select options={optionsMock} value={optionsMock[1].value} toggleOnChange />);
     const selectComp = container.querySelector('.bi.bi-select');
-    const floatingComponentsWrapper = document.getElementById('bi-floats');
-
-    const waitingForDomChangesPromise = waitForDomChange({ container: floatingComponentsWrapper }).then(() => {
-      expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.exist;
-      const optionItem = floatingComponentsWrapper.getElementsByClassName('bi-select-opt')[0];
-      fireEvent.click(optionItem);
-      expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.not.exist;
-    });
-
     fireEvent.click(selectComp);
+    const floatingComponentsWrapper = await waitFor(() => document.getElementById('bi-floats'));
 
-    return waitingForDomChangesPromise;
+    expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.exist;
+
+    const optionItem = floatingComponentsWrapper.getElementsByClassName('bi-select-opt')[0];
+    fireEvent.click(optionItem);
+
+    expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.not.exist;
   });
 
-  it('should keep the dropdown open when selecting an option if \'toggleOnChange\' is set to false', () => {
+  it('should keep the dropdown open when selecting an option if \'toggleOnChange\' is set to false', async () => {
     const { container } = render(<Select options={optionsMock} value={optionsMock[1].value} toggleOnChange={false} />);
     const selectComp = container.querySelector('.bi.bi-select');
-    const floatingComponentsWrapper = document.getElementById('bi-floats');
-
-    const waitingForDomChangesPromise = waitForDomChange({ container: floatingComponentsWrapper }).then(() => {
-      expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.exist;
-      const optionItem = floatingComponentsWrapper.getElementsByClassName('bi-select-opt')[0];
-      fireEvent.click(optionItem);
-      expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.exist;
-    });
-
     fireEvent.click(selectComp);
+    const floatingComponentsWrapper = await waitFor(() => document.getElementById('bi-floats'));
 
-    return waitingForDomChangesPromise;
+    expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.exist;
+
+    const optionItem = floatingComponentsWrapper.getElementsByClassName('bi-select-opt')[0];
+    fireEvent.click(optionItem);
+
+    expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown')).to.exist;
   });
 
   it('should perform the onChange when the \'close\' button is clicked', () => {
@@ -151,62 +142,50 @@ describe('Select component', () => {
     expect(selectElement.querySelector('.sel-clear-x')).to.not.exist;
   });
 
-  it('should create a filtrable dropdown list if \'filtrable\' is true', () => {
+  it('should create a filtrable dropdown list if \'filtrable\' is true', async () => {
     const { container } = render(<Select options={optionsMock} value={optionsMock[1].value} filtrable />);
     const selectComp = container.querySelector('.bi.bi-select');
-    const floatingComponentsWrapper = document.getElementById('bi-floats');
-
-    const waitingForDomChangesPromise = waitForDomChange({ container: floatingComponentsWrapper }).then(() => {
-      expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable')).to.exist;
-      expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable input')).to.exist;
-    });
 
     fireEvent.click(selectComp);
+    const floatingComponentsWrapper = await waitFor(() => document.getElementById('bi-floats'));
 
-    return waitingForDomChangesPromise;
+    expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable')).to.exist;
+    expect(floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable input')).to.exist;
   });
 
-  it('should possibly change the filter\'s input placeholder if \'filterInputPlaceholder\' is well defined', () => {
+  // eslint-disable-next-line max-len
+  it('should possibly change the filter\'s input placeholder if \'filterInputPlaceholder\' is well defined', async () => {
     const filterInputPlaceholder = 'foo';
     const { container } = render(
       <Select options={optionsMock} value={optionsMock[1].value} filtrable filterInputPlaceholder="foo" />,
     );
     const selectComp = container.querySelector('.bi.bi-select');
-    const floatingComponentsWrapper = document.getElementById('bi-floats');
-
-    const waitingForDomChangesPromise = waitForDomChange({ container: floatingComponentsWrapper }).then(() => {
-      const dropdown = floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable');
-      const inputTag = dropdown.querySelector('.bi.bi-input.input-default > input');
-
-      expect(inputTag).to.exist;
-      expect(inputTag.placeholder).to.equal(filterInputPlaceholder);
-    });
-
     fireEvent.click(selectComp);
 
-    return waitingForDomChangesPromise;
+    const floatingComponentsWrapper = await waitFor(() => document.getElementById('bi-floats'));
+    const dropdown = floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable');
+    const inputTag = dropdown.querySelector('.bi.bi-input.input-default > input');
+
+    expect(inputTag).to.exist;
+    expect(inputTag.placeholder).to.equal(filterInputPlaceholder);
   });
 
-  it('should possibly show a custom \'no results\' message if \'filterNoResultLabel\' is defined', () => {
+  it('should possibly show a custom \'no results\' message if \'filterNoResultLabel\' is defined', async () => {
     const filterNoResultLabel = 'foo';
     const { container } = render(
       <Select options={optionsMock} value={optionsMock[1].value} filtrable filterNoResultLabel="foo" />,
     );
     const selectComp = container.querySelector('.bi.bi-select');
-    const floatingComponentsWrapper = document.getElementById('bi-floats');
-
-    const waitingForDomChangesPromise = waitForDomChange({ container: floatingComponentsWrapper }).then(() => {
-      const dropdown = floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable');
-      const inputTag = dropdown.querySelector(' .bi.bi-input.input-default > input');
-      fireEvent.change(inputTag, { target: { value: 'quz' } });
-
-      expect(floatingComponentsWrapper.querySelector('.no-results')).to.exist;
-      expect(floatingComponentsWrapper.querySelector('.no-results').textContent).to.equal(filterNoResultLabel);
-    });
 
     fireEvent.click(selectComp);
 
-    return waitingForDomChangesPromise;
+    const floatingComponentsWrapper = await waitFor(() => document.getElementById('bi-floats'));
+    const dropdown = floatingComponentsWrapper.querySelector('.bi-select-options-dropdown.filtrable');
+    const inputTag = dropdown.querySelector(' .bi.bi-input.input-default > input');
+    fireEvent.change(inputTag, { target: { value: 'quz' } });
+
+    expect(floatingComponentsWrapper.querySelector('.no-results')).to.exist;
+    expect(floatingComponentsWrapper.querySelector('.no-results').textContent).to.equal(filterNoResultLabel);
   });
 
   it('should change the multiple selection style when multiStyle is set to strings', () => {

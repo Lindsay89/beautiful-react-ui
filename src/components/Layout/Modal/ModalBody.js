@@ -21,7 +21,6 @@ ModalBody.propTypes = {
   children: PropTypes.node,
 };
 
-
 ModalBody.defaultProps = {
   children: undefined,
 };

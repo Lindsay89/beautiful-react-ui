@@ -59,7 +59,6 @@ describe('Paragraph component', () => {
     expect(pEl.classList.contains('bi-p-justify')).to.be.true;
   });
 
-
   it('should allow to change the paragraph font by setting a \'fontFamily\' prop', () => {
     const { container, rerender } = render(<Paragraph fontFamily="mono">Foo</Paragraph>);
     const pEl = container.querySelector('.bi-p');

@@ -32,7 +32,6 @@ const DropDown = React.memo((props) => {
   );
 });
 
-
 DropDown.propTypes = {
   /**
    * Defines the React node to apply the dropdown to
@@ -55,7 +54,6 @@ DropDown.propTypes = {
    */
   pointingArrow: PropTypes.bool,
 };
-
 
 DropDown.defaultProps = {
   isShown: false,

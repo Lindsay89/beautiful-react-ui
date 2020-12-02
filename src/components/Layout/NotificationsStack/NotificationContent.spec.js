@@ -3,7 +3,6 @@ import { cleanup, render } from '@testing-library/react';
 import { expect } from 'chai';
 import NotificationContent from './NotificationContent';
 
-
 describe('NotificationContent component', () => {
   afterEach(() => cleanup());
 

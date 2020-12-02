@@ -1,6 +1,5 @@
 import filterOptions from './filterOptions';
 
-
 const optionsMock = [
   { label: 'Foo', value: 'foo' },
   { label: 'Bar', value: 'bar' },

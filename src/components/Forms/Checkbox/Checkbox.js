@@ -60,7 +60,6 @@ Checkbox.propTypes = {
   CheckIconRender: PropTypes.elementType,
 };
 
-
 Checkbox.defaultProps = {
   value: false,
   onChange: undefined,

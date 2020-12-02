@@ -9,7 +9,6 @@ import IconProp from '../../../shared/types/IconProp';
 // styles
 import './notification-stack.scss';
 
-
 /**
  * The NotificationsStack component is used to manage notifications appearance.
  * A notification is a tiny customizable modal positioned over everything else in the document.

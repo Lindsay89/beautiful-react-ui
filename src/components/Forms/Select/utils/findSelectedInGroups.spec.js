@@ -1,6 +1,5 @@
 import findSelectedInGroups from './findSelectedInGroups';
 
-
 const optionsGroup = [{
   name: 'foo',
   options: [

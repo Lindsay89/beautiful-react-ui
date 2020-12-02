@@ -6,7 +6,6 @@ import NotificationContent from './NotificationContent';
 import NotificationRightRender from './NotificationRightRender';
 import { IconProp } from '../../../shared';
 
-
 import './notification.scss';
 
 /**

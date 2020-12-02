@@ -4,7 +4,6 @@ import { expect } from 'chai';
 import Notification from './Notification';
 import noop from '../../../../test/utils/noop';
 
-
 describe('Notification component', () => {
   afterEach(() => cleanup());
 

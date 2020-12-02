@@ -56,7 +56,6 @@ const useFileUploadHandlers = (uploads, multiple, onChange) => {
     }
   }, [inputRef.current]);
 
-
   return { onFilesChange, onFileRemove, clickHandler, isOver, dropZoneRef, inputRef };
 };
 

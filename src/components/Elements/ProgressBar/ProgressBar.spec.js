@@ -1,10 +1,8 @@
-
 import { cleanup } from '@testing-library/react';
 import ProgressBar from './ProgressBar';
 import performStandardTests from '../../../../test/utils/performStandardTests';
 import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 import checkColorProp from '../../../../test/utils/checkColorProp';
-
 
 describe('ProgressBar component', () => {
   afterEach(cleanup);

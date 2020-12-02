@@ -59,7 +59,6 @@ Paragraph.propTypes = {
   ElementRender: PropTypes.elementType,
 };
 
-
 Paragraph.defaultProps = {
   color: 'default',
   fontFamily: 'sans',

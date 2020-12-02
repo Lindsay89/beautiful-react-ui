@@ -27,7 +27,6 @@ const SelectTrigger = (props) => {
     'select-multi': Array.isArray(value) && value.length >= 1,
   });
 
-
   return (
     <>
       <div className={className} {...rest}>

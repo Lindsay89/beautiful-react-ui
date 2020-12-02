@@ -22,7 +22,6 @@ describe('FloatingContent component', () => {
     expect(document.querySelector('#bi-floats')).to.exist;
   });
 
-
   it('should have default classes', () => {
     render(
       <FloatingContent onToggle={noop} trigger={Trigger} isShown className="foo" reversePlacementOnSmallSpace={false}>

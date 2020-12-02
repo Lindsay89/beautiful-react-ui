@@ -46,7 +46,6 @@ Label.propTypes = {
   htmlFor: PropTypes.string,
 };
 
-
 Label.defaultProps = {
   text: undefined,
   color: 'default',

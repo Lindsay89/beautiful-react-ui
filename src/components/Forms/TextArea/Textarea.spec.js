@@ -9,7 +9,6 @@ describe('TextArea component', () => {
     cleanup();
   });
 
-
   it('it should render without explode', () => {
     const { container } = render(<TextArea value="foo" onChange={noop} />);
 

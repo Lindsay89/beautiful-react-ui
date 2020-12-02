@@ -72,7 +72,6 @@ describe('Title component', () => {
     expect(titleEl.tagName).to.equal('H1');
   });
 
-
   it('should allow to define the title size by setting a \'size\' prop', () => {
     const { container } = render(<Title size="xl">Foo</Title>);
     const titleEl = container.querySelector('.bi-title');

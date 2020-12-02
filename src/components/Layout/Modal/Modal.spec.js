@@ -129,7 +129,6 @@ describe('Modal component', () => {
     expect(modal.getAttribute('class').split(' ')).to.not.include.members(['bi-modal-lg']);
   });
 
-
   it('should accept the \'animation\' prop', () => {
     const { rerender } = render(
       <Modal isOpen animation="zoom">
@@ -210,7 +209,6 @@ describe('Modal component', () => {
     const customBackdrop = modalWrapper.querySelector('.custom-backdrop');
     expect(customBackdrop).to.exist;
   });
-
 
   it('should perform the \'onShow\' callback, if provided, when showing the modal', () => {
     const onShowSpy = sinon.spy();

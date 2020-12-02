@@ -6,7 +6,6 @@ import findSelectedOptions from './utils/findSelectedOptions';
 import findSelectedInGroups from './utils/findSelectedInGroups';
 import getSelectLabel from './utils/getSelectLabels';
 
-
 /**
  * Shows the Select label according to its options and value or, if no value is available or no option is found,
  * shows a placeholder

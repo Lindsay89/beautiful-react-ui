@@ -40,7 +40,6 @@ describe('Breadcrumbs component', () => {
     expect(breadcrumb.getAttribute('class').split(' ')).to.include.members(['foo']);
   });
 
-
   it('should allow to define custom style', () => {
     const pages = [{ path: '/', label: 'Home' }];
     const { container } = render(<Breadcrumbs items={pages} style={{ margin: '10px' }} />);

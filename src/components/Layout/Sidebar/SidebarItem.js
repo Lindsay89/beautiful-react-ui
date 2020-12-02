@@ -51,7 +51,6 @@ const SidebarItem = (props) => {
   );
 };
 
-
 SidebarItem.propTypes = {
   text: PropTypes.string.isRequired,
   to: PropTypes.string,

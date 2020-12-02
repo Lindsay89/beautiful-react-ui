@@ -15,7 +15,6 @@ const CardFooter = ({ children, textAlign, className }) => {
   );
 };
 
-
 CardFooter.propTypes = {
   /**
    * Defines how to align footer's content

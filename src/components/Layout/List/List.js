@@ -29,7 +29,6 @@ const List = React.memo((props) => {
   );
 });
 
-
 List.propTypes = {
   /*
    * Defines the list color, can be one of the following:

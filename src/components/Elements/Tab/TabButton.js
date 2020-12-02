@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { makeIconFromProp, IconProp } from '../../../shared';
 
-
 /**
  * Tab button is a component used to show the tab's label.
  * A label could have a title or title plus icon or icon only.

@@ -2,7 +2,6 @@ import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import SelectTrigger from './SelectTrigger';
 
-
 const optionsMock = [
   { label: 'Foo', value: 'foo' },
   { label: 'Bar', value: 'bar' },

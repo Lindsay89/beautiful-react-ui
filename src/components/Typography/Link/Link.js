@@ -37,7 +37,6 @@ Link.propTypes = {
   ElementRender: PropTypes.elementType,
 };
 
-
 Link.defaultProps = {
   color: 'primary',
   ElementRender: 'a',

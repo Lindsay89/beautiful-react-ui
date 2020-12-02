@@ -4,7 +4,6 @@ import FileItem from './FileItem';
 import performStandardTests from '../../../../test/utils/performStandardTests';
 import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 
-
 describe('FileItem component', () => {
   beforeEach(() => {
     // mocking FileReader API
@@ -23,7 +22,6 @@ describe('FileItem component', () => {
     delete global.FileReader;
   });
 
-
   const FileMock = { name: 'foo', size: 1000 * 1000, type: 'image/png' };
 
   const defaultProps = { file: FileMock };
@@ -32,7 +30,6 @@ describe('FileItem component', () => {
   performStandardTests(FileItem, defaultProps);
   // performs a test on default class names
   hasDefaultClassNames(FileItem, defaultProps, ['bi-file-item']);
-
 
   it('shall perform the uploadingFn if provided', () => {
     const spy = sinon.spy();

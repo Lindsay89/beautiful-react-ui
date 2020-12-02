@@ -6,7 +6,6 @@ const optionsMock = [
   { label: 'Baz', value: 'baz', disabled: true },
 ];
 
-
 describe('findSelectedOptions function', () => {
   it('should be a function', () => {
     expect(findSelectedOptions).to.be.a('function');

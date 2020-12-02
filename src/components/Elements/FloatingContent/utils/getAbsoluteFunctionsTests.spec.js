@@ -29,7 +29,6 @@ const makeTestsForFirstType = (fn) => () => {
   });
 };
 
-
 const makeTestsForSecondType = (fn) => () => {
   it('should be a function', () => {
     expect(fn).to.be.a('function');

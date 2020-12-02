@@ -7,7 +7,6 @@ const optionsMock = [
   { label: 'Baz', value: 'baz', disabled: true },
 ];
 
-
 describe('getSelectLabels function', () => {
   it('should be a function', () => {
     expect(getSelectedLabels).to.be.a('function');

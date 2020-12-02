@@ -35,7 +35,6 @@ const BreadcrumbMenu = (props) => {
   );
 };
 
-
 BreadcrumbMenu.propTypes = {
   /**
    * Defines the items to be shown within a dropdown menu
@@ -47,6 +46,5 @@ BreadcrumbMenu.propTypes = {
     render: PropTypes.func,
   })).isRequired,
 };
-
 
 export default React.memo(BreadcrumbMenu);

@@ -15,7 +15,6 @@ const CardContent = ({ children, textAlign, className }) => {
   );
 };
 
-
 CardContent.propTypes = {
   /**
    * Defines how the content should be aligned
@@ -26,6 +25,5 @@ CardContent.propTypes = {
 CardContent.defaultProps = {
   textAlign: undefined,
 };
-
 
 export default React.memo(CardContent);

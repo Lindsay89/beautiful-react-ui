@@ -4,7 +4,6 @@ import FileUploader from './FileUploader';
 import performStandardTests from '../../../../test/utils/performStandardTests';
 import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 
-
 describe('FileUploader component', () => {
   beforeEach(() => {
     // mocking FileReader API
@@ -22,7 +21,6 @@ describe('FileUploader component', () => {
     sinon.restore();
     delete global.FileReader;
   });
-
 
   const FileMock = { name: 'foo', size: 1000 * 1000, type: 'image/png' };
   const onChangeSpy = sinon.spy();

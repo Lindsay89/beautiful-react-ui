@@ -34,7 +34,6 @@ const TextArea = (props) => {
   );
 };
 
-
 TextArea.propTypes = {
   /**
    * The component value

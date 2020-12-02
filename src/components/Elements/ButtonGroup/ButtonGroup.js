@@ -39,7 +39,6 @@ const ButtonGroup = ({ children, className, fluid, id, style, ...props }) => {
   );
 };
 
-
 ButtonGroup.propTypes = {
   /**
    * Defines the buttons color, can be `default`, `primary`, `secondary`, `info`, `warning`, `success`, `danger`

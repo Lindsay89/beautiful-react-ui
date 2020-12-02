@@ -40,7 +40,6 @@ FormPanel.propTypes = {
   LabelRender: PropTypes.elementType,
 };
 
-
 FormPanel.defaultProps = {
   label: undefined,
   labelType: 'floating',

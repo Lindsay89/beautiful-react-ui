@@ -26,7 +26,6 @@ const FileUploader = (props) => {
     'file-dropping': isOver,
   }, className), [className, isOver]);
 
-
   return (
     <ElementRender className={classList} onClick={clickHandler} tabIndex={0} role="button" {...rest}>
       <div className="bi-file-uploader-content" ref={dropZoneRef}>

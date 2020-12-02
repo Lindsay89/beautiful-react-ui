@@ -16,7 +16,6 @@ export { default as Tooltip } from './components/Elements/Tooltip';
 export { default as FloatingContent } from './components/Elements/FloatingContent';
 export { default as ProgressBar } from './components/Elements/ProgressBar';
 
-
 // Forms
 export { default as Label } from './components/Forms/Label';
 export { default as Checkbox } from './components/Forms/Checkbox';

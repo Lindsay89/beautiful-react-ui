@@ -8,7 +8,6 @@ describe('Pill component', () => {
     cleanup();
   });
 
-
   it('it should render withouw explode', () => {
     const { container } = render(<Pill>Join us!</Pill>);
 

@@ -1,6 +1,5 @@
 import optionIsSelected from './optionIsSelected';
 
-
 const optionsMock = [
   { label: 'Foo', value: 'foo' },
   { label: 'Bar', value: 'bar' },

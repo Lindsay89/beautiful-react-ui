@@ -9,7 +9,6 @@ describe('Input component', () => {
     cleanup();
   });
 
-
   it('it should render without explode', () => {
     const { container } = render(<Input value="foo" onChange={noop} />);
 

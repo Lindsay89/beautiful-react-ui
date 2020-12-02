@@ -5,7 +5,6 @@ import performStandardTests from '../../../../test/utils/performStandardTests';
 import hasDefaultClassNames from '../../../../test/utils/hasDefaultClassNames';
 import Sidebar from './Sidebar';
 
-
 describe('SidebarCollapsible component', () => {
   afterEach(() => {
     sinon.restore();

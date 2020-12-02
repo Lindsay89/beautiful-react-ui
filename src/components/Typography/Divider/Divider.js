@@ -26,7 +26,6 @@ const Divider = (props) => {
   return (<div className={classes} {...rest}><span>{children}</span></div>);
 };
 
-
 Divider.propTypes = {
   /**
    * shows 2 lines instead of one

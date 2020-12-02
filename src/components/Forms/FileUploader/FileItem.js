@@ -29,7 +29,6 @@ const FileItem = ({ file, removeLabel, uploadingLabel, uploadingFn, onRemove, ..
     }
   }, [isPreviewable]);
 
-
   useEffect(() => {
     if (uploadingFn && !isUploading && byteSent <= 0) {
       const next = (data) => {

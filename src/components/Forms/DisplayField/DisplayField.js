@@ -25,7 +25,6 @@ const DisplayField = (props) => {
   );
 };
 
-
 DisplayField.propTypes = {
   /**
    * Defines the field label
@@ -56,7 +55,6 @@ DisplayField.propTypes = {
    */
   boldValue: PropTypes.bool,
 };
-
 
 DisplayField.defaultProps = {
   labelColor: 'default',

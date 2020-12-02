@@ -6,7 +6,6 @@ import getTopRightFloater from './getTopRightFloater';
 import getRightCenterFloater from './getRightCenterFloater';
 import getLeftCenterFloater from './getLeftCenterFloater';
 
-
 describe('getFloaterAbsolutePosition utility function', () => {
   const el = document.createElement('div');
 
@@ -26,7 +25,6 @@ describe('getFloaterAbsolutePosition utility function', () => {
     expect(result).to.be.an('object');
   });
 });
-
 
 const makeTestFor = (fn) => () => {
   const boundingRect = {};

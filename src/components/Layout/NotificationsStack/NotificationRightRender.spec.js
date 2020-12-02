@@ -4,10 +4,8 @@ import { expect } from 'chai';
 import NotificationRightRender from './NotificationRightRender';
 import noop from '../../../../test/utils/noop';
 
-
 describe('NotificationRightRender component', () => {
   afterEach(() => cleanup());
-
 
   it('should render without explode', () => {
     const { container } = render(<NotificationRightRender onToggle={noop} />);

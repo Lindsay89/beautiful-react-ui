@@ -5,7 +5,6 @@ import OptionsGroupType from './utils/OptionsGroupType';
 import SelectOption from './SelectOption';
 import ValueType from './utils/ValueType';
 
-
 /**
  * Group of options
  */

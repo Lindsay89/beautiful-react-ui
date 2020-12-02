@@ -10,7 +10,6 @@ import getOppositePlacement from './utils/getOppositePlacement';
 
 import './floating-content.scss';
 
-
 // @TODO: this component can be simplified quite a lot
 
 /**
@@ -66,7 +65,6 @@ const FloatingContent = (props) => {
       setDerivedPlacement(nextPlacement);
     }
   }, [elementStyle]);
-
 
   useEffect(() => {
     if (!isShown) {

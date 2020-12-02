@@ -137,7 +137,6 @@ Sidebar.defaultProps = {
   NavRender: 'nav',
 };
 
-
 Sidebar.Item = SidebarItem;
 Sidebar.Collapsible = SidebarCollapsible;
 Sidebar.Divider = SidebarDivider;

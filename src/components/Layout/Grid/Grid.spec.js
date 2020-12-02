@@ -2,7 +2,6 @@ import React from 'react';
 import { render, cleanup } from '@testing-library/react';
 import Grid from './Grid';
 
-
 const Content = () => (<div>some content</div>);
 
 describe('Grid component', () => {

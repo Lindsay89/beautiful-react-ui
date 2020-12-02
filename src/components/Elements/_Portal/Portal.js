@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import getPortalWrapper from './getPortalWrapper';
 import './ElementRemovePolyfill';
 
-
 /**
  * Creates a React Portal with the given id.
  * Takes care of removing the created portal on component unmount

@@ -23,7 +23,6 @@ const filterTabChildren = (child, index, props) => {
   return result;
 };
 
-
 /**
  * The Tab component consists of clickable labels that shows the corresponding content.
  */

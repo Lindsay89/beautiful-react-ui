@@ -50,7 +50,6 @@ Pill.propTypes = {
   children: PropTypes.node,
 };
 
-
 Pill.defaultProps = {
   children: null,
   color: 'default',
@@ -58,6 +57,5 @@ Pill.defaultProps = {
   render: undefined,
   rounded: true,
 };
-
 
 export default React.memo(Pill);

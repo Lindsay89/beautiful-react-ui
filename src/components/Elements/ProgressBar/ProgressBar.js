@@ -20,7 +20,6 @@ const ProgressBar = ({ color, completed, ElementRender, FillRender, className, .
   );
 };
 
-
 ProgressBar.propTypes = {
   /**
    * Defines the percentage of the completed progress

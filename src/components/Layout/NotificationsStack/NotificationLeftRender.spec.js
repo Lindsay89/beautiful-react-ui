@@ -14,7 +14,6 @@ describe('NotificationLeftRender component', () => {
     expect(elNode).to.exist;
   });
 
-
   it('should render an icon if provided', () => {
     const { container } = render(<NotificationLeftRender icon="heart" />);
     const elNode = container.querySelector('.notification-left-side').querySelector('.bi.bi-icon');
